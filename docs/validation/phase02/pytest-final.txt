@@ -1,0 +1,68 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.18, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\zh\Desktop\git\jiaotong
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.16.0
+collected 77 items
+
+tests\test_archive.py .....                                              [  6%]
+tests\test_cli.py ..                                                     [  9%]
+tests\test_config.py ........                                            [ 19%]
+tests\test_data_stack.py ..                                              [ 22%]
+tests\test_environment.py ....................                           [ 48%]
+tests\test_network.py ...................                                [ 72%]
+tests\test_sioux.py ......                                               [ 80%]
+tests\test_spatial.py ...............                                    [100%]
+
+============================== warnings summary ===============================
+tests/test_data_stack.py::test_geotiff_roundtrip
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_synthetic_points_reproducible_and_never_observed
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\windows.py:387: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    left, bottom = transform * (col_min, row_max)
+
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\windows.py:388: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    right, top = transform * (col_max, row_min)
+
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\merge.py:341: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    output_transform = Affine.translation(dst_w, dst_n) * Affine.scale(
+
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+tests/test_spatial.py::test_native_population_counts_and_nodata_not_interpolated
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    return Affine.translation(
+
+tests/test_spatial.py: 10 warnings
+  C:\Users\zh\Desktop\git\jiaotong\.conda-env\Lib\site-packages\rasterio\features.py:420: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+    return _bounds(geom, north_up=north_up, transform=transform)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\Users\zh\Desktop\git\jiaotong\docs\validation\phase02\pytest-final.xml -
+====================== 77 passed, 35 warnings in 11.47s =======================

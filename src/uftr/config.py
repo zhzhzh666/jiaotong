@@ -78,6 +78,29 @@ def validate_config(data: dict) -> dict:
         for road,values in attributes['defaults'].items():
             for key in ['speed_kph','lanes_per_direction','capacity_per_lane_veh_h']: _positive(values.get(key),road+'.'+key)
             if type(values['lanes_per_direction']) is not int: raise ValueError('lanes must be integer')
+    if result['phase']=='02':
+        spatial=result.get('spatial',{})
+        for field in ['network_directory','osm_snapshot']:
+            p=spatial.get(field)
+            if not isinstance(p,str) or not p or Path(p).is_absolute() or '..' in Path(p).parts:
+                raise ValueError('spatial input paths must be relative and inside project')
+        matching=spatial.get('matching',{})
+        for field in ['search_radius_m','max_match_distance_m','high_distance_m','medium_distance_m','high_gap_m','medium_gap_m']:
+            _positive(matching.get(field),field)
+        if not (matching['high_distance_m']<=matching['medium_distance_m']<=matching['max_match_distance_m']<=matching['search_radius_m']):
+            raise ValueError('invalid match distance ordering')
+        if matching['high_gap_m']<matching['medium_gap_m']:raise ValueError('high confidence requires larger ambiguity gap')
+        risk=spatial.get('synthetic_risk',{})
+        for field in ['count','clusters']:
+            if type(risk.get(field)) is not int or risk[field]<1:raise ValueError('risk counts must be positive integers')
+        if risk['clusters']>risk['count']:raise ValueError('clusters exceed risk count')
+        for field in ['cluster_sd_m','elevation_scale_m','max_dsm_m']:_positive(risk.get(field),field)
+        sources=spatial.get('sources',{})
+        if not sources:raise ValueError('source list required')
+        for filename,spec in sources.items():
+            if Path(filename).name!=filename or not spec.get('url','').startswith('https://') or not spec.get('license'):
+                raise ValueError('source must have safe filename, HTTPS URL and explicit license')
+        if not isinstance(spatial.get('rain_station'),str):raise ValueError('rain station ID must be a string')
     return result
 
 

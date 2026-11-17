@@ -27,6 +27,24 @@ def file_hash(path: Path) -> str:
     return digest.hexdigest()
 
 
+def verify_recorded_input(root: Path, item: dict, recorded_git: dict) -> str:
+    """Audit historical tracked inputs against their recorded clean Git revision.
+
+    Later phases legitimately edit source/config files. Immutable datasets must
+    still match their actual local bytes; ignored data has no Git fallback.
+    """
+    path=Path(item['path']).resolve()
+    relative=path.relative_to(root.resolve()).as_posix()
+    if path.is_file() and file_hash(path)==item['sha256']:return 'current_bytes'
+    commit=recorded_git.get('commit')
+    if commit and not recorded_git.get('dirty'):
+        output=subprocess.run(['git','-c',f'safe.directory={root.as_posix()}',
+                               '-C',str(root),'show',f'{commit}:{relative}'],capture_output=True)
+        if output.returncode==0 and sha256(output.stdout).hexdigest()==item['sha256']:
+            return 'git_blob_at_recorded_commit'
+    raise ValueError('recorded input checksum mismatch: '+relative)
+
+
 def write_json(path: Path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(f".{path.name}.{uuid4().hex}.tmp")

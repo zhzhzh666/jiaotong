@@ -1,0 +1,110 @@
+project: urban-flood-traffic-resilience
+phase: '02'
+seed: 42
+region: nanshan
+scenario: spatial-data-and-synthetic-risk
+strategy: not-applicable
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.3
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+spatial:
+  network_directory: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan
+  osm_snapshot: data/raw/phase01/20261117T192004_p01_d71ec83e
+  rain_station: '59493099999'
+  sources:
+    dem_e113.tif:
+      url: https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E113_00_DEM/Copernicus_DSM_COG_10_N22_00_E113_00_DEM.tif
+      license: Copernicus DEM public licence, ESA / Airbus; see saved licence
+      required: true
+    dem_e114.tif:
+      url: https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E114_00_DEM/Copernicus_DSM_COG_10_N22_00_E114_00_DEM.tif
+      license: Copernicus DEM public licence, ESA / Airbus; see saved licence
+      required: true
+    population_2020_1km.tif:
+      url: https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/chn_ppp_2020_1km_Aggregated_UNadj.tif
+      license: WorldPop CC BY 4.0
+      required: true
+    copernicus_registry.yaml:
+      url: https://raw.githubusercontent.com/awslabs/open-data-registry/main/datasets/copernicus-dem.yaml
+      license: Copernicus DEM public licence, ESA / Airbus; see saved licence
+      required: false
+    copernicus_readme.html:
+      url: https://copernicus-dem-30m.s3.amazonaws.com/readme.html
+      license: Copernicus DEM public licence, ESA / Airbus; see saved licence
+      required: false
+    copernicus_license.html:
+      url: https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM
+      license: Copernicus DEM public licence, ESA / Airbus; see saved licence
+      required: false
+    worldpop_index.html:
+      url: https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/
+      license: WorldPop CC BY 4.0
+      required: false
+    worldpop_license.txt:
+      url: https://hub.worldpop.org/data/licence.txt
+      license: WorldPop CC BY 4.0
+      required: false
+    baoan_gsod_2023.csv:
+      url: https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2023/59493099999.csv
+      license: NOAA NCEI public data; GSOD documentation retained
+      required: true
+    gsod_readme.txt:
+      url: https://www.ncei.noaa.gov/data/global-summary-of-the-day/doc/readme.txt
+      license: NOAA NCEI public data; GSOD documentation retained
+      required: false
+    official_flood_catalog.html:
+      url: https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003891
+      license: Official catalog only; portal terms; downloaded records require real-name
+        login
+      required: false
+    official_water_monitor_catalog.html:
+      url: https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003929
+      license: Official catalog only; portal terms; downloaded records require real-name
+        login
+      required: false
+    official_shelter_catalog.html:
+      url: https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003846
+      license: Official catalog only; portal terms; downloaded records require real-name
+        login
+      required: false
+    official_weather_catalog.html:
+      url: https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_00900273
+      license: Official catalog only; portal terms; downloaded records require real-name
+        login
+      required: false
+  matching:
+    search_radius_m: 100
+    max_match_distance_m: 60
+    high_distance_m: 15
+    medium_distance_m: 40
+    high_gap_m: 15
+    medium_gap_m: 5
+  synthetic_risk:
+    count: 60
+    clusters: 8
+    cluster_sd_m: 90
+    max_dsm_m: 40
+    elevation_scale_m: 10

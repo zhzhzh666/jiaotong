@@ -7,7 +7,7 @@ from urllib.parse import unquote
 import xml.etree.ElementTree as ET
 
 from PIL import Image
-from uftr.archive import artifact_rows, file_hash, write_json
+from uftr.archive import artifact_rows, file_hash, write_json, verify_recorded_input
 
 
 class Links(HTMLParser):
@@ -32,8 +32,10 @@ def main():
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["status"] == "success", "run not successful"
     assert file_hash(run / manifest["config"]) == manifest["config_sha256"], "config changed"
+    historical_git_inputs=0
     for item in manifest["inputs"]:
-        assert file_hash(Path(item["path"])) == item["sha256"], f"input changed: {item['path']}"
+        basis=verify_recorded_input(root,item,manifest['git'])
+        historical_git_inputs+=basis=='git_blob_at_recorded_commit'
     for artifact in manifest["artifacts"]:
         path = run / artifact["path"]
         assert file_hash(path) == artifact["sha256"], f"artifact changed: {path}"
@@ -63,9 +65,15 @@ def main():
             path=(processed/item['path']).resolve(); path.relative_to(processed.resolve())
             assert file_hash(path)==item['sha256'],f'processed output changed: {path}'
         assert all(network[k]['missing_required_attributes']==0 for k in ['small','nanshan'])
+    elif manifest['phase']=='02':
+        report=json.loads((run/'raw/spatial_report.json').read_text(encoding='utf-8'))
+        inventory=json.loads((root/report['processed_root']/'output_inventory.json').read_text(encoding='utf-8'))
+        for item in inventory['files']:
+            path=(root/item['path']).resolve();path.relative_to(root)
+            assert file_hash(path)==item['sha256'],f'spatial output changed: {path}'
     report = {"run_id": args.run_id, "status": "passed", "artifacts_verified": len(rows),
               "inputs_verified": len(manifest["inputs"]), "index_links_verified": len(links.paths),
-              "dependency_imports": dependency_imports, "git": manifest["git"],
+              "dependency_imports": dependency_imports, "historical_git_inputs_verified":historical_git_inputs, "git": manifest["git"],
               "elapsed_s": manifest["elapsed_s"], "visual_png_review": "separate human/agent inspection required"}
     write_json(root / args.output, report)
     print(json.dumps(report, ensure_ascii=False, indent=2))
