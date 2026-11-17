@@ -1,0 +1,17 @@
+{
+  "endpoints": 97,
+  "intervals": 96,
+  "affected_directed_edges": 54,
+  "rows": 20952,
+  "source_kind": "synthetic_parameterized",
+  "not_historical_reconstruction": true,
+  "unit_m_and_timezone_supported_by_user_dictionary": true,
+  "observed_zero_datum_verified": false,
+  "scenario_peak_m": {
+    "extreme": 0.7957634374610573,
+    "general": 0.2586231171748436,
+    "normal": 0.0,
+    "severe": 0.4973521484131608
+  },
+  "output_directory": "data/synthetic/phase04/20261118T003010_p04_b90874cf"
+}

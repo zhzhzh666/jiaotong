@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "run_id": "20261118T003010_p04_b90874cf",
+  "phase": "04",
+  "region": "nanshan",
+  "scenario": "parameterized-four-scenarios",
+  "strategy": "none",
+  "seed": 42,
+  "started_at": "2026-11-18T00:30:10+08:00",
+  "status": "success",
+  "git": {
+    "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+    "dirty": true
+  },
+  "config": "config.json",
+  "config_sha256": "b55a35b229c799a7f874808930b3f8a327d5d6255d6eff894f80417e79c0e9dc",
+  "inputs": [
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\configs\\phase04.yaml",
+      "sha256": "1580483fe1a222d6640cdb3c3008a389f48f2b42301ae3b7104a3902c3781736",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/1580483fe1a222d6640cdb3c3008a389f48f2b42301ae3b7104a3902c3781736"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\__init__.py",
+      "sha256": "1477143721d08f8ac410ca4a8bd30a106d70d4d458016d79dbb59425c21ed0f7",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/1477143721d08f8ac410ca4a8bd30a106d70d4d458016d79dbb59425c21ed0f7"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\archive.py",
+      "sha256": "8454530cc4536c3b22392d6773b2dd4743fcffd3a59e58a52885286125ffab82",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/8454530cc4536c3b22392d6773b2dd4743fcffd3a59e58a52885286125ffab82"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\assignment.py",
+      "sha256": "aec95677cd222b402a086acd022f7ebbaf1e9b2e01594b4396ffff218e13f708",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/aec95677cd222b402a086acd022f7ebbaf1e9b2e01594b4396ffff218e13f708"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\cli.py",
+      "sha256": "c71a4108b075f586f4a826c4d880ac1d6fa303ce34a936f6c094e8d90675c3e7",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/c71a4108b075f586f4a826c4d880ac1d6fa303ce34a936f6c094e8d90675c3e7"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\config.py",
+      "sha256": "fb420442bd2471067b4a2d433728e67f15a5c835b66c0a190043dea0525a6b93",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/fb420442bd2471067b4a2d433728e67f15a5c835b66c0a190043dea0525a6b93"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\demand.py",
+      "sha256": "10eb2c0cf60a64f7b0c19a47550d32bb933fd8a02b27cd548f16f05038c6e901",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/10eb2c0cf60a64f7b0c19a47550d32bb933fd8a02b27cd548f16f05038c6e901"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\environment.py",
+      "sha256": "3643689a71b7105df039f1c183491b7386e319fbd1197fa86c5be033e6545a44",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/3643689a71b7105df039f1c183491b7386e319fbd1197fa86c5be033e6545a44"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\flood.py",
+      "sha256": "541e322ca8691cf9e26d7a74617409d16c12f6885285efb5b4f77938f9a9fb94",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/541e322ca8691cf9e26d7a74617409d16c12f6885285efb5b4f77938f9a9fb94"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\network.py",
+      "sha256": "de1acb9b31df448fb7f86deb33388d4507a200529768db07600a4b05dd0e62eb",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/de1acb9b31df448fb7f86deb33388d4507a200529768db07600a4b05dd0e62eb"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\optimization.py",
+      "sha256": "fc70cc4854d5f6dab91436e65037e41c33eaa19c0a0602c184277d95aef70ebe",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/fc70cc4854d5f6dab91436e65037e41c33eaa19c0a0602c184277d95aef70ebe"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\osm_download.py",
+      "sha256": "b394806c216392e3365fb3f80e4901982ed15eb10e09bc0a127ec06c20b2629b",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/b394806c216392e3365fb3f80e4901982ed15eb10e09bc0a127ec06c20b2629b"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase01.py",
+      "sha256": "c67320384b965b449c2318afae41e3384df5c8b1a4d0d781bf3a3af93eb22a16",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/c67320384b965b449c2318afae41e3384df5c8b1a4d0d781bf3a3af93eb22a16"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase02.py",
+      "sha256": "c3f059486bc3fcdd2c72b2be984b2e8324ff08ba7c1a6d7786b071f94ca08448",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/c3f059486bc3fcdd2c72b2be984b2e8324ff08ba7c1a6d7786b071f94ca08448"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase03.py",
+      "sha256": "0b6ec1728fb02d396d6d3007a7c1366abcfcd40ecc8e9795b0515715b4816812",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/0b6ec1728fb02d396d6d3007a7c1366abcfcd40ecc8e9795b0515715b4816812"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase04.py",
+      "sha256": "34b9acfb47a38a659a142d36ca6becdf6ee9b7eb0efcdced82c07bfd7b9fa5c6",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/34b9acfb47a38a659a142d36ca6becdf6ee9b7eb0efcdced82c07bfd7b9fa5c6"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\pipeline.py",
+      "sha256": "c3308c58adc40da4794fd45da175c39e55fef032411071f701451305b19bf37e",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/c3308c58adc40da4794fd45da175c39e55fef032411071f701451305b19bf37e"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\research.py",
+      "sha256": "d0c44d7d1fc59fab84240db8819535c97f1568911042da59058300bb9b11fef7",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/d0c44d7d1fc59fab84240db8819535c97f1568911042da59058300bb9b11fef7"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\resilience.py",
+      "sha256": "15d0d28002612cf52b334452b7ad9b3c0f7d9adfe3b40b809cf281fa371bac82",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/15d0d28002612cf52b334452b7ad9b3c0f7d9adfe3b40b809cf281fa371bac82"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\sioux.py",
+      "sha256": "972b84d4d3d4821143c0d6063731214d187e27b22b50468890616a6c749a207a",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/972b84d4d3d4821143c0d6063731214d187e27b22b50468890616a6c749a207a"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\spatial.py",
+      "sha256": "04cef883f38e641152ffb8f3a6a0461eea8067ec92e6cd7029c9509e21a20b83",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/04cef883f38e641152ffb8f3a6a0461eea8067ec92e6cd7029c9509e21a20b83"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\spatial_sources.py",
+      "sha256": "82f58f3f50c2b2cc7e3da548956f52ef42a4d621c704f31a74f035e6a3f2b7c9",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/82f58f3f50c2b2cc7e3da548956f52ef42a4d621c704f31a74f035e6a3f2b7c9"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\sumo_run.py",
+      "sha256": "68355418fe03b6c0f1501e548b591e92494427bb683ee9ea146ce0a9d8634d4e",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/68355418fe03b6c0f1501e548b591e92494427bb683ee9ea146ce0a9d8634d4e"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\user_water.py",
+      "sha256": "a3f31681077795dfbeb4091419ae9aa3f9a5a71c68c3130b1d69636b55d54206",
+      "snapshot": "results/runs/20261118T003010_p04_b90874cf/raw/input_snapshots/a3f31681077795dfbeb4091419ae9aa3f9a5a71c68c3130b1d69636b55d54206"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\synthetic\\phase02\\20261117T203637_p02_0286d999\\flood_points.geojson",
+      "sha256": "c9be136cb13f29c523114a752c2dc7768cbfc4509231bad37a6bf1ee831cc261"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase02\\20261117T203637_p02_0286d999\\flood_road_mapping.csv",
+      "sha256": "707e0da75293c3d5af9c8449d5f56e1fce6b4b81702b92bf4ee92d605c761e72"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\road_edges.geojson",
+      "sha256": "8f0b98d70179196255ab92f9e46fa455051b46a426e6afcb950e0d2c45e6bbc6"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\raw\\user_sources\\field_dictionary_e9e5a7bd\\provenance.json",
+      "sha256": "6e1a61f0a09f5306d44c76b555252faf20030752e7e6920e914492afe9e97a02"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "figures/depth_curves.png",
+      "title": "四种参数化积水情景",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": null,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        },
+        {
+          "path": "results/runs/20261118T003010_p04_b90874cf/raw/flood_summary.csv",
+          "sha256": "ddaf0891bf4d07c6144e94852c4123d81ac38c70adb00100e7f378d1ae6ad906"
+        }
+      ],
+      "sha256": "2f7b90e37bbb733c00f54410ddf8518a6149925a74dd10a8d819fa210c268799",
+      "created_at": "2026-11-18T00:30:14+08:00"
+    },
+    {
+      "path": "figures/depth_curves.svg",
+      "title": "四种参数化积水情景",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": null,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        },
+        {
+          "path": "results/runs/20261118T003010_p04_b90874cf/raw/flood_summary.csv",
+          "sha256": "ddaf0891bf4d07c6144e94852c4123d81ac38c70adb00100e7f378d1ae6ad906"
+        }
+      ],
+      "sha256": "825069cb57a0e28017bc20da7ac4b804c467aeb3e9eb730eb0d9c401fb32790f",
+      "created_at": "2026-11-18T00:30:14+08:00"
+    },
+    {
+      "path": "figures/flood_00000.png",
+      "title": "极端情景积水 0小时",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": 0,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "36ba41769f8561699e9673f6830e0b4cc85bb2134ea580b27ef488143709459d",
+      "created_at": "2026-11-18T00:30:15+08:00"
+    },
+    {
+      "path": "figures/flood_21600.png",
+      "title": "极端情景积水 6小时",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": 21600,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "db6bc8f4dbc38ad7dab93f80c1cf5ef69eb47e93f9c47d48b8f64968b6374db5",
+      "created_at": "2026-11-18T00:30:16+08:00"
+    },
+    {
+      "path": "figures/flood_32400.png",
+      "title": "极端情景积水 9小时",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": 32400,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "d4fa365ae007885f9459df89282bf8c17db8baacc2d2bd6f1c3243abce5f435a",
+      "created_at": "2026-11-18T00:30:18+08:00"
+    },
+    {
+      "path": "figures/flood_43200.png",
+      "title": "极端情景积水 12小时",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": 43200,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "45bba8a71fb217cfe32188e8388fa8eae7b9d3bd6d0ed9649137d0360834c6b7",
+      "created_at": "2026-11-18T00:30:19+08:00"
+    },
+    {
+      "path": "figures/flood_64800.png",
+      "title": "极端情景积水 18小时",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": 64800,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "9fea560f1690c0b026bbeb70af791393afa0f15caabd365805daf812e0252b9a",
+      "created_at": "2026-11-18T00:30:20+08:00"
+    },
+    {
+      "path": "figures/flood_86400.png",
+      "title": "极端情景积水 24小时",
+      "kind": "figure",
+      "data_kind": "synthetic",
+      "simulation_time_s": 86400,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "2f8dc47e1fbd8f58f4461ce3e83f25c8c2113c879788d72da005620a0a5cb8b5",
+      "created_at": "2026-11-18T00:30:21+08:00"
+    },
+    {
+      "path": "figures/flood_animation.gif",
+      "title": "极端内涝24小时演化动画（每小时帧）",
+      "kind": "animation",
+      "data_kind": "synthetic",
+      "simulation_time_s": null,
+      "units": {},
+      "sources": [
+        {
+          "path": "data/synthetic/phase04/20261118T003010_p04_b90874cf/edge_depth_timeseries.parquet",
+          "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+        }
+      ],
+      "sha256": "4ec755e0e8602cb4fb23323ebdcd8029a195053b8e12be78a889530a91964885",
+      "created_at": "2026-11-18T00:30:49+08:00"
+    }
+  ],
+  "finished_at": "2026-11-18T00:30:49+08:00",
+  "elapsed_s": 38.571690700002364,
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "b55a35b229c799a7f874808930b3f8a327d5d6255d6eff894f80417e79c0e9dc",
+      "bytes": 1545
+    },
+    {
+      "path": "figures/depth_curves.png",
+      "sha256": "2f7b90e37bbb733c00f54410ddf8518a6149925a74dd10a8d819fa210c268799",
+      "bytes": 115080
+    },
+    {
+      "path": "figures/depth_curves.svg",
+      "sha256": "825069cb57a0e28017bc20da7ac4b804c467aeb3e9eb730eb0d9c401fb32790f",
+      "bytes": 52720
+    },
+    {
+      "path": "figures/flood_00000.png",
+      "sha256": "36ba41769f8561699e9673f6830e0b4cc85bb2134ea580b27ef488143709459d",
+      "bytes": 147166
+    },
+    {
+      "path": "figures/flood_21600.png",
+      "sha256": "db6bc8f4dbc38ad7dab93f80c1cf5ef69eb47e93f9c47d48b8f64968b6374db5",
+      "bytes": 147389
+    },
+    {
+      "path": "figures/flood_32400.png",
+      "sha256": "d4fa365ae007885f9459df89282bf8c17db8baacc2d2bd6f1c3243abce5f435a",
+      "bytes": 147733
+    },
+    {
+      "path": "figures/flood_43200.png",
+      "sha256": "45bba8a71fb217cfe32188e8388fa8eae7b9d3bd6d0ed9649137d0360834c6b7",
+      "bytes": 147713
+    },
+    {
+      "path": "figures/flood_64800.png",
+      "sha256": "9fea560f1690c0b026bbeb70af791393afa0f15caabd365805daf812e0252b9a",
+      "bytes": 147303
+    },
+    {
+      "path": "figures/flood_86400.png",
+      "sha256": "2f8dc47e1fbd8f58f4461ce3e83f25c8c2113c879788d72da005620a0a5cb8b5",
+      "bytes": 147281
+    },
+    {
+      "path": "figures/flood_animation.gif",
+      "sha256": "4ec755e0e8602cb4fb23323ebdcd8029a195053b8e12be78a889530a91964885",
+      "bytes": 375651
+    },
+    {
+      "path": "raw/animation_frames/0.png",
+      "sha256": "36ba41769f8561699e9673f6830e0b4cc85bb2134ea580b27ef488143709459d",
+      "bytes": 147166
+    },
+    {
+      "path": "raw/animation_frames/10800.png",
+      "sha256": "d3a7e95c04609099448e81ff0d04bc8dd54d8f06949106210c3cfab4fe072906",
+      "bytes": 147140
+    },
+    {
+      "path": "raw/animation_frames/14400.png",
+      "sha256": "77e43d4aa9b2bd5f133e82a28a43b4ab49f8afa22bc28b4c07002a7c2c65a6b2",
+      "bytes": 147051
+    },
+    {
+      "path": "raw/animation_frames/18000.png",
+      "sha256": "8e5ec301d9337e0db60d6a055d7340f52f921fa6745290742f8c92c1e7b4ec9e",
+      "bytes": 147196
+    },
+    {
+      "path": "raw/animation_frames/21600.png",
+      "sha256": "db6bc8f4dbc38ad7dab93f80c1cf5ef69eb47e93f9c47d48b8f64968b6374db5",
+      "bytes": 147389
+    },
+    {
+      "path": "raw/animation_frames/25200.png",
+      "sha256": "d98446f6d9d27d3f6f476a0501ae8655d40f9130d7b658a687fe02158cd4772f",
+      "bytes": 147345
+    },
+    {
+      "path": "raw/animation_frames/28800.png",
+      "sha256": "a27e9748e10c8c4696094e7aff0543051dcc0850fd7290446a8ad31203989b3c",
+      "bytes": 147714
+    },
+    {
+      "path": "raw/animation_frames/32400.png",
+      "sha256": "d4fa365ae007885f9459df89282bf8c17db8baacc2d2bd6f1c3243abce5f435a",
+      "bytes": 147733
+    },
+    {
+      "path": "raw/animation_frames/3600.png",
+      "sha256": "910942afe4f2b9df18ad9116f3505eead39cf14d32e4731c18ab4861171c2a0f",
+      "bytes": 147011
+    },
+    {
+      "path": "raw/animation_frames/36000.png",
+      "sha256": "9218ed6c81f3162c5dee3921212b993ac7cbe3568db534748a60c2050ba69481",
+      "bytes": 147873
+    },
+    {
+      "path": "raw/animation_frames/39600.png",
+      "sha256": "3a2637258f274ba3766ed6b25b4142a53853a421468b2d6106c67ffe42902335",
+      "bytes": 147609
+    },
+    {
+      "path": "raw/animation_frames/43200.png",
+      "sha256": "45bba8a71fb217cfe32188e8388fa8eae7b9d3bd6d0ed9649137d0360834c6b7",
+      "bytes": 147713
+    },
+    {
+      "path": "raw/animation_frames/46800.png",
+      "sha256": "7c84936fd5e856aeafc086f5fc86216484f286744f616070bd652a3605969367",
+      "bytes": 147726
+    },
+    {
+      "path": "raw/animation_frames/50400.png",
+      "sha256": "a20110ad1cbd9f4b3b00d56a7a356cbac9918becfbe6433c60c0e34aba056040",
+      "bytes": 147567
+    },
+    {
+      "path": "raw/animation_frames/54000.png",
+      "sha256": "a3024f3f8a963f64500a67fd6d5a45ff93acedc0edd230adedf9059d1b6e159b",
+      "bytes": 147579
+    },
+    {
+      "path": "raw/animation_frames/57600.png",
+      "sha256": "c323d6bb36ce4e2d89f45417385330c942b37d0a796406de62ddcec0c18becf3",
+      "bytes": 147475
+    },
+    {
+      "path": "raw/animation_frames/61200.png",
+      "sha256": "b770136f923fd050282c3437b3ae32643041a068f6baea495e35b5f9a67e68fe",
+      "bytes": 147280
+    },
+    {
+      "path": "raw/animation_frames/64800.png",
+      "sha256": "9fea560f1690c0b026bbeb70af791393afa0f15caabd365805daf812e0252b9a",
+      "bytes": 147303
+    },
+    {
+      "path": "raw/animation_frames/68400.png",
+      "sha256": "aa33ff972fc047409157f656236b5b4a69a887108fc2f348721d9423d7eae263",
+      "bytes": 147316
+    },
+    {
+      "path": "raw/animation_frames/7200.png",
+      "sha256": "156eb5f86bb662e17e29b891b39e5c0ecfb4dd6e877870ad15659d0da2c5b960",
+      "bytes": 147100
+    },
+    {
+      "path": "raw/animation_frames/72000.png",
+      "sha256": "355f1db4e1efe027c4bebdd66da19714f19602435e2708001a573725599202ae",
+      "bytes": 147347
+    },
+    {
+      "path": "raw/animation_frames/75600.png",
+      "sha256": "ced251d96e12ecb33278001b3a7eda10308ba145660c43c1bf00592a73a171e1",
+      "bytes": 147233
+    },
+    {
+      "path": "raw/animation_frames/79200.png",
+      "sha256": "821c69cb2214c5d9cb04830848a98b17ac9bcb1e924d700a3276f4e3f09b8dc3",
+      "bytes": 147139
+    },
+    {
+      "path": "raw/animation_frames/82800.png",
+      "sha256": "dc0fd85965dbd4e5f84dd35c4458a31153bdc204c89431c110f17aa3b9fa9e8b",
+      "bytes": 147333
+    },
+    {
+      "path": "raw/animation_frames/86400.png",
+      "sha256": "2f8dc47e1fbd8f58f4461ce3e83f25c8c2113c879788d72da005620a0a5cb8b5",
+      "bytes": 147281
+    },
+    {
+      "path": "raw/flood_report.json",
+      "sha256": "82e0256daf05ee33ebd187dccf48ca1a6ae66d0baf6312683ab0c1b49766a4ef",
+      "bytes": 521
+    },
+    {
+      "path": "raw/flood_summary.csv",
+      "sha256": "ddaf0891bf4d07c6144e94852c4123d81ac38c70adb00100e7f378d1ae6ad906",
+      "bytes": 16180
+    }
+  ]
+}

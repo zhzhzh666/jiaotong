@@ -1,0 +1,14 @@
+{
+  "sha256": "e9e5a7bd05a6ee9daa24f05f623e9349f760127e01f74fb1c47d599ba70be1c1",
+  "filename": "深圳市积涝点水位数据字段说明.docx",
+  "evidence_kind": "user-supplied research dictionary, not independently verified official zero-datum declaration",
+  "SW_unit": "m",
+  "SJ_timezone": "Asia/Shanghai",
+  "zero_datum_verified": false,
+  "dataset": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_01403147",
+  "station_dataset": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_01400987",
+  "conflicts": [
+    "dictionary end 2023-09-08 19:40; CSV actual 20:04:05",
+    "9281292012 dictionary approximate Shajing Road; CSV reports Dongguan POI; keep warning"
+  ]
+}

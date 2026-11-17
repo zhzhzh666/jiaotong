@@ -1,0 +1,14 @@
+{
+  "run_id": "20261118T003010_p04_b90874cf",
+  "inputs": 28,
+  "artifacts": 9,
+  "input_verification_basis": {
+    "current_bytes": 27,
+    "immutable_recorded_input_snapshot": 1
+  },
+  "git": {
+    "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+    "dirty": true
+  },
+  "elapsed_s": 38.571690700002364
+}
