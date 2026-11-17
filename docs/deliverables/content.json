@@ -109,5 +109,13 @@
       "terrain": "docs/validation/phase02/terrain_population.png",
       "rainfall": "docs/validation/phase02/rainfall_daily.png"
     }
+  },
+  "github": {
+    "status": "Uploaded; first accepted remote main verified",
+    "repository": "https://github.com/zhzhzh666/jiaotong",
+    "branch": "main",
+    "first_verified_upload_commit": "71e17a07a6e46219f88f5b9b4402f8abe4a4ba6f",
+    "verified_at": "2026-11-17T21:01:12+08:00",
+    "scope": "Source, phase commits, maintained Word/PPT and small acceptance evidence; raw data, environment and original papers remain local"
   }
 }

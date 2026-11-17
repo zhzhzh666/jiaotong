@@ -18,8 +18,8 @@
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 4732,
-    "sha256": "677ec22dd776ba2384b2d4af6e2d1012697e11ae69aa9bb4fee12cc080bd2bd9"
+    "bytes": 5175,
+    "sha256": "3fa49530a73225a233b509ce2b4ed902e8d595875599d00bac7ec999e3a55903"
   },
   "originals_preserved": [
     {
@@ -98,5 +98,12 @@
     "qa_directory": ".cache/doc-sync/",
     "limitations": "Native PowerPoint application not inspected; Word preview inspected as PDF page images."
   },
-  "github_upload_status": "Pending authentication and remote configuration; not uploaded"
+  "github_upload_status": {
+    "status": "Uploaded; first accepted remote main verified",
+    "repository": "https://github.com/zhzhzh666/jiaotong",
+    "branch": "main",
+    "first_verified_upload_commit": "71e17a07a6e46219f88f5b9b4402f8abe4a4ba6f",
+    "verified_at": "2026-11-17T21:01:12+08:00",
+    "scope": "Source, phase commits, maintained Word/PPT and small acceptance evidence; raw data, environment and original papers remain local"
+  }
 }

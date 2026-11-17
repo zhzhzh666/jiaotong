@@ -80,3 +80,6 @@ python -X utf8 scripts/verify_references.py
 
 
 Phase 02文档最终检查：PPT 18张、Word 13页全部逐张/逐页查看，无裁切、重叠或孤立说明页。Word初版14页中重复维护说明独立溢出，删除重复段后修复；地形/人口和雨量同页仍清晰。PPT结构、布局、原稿字体与再次导入检查通过，七张嵌入PNG字节一致，三阶段run_id/数值/DOI及原稿指纹检查通过。沿用已确认缺少LibreOffice时的Microsoft Word只读导出PDF方案，未安装软件，未声称检查原生PowerPoint播放。
+
+
+GitHub上传补充：用户提供https://github.com/zhzhzh666/jiaotong后，配置origin并读取远端。远端仅有初始README，和本地无共同提交；使用allow-unrelated-histories合并，README add/add冲突保留完整项目说明，远端初始提交仍作为父历史保留。本地验收提交3866788，合并提交71e17a07a6e46219f88f5b9b4402f8abe4a4ba6f。Git Credential Manager已有可用认证，普通push -u origin main成功，随后ls-remote确认远端main与本地完整哈希一致。未安装gh、未显示凭据、未强制推送。原先日志中未上传的记载为提供仓库前的历史状态，当前以本补充为准。

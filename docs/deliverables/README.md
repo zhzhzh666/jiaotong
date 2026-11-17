@@ -5,7 +5,7 @@
 - `content.json`：共用的验收指标、状态、运行ID、图片与文献；源证据见 `../validation/`。
 - `delivery_manifest.json`：交付与原稿指纹、预览检查方式、源数据对应检查。
 
-根目录原始 `开题汇报.pptx`、`新建 Microsoft Word 文档.docx` 和五篇论文不覆盖、不移动。维护版纳入Git；大型结果与原始材料留本地。GitHub上传需有效认证和远端配置，当前尚未完成。
+根目录原始 `开题汇报.pptx`、`新建 Microsoft Word 文档.docx` 和五篇论文不覆盖、不移动。维护版与验收图片已上传至 [GitHub](https://github.com/zhzhzh666/jiaotong)，首次确认main=71e17a0。大型结果、环境与原始材料留本地，需要另行备份。
 
 每阶段先核对实际验收记录，再更新 content.json 及两个构建脚本中的叙述、阶段规划与方法边界，不能只改日期或指标。图片必须来自已保存真实运行，标明run_id；文献结果、设计假设、项目运行结果分别表述。两文件使用同一验收截止状态。
 

@@ -86,7 +86,7 @@ manifest = {
         'qa_directory': '.cache/doc-sync/',
         'limitations': 'Native PowerPoint application not inspected; Word preview inspected as PDF page images.'
     },
-    'github_upload_status': 'Pending authentication and remote configuration; not uploaded'
+    'github_upload_status': data.get('github', {'status': 'Pending remote configuration or verified push'})
 }
 (target / 'delivery_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
 print('PASS: 18 slides, 13 pages; shared evidence, original fingerprints and all 7 embedded PNG hashes agree.')

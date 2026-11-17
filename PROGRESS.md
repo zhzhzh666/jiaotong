@@ -10,6 +10,6 @@ Phase 02完成Copernicus GLO-30 DSM、WorldPop 2020约1km模型人口、NOAA宝�
 
 Phase 01历史验收保持62项：南山20447节点/40105有向边、33弱分量、6对平行边，小区域1140/2247；真实方向与全部断连保留。Sioux Falls24节点/76弧/528非零OD已接入，但分配未运行。Phase 00历史验收为37项，不被当前77项覆盖。历史归档审计已修正为按原Git提交核验源文件，Phase 01重审通过。
 
-PPT 18张与Word 13页同步至Phase 02，全部逐张/逐页渲染检查，七张嵌入图像字节与源PNG一致，根目录原稿指纹保持不变；记录见docs/deliverables/delivery_manifest.json，原稿和五篇论文保留。GitHub没有remote且gh不可用，尚未上传，原上传授权保留。
+PPT 18张与Word 13页同步至Phase 02，全部逐张/逐页渲染检查，七张嵌入图像字节与源PNG一致，根目录原稿指纹保持不变；记录见docs/deliverables/delivery_manifest.json。用户提供仓库后，已通过Git Credential Manager正常推送https://github.com/zhzhzh666/jiaotong 的main，远端与本地71e17a0一致，保留远端初始化历史和本地阶段链。验收提交3866788、实现提交878e467均已上传；原稿、五篇论文、环境与大型数据留本机。
 
 下一次继续从Phase 03开始：1000m TAZ、重力/IPF合成OD、边界需求与路网连接验收。当前无深圳OD、内涝时序、流量分配、韧性或治理收益，SUMO可执行程序仍待Phase 10配置。本阶段结束停止。
