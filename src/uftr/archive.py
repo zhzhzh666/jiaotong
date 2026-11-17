@@ -36,7 +36,7 @@ def write_json(path: Path, payload) -> None:
 
 def git_state(root: Path) -> dict:
     def command(*args):
-        output = subprocess.run(["git", "-C", str(root), *args], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        output = subprocess.run(["git", "-c", f"safe.directory={root.as_posix()}", "-C", str(root), *args], capture_output=True, text=True, encoding="utf-8", errors="replace")
         return output.stdout.strip() if output.returncode == 0 else None
     return {"commit": command("rev-parse", "HEAD"), "dirty": bool(command("status", "--porcelain"))}
 

@@ -1,5 +1,7 @@
 # 数据来源和真实性说明
 
+Phase 00 验收补充：已实际生成observed-environment类型的环境JSON和PNG/SVG，均有源文件与指纹。测试中的微型GeoJSON/TIFF仅为临时兼容性测试输入，不属于深圳数据。英文4篇Crossref成功；中文Crossref 404、期刊HTTP 500，保留本地全文核实结论与在线失败记录。
+
 ## Phase 00 已有材料
 
 - 用户原始任务书：复制到 docs/TASK_SPEC.md，明确本轮只实施 Phase 00。

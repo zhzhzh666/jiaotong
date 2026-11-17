@@ -19,4 +19,4 @@ tests/test_data_stack.py::test_geotiff_roundtrip
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 - generated xml file: C:\Users\zh\Desktop\git\jiaotong\docs\validation\pytest-final.xml -
-======================== 37 passed, 1 warning in 5.30s ========================
+======================== 37 passed, 1 warning in 6.32s ========================

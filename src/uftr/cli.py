@@ -62,6 +62,8 @@ def run_phase00(root: Path, config_path: Path) -> Path:
 
 
 def main(argv=None):
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="城市暴雨内涝交通韧性研究（当前仅 Phase 00）")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="项目根目录")
     sub = parser.add_subparsers(dest="command", required=True)
