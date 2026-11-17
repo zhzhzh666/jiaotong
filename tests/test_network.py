@@ -72,6 +72,15 @@ def test_source_tamper_rejected(osm_fixture):
     (osm_fixture/'tile.osm').write_text('altered')
     with pytest.raises(ValueError,match='checksum'): graph_from_tiles(osm_fixture,box(113,22,114,23))
 
+def test_offline_replay_preserves_existing_windows_xml_bytes(osm_fixture):
+    first=make_graph(osm_fixture)
+    path=osm_fixture/'drive_filtered.osm'
+    path.write_bytes(path.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))
+    fingerprint=file_hash(path)
+    second=make_graph(osm_fixture)
+    assert file_hash(path)==fingerprint
+    assert {d['edge_id'] for _,_,d in first.edges(data=True)}=={d['edge_id'] for _,_,d in second.edges(data=True)}
+
 def test_isolated_roundabout_and_conditional_data_are_not_silently_lost(osm_fixture):
     path=osm_fixture/'tile.osm'; tree=E.parse(path); osm=tree.getroot()
     for n,lon,lat in [(7,113.942,22.542),(8,113.943,22.542),(9,113.9425,22.543)]:

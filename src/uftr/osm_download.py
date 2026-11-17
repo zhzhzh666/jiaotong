@@ -112,7 +112,9 @@ def graph_from_tiles(directory,polygon):
     path=directory/'drive_filtered.osm'
     content=E.tostring(xml,encoding='utf-8',xml_declaration=True)
     if path.exists():
-        if path.read_bytes()!=content: raise ValueError('derived source XML changed; retain original and use a new snapshot')
+        # ElementTree.write on Windows used CRLF in the first collection run.
+        # Permit serializer-only newline differences without rewriting archived bytes.
+        if path.read_bytes().replace(b'\r\n',b'\n')!=content.replace(b'\r\n',b'\n'): raise ValueError('derived source XML changed; retain original and use a new snapshot')
     else:
         path.write_bytes(content)
     old_tags=ox.settings.useful_tags_way.copy()
