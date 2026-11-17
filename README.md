@@ -56,6 +56,8 @@ CSV/HTML索引可重建；历史运行不覆盖、不自动删除。results大�
 
 ## 文档和后续步骤
 
+维护的可编辑汇报见 [PPT](docs/deliverables/开题与阶段进展汇报.pptx) 与 [Word](docs/deliverables/研究方案与阶段进展.docx)，当前同步到 Phase 00；已嵌入真实环境验收图片，研究模型与后续实验明确标为待实施。原稿留在根目录。每阶段验收后同步更新两份文件，构建与检查方法见 [文档维护说明](docs/deliverables/README.md)。GitHub 尚未上传，待账号认证与远端配置。
+
 PLAN.md 为完整 Phase 00—13 路线及验收；PROGRESS.md 为当前实际进度；DATA_SOURCES.md 说明数据状态；MODEL_ASSUMPTIONS.md 区分论文模型和工程假设；docs/LITERATURE_REVIEW.md 为全文核实记录；EXPERIMENT_LOG.md 保存命令和真实结果。
 
 下一步仅在 Phase 00 验收且收到继续指令后实施 Phase 01。后续需要 OSM/Overpass 和 TransportationNetworks 公开下载；暂无真实积水、人口和OD输入，缺失时按任务书明确标记替代方案。

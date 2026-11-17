@@ -41,3 +41,11 @@ python -X utf8 scripts/verify_references.py
 最终复核运行和交付文件清单见docs/PHASE00_REPORT.md；没有运行后续阶段交通实验。
 
 最终复核：20261117T173510_p00_a2d49eb6，20/20导入、6.2704秒、success，源码0e0b562且dirty=false。保留此前运行，现有4条图像格式记录和14个索引链接；本次2图片/6输入指纹校验通过。验收PNG/SVG及原始JSON/manifest另存docs/validation以纳入Git。最终PNG已查看，中文CLI查询正确显示。
+
+## PPT 与 Word 同步维护 2026-11-17
+
+根据用户要求，保留根目录原始论文、PPT、Word，在 docs/deliverables 建立可编辑维护版：PPT 9页、Word 6页。整理研究范围、模型规划、5篇本地论文与采用边界、Phase 00 验收、真实环境图、图片查询与下一步。两文件的日期、验收指标、运行ID、图像与书目共用 content.json；保存 scripts/build_word.py 与 scripts/build_presentation.mjs。
+
+使用 Codex 捆绑 Python/python-docx 和 Node/@oai/artifact-tool 构建。PPT finalizer 通过9页包结构、布局、原稿字体和再次导入检查，9张 PNG 已逐张查看。首次 finalizer 缺少 RUNTIME_NODE_MODULES 环境变量，设置捆绑模块路径后通过。未安装新软件。
+
+规定的 render_docx.py 实际运行后因本机缺少 LibreOffice soffice.exe 失败；读取报错后改用已安装 Microsoft Word 只读打开并 ExportAsFixedFormat 导出 PDF，再由捆绑 pypdfium2 渲染 PNG。初版有空白页和末节跨页，已修正分页、行距与标题边框，最终6页均检查。预览PDF/PNG仅作本地QA，存 .cache/doc-sync，不作为交付文件。此次不改科学模型，不重跑已验收交通基础测试，不声称完成后续仿真。GitHub 上传仍待认证与远端设置。

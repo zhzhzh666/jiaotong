@@ -1,0 +1,68 @@
+{
+  "updated": "2026-11-17",
+  "phase_status": "Phase 00 已验收；Phase 01—13 未开始",
+  "run_id": "20261117T173510_p00_a2d49eb6",
+  "deliverables": [
+    {
+      "path": "docs/deliverables/开题与阶段进展汇报.pptx",
+      "bytes": 115666,
+      "sha256": "cfc5626691c3195dfc267a3b571fa31c8116b1d38638aea6b56e874f2d25cbaa"
+    },
+    {
+      "path": "docs/deliverables/研究方案与阶段进展.docx",
+      "bytes": 100558,
+      "sha256": "bd5cad7d1142d8641f2297ffeb344f06639c47215906e46034edde26f098ea83"
+    }
+  ],
+  "content_source": {
+    "path": "docs/deliverables/content.json",
+    "bytes": 2481,
+    "sha256": "2244add5f16fc517ac4f0150404467e4d6a5cbb9075e6a4d51a4d737a828cd26"
+  },
+  "originals_preserved": [
+    {
+      "path": "开题汇报.pptx",
+      "bytes": 40750,
+      "sha256": "4eff268b27ab2a34a3cd41dec2196371cc5b8f75644a883cc6ea5e309652038b"
+    },
+    {
+      "path": "新建 Microsoft Word 文档.docx",
+      "bytes": 217241,
+      "sha256": "0afb0446f42bfc4dc8d04b557642897c2540188c2a2ef88fc2e73926c387b324"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/validation/environment_check.png",
+      "bytes": 65703,
+      "sha256": "c343fa790d5e6a1ef0afcd2a122e0dba94e5390fd51246068aa056f8b01fa7fb"
+    },
+    {
+      "path": "docs/validation/accepted-run-manifest.json",
+      "bytes": 3219,
+      "sha256": "440122156b99857d944af803a2df695aa8f4ee85a6173e33026e378dfa35052f"
+    },
+    {
+      "path": "docs/validation/environment.json",
+      "bytes": 4337,
+      "sha256": "3cfc8728772040385e1b707fc740f75a4542d5390179a60a0c1893a98e6ab142"
+    },
+    {
+      "path": "docs/validation/pytest-final.xml",
+      "bytes": 4704,
+      "sha256": "52f60af9f1f6f4f41b6ed8f7f9577f6bb9d8a36e13edeb7240e6d1d4f13cd157"
+    }
+  ],
+  "verification": {
+    "pptx_slides": 9,
+    "docx_pages": 6,
+    "embedded_image_sha256_matches": true,
+    "shared_metrics_and_doi_checked": true,
+    "pptx_package_layout_fonts_and_reimport": "pass",
+    "pptx_render": "Artifact Tool final reimport PNG; all 9 slides visually inspected",
+    "word_render": "render_docx.py unavailable due to missing LibreOffice; Microsoft Word COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; all 6 final pages visually inspected",
+    "qa_directory": ".cache/doc-sync/",
+    "limitations": "Native PowerPoint application not inspected; Word preview inspected as PDF page images."
+  },
+  "github_upload_status": "Pending authentication and remote configuration; not uploaded"
+}

@@ -1,0 +1,16 @@
+{
+  "updated": "2026-11-17",
+  "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
+  "status": "Phase 00 已验收；Phase 01—13 未开始",
+  "run_id": "20261117T173510_p00_a2d49eb6",
+  "evidence": "docs/validation/accepted-run-manifest.json",
+  "metrics": {"tests_passed":37,"warnings":1,"imports_passed":20,"imports_total":20,"runtime_seconds":6.2704,"python":"3.11.18"},
+  "figure": "docs/validation/environment_check.png",
+  "references": [
+    {"label":"Pregnolato 等 2017","citation":"Pregnolato M, Ford A, Wilkinson S M, Dawson R J. The impact of flooding on road transport: A depth-disruption function. Transportation Research Part D, 2017, 55: 67–81.","doi":"10.1016/j.trd.2017.06.020","note":"水深—速度函数；水深单位 mm，速度单位 km/h；容量退化另设。","pages":"PDF 第7页 Eq.4；第8页 Fig.2"},
+    {"label":"Ma 等 2023","citation":"Ma F, Ao Y, Wang X, et al. Assessing and enhancing urban road network resilience under rainstorm waterlogging disasters. Transportation Research Part D, 2023, 123: 103928.","doi":"10.1016/j.trd.2023.103928","note":"SWMM 与 GIS、路段和节点性能；韧性损失面积越小越好。","pages":"PDF 第6—8页 Eq.1—15"},
+    {"label":"He 等 2024","citation":"He K, Pregnolato M, Carhart N, Neal J, De Risi R. Functionality assessment of road network combining flood roadworthiness and graph topology. Transportation Research Part D, 2024, 135: 104354.","doi":"10.1016/j.trd.2024.104354","note":"同时考虑流速、水深与车型；Capacity 指车辆抗洪阈值。","pages":"PDF 第4页 Eq.1—5；第5页 Table 1"},
+    {"label":"Hong 等 2024","citation":"Hong Y, Zhang Z, Fang X, Lu L. Evaluating the Dynamic Comprehensive Resilience of Urban Road Network: A Case Study of Rainstorm in Xi’an, China. Land, 2024, 13(11): 1894.","doi":"10.3390/land13111894","note":"SUMO 与三维韧性；15 cm 中断、8分钟医疗可达性不能直接替换本项目参数。","pages":"PDF 第7—10页；第11页 Eq.18 与第12页 Table 5 常数符号不一致"},
+    {"label":"靳超等 2026","citation":"靳超，王园园，李晨溪，李娟．典型设计暴雨下深圳市内涝空间分异与承灾体风险评估．热带地理，2026，46(3)：471—482．","doi":"10.13284/j.cnki.rddl.20250873","note":"深圳水动力风险研究；作者5 m DEM和183个积水点尚未取得。","pages":"PDF 第2—4页方法与数据；书目以本地全文首页为据"}
+  ]
+}
