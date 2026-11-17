@@ -1,0 +1,58 @@
+# Phase 07 实际运行报告
+
+运行 `20261117T235946_p07_4ed639cd`，命令：`.conda-env\python.exe -m uftr.cli run --phase 07 --config configs/phase07_nanshan.yaml`。
+
+本轮按用户“直接一直继续完成”授权连续推进。原始数据与历史运行不覆盖；字段字典只支持SW单位m和北京时间，路面零点仍待核实。
+
+参数见对应configs；独立审计与验收副本见docs/validation/phase07。
+
+```json
+{
+  "scores": {
+    "extreme": 0.9994607249182967,
+    "general": 0.9999139590249302,
+    "normal": 1.0,
+    "severe": 0.9996646355827558
+  },
+  "penalty_sensitivity": [
+    {
+      "rho_s": 7200,
+      "mean_R": 0.9995230700889483
+    },
+    {
+      "rho_s": 14400,
+      "mean_R": 0.9996797731753276
+    },
+    {
+      "rho_s": 28800,
+      "mean_R": 0.9997916047536491
+    }
+  ],
+  "scope": {
+    "region": "nanshan",
+    "nodes": 20447,
+    "directed_edges": 40105,
+    "od_rows_by_period": {
+      "evening_peak": 58528,
+      "morning_peak": 58528,
+      "offpeak": 58528
+    },
+    "excluded_outside_small_scope_veh_h": {},
+    "represented_population": 1540614.3657147214,
+    "facility_counts": {
+      "fire_station": 15,
+      "hospital": 14
+    },
+    "unavailable_shelter_inventory": true,
+    "candidate_physical_roads": 54,
+    "candidate_risk_design": "Phase 04 synthetic selected road arcs",
+    "efficiency": "time-weighted 1/s, unreachable=0; sampled origin nodes to all graph nodes",
+    "efficiency_origins": 15,
+    "assignment_count": 180,
+    "max_gap": 9.496862400032774e-05,
+    "max_node_balance_error": 4.547473508864641e-12,
+    "solve_seconds": 1260.3454841999192
+  },
+  "elapsed_s": 1293.0343446999905
+}
+```
