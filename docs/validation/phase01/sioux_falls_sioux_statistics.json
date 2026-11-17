@@ -1,0 +1,28 @@
+{
+  "nodes": 24,
+  "directed_edges": 76,
+  "strongly_connected": true,
+  "od_records": 576,
+  "nonzero_od_pairs": 528,
+  "total_demand_original": 360600.0,
+  "metadata": {
+    "NUMBER OF ZONES": "24",
+    "NUMBER OF NODES": "24",
+    "FIRST THRU NODE": "1",
+    "NUMBER OF LINKS": "76",
+    "ORIGINAL HEADER": "~ \tInit node \tTerm node \tCapacity \tLength \tFree Flow Time \tB\tPower\tSpeed limit \tToll \tType\t;",
+    "END OF METADATA": "~\tinit_node\tterm_node\tcapacity\tlength\tfree_flow_time\tb\tpower\tspeed\ttoll\tlink_type\t;"
+  },
+  "all_pairs_reachable": true,
+  "units": "Original TNTP benchmark units retained. Not yet converted to Shenzhen m/s/veh/h.",
+  "assignment_status": "Not run; equilibrium benchmark validation belongs to Phase 06.",
+  "upstream_unit_notes": {
+    "free_flow_time": "0.01 hour according to upstream Source/History; keep native values for benchmarking",
+    "distance": "arbitrarily set equal to native free-flow time, not physical metres",
+    "demand": "0.1 of original daily flows; upstream calls approximate hourly",
+    "coordinates": "upstream says artificial diagram coordinates; not treated as surveyed geometry",
+    "reference_solution": "Downloaded best-known solution is external reference, not our solver output"
+  },
+  "coordinate_records": 24,
+  "reference_flow_records": 76
+}

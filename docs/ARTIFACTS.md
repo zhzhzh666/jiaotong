@@ -1,6 +1,6 @@
 # 运行与图片归档接口
 
-Phase 00 CLI：`python -m uftr.cli run --phase 00 --config configs/phase00.yaml`。当前只实现环境检查，不提供尚未完成阶段的占位仿真。
+Phase 00 CLI：`python -m uftr.cli run --phase 00 --config configs/phase00.yaml`。该阶段实现环境检查，不提供尚未完成阶段的占位仿真。
 
 `RunArchive(project_root, config, inputs)` 创建独立run_id目录，记录配置SHA256、输入SHA256和Git commit/dirty。上下文正常结束为success，异常结束为failed并保存traceback。add_artifact要求图片在本次目录内、有明确data_kind且至少一个可校验源文件；同一路径不能重复注册。
 
@@ -11,3 +11,5 @@ Phase 00 CLI：`python -m uftr.cli run --phase 00 --config configs/phase00.yaml`
 Phase 00参考页核查图片位于`.cache/literature/pages`，属于文献核查材料，不是实验地图，也不是交通模型结果。未来正式运行的图片放在results/runs，截图不能使用生成式图片代替真实界面证据。
 
 当前默认单进程写索引；并行运行应由主进程在全部子任务结束后统一reindex。持续运行被强制终止时manifest可能留为running，不能推断为success；保留后人工诊断。不自动清理历史数据。
+
+Phase 01提供真实路网执行入口。已验收run_id为20261117T193651_p01_2e554d34；两张地图PNG和SVG共4个格式文件，171输入指纹校验通过。地图红线为估计自由流权重的最短路。来源、图片及结果清单见docs/PHASE01_REPORT.md。

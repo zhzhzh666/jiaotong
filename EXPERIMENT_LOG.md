@@ -42,7 +42,7 @@ python -X utf8 scripts/verify_references.py
 
 最终复核：20261117T173510_p00_a2d49eb6，20/20导入、6.2704秒、success，源码0e0b562且dirty=false。保留此前运行，现有4条图像格式记录和14个索引链接；本次2图片/6输入指纹校验通过。验收PNG/SVG及原始JSON/manifest另存docs/validation以纳入Git。最终PNG已查看，中文CLI查询正确显示。
 
-## PPT 与 Word 同步维护 2026-11-17
+## PPT 与 Word 同步维护历史 2026-11-17
 
 ## Phase 01 实施过程
 
@@ -55,3 +55,13 @@ python -X utf8 scripts/verify_references.py
 使用 Codex 捆绑 Python/python-docx 和 Node/@oai/artifact-tool 构建。PPT finalizer 通过9页包结构、布局、原稿字体和再次导入检查，9张 PNG 已逐张查看。首次 finalizer 缺少 RUNTIME_NODE_MODULES 环境变量，设置捆绑模块路径后通过。未安装新软件。
 
 规定的 render_docx.py 实际运行后因本机缺少 LibreOffice soffice.exe 失败；读取报错后改用已安装 Microsoft Word 只读打开并 ExportAsFixedFormat 导出 PDF，再由捆绑 pypdfium2 渲染 PNG。初版有空白页和末节跨页，已修正分页、行距与标题边框，最终6页均检查。预览PDF/PNG仅作本地QA，存 .cache/doc-sync，不作为交付文件。此次不改科学模型，不重跑已验收交通基础测试，不声称完成后续仿真。GitHub 上传仍待认证与远端设置。
+
+## Phase 01 最终验收
+
+初次完整下载20261117T192004_p01_d71ec83e成功。核查发现南山行政海域含港珠澳大桥相关17边，保留完整图并配置研究窗口；方向oneway=-1与孤立环岛保留均修复。离线运行20261117T193355_p01_d6c1cd1a因Windows XML换行比较失败，失败归档保留；增加保留原始字节的回归测试后，20261117T193651_p01_2e554d34离线重放通过，99.9249秒，源e811519、dirty=false。
+
+小区1140节点/2247边；南山研究窗口20447节点/40105边、33弱分量、6对平行边；Sioux Falls24节点/76弧及576个OD读取成功。62项pytest通过（旧pytest-final.*为61项历史记录，最终以pytest-accepted.*为准），pip check无冲突。独立审计全道路方向、几何、投影长度和三格式一致性，21项输出通过；4图像格式、171输入和42索引链接校验通过。两张最终PNG已逐张检查。实际命令、数据获取失败、许可及边界见docs/PHASE01_REPORT.md。
+
+本次同步PPT与Word纳入两张实际路网图、阶段统计、OSM回退来源、研究窗口与估计属性限制、Sioux原始单位及下一阶段Phase 02；历史Phase 00指标保持37项，不用62项覆盖历史。文档使用Codex捆绑运行时，Word继续使用已安装Microsoft Word导出PDF再渲染。最终页数、指纹及检查方法见docs/deliverables/delivery_manifest.json。GitHub远端和认证仍未就绪。
+
+文档最终检查：PPT 13张和Word 9页均逐页查看；三个嵌入PNG字节与源图完全一致，共用证据和DOI核对通过，原稿指纹不变。PPT第一次finalizer输出与私有回执同目录被拒，改为独立输出目录；第二次遇历史回执已存在，生成脚本改为按输出文件名区分回执，使用新输出后通过。中间文件仅留.cache，维护入口替换为已检查版本。

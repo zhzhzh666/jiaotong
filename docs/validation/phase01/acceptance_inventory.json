@@ -1,0 +1,107 @@
+{
+  "run_id": "20261117T193651_p01_2e554d34",
+  "source_commit": "e8115197f63b0f926165406f4ec4c308d77d9bc0",
+  "visual_review": "Both final road PNGs individually inspected; no clipping or text overlap",
+  "files": [
+    {
+      "path": "docs/validation/phase01/accepted-config.json",
+      "bytes": 3974,
+      "sha256": "c5bef4877dd8ca7dbf5300573b8cfdae9dcde20aa4150257eeec145ca8327d3b"
+    },
+    {
+      "path": "docs/validation/phase01/accepted-run-manifest.json",
+      "bytes": 45008,
+      "sha256": "51055069203ad835e2f6e7e2a9154197e437b2f98b35e0617c6915b5f2d63b58"
+    },
+    {
+      "path": "docs/validation/phase01/nanshan_network_statistics.json",
+      "bytes": 12915,
+      "sha256": "05f58f564c01d4bc75c19b966216409ddb7e50b2a90372134df8605e038f9ca8"
+    },
+    {
+      "path": "docs/validation/phase01/network_audit.json",
+      "bytes": 774,
+      "sha256": "2a12a3d8076af279943e8e85dd6fab669dc8995001ceb131853975a48e3abcec"
+    },
+    {
+      "path": "docs/validation/phase01/network_report.json",
+      "bytes": 23944,
+      "sha256": "04f34476e85f7a7ed4a7ca895f685911f8ed0ed65337bf4538c96caee3eb8b76"
+    },
+    {
+      "path": "docs/validation/phase01/output_inventory.json",
+      "bytes": 3165,
+      "sha256": "169dddab84af1c53d7a1db433884c2a721d8aeff358ffdea03210602b2a351fa"
+    },
+    {
+      "path": "docs/validation/phase01/pip-check.txt",
+      "bytes": 31,
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "path": "docs/validation/phase01/pytest-accepted.txt",
+      "bytes": 1497,
+      "sha256": "563d51d956d02f986f20e36a242b6ef32c5443bb65c13cec7d9d27110be00be5"
+    },
+    {
+      "path": "docs/validation/phase01/pytest-accepted.xml",
+      "bytes": 7609,
+      "sha256": "780c0df325fdfd09f627de3b28c17a1b6d69ff0593a7dae69f647e2acd65d9c6"
+    },
+    {
+      "path": "docs/validation/phase01/pytest-final.txt",
+      "bytes": 1494,
+      "sha256": "c7ad2e5cfc05bed6b9dbb0d7fedd5ce64cc90dca08536b0c8809897e275007ce"
+    },
+    {
+      "path": "docs/validation/phase01/pytest-final.xml",
+      "bytes": 7488,
+      "sha256": "63c3fa7346d0cd84c20dcfc5a786f23326644212862f1b69b3e8d12fd81b9128"
+    },
+    {
+      "path": "docs/validation/phase01/pytest.txt",
+      "bytes": 581,
+      "sha256": "0114dc4423e966db9b700f97a4281d97498e6676d5acd0d38964b348cdc3a991"
+    },
+    {
+      "path": "docs/validation/phase01/pytest.xml",
+      "bytes": 7609,
+      "sha256": "3373123700375506f3aa88780d7c5505e2d59bd9a8d02409b8f98dbe52b529a9"
+    },
+    {
+      "path": "docs/validation/phase01/road_network.png",
+      "bytes": 465648,
+      "sha256": "c3c0ce27276be9a5d30daf67494c41fde5956d81d8f082c9956189ff7fd80258"
+    },
+    {
+      "path": "docs/validation/phase01/run_audit.json",
+      "bytes": 390,
+      "sha256": "7e84a316168889de6eb1fa410d0c4f54b385d50b1abbbac10380bbd3200aeac2"
+    },
+    {
+      "path": "docs/validation/phase01/scope_exclusions.json",
+      "bytes": 4049,
+      "sha256": "05e9a52d6349a781be699c98f061a5453dbd65f03b36bdeccfe22f79d24bca5d"
+    },
+    {
+      "path": "docs/validation/phase01/sioux_falls_sioux_statistics.json",
+      "bytes": 1359,
+      "sha256": "2f4886d75a9a4c806fcda61aba7ead418f84a914cee4eb28e56ea1d7aedd3207"
+    },
+    {
+      "path": "docs/validation/phase01/small_network_statistics.json",
+      "bytes": 7844,
+      "sha256": "50c78e52bf30bc78927448699f45831eb11e3d0355b9c849067beab8563bcb57"
+    },
+    {
+      "path": "docs/validation/phase01/small_road_network.png",
+      "bytes": 375953,
+      "sha256": "04f1e7c72f29a14743b6848a8b4a32e4d8c302d5603b0c661ce54dda68b3e2e9"
+    },
+    {
+      "path": "docs/validation/phase01/source_inventory.json",
+      "bytes": 23627,
+      "sha256": "e0c3a114d21e6304392bdb7e4dfd240e5194cdad29ab21c5d3fad98cde649b11"
+    }
+  ]
+}

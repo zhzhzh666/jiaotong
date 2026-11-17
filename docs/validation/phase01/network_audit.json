@@ -1,0 +1,25 @@
+{
+  "run_id": "20261117T193651_p01_2e554d34",
+  "status": "passed",
+  "regions": {
+    "small": {
+      "nodes": 1140,
+      "directed_edges": 2247,
+      "oneway_original_order_checked": 360,
+      "two_way_reverse_edges_checked": 1878,
+      "geometry_endpoints_and_metric_lengths_checked": 2247,
+      "csv_geojson_graphml_agree": true,
+      "same_edge_attributes_as_compare_run": true
+    },
+    "nanshan": {
+      "nodes": 20447,
+      "directed_edges": 40105,
+      "oneway_original_order_checked": 7387,
+      "two_way_reverse_edges_checked": 32676,
+      "geometry_endpoints_and_metric_lengths_checked": 40105,
+      "csv_geojson_graphml_agree": true,
+      "same_edge_attributes_as_compare_run": true
+    }
+  },
+  "outputs_verified": 21
+}

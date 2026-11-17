@@ -1,13 +1,13 @@
 # 当前开发进度
 
-更新日期：2026-11-17（Asia/Shanghai）。
+更新日期：2026-11-17（Asia/Shanghai）。Phase 00—01 已验收；Phase 02—13 未开始。
 
-当前阶段：Phase 00 已验收。Phase 01—13 未开始，等待继续指令。
+Phase 01 已取得真实OSM路网，完成有向MultiDiGraph、稳定edge_id、属性来源标注、GraphML/GeoJSON/CSV导出及实际可达最短路核查。小区域1140节点/2247有向边；南山研究窗口20447节点/40105边、33弱连通分量、6对平行边。保留断连分量，不补造道路。完整行政范围包含海域和港珠澳大桥道路，主实验采用明确研究窗口，完整图及17条排除记录仍保留。
 
-已同步维护版 PPT（9页）和 Word（6页），位于 `docs/deliverables/`；包含本地论文核查、Phase 00 实际验收、环境运行图、历史查询和后续计划。PPT 逐张渲染、Word 用 Microsoft Word 导出预览后逐页检查；根目录原稿保留。后续每阶段同步更新已写入 AGENTS.md 与 PLAN.md。GitHub 仍待认证和远端配置，尚未上传。
+最终运行20261117T193651_p01_2e554d34，99.9249秒；源提交e811519，dirty=false。62项测试通过、1条已有弃用警告，pip check无冲突；独立方向/长度/三格式及重放审计通过。4个图像格式、171个输入、42个索引链接通过校验。两张真实PNG已查看，小型副本纳入Git，原始数据和SVG仍在本机。实际命令和限制见docs/PHASE01_REPORT.md。
 
-已完成独立Git仓库、Python 3.11.18环境、20项依赖导入、37项测试、pip check、本地5篇论文全文及关键公式页核查、配置/运行归档/历史查询、实际PNG/SVG。实现提交772b8f6，最终提交见git log（验收文档不自引用自身提交哈希）。
+Sioux Falls固定上游提交d1639b4：24节点、76弧、576个OD（528非零），原始总需求360600。时间保留0.01小时单位，示意坐标和外部参考解不冒充实测或项目计算结果；分配求解器尚未实施。
 
-实际运行见docs/PHASE00_REPORT.md与docs/validation/run_audit.json，图片索引为results/index.html。中文Crossref 404、期刊HTTP 500只影响在线核对，本地全文可用；SUMO/netconvert不在PATH；真实路网/积水/人口/OD未下载。测试有1条rasterio/affine未来弃用警告，GIS读写通过。
+PPT 13张和Word 9页同步到Phase 01，全部逐页渲染检查，嵌入图像与源PNG指纹一致，根目录原稿与论文保留。GitHub没有可用远端和认证，尚未上传。已授权上传的要求保留，条件就绪后推送。
 
-下一阶段为 Phase 01：需要公开 OSM/Overpass 下载能力、南山区边界及小型测试区域配置、TransportationNetworks SiouxFalls 原始文件。当前阶段不下载或生成真实道路结果。
+下一阶段Phase 02：真实积水、雨量、DEM、人口、医院/消防/避难POI与质量报告。当前无深圳OD、内涝时序、分配、韧性或治理收益结果。SUMO可执行程序仍待Phase 10配置。按阶段门禁，本阶段验收后停止，收到继续指令再实施Phase 02。

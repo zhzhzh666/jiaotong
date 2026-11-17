@@ -1,0 +1,149 @@
+{
+  "original_nodes": 20468,
+  "original_directed_edges": 40122,
+  "study_window_bbox": [
+    113.69,
+    22.35,
+    114.03,
+    22.66
+  ],
+  "excluded_edges": [
+    {
+      "edge_id": "osm_80f3ab9bb733eaf8f30b15f0",
+      "osmid": 572611767,
+      "u": 4849750130,
+      "v": 5540378623,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_ae8ac231149662eb1be225ec",
+      "osmid": 1080261823,
+      "u": 5501067179,
+      "v": 4849750130,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_7fdcfea73ecb47db6c7ae08d",
+      "osmid": 572611768,
+      "u": 5501067181,
+      "v": 6617324560,
+      "name": "港珠澳大橋香港連接路 Hong Kong-Zhuhai-Macao Bridge Hong Kong Link Road",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_8ed000280f2bb3b32f9bd614",
+      "osmid": 1080261834,
+      "u": 5540378623,
+      "v": 9644665247,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_9fb4836355bacccb9edb6bf2",
+      "osmid": 578127581,
+      "u": 5540378625,
+      "v": 9901731005,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_f85332232fa9ba14039d26f1",
+      "osmid": 704635448,
+      "u": 5787319383,
+      "v": 5501067179,
+      "name": "港珠澳大橋香港連接路 Hong Kong-Zhuhai-Macao Bridge Hong Kong Link Road",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_50a6b87e3db50deee9616647",
+      "osmid": 1080261816,
+      "u": 9901730971,
+      "v": 9901730984,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_3a2c324088477710ad807723",
+      "osmid": 1080261807,
+      "u": 9901730978,
+      "v": 12790958226,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_7bddb632a174139b9f5e64c2",
+      "osmid": 1080261813,
+      "u": 9901730984,
+      "v": 9901730987,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_00db5763c75853559b051f3b",
+      "osmid": 1080261815,
+      "u": 9901730985,
+      "v": 9901730970,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_a14c861cf957e5156acc9b17",
+      "osmid": 1080261814,
+      "u": 9901730986,
+      "v": 9901730985,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_7ce04ce97980d7e472b28da5",
+      "osmid": 1381591511,
+      "u": 9901730987,
+      "v": 12790958227,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_bc06b14996e2371a70c2361f",
+      "osmid": 1080261825,
+      "u": 9901731005,
+      "v": 5501067181,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_ed446689cef8642312a0f520",
+      "osmid": 1080261832,
+      "u": 9901755417,
+      "v": 10839304029,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_5eb837804c437cd7f9c2d8a2",
+      "osmid": 1165346282,
+      "u": 10839304029,
+      "v": 5540378625,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_1d0c5ef1a84d56e8f3b1bcc9",
+      "osmid": 1381591510,
+      "u": 12790958226,
+      "v": 9901730986,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    },
+    {
+      "edge_id": "osm_8d267f9ec57a432da912fd55",
+      "osmid": 1080261806,
+      "u": 12790958227,
+      "v": 9901730979,
+      "name": "港珠澳大桥",
+      "road_class": "motorway"
+    }
+  ],
+  "reason": "Explicit research window north of 22.35N; OSM maritime administrative scope includes HZMB corridor. This window is not an official land boundary. All in-window components including Neilingding retained."
+}

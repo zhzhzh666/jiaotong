@@ -1,0 +1,89 @@
+{
+  "run_id": "20261117T193651_p01_2e554d34",
+  "files": [
+    {
+      "path": "full_osm_administrative_scope/road_network.graphml",
+      "sha256": "b772ae6a75d5cdc4d4ed9c97a218c55dcedb321d66dbf01f090a8ef0df93b2c9"
+    },
+    {
+      "path": "full_osm_administrative_scope/scope_exclusions.json",
+      "sha256": "05e9a52d6349a781be699c98f061a5453dbd65f03b36bdeccfe22f79d24bca5d"
+    },
+    {
+      "path": "nanshan/network_statistics.json",
+      "sha256": "05f58f564c01d4bc75c19b966216409ddb7e50b2a90372134df8605e038f9ca8"
+    },
+    {
+      "path": "nanshan/road_attributes.csv",
+      "sha256": "457696cb8b3b358a5edfdd43327c044b5d89269f78429e7a073b16ae4ab5d325"
+    },
+    {
+      "path": "nanshan/road_edges.geojson",
+      "sha256": "8f0b98d70179196255ab92f9e46fa455051b46a426e6afcb950e0d2c45e6bbc6"
+    },
+    {
+      "path": "nanshan/road_network.graphml",
+      "sha256": "821f2cc8a2b832c75c890c881fd9046bcafe5d299a05904cc3201e3af69b215b"
+    },
+    {
+      "path": "nanshan/road_network.png",
+      "sha256": "c3c0ce27276be9a5d30daf67494c41fde5956d81d8f082c9956189ff7fd80258"
+    },
+    {
+      "path": "nanshan/road_nodes.geojson",
+      "sha256": "711012f151427b178e7e1990a55722e67a38381e7d548ffd8e482e5f1330a918"
+    },
+    {
+      "path": "nanshan/study_boundary.geojson",
+      "sha256": "24ada03ca126e131c4d3bc959e588f1c34e5d315f5521de7a4995a2190e541fb"
+    },
+    {
+      "path": "sioux_falls/sioux_links.csv",
+      "sha256": "fb654b8fd5041032c2e6ee60f96598631d79ae3560f13066f8c969134d624756"
+    },
+    {
+      "path": "sioux_falls/sioux_nodes.csv",
+      "sha256": "f4b2242c67ef86527d2369dd42bc31091f66eb645ba965bc01e12f159db9bffa"
+    },
+    {
+      "path": "sioux_falls/sioux_od.csv",
+      "sha256": "6eea62b34470dabebb0b43d80fd1d07e3dd5b97d01998598917809afa781c57b"
+    },
+    {
+      "path": "sioux_falls/sioux_reference_flow.csv",
+      "sha256": "d6876fe71f692ad49e0ab4927da7522298bc23f3105d08894fdc91d023e8a577"
+    },
+    {
+      "path": "sioux_falls/sioux_statistics.json",
+      "sha256": "2f4886d75a9a4c806fcda61aba7ead418f84a914cee4eb28e56ea1d7aedd3207"
+    },
+    {
+      "path": "small/network_statistics.json",
+      "sha256": "50c78e52bf30bc78927448699f45831eb11e3d0355b9c849067beab8563bcb57"
+    },
+    {
+      "path": "small/road_attributes.csv",
+      "sha256": "9ed23dcfcd8f9ca782ac3a341738d2f8c82cd11832240b4ef5e61263c03c1b9d"
+    },
+    {
+      "path": "small/road_edges.geojson",
+      "sha256": "29323c8f3f3ec550eb996129c869b0e087b8fe1f16a4b0ab085d1d10efa742b8"
+    },
+    {
+      "path": "small/road_network.graphml",
+      "sha256": "18212856ca249aff17636b3cdd6db502ce9d5ebac5c9bcddade52217a9f43129"
+    },
+    {
+      "path": "small/road_network.png",
+      "sha256": "04f1e7c72f29a14743b6848a8b4a32e4d8c302d5603b0c661ce54dda68b3e2e9"
+    },
+    {
+      "path": "small/road_nodes.geojson",
+      "sha256": "935ce390b45a271dbe9289dfb5acca033b0c12181287d4d30f52618ea98da840"
+    },
+    {
+      "path": "small/study_boundary.geojson",
+      "sha256": "e6b46d32708d14735dbe8ce53f4115084e8ecabc5533cca3430356e4c622cee4"
+    }
+  ]
+}

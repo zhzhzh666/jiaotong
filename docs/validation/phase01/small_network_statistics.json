@@ -1,0 +1,284 @@
+{
+  "nodes": 1140,
+  "directed_edges": 2247,
+  "unique_edge_ids": 2247,
+  "weak_components": 3,
+  "strong_components": 62,
+  "largest_weak_nodes": 1114,
+  "largest_strong_nodes": 1019,
+  "strong_component_fraction": 0.893859649122807,
+  "parallel_directed_pairs": 0,
+  "oneway_edges": 369,
+  "self_loops": 0,
+  "total_directed_length_m": 92058.92407816571,
+  "missing_required_attributes": 0,
+  "length_min_m": 0.9941755246061744,
+  "attribute_sources": {
+    "lanes_source": {
+      "osm_lanes_oneway": 161,
+      "estimated_class_default": 1824,
+      "estimated_bidirectional_split": 262
+    },
+    "speed_source": {
+      "osm_maxspeed": 16,
+      "estimated_class_default": 2231
+    },
+    "capacity_source": {
+      "estimated_class_per_lane": 2247
+    }
+  },
+  "routing_audit": {
+    "sampled_origins": 20,
+    "checked_reachable_pairs": 19530,
+    "per_origin": [
+      {
+        "origin": 2398019498,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 1931997258,
+        "reachable_nodes": 3
+      },
+      {
+        "origin": 2476511402,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2425050856,
+        "reachable_nodes": 1085
+      },
+      {
+        "origin": 2406688765,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2398034788,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2398019457,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 13382760807,
+        "reachable_nodes": 1089
+      },
+      {
+        "origin": 2394958864,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 7243684741,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2132634013,
+        "reachable_nodes": 1087
+      },
+      {
+        "origin": 1937713782,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2398019409,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2404428146,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2408476503,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 11397135836,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 1932007724,
+        "reachable_nodes": 6
+      },
+      {
+        "origin": 2402273636,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 7243684686,
+        "reachable_nodes": 1084
+      },
+      {
+        "origin": 2404428152,
+        "reachable_nodes": 1084
+      }
+    ],
+    "scope": "All destinations for sampled origins; SCC reachability independently compared. General API supports arbitrary reachable pairs."
+  },
+  "sample_route": {
+    "nodes": [
+      277183286,
+      277664239,
+      1932007679,
+      2407737640,
+      277664224,
+      277664226,
+      2291907867,
+      6366992687,
+      5179677511,
+      2425050839,
+      13396971596,
+      13396971597,
+      5179677513,
+      2425050870,
+      2291907874,
+      2398019496,
+      2398019428,
+      2398019491,
+      2406688759,
+      2400039329,
+      2409440244,
+      2400039314,
+      2400039316,
+      2400039327,
+      2400039325,
+      2400039323,
+      2539273930,
+      2400039312,
+      2401131169,
+      2399009561,
+      2401131103,
+      2457650388,
+      2401126273,
+      2401126313,
+      11813124952,
+      2399009551,
+      2399009553,
+      11813124959,
+      2409473240,
+      11813124961,
+      11813124953,
+      2404417639,
+      2404417796,
+      2425035030,
+      2399009556,
+      2399009576,
+      2400039347,
+      5618621164,
+      2404417638,
+      2400039343,
+      2400039339,
+      5569414863,
+      2400039341,
+      2400051192,
+      2400039302,
+      2400039345,
+      2398019509,
+      11904646187,
+      2400339471,
+      2623164374,
+      2402284497,
+      5569414860,
+      7141031754,
+      9101470277,
+      13808149019,
+      9128487758,
+      7836833869,
+      13808149025,
+      277323425,
+      2132634189,
+      2291907929,
+      6366992732,
+      6366992736
+    ],
+    "edge_ids": [
+      "osm_84663e5666aa987b9cc2161a",
+      "osm_25e438be06f83629c04586d1",
+      "osm_73ae42930f996147ecb0f781",
+      "osm_9efe88cfc2c8fa137c799eb9",
+      "osm_b6e8bd9d5127c6896ec32541",
+      "osm_4a2f2d2fde9a38c25ac2907d",
+      "osm_0718b0a15a7673cbeacd5a3a",
+      "osm_b70058804b5d0fc3b4d63f5e",
+      "osm_4c1846446c3f5b4892809d0c",
+      "osm_ae5033c6ed3faa9eac04fbee",
+      "osm_ca7818b354b5a2d8d68d476c",
+      "osm_215ff88e98c8577f29e1803c",
+      "osm_1c5b99d1c20adc0214840639",
+      "osm_1c70870947b7a5e20bede818",
+      "osm_fc467d1eac9d76a5a3a84092",
+      "osm_2f5ec8402eb172d06d5f4942",
+      "osm_f27dbd92e5774febb7cd24b0",
+      "osm_716a85d99f59f391f9ae64ec",
+      "osm_a770ed4ed735f8d03563ab24",
+      "osm_e493110f6ac98e259d286c1a",
+      "osm_1c799a1ab18d3a243c689ef7",
+      "osm_93bc70644b5f98e1b61fd68f",
+      "osm_d9b5ea1672052f3da0d8bab3",
+      "osm_da4e54915b1b78bbe54e2a64",
+      "osm_0d8e6cfd54344eaa2c1674f1",
+      "osm_c766ac0466744592482e0b9f",
+      "osm_f5be307f5d31b4e7596eff17",
+      "osm_bb2ce3b2f9c159d8b54d52d2",
+      "osm_ba8af625c8c34dbcf6cd7962",
+      "osm_4bdd4bb251ac50d826589b17",
+      "osm_fc7fa0dfe9986ce80f9e9d8c",
+      "osm_1d61f3c7980f17de93209161",
+      "osm_822a371b08e55c5d8fd9bb46",
+      "osm_f7e3a606bd5665c0f22fee5d",
+      "osm_1cd15933c19ca21ecd308ab3",
+      "osm_e62844572e8bb54def780a44",
+      "osm_0f50654012c8fce3c0bc00fc",
+      "osm_1114ad0a962d2a8267471316",
+      "osm_f3b8e6c401501443b0e3359f",
+      "osm_5c47c908dbfe999a475ccaa7",
+      "osm_ddc6d5980c32284bf7bd6b06",
+      "osm_05b77219ecec160eccad0e70",
+      "osm_7f09c94e59f93b3c35112f19",
+      "osm_abe05045f75f16426482fd2a",
+      "osm_e05b6fd010d85f81e322b4d4",
+      "osm_d27a35e7e3479b2e90a73a7d",
+      "osm_0293af5b15a6f6a73cf5fdff",
+      "osm_b0ec60a7c0d80182291989b5",
+      "osm_11a6067f232a110d41921894",
+      "osm_4906bf46dd11d8d40643c4c3",
+      "osm_06fff948dfe64e63a008b44c",
+      "osm_9c1fbe48a232440b80969679",
+      "osm_ce1c7ff645281c727ee8c6e6",
+      "osm_9a77b3cdcb2a4fc01226a582",
+      "osm_b372c8d1d3b33a65dd395693",
+      "osm_2179feecb329f36739a2882d",
+      "osm_729051ebd3dc470151eabbd5",
+      "osm_65e9312520cae80b58d327f5",
+      "osm_e147a5e41454e7e16ffe1e7d",
+      "osm_408c7b13d6dfafc3444bed4c",
+      "osm_4d5c0118846f87470c340be5",
+      "osm_b0a75aaf3fb8320173bbbc97",
+      "osm_ece037c5394290d966345715",
+      "osm_6f7a74c729c8b0c46a0f3e35",
+      "osm_cdb5d76ae24921b23e79d69f",
+      "osm_40849a521c84438d8282bde0",
+      "osm_0547449a668e47c68468ca42",
+      "osm_f58e12b197d32296770fed64",
+      "osm_354245f68390c126655b7e7f",
+      "osm_fcd20c81c158fda09d56fb94",
+      "osm_cdbaa74b52813ea1c87b6674",
+      "osm_a85037ef061a89a8202cbada"
+    ],
+    "travel_time_s": 353.559791445444,
+    "length_m": 4375.411146939769
+  },
+  "limitations": [
+    "OSM snapshot, not survey ground truth",
+    "Disconnected components retained; no invented edges",
+    "OSM turn restriction relations and conditional access not enforced",
+    "Capacity and free-flow assumptions require later calibration"
+  ],
+  "region": "small",
+  "run_id": "20261117T193651_p01_2e554d34",
+  "source_crs": "EPSG:4326",
+  "length_crs": "EPSG:32650",
+  "source_method": "Official OSM map API fallback + OSMnx public XML parser",
+  "boundary_area_km2": 3.879525109667138,
+  "boundary_note": "Nanshan = OSM administrative polygon intersect configured research window; not an official land boundary. All in-window components retained. Boundary-crossing edges retained when endpoint adjacent.",
+  "scope_adjustment": null
+}

@@ -1,0 +1,656 @@
+{
+  "created_at": "2026-11-17T19:25:34+08:00",
+  "contract": {
+    "small_bbox": [
+      113.925,
+      22.528,
+      113.945,
+      22.545
+    ],
+    "expected_relation_id": 5664195,
+    "buffer_m": 500,
+    "filter_version": "OSMnx-2.1.2-drive-equivalent-v1"
+  },
+  "files": [
+    {
+      "path": "nanshan/download_manifest.json",
+      "sha256": "60f648b83bf0bf1a110ff1a90788b36650a5022e5af8ac5a88dfa21c93c40a51"
+    },
+    {
+      "path": "nanshan/drive_filtered.osm",
+      "sha256": "76493c55417a98305b544d212dbe7fab5e2dd089817e1bf065c34fd290f851cd"
+    },
+    {
+      "path": "nanshan/tile-0000.osm",
+      "sha256": "3558c51dfd032ed74d24f2f13a4ff95b6f332a1b2a12c31574daa3e71aca9e03"
+    },
+    {
+      "path": "nanshan/tile-0000.osm.source.json",
+      "sha256": "e110572d969372d86cd479523e67c5872382282e6f7ecd9289378c91fdaea956"
+    },
+    {
+      "path": "nanshan/tile-0001.osm",
+      "sha256": "accbc4cb832d455213ff8ad17958215d234b607d7597156f909a4b10cf621c05"
+    },
+    {
+      "path": "nanshan/tile-0001.osm.source.json",
+      "sha256": "74b32157b0418e6f617e57ec7c9ecb45a2f63c43e2b81bbb95b021707f730d49"
+    },
+    {
+      "path": "nanshan/tile-0002.osm",
+      "sha256": "7734d035c09fb80c0c90c35779acdcc8d711407f7a9e269675e6afd875842dee"
+    },
+    {
+      "path": "nanshan/tile-0002.osm.source.json",
+      "sha256": "b02192c0ab52631f8d5f3315c1d5b070276f7eccc9e1126acf7a11832549a1f2"
+    },
+    {
+      "path": "nanshan/tile-0003.osm",
+      "sha256": "31827cd01f2c4329d4e7b56c6ef66c53280f4f795d1ffdaa12803d6437b92c11"
+    },
+    {
+      "path": "nanshan/tile-0003.osm.source.json",
+      "sha256": "5f9671818b022fd83e4881879532e8df2cd2dbb1339a85111ad2856c39a271e1"
+    },
+    {
+      "path": "nanshan/tile-0004.osm",
+      "sha256": "0be7f00055547c6d39d516cd3748c1e5fdb5176e313326b352511b058ba0784c"
+    },
+    {
+      "path": "nanshan/tile-0004.osm.source.json",
+      "sha256": "04ea7c8f855445c5f4b3d28f2a5471028613a0fee03724de21aa9ae7ffcf675c"
+    },
+    {
+      "path": "nanshan/tile-0005.osm",
+      "sha256": "c40914adee6169ab7f308b4b82a3766aea911eab286b43a036158caa03c05e4f"
+    },
+    {
+      "path": "nanshan/tile-0005.osm.source.json",
+      "sha256": "f0b34c986c31481931cdcf333e8131e18150543eb8649c4bb8037847a6842125"
+    },
+    {
+      "path": "nanshan/tile-0006.osm",
+      "sha256": "626c9bad7aa6d6a429d8ec14b5476cdecd857e9da080643ca8bbd1d4f27d57a4"
+    },
+    {
+      "path": "nanshan/tile-0006.osm.source.json",
+      "sha256": "5f265a0ccfd880fa9ee2009a0d18023459c3209273d920be6d879dd3127ec3f4"
+    },
+    {
+      "path": "nanshan/tile-0007.osm",
+      "sha256": "f243dd05babf388688c92049ff1d1e862bfd12cc7870186a518a1c732b6df2d0"
+    },
+    {
+      "path": "nanshan/tile-0007.osm.source.json",
+      "sha256": "b4ef3ef27f54e79020d9118f748ef378f128b20f157163d4d978b62597d23fc6"
+    },
+    {
+      "path": "nanshan/tile-0008.osm",
+      "sha256": "dc04c1e04b6228eebe57702782fcf578455ba06783734ff2d529e787d4e4ebdb"
+    },
+    {
+      "path": "nanshan/tile-0008.osm.source.json",
+      "sha256": "a6cb246a57c97fa5609d9c90e045168113851cf0c39190a1843b253164f01818"
+    },
+    {
+      "path": "nanshan/tile-0009.osm",
+      "sha256": "456767b22cf608a7b39da558f77d0d04f4363b6d8f9d3e19c6b6b73b7a5c8aa8"
+    },
+    {
+      "path": "nanshan/tile-0009.osm.source.json",
+      "sha256": "b988d71a8e53b2c7bd42269121cc380fc7b923455b88e8349107f7270908f905"
+    },
+    {
+      "path": "nanshan/tile-0010.osm",
+      "sha256": "f65e44fd5e511639fc59577c6b56b84fd6d8c6dfcce7cb8de471b5e554e025be"
+    },
+    {
+      "path": "nanshan/tile-0010.osm.source.json",
+      "sha256": "26e88e6d3a2fb2dc495dcc62bc24c09b8089b4f83f487e8948495420fa576bec"
+    },
+    {
+      "path": "nanshan/tile-0011.osm",
+      "sha256": "d295520de574a44a858c7e72bf0c802239478a325eda6f39352690a37a77bdc7"
+    },
+    {
+      "path": "nanshan/tile-0011.osm.source.json",
+      "sha256": "7607eac27e9316b1cbc0228706a8d4891aa7c6ae1f697a44cb48893d6ed95e85"
+    },
+    {
+      "path": "nanshan/tile-0012.osm",
+      "sha256": "05e8f5f2050fe062c9a0e2bca6e5fcdd9bb3bc934eff4d78de734ed5ff277dc5"
+    },
+    {
+      "path": "nanshan/tile-0012.osm.source.json",
+      "sha256": "1594545c463afcc39b389ebc2a32a7761fb82c38e8fee31387d7bcf7dfba7dcb"
+    },
+    {
+      "path": "nanshan/tile-0013.osm",
+      "sha256": "d2e6dbb0a183bef01b2cee92c621f721b9af2531106f67e81b1d8b478681eb6c"
+    },
+    {
+      "path": "nanshan/tile-0013.osm.source.json",
+      "sha256": "7191124e868560c1de7f4ff5992dae8c6b6995f89b3cf3309d8720e687a84088"
+    },
+    {
+      "path": "nanshan/tile-0014.osm",
+      "sha256": "a0b937720bb7a71646d5d0c9a8a62a662372ab47f6aac0ffffc05af6642b7dd6"
+    },
+    {
+      "path": "nanshan/tile-0014.osm.source.json",
+      "sha256": "3b17ce4948eba2ad6b455155b818e5e9d5cbd50beb089ee907d9632ab22012b1"
+    },
+    {
+      "path": "nanshan/tile-0015.osm",
+      "sha256": "ea7a0f756d4ef7b6d84a467248336c345ef8fdd50db186082adeda2a558c2397"
+    },
+    {
+      "path": "nanshan/tile-0015.osm.source.json",
+      "sha256": "0431ff5df4a8fabecb6da5710faf79075436095f1b285bbd6839faf6eb86f01d"
+    },
+    {
+      "path": "nanshan/tile-0016.osm",
+      "sha256": "00209c5408152da9bda10aae159f59744a8d500f543bc2e5608c257a1af5d221"
+    },
+    {
+      "path": "nanshan/tile-0016.osm.source.json",
+      "sha256": "97d5f4dc6fe400fe7b1b0efbd0dfbac632122d8badc613bcadc9580610f66a0e"
+    },
+    {
+      "path": "nanshan/tile-0017.osm",
+      "sha256": "0c2c46ae41b5c3a1cc1f01dc0c187d599acd0d3ecdc558e4671a79fd71996130"
+    },
+    {
+      "path": "nanshan/tile-0017.osm.source.json",
+      "sha256": "7853d70507bac871bb345a0d9b408ad83f32f4721db6b3af0ba209f697e4cda7"
+    },
+    {
+      "path": "nanshan/tile-0018.osm",
+      "sha256": "77c8311c7e7dbc52cf011e6440774342576d4160ed532e0f6233e2b03af60431"
+    },
+    {
+      "path": "nanshan/tile-0018.osm.source.json",
+      "sha256": "db98d1301b37c194165d836036620568e1f0b108ea74909bc20dd18ac1e3da92"
+    },
+    {
+      "path": "nanshan/tile-0019.osm",
+      "sha256": "a4ae37f7c5d4f901aa837993a93ab89bf608f129b4a646d3f34a1a2e62067a04"
+    },
+    {
+      "path": "nanshan/tile-0019.osm.source.json",
+      "sha256": "09b0f0368b9c3af159c98267440d7fcbca7498d6f7e5d0796348de575ae90df5"
+    },
+    {
+      "path": "nanshan/tile-0020.osm",
+      "sha256": "6495bf15f54e31314bce082202905b0d151f29e6da5acca488bbb236d5ca769f"
+    },
+    {
+      "path": "nanshan/tile-0020.osm.source.json",
+      "sha256": "88da471d933f98b9f77ec09f3c0be4f4471039c7f2c802cb3577e94442449957"
+    },
+    {
+      "path": "nanshan/tile-0021.osm",
+      "sha256": "1bcd6ad51c89f958d15752ae3b1fb5bd7f71973714aa61f60e7fde69cb6de08f"
+    },
+    {
+      "path": "nanshan/tile-0021.osm.source.json",
+      "sha256": "f4dc860e5e5d0ee9bec69d1867c5ce2ca55327d441c5951e27579a6afb2e91cd"
+    },
+    {
+      "path": "nanshan/tile-0022.osm",
+      "sha256": "908cbd5ba13f9ab6cd5937d4735f3eef174d518f6db7f56dbb6138473dae1cff"
+    },
+    {
+      "path": "nanshan/tile-0022.osm.source.json",
+      "sha256": "eb4f866a9f98dd078ced14489b8b399b727cc6fc53c7f51795b262fe0e00f369"
+    },
+    {
+      "path": "nanshan/tile-0023.osm",
+      "sha256": "3256f0db56f9329f9e339013c8a4b0a4656cb5989779e9a3e6ba7eb3396e25b0"
+    },
+    {
+      "path": "nanshan/tile-0023.osm.source.json",
+      "sha256": "d65dab225f80c2e2aa16bded5d03638dc64e30e2f4f97a3fd70930c9b1d01058"
+    },
+    {
+      "path": "nanshan/tile-0024.osm",
+      "sha256": "cb8a49558ef9af998f02c873599257797889f3040a11af24804e60dd35069645"
+    },
+    {
+      "path": "nanshan/tile-0024.osm.source.json",
+      "sha256": "3c7b48c56b0b4dc867eeaf75e94de5c44b72491f4b3d04032b1d250410a333de"
+    },
+    {
+      "path": "nanshan/tile-0025.osm",
+      "sha256": "125a871aceeaf71cb0207265691cba8a28cbdf9c8aaef317fd1636fc09b876f2"
+    },
+    {
+      "path": "nanshan/tile-0025.osm.source.json",
+      "sha256": "7f21368ee3b710a8a3106ebcfe8a5ee2451ea83c96fa6b1a8bae4eba325c705f"
+    },
+    {
+      "path": "nanshan/tile-0026.osm",
+      "sha256": "d90197ef388aca9463790da0a9c28f0bd7f755c0b3ae4a3b2f59f26a269c177f"
+    },
+    {
+      "path": "nanshan/tile-0026.osm.source.json",
+      "sha256": "d28bebd0c7f3710e5133ac3df78011cc614140e084540017218782c618255c6f"
+    },
+    {
+      "path": "nanshan/tile-0027.osm",
+      "sha256": "b63aadd8212b42e2366ae1561bb734b27d02bca7bf0e30e392625446d7285a1b"
+    },
+    {
+      "path": "nanshan/tile-0027.osm.source.json",
+      "sha256": "5cc5ca925c9c4da9a52a8b9d41c92f9d828b75b58d010ea76e1ed77302458310"
+    },
+    {
+      "path": "nanshan/tile-0028.osm",
+      "sha256": "3be799cbbc424b1c69ac878c1df4093ad2a7075d13f9d285fcd1d6f11d0112a7"
+    },
+    {
+      "path": "nanshan/tile-0028.osm.source.json",
+      "sha256": "c3f03240bc3d3b3cc590bf953c438d668e40ae748541b4407aac2dc7c50fd76c"
+    },
+    {
+      "path": "nanshan/tile-0029.osm",
+      "sha256": "656d5315c8a49c9abbb2ff3379890d9372b1e3c67ecfbf63df1e2c4798af88f9"
+    },
+    {
+      "path": "nanshan/tile-0029.osm.source.json",
+      "sha256": "adfe221301cedb4efd68df8eeaa9719684d3257d7183329ec8a5d2e2dcfee5aa"
+    },
+    {
+      "path": "nanshan/tile-0030.osm",
+      "sha256": "51469c0a0ab495577588715433a2ce814ec8abc66d115e52e895b722e51a6512"
+    },
+    {
+      "path": "nanshan/tile-0030.osm.source.json",
+      "sha256": "3606e3547e0368be929fd40c70d132f31a0cb6e193ac79d00300d6cbfb8ac724"
+    },
+    {
+      "path": "nanshan/tile-0031.osm",
+      "sha256": "20adbf111b6358754673dc7748fa60be3760f8fe2a2b8f591c8f9616cf06f8b1"
+    },
+    {
+      "path": "nanshan/tile-0031.osm.source.json",
+      "sha256": "d32e8dad6d712d3dc9570e3d4a6c4ccc15d47ac34446f8d1fa5c07126d4ada82"
+    },
+    {
+      "path": "nanshan/tile-0032.osm",
+      "sha256": "a0c306dde97dd5596afb55d1a33ed54a15b6c8de74acd107d90eb8c9f7537af2"
+    },
+    {
+      "path": "nanshan/tile-0032.osm.source.json",
+      "sha256": "dce0f1b676aa99b0f7572570acf09963e51c5e34fdca3f4e414068e6da07b7da"
+    },
+    {
+      "path": "nanshan/tile-0033.osm",
+      "sha256": "b994aa0f228d4f59d43d34fc44bfbec43517d6ed6f9187d9c011c86528f9b286"
+    },
+    {
+      "path": "nanshan/tile-0033.osm.source.json",
+      "sha256": "0970ee8d11639c294ab3635c834e840d5b00a2f64a111ca69f8699d6520c8bfe"
+    },
+    {
+      "path": "nanshan/tile-0034.osm",
+      "sha256": "fe5461b1d1f268b7512a80902ef04320d34d1412948ef01a0f164baa5d5cbaee"
+    },
+    {
+      "path": "nanshan/tile-0034.osm.source.json",
+      "sha256": "26faa2f3e9565f9e9978b870d22b719ec1e2aed4db1925429d8a4b7761829890"
+    },
+    {
+      "path": "nanshan/tile-0035.osm",
+      "sha256": "5354facc6c7527711b3708f86339acb4da288ddf831eaf81a2b8f566a92ef5bd"
+    },
+    {
+      "path": "nanshan/tile-0035.osm.source.json",
+      "sha256": "5ae26bd65b988b31495af2d900a4323d0ed9e84482f8158af595d1a5b4244d95"
+    },
+    {
+      "path": "nanshan/tile-0036.osm",
+      "sha256": "f091873fb1521d98d9d3f4455f286575c6821485fa3d3bb890c1c234e15b48d6"
+    },
+    {
+      "path": "nanshan/tile-0036.osm.source.json",
+      "sha256": "10ec907211753f38c6a84af589be54ef6825b23615f6d34c119336cbf9f570f9"
+    },
+    {
+      "path": "nanshan/tile-0037.osm",
+      "sha256": "c1cb7f94d4705cde18f04dac8a6ad11a31e422fad0647d2a00b452622d6aeb54"
+    },
+    {
+      "path": "nanshan/tile-0037.osm.source.json",
+      "sha256": "6e99752dee5bb7f257503ff08e130083f1e4d4cb266f5bc967103fe3bf78feb1"
+    },
+    {
+      "path": "nanshan/tile-0038.osm",
+      "sha256": "69c60f6106a50bf42709597295e9eed1ea92bc0a0803a5f7812fef0d34bfb937"
+    },
+    {
+      "path": "nanshan/tile-0038.osm.source.json",
+      "sha256": "19002291aca37e114583ae8b092f0916638e77c9a1267de54a8b672e94dc1f60"
+    },
+    {
+      "path": "nanshan/tile-0039.osm",
+      "sha256": "cb18854d6961adfdc66ee68035fa72a6469d1cf7c65ba37b4561484a07afc1de"
+    },
+    {
+      "path": "nanshan/tile-0039.osm.source.json",
+      "sha256": "7cb04033cdc5295185bc54c85bacb39568fce3c3095021da1ac9b261d91d22e3"
+    },
+    {
+      "path": "nanshan/tile-0040.osm",
+      "sha256": "952fd9552c63f6335bf95fa8c5c89618b0e6a36bf27f37209dfcea1702a76c1e"
+    },
+    {
+      "path": "nanshan/tile-0040.osm.source.json",
+      "sha256": "e167b7ada55f6c75dd19740f0eb47d17beb59e90b793c4c245251d6068b701dc"
+    },
+    {
+      "path": "nanshan/tile-0041.osm",
+      "sha256": "829b89c978d1f6ea5e4d17e0b5396980c0c38744023479dba83b49eb91196575"
+    },
+    {
+      "path": "nanshan/tile-0041.osm.source.json",
+      "sha256": "e7f09c8839bd8113572073758d20a77dd8d9fbcefad40d6da8547fb12cdc49a3"
+    },
+    {
+      "path": "nanshan/tile-0042.osm",
+      "sha256": "9a6ad41056fe1e0999f0cbf70601cf2b654e3356a5d724321e1892d9c71e8ebd"
+    },
+    {
+      "path": "nanshan/tile-0042.osm.source.json",
+      "sha256": "979009ded3528d22e08ab2314c72e05950f3477115412f5d3fad077d0b8ad332"
+    },
+    {
+      "path": "nanshan/tile-0043.osm",
+      "sha256": "93f45e991671310d3fe6fc3ae5c896c3be6daeb0c1d6569ebd7deaf490079f01"
+    },
+    {
+      "path": "nanshan/tile-0043.osm.source.json",
+      "sha256": "046d55fc6a077ceb43da0f505226a421a39977b16acffbf66798049d59830797"
+    },
+    {
+      "path": "nanshan/tile-0044.osm",
+      "sha256": "1034f8056892126a6f2a60dddc731d9a7aabbd729fa098953104e9bc6f126934"
+    },
+    {
+      "path": "nanshan/tile-0044.osm.source.json",
+      "sha256": "f7beb36de4347ebe01fa2c10416e5fe7ee5e30cd2b09a813595ce6c17f56beb1"
+    },
+    {
+      "path": "nanshan/tile-0045.osm",
+      "sha256": "49b8c8f90ca2cc01c745fe71bdddb63d4a8b983be4d6d548529d96b5c65ffbc0"
+    },
+    {
+      "path": "nanshan/tile-0045.osm.source.json",
+      "sha256": "53e6f178dc44813d5af68a83faed6a82d1eb850f3b2488ad81502043bcaa1eaa"
+    },
+    {
+      "path": "nanshan/tile-0046.osm",
+      "sha256": "cd44608b316b2ddba4fb75f4d02f54a3b363310cc7d857aba068aa1d12fb2a2c"
+    },
+    {
+      "path": "nanshan/tile-0046.osm.source.json",
+      "sha256": "9fc369cd812e6ca006264bdb85b05eab80e478747374fe7abeb887111b9316de"
+    },
+    {
+      "path": "nanshan/tile-0047.osm",
+      "sha256": "135879582ed0d8663c158f9f73d4d8f5d58547b9eb785dc8375f100dd204f1cd"
+    },
+    {
+      "path": "nanshan/tile-0047.osm.source.json",
+      "sha256": "597633805e93764d3b9d99d6a02138c13119f1981ded262acce62a53f4db5e59"
+    },
+    {
+      "path": "nanshan/tile-0048.osm",
+      "sha256": "829b89c978d1f6ea5e4d17e0b5396980c0c38744023479dba83b49eb91196575"
+    },
+    {
+      "path": "nanshan/tile-0048.osm.source.json",
+      "sha256": "a2358895942aef2408415ffc80769d4e304d08170097638f289d9d9d0f307642"
+    },
+    {
+      "path": "nanshan/tile-0049.osm",
+      "sha256": "54a0a050d6b0ed3a677d13f10b5f9c8d3b2501e2b027d866a527e63d22acdee4"
+    },
+    {
+      "path": "nanshan/tile-0049.osm.source.json",
+      "sha256": "78c386e73864b6e2f29febd39c6498dcf22e956988ac430b253edd30f48a6d2b"
+    },
+    {
+      "path": "nanshan/tile-0050.osm",
+      "sha256": "048b726d640d9c7a2a8e70e3ebfe54a5294fd18a58bc1d45c32b1af40813f8c2"
+    },
+    {
+      "path": "nanshan/tile-0050.osm.source.json",
+      "sha256": "19d12f45abaa897a1b3437ca3c4a65ba9d36b3c6e67e769b270be8bea0e0773c"
+    },
+    {
+      "path": "nanshan/tile-0051.osm",
+      "sha256": "b4e9cd9e8c4e69391c0e58477e4955b3fb42824f8b35143c268f1841480ef973"
+    },
+    {
+      "path": "nanshan/tile-0051.osm.source.json",
+      "sha256": "b4d8106184f952d1bd8f4eb19a6786f44bd6e86e38d4114918fb0d864689c4fe"
+    },
+    {
+      "path": "nanshan/tile-0052.osm",
+      "sha256": "829b89c978d1f6ea5e4d17e0b5396980c0c38744023479dba83b49eb91196575"
+    },
+    {
+      "path": "nanshan/tile-0052.osm.source.json",
+      "sha256": "e8f08334724330f105cf3c9d046ae17e96cdf99b240281cf003a148cf4b160e4"
+    },
+    {
+      "path": "nanshan/tile-0053.osm",
+      "sha256": "5ac95060a9c31818b3414dbbe15f1f6c3b2c8cf316fbac96cba1b10f2172ae57"
+    },
+    {
+      "path": "nanshan/tile-0053.osm.source.json",
+      "sha256": "352766f3a43f23e07eeb123502d010cf3781d76185ca30f5767d27ea8db14f75"
+    },
+    {
+      "path": "nanshan/tile-0054.osm",
+      "sha256": "8cb77b371e8f352b0ca0e7e6af2fe453eb95689ea929ae8957ed3466f48d8142"
+    },
+    {
+      "path": "nanshan/tile-0054.osm.source.json",
+      "sha256": "308e48c467d3b58d393cc39b003b57b0b1974cc4cc49f631af8756b3e01ae1d7"
+    },
+    {
+      "path": "nanshan/tile-0055.osm",
+      "sha256": "f97dde9a7bc911684072d8a4f3ff07c425be383900952373ea34866729dc0c74"
+    },
+    {
+      "path": "nanshan/tile-0055.osm.source.json",
+      "sha256": "16a7dc739b6259d44797e64128f7500e204ad9a4fed3db2ee3ff05e17bbf93af"
+    },
+    {
+      "path": "nanshan/tile-0056.osm",
+      "sha256": "a66b998d5ebfc5beabbea6304202dbfe445c0218bbfe5fbc9ee26fde994c87fd"
+    },
+    {
+      "path": "nanshan/tile-0056.osm.source.json",
+      "sha256": "db03ff9c19671ccf8d3c2361ceadfbf41fba7f90b2717d35b2a8fde0cd387c1b"
+    },
+    {
+      "path": "nanshan/tile-0057.osm",
+      "sha256": "a888e96478ded8f14e7977cb27ce2cad91a0635975d12d557d16b3310e7f1350"
+    },
+    {
+      "path": "nanshan/tile-0057.osm.source.json",
+      "sha256": "ce71732db98f9017d4db5f09ec005bd90a1a90e03725c3ecf4d359e3e6dd42b3"
+    },
+    {
+      "path": "nanshan/tile-0058.osm",
+      "sha256": "983a117fdd8d4eed741cabbd7d1c8a5723defb5e3c0507903d6ee1313f73f68c"
+    },
+    {
+      "path": "nanshan/tile-0058.osm.source.json",
+      "sha256": "d9e2d3b1300c9347b36a769bafb6ad5a3549450d2aa0f0d02b5402f802f108b8"
+    },
+    {
+      "path": "nanshan/tile-0059.osm",
+      "sha256": "42d6463b511dad7e56fec39982a2c56abd8aad82bce4aa2c1639f3ae433a203a"
+    },
+    {
+      "path": "nanshan/tile-0059.osm.source.json",
+      "sha256": "167575fd19b210cd5c570952f8d3daf4bb2cbe9f84767b05e535b97d0782c7d9"
+    },
+    {
+      "path": "nanshan/tile-0060.osm",
+      "sha256": "0150be2fd07bca3e2cc0511f04d6bd8acc296584dcd7cfcad7c1336280decb07"
+    },
+    {
+      "path": "nanshan/tile-0060.osm.source.json",
+      "sha256": "0aa32bbfa6122a83636e71600e1568e777df903b882613bfe88cbd418a89197b"
+    },
+    {
+      "path": "nanshan/tile-0061.osm",
+      "sha256": "ddbd8a862825c0f08c5d8050f60c31d1682d00312f8c74a65b096d7884f83c07"
+    },
+    {
+      "path": "nanshan/tile-0061.osm.source.json",
+      "sha256": "34fd574d0b9a2e522df7ce9c842bb358d6400d69433b09c7e31a98cccab5bb61"
+    },
+    {
+      "path": "nanshan/tile-0062.osm",
+      "sha256": "5ed02a9cfa9a4c736c9089adbaf8f016f541856ee842fa63cc0ccb251f4ffb78"
+    },
+    {
+      "path": "nanshan/tile-0062.osm.source.json",
+      "sha256": "be2df97aecd76288d95c8ee56e87d186dd17d3ef3d7bda6c61bfbe9a494b06cf"
+    },
+    {
+      "path": "nanshan/tile-0063.osm",
+      "sha256": "388664327156f761961f840d25c97a72a8b5eefc2b6c603865ae565828d17649"
+    },
+    {
+      "path": "nanshan/tile-0063.osm.source.json",
+      "sha256": "51154244ba50e031073e71d3e21e7474ec9fd43f38a8805671ce7904bd638e88"
+    },
+    {
+      "path": "nanshan/tile-0064.osm",
+      "sha256": "fd05d1f1f983a647431c146e959a5e1fca72223e253acaf23aa1f0f76d6eabf1"
+    },
+    {
+      "path": "nanshan/tile-0064.osm.source.json",
+      "sha256": "4345ce08e02a1dff4fc0b2e5cfdac329e539eca30630aba574008df770875a9e"
+    },
+    {
+      "path": "nanshan/tile-0065.osm",
+      "sha256": "f65411344f6a1f56947af5fea008546897c7eafddcfbcea66297c8e52196e33f"
+    },
+    {
+      "path": "nanshan/tile-0065.osm.source.json",
+      "sha256": "22bdd987ca4b6cfa8706b339712682390bf786e1e3dfe8444bcf10829548a64e"
+    },
+    {
+      "path": "nanshan/tile-0066.osm",
+      "sha256": "7dc865032f95449cf55cdb928e709b087fc9c49228558529beb1ddfd851402e5"
+    },
+    {
+      "path": "nanshan/tile-0066.osm.source.json",
+      "sha256": "4ff67fbcbabcf5ac49446a0e9b1cad5723d0764dd3fac0faed7f1cba3de9c957"
+    },
+    {
+      "path": "nanshan/tile-0067.osm",
+      "sha256": "653597cfe2217fb3f8f91474b25fe50354f0802a50c901c63ccc8509ea8e5c0b"
+    },
+    {
+      "path": "nanshan/tile-0067.osm.source.json",
+      "sha256": "b8e46e0e23f0370334dfa4a119be8a306be192bf7aceb80218efa9be5cfc2e0f"
+    },
+    {
+      "path": "nanshan_boundary.geojson",
+      "sha256": "bb6ad29a79cd09156f100e183600c4aa107cfbbe124dd263a9ef037e55027578"
+    },
+    {
+      "path": "nanshan_nominatim.json",
+      "sha256": "1746cb904f4a93befa92cca3d933cdb56c7ae98bd5d752e28377802adc8a1f5e"
+    },
+    {
+      "path": "nanshan_nominatim.json.source.json",
+      "sha256": "072ca8be9f4a3a08e39527dfba5a0cc7a60439c6bc35fb679196ca118ae54809"
+    },
+    {
+      "path": "sioux_falls/README.md",
+      "sha256": "ebe1f3dcca4736ca55a059ad82275a2c37489c3c5df915713c518635086054c1"
+    },
+    {
+      "path": "sioux_falls/README.md.source.json",
+      "sha256": "e779a8d1c48b7a0534d2f9dbccc437ff9a657d2768745bb53b0a9a19c7fc31b9"
+    },
+    {
+      "path": "sioux_falls/repository_commit.json",
+      "sha256": "2e68c82563dadbb80ae4b083e13030b58452762d76747e91872e83e0a901f5a9"
+    },
+    {
+      "path": "sioux_falls/repository_commit.json.source.json",
+      "sha256": "264096b1704ff0af2b5a923b1ea1cb82315eb5745aadf9b54f99fe452fcbecde"
+    },
+    {
+      "path": "sioux_falls/repository_README.md",
+      "sha256": "dc9246c6bd157a3e3a2822831369c497bd3cc74506af689c03b0cfe03fc663f6"
+    },
+    {
+      "path": "sioux_falls/repository_README.md.source.json",
+      "sha256": "b96647e4a19b9da6273bfc939f0e8615ad571b5e0f4bb219b8cf455065dc5104"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_flow.tntp",
+      "sha256": "5d0b83a22ecc3ce79dabb2b2972162b78c5eda571dcb5b3687429d8397654fee"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_flow.tntp.source.json",
+      "sha256": "b3643ad6dd709cb1e7480b353072a68b5aeee80862ab912372589cbfcddbd606"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_net.tntp",
+      "sha256": "ace99b24cec69c273ff0cf3d6d074110177f0cc0ae24b0c7a9f4f4cb5e27635c"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_net.tntp.source.json",
+      "sha256": "a40c0c3d46f370479c48d6f27ef29e8369ee35c447c6365bc6e9742b5e489e32"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_node.tntp",
+      "sha256": "91c0b954dcfc6f6f08f48de1ce9d245261f5188a33aef76acf3ce1fff0809969"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_node.tntp.source.json",
+      "sha256": "63ed5d01fe0ba50f78bebba437efda8c755741aa590f3d1ea481633ed2933006"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_trips.tntp",
+      "sha256": "56f9566857f3f66730fd5c4232258d7ee3ac2931a476526331afd062f4958de7"
+    },
+    {
+      "path": "sioux_falls/SiouxFalls_trips.tntp.source.json",
+      "sha256": "6a94ebf482953eb59c54a64415384070fa2733d6bf775c5d2e7e3deb15e66bc4"
+    },
+    {
+      "path": "sioux_falls/source.json",
+      "sha256": "ccbcf690630b65deea9f7490322667a1c436467865af7e2800b6f0530ac33529"
+    },
+    {
+      "path": "small/download_manifest.json",
+      "sha256": "028494d9cd1ec101a568f396cb4a277bdc79505acc41fb06a8f8c3b7f3eb419b"
+    },
+    {
+      "path": "small/drive_filtered.osm",
+      "sha256": "bbf0b984057be000a35e8d26a62b01346558c2ac00e7070057e4f7e081e541d2"
+    },
+    {
+      "path": "small/tile-0000.osm",
+      "sha256": "b6da4f4dc8a0bf358c0f03180da7ef8cd02c30bf11e9cc321b877aca1afdcc31"
+    },
+    {
+      "path": "small/tile-0000.osm.source.json",
+      "sha256": "a031809eb9d1431b8e11ef9650221610bf247ef6b42f498ea08888a9c105d834"
+    }
+  ]
+}

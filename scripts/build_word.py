@@ -12,6 +12,7 @@ from docx.oxml.ns import qn
 ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'docs/deliverables/content.json').read_text(encoding='utf-8'))
 m=data['metrics']
+a=data['phase01']
 parser=argparse.ArgumentParser()
 parser.add_argument('--output',type=Path,default=ROOT/'docs/deliverables/研究方案与阶段进展.docx')
 args=parser.parse_args()
@@ -84,16 +85,16 @@ def table(headers,rows,widths):
 
 d.add_paragraph('暴雨内涝情景下城市交通网络\n韧性评估与优化研究',style='Title')
 p('研究方案与阶段进展  2026年11月17日',style='Subtitle')
-p('本报告面向课题讨论与后续开发，整合原始研究构想、本地五篇参考论文和项目验收记录。当前结论是 Phase 00 基础设施通过验收，真实路网、交通分配、韧性评价与治理优化尚未实施。本报告中的模型和实验安排均标明为拟实施内容。')
+p('本报告面向课题讨论与后续开发，整合原始研究构想、本地五篇参考论文和项目验收记录。Phase 00基础设施与Phase 01真实有向路网已通过验收，南山研究窗口取得20,447节点和40,105条有向边。交通分配、韧性评价与治理优化尚未实施，后续模型明确标为规划。')
 h('研究问题与范围')
 p('暴雨积水会使道路降速或中断，交通需求随之绕行，并可能放大拥堵与公共服务可达性损失。本研究拟回答：在有限预算和治理道路数量约束下，优先改善哪些道路，能够提高整个交通网络在灾害过程中的综合性能。')
 p('研究区域从深圳市南山区的小型真实路网开始，完成方向、长度、属性和连通性校验后再扩大范围。交通分配先用 Sioux Falls 标准网络验证，再接入深圳路网；SUMO 用于后续车辆运行过程补充分析。')
 table(['工作范围','截至本次更新的状态'],[
- ['环境与可复现基础设施','Phase 00 已验收'],['本地参考论文','5篇全文已核查，关键公式页已对照'],['真实路网与外部数据','未获取；Phase 01、02 待实施'],['交通模型与治理实验','未实施；暂无韧性提升数值'],['运行图片','已保存环境验收 PNG 和 SVG，可追溯查询']],[5,11.6])
+ ['环境与可复现基础设施','Phase 00 已验收'],['本地参考论文','5篇全文已核查，关键公式页已对照'],['真实路网与外部数据','Phase 01已验收；积水等外部数据待Phase 02'],['交通模型与治理实验','未实施；暂无韧性提升数值'],['运行图片','已保存环境图与两张真实路网图，PNG/SVG可追溯']],[5,11.6])
 p('根目录原始 PPT、Word 和 PDF 保留不变。本文件与配套汇报为持续维护版本，后续按每阶段实际验收结果同步更新。',style='Caption')
 
 page(); h('技术路线与模型设计')
-p('以下内容为拟实施方案，不代表已完成的仿真结果。完整阶段门禁与参数以 PLAN.md、MODEL_ASSUMPTIONS.md 和配置文件为准。')
+p('道路建模已实施，需求、内涝、分配及治理为拟实施方案。完整阶段门禁与参数以 PLAN.md、MODEL_ASSUMPTIONS.md 和配置文件为准。')
 sub('真实道路与需求')
 p('OSM 路网保留有向 MultiDiGraph、平行边和稳定 edge_id。原始坐标使用 WGS84，距离与长度计算使用 EPSG:32650。OD 拟以交通分区、人口与设施估计产生吸引量，采用重力模型和 IPF 平衡；估计与合成输入明确标识，不冒充实测出行。')
 sub('参数化内涝与道路退化')
@@ -122,15 +123,42 @@ d.add_picture(str(ROOT/data['figure']),width=Cm(16.4))
 p('图1 实际环境快照与依赖导入检查  源记录时间为2026-11-17 17:35:15 +08:00。左图为当次内存与磁盘用量，右图为20项依赖导入结果。',style='Caption')
 p('run_id  '+data['run_id'],style='Caption')
 p('证据：docs/validation/environment.json、pytest-final.txt、pip-check.txt、accepted-run-manifest.json 和 run_audit.json。原始图片 PNG/SVG 及源 JSON 保留在该 run_id 的运行目录；本报告引用版本化验收副本。',style='Caption')
-p('归档审计确认本次2个图片与6个输入指纹一致；两次运行共4条图像格式记录和14个索引链接存在。图片均来自实际环境数据，当前尚无路网地图、交通韧性曲线或治理收益图。')
+p('归档审计确认本次2个图片与6个输入指纹一致；两次运行共4条图像格式记录和14个索引链接存在。以上为Phase 00历史环境证据；本次新增实际路网地图见后文，暂无交通韧性曲线或治理收益图。')
+
+
+page(); h('Phase 01 实际路网与基准数据')
+p('已完成真实OSM道路获取、拓扑处理、方向属性和长度核查，输出GraphML、GeoJSON、CSV、统计、边界及路网图。全部断连分量保留，未补造道路；南山6对平行有向边保留。')
+table(['指标','小区域','南山研究窗口'],[
+ ['节点',a['small']['nodes'],a['nanshan']['nodes']],['有向边',a['small']['directed_edges'],a['nanshan']['directed_edges']],['弱连通分量',3,33],['强连通分量',62,419],['类型估计速度边',2231,39081],['容量估计边',2247,40105],['20起点可达对核查',19530,362300]],[6.6,5,5])
+sub('来源与空间范围')
+p('Overpass多端点502或超时，改为官方OSM map API分块XML下载，再用OSMnx公开XML接口建图。Nominatim核实南山relation 5664195。完整行政范围含海域及17条港珠澳大桥相关边；主图取原边界与[113.69,22.35,114.03,22.66]的交集，不是官方陆地边界，完整图和排除清单均保留。')
+sub('属性与运行验收')
+p(f"{a['tests_passed']}项测试通过、1条已有弃用警告，pip check无冲突。独立核查所有道路几何、方向、米制长度及三格式一致性。离线校验重放{a['runtime_seconds']}秒，源e811519、dirty=false。限速或类型默认速度仅作自由流代理；容量均为估计，未标定。")
+sub('Sioux Falls基准')
+p('固定上游提交d1639b4：24节点、76有向弧、576个OD条目（528非零），原始总需求360600。自由流时间为0.01小时，长度/坐标人工示意，需求为近似小时量；保留原始单位。76条参考流量是外部解，尚未运行项目求解器。上游捐赠数据限学术研究，原件留本地。')
+p('详细命令、失败重放及修复、输入指纹与审计见docs/PHASE01_REPORT.md及docs/validation/phase01/。',style='Caption')
+
+page(); h('南山研究窗口实际路网')
+d.add_picture(str(ROOT/a['figures']['nanshan']),width=Cm(16.4))
+p('图2 南山研究窗口真实OSM道路及估计自由流最短时间路径。20,447节点、40,105有向边、33个弱分量全部保留。主图聚焦主体道路，插图显示含内伶仃的完整研究边界。',style='Caption')
+p('run_id  '+a['run_id'],style='Caption')
+p('红线是实际有向边上的最短路核查，权重含估计自由流速度；没有使用实测流量或执行均衡分配。OSM转向限制、条件通行与信号延误尚未纳入，不能作为导航合规或实际旅行时间证明。')
+p('© OpenStreetMap contributors，ODbL 1.0。位置WGS84，长度EPSG:32650。来源https://www.openstreetmap.org/copyright；验收PNG副本与哈希见docs/validation/phase01/。',style='Caption')
+
+page(); h('深大附近小区域实际路网')
+d.add_picture(str(ROOT/a['figures']['small']),width=Cm(16.4))
+p('图3 小区域真实OSM道路。1,140节点、2,247有向边、3个弱连通分量；红线为估计自由流最短时间路径，未补造连接道路。',style='Caption')
+p('run_id  '+a['run_id'],style='Caption')
+p('小区范围[113.925,22.528,113.945,22.545]。原始数据、处理结果、失败及成功运行分别归档；本图和南山图均保留PNG/SVG，后续可按Phase 01或run_id查询。')
+p('© OpenStreetMap contributors，ODbL 1.0。图像来自实际运行，非论文示意图。原始数据在data/raw/phase01/，处理数据在data/processed/phase01/。',style='Caption')
 
 page(); h('后续实施安排与图片查询')
 table(['阶段','拟实施内容','状态'],[
- ['01—03','真实路网、灾害与人口设施数据、OD 构建','未开始'],['04—07','内涝、道路退化、分配及韧性评价','未开始'],['08—09','关键道路识别、治理策略及预算优化','未开始'],['10—11','SUMO 补充验证与对比实验','未开始'],['12—13','中文交互界面、完整审计与交付','未开始']],[2.2,11.2,3.2])
+ ['01','真实路网与Sioux Falls接入','已验收'],['02—03','灾害与人口设施数据、OD构建','未开始'],['04—07','内涝、道路退化、分配及韧性评价','未开始'],['08—09','关键道路识别、治理策略及预算优化','未开始'],['10—11','SUMO 补充验证与对比实验','未开始'],['12—13','中文交互界面、完整审计与交付','未开始']],[2.2,11.2,3.2])
 sub('下一步验收')
-p('下一阶段为 Phase 01：准备南山区边界和小测试区域，获取公开 OSM/Overpass 路网与 TransportationNetworks 的 Sioux Falls 标准文件。输出 GraphML、GeoJSON、CSV、统计与路网图；检查稳定边 ID、方向、长度、平行边与实际可达最短路，不补造道路。')
+p('下一阶段为Phase 02：获取真实积水、雨量、DEM、人口及应急设施POI。逐项核查来源、年份、单位、分辨率、许可和缺失，统一坐标；关联道路时区分高架/匝道，记录距离及置信度。论文使用的数据不等于本项目已取得。')
 sub('当前限制')
-p('真实路网、积水、降雨、DEM、人口、POI 和 OD 尚未获取。SUMO、sumo-gui、netconvert 未在 PATH 发现；sumolib/traci 导入成功不代表可执行仿真已就绪。测试有1条 rasterio/affine 未来弃用警告，GIS 读写已通过。')
+p('积水、降雨、DEM、人口、POI和深圳OD尚未获取。SUMO、sumo-gui、netconvert 未在 PATH 发现；sumolib/traci 导入成功不代表可执行仿真已就绪。测试有1条 rasterio/affine 未来弃用警告，GIS 读写已通过。')
 sub('历史图片留存')
 p('每次运行生成独立 run_id，保存 raw、figures、screenshots、logs、配置快照与 manifest；保留失败记录，不覆盖历史。后续重点保存正常、首次中断、受影响边最多、最低 Q、恢复或结束时刻的图像，重复时刻合并，原始时序完整保留。')
 p('本地打开 results/index.html，按阶段、日期、区域、情景、策略筛选；或使用命令行 history 按 run_id 精确查询。索引可由 manifest 重建，manifest 为运行来源权威记录。')
@@ -141,12 +169,13 @@ page(); h('参考文献与复现入口')
 for i,r in enumerate(data['references'],1):
  p(f'[{i}] '+r['citation'])
  p('https://doi.org/'+r['doi'],style='Caption')
+p('OSM来源 https://www.openstreetmap.org/copyright，ODbL 1.0。Sioux Falls来源 https://github.com/bstabler/TransportationNetworks，固定版本与学术研究许可见阶段报告。',style='Caption')
 sub('复现与核查')
 p('工作目录为 jiaotong。项目运行使用 .conda-env/python.exe；文档维护脚本使用 Codex 提供的文档运行时，避免修改项目科学计算依赖。')
-for cmd in ['.conda-env\\python.exe -m pytest','.conda-env\\python.exe -m pip check','.conda-env\\python.exe -m uftr.cli run --phase 00','.conda-env\\python.exe -m uftr.cli history --phase 00','.conda-env\\python.exe -m uftr.cli reindex']:
+for cmd in ['.conda-env\\python.exe -m pytest','.conda-env\\python.exe -m pip check','.conda-env\\python.exe -m uftr.cli run --phase 01 --offline-source data/raw/phase01/20261117T192004_p01_d71ec83e','.conda-env\\python.exe -m uftr.cli history --phase 01','.conda-env\\python.exe -m uftr.cli reindex']:
  pp=p(cmd); pp.paragraph_format.space_after=Pt(3)
  for run in pp.runs: run.font.name='Consolas'; run.font.size=Pt(9)
-p('完整任务书见 docs/TASK_SPEC.md，实施验收见 docs/PHASE00_REPORT.md。PPT 与 Word 共用 docs/deliverables/content.json 中的日期、状态、验收数值、运行ID、图片路径与书目。',style='Caption')
+p('完整任务书见 docs/TASK_SPEC.md，实施验收见 docs/PHASE00_REPORT.md 与 docs/PHASE01_REPORT.md。PPT 与 Word 共用 docs/deliverables/content.json 中的日期、状态、验收数值、运行ID、图片路径与书目。',style='Caption')
 args.output.parent.mkdir(parents=True,exist_ok=True)
 d.save(args.output)
 print(args.output)
