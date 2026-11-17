@@ -1,0 +1,164 @@
+{
+  "all_pages_and_slides_visually_reviewed": true,
+  "word_pages": 19,
+  "ppt_slides": 19,
+  "method": "Each Word PDF page rendered with pypdfium2 at scale 1.4 and opened as an image; every Artifact Tool slide PNG opened; slides 2 and 3 blank bullets repaired and rechecked. No clipping or missing glyphs observed.",
+  "word_sha256": "ef9c1b3b5366a89c1724efcbdb5c538d7b41e80772253b22a7d05eded56d28cf",
+  "ppt_sha256": "7512a6288a4bddfa4c44591e51e88855888d04896498313bc894079bc23ade91",
+  "word_page_images": [
+    {
+      "page": 1,
+      "sha256": "12e518ec2af49a4ca1f4ad8066e4555e18439bfc65671112de4423904bbb9abd"
+    },
+    {
+      "page": 2,
+      "sha256": "1cadde700e89e57877c945cd2cbacc90df198719bdbe8cfd8adc73e8c260a940"
+    },
+    {
+      "page": 3,
+      "sha256": "fc7ee740923530866939b6475e9c24be7885ee7c09d9ffcd6991edc90b7e4b61"
+    },
+    {
+      "page": 4,
+      "sha256": "7efa5cb3e73a61f51c9f34bdd6a4f83e9ba3d47dc5969e7f8fd12703015428f6"
+    },
+    {
+      "page": 5,
+      "sha256": "355826020af26d4633a69dcb5170cef807e707426c2f26745ec43c0d0ca6d017"
+    },
+    {
+      "page": 6,
+      "sha256": "d4cdd9be1e06b7db2a40b033a7edf8d88499f2fe73ffbfa0c9b6438da02a80c2"
+    },
+    {
+      "page": 7,
+      "sha256": "ba4c0a67a7340e8df2e6cdedc6a44617a9e542c9871e6f660a9afb2b3749603f"
+    },
+    {
+      "page": 8,
+      "sha256": "46e702b2ea4bf57bd19c62d228f1722341f71b63cc514bb6b80c22fa7c760017"
+    },
+    {
+      "page": 9,
+      "sha256": "606e363b5f85eb0bdd20d952aed9ae7b253972e0fedfc7b61e298d4a5668bf63"
+    },
+    {
+      "page": 10,
+      "sha256": "568aeea84996d6e04cbe8352bd7add79e6e554e628af95ebc53e28d4444cd791"
+    },
+    {
+      "page": 11,
+      "sha256": "f75103e3d7bd9045f54331a1952f9d2526c255bcb16c857b438ee7928b21bb8b"
+    },
+    {
+      "page": 12,
+      "sha256": "2d3de8fc1f4654c4cf2cbe009601284c43bc75836f611549876513ba10708439"
+    },
+    {
+      "page": 13,
+      "sha256": "4563f022c3cc7e0566ba4b99eef42ca39f99bc644d7111a36d4caba22ae6071f"
+    },
+    {
+      "page": 14,
+      "sha256": "2783ef1d950cf58a82d57c76746e6349be67fe27ce0b360131cb5af8a2ad35be"
+    },
+    {
+      "page": 15,
+      "sha256": "89b4fe661ef514880f93cd041ee1c99f79e765d10d29b4f61664a15bd5082c27"
+    },
+    {
+      "page": 16,
+      "sha256": "d6738d9f1a37d987e63e2f7deaf3f20536568019f1a79eb25b2b30831dd58429"
+    },
+    {
+      "page": 17,
+      "sha256": "b8330600340ec44a238e09c2c9f80cee8043828dd7e3d21da47f7a9c99312e06"
+    },
+    {
+      "page": 18,
+      "sha256": "84a728380afa952391b3a2f8e1aeda87c534261869947a08670ad3401fe9d10c"
+    },
+    {
+      "page": 19,
+      "sha256": "51d30508b6cec7880169ceffba99129f52648aebde0fe2676e8b1080ec5ffd27"
+    }
+  ],
+  "slide_images": [
+    {
+      "slide": 1,
+      "sha256": "6c71adc422a81ba85099365d5347556f7183b8e27522c264c19bf6b82828afe6"
+    },
+    {
+      "slide": 2,
+      "sha256": "5edada11847f1ca452be8d5c41912d70a8abc7d1d9026a65da10b3d8e4736d36"
+    },
+    {
+      "slide": 3,
+      "sha256": "e2487dc82cb43468ac2bc25ece7fb144c9f5ca2d5fef66cab0c1b8c7db8a640f"
+    },
+    {
+      "slide": 4,
+      "sha256": "070750041dd96e5f9b476be951c2f4f95a367d1ffa05f69e806d1a7d19924ac0"
+    },
+    {
+      "slide": 5,
+      "sha256": "f44ce29e846f3f69b790309cb05b9a44f29049dab10fe7d5a2caa6b0b009e818"
+    },
+    {
+      "slide": 6,
+      "sha256": "3eec706d5d85388b4d2981c2776b389e12061af5bee24028713dcccd6d3c860a"
+    },
+    {
+      "slide": 7,
+      "sha256": "7a3f02c4c8946aa4df087b96e78a2f1754ed2b9c4cb9d14202735809c5b95ada"
+    },
+    {
+      "slide": 8,
+      "sha256": "33b6c23a4b8d9a78919911289a3d000ce1a3a18775172be99c0a3ae7a0136c3e"
+    },
+    {
+      "slide": 9,
+      "sha256": "ce98f5cc53d6c5042513d375510ee234ff7a311bc81ef78d9673399c842623c1"
+    },
+    {
+      "slide": 10,
+      "sha256": "37f80a7456255a31a63cb436780e9f996c126ec7fc59e6b8ac0c1ea730824914"
+    },
+    {
+      "slide": 11,
+      "sha256": "843eef79303d99915472823ef3531badaab74f49b48754d4b0c0208323af1871"
+    },
+    {
+      "slide": 12,
+      "sha256": "ed3d1e44b2273d4f0acec99f9ea11325379fa058123d9f8318f588338f5aa3ce"
+    },
+    {
+      "slide": 13,
+      "sha256": "ea001bdfd4b295e4c6f924a0b33d67cccc4be6fd02e1661464659c4213afffbb"
+    },
+    {
+      "slide": 14,
+      "sha256": "704e1855a3bac602547025a810433d24a83569479af7073a27452770cb707ac1"
+    },
+    {
+      "slide": 15,
+      "sha256": "fd54c70b36b87f1f62b8ad7cd3bc4e96bee50aa863a5b8f3de9ffe81eeff8679"
+    },
+    {
+      "slide": 16,
+      "sha256": "70875ea360969aa64a9d83c703e116596941cb2444e9323584c1a0e631a0ae49"
+    },
+    {
+      "slide": 17,
+      "sha256": "2936091491676f4f7c09f0380849df5c6d6e675faf85d5101ffab2b34c799414"
+    },
+    {
+      "slide": 18,
+      "sha256": "8bff395ffa6114b27f10f64a3d9abd1341e8c88ca4b6d6f3c71ec0c7d8d67ebd"
+    },
+    {
+      "slide": 19,
+      "sha256": "5d090bc65ac19b8ec81fc42524a5226b8b753f904cb26017e0aba6d4bc3ade59"
+    }
+  ]
+}

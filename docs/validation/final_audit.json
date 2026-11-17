@@ -1,0 +1,221 @@
+{
+  "status": "passed",
+  "runs": {
+    "04": {
+      "run_id": "20261118T003010_p04_b90874cf",
+      "inputs": 28,
+      "artifacts": 9,
+      "input_verification_basis": {
+        "current_bytes": 27,
+        "immutable_recorded_input_snapshot": 1
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 38.571690700002364
+    },
+    "05": {
+      "run_id": "20261118T003411_p05_ed9ae37d",
+      "inputs": 27,
+      "artifacts": 3,
+      "input_verification_basis": {
+        "current_bytes": 26,
+        "immutable_recorded_input_snapshot": 1
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 4.701862200003234
+    },
+    "06": {
+      "run_id": "20261118T003023_p06_dd3a8f40",
+      "inputs": 45,
+      "artifacts": 1,
+      "input_verification_basis": {
+        "current_bytes": 44,
+        "immutable_recorded_input_snapshot": 1
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 19.16286470000341
+    },
+    "08": {
+      "run_id": "20261118T000018_p08_d5053648",
+      "inputs": 23,
+      "artifacts": 2,
+      "input_verification_basis": {
+        "current_bytes": 19,
+        "git_blob_at_recorded_commit": 2,
+        "checksum_verified_recovered_source": 2
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 15.796106800000416
+    },
+    "09": {
+      "run_id": "20261118T000031_p09_db4b0eb2",
+      "inputs": 23,
+      "artifacts": 3,
+      "input_verification_basis": {
+        "current_bytes": 19,
+        "git_blob_at_recorded_commit": 2,
+        "checksum_verified_recovered_source": 2
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 97.43136490001052
+    },
+    "10": {
+      "run_id": "20261118T001529_p10_09f176d5",
+      "inputs": 24,
+      "artifacts": 3,
+      "input_verification_basis": {
+        "current_bytes": 21,
+        "immutable_recorded_input_snapshot": 3
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 289.37832059999346
+    },
+    "11": {
+      "run_id": "20261118T001742_p11_2810fef9",
+      "inputs": 24,
+      "artifacts": 2,
+      "input_verification_basis": {
+        "current_bytes": 22,
+        "immutable_recorded_input_snapshot": 2
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 86.10091509998892
+    },
+    "12": {
+      "run_id": "20261118T004847_p12_a74097b5",
+      "inputs": 25,
+      "artifacts": 9,
+      "input_verification_basis": {
+        "current_bytes": 24,
+        "immutable_recorded_input_snapshot": 1
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 0.6642801999987569
+    },
+    "07_small": {
+      "run_id": "20261117T235936_p07_e0ae2117",
+      "inputs": 23,
+      "artifacts": 3,
+      "input_verification_basis": {
+        "current_bytes": 19,
+        "git_blob_at_recorded_commit": 2,
+        "checksum_verified_recovered_source": 2
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 5.290657799996552
+    },
+    "07_nanshan": {
+      "run_id": "20261117T235946_p07_4ed639cd",
+      "inputs": 23,
+      "artifacts": 3,
+      "input_verification_basis": {
+        "current_bytes": 19,
+        "git_blob_at_recorded_commit": 2,
+        "checksum_verified_recovered_source": 2
+      },
+      "git": {
+        "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+        "dirty": true
+      },
+      "elapsed_s": 1295.5884533000062
+    }
+  },
+  "foundation_runs": {
+    "01": {
+      "run_id": "20261117T193651_p01_2e554d34",
+      "inputs": 171,
+      "artifacts": 4,
+      "input_verification_basis": {
+        "current_bytes": 168,
+        "git_blob_at_recorded_commit": 3
+      },
+      "git": {
+        "commit": "e8115197f63b0f926165406f4ec4c308d77d9bc0",
+        "dirty": false
+      },
+      "elapsed_s": 99.92491240000527
+    },
+    "02": {
+      "run_id": "20261117T203637_p02_0286d999",
+      "inputs": 215,
+      "artifacts": 4,
+      "input_verification_basis": {
+        "current_bytes": 212,
+        "git_blob_at_recorded_commit": 3
+      },
+      "git": {
+        "commit": "878e4671298cb208349c29d81d5b2d70d32868a6",
+        "dirty": false
+      },
+      "elapsed_s": 47.402686600005836
+    },
+    "03": {
+      "run_id": "20261117T215510_p03_ab17de87",
+      "inputs": 55,
+      "artifacts": 5,
+      "input_verification_basis": {
+        "current_bytes": 52,
+        "git_blob_at_recorded_commit": 3
+      },
+      "git": {
+        "commit": "410a526224966d7ac30203049978823185876038",
+        "dirty": false
+      },
+      "elapsed_s": 36.37850609999441
+    }
+  },
+  "final_data_files": 54,
+  "resilience": {
+    "07_small": {
+      "rows": 388,
+      "min_Q": 0.9501967712336492,
+      "max_gap": 0.0
+    },
+    "07_nanshan": {
+      "rows": 388,
+      "min_Q": 0.9980394108987972,
+      "max_gap": 9.496862400032774e-05
+    }
+  },
+  "tests_passed": 106,
+  "replay": {
+    "base_R": 0.9912682261200289,
+    "selected_R": 0.9971560091494998,
+    "max_absolute_error": 0.0
+  },
+  "sumo_vehicle_accounting": "all six runs balance; zero teleports; shared planned departures verified",
+  "scope": "Research prototype validated on small real network and selected full-Nanshan computations; not a calibrated city flood forecast or full-Nanshan optimization",
+  "limitations": [
+    "Full Nanshan optimization was not performed; six-road governance and ten-seed suites apply only to small three-TAZ subset",
+    "Nanshan SUMO overlap with small optimized risk roads is empty, so its disaster/optimized outputs coincide",
+    "Shelters missing, facility entrances/address geocodes and SW zero datum unverified",
+    "Network efficiency and betweenness use explicitly labeled origin sampling",
+    "OD, capacities, flood, effect and cost parameters uncalibrated; C/D/E deterministic sensitivities use seed 42"
+  ]
+}

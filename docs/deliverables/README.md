@@ -1,18 +1,15 @@
-# PPT 与 Word 维护说明
+# Word 与 PPT 维护说明
 
-- `开题与阶段进展汇报.pptx`：24张，可编辑文字，保留原PPT画布、主题和字体；同步至Phase 03，包含研究路线、论文、环境、路网、空间数据与五张OD/水位处理图。
-- `研究方案与阶段进展.docx`：19页，整合原研究构想与Phase 03实际状态，十二张运行图与来源、合成OD、水位不确定性及Phase 04规划。
-- `content.json`：共用的验收指标、状态、运行ID、图片与文献；源证据见 `../validation/`。
-- `delivery_manifest.json`：交付与原稿指纹、预览检查方式、源数据对应检查。
+2026-11-18维护版：Word19页、PPT19张，包含实际内涝、分配、南山韧性、小网六候选治理、十种子、SUMO和中文界面。共12张源图字节核验，全部逐页/逐张渲染查看。原始根PPT/Word及论文保留，原稿SHA见delivery_manifest.json。
 
-根目录原始 `开题汇报.pptx`、`新建 Microsoft Word 文档.docx` 和五篇论文不覆盖、不移动。维护版与验收图片已上传至 [GitHub](https://github.com/zhzhzh666/jiaotong)，首次确认main=71e17a0。大型结果、环境与原始材料留本地，需要另行备份。
+content.json的final.sections是共用正文、图片和备注证据，旧phase00—03字段作为历史保留。当前范围为南山分配/韧性/抽样SUMO、小网优化与十种子；未完成南山全尺度优化，也没有实测标定的洪灾预测。数据零点、代理坐标、不可达需求与小网范围均在两份文件中明示。
 
-每阶段先核对实际验收记录，再更新 content.json 及两个构建脚本中的叙述、阶段规划与方法边界，不能只改日期或指标。图片必须来自已保存真实运行，标明run_id；文献结果、设计假设、项目运行结果分别表述。两文件使用同一验收截止状态。
+先用项目环境执行scripts/build_final_content.py汇总真实成功run。Word使用Codex捆绑Python执行scripts/build_word.py --output 新文件.docx；PPT使用捆绑Node和artifact-tool，不能用python-pptx重建。将build_presentation.mjs和build_final_presentation.mjs一并复制到.cache/doc-sync，其node_modules链接捆绑模块目录，设置CODEX_PRESENTATION_SKILL、CODEX_ARTIFACT_PYTHON、RUNTIME_NODE_MODULES后从项目根目录执行build_presentation.mjs 新输出.pptx。捆绑运行时路径应通过load_workspace_dependencies查询，不修改项目环境。
 
-构建使用 Codex workspace dependencies 返回的捆绑Python、Node与模块路径，不修改项目 `.conda-env`。Python执行 `scripts/build_word.py`，可用 `--output` 指定新文件。PPT将 `scripts/build_presentation.mjs` 复制到 `.cache/doc-sync/`，在该目录链接捆绑 `node_modules`；设置 `CODEX_PRESENTATION_SKILL`、`CODEX_ARTIFACT_PYTHON`、`RUNTIME_NODE_MODULES`，从项目根目录执行该模块。PPT finalizer 默认不覆盖已有输出，可传第一个参数指定新的最终文件路径。检查完成后再替换维护入口，历史版本由Git保留。
+PPT finalizer禁止覆盖已有输出和旧回执，每次使用新路径，检查后复制到维护文件名。结构、字体、几何和再次导入检查通过后，对最终文件再次导入并逐张导PNG查看。Word的render_docx.py依赖LibreOffice；本机缺少该程序已诊断，采用Microsoft Word新建COM实例只读打开维护候选，ExportAsFixedFormat PDF17，pypdfium2生成每页PNG并逐页查看。不得操作用户正在编辑的原稿。
 
-每次必须检查导出的最终文档：PPT执行结构、布局、字体和再次导入检查后渲染每张幻灯片；Word先执行 documents skill 的 render_docx.py。当前Windows没有LibreOffice，已用 Microsoft Word COM 只读导出PDF、捆绑pypdfium2生成PNG替代。逐页检查标题、字体、表格、图片、页码与分页，修正后重新渲染。QA中间文件留 `.cache/doc-sync/`，不纳入仓库；最终检查结论和指纹写入交付记录。
+QA文件留.cache/doc-sync。人工看图后更新docs/validation/final_visual_review.json的实际文件SHA与结论，再用捆绑Python执行scripts/verify_deliverables.py，核对标题/DOI/12张嵌图/原稿/交付文件SHA并更新manifest。当前验证分支scripts/verify_final_deliverables.py的回执文件名对应本次final-reviewed；下一轮必须按新回执路径更新，不能挪用历史通过结论。最终数值审计使用项目环境-m uftr.cli run --phase 13。
 
-本次最终24张幻灯片与19页Word预览已逐张/逐页查看。`scripts/verify_deliverables.py` 用捆绑Python核对共用指标、文献DOI、四阶段run_id、十二张嵌入PNG字节、验收审计和根目录原稿指纹，同时更新交付清单。它不能代替视觉检查。最终测试依据 `../validation/phase03/pytest-final.*` 为98通过、44条已记录的rasterio/affine未来弃用警告；Phase 00历史指标仍37项、Phase 01仍62项。
+依赖锁是可安装的实际版本集合；docs/validation/installed-pip-freeze.txt保留原始pip provenance（含Conda构建位置与旧editable提交），requirements-lock.txt将本机构建URL规范为已安装版本并移除项目editable地址，项目本身另用pip install -e .安装。
 
-Phase 02官方积水坐标/水深与完整避难所未取得；60个合成风险点独立标注，几何置信度不是历史受灾证据。DSM不是排水DTM、人口为2020约1km模型、宝安单站日雨量不拆15分钟，详见 `../PHASE02_REPORT.md`。Phase 03新增45站水位及地址地理编码，零点未核实。下一阶段Phase 04尚未开始。
+验收范围、失败与修复记录、数据位置详见docs/FINAL_REPORT.md、USER_GUIDE.md和EXPERIMENT_LOG.md。此检查未声称原生PowerPoint播放或真实灾害校准已完成。

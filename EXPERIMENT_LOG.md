@@ -1,3 +1,54 @@
+# 实验记录：当前验收与完整历史
+
+2026-11-18：Phase 00—13按上述实际范围完成研究原型与最终审计；106项测试通过、44条既有弃用警告，pip check无冲突。南山已完成全图用户均衡、24小时/97端点韧性与固定2000辆计划的SUMO抽样；关键性、治理及十种子实验使用三个TAZ的小型真实区域。尚未实施南山全尺度优化，不能宣称全区治理收益或已校准历史灾害预测。
+
+| 阶段 | run_id |
+| --- | --- |
+| 04 | `20261118T003010_p04_b90874cf` |
+| 05 | `20261118T003411_p05_ed9ae37d` |
+| 06 | `20261118T003023_p06_dd3a8f40` |
+| 08 | `20261118T000018_p08_d5053648` |
+| 09 | `20261118T000031_p09_db4b0eb2` |
+| 10 | `20261118T001529_p10_09f176d5` |
+| 11 | `20261118T001742_p11_2810fef9` |
+| 12 | `20261118T004847_p12_a74097b5` |
+| 07_small | `20261117T235936_p07_e0ae2117` |
+| 07_nanshan | `20261117T235946_p07_4ed639cd` |
+| 13 | `20261118T005701_p13_457497bb` |
+
+Sioux Falls相对间隙9.92645e-5，参考流量相对RMSE0.05736%；南山平峰间隙1.70415e-5，未服务3649.7494 veh/h与区内1353.4766 veh/h均保留。南山正常/一般/严重/极端R为1 / 0.999913959 / 0.999664636 / 0.999460725，全部180次分配收敛，约21.6分钟。小网六路组、成本1、K=3、预算3、效果0.6，贪心选择road_05/road_03/road_04：R由0.991268226提高至0.997156009，与流量优先并列；42集合穷举差距0。独立十种子配对增益0.007565316，95% t区间[0.006974898,0.008155734]，只描述随机模型差异。
+
+## 本轮失败、修复与恢复
+
+所有失败run和日志均保留。GraphML字符串u/v属性覆盖节点标识，读取时改为图实际端点；NumPy已移除trapz，改用受支持积分接口；旧测试只接受早期CLI阶段和当前源码指纹，随新增功能更新。SUMO动态封路影响待发路线，改为保留外部队列、核查可发路线再入网；原有自环在SUMO沿同曲线拆为两段并保留映射，未新增连接。十种子训练完成后Tk绘图后端失败，切换Agg；从20261118T000318_p11_f3be35ea恢复已完成训练，保存源结果SHA，独立测试重跑。phase11_fresh.yaml可完全重算，phase11.yaml依赖该本机检查点。
+
+早期dirty运行缺少不可变源码副本，最终审计以原Git blob和SHA完全一致的恢复文件核验，恢复文件保存在docs/validation/source_snapshots；未改历史git状态或hash。后续归档增加源码/配置快照与输出清单。历史数据按真实本地字节核查。
+
+文档生成发现PPT空项目符号，删空行后修复；finalizer禁止覆盖旧输出，改新输出路径；子进程缺少RUNTIME_NODE_MODULES，显式配置捆绑路径后通过。Word沿已诊断的LibreOffice缺失使用Microsoft Word只读COM导PDF，再pypdfium2渲染；19页和19张逐一查看，12张源图字节核验，PPT结构/字体/再次导入检查通过。未声称原生PowerPoint播放测试。
+
+最终审计20261118T005701_p13_457497bb：基础和后续输入/图件、守恒、收敛、公平预算、独立种子、六次SUMO全车辆去向、界面与交付指纹通过；小网fresh重算R绝对误差0，54个数据文件冻结。最终106项测试/44警告、pip check通过，原始stdout见docs/validation/current-tests.txt与current-pip-check.txt。
+
+
+```powershell
+.conda-env/python.exe -m pytest -q
+.conda-env/python.exe -m pip check
+.conda-env/python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
+.conda-env/python.exe -m uftr.cli run --phase 06
+.conda-env/python.exe -m uftr.cli run --phase 07 --config configs/phase07_nanshan.yaml
+.conda-env/python.exe -m uftr.cli run --phase 11 --config configs/phase11_fresh.yaml
+.conda-env/python.exe -m uftr.cli run --phase 13
+.conda-env/python.exe -m uftr.cli reindex
+.conda-env/python.exe -m uftr.cli history --phase 10
+.conda-env/python.exe experiments/run_all.py --phases 04 05 06 07 08 09 10 11 --include-full-nanshan --dry-run
+```
+
+最后一条先检查命令，删除`--dry-run`才执行；包含南山07约22分钟，完整十种子需更久。Phase11默认恢复配置依赖本机失败运行的已完成训练检查点，`phase11_fresh.yaml`才是从零重算。12需要实际浏览器验收文件，13需要数据、历史运行和已验证交付文档，不是只克隆源码即可运行。新增运行保留新run_id，不覆盖历史。
+
+
+监测SW零点与测站地址代理位置未核实；OD、容量、积水、治理成本效果与情景概率未实测标定；人口与OSM年份不同，完整避难所缺失。南山时间效率为15起点抽样，介数32起点抽样。南山SUMO治理集合与风险无交集，灾害与治理结果相同；不据此证明全区治理有效。C/D/E只用种子42，B/F各十种子。GA为可选扩展未实现；G为实际分配效率表，不冒充南山优化耗时。
+
+## 历史Phase00—03（当时状态，保留原文）
+
 # 实验配置与结果
 
 ## 2026-11-17 Phase 00 实施过程记录

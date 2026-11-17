@@ -1,75 +1,46 @@
-# 暴雨内涝下城市交通网络韧性评估与优化
+# 深圳暴雨内涝交通韧性研究原型
 
-基于深圳真实路网的分阶段研究工程。Phase 00—03已验收，98项测试通过。已完成真实有向OSM路网、空间数据、568个TAZ及三时段重力/IPF合成OD，并接入45站18123条用户提供水位。需求均未标定，水位零点及地址位置待核实；尚无内涝、分配、韧性或治理结果。见[Phase 03报告](docs/PHASE03_REPORT.md)。
+2026-11-18：Phase 00—13按上述实际范围完成研究原型与最终审计；106项测试通过、44条既有弃用警告，pip check无冲突。南山已完成全图用户均衡、24小时/97端点韧性与固定2000辆计划的SUMO抽样；关键性、治理及十种子实验使用三个TAZ的小型真实区域。尚未实施南山全尺度优化，不能宣称全区治理收益或已校准历史灾害预测。
 
-## 安装（Windows PowerShell）
+## 使用与结果
 
-在 `C:\Users\zh\Desktop\git\jiaotong` 执行：
+界面启动后打开 http://127.0.0.1:8501 。八页中文系统展示预计算结果，侧栏筛选情景、时间、K、策略与效果；未计算组合明确提示。治理图为小网选中道路，Phase09参考曲线有固定参数标识。
 
-```powershell
-conda create --prefix .conda-env --override-channels -c conda-forge python=3.11 pip -y
-& .\.conda-env\python.exe -m pip install -r requirements.in
-& .\.conda-env\python.exe -m pip install --no-index --disable-pip-version-check --no-build-isolation --no-deps -e .
-```
-
-精确复现已验收环境时，用下面的锁文件安装方式替代上面的宽范围依赖安装：
 
 ```powershell
-conda create --prefix .conda-env --file conda-win-64.lock.txt -y
-& .\.conda-env\python.exe -m pip install -r requirements-win-64.lock.txt
-& .\.conda-env\python.exe -m pip install --no-index --disable-pip-version-check --no-build-isolation --no-deps -e .
+.conda-env/python.exe -m pytest -q
+.conda-env/python.exe -m pip check
+.conda-env/python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
+.conda-env/python.exe -m uftr.cli run --phase 06
+.conda-env/python.exe -m uftr.cli run --phase 07 --config configs/phase07_nanshan.yaml
+.conda-env/python.exe -m uftr.cli run --phase 11 --config configs/phase11_fresh.yaml
+.conda-env/python.exe -m uftr.cli run --phase 13
+.conda-env/python.exe -m uftr.cli reindex
+.conda-env/python.exe -m uftr.cli history --phase 10
+.conda-env/python.exe experiments/run_all.py --phases 04 05 06 07 08 09 10 11 --include-full-nanshan --dry-run
 ```
 
-锁文件针对Windows x64；其他平台需要重新求解和验收。SUMO 的 Python 接口与 SUMO/netconvert 可执行程序是独立依赖；可执行程序在 Phase 10 检查，本阶段不以接口导入冒充微观仿真可运行。
+最后一条先检查命令，删除`--dry-run`才执行；包含南山07约22分钟，完整十种子需更久。Phase11默认恢复配置依赖本机失败运行的已完成训练检查点，`phase11_fresh.yaml`才是从零重算。12需要实际浏览器验收文件，13需要数据、历史运行和已验证交付文档，不是只克隆源码即可运行。新增运行保留新run_id，不覆盖历史。
 
-## 运行和测试
 
-```powershell
-& .\.conda-env\python.exe -m uftr.cli check-config
-& .\.conda-env\python.exe -m pytest
-& .\.conda-env\python.exe -m pip check
-& .\.conda-env\python.exe -m uftr.cli run --phase 00
-& .\.conda-env\python.exe -m uftr.cli run --phase 01
-& .\.conda-env\python.exe -m uftr.cli run --phase 02 --offline-source data/raw/phase02/20261117_source_acquisition
-& .\.conda-env\python.exe -m uftr.cli history --phase 02
-& .\.conda-env\python.exe -m uftr.cli history --date 2026-11-17 --kind figure
-& .\.conda-env\python.exe -m uftr.cli reindex
-```
+## 实际结果
 
-不在根目录执行时，命令增加 `--root C:\Users\zh\Desktop\git\jiaotong`（放在子命令前）。可用 `--config` 指定配置文件。当前接受 `--phase 00`、`--phase 01` 和 `--phase 02`；Phase 01可用 `--offline-source data/raw/phase01/20261117T192004_p01_d71ec83e` 校验已存原始快照后离线重放。公开下载需要网络。Phase 02默认在线下载，或使用上方已封存快照离线重放；需保留配置所指Phase 01原始OSM和处理路网，克隆仓库本身不包含大型数据。Phase 03以后尚无执行入口。
+Sioux Falls相对间隙9.92645e-5，参考流量相对RMSE0.05736%；南山平峰间隙1.70415e-5，未服务3649.7494 veh/h与区内1353.4766 veh/h均保留。南山正常/一般/严重/极端R为1 / 0.999913959 / 0.999664636 / 0.999460725，全部180次分配收敛，约21.6分钟。小网六路组、成本1、K=3、预算3、效果0.6，贪心选择road_05/road_03/road_04：R由0.991268226提高至0.997156009，与流量优先并列；42集合穷举差距0。独立十种子配对增益0.007565316，95% t区间[0.006974898,0.008155734]，只描述随机模型差异。
 
-## 图片与结果查询
+监测SW零点与测站地址代理位置未核实；OD、容量、积水、治理成本效果与情景概率未实测标定；人口与OSM年份不同，完整避难所缺失。南山时间效率为15起点抽样，介数32起点抽样。南山SUMO治理集合与风险无交集，灾害与治理结果相同；不据此证明全区治理有效。C/D/E只用种子42，B/F各十种子。GA为可选扩展未实现；G为实际分配效率表，不冒充南山优化耗时。
 
-打开 `results/index.html`，用阶段、日期、区域、情景、策略关键词筛选缩略图；命令行可组合 `--phase --region --scenario --strategy --kind --run-id --date` 精确查询。
+## 文档、图片与数据
 
-每次运行保存：
+- [Word研究报告](docs/deliverables/研究方案与阶段进展.docx)：19页；[PPT汇报](docs/deliverables/开题与阶段进展汇报.pptx)：19张，均逐页渲染查看，12张嵌入源图SHA匹配。
+- [最终报告](docs/FINAL_REPORT.md)、[操作说明](docs/USER_GUIDE.md)、[最终审计](docs/validation/final_audit.json)。
+- 本机完整图片索引`results/index.html`；每次`results/runs/<run_id>/`保留raw、figures、screenshots、logs、配置与manifest。Git中可查`docs/validation/phase04`至`phase12`的小型验收副本。
+- 原始资料、完整`data`和`results/runs`留本机，克隆仓库不包含这些大型输入，复现需按`configs`路径恢复本机备份；`docs/validation/final_data_inventory.json`冻结54个输入文件字节。
+- 根目录论文、原PPT/Word和用户六份水位CSV/ZIP保留；原稿指纹见`delivery_manifest.json`。字段字典存本机`data/raw/user_sources/field_dictionary_e9e5a7bd`。
 
-```text
-results/runs/<run_id>/
-  config.json            # 实际配置快照
-  manifest.json          # 代码版本、输入/图片指纹、时间、状态、来源
-  raw/environment.json   # 实际环境和依赖导入结果
-  figures/               # PNG及SVG
-  screenshots/           # 后续真实界面截图
-  logs/                  # 运行及失败记录
-```
+## 环境与来源
 
-CSV/HTML索引可重建；历史运行不覆盖、不自动删除。results大文件未纳入Git，需要另行备份整个运行目录才能保留所有结果。原始论文也保留在本机根目录，源码仓库保存其指纹。
+使用本项目`.conda-env/python.exe`（Python3.11），锁定依赖见`requirements-lock.txt`，Eclipse SUMO/traci/sumolib1.28.0。新机器在独立Python3.11环境中安装`requirements-lock.txt`和`pip install -e .`；不修改系统/base环境。包锁来自Windows，不保证其他平台二进制依赖完全一致。
 
-## 文档和后续步骤
+OSM / WorldPop / Copernicus / NOAA / TNTP来源、许可及估计字段见[DATA_SOURCES.md](DATA_SOURCES.md)。45站18123条水位来自用户抓取的深圳开放平台，SW为m、SJ北京时间；路面零点仍未正式说明，不将观测直接当道路积水深度。
 
-维护的可编辑汇报见 [PPT](docs/deliverables/开题与阶段进展汇报.pptx) 与 [Word](docs/deliverables/研究方案与阶段进展.docx)，当前同步到 Phase 03；19页Word、24张PPT，嵌入环境、路网、空间数据、合成OD及水位共12张运行图片，研究模型与后续实验明确标为待实施。原稿留在根目录。每阶段验收后同步更新两份文件，构建与检查方法见 [文档维护说明](docs/deliverables/README.md)。项目已上传至 [GitHub](https://github.com/zhzhzh666/jiaotong)，main保留全部本地阶段提交及远端初始化历史；原始论文、环境与大型数据仍在本机。
-
-PLAN.md 为完整 Phase 00—13 路线及验收；PROGRESS.md 为当前实际进度；DATA_SOURCES.md 说明数据状态；MODEL_ASSUMPTIONS.md 区分论文模型和工程假设；docs/LITERATURE_REVIEW.md 为全文核实记录；EXPERIMENT_LOG.md 保存命令和真实结果。
-
-下一阶段Phase 04，在收到继续指令后实施24 h/15 min参数化内涝时序。实测深圳OD、完整避难所与本地细时序雨量仍缺，SW疑似积水深度但零点未核实；不宣称历史灾害重建。
-
-## Phase 03 已验收 2026-11-17
-
-最终运行20261117T215510_p03_ab17de87，实现提交410a526224966d7ac30203049978823185876038、dirty=false，36.3785秒。98项测试通过、44条rasterio/affine未来弃用警告，pip check无冲突。568个1000 m裁剪TAZ，236个正产生/吸引TAZ；193个区内道路接入、43个未接入，未删需求；6个真实跨界外部节点。保留233个WorldPop原生像元的1540614.3657147214估计人数。平/早/晚峰总量36974.744777/73949.489554/66554.540599 veh/h，全部为未标定合成小时率原型；每时段58528非零OD对。IPF最大相对边际误差9.64608e-10，最大绝对误差6.891502e-7 veh/h。区内未上图与正常不可达需求单列，原MultiDiGraph不改动。
-
-水位来源由用户确认：深圳市政府数据开放平台抓取，高水位日期筛选，平台地址经高德地理编码。45站、18123条记录；6站/2393条在研究边界，1条东莞POI匹配方式可疑。用户确认0.15/0.30/0.40 m蓝黄橙红分级；SW路面零点仅为“平时近零”的推测，平台未明确，保留raw值，不直接作为道路积水深度。六个原始CSV/ZIP在根目录和sealed snapshot保持字节不变，未纳入Git。
-
-独立审计、5图/55输入/114索引链接校验通过，11项关键输出与首轮成功运行逐字节一致。5张实际PNG逐张查看并保存到docs/validation/phase03；Word19页、PPT24张全部渲染检查，12张嵌入源图字节核验，原稿指纹不变。报告和命令见docs/PHASE03_REPORT.md。下一阶段为Phase 04，本阶段结束停止，收到继续指令再实施。
-
-复现Phase 03：`.conda-env/python.exe -m uftr.cli run --phase 03 --user-source data/raw/user_sources/20261117T215014_p03_2b8fe770`。首次接入时六个用户文件须放项目根目录，可省略--user-source。大型输入未在Git中，须使用本地封存目录；下载代码不会自动取得这些数据。
+[GitHub仓库](https://github.com/zhzhzh666/jiaotong)。逐阶段run_id见[PROGRESS.md](PROGRESS.md)，历史Phase03文档保存在`docs/history-phase03/`；历史“未开始”描述不代表当前状态。

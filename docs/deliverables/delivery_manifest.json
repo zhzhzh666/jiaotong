@@ -1,25 +1,33 @@
 {
-  "updated": "2026-11-17",
-  "phase_status": "Phase 00—03 已验收（合成OD与受限水位数据接入）；Phase 04—13 未开始",
-  "run_id": "20261117T215510_p03_ab17de87",
-  "phase00_run_id": "20261117T173510_p00_a2d49eb6",
-  "phase01_run_id": "20261117T193651_p01_2e554d34",
+  "updated": "2026-11-18",
+  "phase_status": "研究原型：南山分配与韧性评估、小网治理与十种子实验；实际验收范围及限制见报告",
+  "accepted_runs": {
+    "04": "20261118T003010_p04_b90874cf",
+    "05": "20261118T003411_p05_ed9ae37d",
+    "06": "20261118T003023_p06_dd3a8f40",
+    "08": "20261118T000018_p08_d5053648",
+    "09": "20261118T000031_p09_db4b0eb2",
+    "10": "20261118T001529_p10_09f176d5",
+    "11": "20261118T001742_p11_2810fef9",
+    "07": "20261117T235946_p07_4ed639cd",
+    "07_small": "20261117T235936_p07_e0ae2117"
+  },
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 3687723,
-      "sha256": "d2fc73924bab30fa69d7d3b6352be500bc7e0082fa542a1782ea343f124f14f3"
+      "bytes": 1312031,
+      "sha256": "7512a6288a4bddfa4c44591e51e88855888d04896498313bc894079bc23ade91"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 3618611,
-      "sha256": "895bb4f2eb1b654f35e89c1d152024d5a019c02467b626897e54ea61aa2f98ff"
+      "bytes": 1252029,
+      "sha256": "ef9c1b3b5366a89c1724efcbdb5c538d7b41e80772253b22a7d05eded56d28cf"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 8321,
-    "sha256": "294bb1f3c9129d0b9fc08141fb0e198a02068efd0f2f6243ab15b0e3d316f3b0"
+    "bytes": 31961,
+    "sha256": "7760bc205e79ce9810687ea887793c499d56fe457dec5f6d8f2527cebd247ed7"
   },
   "originals_preserved": [
     {
@@ -33,102 +41,23 @@
       "sha256": "0afb0446f42bfc4dc8d04b557642897c2540188c2a2ef88fc2e73926c387b324"
     }
   ],
-  "evidence": [
-    {
-      "path": "docs/validation/environment_check.png",
-      "bytes": 65703,
-      "sha256": "c343fa790d5e6a1ef0afcd2a122e0dba94e5390fd51246068aa056f8b01fa7fb"
-    },
-    {
-      "path": "docs/validation/phase01/road_network.png",
-      "bytes": 465648,
-      "sha256": "c3c0ce27276be9a5d30daf67494c41fde5956d81d8f082c9956189ff7fd80258"
-    },
-    {
-      "path": "docs/validation/phase01/small_road_network.png",
-      "bytes": 375953,
-      "sha256": "04f1e7c72f29a14743b6848a8b4a32e4d8c302d5603b0c661ce54dda68b3e2e9"
-    },
-    {
-      "path": "docs/validation/phase02/synthetic_risk_map.png",
-      "bytes": 409663,
-      "sha256": "8dcdde9f163b72d090dd21ddbc7fc9ff4fa481bb1da06250559481d3f1955053"
-    },
-    {
-      "path": "docs/validation/phase02/facilities_map.png",
-      "bytes": 406960,
-      "sha256": "0d911644a52735c3e40d2db5faefedd1550e4a72dd62973897545966a08489ad"
-    },
-    {
-      "path": "docs/validation/phase02/terrain_population.png",
-      "bytes": 362398,
-      "sha256": "2c2e64f5a3e564a5ad2aa7c77dec2a6f57c92e3b157c4a0676bb92cdd1d60e5f"
-    },
-    {
-      "path": "docs/validation/phase02/rainfall_daily.png",
-      "bytes": 104109,
-      "sha256": "e19f64ef21d98afadf3595757d9ad1b4d78fb32029f5718ac4af86d757f29f96"
-    },
-    {
-      "path": "docs/validation/phase03/traffic_zones.png",
-      "bytes": 376789,
-      "sha256": "2be11f4607a0d43a6c92e8397dfa23ada805dbd39a146b1f1e2c154532719df5"
-    },
-    {
-      "path": "docs/validation/phase03/od_heatmap.png",
-      "bytes": 526970,
-      "sha256": "0f48ca2bdcb64b4d885fd8edaf8ec29bc2115d3b30b9cd1b9f5db667aee3d6f4"
-    },
-    {
-      "path": "docs/validation/phase03/od_desire_lines.png",
-      "bytes": 368339,
-      "sha256": "26d30f2c8b6382f692f27d6dce2b791126daff1342be39a15be7c1b87881b0c3"
-    },
-    {
-      "path": "docs/validation/phase03/user_station_map.png",
-      "bytes": 137159,
-      "sha256": "87d7ad4aef6294e10844425c65f9d37e9d5a4d5779be1917ca614b8effda1b67"
-    },
-    {
-      "path": "docs/validation/phase03/user_water_series.png",
-      "bytes": 122969,
-      "sha256": "1152526fc521567dfd5f86d16de66923e7aa086a5db049042d73af5f0939db44"
-    },
-    {
-      "path": "docs/validation/phase03/accepted-run-manifest.json",
-      "bytes": 22978,
-      "sha256": "361754818a7f543e85506637c1427c559e550ab7cc68d1dc40c2c5283a71a494"
-    },
-    {
-      "path": "docs/validation/phase03/pytest-final.xml",
-      "bytes": 11742,
-      "sha256": "2ac9d05e8da9b17e582922a90b96400bb2cdd3c1b05e127f4f3cd0e375503a9b"
-    },
-    {
-      "path": "docs/validation/phase03/acceptance_inventory.json",
-      "bytes": 3745,
-      "sha256": "d8b2433ec34237031f88a49650081e21d097f6877a5ced09940032db4951167b"
-    }
-  ],
   "verification": {
-    "pptx_slides": 24,
+    "final_content_checked": true,
+    "all_pages_and_slides_visually_reviewed": true,
+    "pptx_slides": 19,
     "docx_pages": 19,
-    "embedded_images": 12,
+    "embedded_source_images": 12,
     "embedded_image_sha256_matches": true,
-    "shared_metrics_and_doi_checked": true,
+    "tests_passed": 106,
+    "shared_titles_and_doi_checked": true,
     "pptx_package_layout_fonts_and_reimport": "pass",
-    "pptx_render": "Artifact Tool final reimport PNG; all 24 slides individually inspected",
-    "word_render": "render_docx.py unavailable due to missing LibreOffice; Microsoft Word COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; all 19 final pages individually inspected",
-    "pptx_finalizer_receipt_sha256": "54170a4e8551566de271be0903b13ea6e503c88ebe1c5621a4a5fff2fefa432c",
-    "qa_directory": ".cache/doc-sync/",
-    "limitations": "Native PowerPoint application not inspected; Word preview inspected as PDF page images."
+    "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
+    "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
+    "native_powerpoint_playback_verified": false
   },
-  "github_upload_status": {
-    "status": "Uploaded; first accepted remote main verified",
-    "repository": "https://github.com/zhzhzh666/jiaotong",
-    "branch": "main",
-    "first_verified_upload_commit": "71e17a07a6e46219f88f5b9b4402f8abe4a4ba6f",
-    "verified_at": "2026-11-17T21:01:12+08:00",
-    "scope": "Source, phase commits, maintained Word/PPT and small acceptance evidence; raw data, environment and original papers remain local"
+  "visual_review": {
+    "path": "docs/validation/final_visual_review.json",
+    "bytes": 5037,
+    "sha256": "cff3dc320f24980f055d412607d68ee490600eceeb05f23dbac3d200eaccfa0f"
   }
 }

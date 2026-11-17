@@ -1,0 +1,275 @@
+{
+  "timing": "Frozen at final audit, not at original historical run",
+  "files": [
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/full_osm_administrative_scope/road_network.graphml",
+      "bytes": 55322594,
+      "sha256": "b772ae6a75d5cdc4d4ed9c97a218c55dcedb321d66dbf01f090a8ef0df93b2c9"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/full_osm_administrative_scope/scope_exclusions.json",
+      "bytes": 4049,
+      "sha256": "05e9a52d6349a781be699c98f061a5453dbd65f03b36bdeccfe22f79d24bca5d"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/network_statistics.json",
+      "bytes": 12915,
+      "sha256": "05f58f564c01d4bc75c19b966216409ddb7e50b2a90372134df8605e038f9ca8"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_attributes.csv",
+      "bytes": 17061201,
+      "sha256": "457696cb8b3b358a5edfdd43327c044b5d89269f78429e7a073b16ae4ab5d325"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_edges.geojson",
+      "bytes": 47356256,
+      "sha256": "8f0b98d70179196255ab92f9e46fa455051b46a426e6afcb950e0d2c45e6bbc6"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_network.graphml",
+      "bytes": 55288977,
+      "sha256": "821f2cc8a2b832c75c890c881fd9046bcafe5d299a05904cc3201e3af69b215b"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_network.png",
+      "bytes": 465648,
+      "sha256": "c3c0ce27276be9a5d30daf67494c41fde5956d81d8f082c9956189ff7fd80258"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_nodes.geojson",
+      "bytes": 4562447,
+      "sha256": "711012f151427b178e7e1990a55722e67a38381e7d548ffd8e482e5f1330a918"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/study_boundary.geojson",
+      "bytes": 19862,
+      "sha256": "24ada03ca126e131c4d3bc959e588f1c34e5d315f5521de7a4995a2190e541fb"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/output_inventory.json",
+      "bytes": 3165,
+      "sha256": "169dddab84af1c53d7a1db433884c2a721d8aeff358ffdea03210602b2a351fa"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/sioux_falls/sioux_links.csv",
+      "bytes": 3684,
+      "sha256": "fb654b8fd5041032c2e6ee60f96598631d79ae3560f13066f8c969134d624756"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/sioux_falls/sioux_nodes.csv",
+      "bytes": 714,
+      "sha256": "f4b2242c67ef86527d2369dd42bc31091f66eb645ba965bc01e12f159db9bffa"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/sioux_falls/sioux_od.csv",
+      "bytes": 7113,
+      "sha256": "6eea62b34470dabebb0b43d80fd1d07e3dd5b97d01998598917809afa781c57b"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/sioux_falls/sioux_reference_flow.csv",
+      "bytes": 3240,
+      "sha256": "d6876fe71f692ad49e0ab4927da7522298bc23f3105d08894fdc91d023e8a577"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/sioux_falls/sioux_statistics.json",
+      "bytes": 1359,
+      "sha256": "2f4886d75a9a4c806fcda61aba7ead418f84a914cee4eb28e56ea1d7aedd3207"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/network_statistics.json",
+      "bytes": 7844,
+      "sha256": "50c78e52bf30bc78927448699f45831eb11e3d0355b9c849067beab8563bcb57"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/road_attributes.csv",
+      "bytes": 935193,
+      "sha256": "9ed23dcfcd8f9ca782ac3a341738d2f8c82cd11832240b4ef5e61263c03c1b9d"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/road_edges.geojson",
+      "bytes": 2339934,
+      "sha256": "29323c8f3f3ec550eb996129c869b0e087b8fe1f16a4b0ab085d1d10efa742b8"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/road_network.graphml",
+      "bytes": 3091266,
+      "sha256": "18212856ca249aff17636b3cdd6db502ce9d5ebac5c9bcddade52217a9f43129"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/road_network.png",
+      "bytes": 375953,
+      "sha256": "04f1e7c72f29a14743b6848a8b4a32e4d8c302d5603b0c661ce54dda68b3e2e9"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/road_nodes.geojson",
+      "bytes": 220050,
+      "sha256": "935ce390b45a271dbe9289dfb5acca033b0c12181287d4d30f52618ea98da840"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/small/study_boundary.geojson",
+      "bytes": 365,
+      "sha256": "e6b46d32708d14735dbe8ce53f4115084e8ecabc5533cca3430356e4c622cee4"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/copernicus_dsm_30m.tif",
+      "bytes": 729621,
+      "sha256": "02d69f906224f679e69bd22f5b07db94574ee6fe194cee7e50d1ff36b4b90b9e"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/data_quality_report.json",
+      "bytes": 4980,
+      "sha256": "47e153c5dc6685c4b05daa6ff51c705d3513df1ca370e70cc775cd8cc1c31e41"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/facilities.geojson",
+      "bytes": 11292,
+      "sha256": "0ada2397bcafead549c2f3f8ea74d4aa375ab0f3a17d577fb654a29cf0301c87"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/facility_road_candidates.csv",
+      "bytes": 65058,
+      "sha256": "da849a055c8651d9686a67bd0f9110e58aa37b6372fd42f2f5dda48fd6f87044"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/flood_points.geojson",
+      "bytes": 169,
+      "sha256": "21f1fee7f0b8ed05d13cf10a0df4908a4709dfa4674df4df872d7e3a9040a461"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/flood_road_mapping.csv",
+      "bytes": 194777,
+      "sha256": "707e0da75293c3d5af9c8449d5f56e1fce6b4b81702b92bf4ee92d605c761e72"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/output_inventory.json",
+      "bytes": 1806,
+      "sha256": "a202f8da32f977db6f92a52dc629f8c4380fa13e3e74774823e2c459fb73b59e"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/population_2020_native_1km.tif",
+      "bytes": 1444,
+      "sha256": "1fa23ac9a22606e9f95c9ff8b399f8d9214cbf3982c16d0874886f7546cc2d91"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/rainfall_timeseries.csv",
+      "bytes": 52286,
+      "sha256": "cb1b54d9c4bb7fcdf280c7128bbd83358b96650c0ff1add7f7cbb8c277f2baaa"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/all_zone_connectors.csv",
+      "bytes": 72868,
+      "sha256": "8a88077833370e0d206c5b6b01915d883083e915ab7113af9470b7efa8bd63f4"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/boundary_gateways.geojson",
+      "bytes": 2178,
+      "sha256": "69d29ffeff7d6b28a26c10ccae3d47d800e271c06635c5df5211e59f43bf5d78"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/demand_report.json",
+      "bytes": 6798,
+      "sha256": "839d4cf23cce065e82dd22360931da869c2d9d1aa2ca10021a79a61b31cd6619"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/ipf_trace.csv",
+      "bytes": 22595,
+      "sha256": "61151b420273e337d5adf46a33ffaf5ce1621d1795162c5550adf8e60f9ad9f0"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/network_skims.csv",
+      "bytes": 535080,
+      "sha256": "80e612a41c0665560e5960d92214c3a0dbd657a45ee111098b72bfab488e90a0"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/output_inventory.json",
+      "bytes": 4914,
+      "sha256": "c02fa08db6f276f0ae59f05d75efaaf3d450f037d9e079d3f7a3d42272b8bc13"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/population_allocation.csv",
+      "bytes": 112697,
+      "sha256": "a11a919382045e85c859ba4e99fb840c3b22b9c6dcf9e80a1c9268bbff22d3ce"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/traffic_zones.geojson",
+      "bytes": 314994,
+      "sha256": "daefcef1c88f1caff08588410b35c22b6bfaced4d023353ea72344b5fe513e4f"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/station_sampling_quality.csv",
+      "bytes": 7150,
+      "sha256": "568bf11f51ef19ca52ea18276534697a9d438f3b2a037bd72c4421b31144b9d9"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_station_road_candidates.csv",
+      "bytes": 29998,
+      "sha256": "394ba737ab3b6470256346e305161df1a10ec2fd42986005336dec1f90208f9e"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_stations_all.geojson",
+      "bytes": 33528,
+      "sha256": "56aabf02e387cad03677a52702e41f78518b724dbbc24bbf43a19427808169f4"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_stations_in_study.geojson",
+      "bytes": 4486,
+      "sha256": "d56902807cef153381aeec9b6ab31709c097717dbd6784e1ff5c4e8fdd3d01fc"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_water_levels_all.csv",
+      "bytes": 4386956,
+      "sha256": "14312dd5782d83bba972f49f760ace42d37b66abd0f944c220376a0c50f51700"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_water_levels_in_study.csv",
+      "bytes": 561357,
+      "sha256": "44aa9d48978549193b078215951cb8367b9ab68d3002318f904d1467cd1d81c8"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_water_quality.json",
+      "bytes": 3031,
+      "sha256": "b31628441367cf0fd6770d51f06fb820ec1eb8c908c21f5d89977dc2883ab3a9"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/zone_connectors.csv",
+      "bytes": 33288,
+      "sha256": "a07b11b4e15de7abba98fb8188b389ed15bf2fab0c2a3395fdb5514a8f156adc"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/zone_population.csv",
+      "bytes": 69065,
+      "sha256": "7581e0f3211163a0218b23503b3d36ef9b4b1970e21dfcd8a65d6b3442d95c72"
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/zone_targets.csv",
+      "bytes": 72462,
+      "sha256": "a55397a982dc1401ae186126d59cd04c10e17e41cffe922d220c2746a0d55cc6"
+    },
+    {
+      "path": "data/synthetic/phase03/20261117T215510_p03_ab17de87/od_all_periods.csv",
+      "bytes": 28013150,
+      "sha256": "ace4c1773ccc0ef9e8b32f62fee4d966c066692be2d1a1ae4678778f28513d06"
+    },
+    {
+      "path": "data/synthetic/phase04/20261117T234926_p04_08fa964b/edge_depth_timeseries.parquet",
+      "bytes": 70269,
+      "sha256": "413f0bbf09c6cfe7feeecff06a025331a3234cc6fdff0f252ef4c4fa6e0bb812"
+    },
+    {
+      "path": "data/raw/user_sources/field_dictionary_e9e5a7bd/extracted.txt",
+      "bytes": 6830,
+      "sha256": "f1fc885dc7f3123453d075ee0a176e3b0000ef506e54d7e93ed43159120bf953"
+    },
+    {
+      "path": "data/raw/user_sources/field_dictionary_e9e5a7bd/provenance.json",
+      "bytes": 713,
+      "sha256": "6e1a61f0a09f5306d44c76b555252faf20030752e7e6920e914492afe9e97a02"
+    },
+    {
+      "path": "data/raw/user_sources/field_dictionary_e9e5a7bd/深圳市积涝点水位数据字段说明.docx",
+      "bytes": 41844,
+      "sha256": "e9e5a7bd05a6ee9daa24f05f623e9349f760127e01f74fb1c47d599ba70be1c1"
+    }
+  ]
+}
