@@ -1,0 +1,78 @@
+{
+  "source_kind": "user_supplied_platform_water_levels_with_address_geocodes",
+  "stations": 45,
+  "source_platform": "深圳市政府数据开放平台 (user attestation)",
+  "user_attestation": "User scraped platform water levels, selected high-water dates; 45 stations; platform addresses geocoded using Amap. Exact dataset/API URL not supplied.",
+  "risk_thresholds_m_user_confirmed": [
+    0.15,
+    0.3,
+    0.4
+  ],
+  "risk_labels_match_confirmed_thresholds": true,
+  "datum_user_interpretation": "Dry-weather SW near zero supports suspected road-relative depth, but the platform does not specify the zero datum; unverified interpretation",
+  "water_level_records": 18123,
+  "source_flagged_records": 1377,
+  "source_flagged_stations": 29,
+  "timestamp_min_raw": "2023-09-07 00:00:33",
+  "timestamp_max_raw": "2023-09-08 20:04:05",
+  "water_level_raw_min": 0.0,
+  "water_level_raw_max": 1.95,
+  "district_label_nanshan_stations": 7,
+  "stations_within_study": 6,
+  "records_within_study": 2393,
+  "suspicious_geocode_station_ids": [
+    "9281292012"
+  ],
+  "summary_peak_max_difference": 0.0,
+  "filtered_subset_exactly_matches_full": true,
+  "source_label_ranges": [
+    {
+      "风险等级": "橙Ⅱ(严重影响)",
+      "count": 95,
+      "min": 0.3,
+      "max": 0.39
+    },
+    {
+      "风险等级": "红Ⅰ(交通中断)",
+      "count": 1016,
+      "min": 0.4,
+      "max": 1.95
+    },
+    {
+      "风险等级": "蓝Ⅳ(一般积水)",
+      "count": 16746,
+      "min": 0.0,
+      "max": 0.14
+    },
+    {
+      "风险等级": "黄Ⅲ(交通不便)",
+      "count": 266,
+      "min": 0.15,
+      "max": 0.29
+    }
+  ],
+  "source_zip_checks": [
+    {
+      "archive": "深圳积涝测站_全部45站.geojson.zip",
+      "features": 45,
+      "input_crs_declaration": "WGS84(EPSG:4326)",
+      "note": "Nonstandard string CRS in source retained; normalized derived output uses standard GeoJSON WGS84"
+    },
+    {
+      "archive": "深圳积涝测站_洪涝29站.geojson.zip",
+      "features": 29,
+      "input_crs_declaration": "WGS84(EPSG:4326)",
+      "note": "Nonstandard string CRS in source retained; normalized derived output uses standard GeoJSON WGS84"
+    }
+  ],
+  "depth_adoption_status": "quarantined_from_road_depth_until_original_unit_and_vertical_reference_verified",
+  "limitations": [
+    "User confirms Shenzhen open-data platform and Amap address geocoding; exact dataset/API URL and original field dictionary not supplied yet",
+    "CSV peak column claims metres; SW original unit and zero datum not verified",
+    "Address/POI geocodes, not sensor surveyed coordinates; a Dongguan POI match is flagged",
+    "District labels not used to override spatial study boundary",
+    "Source risk classes and flood flag are derived labels, not observed vehicle closure",
+    "Sampling irregular; no interpolation or missing-to-zero fill",
+    "First/last flagged time span is not continuous inundation duration"
+  ]
+}

@@ -6,7 +6,7 @@ Phase 00 验收补充：已实际生成observed-environment类型的环境JSON�
 
 - 用户原始任务书：复制到 docs/TASK_SPEC.md，保留完整阶段要求。
 - 5篇论文全文：用户提供，位于项目根目录；大小、页数、SHA256 见 docs/references/local_inventory.json。原件不改动，不纳入 Git。
-- 用户开题汇报 PPTX 和新建 DOCX：保留原件；原稿不编辑，维护版已同步至Phase 02，不把其中未经核实的数字当实测输入。
+- 用户开题汇报 PPTX 和新建 DOCX：保留原件；原稿不编辑，维护版已同步至Phase 03，不把其中未经核实的数字当实测输入。
 - 本机硬件/依赖状态：由 psutil、platform、importlib 和 nvidia-smi 实际读取；原始 JSON 随运行存档，属于 observed-environment。
 - 在线论文信息：Crossref 公共元数据；访问状态及时间见 docs/references/online_metadata.json。论文全文访问状态与书目信息核实状态分别记录。
 
@@ -16,11 +16,11 @@ Phase 00 验收补充：已实际生成observed-environment类型的环境JSON�
 | --- | --- | --- |
 | 机动车道路、方向、几何 | OSM/OSMnx/Overpass，来源 https://www.openstreetmap.org/ | 已获取真实OSM小区及南山研究窗口；缺失速度/车道与全部容量估计逐字段标记，见下文 |
 | Sioux Falls | https://github.com/bstabler/TransportationNetworks/tree/master/SiouxFalls | 已获取固定提交d1639b4的net/trips/node/flow和README；保留原单位及学术研究许可 |
-| 历史积水/水深/2023-09-07至08降雨 | 深圳官方数据开放平台、气象/水务/应急等具有明确出处的公开材料 | 积水/水深未取得（平台元数据403，下载需实名）；已获NOAA宝安2023逐日雨量，仅作区域参考 |
+| 历史积水/水深/2023-09-07至08降雨 | 深圳官方数据开放平台、气象/水务/应急等具有明确出处的公开材料 | 用户新增45站水位及地址地理编码，SW零点待核实；已获NOAA宝安2023逐日雨量，仅作区域参考 |
 | DEM | Copernicus DEM https://dataspace.copernicus.eu/ 或 NASA SRTM https://www.earthdata.nasa.gov/ | 已获Copernicus GLO-30 DSM两瓦片，约30m/EGM2008；不是排水DTM，许可与原件已保存 |
 | 人口 | WorldPop https://www.worldpop.org/ | 已获WorldPop 2020约1km UN调整模型人数，CC BY 4.0；保留原生像元，不是当年普查 |
 | 医院/消防/避难所 | 官方公开名录优先，OSM POI 可作备选 | OSM医院14/消防15；未获完整避难所，面内点不是核验入口 |
-| 真实 OD | 合法公开或用户提供 | 当前没有，允许明确标注的重力/IPF 合成替代 |
+| 真实 OD | 合法公开或用户提供 | 没有实测OD；已构建明确标注的三时段重力/IPF合成OD |
 
 ## 保存约定
 
@@ -47,7 +47,12 @@ Sioux Falls来自https://github.com/bstabler/TransportationNetworks ，固定提
 
 人口233个原生像元的1540614.3657人数合计仅是模型与研究边界裁剪结果，海岸/边界像元有误差，不能称官方人口；DSM负值保留。时间和精度不一致，不能宣称重建2023暴雨。
 
+## Phase 03 已验收 2026-11-17
 
-## Phase 03 本轮实施状态
+最终运行20261117T215510_p03_ab17de87，实现提交410a526224966d7ac30203049978823185876038、dirty=false，36.3785秒。98项测试通过、44条rasterio/affine未来弃用警告，pip check无冲突。568个1000 m裁剪TAZ，236个正产生/吸引TAZ；193个区内道路接入、43个未接入，未删需求；6个真实跨界外部节点。保留233个WorldPop原生像元的1540614.3657147214估计人数。平/早/晚峰总量36974.744777/73949.489554/66554.540599 veh/h，全部为未标定合成小时率原型；每时段58528非零OD对。IPF最大相对边际误差9.64608e-10，最大绝对误差6.891502e-7 veh/h。区内未上图与正常不可达需求单列，原MultiDiGraph不改动。
 
-用户已授权继续。已实现1000 m TAZ、原生人口守恒分摊、重力/IPF三时段合成OD、真实边界节点和不可达需求保留；新增45站水位数据封存与质量检查。首次成功运行20261117T215014_p03_2b8fe770；98项测试通过，pip check无冲突。正在进行干净源码离线重放和Word/PPT同步，完成前不标记阶段验收。数据平台和高德地址编码由用户确认；0.15/0.30/0.40 m分级阈值已确认，SW路面零点仅为用户推测。
+水位来源由用户确认：深圳市政府数据开放平台抓取，高水位日期筛选，平台地址经高德地理编码。45站、18123条记录；6站/2393条在研究边界，1条东莞POI匹配方式可疑。用户确认0.15/0.30/0.40 m蓝黄橙红分级；SW路面零点仅为“平时近零”的推测，平台未明确，保留raw值，不直接作为道路积水深度。六个原始CSV/ZIP在根目录和sealed snapshot保持字节不变，未纳入Git。
+
+独立审计、5图/55输入/114索引链接校验通过，11项关键输出与首轮成功运行逐字节一致。5张实际PNG逐张查看并保存到docs/validation/phase03；Word19页、PPT24张全部渲染检查，12张嵌入源图字节核验，原稿指纹不变。报告和命令见docs/PHASE03_REPORT.md。下一阶段为Phase 04，本阶段结束停止，收到继续指令再实施。
+
+来源精确URL、抓取时间、许可和GCJ02→WGS84转换脚本尚缺；不能补造平台原始字典。根目录六文件SHA256和sealed snapshot清单见docs/validation/phase03/user_source_inventory.json。derived用户水位另存processed/phase03/<run_id>/user_water，不覆盖Phase 02的历史缺失记录。

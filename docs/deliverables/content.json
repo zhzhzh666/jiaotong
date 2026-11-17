@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-17",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "Phase 00—02 已验收（Phase 02 含明确数据缺失替代）；Phase 03—13 未开始",
+  "status": "Phase 00—03 已验收（合成OD与受限水位数据接入）；Phase 04—13 未开始",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -117,5 +117,78 @@
     "first_verified_upload_commit": "71e17a07a6e46219f88f5b9b4402f8abe4a4ba6f",
     "verified_at": "2026-11-17T21:01:12+08:00",
     "scope": "Source, phase commits, maintained Word/PPT and small acceptance evidence; raw data, environment and original papers remain local"
+  },
+  "phase03": {
+    "run_id": "20261117T215510_p03_ab17de87",
+    "zones": 568,
+    "active_internal_zones": 236,
+    "connected_active_zones": 193,
+    "unconnected_active_zones": 43,
+    "boundary_gateways": 6,
+    "population": {
+      "native_cells": 233,
+      "native_people": 1540614.3657147214,
+      "allocated_people": 1540614.3657147214,
+      "assumption": "Uniform distribution within retained native cell intersect study boundary, normalized to preserve Phase 02 cell count; not observed 1km TAZ population"
+    },
+    "periods": {
+      "offpeak": {
+        "total_veh_h": 36974.74477715332,
+        "internal_veh_h": 30812.28731429443,
+        "inbound_veh_h": 3081.228731429443,
+        "outbound_veh_h": 3081.228731429443,
+        "nonzero_od_pairs": 58528,
+        "by_route_status_veh_h": {
+          "intrazonal_not_graph_loaded": 1353.4765893972303,
+          "routable": 31971.518754052315,
+          "unreachable_normal_network": 3649.7494337037756
+        },
+        "max_absolute_margin_error_veh_h": 3.1324816518463194e-07,
+        "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+      },
+      "morning_peak": {
+        "total_veh_h": 73949.48955430662,
+        "internal_veh_h": 61624.57462858886,
+        "inbound_veh_h": 6162.457462858886,
+        "outbound_veh_h": 6162.457462858886,
+        "nonzero_od_pairs": 58528,
+        "by_route_status_veh_h": {
+          "intrazonal_not_graph_loaded": 2560.603216466439,
+          "routable": 63918.00809629683,
+          "unreachable_normal_network": 7470.8782415433625
+        },
+        "max_absolute_margin_error_veh_h": 6.891500561323483e-07,
+        "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+      },
+      "evening_peak": {
+        "total_veh_h": 66554.54059887599,
+        "internal_veh_h": 55462.11716572998,
+        "inbound_veh_h": 5546.211716572998,
+        "outbound_veh_h": 5546.211716572998,
+        "nonzero_od_pairs": 58528,
+        "by_route_status_veh_h": {
+          "intrazonal_not_graph_loaded": 2334.743035640827,
+          "routable": 57492.947394227194,
+          "unreachable_normal_network": 6726.850169007965
+        },
+        "max_absolute_margin_error_veh_h": 4.050556299262098e-07,
+        "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+      }
+    },
+    "max_ipf_relative_error": 9.646079346360236e-10,
+    "user_source_snapshot": "data/raw/user_sources/20261117T215014_p03_2b8fe770",
+    "report": "docs/PHASE03_REPORT.md",
+    "evidence": "docs/validation/phase03/accepted-run-manifest.json",
+    "source_commit": "410a526224966d7ac30203049978823185876038",
+    "runtime_seconds": 36.3785,
+    "tests_passed": 98,
+    "warnings": 44,
+    "figures": {
+      "zones": "docs/validation/phase03/traffic_zones.png",
+      "heatmap": "docs/validation/phase03/od_heatmap.png",
+      "desire": "docs/validation/phase03/od_desire_lines.png",
+      "stations": "docs/validation/phase03/user_station_map.png",
+      "water": "docs/validation/phase03/user_water_series.png"
+    }
   }
 }

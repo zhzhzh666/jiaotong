@@ -1,25 +1,25 @@
 {
   "updated": "2026-11-17",
-  "phase_status": "Phase 00—02 已验收（Phase 02 含明确数据缺失替代）；Phase 03—13 未开始",
-  "run_id": "20261117T203637_p02_0286d999",
+  "phase_status": "Phase 00—03 已验收（合成OD与受限水位数据接入）；Phase 04—13 未开始",
+  "run_id": "20261117T215510_p03_ab17de87",
   "phase00_run_id": "20261117T173510_p00_a2d49eb6",
   "phase01_run_id": "20261117T193651_p01_2e554d34",
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 2194699,
-      "sha256": "aa5fce64bcbbeafa8be3ede61866ff58cb93f57a6b2a65a4e98979857a8fb48e"
+      "bytes": 3687723,
+      "sha256": "d2fc73924bab30fa69d7d3b6352be500bc7e0082fa542a1782ea343f124f14f3"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 2147657,
-      "sha256": "23c3f7ac700d64b83ab3b59775ada4e5edc6b02e9c64842640879571daa8ae2b"
+      "bytes": 3618611,
+      "sha256": "895bb4f2eb1b654f35e89c1d152024d5a019c02467b626897e54ea61aa2f98ff"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 5175,
-    "sha256": "3fa49530a73225a233b509ce2b4ed902e8d595875599d00bac7ec999e3a55903"
+    "bytes": 8321,
+    "sha256": "294bb1f3c9129d0b9fc08141fb0e198a02068efd0f2f6243ab15b0e3d316f3b0"
   },
   "originals_preserved": [
     {
@@ -70,31 +70,56 @@
       "sha256": "e19f64ef21d98afadf3595757d9ad1b4d78fb32029f5718ac4af86d757f29f96"
     },
     {
-      "path": "docs/validation/phase02/accepted-run-manifest.json",
-      "bytes": 59537,
-      "sha256": "e0114d1c675e8d7919464f33845cb1bad2c87a5df4df736f13b6e0865b876708"
+      "path": "docs/validation/phase03/traffic_zones.png",
+      "bytes": 376789,
+      "sha256": "2be11f4607a0d43a6c92e8397dfa23ada805dbd39a146b1f1e2c154532719df5"
     },
     {
-      "path": "docs/validation/phase02/pytest-final.xml",
-      "bytes": 9357,
-      "sha256": "f3ce842e6d4dc98728c2f460dfd4a3d151859b57883f59b830f872622326b0cd"
+      "path": "docs/validation/phase03/od_heatmap.png",
+      "bytes": 526970,
+      "sha256": "0f48ca2bdcb64b4d885fd8edaf8ec29bc2115d3b30b9cd1b9f5db667aee3d6f4"
     },
     {
-      "path": "docs/validation/phase02/acceptance_inventory.json",
-      "bytes": 5243,
-      "sha256": "b22c5160fcf58a4aa9ecd194b155c950084f16a7971cd23b8fe26b7a9e648525"
+      "path": "docs/validation/phase03/od_desire_lines.png",
+      "bytes": 368339,
+      "sha256": "26d30f2c8b6382f692f27d6dce2b791126daff1342be39a15be7c1b87881b0c3"
+    },
+    {
+      "path": "docs/validation/phase03/user_station_map.png",
+      "bytes": 137159,
+      "sha256": "87d7ad4aef6294e10844425c65f9d37e9d5a4d5779be1917ca614b8effda1b67"
+    },
+    {
+      "path": "docs/validation/phase03/user_water_series.png",
+      "bytes": 122969,
+      "sha256": "1152526fc521567dfd5f86d16de66923e7aa086a5db049042d73af5f0939db44"
+    },
+    {
+      "path": "docs/validation/phase03/accepted-run-manifest.json",
+      "bytes": 22978,
+      "sha256": "361754818a7f543e85506637c1427c559e550ab7cc68d1dc40c2c5283a71a494"
+    },
+    {
+      "path": "docs/validation/phase03/pytest-final.xml",
+      "bytes": 11742,
+      "sha256": "2ac9d05e8da9b17e582922a90b96400bb2cdd3c1b05e127f4f3cd0e375503a9b"
+    },
+    {
+      "path": "docs/validation/phase03/acceptance_inventory.json",
+      "bytes": 3745,
+      "sha256": "d8b2433ec34237031f88a49650081e21d097f6877a5ced09940032db4951167b"
     }
   ],
   "verification": {
-    "pptx_slides": 18,
-    "docx_pages": 13,
-    "embedded_images": 7,
+    "pptx_slides": 24,
+    "docx_pages": 19,
+    "embedded_images": 12,
     "embedded_image_sha256_matches": true,
     "shared_metrics_and_doi_checked": true,
     "pptx_package_layout_fonts_and_reimport": "pass",
-    "pptx_render": "Artifact Tool final reimport PNG; all 18 slides individually inspected",
-    "word_render": "render_docx.py unavailable due to missing LibreOffice; Microsoft Word COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; all 13 final pages individually inspected",
-    "pptx_finalizer_receipt_sha256": "3bdcaff34d59d9b1fb72094ff4aab4a2753438545bfddefaef6d95720abceac9",
+    "pptx_render": "Artifact Tool final reimport PNG; all 24 slides individually inspected",
+    "word_render": "render_docx.py unavailable due to missing LibreOffice; Microsoft Word COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; all 19 final pages individually inspected",
+    "pptx_finalizer_receipt_sha256": "54170a4e8551566de271be0903b13ea6e503c88ebe1c5621a4a5fff2fefa432c",
     "qa_directory": ".cache/doc-sync/",
     "limitations": "Native PowerPoint application not inspected; Word preview inspected as PDF page images."
   },

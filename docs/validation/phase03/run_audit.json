@@ -1,0 +1,15 @@
+{
+  "run_id": "20261117T215510_p03_ab17de87",
+  "status": "passed",
+  "artifacts_verified": 5,
+  "inputs_verified": 55,
+  "index_links_verified": 114,
+  "dependency_imports": null,
+  "historical_git_inputs_verified": 0,
+  "git": {
+    "commit": "410a526224966d7ac30203049978823185876038",
+    "dirty": false
+  },
+  "elapsed_s": 36.37850609999441,
+  "visual_png_review": "separate human/agent inspection required"
+}

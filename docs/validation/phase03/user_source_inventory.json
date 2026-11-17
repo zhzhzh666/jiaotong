@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-11-17T21:50:15+08:00",
+  "source_kind": "user_supplied_derived",
+  "source_url": null,
+  "source_platform": "深圳市政府数据开放平台 (user attestation)",
+  "user_attestation": "User scraped platform water levels, selected high-water dates; 45 stations; platform addresses geocoded using Amap. Exact dataset/API URL not supplied.",
+  "original_unit_and_vertical_reference": "not independently verified",
+  "risk_thresholds_m_user_confirmed": [
+    0.15,
+    0.3,
+    0.4
+  ],
+  "datum_user_interpretation": "User infers road-relative depth because dry-weather SW is usually near zero; platform does not state the zero datum. Treat as plausible interpretation, not verified datum.",
+  "coordinates": "CSV claims WGS84 converted from geocoded GCJ02; not surveyed sensor coordinates",
+  "files": [
+    {
+      "path": "深圳积涝测站_带坐标汇总.csv",
+      "bytes": 8743,
+      "sha256": "b9014186d9b74386d0acead43f3d7da618ba36391b82e374b1d64afc6ac0c249"
+    },
+    {
+      "path": "9·7暴雨_全量水位_带分级.csv",
+      "bytes": 1306375,
+      "sha256": "818d2db72bbccdf9cc9a451807e5de484b0615155a0991a4577ac0a359d735b5"
+    },
+    {
+      "path": "9·7暴雨_洪涝水位记录_带坐标.csv",
+      "bytes": 179242,
+      "sha256": "af3d7e2b65472423dd59ec1753820c8c637989863f81e075635ab8966b215d02"
+    },
+    {
+      "path": "9·7暴雨_测站洪涝指标汇总(1).csv",
+      "bytes": 5153,
+      "sha256": "950cc5c40fbe01b1f173577f88222d633909134c7912cc2d22d67f539d6bf39d"
+    },
+    {
+      "path": "深圳积涝测站_全部45站.geojson.zip",
+      "bytes": 3397,
+      "sha256": "84ef6ada048da4caa589d4789b914b60e405652e88b17bfa8f404f3e3d10a59f"
+    },
+    {
+      "path": "深圳积涝测站_洪涝29站.geojson.zip",
+      "bytes": 2566,
+      "sha256": "dd08623c24b32fb027497d6b52578646a730aeea01b299d0329e32bc20a139b7"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "run_id": "20261117T215510_p03_ab17de87",
+  "source_commit": "410a526224966d7ac30203049978823185876038",
+  "visual_review": "All five final Phase 03 PNGs individually inspected; no clipping or text overlap",
+  "files": [
+    {
+      "path": "docs/validation/phase03/accepted-config.json",
+      "bytes": 2460,
+      "sha256": "3a4e4c5a864f76995df1ffece9db22e224c4d4c5882bfe3cfd98073110d0cfd4"
+    },
+    {
+      "path": "docs/validation/phase03/accepted-run-manifest.json",
+      "bytes": 22978,
+      "sha256": "361754818a7f543e85506637c1427c559e550ab7cc68d1dc40c2c5283a71a494"
+    },
+    {
+      "path": "docs/validation/phase03/demand_audit.json",
+      "bytes": 482,
+      "sha256": "72ff90c738c23b44d2a61310f83b744e9039d40762715f11fefb730cd0cecc1b"
+    },
+    {
+      "path": "docs/validation/phase03/demand_report.json",
+      "bytes": 6798,
+      "sha256": "839d4cf23cce065e82dd22360931da869c2d9d1aa2ca10021a79a61b31cd6619"
+    },
+    {
+      "path": "docs/validation/phase03/initial-demand-audit.json",
+      "bytes": 362,
+      "sha256": "7ea993916d4731c3aa7989c3c36dd6c751475d81adfb154a2c0886cb5e8a68e0"
+    },
+    {
+      "path": "docs/validation/phase03/od_desire_lines.png",
+      "bytes": 368339,
+      "sha256": "26d30f2c8b6382f692f27d6dce2b791126daff1342be39a15be7c1b87881b0c3"
+    },
+    {
+      "path": "docs/validation/phase03/od_heatmap.png",
+      "bytes": 526970,
+      "sha256": "0f48ca2bdcb64b4d885fd8edaf8ec29bc2115d3b30b9cd1b9f5db667aee3d6f4"
+    },
+    {
+      "path": "docs/validation/phase03/pip-check.txt",
+      "bytes": 31,
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "path": "docs/validation/phase03/pytest-final.txt",
+      "bytes": 5174,
+      "sha256": "1f52d0e317f85798c59da3670d5869fe33e7a7e9fc849fd14dac6905cda7d856"
+    },
+    {
+      "path": "docs/validation/phase03/pytest-final.xml",
+      "bytes": 11742,
+      "sha256": "2ac9d05e8da9b17e582922a90b96400bb2cdd3c1b05e127f4f3cd0e375503a9b"
+    },
+    {
+      "path": "docs/validation/phase03/pytest-initial.xml",
+      "bytes": 11635,
+      "sha256": "76e6951de98f71b78f3dcdcb06b6d1c6b5486dc46bd2bd50b8189a219a7871ba"
+    },
+    {
+      "path": "docs/validation/phase03/run_audit.json",
+      "bytes": 430,
+      "sha256": "56af7808f2c11a9bd58e81a7880d3afdbce5258108d755e0175f82fc9df7ab26"
+    },
+    {
+      "path": "docs/validation/phase03/station_sampling_quality.csv",
+      "bytes": 7150,
+      "sha256": "568bf11f51ef19ca52ea18276534697a9d438f3b2a037bd72c4421b31144b9d9"
+    },
+    {
+      "path": "docs/validation/phase03/traffic_zones.png",
+      "bytes": 376789,
+      "sha256": "2be11f4607a0d43a6c92e8397dfa23ada805dbd39a146b1f1e2c154532719df5"
+    },
+    {
+      "path": "docs/validation/phase03/user_source_inventory.json",
+      "bytes": 1939,
+      "sha256": "ce759526f269e0f11a8cab2a90b7003cd69caa0956359b51d86ea0e14239e53e"
+    },
+    {
+      "path": "docs/validation/phase03/user_station_map.png",
+      "bytes": 137159,
+      "sha256": "87d7ad4aef6294e10844425c65f9d37e9d5a4d5779be1917ca614b8effda1b67"
+    },
+    {
+      "path": "docs/validation/phase03/user_station_road_candidates.csv",
+      "bytes": 29998,
+      "sha256": "394ba737ab3b6470256346e305161df1a10ec2fd42986005336dec1f90208f9e"
+    },
+    {
+      "path": "docs/validation/phase03/user_water_quality.json",
+      "bytes": 3031,
+      "sha256": "b31628441367cf0fd6770d51f06fb820ec1eb8c908c21f5d89977dc2883ab3a9"
+    },
+    {
+      "path": "docs/validation/phase03/user_water_series.png",
+      "bytes": 122969,
+      "sha256": "1152526fc521567dfd5f86d16de66923e7aa086a5db049042d73af5f0939db44"
+    }
+  ]
+}

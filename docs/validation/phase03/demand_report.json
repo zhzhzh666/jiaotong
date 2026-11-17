@@ -1,0 +1,157 @@
+{
+  "run_id": "20261117T215510_p03_ab17de87",
+  "status": "passed_synthetic_demand_and_qualified_water_intake",
+  "processed_root": "data/processed/phase03/20261117T215510_p03_ab17de87",
+  "synthetic_root": "data/synthetic/phase03/20261117T215510_p03_ab17de87",
+  "user_source_snapshot": "data/raw/user_sources/20261117T215014_p03_2b8fe770",
+  "zones": 568,
+  "active_internal_zones": 236,
+  "connected_active_zones": 193,
+  "unconnected_active_zones": 43,
+  "boundary_gateways": 6,
+  "graph_nodes": 20447,
+  "graph_directed_edges": 40105,
+  "population": {
+    "native_cells": 233,
+    "native_people": 1540614.3657147214,
+    "allocated_people": 1540614.3657147214,
+    "assumption": "Uniform distribution within retained native cell intersect study boundary, normalized to preserve Phase 02 cell count; not observed 1km TAZ population"
+  },
+  "attraction": {
+    "facility_population_fallback": false,
+    "facility_count_assigned": 29,
+    "assumption": "Population plus incomplete emergency POI score only; no measured employment, commercial trips or commuting validation"
+  },
+  "periods": {
+    "offpeak": {
+      "total_veh_h": 36974.74477715332,
+      "internal_veh_h": 30812.28731429443,
+      "inbound_veh_h": 3081.228731429443,
+      "outbound_veh_h": 3081.228731429443,
+      "nonzero_od_pairs": 58528,
+      "by_route_status_veh_h": {
+        "intrazonal_not_graph_loaded": 1353.4765893972303,
+        "routable": 31971.518754052315,
+        "unreachable_normal_network": 3649.7494337037756
+      },
+      "max_absolute_margin_error_veh_h": 3.1324816518463194e-07,
+      "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+    },
+    "morning_peak": {
+      "total_veh_h": 73949.48955430662,
+      "internal_veh_h": 61624.57462858886,
+      "inbound_veh_h": 6162.457462858886,
+      "outbound_veh_h": 6162.457462858886,
+      "nonzero_od_pairs": 58528,
+      "by_route_status_veh_h": {
+        "intrazonal_not_graph_loaded": 2560.603216466439,
+        "routable": 63918.00809629683,
+        "unreachable_normal_network": 7470.8782415433625
+      },
+      "max_absolute_margin_error_veh_h": 6.891500561323483e-07,
+      "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+    },
+    "evening_peak": {
+      "total_veh_h": 66554.54059887599,
+      "internal_veh_h": 55462.11716572998,
+      "inbound_veh_h": 5546.211716572998,
+      "outbound_veh_h": 5546.211716572998,
+      "nonzero_od_pairs": 58528,
+      "by_route_status_veh_h": {
+        "intrazonal_not_graph_loaded": 2334.743035640827,
+        "routable": 57492.947394227194,
+        "unreachable_normal_network": 6726.850169007965
+      },
+      "max_absolute_margin_error_veh_h": 4.050556299262098e-07,
+      "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+    }
+  },
+  "max_ipf_relative_error": 9.646079346360236e-10,
+  "water_intake": {
+    "source_kind": "user_supplied_platform_water_levels_with_address_geocodes",
+    "stations": 45,
+    "source_platform": "深圳市政府数据开放平台 (user attestation)",
+    "user_attestation": "User scraped platform water levels, selected high-water dates; 45 stations; platform addresses geocoded using Amap. Exact dataset/API URL not supplied.",
+    "risk_thresholds_m_user_confirmed": [
+      0.15,
+      0.3,
+      0.4
+    ],
+    "risk_labels_match_confirmed_thresholds": true,
+    "datum_user_interpretation": "Dry-weather SW near zero supports suspected road-relative depth, but the platform does not specify the zero datum; unverified interpretation",
+    "water_level_records": 18123,
+    "source_flagged_records": 1377,
+    "source_flagged_stations": 29,
+    "timestamp_min_raw": "2023-09-07 00:00:33",
+    "timestamp_max_raw": "2023-09-08 20:04:05",
+    "water_level_raw_min": 0.0,
+    "water_level_raw_max": 1.95,
+    "district_label_nanshan_stations": 7,
+    "stations_within_study": 6,
+    "records_within_study": 2393,
+    "suspicious_geocode_station_ids": [
+      "9281292012"
+    ],
+    "summary_peak_max_difference": 0.0,
+    "filtered_subset_exactly_matches_full": true,
+    "source_label_ranges": [
+      {
+        "风险等级": "橙Ⅱ(严重影响)",
+        "count": 95,
+        "min": 0.3,
+        "max": 0.39
+      },
+      {
+        "风险等级": "红Ⅰ(交通中断)",
+        "count": 1016,
+        "min": 0.4,
+        "max": 1.95
+      },
+      {
+        "风险等级": "蓝Ⅳ(一般积水)",
+        "count": 16746,
+        "min": 0.0,
+        "max": 0.14
+      },
+      {
+        "风险等级": "黄Ⅲ(交通不便)",
+        "count": 266,
+        "min": 0.15,
+        "max": 0.29
+      }
+    ],
+    "source_zip_checks": [
+      {
+        "archive": "深圳积涝测站_全部45站.geojson.zip",
+        "features": 45,
+        "input_crs_declaration": "WGS84(EPSG:4326)",
+        "note": "Nonstandard string CRS in source retained; normalized derived output uses standard GeoJSON WGS84"
+      },
+      {
+        "archive": "深圳积涝测站_洪涝29站.geojson.zip",
+        "features": 29,
+        "input_crs_declaration": "WGS84(EPSG:4326)",
+        "note": "Nonstandard string CRS in source retained; normalized derived output uses standard GeoJSON WGS84"
+      }
+    ],
+    "depth_adoption_status": "quarantined_from_road_depth_until_original_unit_and_vertical_reference_verified",
+    "limitations": [
+      "User confirms Shenzhen open-data platform and Amap address geocoding; exact dataset/API URL and original field dictionary not supplied yet",
+      "CSV peak column claims metres; SW original unit and zero datum not verified",
+      "Address/POI geocodes, not sensor surveyed coordinates; a Dongguan POI match is flagged",
+      "District labels not used to override spatial study boundary",
+      "Source risk classes and flood flag are derived labels, not observed vehicle closure",
+      "Sampling irregular; no interpolation or missing-to-zero fill",
+      "First/last flagged time span is not continuous inundation duration"
+    ]
+  },
+  "limitations": [
+    "All OD is synthetic, uncalibrated hourly prototypes, no observed commuting or 24h schedule",
+    "Population and emergency POIs are incomplete attraction proxies; sensitivity required",
+    "Virtual within-zone access is an assumption, not a verified drivable access route",
+    "Intrazonal trips retained separately, not loaded onto graph edges",
+    "Disconnected demand remains positive; no graph edges invented",
+    "Boundary demand equal shares at actual outside crossing nodes, not measured screenline flows",
+    "Water-level SW unit/zero reference and address geocodes not sufficient for road-depth adoption"
+  ]
+}
