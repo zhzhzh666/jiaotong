@@ -109,7 +109,12 @@ def graph_from_tiles(directory,polygon):
     xml=E.Element('osm',version='0.6',generator='UFTR official-map-api motor-road filter')
     for n in sorted(needed): xml.append(nodes[n])
     for w in sorted(ways): xml.append(ways[w])
-    path=directory/'drive_filtered.osm'; E.ElementTree(xml).write(path,encoding='utf-8',xml_declaration=True)
+    path=directory/'drive_filtered.osm'
+    content=E.tostring(xml,encoding='utf-8',xml_declaration=True)
+    if path.exists():
+        if path.read_bytes()!=content: raise ValueError('derived source XML changed; retain original and use a new snapshot')
+    else:
+        path.write_bytes(content)
     old_tags=ox.settings.useful_tags_way.copy()
     try:
         ox.settings.useful_tags_way=list(dict.fromkeys(old_tags+TAGS))

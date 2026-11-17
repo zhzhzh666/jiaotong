@@ -50,11 +50,22 @@ def main():
         assert (results / unquote(value)).is_file(), f"broken local index link: {value}"
     rows = [row for row in artifact_rows(results) if row["run_id"] == args.run_id]
     assert len(rows) == len(manifest["artifacts"])
-    environment = json.loads((run / "raw/environment.json").read_text(encoding="utf-8"))
-    assert all(item["ok"] for item in environment["dependencies"])
+    dependency_imports=None
+    if manifest['phase']=='00':
+        environment = json.loads((run / "raw/environment.json").read_text(encoding="utf-8"))
+        assert all(item["ok"] for item in environment["dependencies"])
+        dependency_imports=len(environment['dependencies'])
+    elif manifest['phase']=='01':
+        network=json.loads((run/'raw/network_report.json').read_text(encoding='utf-8'))
+        processed=root/network['processed_root']
+        inventory=json.loads((processed/'output_inventory.json').read_text(encoding='utf-8'))
+        for item in inventory['files']:
+            path=(processed/item['path']).resolve(); path.relative_to(processed.resolve())
+            assert file_hash(path)==item['sha256'],f'processed output changed: {path}'
+        assert all(network[k]['missing_required_attributes']==0 for k in ['small','nanshan'])
     report = {"run_id": args.run_id, "status": "passed", "artifacts_verified": len(rows),
               "inputs_verified": len(manifest["inputs"]), "index_links_verified": len(links.paths),
-              "dependency_imports": len(environment["dependencies"]), "git": manifest["git"],
+              "dependency_imports": dependency_imports, "git": manifest["git"],
               "elapsed_s": manifest["elapsed_s"], "visual_png_review": "separate human/agent inspection required"}
     write_json(root / args.output, report)
     print(json.dumps(report, ensure_ascii=False, indent=2))

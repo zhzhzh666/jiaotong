@@ -72,6 +72,8 @@ def validate_config(data: dict) -> dict:
             raise ValueError('road distance CRS must be EPSG:32650')
         _positive(attributes.get('free_flow_factor'),'free_flow_factor')
         if attributes['free_flow_factor']>1: raise ValueError('free-flow factor must not exceed speed limit')
+        window=network.get('study_window_bbox',[])
+        if len(window)!=4 or not all(isinstance(x,(int,float)) and math.isfinite(x) for x in window) or not (window[0]<window[2] and window[1]<window[3]): raise ValueError('study_window_bbox must be ordered WGS84 bounds')
         if 'fallback' not in attributes.get('defaults',{}): raise ValueError('fallback road attributes required')
         for road,values in attributes['defaults'].items():
             for key in ['speed_kph','lanes_per_direction','capacity_per_lane_veh_h']: _positive(values.get(key),road+'.'+key)

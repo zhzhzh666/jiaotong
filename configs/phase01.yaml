@@ -112,3 +112,8 @@ network:
         speed_kph: 30
         lanes_per_direction: 1
         capacity_per_lane_veh_h: 1000
+  study_window_bbox:
+  - 113.69
+  - 22.35
+  - 114.03
+  - 22.66

@@ -72,6 +72,20 @@ def test_source_tamper_rejected(osm_fixture):
     (osm_fixture/'tile.osm').write_text('altered')
     with pytest.raises(ValueError,match='checksum'): graph_from_tiles(osm_fixture,box(113,22,114,23))
 
+def test_isolated_roundabout_and_conditional_data_are_not_silently_lost(osm_fixture):
+    path=osm_fixture/'tile.osm'; tree=E.parse(path); osm=tree.getroot()
+    for n,lon,lat in [(7,113.942,22.542),(8,113.943,22.542),(9,113.9425,22.543)]:
+        E.SubElement(osm,'node',id=str(n),lon=str(lon),lat=str(lat),version='1')
+    w=E.SubElement(osm,'way',id='106',version='1')
+    for n in [7,8,9,7]: E.SubElement(w,'nd',ref=str(n))
+    E.SubElement(w,'tag',k='highway',v='residential'); E.SubElement(w,'tag',k='junction',v='roundabout')
+    tree.write(path,encoding='utf-8')
+    write_json(osm_fixture/'download_manifest.json',{'tiles':[{'path':'tile.osm','sha256':file_hash(path)}]})
+    g=make_graph(osm_fixture)
+    assert nx.number_weakly_connected_components(g)==3
+    assert any(d['osmid']==106 for _,_,d in g.edges(data=True))
+    assert all(d['oneway'] for _,_,d in g.edges(data=True) if d['osmid']==106)
+
 @pytest.mark.parametrize('tags',[{'highway':'footway'},{'highway':'primary','access':'private'},{'highway':'primary','motor_vehicle':'no'},{'highway':'residential','area':'yes'},{'highway':'service'}])
 def test_drive_filter(tags): assert not drive_way(tags)
 
