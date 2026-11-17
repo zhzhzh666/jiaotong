@@ -101,6 +101,27 @@ def validate_config(data: dict) -> dict:
             if Path(filename).name!=filename or not spec.get('url','').startswith('https://') or not spec.get('license'):
                 raise ValueError('source must have safe filename, HTTPS URL and explicit license')
         if not isinstance(spatial.get('rain_station'),str):raise ValueError('rain station ID must be a string')
+    if result['phase']=='03':
+        demand=result.get('demand',{})
+        for field in ['network_directory','spatial_directory']:
+            value=demand.get(field)
+            if not isinstance(value,str) or not value or Path(value).is_absolute() or '..' in Path(value).parts:
+                raise ValueError('demand input paths must be relative inside project')
+        for field in ['zone_size_m','max_connector_distance_m','access_speed_kph','intrazonal_time_s',
+                      'minimum_impedance_s','unreachable_impedance_s','gravity_beta_per_s',
+                      'person_trip_rate_per_hour','motorized_person_trip_share','vehicle_occupancy','ipf_tolerance']:
+            _positive(demand.get(field),'demand.'+field)
+        if demand['motorized_person_trip_share']>1:raise ValueError('trip share exceeds one')
+        for field in ['boundary_inbound_fraction','boundary_outbound_fraction','attraction_population_share']:
+            value=demand.get(field)
+            if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not 0<=value<=1:
+                raise ValueError('invalid demand fraction '+field)
+        for field in ['boundary_gateways','ipf_max_iterations']:
+            if type(demand.get(field)) is not int or demand[field]<1:raise ValueError('invalid demand integer '+field)
+        if set(demand.get('periods',{}))!={'offpeak','morning_peak','evening_peak'}:raise ValueError('three demand periods required')
+        for period,spec in demand['periods'].items():_positive(spec.get('factor'),period+'.factor')
+        if not demand.get('facility_weights'):raise ValueError('facility weights required')
+        for field,value in demand['facility_weights'].items():_positive(value,'facility weight '+field)
     return result
 
 

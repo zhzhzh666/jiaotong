@@ -20,6 +20,7 @@ await fs.writeFile(path.join(tmp,'import-inspection.ndjson'),inspect.ndjson);
 const m=data.metrics;
 const a=data.phase01;
 const b=data.phase02;
+const c=data.phase03;
 function box(slide,text,x,y,w,h,size=24,bold=false,font='等线'){
  const sh=slide.shapes.add({geometry:'textbox',position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});
  sh.text=text; sh.text.style={fontSize:`${size}pt`,typeface:font,bold,color:'#000000'};
@@ -33,9 +34,9 @@ function body(slide,blocks,notes){
 function add(text,blocks,notes){const s=p.slides.add();s.background.fill='#FFFFFF';title(s,text);body(s,blocks,notes);return s;}
 const cover=p.slides.items[0];
 const subtitle=cover.shapes.items.find(s=>s.name==='副标题 2');
-subtitle.text='研究方案与阶段进展\n2026年11月17日\nPhase 00—02 已验收';
+subtitle.text='研究方案与阶段进展\n2026年11月17日\nPhase 00—03 已验收';
 subtitle.text.style={fontSize:'24pt',typeface:'等线',color:'#000000',alignment:'center'};
-cover.speakerNotes.text='依据原始开题汇报与项目分阶段验收报告。Phase 00—02已验收，其中Phase 02采用明确数据缺失替代，Phase 03—13尚未开始；暂无交通韧性或治理实验结果。';
+cover.speakerNotes.text='依据原始开题汇报与项目分阶段验收报告。Phase 00—03已验收，其中Phase 02采用明确数据缺失替代，Phase 04—13尚未开始；暂无交通韧性或治理实验结果。';
 const bg=p.slides.items[1];
 const bgBody=bg.shapes.items.find(s=>s.name==='内容占位符 2');
 bgBody.text='积水导致道路降速或中断，交通绕行会改变拥堵分布及应急设施可达性。\n道路局部受灾程度与全网治理收益需要分别评价。\n核心问题：在有限预算和治理数量约束下，优先改善哪些道路，才能提高灾害全过程的网络性能？\n研究从深圳南山区小型真实路网开始，再逐步扩大。';
@@ -46,7 +47,7 @@ const rt=route.shapes.items.find(s=>s.name==='标题 1');rt.text='研究技术�
 const rb=route.shapes.items.find(s=>s.name==='内容占位符 2');
 rb.text='真实有向路网与 OD 需求：先小区域，再扩展南山区。\n参数化内涝与道路退化：水深时序、速度和容量变化。\n时间片交通分配与综合韧性：正常基准、未满足需求、设施可达性。\n预算约束治理与验证：公平策略比较，后续以 SUMO 补充车辆过程。';
 rb.text.style={fontSize:'24pt',typeface:'等线',color:'#000000'};
-route.speakerNotes.text='阶段定义见PLAN.md；有向路网已实施，OD、内涝、分配、韧性与治理为后续规划。';
+route.speakerNotes.text='阶段定义见PLAN.md；有向路网与合成OD已实施，内涝、分配、韧性与治理为后续规划。';
 const lit=p.slides.add();lit.background.fill='#FFFFFF'; title(lit,'五篇本地论文与采用边界');
 data.references.forEach((r,i)=>{
  box(lit,r.label,88,190+i*90,260,65,22,true);
@@ -119,18 +120,37 @@ for(const [key,label,caption] of [
  slide.speakerNotes.text='实际运行图：'+b.figures[key]+'；run_id：'+b.run_id+'。来源：'+b.report+'。Copernicus GLO-30 AWS 2021 release，TanDEM-X 2011—2015及补洞来源，EGM2008米。Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved。WorldPop 2020 aggregated UN-adjusted counts，CC BY 4.0，https://data.worldpop.org/ 。NOAA NCEI GSOD 2023站59493099999，英寸×25.4；单站不代表南山面雨量，不外推未观测时序。';
 }
 
+add('Phase 03 合成OD与水位接入',[
+ `${c.zones}个分区，${c.active_internal_zones}个参与OD；${c.unconnected_active_zones}个缺少区内道路节点，需求保留。`,
+ `三个时段重力/IPF需求均衡；最大相对边际误差${c.max_ipf_relative_error.toExponential(2)}。`,
+ `${c.tests_passed}项测试通过；实际运行${c.runtime_seconds}秒，全部OD明确标为合成。`,
+ '新增45站、18,123条水位记录；6站在研究范围，地址经高德编码。'
+],'来源：'+c.report+'；'+c.evidence+'。run_id：'+c.run_id+'；源码'+c.source_commit+'、dirty=false。平峰总需求'+c.periods.offpeak.total_veh_h+' veh/h，早高峰'+c.periods.morning_peak.total_veh_h+'，晚高峰'+c.periods.evening_peak.total_veh_h+'。IPF内部/入境/出境分别平衡；不可达和区内未上图需求单列。');
+for(const [key,label,caption] of [
+ ['zones','1000 m交通分区与接入','原生人口按重叠面积分摊并守恒；虚拟接入未核验，原图不增添道路'],
+ ['heatmap','三时段合成OD热力图','单位veh/h，对数色阶；不可达与区内需求均保留，尚无24小时出发计划'],
+ ['desire','早高峰合成期望线','最大的120对跨区需求；直线连接代表点，仅展示合成需求关系'],
+ ['stations','新增45站的地理编码位置','平台地址经高德编码；6站在研究范围，一条东莞POI匹配待复核'],
+ ['water','范围内六站的原始SW时序','分级断点0.15 / 0.30 / 0.40 m；水位零点待核实，不直接作为道路水深']]){
+ const slide=p.slides.add();slide.background.fill='#FFFFFF';title(slide,label);
+ const img=await fs.readFile(path.join(root,c.figures[key]));
+ slide.images.add({blob:img.buffer.slice(img.byteOffset,img.byteOffset+img.byteLength),contentType:'image/png',alt:label,fit:'contain',position:{left:65,top:175,width:1150,height:460}});
+ box(slide,caption,88,655,1104,48,18);
+ slide.speakerNotes.text='来源：'+c.figures[key]+'；run_id：'+c.run_id+'。'+c.report+'。© OpenStreetMap contributors ODbL 1.0；WorldPop 2020 CC BY 4.0。水位来源由用户确认是深圳市政府数据开放平台，具体API和字段说明未提供。用户根据平时SW近零推测为路面相对深度，平台未明说零点。分级阈值由用户确认，源标签交通中断不认定实际封路。地址地理编码未经传感器位置实测核验；采样空缺不补零，超过10分钟断线。需求基础=人口×0.05×0.5/1.25，早/晚/平倍率2/1.8/1；人口吸引权重0.8，医院3消防1；边界流入流出各0.1，重力衰减1/1200 s，不可达阻抗7200 s；均未标定。';
+}
+
 add('运行图片留存与查询',[
  '每次生成独立 run_id，保存源数据、配置、图片、日志与 manifest。',
  'PNG 用于查看，适合的曲线另存 SVG；失败结果与历次运行均保留。',
  '本地入口 results/index.html；按阶段、日期、区域、情景、策略查询。',
- 'Phase 02：4张实际处理图已归档；合成、真实产品与观测数据分别标注。'
+ 'Phase 03新增5张实际处理图；合成OD和水位观测分别标注。'
 ],'来源：docs/ARTIFACTS.md、docs/validation/phase02/run_audit.json。Phase 02保存4张PNG，215项输入与74个当次索引链接已校验；六项数据输出重放一致。大型results/runs未纳入Git，需本地备份；小型验收副本位于docs/validation。');
 add('下一阶段与文档同步',[
- 'Phase 03：构建1000 m交通小区，利用人口和设施估计产生与吸引。',
- '采用重力模型与IPF构建明确标注的合成OD，核查边际平衡与路网连接。',
+ 'Phase 04：构建24小时、15分钟参数化内涝时序。',
+ '核验情景增长、峰值、延迟与消退；区分观测与合成输入。',
  '深圳实测OD仍缺失；人口时间差、设施入口与边界需求需要明确处理。',
  '每阶段验收后同步更新 PPT、Word 与关键运行图，明确实际结果和未完成内容。'
-],'来源：PLAN.md、PROGRESS.md、DATA_SOURCES.md。下一阶段需用户继续指令；当前完成Phase00—02（含数据缺失替代）。维护版本由 docs/deliverables/content.json 同步验收信息，根目录原稿保留。');
+],'来源：PLAN.md、PROGRESS.md、DATA_SOURCES.md。下一阶段需用户继续指令；当前完成Phase00—03（含明确数据限制）。维护版本由 docs/deliverables/content.json 同步验收信息，根目录原稿保留。');
 const candidate=path.join(tmp,'candidate.pptx');
 await (await PresentationFile.exportPptx(p)).save(candidate);
 const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);

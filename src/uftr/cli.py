@@ -64,13 +64,14 @@ def run_phase00(root: Path, config_path: Path) -> Path:
 def main(argv=None):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(description="城市暴雨内涝交通韧性研究（Phase 00—02）")
+    parser = argparse.ArgumentParser(description="城市暴雨内涝交通韧性研究（Phase 00—03）")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="项目根目录")
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser("check-config")
     check.add_argument("--config", type=Path, default=Path("configs/phase00.yaml"))
     run = sub.add_parser("run")
-    run.add_argument("--phase", choices=["00","01","02"], required=True)
+    run.add_argument("--phase", choices=["00","01","02","03"], required=True)
+    run.add_argument('--user-source',type=Path,help='Phase 03 已封存的用户水位数据快照，校验后重放')
     run.add_argument("--config", type=Path)
     run.add_argument("--offline-source",type=Path,help="Phase 01/02 已保存的原始数据快照目录，校验后离线重建")
     history = sub.add_parser("history")
@@ -88,15 +89,20 @@ def main(argv=None):
             config = load_config(path)
             print(json.dumps({"valid": True, "phase": config["phase"], "endpoints": len(time_grid(config))}))
         else:
+            if args.user_source and args.phase!='03':parser.error('--user-source only applies to Phase 03')
+            if args.offline_source and args.phase=='03':parser.error('Phase 03 uses processed inputs and --user-source')
             if args.phase=='00':
                 if args.offline_source: parser.error('--offline-source only applies to Phase 01/02')
                 run_phase00(root, path)
             elif args.phase=='01':
                 from .phase01 import run_phase01
                 run_phase01(root,path,args.offline_source)
-            else:
+            elif args.phase=='02':
                 from .phase02 import run_phase02
                 run_phase02(root,path,args.offline_source)
+            else:
+                from .phase03 import run_phase03
+                run_phase03(root,path,args.user_source)
     elif args.command == "reindex":
         results = (root / load_config(root / args.config)["outputs"]["root"]).resolve()
         results.relative_to(root)

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "run_id": "20261117T215014_p03_2b8fe770",
+  "zones": 568,
+  "native_people": 1540614.3657147214,
+  "max_margin_error_veh_h": 6.89150169819186e-07,
+  "shortest_path_samples_verified": 25,
+  "all_positive_demand_zones_retained": true,
+  "raw_user_files_unchanged": true,
+  "water_depth_quarantined": true,
+  "compare": null
+}

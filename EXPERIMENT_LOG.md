@@ -83,3 +83,8 @@ Phase 02文档最终检查：PPT 18张、Word 13页全部逐张/逐页查看，�
 
 
 GitHub上传补充：用户提供https://github.com/zhzhzh666/jiaotong后，配置origin并读取远端。远端仅有初始README，和本地无共同提交；使用allow-unrelated-histories合并，README add/add冲突保留完整项目说明，远端初始提交仍作为父历史保留。本地验收提交3866788，合并提交71e17a07a6e46219f88f5b9b4402f8abe4a4ba6f。Git Credential Manager已有可用认证，普通push -u origin main成功，随后ls-remote确认远端main与本地完整哈希一致。未安装gh、未显示凭据、未强制推送。原先日志中未上传的记载为提供仓库前的历史状态，当前以本补充为准。
+
+
+## Phase 03 本轮实施状态
+
+用户已授权继续。已实现1000 m TAZ、原生人口守恒分摊、重力/IPF三时段合成OD、真实边界节点和不可达需求保留；新增45站水位数据封存与质量检查。首次成功运行20261117T215014_p03_2b8fe770；98项测试通过，pip check无冲突。正在进行干净源码离线重放和Word/PPT同步，完成前不标记阶段验收。数据平台和高德地址编码由用户确认；0.15/0.30/0.40 m分级阈值已确认，SW路面零点仅为用户推测。

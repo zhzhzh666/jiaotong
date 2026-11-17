@@ -65,8 +65,8 @@ def main():
             path=(processed/item['path']).resolve(); path.relative_to(processed.resolve())
             assert file_hash(path)==item['sha256'],f'processed output changed: {path}'
         assert all(network[k]['missing_required_attributes']==0 for k in ['small','nanshan'])
-    elif manifest['phase']=='02':
-        report=json.loads((run/'raw/spatial_report.json').read_text(encoding='utf-8'))
+    elif manifest['phase'] in ['02','03']:
+        report=json.loads((run/('raw/spatial_report.json' if manifest['phase']=='02' else 'raw/demand_report.json')).read_text(encoding='utf-8'))
         inventory=json.loads((root/report['processed_root']/'output_inventory.json').read_text(encoding='utf-8'))
         for item in inventory['files']:
             path=(root/item['path']).resolve();path.relative_to(root)

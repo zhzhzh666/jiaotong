@@ -18,3 +18,7 @@ htmlcov/
 /*.pdf
 /*.pptx
 /*.docx
+# User-supplied raw monitoring tables/archives remain local and are sealed per run.
+/*水位*.csv
+/*测站*.csv
+/*测站*.geojson.zip

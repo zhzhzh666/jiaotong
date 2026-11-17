@@ -1,0 +1,76 @@
+project: urban-flood-traffic-resilience
+phase: '03'
+seed: 42
+region: nanshan
+scenario: synthetic-demand-and-user-water-intake
+strategy: not-applicable
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.3
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+demand:
+  network_directory: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan
+  spatial_directory: data/processed/phase02/20261117T203637_p02_0286d999
+  zone_size_m: 1000
+  max_connector_distance_m: 1500
+  access_speed_kph: 20
+  intrazonal_time_s: 300
+  minimum_impedance_s: 60
+  unreachable_impedance_s: 7200
+  gravity_beta_per_s: 0.0008333333333333334
+  person_trip_rate_per_hour: 0.05
+  motorized_person_trip_share: 0.5
+  vehicle_occupancy: 1.25
+  attraction_population_share: 0.8
+  facility_weights:
+    hospital: 3
+    fire_station: 1
+  boundary_gateways: 6
+  boundary_inbound_fraction: 0.1
+  boundary_outbound_fraction: 0.1
+  ipf_tolerance: 1.0e-09
+  ipf_max_iterations: 2000
+  periods:
+    offpeak:
+      factor: 1.0
+    morning_peak:
+      factor: 2.0
+    evening_peak:
+      factor: 1.8
+user_water:
+  files:
+  - 深圳积涝测站_带坐标汇总.csv
+  - 9·7暴雨_全量水位_带分级.csv
+  - 9·7暴雨_洪涝水位记录_带坐标.csv
+  - 9·7暴雨_测站洪涝指标汇总(1).csv
+  - 深圳积涝测站_全部45站.geojson.zip
+  - 深圳积涝测站_洪涝29站.geojson.zip
+  matching:
+    search_radius_m: 100
+    max_match_distance_m: 60
+    high_distance_m: 15
+    medium_distance_m: 40
+    high_gap_m: 15
+    medium_gap_m: 5
