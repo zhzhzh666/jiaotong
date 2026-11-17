@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "run_id": "20261117T173510_p00_a2d49eb6",
+  "phase": "00",
+  "region": "environment",
+  "scenario": "environment-check",
+  "strategy": "not-applicable",
+  "seed": 42,
+  "started_at": "2026-11-17T17:35:10+08:00",
+  "status": "success",
+  "git": {
+    "commit": "0e0b56219e00b736621cc89b9bf33068d8473fd5",
+    "dirty": false
+  },
+  "config": "config.json",
+  "config_sha256": "af2794f44b01aa4960213477f2a5081db49a55c5d789e39919448c0c2e43f134",
+  "inputs": [
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\configs\\phase00.yaml",
+      "sha256": "11796d4c7a3b491d767888ca2736274afb92ded24ff48cb9f745b8af74af1b96"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\1-s2.0-S1361920916308367-main.pdf",
+      "sha256": "5cab1e8e5ccdc8fb76740aea6c9916b5e68117f88f00bcea8c8f11b8eb80f0b9"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\1-s2.0-S1361920923003255-main.pdf",
+      "sha256": "e268eafaf2b953f40a3f83a6215b27b4e427f1cd306681907896e783dd2bd625"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\1-s2.0-S1361920924003110-main.pdf",
+      "sha256": "66884903ca1898abcbc41342ae21af8494a2d345c83b5d2960258fe80af62014"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\land-13-01894.pdf",
+      "sha256": "b64a201159691b6abfb7bdd532d3f563b69b74db3d849f78a0ee4344c2ad4949"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\典型设计暴雨下深圳市内涝空间分异与承灾体风险评估.pdf",
+      "sha256": "8855379b3f5cf1fd4852d6cd173cc7f6bf60fcd39b5b97c6930d321496842b2e"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "figures/environment_check.png",
+      "title": "Phase 00 环境与依赖检查",
+      "kind": "figure",
+      "data_kind": "observed-environment",
+      "simulation_time_s": null,
+      "units": {
+        "storage": "GiB"
+      },
+      "sources": [
+        {
+          "path": "results/runs/20261117T173510_p00_a2d49eb6/raw/environment.json",
+          "sha256": "3cfc8728772040385e1b707fc740f75a4542d5390179a60a0c1893a98e6ab142"
+        }
+      ],
+      "sha256": "c343fa790d5e6a1ef0afcd2a122e0dba94e5390fd51246068aa056f8b01fa7fb",
+      "created_at": "2026-11-17T17:35:16+08:00"
+    },
+    {
+      "path": "figures/environment_check.svg",
+      "title": "Phase 00 环境与依赖检查",
+      "kind": "figure",
+      "data_kind": "observed-environment",
+      "simulation_time_s": null,
+      "units": {
+        "storage": "GiB"
+      },
+      "sources": [
+        {
+          "path": "results/runs/20261117T173510_p00_a2d49eb6/raw/environment.json",
+          "sha256": "3cfc8728772040385e1b707fc740f75a4542d5390179a60a0c1893a98e6ab142"
+        }
+      ],
+      "sha256": "1d4498c4a6fe180bdbcc818bca32190c2bdf63768c8f825df30e968a1632f472",
+      "created_at": "2026-11-17T17:35:16+08:00"
+    }
+  ],
+  "command": [
+    "C:\\Users\\zh\\Desktop\\git\\jiaotong\\.conda-env\\python.exe",
+    "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\cli.py",
+    "run",
+    "--phase",
+    "00"
+  ],
+  "finished_at": "2026-11-17T17:35:16+08:00",
+  "elapsed_s": 6.27036880000378
+}

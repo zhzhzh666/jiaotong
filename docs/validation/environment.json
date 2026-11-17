@@ -1,0 +1,182 @@
+{
+  "observed_at": "2026-11-17T17:35:15+08:00",
+  "data_kind": "observed-environment",
+  "python": "3.11.18 | packaged by conda-forge | (main, Oct 26 2026, 11:29:07) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\.conda-env\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "physical_cores": 16,
+  "logical_cores": 24,
+  "memory": {
+    "total_gib": 15.781120300292969,
+    "available_gib": 3.8506813049316406
+  },
+  "disks": {
+    "C:\\": {
+      "total_gib": 300.00097274780273,
+      "free_gib": 29.125282287597656
+    },
+    "D:\\": {
+      "total_gib": 358.67577743530273,
+      "free_gib": 63.45302200317383
+    }
+  },
+  "gpu": {
+    "available": true,
+    "output": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB",
+    "error": ""
+  },
+  "dependencies": [
+    {
+      "package": "osmnx",
+      "module": "osmnx",
+      "ok": true,
+      "version": "2.1.2",
+      "elapsed_s": 2.253617700000177
+    },
+    {
+      "package": "networkx",
+      "module": "networkx",
+      "ok": true,
+      "version": "3.6.1",
+      "elapsed_s": 0.0011722000053850934
+    },
+    {
+      "package": "geopandas",
+      "module": "geopandas",
+      "ok": true,
+      "version": "1.2.0",
+      "elapsed_s": 0.001021900010528043
+    },
+    {
+      "package": "shapely",
+      "module": "shapely",
+      "ok": true,
+      "version": "2.2.0",
+      "elapsed_s": 0.0010781000019051135
+    },
+    {
+      "package": "rasterio",
+      "module": "rasterio",
+      "ok": true,
+      "version": "1.4.4",
+      "elapsed_s": 0.0012032999948132783
+    },
+    {
+      "package": "pandas",
+      "module": "pandas",
+      "ok": true,
+      "version": "2.3.3",
+      "elapsed_s": 0.0015042999875731766
+    },
+    {
+      "package": "numpy",
+      "module": "numpy",
+      "ok": true,
+      "version": "2.4.6",
+      "elapsed_s": 0.0011219000007258728
+    },
+    {
+      "package": "scipy",
+      "module": "scipy",
+      "ok": true,
+      "version": "1.17.1",
+      "elapsed_s": 0.00303140000323765
+    },
+    {
+      "package": "matplotlib",
+      "module": "matplotlib",
+      "ok": true,
+      "version": "3.11.2",
+      "elapsed_s": 0.0035128000017721206
+    },
+    {
+      "package": "plotly",
+      "module": "plotly",
+      "ok": true,
+      "version": "6.9.0",
+      "elapsed_s": 0.008886900002835318
+    },
+    {
+      "package": "streamlit",
+      "module": "streamlit",
+      "ok": true,
+      "version": "1.67.0",
+      "elapsed_s": 1.498582100000931
+    },
+    {
+      "package": "pytest",
+      "module": "pytest",
+      "ok": true,
+      "version": "9.2.0",
+      "elapsed_s": 0.25598590000299737
+    },
+    {
+      "package": "sumolib",
+      "module": "sumolib",
+      "ok": true,
+      "version": "1.28.0",
+      "elapsed_s": 0.08149779999803286
+    },
+    {
+      "package": "traci",
+      "module": "traci",
+      "ok": true,
+      "version": "1.28.0",
+      "elapsed_s": 0.06042179999349173
+    },
+    {
+      "package": "pyarrow",
+      "module": "pyarrow",
+      "ok": true,
+      "version": "23.0.1",
+      "elapsed_s": 0.0020506000000750646
+    },
+    {
+      "package": "PyYAML",
+      "module": "yaml",
+      "ok": true,
+      "version": "6.0.3",
+      "elapsed_s": 0.00253800000064075
+    },
+    {
+      "package": "psutil",
+      "module": "psutil",
+      "ok": true,
+      "version": "7.2.2",
+      "elapsed_s": 0.0025817999994615093
+    },
+    {
+      "package": "pypdf",
+      "module": "pypdf",
+      "ok": true,
+      "version": "6.21.4",
+      "elapsed_s": 0.3883246999903349
+    },
+    {
+      "package": "PyMuPDF",
+      "module": "pymupdf",
+      "ok": true,
+      "version": "1.28.2",
+      "elapsed_s": 0.06949769999482669
+    },
+    {
+      "package": "Pillow",
+      "module": "PIL",
+      "ok": true,
+      "version": "12.3.0",
+      "elapsed_s": 0.0014493999915430322
+    }
+  ],
+  "tools": {
+    "git": "D:\\Git\\cmd\\git.EXE",
+    "conda": "D:\\anaconda\\Library\\bin\\conda.BAT",
+    "sumo": null,
+    "sumo-gui": null,
+    "netconvert": null
+  },
+  "time_grid": {
+    "endpoint_count": 97,
+    "interval_count": 96
+  }
+}

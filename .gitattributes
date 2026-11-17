@@ -1,0 +1,2 @@
+# Preserve generated SVG bytes (including Matplotlib path whitespace) for SHA256 provenance.
+docs/validation/*.svg binary

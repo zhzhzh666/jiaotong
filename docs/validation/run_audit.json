@@ -1,14 +1,14 @@
 {
-  "run_id": "20261117T172555_p00_0dcd60c4",
+  "run_id": "20261117T173510_p00_a2d49eb6",
   "status": "passed",
   "artifacts_verified": 2,
   "inputs_verified": 6,
-  "index_links_verified": 7,
+  "index_links_verified": 14,
   "dependency_imports": 20,
   "git": {
-    "commit": "772b8f6a5d97b41f3e13ab7c507c6442b6978ef9",
+    "commit": "0e0b56219e00b736621cc89b9bf33068d8473fd5",
     "dirty": false
   },
-  "elapsed_s": 5.215288699997473,
+  "elapsed_s": 6.27036880000378,
   "visual_png_review": "separate human/agent inspection required"
 }

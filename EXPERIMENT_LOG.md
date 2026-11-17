@@ -39,3 +39,5 @@ python -X utf8 scripts/verify_references.py
 - 5篇本地全文和10张关键页用于方法核查；4篇Crossref成功，中文Crossref404、期刊HTTP500，保留失败记录，未重复下载论文。
 
 最终复核运行和交付文件清单见docs/PHASE00_REPORT.md；没有运行后续阶段交通实验。
+
+最终复核：20261117T173510_p00_a2d49eb6，20/20导入、6.2704秒、success，源码0e0b562且dirty=false。保留此前运行，现有4条图像格式记录和14个索引链接；本次2图片/6输入指纹校验通过。验收PNG/SVG及原始JSON/manifest另存docs/validation以纳入Git。最终PNG已查看，中文CLI查询正确显示。
