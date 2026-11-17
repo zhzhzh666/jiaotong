@@ -64,14 +64,15 @@ def run_phase00(root: Path, config_path: Path) -> Path:
 def main(argv=None):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(description="城市暴雨内涝交通韧性研究（当前仅 Phase 00）")
+    parser = argparse.ArgumentParser(description="城市暴雨内涝交通韧性研究（Phase 00—01）")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="项目根目录")
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser("check-config")
     check.add_argument("--config", type=Path, default=Path("configs/phase00.yaml"))
     run = sub.add_parser("run")
-    run.add_argument("--phase", choices=["00"], required=True)
-    run.add_argument("--config", type=Path, default=Path("configs/phase00.yaml"))
+    run.add_argument("--phase", choices=["00","01"], required=True)
+    run.add_argument("--config", type=Path)
+    run.add_argument("--offline-source",type=Path,help="Phase 01 已保存的原始数据快照目录，校验后离线重建")
     history = sub.add_parser("history")
     history.add_argument("--config", type=Path, default=Path("configs/phase00.yaml"))
     for flag in ("phase", "region", "scenario", "strategy", "kind", "run-id", "date"):
@@ -81,12 +82,18 @@ def main(argv=None):
     args = parser.parse_args(argv)
     root = args.root.resolve()
     if args.command in {"run", "check-config"}:
-        path = (root / args.config).resolve()
+        selected=args.config or Path(f'configs/phase{args.phase}.yaml')
+        path = (root / selected).resolve()
         if args.command == "check-config":
             config = load_config(path)
             print(json.dumps({"valid": True, "phase": config["phase"], "endpoints": len(time_grid(config))}))
         else:
-            run_phase00(root, path)
+            if args.phase=='00':
+                if args.offline_source: parser.error('--offline-source only applies to Phase 01')
+                run_phase00(root, path)
+            else:
+                from .phase01 import run_phase01
+                run_phase01(root,path,args.offline_source)
     elif args.command == "reindex":
         results = (root / load_config(root / args.config)["outputs"]["root"]).resolve()
         results.relative_to(root)

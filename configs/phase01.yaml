@@ -1,0 +1,114 @@
+project: urban-flood-traffic-resilience
+phase: '01'
+seed: 42
+region: nanshan
+scenario: road-network-acquisition
+strategy: not-applicable
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.3
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+network:
+  map_url: https://api.openstreetmap.org/api/0.6/map
+  boundary_url: https://nominatim.openstreetmap.org/search
+  boundary_query: Nanshan District, Shenzhen, Guangdong, China
+  expected_relation_id: 5664195
+  small_bbox:
+  - 113.925
+  - 22.528
+  - 113.945
+  - 22.545
+  projected_crs: EPSG:32650
+  buffer_m: 500
+  tile_degrees: 0.04
+  minimum_tile_degrees: 0.004
+  max_requests: 240
+  request_pause_s: 1.0
+  timeout_s: 60
+  routing_sample_origins: 20
+  sioux:
+    api_commit_url: https://api.github.com/repos/bstabler/TransportationNetworks/commits/master
+    raw_base: https://raw.githubusercontent.com/bstabler/TransportationNetworks
+    repository: https://github.com/bstabler/TransportationNetworks
+  attributes:
+    projected_crs: EPSG:32650
+    free_flow_factor: 1.0
+    defaults:
+      motorway:
+        speed_kph: 100
+        lanes_per_direction: 3
+        capacity_per_lane_veh_h: 2000
+      motorway_link:
+        speed_kph: 50
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1700
+      trunk:
+        speed_kph: 80
+        lanes_per_direction: 2
+        capacity_per_lane_veh_h: 1800
+      trunk_link:
+        speed_kph: 40
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1600
+      primary:
+        speed_kph: 60
+        lanes_per_direction: 2
+        capacity_per_lane_veh_h: 1700
+      primary_link:
+        speed_kph: 40
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1500
+      secondary:
+        speed_kph: 50
+        lanes_per_direction: 2
+        capacity_per_lane_veh_h: 1600
+      secondary_link:
+        speed_kph: 35
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1400
+      tertiary:
+        speed_kph: 40
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1400
+      tertiary_link:
+        speed_kph: 30
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1200
+      residential:
+        speed_kph: 30
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1000
+      living_street:
+        speed_kph: 20
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 600
+      unclassified:
+        speed_kph: 30
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1000
+      fallback:
+        speed_kph: 30
+        lanes_per_direction: 1
+        capacity_per_lane_veh_h: 1000

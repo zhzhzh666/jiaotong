@@ -3,7 +3,7 @@
 ## 当前范围与阶段门禁
 
 - 项目根目录为本文件所在的 `jiaotong`，使用独立 Git 仓库；保留根目录原始论文、PPTX、DOCX，禁止覆盖或移动。
-- 当前仅允许实施 Phase 00。收到继续指令时，先读取 PLAN.md、PROGRESS.md、MODEL_ASSUMPTIONS.md 和已有代码，执行第一个未验收阶段。不得重复创建已通过模块。
+- 用户已指令继续，当前实施 Phase 01。收到继续指令时，先读取 PLAN.md、PROGRESS.md、MODEL_ASSUMPTIONS.md 和已有代码，执行第一个未验收阶段。不得重复创建已通过模块。
 - 每阶段实际编码、运行、测试、检查图片并保存 Git 提交；必要测试失败先修复，不跳过验收。每阶段结束后报告并等待下一次继续指令。
 - 每阶段更新 AGENTS.md、PLAN.md、PROGRESS.md、DATA_SOURCES.md、MODEL_ASSUMPTIONS.md、EXPERIMENT_LOG.md、README.md。
 - 按用户要求，每阶段验收后同步更新 `docs/deliverables/` 中维护的 PPTX、DOCX：实际状态、方法、验收数值、运行图片及来源、问题与下一阶段。保留根目录原稿；共用 `content.json` 的证据字段，并更新两份生成脚本的正文，不能只改日期。导出后逐页/逐幻灯片渲染查看，再记录检查和 Git 提交。

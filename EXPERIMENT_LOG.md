@@ -44,6 +44,12 @@ python -X utf8 scripts/verify_references.py
 
 ## PPT 与 Word 同步维护 2026-11-17
 
+## Phase 01 实施过程
+
+用户继续后读取阶段文档，实施真实路网获取。沙箱内 GitHub 请求超时；授权联网后 Sioux Falls 和 Nominatim 可读。Overpass 主端点502繁忙，kumi/private.coffee超时，其他公开镜像亦失败。官方 api.openstreetmap.org 只读地图API成功，改为限定请求预算、1秒间隔、按需细分分块下载原始OSM XML，再以OSMnx公开XML接口建图；这一变化需在最终数据来源中说明。
+
+首次网络单元检查26项通过、1项失败：oneway=-1的方向限速误用。查阅已安装OSMnx _add_paths 确认节点先翻转后reversed=False，已按原始oneway标签修正，复核27项通过。CSV导出改为普通DataFrame避免几何列被WKT替换的无害警告。真实数据运行和最终验收结果在后文记录。
+
 根据用户要求，保留根目录原始论文、PPT、Word，在 docs/deliverables 建立可编辑维护版：PPT 9页、Word 6页。整理研究范围、模型规划、5篇本地论文与采用边界、Phase 00 验收、真实环境图、图片查询与下一步。两文件的日期、验收指标、运行ID、图像与书目共用 content.json；保存 scripts/build_word.py 与 scripts/build_presentation.mjs。
 
 使用 Codex 捆绑 Python/python-docx 和 Node/@oai/artifact-tool 构建。PPT finalizer 通过9页包结构、布局、原稿字体和再次导入检查，9张 PNG 已逐张查看。首次 finalizer 缺少 RUNTIME_NODE_MODULES 环境变量，设置捆绑模块路径后通过。未安装新软件。

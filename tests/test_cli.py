@@ -31,5 +31,5 @@ def test_history_honors_custom_output_and_filters(tmp_path, capsys):
 
 def test_cli_rejects_unimplemented_phase():
     with pytest.raises(SystemExit) as error:
-        main(["run", "--phase", "01"])
+        main(["run", "--phase", "02"])
     assert error.value.code == 2

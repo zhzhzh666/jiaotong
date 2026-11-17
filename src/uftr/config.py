@@ -56,6 +56,26 @@ def validate_config(data: dict) -> dict:
         raise ValueError("weights must be finite and nonnegative")
     if not math.isclose(sum(weights.values()), 1.0, abs_tol=1e-9):
         raise ValueError("resilience weights must sum to 1")
+    if result['phase']=='01':
+        network=result.get('network',{})
+        bounds=network.get('small_bbox',[])
+        if len(bounds)!=4 or not all(isinstance(x,(int,float)) and math.isfinite(x) for x in bounds) or not (113<bounds[0]<bounds[2]<115 and 22<bounds[1]<bounds[3]<24):
+            raise ValueError('small_bbox must be WGS84 Shenzhen west,south,east,north')
+        for key in ['tile_degrees','minimum_tile_degrees','buffer_m','max_requests','timeout_s','routing_sample_origins']:
+            _positive(network.get(key),'network.'+key)
+        if network['tile_degrees']>.1 or network['minimum_tile_degrees']>network['tile_degrees']:
+            raise ValueError('invalid bounded OSM tile size')
+        if not isinstance(network.get('request_pause_s'),(float,int)) or network['request_pause_s']<1:
+            raise ValueError('official OSM API requires at least 1 second request spacing')
+        attributes=network.get('attributes',{})
+        if attributes.get('projected_crs')!='EPSG:32650' or network.get('projected_crs')!='EPSG:32650':
+            raise ValueError('road distance CRS must be EPSG:32650')
+        _positive(attributes.get('free_flow_factor'),'free_flow_factor')
+        if attributes['free_flow_factor']>1: raise ValueError('free-flow factor must not exceed speed limit')
+        if 'fallback' not in attributes.get('defaults',{}): raise ValueError('fallback road attributes required')
+        for road,values in attributes['defaults'].items():
+            for key in ['speed_kph','lanes_per_direction','capacity_per_lane_veh_h']: _positive(values.get(key),road+'.'+key)
+            if type(values['lanes_per_direction']) is not int: raise ValueError('lanes must be integer')
     return result
 
 
