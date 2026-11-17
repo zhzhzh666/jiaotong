@@ -1,0 +1,619 @@
+{
+  "checked_at": "2026-11-17T09:06:44.304913+00:00",
+  "service": "https://api.crossref.org",
+  "references": [
+    {
+      "requested_doi": "10.1016/j.trd.2023.103928",
+      "url": "https://api.crossref.org/works/10.1016/j.trd.2023.103928",
+      "status": "verified",
+      "metadata": {
+        "DOI": "10.1016/j.trd.2023.103928",
+        "title": [
+          "Assessing and enhancing urban road network resilience under rainstorm waterlogging disasters"
+        ],
+        "author": [
+          {
+            "given": "Fei",
+            "family": "Ma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yuyun",
+            "family": "Ao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Xiaojian",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Haonan",
+            "family": "He",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Qing",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Danting",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Huiyan",
+            "family": "Gou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part D: Transport and Environment"
+        ],
+        "volume": "123",
+        "issue": null,
+        "page": "103928",
+        "article-number": "103928",
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              10
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.trd.2023.103928",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/legal/tdmrep-license"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-017"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-012"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2023-10-01T00:00:00Z",
+              "timestamp": 1696118400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-004"
+          }
+        ]
+      }
+    },
+    {
+      "requested_doi": "10.1016/j.trd.2017.06.020",
+      "url": "https://api.crossref.org/works/10.1016/j.trd.2017.06.020",
+      "status": "verified",
+      "metadata": {
+        "DOI": "10.1016/j.trd.2017.06.020",
+        "title": [
+          "The impact of flooding on road transport: A depth-disruption function"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0796-9618",
+            "authenticated-orcid": false,
+            "given": "Maria",
+            "family": "Pregnolato",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Alistair",
+            "family": "Ford",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sean M.",
+            "family": "Wilkinson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3158-5868",
+            "authenticated-orcid": false,
+            "given": "Richard J.",
+            "family": "Dawson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part D: Transport and Environment"
+        ],
+        "volume": "55",
+        "issue": null,
+        "page": "67-81",
+        "article-number": null,
+        "published": {
+          "date-parts": [
+            [
+              2017,
+              8
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.trd.2017.06.020",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2017,
+                  8,
+                  1
+                ]
+              ],
+              "date-time": "2017-08-01T00:00:00Z",
+              "timestamp": 1501545600000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2017,
+                  6,
+                  21
+                ]
+              ],
+              "date-time": "2017-06-21T00:00:00Z",
+              "timestamp": 1498003200000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "http://creativecommons.org/licenses/by/4.0/"
+          }
+        ]
+      }
+    },
+    {
+      "requested_doi": "10.1016/j.trd.2024.104354",
+      "url": "https://api.crossref.org/works/10.1016/j.trd.2024.104354",
+      "status": "verified",
+      "metadata": {
+        "DOI": "10.1016/j.trd.2024.104354",
+        "title": [
+          "Functionality assessment of road network combining flood roadworthiness and graph topology"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0002-5212-055X",
+            "authenticated-orcid": false,
+            "given": "Ke",
+            "family": "He",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0796-9618",
+            "authenticated-orcid": false,
+            "given": "Maria",
+            "family": "Pregnolato",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4503-7141",
+            "authenticated-orcid": false,
+            "given": "Neil",
+            "family": "Carhart",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5793-9594",
+            "authenticated-orcid": false,
+            "given": "Jeffrey",
+            "family": "Neal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Raffaele",
+            "family": "De Risi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part D: Transport and Environment"
+        ],
+        "volume": "135",
+        "issue": null,
+        "page": "104354",
+        "article-number": "104354",
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              10
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.trd.2024.104354",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2024-10-01T00:00:00Z",
+              "timestamp": 1727740800000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  10,
+                  1
+                ]
+              ],
+              "date-time": "2024-10-01T00:00:00Z",
+              "timestamp": 1727740800000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/legal/tdmrep-license"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  8,
+                  6
+                ]
+              ],
+              "date-time": "2024-08-06T00:00:00Z",
+              "timestamp": 1722902400000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "http://creativecommons.org/licenses/by/4.0/"
+          }
+        ]
+      }
+    },
+    {
+      "requested_doi": "10.3390/land13111894",
+      "url": "https://api.crossref.org/works/10.3390/land13111894",
+      "status": "verified",
+      "metadata": {
+        "DOI": "10.3390/land13111894",
+        "title": [
+          "Evaluating the Dynamic Comprehensive Resilience of Urban Road Network: A Case Study of Rainstorm in Xi’an, China"
+        ],
+        "author": [
+          {
+            "given": "Yilin",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Traffic Engineering, School of Ocean and Civil Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3481-1149",
+            "authenticated-orcid": false,
+            "given": "Zhan",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Design, Shanghai Jiao Tong University, Shanghai 200240, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0005-4940-3796",
+            "authenticated-orcid": false,
+            "given": "Xinyi",
+            "family": "Fang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Traffic Engineering, School of Ocean and Civil Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1296-3926",
+            "authenticated-orcid": false,
+            "given": "Linjun",
+            "family": "Lu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Traffic Engineering, School of Ocean and Civil Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Land"
+        ],
+        "volume": "13",
+        "issue": "11",
+        "page": "1894",
+        "article-number": null,
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              11,
+              12
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.3390/land13111894",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  11,
+                  12
+                ]
+              ],
+              "date-time": "2024-11-12T00:00:00Z",
+              "timestamp": 1731369600000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        ]
+      }
+    },
+    {
+      "requested_doi": "10.13284/j.cnki.rddl.20250873",
+      "url": "https://api.crossref.org/works/10.13284/j.cnki.rddl.20250873",
+      "status": "unavailable",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}

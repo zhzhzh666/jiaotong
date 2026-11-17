@@ -1,0 +1,52 @@
+[
+  {
+    "filename": "1-s2.0-S1361920916308367-main.pdf",
+    "pages": 15,
+    "size_bytes": 2070976,
+    "sha256": "5cab1e8e5ccdc8fb76740aea6c9916b5e68117f88f00bcea8c8f11b8eb80f0b9",
+    "doi_candidates": [
+      "10.1016/j.trd.2017.06.020"
+    ],
+    "text_extraction": "pypdf; mathematical glyphs require page verification"
+  },
+  {
+    "filename": "1-s2.0-S1361920923003255-main.pdf",
+    "pages": 21,
+    "size_bytes": 8354435,
+    "sha256": "e268eafaf2b953f40a3f83a6215b27b4e427f1cd306681907896e783dd2bd625",
+    "doi_candidates": [
+      "10.1016/j.trd.2023.103928"
+    ],
+    "text_extraction": "pypdf; mathematical glyphs require page verification"
+  },
+  {
+    "filename": "1-s2.0-S1361920924003110-main.pdf",
+    "pages": 15,
+    "size_bytes": 12943706,
+    "sha256": "66884903ca1898abcbc41342ae21af8494a2d345c83b5d2960258fe80af62014",
+    "doi_candidates": [
+      "10.1016/j.trd.2024.104354"
+    ],
+    "text_extraction": "pypdf; mathematical glyphs require page verification"
+  },
+  {
+    "filename": "land-13-01894.pdf",
+    "pages": 24,
+    "size_bytes": 127809254,
+    "sha256": "b64a201159691b6abfb7bdd532d3f563b69b74db3d849f78a0ee4344c2ad4949",
+    "doi_candidates": [
+      "10.3390/land13111894"
+    ],
+    "text_extraction": "pypdf; mathematical glyphs require page verification"
+  },
+  {
+    "filename": "典型设计暴雨下深圳市内涝空间分异与承灾体风险评估.pdf",
+    "pages": 12,
+    "size_bytes": 22892492,
+    "sha256": "8855379b3f5cf1fd4852d6cd173cc7f6bf60fcd39b5b97c6930d321496842b2e",
+    "doi_candidates": [
+      "10.13284/j.cnki.rddl.20250873"
+    ],
+    "text_extraction": "pypdf; mathematical glyphs require page verification"
+  }
+]

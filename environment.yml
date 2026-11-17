@@ -1,0 +1,9 @@
+name: urban-flood-traffic-resilience
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements.in
+      - -e .

@@ -1,0 +1,29 @@
+project: urban-flood-traffic-resilience
+phase: '00'
+seed: 42
+region: environment
+scenario: environment-check
+strategy: not-applicable
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.30
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights: {structure: 0.2, performance: 0.5, functionality: 0.3}
