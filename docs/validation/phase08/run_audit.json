@@ -1,0 +1,15 @@
+{
+  "run_id": "20261118T000018_p08_d5053648",
+  "inputs": 23,
+  "artifacts": 2,
+  "input_verification_basis": {
+    "current_bytes": 19,
+    "git_blob_at_recorded_commit": 2,
+    "checksum_verified_recovered_source": 2
+  },
+  "git": {
+    "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+    "dirty": true
+  },
+  "elapsed_s": 15.796106800000416
+}
