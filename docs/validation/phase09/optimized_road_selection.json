@@ -1,0 +1,15 @@
+{
+  "selected": [
+    "road_05",
+    "road_03",
+    "road_04"
+  ],
+  "exhaustive_selected": [
+    "road_05",
+    "road_03",
+    "road_04"
+  ],
+  "exhaustive_R": 0.9971560091494998,
+  "sets_evaluated": 42,
+  "greedy_absolute_gap": 0.0
+}

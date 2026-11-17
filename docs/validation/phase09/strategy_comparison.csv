@@ -1,0 +1,7 @@
+strategy,R,selected,selected_count,spent,budget,K,effect,seed,runtime_s,scenarios
+none,0.9912682261200289,,0,0.0,3.0,3,0.6,42,1.0299991117790341e-05,"general,severe,extreme"
+random,0.9922231634870581,road_02|road_04|road_01,3,3.0,3.0,3,0.6,42,2.0348892000038177,"general,severe,extreme"
+depth,0.9926956308537506,road_02|road_03|road_00,3,3.0,3.0,3,0.6,42,1.9218317000049865,"general,severe,extreme"
+flow,0.9971560091494998,road_05|road_04|road_03,3,3.0,3.0,3,0.6,42,2.0125251000135904,"general,severe,extreme"
+centrality,0.9956974486746625,road_02|road_05|road_01,3,3.0,3.0,3,0.6,42,2.151522800006205,"general,severe,extreme"
+resilience_greedy,0.9971560091494998,road_05|road_03|road_04,3,3.0,3.0,3,0.6,42,17.429812500005937,"general,severe,extreme"
