@@ -1,0 +1,393 @@
+"""Time-slice UE, resilience, road ranking, optimization and reproducible suites."""
+from pathlib import Path
+import json
+import time
+from itertools import combinations
+import numpy as np
+import pandas as pd
+import geopandas as gpd
+import networkx as nx
+from scipy.spatial import cKDTree
+from shapely import normalize
+from .archive import write_json,file_hash
+from .assignment import load_osm
+from .flood import hydrograph,spatial_parameters,road_response
+from .spatial import surface_reason
+from .resilience import evaluate_metrics,integrate
+from .optimization import greedy,exhaustive,fixed_selection,confidence_interval
+
+
+class Experiment:
+    def __init__(self,root,settings,seed=42,region='small',od_seed=None):
+        self.root=root;self.s=settings;self.seed=seed;self.region=region
+        self.net,self.graph=load_osm(root/settings['network_root']/region)
+        all_od=pd.read_csv(root/settings['od'],dtype={'origin_node':'Int64','destination_node':'Int64'})
+        scope=np.ones(len(all_od),bool) if region=='nanshan' else all_od.origin_node.isin(self.net.nodes)&all_od.destination_node.isin(self.net.nodes)
+        self.excluded=all_od.loc[~scope].groupby('period').flow_veh_h.sum().to_dict()
+        self.od={p:q.copy().reset_index(drop=True) for p,q in all_od[scope].groupby('period')}
+        if od_seed is not None:
+            rng=np.random.default_rng(od_seed)
+            for p,q in self.od.items():q['flow_veh_h']*=rng.lognormal(0,.2,len(q))
+        self.edges=gpd.read_file(root/settings['network_root']/region/'road_edges.geojson').to_crs(32650)
+        self.edges=self.edges.set_index('edge_id').loc[self.net.edges.edge_id].reset_index()
+        connectors=pd.read_csv(root/settings['demand_directory']/'zone_connectors.csv',dtype={'node_id':'Int64'})
+        population=pd.read_csv(root/settings['demand_directory']/'zone_population.csv')
+        origins=connectors.merge(population[['zone_id','population_estimate']],on='zone_id')
+        if region=='small':origins=origins[origins.node_id.isin(self.net.nodes)]
+        origins=origins.copy();origins['access_time_s']=origins.connector_distance_m.fillna(0)/settings['access_speed_kph']*3.6
+        self.origins=origins
+        self.efficiency_origins=sorted(set(origins.node_id.dropna().astype(int)))
+        self.efficiency_origins=self.efficiency_origins[::max(1,int(np.ceil(len(self.efficiency_origins)/settings['efficiency_sample_origins'])))]
+        # Address/OSM representative-point access, with explicit snap-distance exclusion.
+        nodes=gpd.GeoDataFrame({'node_id':list(self.graph.nodes)},geometry=gpd.points_from_xy([self.graph.nodes[n]['x'] for n in self.graph],[self.graph.nodes[n]['y'] for n in self.graph]),crs=4326).to_crs(32650)
+        tree=cKDTree(np.array([(p.x,p.y) for p in nodes.geometry]))
+        facilities=gpd.read_file(root/settings['facilities']).to_crs(32650)
+        distance,idx=tree.query(np.array([(p.x,p.y) for p in facilities.geometry]));facilities['node_id']=nodes.node_id.to_numpy()[idx]
+        facilities['snap_distance_m']=distance;facilities['access_time_s']=distance/settings['access_speed_kph']*3.6
+        self.facility_rejections=facilities[distance>settings['facility_max_snap_m']].copy()
+        self.facilities=facilities[distance<=settings['facility_max_snap_m']].copy()
+        self.normal={};self.normal_metrics={};self.cache={};self.state_cache={};self.assignment_count=0;self.max_gap=0.;self.max_balance=0.;self.solve_seconds=0.
+        for period,od in self.od.items():
+            r=self.solve(od)
+            m,a=evaluate_metrics(self.net,r,np.zeros(len(self.net.edges),bool),self.origins,self.facilities,self.efficiency_origins,rho_s=settings['rho_s'],weights=settings['weights'])
+            self.normal[period]=r;self.normal_metrics[period]=m
+        self.times=np.arange(0,86401,settings['interval_s'],dtype=float)
+        if region=='nanshan':
+            depth=pd.read_parquet(root/settings['full_depths']);self.depths={}
+            for scenario,part in depth.groupby('scenario'):
+                a=np.zeros((len(self.times),len(self.net.edges)));lookup={v:i for i,v in enumerate(self.net.edges.edge_id)}
+                for t,frame in part.groupby('time_s'):
+                    k=np.flatnonzero(self.times==t)
+                    if len(k):
+                        ids=[lookup[x] for x in frame.edge_id];a[k[0],ids]=frame.depth_m.to_numpy()
+                self.depths[scenario]=a
+            mask=np.max(self.depths['extreme'],axis=0)>0
+            self.candidate_groups={str(e):[i] for i,e in enumerate(self.net.edges.edge_id) if mask[i]}
+        else:self._small_risk()
+
+    def solve(self,od,**kwargs):
+        r=self.net.solve(od,tolerance=self.s['gap_target'],max_iterations=self.s['max_iterations'],**kwargs)
+        self.assignment_count+=1;self.max_gap=max(self.max_gap,r.relative_gap);self.max_balance=max(self.max_balance,r.node_balance_max_error);self.solve_seconds+=r.elapsed_s
+        if not r.converged:raise RuntimeError(f'UE did not converge: {r.relative_gap}')
+        if r.node_balance_max_error>1e-5:raise RuntimeError('node flow conservation failed')
+        return r
+
+    def _small_risk(self):
+        # A distinct stress-test design on existing surface roads; not a downsized historical event.
+        # Sample eligible, normally used road groups to ensure the 3-zone small model is exercised.
+        geometry=[normalize(g).wkb_hex for g in self.edges.geometry];groups={}
+        for i,key in enumerate(geometry):
+            if not surface_reason(self.edges.iloc[i]):groups.setdefault(key,[]).append(i)
+        used=[(key,ids) for key,ids in groups.items() if sum(self.normal['offpeak'].flow[ids])>1e-8]
+        rng=np.random.default_rng(self.s['risk_design_seed']);chosen=rng.choice(len(used),size=min(len(used),self.s['candidate_limit']),replace=False)
+        self.candidate_groups={f'road_{k:02d}':used[i][1] for k,i in enumerate(chosen)}
+        mid=[self.edges.geometry.iloc[v[0]].interpolate(.5,normalized=True) for v in self.candidate_groups.values()]
+        params=spatial_parameters([(p.x,p.y) for p in mid],self.seed,self.s['small_flood'])
+        pulse=hydrograph(self.times,params.peak_s,params.rise_s,params.recession_s)*params.peak_m.to_numpy()
+        self.risk_parameters=params;self.depths={}
+        for scenario,mult in self.s['scenario_multipliers'].items():
+            a=np.zeros((len(self.times),len(self.net.edges)))
+            for k,ids in enumerate(self.candidate_groups.values()):a[:,ids]=pulse[:,k,None]*mult
+            self.depths[scenario]=a
+
+    @staticmethod
+    def period(t):
+        return 'morning_peak' if 7*3600<=t<10*3600 else ('evening_peak' if 17*3600<=t<20*3600 else 'offpeak')
+
+    def state(self,depth,effect=0,selected=(),ablation=None):
+        d=np.array(depth,copy=True)
+        for road in selected:d[self.candidate_groups[road]]*=1-effect
+        response=road_response(d,self.net.edges.free_flow_speed_kph,self.net.capacity,self.s['impact'],model=self.s.get('speed_model','pregnolato'))
+        closed=response.closed.to_numpy();t0=np.divide(self.net.edges.length_m.to_numpy()*3.6,response.speed_kph.to_numpy(),out=np.full(len(d),np.inf),where=response.speed_kph.to_numpy()>0)
+        cap=response.capacity_veh_h.to_numpy()
+        if ablation=='no_capacity_degradation':cap=np.where(closed,0,self.net.capacity)
+        return t0,cap,closed
+
+    def evaluate(self,selected=(),effect=None,scenarios=None,ablation=None,rho_s=None,retain=False):
+        selected=tuple(sorted(selected));effect=self.s['effect'] if effect is None else effect
+        scenarios=tuple(scenarios or ['general','severe','extreme']);rho=self.s['rho_s'] if rho_s is None else rho_s
+        key=(selected,effect,scenarios,ablation,rho)
+        if key in self.cache and not retain:return self.cache[key][0]
+        rows=[];access_rows=[]
+        weights=self.s['weights'].copy()
+        if ablation=='no_facility':weights['functionality']=0
+        for scenario in scenarios:
+            array=self.depths[scenario]
+            for ti,t in enumerate(self.times):
+                period=self.period(t);normal=self.normal[period];base=self.normal_metrics[period]
+                depth=np.max(array,axis=0) if ablation=='static_peak_flood' else array[ti]
+                if np.all(depth==0):
+                    m=base.copy();m['Q']=1.
+                    # Baseline includes same penalty, so normalization stays exactly 1 for all rho.
+                else:
+                    t0,cap,closed=self.state(depth,effect,selected,ablation)
+                    state_key=(period,depth.tobytes(),selected,effect,ablation)
+                    cached=self.state_cache.get(state_key)
+                    if cached is not None:r=cached
+                    elif ablation=='no_reassignment':
+                        # Fixed normal routes: blocked OD explicitly unserved; no circulation on closed arcs.
+                        # Decompose each OD to the normal shortest path, not arbitrary normal edge-flow masking.
+                        r=self.fixed_routes(period,t0,cap,closed)
+                    else:r=self.solve(self.od[period],t0=t0,capacity=cap,closed=closed)
+                    # Cache only small stress tests; full-city per-state arc arrays are large.
+                    if self.region=='small':
+                        if len(self.state_cache)>=2000:self.state_cache.pop(next(iter(self.state_cache)))
+                        self.state_cache[state_key]=r
+                    if rho!=self.s['rho_s']:
+                        base=dict(base);base['total_cost_veh_s_h']=base['travel_cost_veh_s_h']+300*normal.intrazonal_veh_h+rho*normal.unserved_veh_h
+                    m,a=evaluate_metrics(self.net,r,closed,self.origins,self.facilities,self.efficiency_origins,base,rho,weights)
+                    if retain:
+                        a=a.copy();a['scenario']=scenario;a['time_s']=t;access_rows.append(a)
+                rows.append({'scenario':scenario,'time_s':t,'period':period,**m})
+        frame=pd.DataFrame(rows)
+        scores={scenario:integrate(q.time_s,q.Q) for scenario,q in frame.groupby('scenario')}
+        score=float(np.mean(list(scores.values())))
+        self.cache[key]=(score,frame,scores)
+        if retain:return score,frame,scores,pd.concat(access_rows,ignore_index=True) if access_rows else pd.DataFrame()
+        return score
+
+    def fixed_routes(self,period,t0,cap,closed):
+        from scipy.sparse.csgraph import dijkstra
+        from .assignment import AssignmentResult,bpr
+        od=self.od[period];q,o,d,intra,valid,groups=self.net.prepare_od(od)
+        graph,lookup=self.net.graph(self.normal[period].time,np.ones(len(closed),bool));flow=np.zeros(len(closed));served=np.zeros(len(q),bool);times=np.full(len(q),np.inf)
+        for origin,ids in groups:
+            dist,pred=dijkstra(graph,indices=int(origin),return_predecessors=True)
+            for row in ids:
+                v=d[row];path=[]
+                while v!=origin and pred[v]>=0:
+                    u=int(pred[v]);path.append(lookup[u*len(self.net.nodes)+v]);v=u
+                if v==origin and not closed[path].any():flow[path]+=q[row];served[row]=True
+        cost=np.full(len(flow),np.inf);cost[~closed]=bpr(flow[~closed],t0[~closed],cap[~closed]);times[served]=0
+        return AssignmentResult(flow,cost,pd.DataFrame(),float(q[served].sum()),float(q[~served&~intra].sum()),float(q[intra].sum()),float(q.sum()),0.,True,0.,0.,times,served)
+
+    def scope(self):
+        return {'region':self.region,'nodes':len(self.net.nodes),'directed_edges':len(self.net.edges),
+            'od_rows_by_period':{p:len(q) for p,q in self.od.items()},'excluded_outside_small_scope_veh_h':self.excluded,
+            'represented_population':float(self.origins.population_estimate.sum()),'facility_counts':self.facilities.category.value_counts().to_dict(),
+            'unavailable_shelter_inventory':True,'candidate_physical_roads':len(self.candidate_groups),
+            'candidate_risk_design':'independent synthetic surface-road stress test; sampled from normally used physical groups' if self.region=='small' else 'Phase 04 synthetic selected road arcs',
+            'efficiency':'time-weighted 1/s, unreachable=0; sampled origin nodes to all graph nodes','efficiency_origins':len(self.efficiency_origins),
+            'assignment_count':self.assignment_count,'max_gap':self.max_gap,'max_node_balance_error':self.max_balance,'solve_seconds':self.solve_seconds}
+
+
+def rankings(exp):
+    normal=exp.normal['offpeak'];base=exp.evaluate();rows=[]
+    # Edge betweenness on directed simple graph: unique ordered pair scores shared among parallel arcs.
+    graph=nx.DiGraph()
+    for r in exp.net.edges.itertuples():
+        if not graph.has_edge(r.u,r.v) or r.free_flow_time_s<graph[r.u][r.v]['weight']:graph.add_edge(r.u,r.v,weight=r.free_flow_time_s)
+    bet=nx.edge_betweenness_centrality(graph,k=min(exp.s['betweenness_origins'],len(graph)),weight='weight',seed=42)
+    for road,ids in exp.candidate_groups.items():
+        closed=np.zeros(len(exp.net.edges),bool);closed[ids]=True;r=exp.solve(exp.od['offpeak'],closed=closed)
+        m,a=evaluate_metrics(exp.net,r,closed,exp.origins,exp.facilities,exp.efficiency_origins,exp.normal_metrics['offpeak'],exp.s['rho_s'],exp.s['weights'])
+        rows.append({'road_id':road,'directed_edge_ids':'|'.join(exp.net.edges.edge_id.iloc[ids]),
+            'peak_depth_m':float(np.max(exp.depths['extreme'][:,ids])),'normal_flow_veh_h':float(normal.flow[ids].sum()),
+            'betweenness_sampled':float(sum(bet.get((exp.net.edges.u.iloc[i],exp.net.edges.v.iloc[i]),0.) for i in ids)),
+            'failure_performance_loss':1-m['Qp'],'failure_hospital_15min_loss':None if m['hospital_15min_coverage'] is None else exp.normal_metrics['offpeak']['hospital_15min_coverage']-m['hospital_15min_coverage'],
+            'delta_R':exp.evaluate([road])-base,'cost':1.})
+    return pd.DataFrame(rows).sort_values(['delta_R','road_id'],ascending=[False,True])
+
+
+def compare_strategies(exp,ranking,k,budget,effect=None,seed=42,scenarios=None):
+    costs=dict(zip(ranking.road_id,ranking.cost));candidates=ranking.road_id.tolist();rows=[];selections={};rng=np.random.default_rng(seed)
+    evaluate=lambda selected:exp.evaluate(selected,effect=effect,scenarios=scenarios)
+    orders={'none':[],'random':list(rng.permutation(candidates)),
+        'depth':ranking.sort_values(['peak_depth_m','road_id'],ascending=[False,True]).road_id.tolist(),
+        'flow':ranking.sort_values(['normal_flow_veh_h','road_id'],ascending=[False,True]).road_id.tolist(),
+        'centrality':ranking.sort_values(['betweenness_sampled','road_id'],ascending=[False,True]).road_id.tolist()}
+    for strategy in [*orders,'resilience_greedy']:
+        start=time.perf_counter()
+        if strategy=='resilience_greedy':selection,trace=greedy(candidates,costs,budget,k,evaluate)
+        else:selection=fixed_selection(orders[strategy],costs,budget,k)
+        score=evaluate(selection);selections[strategy]=selection
+        rows.append({'strategy':strategy,'R':score,'selected':'|'.join(selection),'selected_count':len(selection),
+            'spent':sum(costs[e] for e in selection),'budget':budget,'K':k,'effect':effect if effect is not None else exp.s['effect'],
+            'seed':seed,'runtime_s':time.perf_counter()-start,'scenarios':','.join(scenarios or ['general','severe','extreme'])})
+    return pd.DataFrame(rows),selections
+
+
+def research_stage(root,config,run):
+    phase=config['phase'];s=config['research'];start=time.perf_counter()
+    exp=Experiment(root,s,config['seed'],region=s.get('region','small'))
+    if phase=='07':
+        score,frame,scores,access=exp.evaluate(scenarios=['normal','general','severe','extreme'],retain=True)
+        frame.to_csv(run.path/'raw/resilience_timeseries.csv',index=False);access.to_parquet(run.path/'raw/accessibility.parquet',index=False)
+        pd.DataFrame([{'scenario':k,'R':v} for k,v in scores.items()]).to_csv(run.path/'raw/resilience_summary.csv',index=False)
+        sensitivity=[]
+        for rho in s['rho_sensitivity_s']:
+            # Rho affects evaluation, not equilibrium. Reuse actual assigned costs.
+            q=frame[frame.scenario.ne('normal')].copy();vals=[]
+            for scenario,part in q.groupby('scenario'):
+                numerator=np.array([exp.normal_metrics[p]['travel_cost_veh_s_h']+300*exp.normal[p].intrazonal_veh_h+rho*exp.normal[p].unserved_veh_h for p in part.period])
+                denominator=part.travel_cost_veh_s_h+300*part.intrazonal_veh_h+rho*part.unserved_veh_h
+                qp=np.divide(numerator,denominator,out=np.ones(len(part)),where=denominator.to_numpy()>0)
+                w=s['weights'];qf=part.Qf.fillna(0);denom=w['structure']+w['performance']+w['functionality']*part.function_weight_available
+                vals.append(integrate(part.time_s,(w['structure']*part.Qs+w['performance']*qp+w['functionality']*qf)/denom))
+            sensitivity.append({'rho_s':rho,'mean_R':float(np.mean(vals))})
+        pd.DataFrame(sensitivity).to_csv(run.path/'raw/penalty_sensitivity.csv',index=False)
+        plot_curves(run,frame,'resilience_curve','Four scenarios | same OD and no-disaster baseline per time slice')
+        plot_access(run,exp,access)
+        report={'scores':scores,'penalty_sensitivity':sensitivity,'scope':exp.scope(),'elapsed_s':time.perf_counter()-start}
+    elif phase in {'08','09'}:
+        ranking=rankings(exp);ranking.to_csv(run.path/'raw/critical_road_ranking.csv',index=False)
+        save_candidate_maps(run,exp,ranking)
+        if phase=='08':report={'scope':exp.scope(),'ranking_rows':len(ranking),'base_R':exp.evaluate(),'elapsed_s':time.perf_counter()-start}
+        else:
+            table,selected=compare_strategies(exp,ranking,s['K'],s['budget']);table.to_csv(run.path/'raw/strategy_comparison.csv',index=False)
+            best,value,count=exhaustive(ranking.road_id.tolist(),dict(zip(ranking.road_id,ranking.cost)),s['budget'],s['K'],lambda x:exp.evaluate(x))
+            selection=selected['resilience_greedy'];greedy_value=float(table.loc[table.strategy.eq('resilience_greedy'),'R'].iloc[0])
+            write_json(run.path/'raw/optimized_road_selection.json',{'selected':selection,'exhaustive_selected':best,'exhaustive_R':value,'sets_evaluated':count,'greedy_absolute_gap':value-greedy_value})
+            optimized,frames,_,_=exp.evaluate(selection,retain=True);base,old,_,_=exp.evaluate(retain=True)
+            frames['strategy']='resilience_greedy';old['strategy']='none';pd.concat([old,frames]).to_csv(run.path/'raw/strategy_timeseries.csv',index=False)
+            plot_comparison(run,table,'strategy_comparison')
+            report={'scope':exp.scope(),'strategies':table.to_dict('records'),'exhaustive_R':value,'exhaustive_sets':count,'greedy_absolute_gap':value-greedy_value,'elapsed_s':time.perf_counter()-start}
+    else:
+        report=experiment_suite(root,config,run,exp)
+    return report
+
+
+def plot_curves(run,frame,name,title):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    fig,ax=plt.subplots(figsize=(11,5),layout='constrained')
+    for scenario,q in frame.groupby('scenario'):ax.plot(q.time_s/3600,q.Q,label=f'{scenario}, R={integrate(q.time_s,q.Q):.5f}')
+    ax.set(xlabel='Scenario hours',ylabel='Q(t)',title=title);ax.legend(fontsize=8);ax.grid(alpha=.2)
+    for ext in ['png','svg']:
+        p=run.path/'figures'/(name+'.'+ext);fig.savefig(p,dpi=160)
+        run.add_artifact(p,title='灾害全过程综合韧性',kind='figure',data_kind='mixed',source_paths=[run.path/'raw/resilience_timeseries.csv'])
+    plt.close(fig)
+
+
+def plot_access(run,exp,access):
+    if access.empty:return
+    import matplotlib.pyplot as plt
+    ti=access[access.scenario.eq('extreme')].groupby('time_s').hospital_time_s.sum().idxmax()
+    part=access[access.scenario.eq('extreme')&access.time_s.eq(ti)]
+    zones=gpd.read_file(exp.root/exp.s['demand_directory']/'traffic_zones.geojson').to_crs(32650)
+    q=zones.merge(part,on='zone_id');q['hospital_minutes']=q.hospital_time_s.clip(upper=3600)/60
+    fig,ax=plt.subplots(figsize=(9,7),layout='constrained');exp.edges.plot(ax=ax,color='#aab6c0',linewidth=.3)
+    q.plot(ax=ax,column='hospital_minutes',cmap='YlOrRd',vmin=0,vmax=60,legend=True,alpha=.65,legend_kwds={'label':'Nearest hospital min; unreachable capped 60 for display'})
+    ax.set_title(f'Extreme scenario hospital accessibility | {ti/3600:g} h\nOSM representative locations, unverified entrances');ax.ticklabel_format(style='plain',useOffset=False)
+    p=run.path/'figures/hospital_accessibility_map.png';fig.savefig(p,dpi=140);plt.close(fig)
+    run.add_artifact(p,title='医院网络可达性（入口待核验）',kind='figure',data_kind='mixed',source_paths=[run.path/'raw/accessibility.parquet'])
+
+
+def save_candidate_maps(run,exp,ranking):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    columns=['peak_depth_m','normal_flow_veh_h','betweenness_sampled','failure_performance_loss','delta_R']
+    corr=ranking[columns].corr(method='spearman');corr.to_csv(run.path/'raw/importance_correlation.csv')
+    fig,ax=plt.subplots(figsize=(8,6),layout='constrained');im=ax.imshow(corr,vmin=-1,vmax=1,cmap='RdBu_r');ax.set_xticks(range(len(columns)),columns,rotation=30,ha='right',fontsize=8);ax.set_yticks(range(len(columns)),columns,fontsize=8)
+    for i in range(len(columns)):
+        for j in range(len(columns)):ax.text(j,i,'NA' if pd.isna(corr.iloc[i,j]) else f'{corr.iloc[i,j]:.2f}',ha='center',va='center',fontsize=8)
+    fig.colorbar(im,ax=ax,label='Spearman rank correlation');ax.set_title('Computed road importance; NA means constant/undefined')
+    p=run.path/'figures/importance_correlation.png';fig.savefig(p,dpi=150);plt.close(fig)
+    run.add_artifact(p,title='道路重要性排名相关性',kind='figure',data_kind='synthetic',source_paths=[run.path/'raw/critical_road_ranking.csv'])
+    roads=[]
+    for r in ranking.itertuples():
+        q=exp.edges.iloc[exp.candidate_groups[r.road_id]].copy();q['road_id']=r.road_id;q['delta_R']=r.delta_R;roads.append(q)
+    candidates=gpd.GeoDataFrame(pd.concat(roads),crs=exp.edges.crs);candidates.to_crs(4326).to_file(run.path/'raw/critical_roads.geojson',driver='GeoJSON')
+    fig,ax=plt.subplots(figsize=(9,7),layout='constrained');exp.edges.plot(ax=ax,color='#c6ced3',linewidth=.5)
+    candidates.plot(ax=ax,column='delta_R',cmap='viridis',linewidth=4,legend=True,legend_kwds={'label':'Recomputed single-road Delta R'})
+    for r in ranking.itertuples():
+        pnt=exp.edges.geometry.iloc[exp.candidate_groups[r.road_id][0]].interpolate(.5,normalized=True);ax.annotate(r.road_id,(pnt.x,pnt.y),fontsize=8)
+    ax.set_title('Small real-network synthetic flood candidates');ax.ticklabel_format(style='plain',useOffset=False)
+    p=run.path/'figures/critical_roads_map.png';fig.savefig(p,dpi=140);plt.close(fig)
+    run.add_artifact(p,title='关键积水道路（小网压力试验）',kind='figure',data_kind='mixed',source_paths=[run.path/'raw/critical_road_ranking.csv',run.path/'raw/critical_roads.geojson'])
+
+
+def plot_comparison(run,table,name):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    fig,ax=plt.subplots(figsize=(10,5),layout='constrained');q=table.groupby('strategy',sort=False).R.mean();ax.bar(q.index,q.values,color='#367d98');ax.set_ylim(max(0,q.min()-.02),max(1.001,q.max()+.002));ax.set(ylabel='Mean time-integrated R',title='Equal-cost, equal-budget governance comparison');ax.tick_params(axis='x',rotation=20)
+    p=run.path/'figures'/(name+'.png');fig.savefig(p,dpi=160);plt.close(fig)
+    run.add_artifact(p,title='同条件治理策略比较',kind='figure',data_kind='synthetic',source_paths=[run.path/'raw'/('strategy_comparison.csv' if name=='strategy_comparison' else 'experiment_results.csv')])
+
+
+def experiment_suite(root,config,run,first):
+    import gc
+    import psutil
+    s=config['research'];all_rows=[];checks=[];base_ranking=rankings(first)
+    training_selection=None
+    resumed=None
+    if s.get('resume_results_directory'):
+        source=(root/s['resume_results_directory']).resolve();source.relative_to(root)
+        previous=json.loads((source.parent/'config.json').read_text())['research']
+        if {k:v for k,v in s.items() if k!='resume_results_directory'}!={k:v for k,v in previous.items() if k!='resume_results_directory'}:raise ValueError('resume model parameters changed')
+        table=pd.read_csv(source/'experiment_results.csv');table=table[~table.experiment.eq('F_heldout')]
+        checks=json.loads((source/'checkpoints.json').read_text())['checks']
+        if set(c['seed'] for c in checks)!=set(s['seeds']):raise ValueError('training checkpoint incomplete')
+        all_rows=table.where(table.notna(),None).to_dict('records')
+        row=table[table.experiment.eq('B_strategies')&table.seed.eq(config['seed'])&table.strategy.eq('resilience_greedy')].iloc[0]
+        training_selection=str(row.selected).split('|') if pd.notna(row.selected) else []
+        resumed={'source_run':source.parent.name,'numerical_results_sha256':file_hash(source/'experiment_results.csv'),'reason':'all ten training seeds finished; original run failed only during plot backend initialization; held-out cases rerun'}
+        print('Resumed all ten completed training seeds; rerunning held-out validation and rendering',flush=True)
+    for seed in s['seeds']:
+        if resumed:continue
+        started=time.perf_counter();exp=first if seed==config['seed'] else Experiment(root,s,seed)
+        ranking=base_ranking.copy()
+        for k,row in ranking.iterrows():ranking.loc[k,'peak_depth_m']=np.max(exp.depths['extreme'][:,exp.candidate_groups[row.road_id]])
+        _,ts,scores,_=exp.evaluate(scenarios=['normal','general','severe','extreme'],retain=True)
+        for scenario,value in scores.items():all_rows.append({'experiment':'A_intensity','seed':seed,'strategy':'none','scenario':scenario,'R':value})
+        table,selected=compare_strategies(exp,ranking,s['K'],s['budget'],seed=seed)
+        all_rows.extend({'experiment':'B_strategies',**row} for row in table.to_dict('records'))
+        if seed==config['seed']:
+            training_selection=selected['resilience_greedy']
+            # Requested values are retained, while effective K is explicitly capped by candidates.
+            for requested in [0,1,3,5,10,20]:
+                effective=min(requested,len(ranking));choice,trace=greedy(ranking.road_id.tolist(),dict(zip(ranking.road_id,ranking.cost)),float(effective),effective,lambda a:exp.evaluate(a))
+                all_rows.append({'experiment':'C_budget','seed':seed,'strategy':'resilience_greedy','K_requested':requested,'K':effective,'budget':float(effective),'spent':float(len(choice)),'selected_count':len(choice),'selected':'|'.join(choice),'R':exp.evaluate(choice)})
+            for effect in [.2,.4,.6,.8]:
+                choice,trace=greedy(ranking.road_id.tolist(),dict(zip(ranking.road_id,ranking.cost)),s['budget'],s['K'],lambda a:exp.evaluate(a,effect=effect))
+                all_rows.append({'experiment':'D_effect','seed':seed,'strategy':'resilience_greedy','effect':effect,'K':s['K'],'budget':s['budget'],'spent':float(len(choice)),'selected_count':len(choice),'selected':'|'.join(choice),'R':exp.evaluate(choice,effect=effect)})
+            all_rows.append({'experiment':'E_ablation','seed':seed,'strategy':'full_model','R':exp.evaluate(training_selection)})
+            for ablation in ['static_peak_flood','no_capacity_degradation','no_reassignment','no_facility']:
+                all_rows.append({'experiment':'E_ablation','seed':seed,'strategy':ablation,'R':exp.evaluate(training_selection,ablation=ablation)})
+            single,_=greedy(ranking.road_id.tolist(),dict(zip(ranking.road_id,ranking.cost)),s['budget'],s['K'],lambda a:exp.evaluate(a,scenarios=['severe']))
+            all_rows.append({'experiment':'E_ablation','seed':seed,'strategy':'single_scenario_optimization','R':exp.evaluate(single),'selected':'|'.join(single)})
+        checks.append({'seed':seed,**exp.scope(),'elapsed_s':time.perf_counter()-started})
+        write_json(run.path/'raw/checkpoints.json',{'completed_seeds':[c['seed'] for c in checks],'checks':checks})
+        pd.DataFrame(all_rows).to_csv(run.path/'raw/experiment_results.csv',index=False)
+        print(f'Experiment suite: seed {seed} finished in {time.perf_counter()-started:.1f} s',flush=True)
+        if exp is not first:del exp;gc.collect()
+    # Fixed training policy is tested on unseen correlated flood patterns and perturbed OD.
+    for seed in s['seeds']:
+        test=Experiment(root,s,seed+1000,od_seed=seed+5000)
+        for strategy,choice in [('none',[]),('trained_greedy',training_selection)]:
+            all_rows.append({'experiment':'F_heldout','seed':seed,'hazard_seed':seed+1000,'od_seed':seed+5000,'strategy':strategy,'R':test.evaluate(choice)})
+        checks.append({'heldout_seed':seed,**test.scope()});del test;gc.collect()
+        print(f'Held-out robustness: seed {seed} finished',flush=True)
+    # G uses actual accepted algorithm benchmark timings, without rerunning the same test.
+    runs=sorted((root/'results/runs').glob('*_p06_*/raw/assignment_report.json'))
+    if not runs:raise FileNotFoundError('Phase 06 benchmark required')
+    benchmark=json.loads(runs[-1].read_text())
+    efficiency=[{'region':'sioux_falls',**benchmark['sioux']},*({'region':region,**row} for region,row in benchmark['osm'].items())]
+    pd.DataFrame(efficiency).to_csv(run.path/'raw/efficiency_benchmark.csv',index=False)
+    table=pd.DataFrame(all_rows);table.to_csv(run.path/'raw/experiment_results.csv',index=False)
+    statistics=[]
+    for (experiment,strategy),q in table[table.experiment.isin(['B_strategies','F_heldout'])].groupby(['experiment','strategy']):
+        statistics.append({'experiment':experiment,'strategy':strategy,**confidence_interval(q.R)})
+    stats=pd.DataFrame(statistics);stats.to_csv(run.path/'raw/experiment_statistics.csv',index=False)
+    pairs=table[table.experiment.eq('F_heldout')].pivot(index='seed',columns='strategy',values='R')
+    paired_ci=confidence_interval(pairs.trained_greedy-pairs.none)
+    plot_comparison(run,table[table.experiment.eq('B_strategies')],'experiment_strategy_comparison')
+    import matplotlib.pyplot as plt
+    fig,axes=plt.subplots(1,2,figsize=(11,4.5),layout='constrained')
+    for ax,kind,x in [(axes[0],'C_budget','K_requested'),(axes[1],'D_effect','effect')]:
+        q=table[table.experiment.eq(kind)];ax.plot(q[x],q.R,marker='o');ax.set(xlabel=x,ylabel='R');ax.grid(alpha=.2)
+    fig.suptitle('Deterministic parameter sensitivities, training seed 42; K capped at six roads')
+    p=run.path/'figures/budget_effect_sensitivity.png';fig.savefig(p,dpi=160);plt.close(fig)
+    run.add_artifact(p,title='预算与治理效果敏感性',kind='figure',data_kind='synthetic',source_paths=[run.path/'raw/experiment_results.csv'])
+    # Enforce fairness before labeling the experiment suite successful.
+    constrained=table[table.spent.notna()&table.budget.notna()]
+    if not (constrained.spent<=constrained.budget+1e-9).all():raise ValueError('budget violation')
+    if any(c['max_gap']>s['gap_target'] or c['max_node_balance_error']>1e-5 for c in checks):raise ValueError('invalid assignment in suite')
+    return {'experiments':'A-G','resumed_numerical_checkpoint':resumed,'training_seeds':s['seeds'],'independent_test_seeds':[x+1000 for x in s['seeds']],
+        'sensitivity_and_ablation_seeds':[config['seed']],'scope':first.scope(),'checks':checks,'statistics':statistics,
+        'heldout_paired_gain_ci95':paired_ci,'observed_process_peak_memory_bytes':getattr(psutil.Process().memory_info(),'peak_wset',psutil.Process().memory_info().rss),
+        'G_assignment_benchmark_source':str(runs[-1].relative_to(root)),
+        'limitations':['Optimization/10-seed suite is on the explicitly scoped small real network, not full Nanshan optimization','Small OD contains three connected TAZ and nine positive pairs, including three intrazonal entries','No calibrated OD, rainfall probability, sensor zero datum or SUMO capacity calibration','CI describes stochastic model realizations; it is not a confidence interval for real Shenzhen resilience']}

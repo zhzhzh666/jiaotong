@@ -29,7 +29,7 @@ def test_history_honors_custom_output_and_filters(tmp_path, capsys):
     assert (tmp_path / "custom-results/index.html").exists()
 
 
-def test_cli_rejects_unimplemented_phase():
+def test_cli_rejects_invalid_phase():
     with pytest.raises(SystemExit) as error:
-        main(["run", "--phase", "04"])
+        main(["run", "--phase", "14"])
     assert error.value.code == 2

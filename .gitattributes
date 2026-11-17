@@ -1,2 +1,6 @@
 # Preserve generated SVG bytes (including Matplotlib path whitespace) for SHA256 provenance.
 docs/validation/*.svg binary
+# Acceptance evidence includes byte-level fingerprints. Preserve exact bytes.
+/docs/validation/** -text whitespace=cr-at-eol
+/docs/deliverables/content.json -text whitespace=cr-at-eol
+/docs/deliverables/delivery_manifest.json -text whitespace=cr-at-eol

@@ -138,7 +138,7 @@ def test_spatial_config_distance_order_and_external_paths_rejected():
     with pytest.raises(ValueError,match='inside project'):validate_config(cfg)
 
 
-def test_historical_clean_source_uses_git_revision_but_dirty_source_is_not_accepted(tmp_path,monkeypatch):
+def test_historical_input_requires_exact_hash_even_when_git_was_dirty(tmp_path,monkeypatch):
     from hashlib import sha256
     from types import SimpleNamespace
     from uftr.archive import verify_recorded_input
@@ -146,5 +146,7 @@ def test_historical_clean_source_uses_git_revision_but_dirty_source_is_not_accep
     item={'path':str(path),'sha256':sha256(b'original version').hexdigest()}
     monkeypatch.setattr('uftr.archive.subprocess.run',lambda *a,**k:SimpleNamespace(returncode=0,stdout=b'original version'))
     assert verify_recorded_input(tmp_path,item,{'commit':'a'*40,'dirty':False})=='git_blob_at_recorded_commit'
+    assert verify_recorded_input(tmp_path,item,{'commit':'a'*40,'dirty':True})=='git_blob_at_recorded_commit'
+    monkeypatch.setattr('uftr.archive.subprocess.run',lambda *a,**k:SimpleNamespace(returncode=0,stdout=b'wrong bytes'))
     with pytest.raises(ValueError,match='checksum'):
         verify_recorded_input(tmp_path,item,{'commit':'a'*40,'dirty':True})

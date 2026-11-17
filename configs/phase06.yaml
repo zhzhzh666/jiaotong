@@ -1,0 +1,39 @@
+project: urban-flood-traffic-resilience
+phase: '06'
+seed: 42
+region: nanshan
+scenario: static-user-equilibrium
+strategy: none
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.3
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+assignment:
+  sioux_directory: data/processed/phase01/20261117T193651_p01_2e554d34/sioux_falls
+  network_root: data/processed/phase01/20261117T193651_p01_2e554d34
+  od: data/synthetic/phase03/20261117T215510_p03_ab17de87/od_matrix.csv
+  sioux_max_iterations: 10000
+  small_max_iterations: 500
+  nanshan_max_iterations: 500

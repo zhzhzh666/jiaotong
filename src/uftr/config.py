@@ -122,6 +122,26 @@ def validate_config(data: dict) -> dict:
         for period,spec in demand['periods'].items():_positive(spec.get('factor'),period+'.factor')
         if not demand.get('facility_weights'):raise ValueError('facility weights required')
         for field,value in demand['facility_weights'].items():_positive(value,'facility weight '+field)
+    if result['phase']=='04':
+        s=result.get('flood',{})
+        for k in ['correlation_length_m','base_peak_m','rise_hours','recession_hours']:_positive(s.get(k),'flood.'+k)
+        for k in ['log_depth_sd','delay_sd_hours','peak_hour']:
+            if not isinstance(s.get(k),(float,int)) or not math.isfinite(s[k]) or s[k]<0:raise ValueError('invalid '+k)
+        if set(s.get('scenario_multipliers',{}))!={'normal','general','severe','extreme'} or s['scenario_multipliers']['normal']!=0:raise ValueError('four scenarios with dry normal required')
+        values=[s['scenario_multipliers'][k] for k in ['normal','general','severe','extreme']]
+        if any(not math.isfinite(x) for x in values) or not all(a<b for a,b in zip(values,values[1:])):raise ValueError('scenario intensities must increase')
+    if result['phase'] in {'04','05','06','07','08','09','10','11','12','13'}:
+        for section in ['flood','impact','assignment','research','sumo']:
+            for key,value in result.get(section,{}).items():
+                if key in {'points','mapping','edges','dictionary','depths','sioux_directory','network_root','od','demand_directory','facilities','full_depths','selection'}:
+                    if not isinstance(value,str) or Path(value).is_absolute() or '..' in Path(value).parts:raise ValueError('input path must stay within project: '+key)
+    if result['phase'] in {'07','08','09','10','11'}:
+        s=result.get('research',{})
+        for k in ['rho_s','gap_target','max_iterations','interval_s','candidate_limit','access_speed_kph']:_positive(s.get(k),'research.'+k)
+        if 86400%s['interval_s']:raise ValueError('research interval must divide 24 hours')
+        if not 0<=s.get('effect',-1)<=1:raise ValueError('effect must be in [0,1]')
+        if s.get('budget',-1)<0 or s.get('K',-1)<0:raise ValueError('nonnegative budget and K required')
+        if result['phase']=='11' and len(set(s.get('seeds',[])))<10:raise ValueError('at least ten distinct seeds required')
     return result
 
 

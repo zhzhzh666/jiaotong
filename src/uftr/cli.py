@@ -70,7 +70,7 @@ def main(argv=None):
     check = sub.add_parser("check-config")
     check.add_argument("--config", type=Path, default=Path("configs/phase00.yaml"))
     run = sub.add_parser("run")
-    run.add_argument("--phase", choices=["00","01","02","03"], required=True)
+    run.add_argument("--phase", choices=[f'{i:02d}' for i in range(14)], required=True)
     run.add_argument('--user-source',type=Path,help='Phase 03 已封存的用户水位数据快照，校验后重放')
     run.add_argument("--config", type=Path)
     run.add_argument("--offline-source",type=Path,help="Phase 01/02 已保存的原始数据快照目录，校验后离线重建")
@@ -100,9 +100,15 @@ def main(argv=None):
             elif args.phase=='02':
                 from .phase02 import run_phase02
                 run_phase02(root,path,args.offline_source)
-            else:
+            elif args.phase=='03':
                 from .phase03 import run_phase03
                 run_phase03(root,path,args.user_source)
+            elif args.phase in {'04','05'}:
+                from .phase04 import run_phase04,run_phase05
+                {'04':run_phase04,'05':run_phase05}[args.phase](root,path)
+            else:
+                from .pipeline import run_stage
+                run_stage(root,path)
     elif args.command == "reindex":
         results = (root / load_config(root / args.config)["outputs"]["root"]).resolve()
         results.relative_to(root)

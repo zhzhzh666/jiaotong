@@ -11,6 +11,7 @@ const skill=process.env.CODEX_PRESENTATION_SKILL;
 const python=process.env.CODEX_ARTIFACT_PYTHON;
 if(!skill||!python) throw new Error('Set CODEX_PRESENTATION_SKILL and CODEX_ARTIFACT_PYTHON to bundled runtime paths.');
 const data=JSON.parse(await fs.readFile(path.join(root,'docs/deliverables/content.json'),'utf8'));
+if(data.final){await import('./build_final_presentation.mjs');process.exit(0);}
 const tmp=path.join(root,'.cache/doc-sync');
 await fs.mkdir(path.join(tmp,'slides'),{recursive:true});
 const original=path.join(root,'开题汇报.pptx');

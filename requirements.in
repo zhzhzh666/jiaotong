@@ -18,3 +18,4 @@ psutil>=6,<8
 pypdf>=5,<7
 PyMuPDF>=1.24,<2
 Pillow>=11,<13
+eclipse-sumo==1.28.0

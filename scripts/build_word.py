@@ -15,6 +15,10 @@ m=data['metrics']
 a=data['phase01']
 b=data['phase02']
 c=data['phase03']
+if 'final' in data:
+ import runpy
+ runpy.run_path(str(ROOT/'scripts/build_final_word.py'),run_name='__main__')
+ raise SystemExit(0)
 parser=argparse.ArgumentParser()
 parser.add_argument('--output',type=Path,default=ROOT/'docs/deliverables/研究方案与阶段进展.docx')
 args=parser.parse_args()

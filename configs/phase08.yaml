@@ -1,0 +1,88 @@
+project: urban-flood-traffic-resilience
+phase: 08
+seed: 42
+region: nanshan
+scenario: time-slice-resilience
+strategy: none
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.3
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+research:
+  region: small
+  network_root: data/processed/phase01/20261117T193651_p01_2e554d34
+  od: data/synthetic/phase03/20261117T215510_p03_ab17de87/od_all_periods.csv
+  demand_directory: data/processed/phase03/20261117T215510_p03_ab17de87
+  facilities: data/processed/phase02/20261117T203637_p02_0286d999/facilities.geojson
+  full_depths: data/synthetic/phase04/20261117T234926_p04_08fa964b/edge_depth_timeseries.parquet
+  access_speed_kph: 20
+  facility_max_snap_m: 1500
+  efficiency_sample_origins: 16
+  rho_s: 14400
+  rho_sensitivity_s:
+  - 7200
+  - 14400
+  - 28800
+  weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+  gap_target: 0.0001
+  max_iterations: 1000
+  interval_s: 900
+  candidate_limit: 6
+  risk_design_seed: 42
+  betweenness_origins: 32
+  impact:
+    closure_depth_m: 0.3
+    minimum_capacity_fraction: 0.2
+    capacity_loss_at_closure: 0.8
+  small_flood:
+    correlation_length_m: 500
+    base_peak_m: 0.28
+    log_depth_sd: 0.35
+    delay_sd_hours: 0.5
+    peak_hour: 9
+    rise_hours: 4
+    recession_hours: 9
+  scenario_multipliers:
+    normal: 0.0
+    general: 0.65
+    severe: 1.25
+    extreme: 2.0
+  effect: 0.6
+  K: 3
+  budget: 3.0
+  seeds:
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51

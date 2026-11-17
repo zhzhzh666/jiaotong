@@ -1,0 +1,49 @@
+project: urban-flood-traffic-resilience
+phase: '04'
+seed: 42
+region: nanshan
+scenario: parameterized-four-scenarios
+strategy: none
+workers: 1
+outputs:
+  root: results
+  dpi: 180
+  retention: key-figures-and-screenshots
+simulation:
+  duration_hours: 24
+  interval_minutes: 15
+units:
+  distance: m
+  time: s
+  flow: veh/h
+  capacity: veh/h
+  flood_depth: m
+crs:
+  source: EPSG:4326
+  projected: EPSG:32650
+models:
+  closure_depth_m: 0.3
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  relative_gap_target: 0.0001
+  resilience_weights:
+    structure: 0.2
+    performance: 0.5
+    functionality: 0.3
+flood:
+  points: data/synthetic/phase02/20261117T203637_p02_0286d999/flood_points.geojson
+  mapping: data/processed/phase02/20261117T203637_p02_0286d999/flood_road_mapping.csv
+  edges: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_edges.geojson
+  dictionary: data/raw/user_sources/field_dictionary_e9e5a7bd/provenance.json
+  correlation_length_m: 1500
+  base_peak_m: 0.25
+  log_depth_sd: 0.35
+  delay_sd_hours: 0.5
+  peak_hour: 9
+  rise_hours: 4
+  recession_hours: 9
+  scenario_multipliers:
+    normal: 0.0
+    general: 0.65
+    severe: 1.25
+    extreme: 2.0

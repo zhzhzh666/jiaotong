@@ -14,6 +14,10 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 target = ROOT / 'docs/deliverables'
 data = json.loads((target / 'content.json').read_text(encoding='utf-8'))
+if 'final' in data:
+    import runpy
+    runpy.run_path(str(ROOT/'scripts/verify_final_deliverables.py'),run_name='__main__')
+    raise SystemExit(0)
 a = data['phase03']
 accepted = json.loads((ROOT / a['evidence']).read_text(encoding='utf-8'))
 assert a['run_id'] == accepted['run_id']

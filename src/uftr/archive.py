@@ -10,6 +10,7 @@ from pathlib import Path
 import subprocess
 import time
 import traceback
+import shutil
 from urllib.parse import quote
 from uuid import uuid4
 from zoneinfo import ZoneInfo
@@ -36,12 +37,21 @@ def verify_recorded_input(root: Path, item: dict, recorded_git: dict) -> str:
     path=Path(item['path']).resolve()
     relative=path.relative_to(root.resolve()).as_posix()
     if path.is_file() and file_hash(path)==item['sha256']:return 'current_bytes'
+    snapshot=item.get('snapshot')
+    if snapshot:
+        saved=(root/snapshot).resolve();saved.relative_to(root.resolve())
+        if saved.is_file() and file_hash(saved)==item['sha256']:return 'immutable_recorded_input_snapshot'
     commit=recorded_git.get('commit')
-    if commit and not recorded_git.get('dirty'):
+    # Even a dirty run may have unchanged tracked files: accept a Git blob only
+    # when its bytes match this individual recorded input's SHA256 exactly.
+    if commit:
         output=subprocess.run(['git','-c',f'safe.directory={root.as_posix()}',
                                '-C',str(root),'show',f'{commit}:{relative}'],capture_output=True)
         if output.returncode==0 and sha256(output.stdout).hexdigest()==item['sha256']:
             return 'git_blob_at_recorded_commit'
+    recovered=root/'docs/validation/source_snapshots'/item['sha256']
+    if recovered.is_file() and file_hash(recovered)==item['sha256']:
+        return 'checksum_verified_recovered_source'
     raise ValueError('recorded input checksum mismatch: '+relative)
 
 
@@ -81,6 +91,15 @@ class RunArchive:
             "inputs": [{"path": str(p.resolve()), "sha256": file_hash(p)} for p in inputs or []],
             "artifacts": [],
         }
+        # Dirty development runs must remain auditable after later source edits.
+        # Preserve only small code/config inputs; original datasets stay in their sealed locations.
+        for item in self.manifest['inputs']:
+            source=Path(item['path'])
+            if source.suffix in {'.py','.yaml','.toml','.md'} and source.stat().st_size<2_000_000:
+                snapshot=self.path/'raw/input_snapshots'/item['sha256']
+                snapshot.parent.mkdir(exist_ok=True,parents=True)
+                if not snapshot.exists():shutil.copy2(source,snapshot)
+                item['snapshot']=snapshot.relative_to(self.project_root).as_posix()
         self.flush()
 
     def flush(self):
@@ -124,6 +143,9 @@ class RunArchive:
         if exc:
             self.manifest["error"] = {"type": exc_type.__name__, "message": str(exc)}
             (self.path / "logs" / "error.txt").write_text("".join(traceback.format_exception(exc_type, exc, tb)), encoding="utf-8")
+        if not exc:
+            self.manifest['outputs']=[{'path':p.relative_to(self.path).as_posix(),'sha256':file_hash(p),'bytes':p.stat().st_size}
+                for p in sorted(self.path.rglob('*')) if p.is_file() and p.name not in {'manifest.json','run.log'} and 'input_snapshots' not in p.parts]
         self.log(f"run finished: {self.manifest['status']}")
         self.flush()
         rebuild_index(self.results)
