@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'docs/deliverables/content.json').read_text(encoding='utf-8'))
 m=data['metrics']
 a=data['phase01']
+b=data['phase02']
 parser=argparse.ArgumentParser()
 parser.add_argument('--output',type=Path,default=ROOT/'docs/deliverables/研究方案与阶段进展.docx')
 args=parser.parse_args()
@@ -85,12 +86,12 @@ def table(headers,rows,widths):
 
 d.add_paragraph('暴雨内涝情景下城市交通网络\n韧性评估与优化研究',style='Title')
 p('研究方案与阶段进展  2026年11月17日',style='Subtitle')
-p('本报告面向课题讨论与后续开发，整合原始研究构想、本地五篇参考论文和项目验收记录。Phase 00基础设施与Phase 01真实有向路网已通过验收，南山研究窗口取得20,447节点和40,105条有向边。交通分配、韧性评价与治理优化尚未实施，后续模型明确标为规划。')
+p('本报告面向课题讨论与后续开发，整合原始研究构想、本地五篇参考论文和项目验收记录。Phase 00—02已完成基础设施、真实路网和空间数据处理，南山研究窗口有20,447节点、40,105条有向边。历史积水坐标/水深仍缺失，已按任务书采用明确标注的合成风险点替代。交通分配、韧性评价与治理优化尚未实施，后续模型明确标为规划。')
 h('研究问题与范围')
 p('暴雨积水会使道路降速或中断，交通需求随之绕行，并可能放大拥堵与公共服务可达性损失。本研究拟回答：在有限预算和治理道路数量约束下，优先改善哪些道路，能够提高整个交通网络在灾害过程中的综合性能。')
 p('研究区域从深圳市南山区的小型真实路网开始，完成方向、长度、属性和连通性校验后再扩大范围。交通分配先用 Sioux Falls 标准网络验证，再接入深圳路网；SUMO 用于后续车辆运行过程补充分析。')
 table(['工作范围','截至本次更新的状态'],[
- ['环境与可复现基础设施','Phase 00 已验收'],['本地参考论文','5篇全文已核查，关键公式页已对照'],['真实路网与外部数据','Phase 01已验收；积水等外部数据待Phase 02'],['交通模型与治理实验','未实施；暂无韧性提升数值'],['运行图片','已保存环境图与两张真实路网图，PNG/SVG可追溯']],[5,11.6])
+ ['环境与可复现基础设施','Phase 00 已验收'],['本地参考论文','5篇全文已核查，关键公式页已对照'],['真实路网与外部数据','已获地形、人口、区域雨量与OSM设施；历史积水缺失'],['交通模型与治理实验','未实施；暂无韧性提升数值'],['运行图片','环境、路网及Phase 02处理图均已归档，可追溯查询']],[5,11.6])
 p('根目录原始 PPT、Word 和 PDF 保留不变。本文件与配套汇报为持续维护版本，后续按每阶段实际验收结果同步更新。',style='Caption')
 
 page(); h('技术路线与模型设计')
@@ -152,18 +153,54 @@ p('run_id  '+a['run_id'],style='Caption')
 p('小区范围[113.925,22.528,113.945,22.545]。原始数据、处理结果、失败及成功运行分别归档；本图和南山图均保留PNG/SVG，后续可按Phase 01或run_id查询。')
 p('© OpenStreetMap contributors，ODbL 1.0。图像来自实际运行，非论文示意图。原始数据在data/raw/phase01/，处理数据在data/processed/phase01/。',style='Caption')
 
+
+page(); h('Phase 02 空间数据与缺失替代')
+p('已取得公开高程、人口栅格及2023年逐日雨量，并从原始OSM提取医院与消防站。官方平台目录页公开，但元数据请求403，下载要求实名登录；未取得可核验的历史积水坐标、道路监测水深或完整避难所清单。缺失数据不按零值处理。')
+table(['数据','本次实际状态'],[
+ ['地形','Copernicus GLO-30 DSM，两块原始瓦片；约30 m，垂直基准EGM2008'],
+ ['人口','WorldPop 2020 UN调整模型人口，约1 km，每像元人数，CC BY 4.0'],
+ ['降雨',f"宝安机场NOAA GSOD 2023，{b['rain_records']}条逐日报告；不是南山区面雨量"],
+ ['公共设施',f"OSM医院{b['hospitals']}处、消防站{b['fire_stations']}处；无合格避难所标签，覆盖不完整"],
+ ['积水风险',f"观测积水点0条，表示未取得数据；另存{b['synthetic_points']}个合成风险点"],
+ ['工程验收',f"{b['tests_passed']}项测试通过，pip check无冲突；离线重放{b['runtime_seconds']}秒，源码878e467、dirty=false"]],[3.4,13.2])
+sub('坐标与匹配')
+p('位置统一为WGS84，匹配距离在EPSG:32650计算。地面风险点不能仅按最近道路认定受灾：高架、隧道和非零layer候选被排除，匝道与近邻歧义降低置信度；同一物理几何的双向边保留。输出候选边、距离、排除理由及高/中/低几何置信度。选择候选不等于认定该路发生积水。')
+sub('时间和精度边界')
+p('Copernicus为DSM，包含建筑和植被，不能直接作为精细排水DTM。WorldPop是2020年模型人口；按原生像元中心裁剪并保留人数，边界像元有误差，未插值到30 m。OSM为2026年快照，雨量是2023年机场单站；这些资料不足以宣称重建2023深圳灾害。')
+p('run_id  '+b['run_id'],style='Caption')
+p('来源、许可、访问失败、数据字典、实际命令与独立审计见docs/PHASE02_REPORT.md。当前交通分配、内涝时序、韧性和治理优化仍未运行。',style='Caption')
+
+page(); h('合成风险点与几何匹配')
+d.add_picture(str(ROOT/b['figures']['risk']),width=Cm(16.4))
+p('图4 合成地形风险点在真实OSM路网上的分布。全部为低DSM道路种子与高斯聚集构建的情景输入，不是历史积水实测位置或水动力预测。',style='Caption')
+p(f"共{b['synthetic_points']}个合成风险点。高/中/低几何置信度为{b['confidence'].get('high',0)}/{b['confidence'].get('medium',0)}/{b['confidence'].get('low',0)}个点，未匹配{b['confidence'].get('unmatched',0)}个。颜色仅表示距离与候选歧义，不表示实际受灾证据强弱。高架、隧道等候选另列排除理由。")
+p('run_id  '+b['run_id'],style='Caption')
+p('© OpenStreetMap contributors，ODbL 1.0。合成点在data/synthetic/phase02/独立保存；真实积水输出保留为空，并注明未取得数据。',style='Caption')
+
+page(); h('公共设施数据与覆盖缺口')
+d.add_picture(str(ROOT/b['figures']['facilities']),width=Cm(16.4))
+p('图5 原始OSM快照提取的医院和消防站。设施点保留类型、OSM ID、名称与位置生成方法；面要素采用内部点，未核验实际入口。',style='Caption')
+p(f"医院{b['hospitals']}处、消防站{b['fire_stations']}处。未识别到符合应急避难所规则的OSM标签，不代表当地没有避难设施。公交候车亭不作为避难所，集合点与法定避难所也不混同；未来覆盖率必须报告设施缺口。")
+p('© OpenStreetMap contributors，ODbL 1.0。run_id  '+b['run_id'],style='Caption')
+
+page(); h('高程 人口与区域逐日雨量')
+d.add_picture(str(ROOT/b['figures']['terrain']),width=Cm(16.4))
+p('图6 DSM与人口原生栅格。保留像元单位，人口为模型估计人数，不能作为2023或2026年人口普查结果。',style='Caption')
+p('Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. WorldPop CC BY 4.0.',style='Caption')
+d.add_picture(str(ROOT/b['figures']['rainfall']),width=Cm(16.4))
+p('图7 宝安机场站59493099999逐日降水。NOAA NCEI GSOD 2023；英寸×25.4转mm，GMT名义日期，累计时段可包含前一日。没有拆分或插值成15分钟降雨。',style='Caption')
+p('run_id  '+b['run_id'],style='Caption')
+
 page(); h('后续实施安排与图片查询')
 table(['阶段','拟实施内容','状态'],[
- ['01','真实路网与Sioux Falls接入','已验收'],['02—03','灾害与人口设施数据、OD构建','未开始'],['04—07','内涝、道路退化、分配及韧性评价','未开始'],['08—09','关键道路识别、治理策略及预算优化','未开始'],['10—11','SUMO 补充验证与对比实验','未开始'],['12—13','中文交互界面、完整审计与交付','未开始']],[2.2,11.2,3.2])
+ ['01','真实路网与Sioux Falls接入','已验收'],['02','空间数据与缺失替代','已验收'],['03','交通分区、合成OD构建','未开始'],['04—07','内涝、道路退化、分配及韧性评价','未开始'],['08—09','关键道路识别、治理策略及预算优化','未开始'],['10—11','SUMO 补充验证与对比实验','未开始'],['12—13','中文交互界面、完整审计与交付','未开始']],[2.2,11.2,3.2])
 sub('下一步验收')
-p('下一阶段为Phase 02：获取真实积水、雨量、DEM、人口及应急设施POI。逐项核查来源、年份、单位、分辨率、许可和缺失，统一坐标；关联道路时区分高架/匝道，记录距离及置信度。论文使用的数据不等于本项目已取得。')
+p('下一阶段为Phase 03：建立1000 m交通分区，用已取得的人口与设施估计产生和吸引，构建重力模型与IPF平衡的合成OD。明确人口年份差、设施入口、边界需求及不可达连接，验证非负、边际平衡与真实路网连接。')
 sub('当前限制')
-p('积水、降雨、DEM、人口、POI和深圳OD尚未获取。SUMO、sumo-gui、netconvert 未在 PATH 发现；sumolib/traci 导入成功不代表可执行仿真已就绪。测试有1条 rasterio/affine 未来弃用警告，GIS 读写已通过。')
+p('历史积水坐标/水深、完整避难所清单、深圳实测OD仍缺失。已获雨量仅为机场逐日报告，人口为2020模型估计。SUMO、sumo-gui、netconvert 未在 PATH 发现；sumolib/traci 导入成功不代表可执行仿真已就绪。本阶段测试有35条 rasterio/affine 未来弃用警告，GIS 读写已通过。')
 sub('历史图片留存')
 p('每次运行生成独立 run_id，保存 raw、figures、screenshots、logs、配置快照与 manifest；保留失败记录，不覆盖历史。后续重点保存正常、首次中断、受影响边最多、最低 Q、恢复或结束时刻的图像，重复时刻合并，原始时序完整保留。')
 p('本地打开 results/index.html，按阶段、日期、区域、情景、策略筛选；或使用命令行 history 按 run_id 精确查询。索引可由 manifest 重建，manifest 为运行来源权威记录。')
-sub('每阶段文档同步')
-p('阶段验收后同时更新本 Word 和汇报 PPT 的状态、方法、实际数值、图片来源、限制与下一步；生成后检查每页和每张幻灯片，并保存 Git 提交。源论文、环境及大型运行目录留本地；小型验收图与维护文档纳入版本管理。')
 
 page(); h('参考文献与复现入口')
 for i,r in enumerate(data['references'],1):
@@ -172,10 +209,10 @@ for i,r in enumerate(data['references'],1):
 p('OSM来源 https://www.openstreetmap.org/copyright，ODbL 1.0。Sioux Falls来源 https://github.com/bstabler/TransportationNetworks，固定版本与学术研究许可见阶段报告。',style='Caption')
 sub('复现与核查')
 p('工作目录为 jiaotong。项目运行使用 .conda-env/python.exe；文档维护脚本使用 Codex 提供的文档运行时，避免修改项目科学计算依赖。')
-for cmd in ['.conda-env\\python.exe -m pytest','.conda-env\\python.exe -m pip check','.conda-env\\python.exe -m uftr.cli run --phase 01 --offline-source data/raw/phase01/20261117T192004_p01_d71ec83e','.conda-env\\python.exe -m uftr.cli history --phase 01','.conda-env\\python.exe -m uftr.cli reindex']:
+for cmd in ['.conda-env\\python.exe -m pytest','.conda-env\\python.exe -m pip check','.conda-env\\python.exe -m uftr.cli run --phase 02 --offline-source data/raw/phase02/20261117_source_acquisition','.conda-env\\python.exe -m uftr.cli history --phase 02','.conda-env\\python.exe -m uftr.cli reindex']:
  pp=p(cmd); pp.paragraph_format.space_after=Pt(3)
  for run in pp.runs: run.font.name='Consolas'; run.font.size=Pt(9)
-p('完整任务书见 docs/TASK_SPEC.md，实施验收见 docs/PHASE00_REPORT.md 与 docs/PHASE01_REPORT.md。PPT 与 Word 共用 docs/deliverables/content.json 中的日期、状态、验收数值、运行ID、图片路径与书目。',style='Caption')
+p('完整任务书见 docs/TASK_SPEC.md，实施验收见 docs/PHASE00_REPORT.md 、docs/PHASE01_REPORT.md 与 docs/PHASE02_REPORT.md。PPT 与 Word 共用 docs/deliverables/content.json 中的日期、状态、验收数值、运行ID、图片路径与书目。',style='Caption')
 args.output.parent.mkdir(parents=True,exist_ok=True)
 d.save(args.output)
 print(args.output)

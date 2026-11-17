@@ -1,6 +1,6 @@
 # 暴雨内涝下城市交通网络韧性评估与优化
 
-基于深圳真实路网的分阶段研究工程。Phase 00—01已验收：环境、论文方法、配置、图片查询及真实OSM有向路网。南山研究窗口20,447节点/40,105边，小区1,140节点/2,247边，Sioux Falls已接入。62项测试通过；内涝、分配、优化、SUMO 和 Streamlit 页面尚未实现。实际命令与限制见docs/PHASE01_REPORT.md。
+基于深圳真实路网的分阶段研究工程。Phase 00—02已验收：环境、论文、归档查询、真实有向OSM路网及空间数据处理。77项测试通过；Phase 02含明确数据缺失替代，60个合成风险点不是历史积水记录。已获Copernicus DSM、WorldPop 2020模型人口、宝安逐日雨量、OSM医院14/消防15。尚无OD、内涝时序、分配、韧性或治理结果。见[Phase 02报告](docs/PHASE02_REPORT.md)。
 
 ## 安装（Windows PowerShell）
 
@@ -30,12 +30,13 @@ conda create --prefix .conda-env --file conda-win-64.lock.txt -y
 & .\.conda-env\python.exe -m pip check
 & .\.conda-env\python.exe -m uftr.cli run --phase 00
 & .\.conda-env\python.exe -m uftr.cli run --phase 01
-& .\.conda-env\python.exe -m uftr.cli history --phase 01
+& .\.conda-env\python.exe -m uftr.cli run --phase 02 --offline-source data/raw/phase02/20261117_source_acquisition
+& .\.conda-env\python.exe -m uftr.cli history --phase 02
 & .\.conda-env\python.exe -m uftr.cli history --date 2026-11-17 --kind figure
 & .\.conda-env\python.exe -m uftr.cli reindex
 ```
 
-不在根目录执行时，命令增加 `--root C:\Users\zh\Desktop\git\jiaotong`（放在子命令前）。可用 `--config` 指定配置文件。当前接受 `--phase 00` 和 `--phase 01`；Phase 01可用 `--offline-source data/raw/phase01/20261117T192004_p01_d71ec83e` 校验已存原始快照后离线重放。公开下载需要网络。Phase 02以后尚无执行入口。
+不在根目录执行时，命令增加 `--root C:\Users\zh\Desktop\git\jiaotong`（放在子命令前）。可用 `--config` 指定配置文件。当前接受 `--phase 00`、`--phase 01` 和 `--phase 02`；Phase 01可用 `--offline-source data/raw/phase01/20261117T192004_p01_d71ec83e` 校验已存原始快照后离线重放。公开下载需要网络。Phase 02默认在线下载，或使用上方已封存快照离线重放；需保留配置所指Phase 01原始OSM和处理路网，克隆仓库本身不包含大型数据。Phase 03以后尚无执行入口。
 
 ## 图片与结果查询
 
@@ -57,8 +58,8 @@ CSV/HTML索引可重建；历史运行不覆盖、不自动删除。results大�
 
 ## 文档和后续步骤
 
-维护的可编辑汇报见 [PPT](docs/deliverables/开题与阶段进展汇报.pptx) 与 [Word](docs/deliverables/研究方案与阶段进展.docx)，当前同步到 Phase 01；已嵌入真实环境验收与两张路网图片，研究模型与后续实验明确标为待实施。原稿留在根目录。每阶段验收后同步更新两份文件，构建与检查方法见 [文档维护说明](docs/deliverables/README.md)。GitHub 尚未上传，待账号认证与远端配置。
+维护的可编辑汇报见 [PPT](docs/deliverables/开题与阶段进展汇报.pptx) 与 [Word](docs/deliverables/研究方案与阶段进展.docx)，当前同步到 Phase 02；已嵌入环境、两张路网与四张空间处理图片，研究模型与后续实验明确标为待实施。原稿留在根目录。每阶段验收后同步更新两份文件，构建与检查方法见 [文档维护说明](docs/deliverables/README.md)。GitHub 尚未上传，待账号认证与远端配置。
 
 PLAN.md 为完整 Phase 00—13 路线及验收；PROGRESS.md 为当前实际进度；DATA_SOURCES.md 说明数据状态；MODEL_ASSUMPTIONS.md 区分论文模型和工程假设；docs/LITERATURE_REVIEW.md 为全文核实记录；EXPERIMENT_LOG.md 保存命令和真实结果。
 
-下一阶段Phase 02，在收到继续指令后获取积水、雨量、DEM、人口和应急POI。OSM下载采用官方map API回退，完整来源、研究窗口、转向限制与速度/容量估计边界见docs/PHASE01_REPORT.md。暂无深圳真实OD及交通韧性结果。
+下一阶段Phase 03，在收到继续指令后实施1000m TAZ、重力/IPF合成OD、边界需求与路网连接核查。Phase 02官方积水/水深/完整避难所缺失，合成风险和真实数据分开；DSM不是排水DTM，人口是2020模型，雨量是区域单站日记录。OSM下载采用官方map API回退，完整来源、研究窗口、转向限制与速度/容量估计边界见docs/PHASE01_REPORT.md。暂无深圳真实OD及交通韧性结果。

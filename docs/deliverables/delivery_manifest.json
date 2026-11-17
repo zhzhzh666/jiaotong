@@ -1,24 +1,25 @@
 {
   "updated": "2026-11-17",
-  "phase_status": "Phase 00—01 已验收；Phase 02—13 未开始",
-  "run_id": "20261117T193651_p01_2e554d34",
+  "phase_status": "Phase 00—02 已验收（Phase 02 含明确数据缺失替代）；Phase 03—13 未开始",
+  "run_id": "20261117T203637_p02_0286d999",
   "phase00_run_id": "20261117T173510_p00_a2d49eb6",
+  "phase01_run_id": "20261117T193651_p01_2e554d34",
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 946577,
-      "sha256": "f9e28f3b02c60f694a21786615c3ba9084b56e2158e2028957056d29c2560b1c"
+      "bytes": 2194699,
+      "sha256": "aa5fce64bcbbeafa8be3ede61866ff58cb93f57a6b2a65a4e98979857a8fb48e"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 918069,
-      "sha256": "80cb5a701911485f06345fa566aeb65b187f3ca1f1201d70edf04686465b6146"
+      "bytes": 2147657,
+      "sha256": "23c3f7ac700d64b83ab3b59775ada4e5edc6b02e9c64842640879571daa8ae2b"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 3792,
-    "sha256": "bd61e7642190384783deaa114eb4fba7a2d14581f17d6d9e381fd9cc1eb05636"
+    "bytes": 4732,
+    "sha256": "677ec22dd776ba2384b2d4af6e2d1012697e11ae69aa9bb4fee12cc080bd2bd9"
   },
   "originals_preserved": [
     {
@@ -49,29 +50,51 @@
       "sha256": "04f1e7c72f29a14743b6848a8b4a32e4d8c302d5603b0c661ce54dda68b3e2e9"
     },
     {
-      "path": "docs/validation/phase01/accepted-run-manifest.json",
-      "bytes": 45008,
-      "sha256": "51055069203ad835e2f6e7e2a9154197e437b2f98b35e0617c6915b5f2d63b58"
+      "path": "docs/validation/phase02/synthetic_risk_map.png",
+      "bytes": 409663,
+      "sha256": "8dcdde9f163b72d090dd21ddbc7fc9ff4fa481bb1da06250559481d3f1955053"
     },
     {
-      "path": "docs/validation/phase01/pytest-accepted.xml",
-      "bytes": 7609,
-      "sha256": "780c0df325fdfd09f627de3b28c17a1b6d69ff0593a7dae69f647e2acd65d9c6"
+      "path": "docs/validation/phase02/facilities_map.png",
+      "bytes": 406960,
+      "sha256": "0d911644a52735c3e40d2db5faefedd1550e4a72dd62973897545966a08489ad"
     },
     {
-      "path": "docs/validation/phase01/acceptance_inventory.json",
-      "bytes": 3906,
-      "sha256": "39661b571fc87b5492726842211874bcd0c4a14d0ae77d10f180aa5771c38ceb"
+      "path": "docs/validation/phase02/terrain_population.png",
+      "bytes": 362398,
+      "sha256": "2c2e64f5a3e564a5ad2aa7c77dec2a6f57c92e3b157c4a0676bb92cdd1d60e5f"
+    },
+    {
+      "path": "docs/validation/phase02/rainfall_daily.png",
+      "bytes": 104109,
+      "sha256": "e19f64ef21d98afadf3595757d9ad1b4d78fb32029f5718ac4af86d757f29f96"
+    },
+    {
+      "path": "docs/validation/phase02/accepted-run-manifest.json",
+      "bytes": 59537,
+      "sha256": "e0114d1c675e8d7919464f33845cb1bad2c87a5df4df736f13b6e0865b876708"
+    },
+    {
+      "path": "docs/validation/phase02/pytest-final.xml",
+      "bytes": 9357,
+      "sha256": "f3ce842e6d4dc98728c2f460dfd4a3d151859b57883f59b830f872622326b0cd"
+    },
+    {
+      "path": "docs/validation/phase02/acceptance_inventory.json",
+      "bytes": 5243,
+      "sha256": "b22c5160fcf58a4aa9ecd194b155c950084f16a7971cd23b8fe26b7a9e648525"
     }
   ],
   "verification": {
-    "pptx_slides": 13,
-    "docx_pages": 9,
+    "pptx_slides": 18,
+    "docx_pages": 13,
+    "embedded_images": 7,
     "embedded_image_sha256_matches": true,
     "shared_metrics_and_doi_checked": true,
     "pptx_package_layout_fonts_and_reimport": "pass",
-    "pptx_render": "Artifact Tool final reimport PNG; all 13 slides individually inspected",
-    "word_render": "render_docx.py unavailable due to missing LibreOffice; Microsoft Word COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; all 9 final pages individually inspected",
+    "pptx_render": "Artifact Tool final reimport PNG; all 18 slides individually inspected",
+    "word_render": "render_docx.py unavailable due to missing LibreOffice; Microsoft Word COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; all 13 final pages individually inspected",
+    "pptx_finalizer_receipt_sha256": "3bdcaff34d59d9b1fb72094ff4aab4a2753438545bfddefaef6d95720abceac9",
     "qa_directory": ".cache/doc-sync/",
     "limitations": "Native PowerPoint application not inspected; Word preview inspected as PDF page images."
   },

@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-17",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "Phase 00—01 已验收；Phase 02—13 未开始",
+  "status": "Phase 00—02 已验收（Phase 02 含明确数据缺失替代）；Phase 03—13 未开始",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -83,5 +83,31 @@
     "artifacts_verified": 4,
     "inputs_verified": 171,
     "index_links_verified": 42
+  },
+  "phase02": {
+    "report": "docs/PHASE02_REPORT.md",
+    "evidence": "docs/validation/phase02/accepted-run-manifest.json",
+    "run_id": "20261117T203637_p02_0286d999",
+    "source_snapshot": "data/raw/phase02/20261117_source_acquisition",
+    "source_commit": "878e4671298cb208349c29d81d5b2d70d32868a6",
+    "runtime_seconds": 47.4027,
+    "tests_passed": 77,
+    "warnings": 35,
+    "hospitals": 14,
+    "fire_stations": 15,
+    "synthetic_points": 60,
+    "rain_records": 365,
+    "confidence": {
+      "high": 7,
+      "medium": 25,
+      "low": 23,
+      "unmatched": 5
+    },
+    "figures": {
+      "risk": "docs/validation/phase02/synthetic_risk_map.png",
+      "facilities": "docs/validation/phase02/facilities_map.png",
+      "terrain": "docs/validation/phase02/terrain_population.png",
+      "rainfall": "docs/validation/phase02/rainfall_daily.png"
+    }
   }
 }

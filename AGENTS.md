@@ -3,7 +3,7 @@
 ## 当前范围与阶段门禁
 
 - 项目根目录为本文件所在的 `jiaotong`，使用独立 Git 仓库；保留根目录原始论文、PPTX、DOCX，禁止覆盖或移动。
-- 用户已指令继续，当前实施 Phase 02。收到继续指令时，先读取 PLAN.md、PROGRESS.md、MODEL_ASSUMPTIONS.md 和已有代码，执行第一个未验收阶段。不得重复创建已通过模块。
+- 用户已指令继续，Phase 02 已验收（含明确数据缺失替代），下一阶段为 Phase 03。收到继续指令时，先读取 PLAN.md、PROGRESS.md、MODEL_ASSUMPTIONS.md 和已有代码，执行第一个未验收阶段。不得重复创建已通过模块。
 - 每阶段实际编码、运行、测试、检查图片并保存 Git 提交；必要测试失败先修复，不跳过验收。每阶段结束后报告并等待下一次继续指令。
 - 每阶段更新 AGENTS.md、PLAN.md、PROGRESS.md、DATA_SOURCES.md、MODEL_ASSUMPTIONS.md、EXPERIMENT_LOG.md、README.md。
 - 按用户要求，每阶段验收后同步更新 `docs/deliverables/` 中维护的 PPTX、DOCX：实际状态、方法、验收数值、运行图片及来源、问题与下一阶段。保留根目录原稿；共用 `content.json` 的证据字段，并更新两份生成脚本的正文，不能只改日期。导出后逐页/逐幻灯片渲染查看，再记录检查和 Git 提交。
@@ -37,4 +37,8 @@
 
 ## Phase 00 验收补充
 
-基础设施已验收：37项测试通过、20项依赖实际导入、pip check无冲突。Phase 01 已完成，下一次继续从Phase 02开始。运行ID与图片见docs/PHASE00_REPORT.md。Git命令遇执行账号所有权差异时仅对本项目使用命令级`-c safe.directory=C:/Users/zh/Desktop/git/jiaotong`，不更改全局信任设置。
+基础设施已验收：37项测试通过、20项依赖实际导入、pip check无冲突。Phase 01—02 已完成，下一次继续从Phase 03开始。运行ID与图片见docs/PHASE00_REPORT.md。Git命令遇执行账号所有权差异时仅对本项目使用命令级`-c safe.directory=C:/Users/zh/Desktop/git/jiaotong`，不更改全局信任设置。
+
+## Phase 02 验收与后续数据约束
+
+77项测试通过；最终run_id为20261117T203637_p02_0286d999，源码878e467、dirty=false，六项数据输出重放一致。数据、来源、图片与缺失替代见docs/PHASE02_REPORT.md。人口保持2020约1km原生模型人数，DSM不是裸地DTM；宝安2023日雨量不得伪拆15分钟；合成风险点及几何置信度不得写成历史受灾证据。没有合格避难所标签不表示现实无避难所，设施入口仍需核验。当前无OD、内涝时序或韧性结果。每阶段验收后停止，下一次用户继续才实施Phase 03。

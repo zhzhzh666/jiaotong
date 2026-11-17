@@ -1,0 +1,41 @@
+{
+  "run_id": "20261117T203637_p02_0286d999",
+  "files": [
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/copernicus_dsm_30m.tif",
+      "sha256": "02d69f906224f679e69bd22f5b07db94574ee6fe194cee7e50d1ff36b4b90b9e"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/data_quality_report.json",
+      "sha256": "47e153c5dc6685c4b05daa6ff51c705d3513df1ca370e70cc775cd8cc1c31e41"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/facilities.geojson",
+      "sha256": "0ada2397bcafead549c2f3f8ea74d4aa375ab0f3a17d577fb654a29cf0301c87"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/facility_road_candidates.csv",
+      "sha256": "da849a055c8651d9686a67bd0f9110e58aa37b6372fd42f2f5dda48fd6f87044"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/flood_points.geojson",
+      "sha256": "21f1fee7f0b8ed05d13cf10a0df4908a4709dfa4674df4df872d7e3a9040a461"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/flood_road_mapping.csv",
+      "sha256": "707e0da75293c3d5af9c8449d5f56e1fce6b4b81702b92bf4ee92d605c761e72"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/population_2020_native_1km.tif",
+      "sha256": "1fa23ac9a22606e9f95c9ff8b399f8d9214cbf3982c16d0874886f7546cc2d91"
+    },
+    {
+      "path": "data/processed/phase02/20261117T203637_p02_0286d999/rainfall_timeseries.csv",
+      "sha256": "cb1b54d9c4bb7fcdf280c7128bbd83358b96650c0ff1add7f7cbb8c277f2baaa"
+    },
+    {
+      "path": "data/synthetic/phase02/20261117T203637_p02_0286d999/flood_points.geojson",
+      "sha256": "c9be136cb13f29c523114a752c2dc7768cbfc4509231bad37a6bf1ee831cc261"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "run_id": "20261117T203637_p02_0286d999",
+  "source_commit": "878e4671298cb208349c29d81d5b2d70d32868a6",
+  "visual_review": "All four final Phase 02 PNGs individually inspected; no clipping or text overlap",
+  "files": [
+    {
+      "path": "docs/validation/phase02/accepted-config.json",
+      "bytes": 5052,
+      "sha256": "8a29df0d490f11d219cb347687513c1fabd0e4d90c03b2a92fef2cd3b3d4a2b8"
+    },
+    {
+      "path": "docs/validation/phase02/accepted-run-manifest.json",
+      "bytes": 59537,
+      "sha256": "e0114d1c675e8d7919464f33845cb1bad2c87a5df4df736f13b6e0865b876708"
+    },
+    {
+      "path": "docs/validation/phase02/acquisition_report.json",
+      "bytes": 8982,
+      "sha256": "4bb2efe98e2bf2368a4faf200b7cef5f949cfa47ed5f5d4617b7568b7d83ceea"
+    },
+    {
+      "path": "docs/validation/phase02/data_quality_report.json",
+      "bytes": 4980,
+      "sha256": "47e153c5dc6685c4b05daa6ff51c705d3513df1ca370e70cc775cd8cc1c31e41"
+    },
+    {
+      "path": "docs/validation/phase02/data_quality_report.md",
+      "bytes": 1168,
+      "sha256": "f8f1c84d9e90d23d22aa92c3157829eab51e9f9887fcd5185cb1fdb534ab1aba"
+    },
+    {
+      "path": "docs/validation/phase02/facilities.geojson",
+      "bytes": 11292,
+      "sha256": "0ada2397bcafead549c2f3f8ea74d4aa375ab0f3a17d577fb654a29cf0301c87"
+    },
+    {
+      "path": "docs/validation/phase02/facilities_map.png",
+      "bytes": 406960,
+      "sha256": "0d911644a52735c3e40d2db5faefedd1550e4a72dd62973897545966a08489ad"
+    },
+    {
+      "path": "docs/validation/phase02/facility_road_candidates.csv",
+      "bytes": 65058,
+      "sha256": "da849a055c8651d9686a67bd0f9110e58aa37b6372fd42f2f5dda48fd6f87044"
+    },
+    {
+      "path": "docs/validation/phase02/flood_points.geojson",
+      "bytes": 169,
+      "sha256": "21f1fee7f0b8ed05d13cf10a0df4908a4709dfa4674df4df872d7e3a9040a461"
+    },
+    {
+      "path": "docs/validation/phase02/flood_road_mapping.csv",
+      "bytes": 194777,
+      "sha256": "707e0da75293c3d5af9c8449d5f56e1fce6b4b81702b92bf4ee92d605c761e72"
+    },
+    {
+      "path": "docs/validation/phase02/output_inventory.json",
+      "bytes": 1806,
+      "sha256": "a202f8da32f977db6f92a52dc629f8c4380fa13e3e74774823e2c459fb73b59e"
+    },
+    {
+      "path": "docs/validation/phase02/pip-check.txt",
+      "bytes": 31,
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "path": "docs/validation/phase02/prior_phase01_audit.json",
+      "bytes": 430,
+      "sha256": "eae3069e68b01af12533d2849dd64bbf83dc96b447c798059912cad2a0432e8e"
+    },
+    {
+      "path": "docs/validation/phase02/pytest-final.txt",
+      "bytes": 5044,
+      "sha256": "7e4c03368cc95af59c49e571b3a5293aa70378843837866a254ecd24d04418b9"
+    },
+    {
+      "path": "docs/validation/phase02/pytest-final.xml",
+      "bytes": 9357,
+      "sha256": "f3ce842e6d4dc98728c2f460dfd4a3d151859b57883f59b830f872622326b0cd"
+    },
+    {
+      "path": "docs/validation/phase02/pytest-implementation.txt",
+      "bytes": 5053,
+      "sha256": "e764c1f09b9f2ca5fef8fbbe99be5121dc224f147125716c84c2dbfd6c152457"
+    },
+    {
+      "path": "docs/validation/phase02/pytest-implementation.xml",
+      "bytes": 9213,
+      "sha256": "6f9d4971240fdcd2f7314bf77bf4804414d53a0b140500c0e98272adbfea45b2"
+    },
+    {
+      "path": "docs/validation/phase02/rainfall_daily.png",
+      "bytes": 104109,
+      "sha256": "e19f64ef21d98afadf3595757d9ad1b4d78fb32029f5718ac4af86d757f29f96"
+    },
+    {
+      "path": "docs/validation/phase02/rainfall_timeseries.csv",
+      "bytes": 52286,
+      "sha256": "cb1b54d9c4bb7fcdf280c7128bbd83358b96650c0ff1add7f7cbb8c277f2baaa"
+    },
+    {
+      "path": "docs/validation/phase02/research_attempts.json",
+      "bytes": 4559,
+      "sha256": "6659a6231e12516ccb0baddef2f7d102ff4220bd44d162a759c968f6699a2610"
+    },
+    {
+      "path": "docs/validation/phase02/run_audit.json",
+      "bytes": 431,
+      "sha256": "e735fc588e0f953e0e0d3f1f764e63d8b09906556fccade62aa059dd8de0d54e"
+    },
+    {
+      "path": "docs/validation/phase02/source_inventory.json",
+      "bytes": 9488,
+      "sha256": "e4c7e5183355d72e726aae8c4e30ff59af880795964808ac6b0bdd69e8b3ca74"
+    },
+    {
+      "path": "docs/validation/phase02/spatial_audit.json",
+      "bytes": 485,
+      "sha256": "3a957752d14f510d74d52e5c38116a41f7687b7c447a13a2a24117a89b349423"
+    },
+    {
+      "path": "docs/validation/phase02/spatial_report.json",
+      "bytes": 4980,
+      "sha256": "47e153c5dc6685c4b05daa6ff51c705d3513df1ca370e70cc775cd8cc1c31e41"
+    },
+    {
+      "path": "docs/validation/phase02/synthetic_risk_map.png",
+      "bytes": 409663,
+      "sha256": "8dcdde9f163b72d090dd21ddbc7fc9ff4fa481bb1da06250559481d3f1955053"
+    },
+    {
+      "path": "docs/validation/phase02/synthetic_risk_points.geojson",
+      "bytes": 21547,
+      "sha256": "c9be136cb13f29c523114a752c2dc7768cbfc4509231bad37a6bf1ee831cc261"
+    },
+    {
+      "path": "docs/validation/phase02/terrain_population.png",
+      "bytes": 362398,
+      "sha256": "2c2e64f5a3e564a5ad2aa7c77dec2a6f57c92e3b157c4a0676bb92cdd1d60e5f"
+    }
+  ]
+}

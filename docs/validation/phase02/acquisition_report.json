@@ -1,0 +1,235 @@
+{
+  "accessed_at": "2026-11-17T20:30:36+08:00",
+  "sources": {
+    "dem_e113.tif": {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E113_00_DEM/Copernicus_DSM_COG_10_N22_00_E113_00_DEM.tif",
+      "accessed_at": "2026-11-17T20:08:07+08:00",
+      "http_status": 200,
+      "content_type": "image/tiff",
+      "content_length": "36641041",
+      "etag": "\"3be116df63270073e418b98de7555d21\"",
+      "bytes": 36641041,
+      "sha256": "074e13244e6da6745bcf76150fdc6e06f774140a7aac796785922fce962eacbb",
+      "crs": "EPSG:4326",
+      "width": 3600,
+      "height": 3600,
+      "nodata": null,
+      "transform": [
+        0.0002777777777777778,
+        0.0,
+        112.99986111111112,
+        0.0,
+        -0.0002777777777777778,
+        23.000138888888888,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        112.99986111111112,
+        22.000138888888888,
+        113.99986111111112,
+        23.000138888888888
+      ],
+      "status": "downloaded"
+    },
+    "dem_e114.tif": {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E114_00_DEM/Copernicus_DSM_COG_10_N22_00_E114_00_DEM.tif",
+      "accessed_at": "2026-11-17T20:08:07+08:00",
+      "http_status": 200,
+      "content_type": "image/tiff",
+      "content_length": "25030462",
+      "etag": "\"d5f15f41941d3cb909551ddd5e6bdec4\"",
+      "bytes": 25030462,
+      "sha256": "b950ab75642d6684fe08c82b6aa3bb087c1d35acd229ef0e6e6586e1b0868fa3",
+      "crs": "EPSG:4326",
+      "width": 3600,
+      "height": 3600,
+      "nodata": null,
+      "transform": [
+        0.0002777777777777778,
+        0.0,
+        113.99986111111112,
+        0.0,
+        -0.0002777777777777778,
+        23.000138888888888,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        113.99986111111112,
+        22.000138888888888,
+        114.99986111111112,
+        23.000138888888888
+      ],
+      "status": "downloaded"
+    },
+    "population_2020_1km.tif": {
+      "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/chn_ppp_2020_1km_Aggregated_UNadj.tif",
+      "accessed_at": "2026-11-17T20:08:07+08:00",
+      "http_status": 200,
+      "content_type": "image/tiff",
+      "content_length": "49445858",
+      "etag": "\"2f27be2-5a8acb66c647d\"",
+      "bytes": 49445858,
+      "sha256": "701fa532bfc6eb775682f38806e82ac53487f8b9de15a55c838c34633d7b743a",
+      "crs": "EPSG:4326",
+      "width": 7346,
+      "height": 4504,
+      "nodata": -99999.0,
+      "transform": [
+        0.0083333333,
+        0.0,
+        73.55708304727315,
+        0.0,
+        -0.0083333333,
+        53.56624996993054,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        73.55708304727315,
+        16.03291678673054,
+        134.77374946907315,
+        53.56624996993054
+      ],
+      "status": "downloaded"
+    },
+    "copernicus_registry.yaml": {
+      "url": "https://raw.githubusercontent.com/awslabs/open-data-registry/main/datasets/copernicus-dem.yaml",
+      "accessed_at": "2026-11-17T20:09:05+08:00",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "1218",
+      "etag": "W/\"f192243ba453ac57daad1f17e7bfed2bc9bc0cfee7f2722082c72285b3a184f0\"",
+      "bytes": 2830,
+      "sha256": "575f3ff639f223fd50238b6a91933b9c37864f4a24f625acb399a30526ff5a51",
+      "status": "downloaded"
+    },
+    "copernicus_readme.html": {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+      "accessed_at": "2026-11-17T20:09:05+08:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "content_length": "8536",
+      "etag": "\"022cee281269bfa9eafa36401ef3e104\"",
+      "bytes": 8536,
+      "sha256": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2",
+      "status": "downloaded"
+    },
+    "copernicus_license.html": {
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "accessed_at": "2026-11-17T20:09:07+08:00",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length": null,
+      "etag": "\"1794914052\"",
+      "bytes": 115055,
+      "sha256": "d12536d3a69002cd625cc7e63f4ddbb7352d8062418744bfca8762bd118df011",
+      "status": "downloaded"
+    },
+    "worldpop_index.html": {
+      "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/",
+      "accessed_at": "2026-11-17T20:09:09+08:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=ISO-8859-1",
+      "content_length": "1428",
+      "etag": null,
+      "bytes": 1428,
+      "sha256": "cf34faf35fcbd9d0c139af1212d2d620f943a9d7576bf94417ab1cc81ec896ee",
+      "status": "downloaded"
+    },
+    "worldpop_license.txt": {
+      "url": "https://hub.worldpop.org/data/licence.txt",
+      "accessed_at": "2026-11-17T20:09:10+08:00",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "19271",
+      "etag": "\"4b47-6418b6094f55a\"",
+      "bytes": 19271,
+      "sha256": "cb0b6ac8fb7d24e900d3bcba5474cf022a6fef3646fa5b94e6019b54f63be25f",
+      "status": "downloaded"
+    },
+    "worldpop_metadata.json": {
+      "url": "https://hub.worldpop.org/rest/data/pop/wpgpunadj1km?iso3=CHN",
+      "accessed_at": "2026-11-17T20:09:11+08:00",
+      "http_status": 500,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length": null,
+      "etag": null,
+      "bytes": 6015,
+      "sha256": "6583ea4adc6544bea66446a9c2529f2f5ce75e47ccbba387a71a1bc9a25d590c",
+      "status": "unavailable",
+      "error": "500 Server Error: Internal Server Error for url: https://hub.worldpop.org/rest/data/pop/wpgpunadj1km?iso3=CHN"
+    },
+    "baoan_gsod_2023.csv": {
+      "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2023/59493099999.csv",
+      "accessed_at": "2026-11-17T20:09:14+08:00",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "content_length": "86814",
+      "etag": "\"1531e-60e484daecf00\"",
+      "bytes": 86814,
+      "sha256": "78ca6fed2dd66c60a8a1c470d2550002db9745511264504b4040645338e2ffe0",
+      "status": "downloaded"
+    },
+    "gsod_readme.txt": {
+      "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/doc/readme.txt",
+      "accessed_at": "2026-11-17T20:09:16+08:00",
+      "http_status": 200,
+      "content_type": "text/plain",
+      "content_length": "11288",
+      "etag": "\"2c18-5b2c072244d80\"",
+      "bytes": 11288,
+      "sha256": "25a784a4cba0eab5f070137c57c4b4bd113982e054c77812b2d22e96c5818bc1",
+      "status": "downloaded"
+    },
+    "official_flood_catalog.html": {
+      "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003891",
+      "accessed_at": "2026-11-17T20:09:17+08:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length": null,
+      "etag": null,
+      "bytes": 191849,
+      "sha256": "d3a937f91f38df9314d3aef1b6a72edec6b6e7c1b23612160afb2747d1b9e32c",
+      "status": "downloaded"
+    },
+    "official_water_monitor_catalog.html": {
+      "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003929",
+      "accessed_at": "2026-11-17T20:09:18+08:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length": null,
+      "etag": null,
+      "bytes": 191855,
+      "sha256": "c4bb79c82804dbe6356389fb1a2c474d29ca5c41afbcbe93a75e13ca8e26d1f9",
+      "status": "downloaded"
+    },
+    "official_shelter_catalog.html": {
+      "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003846",
+      "accessed_at": "2026-11-17T20:09:18+08:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length": null,
+      "etag": null,
+      "bytes": 191838,
+      "sha256": "eb240cdc8481abb20cf00968a281f711dd90d305b6b2f74c3ed7dd0ffbd45bd3",
+      "status": "downloaded"
+    },
+    "official_weather_catalog.html": {
+      "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_00900273",
+      "accessed_at": "2026-11-17T20:09:18+08:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length": null,
+      "etag": null,
+      "bytes": 191874,
+      "sha256": "e227d6c5c4ff3cd5a670e11195fdb46127475fc5cfa1ee1a6e0ef17dd9a2f589",
+      "status": "downloaded"
+    }
+  },
+  "official_portal_note": "Catalog pages public. Normal POST metadata calls returned HTML 403. Download UI requires login and real-name verification; no login/download endpoint bypass attempted. No georeferenced official flood or monitoring records acquired."
+}

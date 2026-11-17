@@ -1,0 +1,135 @@
+{
+  "note": "Actual public-source availability probes; 200 may be HTML error, not accepted as data. Failed sources and required login are not bypassed.",
+  "attempts": [
+    {
+      "key": "dem113",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E113_00_DEM/Copernicus_DSM_COG_10_N22_00_E113_00_DEM.tif",
+      "status": 206,
+      "saved_bytes": 50001
+    },
+    {
+      "key": "dem_readme",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+      "status": 200,
+      "saved_bytes": 8536
+    },
+    {
+      "key": "dem_registry",
+      "url": "https://raw.githubusercontent.com/awslabs/open-data-registry/main/datasets/copernicus-dem.yaml",
+      "status": 200,
+      "saved_bytes": 2830
+    },
+    {
+      "key": "flood_dataset",
+      "url": "https://www.selectdataset.com/dataset/d900ee58bfe9fc62fd6308112bf2ec78",
+      "status": 200,
+      "saved_bytes": 64498
+    },
+    {
+      "key": "flood_search",
+      "url": "https://www.bing.com/search?q=%E6%B7%B1%E5%9C%B3+%E6%98%93%E6%B6%9D%E7%82%B9+%E5%90%8D%E5%8D%95+%E5%8D%97%E5%B1%B1",
+      "status": 200,
+      "saved_bytes": 280970
+    },
+    {
+      "key": "monitor_dataset",
+      "url": "https://www.selectdataset.com/dataset/5a691f98242116453e40732edbdd4095",
+      "status": 200,
+      "saved_bytes": 63839
+    },
+    {
+      "key": "noaa_gsod",
+      "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2023/59493099999.csv",
+      "status": 200,
+      "saved_bytes": 86814
+    },
+    {
+      "key": "official_search",
+      "url": "https://www.bing.com/search?q=site.sz.gov.cn+2023+9+8+%E6%9A%B4%E9%9B%A8+%E9%99%8D%E9%9B%A8",
+      "status": 200,
+      "saved_bytes": 281528
+    },
+    {
+      "key": "open_data",
+      "url": "https://opendata.sz.gov.cn/",
+      "status": 200,
+      "saved_bytes": 288973
+    },
+    {
+      "key": "poi_shelter",
+      "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003846",
+      "status": 200,
+      "saved_bytes": 191838
+    },
+    {
+      "key": "rain_hko",
+      "url": "https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMRF&year=2023&month=9&lang=en",
+      "status": 200,
+      "saved_bytes": 726
+    },
+    {
+      "key": "rain_hourly",
+      "url": "https://noaa-global-hourly-pds.s3.amazonaws.com/index.html",
+      "status": 200,
+      "saved_bytes": 36822
+    },
+    {
+      "key": "rain_meteostat",
+      "url": "https://data.meteostat.net/daily/59493.csv.gz",
+      "status": 404,
+      "saved_bytes": 236
+    },
+    {
+      "key": "rain_noaa",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/CHM00059493.dly",
+      "status": 404,
+      "saved_bytes": 196
+    },
+    {
+      "key": "rain_official",
+      "url": "https://swj.sz.gov.cn/gkmlpt/content/10/10824/mpost_10824837.html",
+      "error": "HTTPSConnectionPool(host='swj.sz.gov.cn', port=443): Max retries exceeded with url: /gkmlpt/content/10/10824/mpost_10824837.html (Caused by SSLError(SSLError(1, '[SSL: BAD_ECPOINT] bad ecpoint (_ssl.c:1018)')))"
+    },
+    {
+      "key": "sz_weather",
+      "url": "https://weather.sz.gov.cn/",
+      "status": 200,
+      "saved_bytes": 139481
+    },
+    {
+      "key": "water_bureau",
+      "url": "https://swj.sz.gov.cn/ztzl/ndmsss/yldzl/gqnldzl/",
+      "error": "HTTPSConnectionPool(host='swj.sz.gov.cn', port=443): Max retries exceeded with url: /ztzl/ndmsss/yldzl/gqnldzl/ (Caused by SSLError(SSLError(1, '[SSL: BAD_ECPOINT] bad ecpoint (_ssl.c:1018)')))"
+    },
+    {
+      "key": "weather_dataset",
+      "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_00900273",
+      "status": 200,
+      "saved_bytes": 191874
+    },
+    {
+      "key": "worldpop",
+      "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/chn_ppp_2020_1km_Aggregated_UNadj.tif",
+      "status": 200,
+      "saved_bytes": 1000000
+    },
+    {
+      "key": "worldpop_index",
+      "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/",
+      "status": 200,
+      "saved_bytes": 1428
+    },
+    {
+      "key": "worldpop_license",
+      "url": "https://hub.worldpop.org/data/licence.txt",
+      "status": 200,
+      "saved_bytes": 19271
+    },
+    {
+      "key": "worldpop_meta",
+      "url": "https://hub.worldpop.org/rest/data/pop/wpgp?iso3=CHN",
+      "status": 200,
+      "saved_bytes": 38419
+    }
+  ]
+}

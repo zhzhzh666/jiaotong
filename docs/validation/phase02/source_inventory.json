@@ -1,0 +1,233 @@
+{
+  "created_at": "2026-11-17T20:32:21+08:00",
+  "contract": {
+    "network_inventory_sha256": "169dddab84af1c53d7a1db433884c2a721d8aeff358ffdea03210602b2a351fa",
+    "osm_inventory_sha256": "e0c3a114d21e6304392bdb7e4dfd240e5194cdad29ab21c5d3fad98cde649b11",
+    "source_specs": {
+      "dem_e113.tif": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E113_00_DEM/Copernicus_DSM_COG_10_N22_00_E113_00_DEM.tif",
+        "license": "Copernicus DEM public licence, ESA / Airbus; see saved licence",
+        "required": true
+      },
+      "dem_e114.tif": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_E114_00_DEM/Copernicus_DSM_COG_10_N22_00_E114_00_DEM.tif",
+        "license": "Copernicus DEM public licence, ESA / Airbus; see saved licence",
+        "required": true
+      },
+      "population_2020_1km.tif": {
+        "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/chn_ppp_2020_1km_Aggregated_UNadj.tif",
+        "license": "WorldPop CC BY 4.0",
+        "required": true
+      },
+      "copernicus_registry.yaml": {
+        "url": "https://raw.githubusercontent.com/awslabs/open-data-registry/main/datasets/copernicus-dem.yaml",
+        "license": "Copernicus DEM public licence, ESA / Airbus; see saved licence",
+        "required": false
+      },
+      "copernicus_readme.html": {
+        "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+        "license": "Copernicus DEM public licence, ESA / Airbus; see saved licence",
+        "required": false
+      },
+      "copernicus_license.html": {
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+        "license": "Copernicus DEM public licence, ESA / Airbus; see saved licence",
+        "required": false
+      },
+      "worldpop_index.html": {
+        "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/CHN/",
+        "license": "WorldPop CC BY 4.0",
+        "required": false
+      },
+      "worldpop_license.txt": {
+        "url": "https://hub.worldpop.org/data/licence.txt",
+        "license": "WorldPop CC BY 4.0",
+        "required": false
+      },
+      "baoan_gsod_2023.csv": {
+        "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2023/59493099999.csv",
+        "license": "NOAA NCEI public data; GSOD documentation retained",
+        "required": true
+      },
+      "gsod_readme.txt": {
+        "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/doc/readme.txt",
+        "license": "NOAA NCEI public data; GSOD documentation retained",
+        "required": false
+      },
+      "official_flood_catalog.html": {
+        "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003891",
+        "license": "Official catalog only; portal terms; downloaded records require real-name login",
+        "required": false
+      },
+      "official_water_monitor_catalog.html": {
+        "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003929",
+        "license": "Official catalog only; portal terms; downloaded records require real-name login",
+        "required": false
+      },
+      "official_shelter_catalog.html": {
+        "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_04003846",
+        "license": "Official catalog only; portal terms; downloaded records require real-name login",
+        "required": false
+      },
+      "official_weather_catalog.html": {
+        "url": "https://opendata.sz.gov.cn/data/dataSet/toDataDetails/29200_00900273",
+        "license": "Official catalog only; portal terms; downloaded records require real-name login",
+        "required": false
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "acquisition_report.json",
+      "sha256": "4bb2efe98e2bf2368a4faf200b7cef5f949cfa47ed5f5d4617b7568b7d83ceea"
+    },
+    {
+      "path": "baoan_gsod_2023.csv",
+      "sha256": "78ca6fed2dd66c60a8a1c470d2550002db9745511264504b4040645338e2ffe0"
+    },
+    {
+      "path": "baoan_gsod_2023.csv.source.json",
+      "sha256": "90345f4ce5118a0eceefda3bbbd6cecef49c786b6e03a55c5197a74c23e2d8c4"
+    },
+    {
+      "path": "copernicus_license.html",
+      "sha256": "d12536d3a69002cd625cc7e63f4ddbb7352d8062418744bfca8762bd118df011"
+    },
+    {
+      "path": "copernicus_license.html.source.json",
+      "sha256": "562d99a2cd61054d91c830b33b9ded5118690104f9111b23e55424ae7ec58987"
+    },
+    {
+      "path": "copernicus_readme.html",
+      "sha256": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2"
+    },
+    {
+      "path": "copernicus_readme.html.source.json",
+      "sha256": "5bfe4a5cba8040287f5f9b53a4a2963a911e3f7a3bb367fa413ae7dafd6b123e"
+    },
+    {
+      "path": "copernicus_registry.yaml",
+      "sha256": "575f3ff639f223fd50238b6a91933b9c37864f4a24f625acb399a30526ff5a51"
+    },
+    {
+      "path": "copernicus_registry.yaml.source.json",
+      "sha256": "e5c3d4f3a770a575abfed070f088fdda7e2f224e5c6ae4048e1eb75189c2117d"
+    },
+    {
+      "path": "dem_e113.tif",
+      "sha256": "074e13244e6da6745bcf76150fdc6e06f774140a7aac796785922fce962eacbb"
+    },
+    {
+      "path": "dem_e113.tif.source.json",
+      "sha256": "acc81c0902c15017bc8617f840ab338fbdfa467bbe261693f87a8a51c8e103f5"
+    },
+    {
+      "path": "dem_e114.tif",
+      "sha256": "b950ab75642d6684fe08c82b6aa3bb087c1d35acd229ef0e6e6586e1b0868fa3"
+    },
+    {
+      "path": "dem_e114.tif.source.json",
+      "sha256": "98381babe2099e397f0ed5e235cc062b54412369bf92d9d08bfd11c50be38b3d"
+    },
+    {
+      "path": "flood_metadata_http403.html",
+      "sha256": "9d31aa68d2fdfad5e506d80e58b1925a049718c22d782b950f1cba41751b26be"
+    },
+    {
+      "path": "gsod_readme.txt",
+      "sha256": "25a784a4cba0eab5f070137c57c4b4bd113982e054c77812b2d22e96c5818bc1"
+    },
+    {
+      "path": "gsod_readme.txt.source.json",
+      "sha256": "1dbf267c35a0a86464efc769c68aa073f506148704e3bbd21ae04316cdcf8532"
+    },
+    {
+      "path": "monitor_metadata_http403.html",
+      "sha256": "3f07eb458309b9bfa6c12816aed2c06f96aebf7d56418f17c2809a752f6cb5a1"
+    },
+    {
+      "path": "official_flood_catalog.html",
+      "sha256": "d3a937f91f38df9314d3aef1b6a72edec6b6e7c1b23612160afb2747d1b9e32c"
+    },
+    {
+      "path": "official_flood_catalog.html.source.json",
+      "sha256": "b21cce27c9f34a7171fe93a60cd6e423223e2f1b3a7c257348d5ac923d8b53a4"
+    },
+    {
+      "path": "official_shelter_catalog.html",
+      "sha256": "eb240cdc8481abb20cf00968a281f711dd90d305b6b2f74c3ed7dd0ffbd45bd3"
+    },
+    {
+      "path": "official_shelter_catalog.html.source.json",
+      "sha256": "1d785597b6fd7dbb74db6c8109ad23862ec54730b3112b79b98f83cf05539363"
+    },
+    {
+      "path": "official_water_monitor_catalog.html",
+      "sha256": "c4bb79c82804dbe6356389fb1a2c474d29ca5c41afbcbe93a75e13ca8e26d1f9"
+    },
+    {
+      "path": "official_water_monitor_catalog.html.source.json",
+      "sha256": "8e278e92a0d4730f072995a83d142165ab59178ea48fa43f8ec4b8969e5579ab"
+    },
+    {
+      "path": "official_weather_catalog.html",
+      "sha256": "e227d6c5c4ff3cd5a670e11195fdb46127475fc5cfa1ee1a6e0ef17dd9a2f589"
+    },
+    {
+      "path": "official_weather_catalog.html.source.json",
+      "sha256": "5f372df2f7de095477b561d77058bcb9fd9eac8dd66f51abcbb14da57dd34944"
+    },
+    {
+      "path": "population_2020_1km.tif",
+      "sha256": "701fa532bfc6eb775682f38806e82ac53487f8b9de15a55c838c34633d7b743a"
+    },
+    {
+      "path": "population_2020_1km.tif.source.json",
+      "sha256": "73fdb2a3248adb3c631e38158bf26490367eb16673e743ed8b74f39157c8006d"
+    },
+    {
+      "path": "research_attempts.json",
+      "sha256": "6659a6231e12516ccb0baddef2f7d102ff4220bd44d162a759c968f6699a2610"
+    },
+    {
+      "path": "shelter_metadata_http403.html",
+      "sha256": "d78b8bd7c4a302abbb9c27935764ce8207b36377581e3b4064cf55b9e39cf84d"
+    },
+    {
+      "path": "weather_metadata_http403.html",
+      "sha256": "74996cbb0a231a3802dddaf6b84a6c36d5fe6865d0330bd3e7420d52949eae86"
+    },
+    {
+      "path": "worldpop_base_100m_method_metadata.json",
+      "sha256": "23119f4a8c1d8c28b8190f0cdb2631147251bbe7aa27c4eac0d512d23bd9ef73"
+    },
+    {
+      "path": "worldpop_base_100m_method_metadata.json.source.json",
+      "sha256": "c83548125eb8f2b1e50e6d8133176e1e322ff3710a664bd241ef8fc012764774"
+    },
+    {
+      "path": "worldpop_index.html",
+      "sha256": "cf34faf35fcbd9d0c139af1212d2d620f943a9d7576bf94417ab1cc81ec896ee"
+    },
+    {
+      "path": "worldpop_index.html.source.json",
+      "sha256": "de08b4adc4cce8eebaa7e2fe763c1d33e788a2206c0893d8350fce5e49b236f3"
+    },
+    {
+      "path": "worldpop_license.txt",
+      "sha256": "cb0b6ac8fb7d24e900d3bcba5474cf022a6fef3646fa5b94e6019b54f63be25f"
+    },
+    {
+      "path": "worldpop_license.txt.source.json",
+      "sha256": "a3b1e13ec9a6d186932c10e25f793bab66ce87d2293b2c67af0d1a3c98a01134"
+    },
+    {
+      "path": "worldpop_metadata.json",
+      "sha256": "6583ea4adc6544bea66446a9c2529f2f5ce75e47ccbba387a71a1bc9a25d590c"
+    },
+    {
+      "path": "worldpop_metadata.json.source.json",
+      "sha256": "62c9d1ce5c7a1793ede914b54bb859aa981e49d584ed435cc58bd729a36522ff"
+    }
+  ]
+}

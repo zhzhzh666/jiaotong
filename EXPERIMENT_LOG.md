@@ -65,3 +65,18 @@ python -X utf8 scripts/verify_references.py
 本次同步PPT与Word纳入两张实际路网图、阶段统计、OSM回退来源、研究窗口与估计属性限制、Sioux原始单位及下一阶段Phase 02；历史Phase 00指标保持37项，不用62项覆盖历史。文档使用Codex捆绑运行时，Word继续使用已安装Microsoft Word导出PDF再渲染。最终页数、指纹及检查方法见docs/deliverables/delivery_manifest.json。GitHub远端和认证仍未就绪。
 
 文档最终检查：PPT 13张和Word 9页均逐页查看；三个嵌入PNG字节与源图完全一致，共用证据和DOI核对通过，原稿指纹不变。PPT第一次finalizer输出与私有回执同目录被拒，改为独立输出目录；第二次遇历史回执已存在，生成脚本改为按输出文件名区分回执，使用新输出后通过。中间文件仅留.cache，维护入口替换为已检查版本。
+
+## Phase 02 实施与最终验收 2026-11-17
+
+用户继续后实现spatial_sources/spatial/phase02、配置、CLI与独立审计。经联网审核下载Copernicus两瓦片、WorldPop 2020约1km人口、NOAA GSOD宝安2023雨量，许可/目录/失败响应保存，人口约49MB慢速下载已完整结束。官方开放平台元数据403，下载需实名，未绕过；其他404/HTML错误/SSL失败见研究记录。复用Phase 01原始XML提取OSM设施，未另造名录。
+
+增加原生栅格不重采样、点清洗、雨量标志、垂直道路排除和几何置信度、合成低DSM聚集规则与不可变快照测试。初版76项通过，增加历史源输入Git blob核验测试后最终77项通过、35条rasterio/affine未来弃用警告，pip check无冲突，原始日志保留docs/validation/phase02/。历史运行审计原来误按当前变动源文件核验，已修复；Phase 01重审通过，3项源输入按原提交验证，原始数据仍按本地字节核验。
+
+实现提交878e467。首次完整运行20261117T203230_p02_9be1082c成功，因两个文档脚本恢复后stat/EOL标志记录dirty=true；git diff未见实际内容变化，刷新索引后工作区清洁。最终离线重放20261117T203637_p02_0286d999，源码878e467、dirty=false，47.4027秒。执行命令：`.conda-env/python.exe -m uftr.cli run --phase 02 --offline-source data/raw/phase02/20261117_source_acquisition`。
+
+结果：DSM563281有效像元，人口233个原生像元、1540614.3657估计人数；医院14/消防15，避难清单缺失；365日雨量、355有效。官方积水点/深度未取得，另存60合成点，高/中/低几何置信度7/25/23，未匹配5。1414候选行、122垂直排除、74选中有向边行。归档审计4图/215输入/74索引链接通过，空间独立审计及六项数据字节重放一致。四张最终PNG分别检查，无裁切或文字重叠，验收副本纳入Git。
+
+原始/处理/合成分开；雨量不拆15min，DSM不作排水DTM，人口不是普查，合成点不是历史灾害。同步维护PPT/Word与七份管理文档，文档渲染、页数和指纹见delivery_manifest。未运行Phase 03以后模型。GitHub未设置remote、gh不可用，保留授权但尚未上传。
+
+
+Phase 02文档最终检查：PPT 18张、Word 13页全部逐张/逐页查看，无裁切、重叠或孤立说明页。Word初版14页中重复维护说明独立溢出，删除重复段后修复；地形/人口和雨量同页仍清晰。PPT结构、布局、原稿字体与再次导入检查通过，七张嵌入PNG字节一致，三阶段run_id/数值/DOI及原稿指纹检查通过。沿用已确认缺少LibreOffice时的Microsoft Word只读导出PDF方案，未安装软件，未声称检查原生PowerPoint播放。

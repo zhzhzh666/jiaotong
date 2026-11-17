@@ -19,6 +19,7 @@ const inspect=await p.inspect({kind:'slide,textbox,shape,layout',maxChars:24000}
 await fs.writeFile(path.join(tmp,'import-inspection.ndjson'),inspect.ndjson);
 const m=data.metrics;
 const a=data.phase01;
+const b=data.phase02;
 function box(slide,text,x,y,w,h,size=24,bold=false,font='等线'){
  const sh=slide.shapes.add({geometry:'textbox',position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});
  sh.text=text; sh.text.style={fontSize:`${size}pt`,typeface:font,bold,color:'#000000'};
@@ -32,9 +33,9 @@ function body(slide,blocks,notes){
 function add(text,blocks,notes){const s=p.slides.add();s.background.fill='#FFFFFF';title(s,text);body(s,blocks,notes);return s;}
 const cover=p.slides.items[0];
 const subtitle=cover.shapes.items.find(s=>s.name==='副标题 2');
-subtitle.text='研究方案与阶段进展\n2026年11月17日\nPhase 00—01 已验收';
+subtitle.text='研究方案与阶段进展\n2026年11月17日\nPhase 00—02 已验收';
 subtitle.text.style={fontSize:'24pt',typeface:'等线',color:'#000000',alignment:'center'};
-cover.speakerNotes.text='依据原始开题汇报与项目 docs/PHASE00_REPORT.md。Phase 00—01已验收，Phase 02—13尚未开始；暂无交通韧性或治理实验结果。';
+cover.speakerNotes.text='依据原始开题汇报与项目分阶段验收报告。Phase 00—02已验收，其中Phase 02采用明确数据缺失替代，Phase 03—13尚未开始；暂无交通韧性或治理实验结果。';
 const bg=p.slides.items[1];
 const bgBody=bg.shapes.items.find(s=>s.name==='内容占位符 2');
 bgBody.text='积水导致道路降速或中断，交通绕行会改变拥堵分布及应急设施可达性。\n道路局部受灾程度与全网治理收益需要分别评价。\n核心问题：在有限预算和治理数量约束下，优先改善哪些道路，才能提高灾害全过程的网络性能？\n研究从深圳南山区小型真实路网开始，再逐步扩大。';
@@ -92,18 +93,44 @@ add('来源与属性适用边界',[
  'Sioux Falls：24节点、76弧、528个非零OD；保留原生单位，分配尚未运行。'
 ],'OSM来源与研究bbox见'+a.report+'。研究窗口不是官方陆地边界，包含内伶仃分量。OSM是开源地图快照，不是实测真值。Sioux Falls https://github.com/bstabler/TransportationNetworks 固定提交d1639b4ef218c17928ba573e806ddf8ba5e7ae6d；自由流时间0.01小时，长度/坐标人工示意，需求近似小时量，限学术研究；外部参考流量不是本项目求解结果。');
 
+
+add('Phase 02 空间数据与缺失替代',[
+ '取得 Copernicus 30 m DSM、WorldPop 2020约1 km人口栅格和宝安逐日雨量。',
+ `OSM清洗得到${b.hospitals}处医院、${b.fire_stations}处消防站；避难所清单仍缺失。`,
+ `官方历史积水坐标/水深未取得；按任务书生成${b.synthetic_points}个明确标注的合成风险点。`,
+ `${b.tests_passed}项测试通过；匹配排除高架/隧道，置信度仅描述几何关联。`
+],'来源：'+b.report+'；'+b.evidence+'。run_id：'+b.run_id+'。最终离线运行'+b.runtime_seconds+'秒，源码'+b.source_commit+'、dirty=false。官方平台目录公开，元数据403，下载需实名登录；未绕过。无历史积水数据不意味着无灾。WorldPop是2020模型人口，DSM不是排水DTM；数据年份不同，不能声称重建2023灾害。');
+for(const [key,label,note] of [
+ ['risk','合成风险点与道路几何关联',`${b.synthetic_points}个合成风险点\n\n几何高 / 中 / 低置信度\n${b.confidence.high||0} / ${b.confidence.medium||0} / ${b.confidence.low||0} 个点\n未匹配 ${b.confidence.unmatched||0} 个\n\n全部不是历史积水实测点`],
+ ['facilities','OSM医院与消防站清单',`${b.hospitals}处医院 / ${b.fire_stations}处消防站\n\n覆盖不完整，原始标签可查\n尚未核验设施入口\n\n未识别到合格避难所标签\n不表示当地没有避难所`]]){
+ const slide=p.slides.add();slide.background.fill='#FFFFFF';title(slide,label);
+ const img=await fs.readFile(path.join(root,b.figures[key]));
+ slide.images.add({blob:img.buffer.slice(img.byteOffset,img.byteOffset+img.byteLength),contentType:'image/png',alt:label,fit:'contain',position:{left:65,top:170,width:665,height:510}});
+ box(slide,note,770,210,430,430,22);
+ slide.speakerNotes.text='实际运行图：'+b.figures[key]+'；run_id：'+b.run_id+'。© OpenStreetMap contributors，ODbL 1.0，https://www.openstreetmap.org/copyright 。'+b.report+'记录source_kind。风险点由低DSM道路种子与高斯聚集生成，不是水动力预测。高/中/低为距离和候选歧义的几何置信度，不能认定受灾；高架、隧道、非零layer候选被排除。';
+}
+for(const [key,label,caption] of [
+ ['terrain','高程与人口原生栅格','DSM包含建筑和植被；2020模型人口按原生像元保留，未插值到30 m'],
+ ['rainfall','2023年9月区域逐日雨量','宝安机场单站；GMT名义日期，累计时段可含前一日，未拆成15分钟数据']]){
+ const slide=p.slides.add();slide.background.fill='#FFFFFF';title(slide,label);
+ const img=await fs.readFile(path.join(root,b.figures[key]));
+ slide.images.add({blob:img.buffer.slice(img.byteOffset,img.byteOffset+img.byteLength),contentType:'image/png',alt:label,fit:'contain',position:{left:65,top:175,width:1150,height:460}});
+ box(slide,caption,88,655,1104,48,18);
+ slide.speakerNotes.text='实际运行图：'+b.figures[key]+'；run_id：'+b.run_id+'。来源：'+b.report+'。Copernicus GLO-30 AWS 2021 release，TanDEM-X 2011—2015及补洞来源，EGM2008米。Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved。WorldPop 2020 aggregated UN-adjusted counts，CC BY 4.0，https://data.worldpop.org/ 。NOAA NCEI GSOD 2023站59493099999，英寸×25.4；单站不代表南山面雨量，不外推未观测时序。';
+}
+
 add('运行图片留存与查询',[
  '每次生成独立 run_id，保存源数据、配置、图片、日志与 manifest。',
  'PNG 用于查看，适合的曲线另存 SVG；失败结果与历次运行均保留。',
  '本地入口 results/index.html；按阶段、日期、区域、情景、策略查询。',
- 'Phase 01：两张图的4个格式、171个输入和42个历史索引链接验证通过。'
-],'来源：docs/ARTIFACTS.md、docs/validation/phase01/run_audit.json。4个格式为2张图各有PNG/SVG，非4次实验。大型results/runs未纳入Git，需本地备份；小型验收副本位于docs/validation。');
+ 'Phase 02：4张实际处理图已归档；合成、真实产品与观测数据分别标注。'
+],'来源：docs/ARTIFACTS.md、docs/validation/phase02/run_audit.json。Phase 02保存4张PNG，215项输入与74个当次索引链接已校验；六项数据输出重放一致。大型results/runs未纳入Git，需本地备份；小型验收副本位于docs/validation。');
 add('下一阶段与文档同步',[
- 'Phase 02：获取真实积水、雨量、DEM、人口与医院/消防/避难设施。',
- '核查来源、年份、分辨率、许可和缺失；统一坐标并记录道路关联置信度。',
- '深圳OD尚未获取；内涝、分配、韧性及优化实验尚未实施。',
+ 'Phase 03：构建1000 m交通小区，利用人口和设施估计产生与吸引。',
+ '采用重力模型与IPF构建明确标注的合成OD，核查边际平衡与路网连接。',
+ '深圳实测OD仍缺失；人口时间差、设施入口与边界需求需要明确处理。',
  '每阶段验收后同步更新 PPT、Word 与关键运行图，明确实际结果和未完成内容。'
-],'来源：PLAN.md、PROGRESS.md、DATA_SOURCES.md。下一阶段需用户继续指令；当前完成Phase00—01。维护版本由 docs/deliverables/content.json 同步验收信息，根目录原稿保留。');
+],'来源：PLAN.md、PROGRESS.md、DATA_SOURCES.md。下一阶段需用户继续指令；当前完成Phase00—02（含数据缺失替代）。维护版本由 docs/deliverables/content.json 同步验收信息，根目录原稿保留。');
 const candidate=path.join(tmp,'candidate.pptx');
 await (await PresentationFile.exportPptx(p)).save(candidate);
 const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);

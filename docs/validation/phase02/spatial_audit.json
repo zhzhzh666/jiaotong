@@ -1,0 +1,14 @@
+{
+  "run_id": "20261117T203637_p02_0286d999",
+  "status": "passed",
+  "observed_flood_points": 0,
+  "synthetic_points": 60,
+  "selected_directed_edge_rows_checked": 74,
+  "native_population_cells_verified": 233,
+  "rainfall_records_verified": 365,
+  "compare": {
+    "run_id": "20261117T203230_p02_9be1082c",
+    "six_data_outputs_identical": true
+  },
+  "claim_boundary": "Geometric confidence is not evidence of historical flooding; no 15-minute rainfall fabricated"
+}

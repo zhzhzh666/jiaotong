@@ -1,7 +1,7 @@
 # PPT 与 Word 维护说明
 
-- `开题与阶段进展汇报.pptx`：13页，可编辑文字，保留原PPT画布、主题和字体；同步至Phase 01，包含研究路线、论文、历史环境验收及真实路网证据。
-- `研究方案与阶段进展.docx`：9页，整合原研究构想与Phase 01实际状态，保留环境图、南山与小区域路网图及来源。
+- `开题与阶段进展汇报.pptx`：18张，可编辑文字，保留原PPT画布、主题和字体；同步至Phase 02，包含研究路线、论文、环境、路网与四张空间处理图。
+- `研究方案与阶段进展.docx`：13页，整合原研究构想与Phase 02实际状态，七张运行图与来源、数据缺失替代及Phase 03规划。
 - `content.json`：共用的验收指标、状态、运行ID、图片与文献；源证据见 `../validation/`。
 - `delivery_manifest.json`：交付与原稿指纹、预览检查方式、源数据对应检查。
 
@@ -13,4 +13,6 @@
 
 每次必须检查导出的最终文档：PPT执行结构、布局、字体和再次导入检查后渲染每张幻灯片；Word先执行 documents skill 的 render_docx.py。当前Windows没有LibreOffice，已用 Microsoft Word COM 只读导出PDF、捆绑pypdfium2生成PNG替代。逐页检查标题、字体、表格、图片、页码与分页，修正后重新渲染。QA中间文件留 `.cache/doc-sync/`，不纳入仓库；最终检查结论和指纹写入交付记录。
 
-本次最终13张幻灯片与9页Word预览已逐张/逐页查看。`scripts/verify_deliverables.py` 用捆绑Python核对共用指标、文献DOI、两阶段run_id、三个嵌入PNG的原始字节及根目录原稿指纹，同时更新交付清单。它不能代替视觉检查。最终测试依据 `../validation/phase01/pytest-accepted.*` 为62通过；Phase 00历史指标仍为37项。地图速度、容量及边界适用限制见 `../PHASE01_REPORT.md`。
+本次最终18张幻灯片与13页Word预览已逐张/逐页查看。`scripts/verify_deliverables.py` 用捆绑Python核对共用指标、文献DOI、三阶段run_id、七张嵌入PNG字节、验收审计和根目录原稿指纹，同时更新交付清单。它不能代替视觉检查。最终测试依据 `../validation/phase02/pytest-final.*` 为77通过、35条已记录的rasterio/affine未来弃用警告；Phase 00历史指标仍37项、Phase 01仍62项。
+
+Phase 02官方积水坐标/水深与完整避难所未取得；60个合成风险点独立标注，几何置信度不是历史受灾证据。DSM不是排水DTM、人口为2020约1km模型、宝安单站日雨量不拆15分钟，详见 `../PHASE02_REPORT.md`。下一阶段Phase 03尚未开始。

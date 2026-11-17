@@ -1,0 +1,134 @@
+{
+  "run_id": "20261117T203637_p02_0286d999",
+  "status": "passed_with_explicit_data_gaps",
+  "processed_root": "data/processed/phase02/20261117T203637_p02_0286d999",
+  "synthetic_root": "data/synthetic/phase02/20261117T203637_p02_0286d999",
+  "source_snapshot": "data/raw/phase02/20261117_source_acquisition",
+  "dem": {
+    "crs": "EPSG:4326",
+    "resolution_degrees": [
+      0.0002777777777777778,
+      0.0002777777777777778
+    ],
+    "valid_cells": 563281,
+    "min": -15.507220268249512,
+    "max": 576.77734375,
+    "sum_native_cells": 9696651.11907696,
+    "boundary_rule": "Native cells whose centres fall inside polygon; no fractional-cell redistribution",
+    "nodata": -9999,
+    "dataset": "Copernicus GLO-30 DSM, AWS 2021 release",
+    "vertical_datum": "EGM2008",
+    "acquisition_period": "TanDEM-X 2011-2015 with older gap-filling sources",
+    "attribution": "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved"
+  },
+  "population": {
+    "crs": "EPSG:4326",
+    "resolution_degrees": [
+      0.0083333333,
+      0.0083333333
+    ],
+    "valid_cells": 233,
+    "min": 0.06880306452512741,
+    "max": 30918.556640625,
+    "sum_native_cells": 1540614.3657147214,
+    "boundary_rule": "Native cells whose centres fall inside polygon; no fractional-cell redistribution",
+    "nodata": -9999,
+    "dataset": "WorldPop 2020 aggregated 1 km UN-adjusted population counts",
+    "year": 2020,
+    "units": "estimated people per native cell",
+    "license": "CC BY 4.0"
+  },
+  "facilities": {
+    "counts": {
+      "fire_station": 15,
+      "hospital": 14
+    },
+    "skipped_unsupported_geometries": [],
+    "coverage": "Incomplete OSM inventory, not official complete list; node/way duplicates across types or nearby entrances not merged without evidence. Assembly points are not designated shelters."
+  },
+  "rainfall": {
+    "station_id": "59493099999",
+    "name": "BAOAN INTERNATIONAL",
+    "records": 365,
+    "valid_records": 355,
+    "year_2023_records": 365,
+    "source_flag_counts": {
+      "G": 355,
+      "": 7,
+      "I": 3
+    },
+    "event_daily_records": [
+      {
+        "station_id": "59493099999",
+        "date_gmt": "2023-09-07",
+        "precipitation_mm": 164.338,
+        "raw_precipitation_inches": 6.47,
+        "source_flag": "G",
+        "valid": true,
+        "resolution": "daily report; accumulation may include previous day",
+        "source_kind": "observed_station_daily",
+        "is_nanshan_areal_mean": false,
+        "latitude": 22.639258,
+        "longitude": 113.810664
+      },
+      {
+        "station_id": "59493099999",
+        "date_gmt": "2023-09-08",
+        "precipitation_mm": 110.23599999999999,
+        "raw_precipitation_inches": 4.34,
+        "source_flag": "G",
+        "valid": true,
+        "resolution": "daily report; accumulation may include previous day",
+        "source_kind": "observed_station_daily",
+        "is_nanshan_areal_mean": false,
+        "latitude": 22.639258,
+        "longitude": 113.810664
+      }
+    ],
+    "time_note": "GMT nominal report dates, may include previous day; no hourly/15-minute disaggregation"
+  },
+  "flood": {
+    "observed_points": 0,
+    "observed_depth_records": 0,
+    "synthetic_risk_points": 60,
+    "geometric_match_point_counts": {
+      "medium": 25,
+      "low": 23,
+      "high": 7,
+      "unmatched": 5
+    },
+    "candidate_rows": 1414,
+    "excluded_vertical_candidate_rows": 122,
+    "selected_directed_edge_rows": 74,
+    "confidence_note": "Geometric association only. No point is an observed flood event; selection never declares road flooded."
+  },
+  "limitations": [
+    "No official historical georeferenced flood points or road depth monitoring acquired",
+    "Copernicus GLO-30 is DSM, not bare-earth drainage DTM; no hydraulic calibration",
+    "WorldPop 2020 UN-adjusted ~1 km modelled counts, not 2023/2026 census or daytime traffic demand",
+    "Native population cells use centre-in-polygon inclusion, with boundary and coastal uncertainty",
+    "OSM POIs incomplete; polygon points and road candidates are not verified facility entrances",
+    "OSM assembly points are separate from designated emergency shelters",
+    "Airport daily rainfall outside Nanshan is regional context, not local areal or 15-minute input"
+  ],
+  "required_outputs": [
+    "flood_points.geojson",
+    "flood_road_mapping.csv",
+    "rainfall_timeseries.csv"
+  ],
+  "synthetic_parameters": {
+    "count": 60,
+    "clusters": 8,
+    "cluster_sd_m": 90,
+    "max_dsm_m": 40,
+    "elevation_scale_m": 10
+  },
+  "matching_parameters": {
+    "search_radius_m": 100,
+    "max_match_distance_m": 60,
+    "high_distance_m": 15,
+    "medium_distance_m": 40,
+    "high_gap_m": 15,
+    "medium_gap_m": 5
+  }
+}
