@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "run_id": "20261118T003023_p06_dd3a8f40",
+  "phase": "06",
+  "region": "nanshan",
+  "scenario": "static-user-equilibrium",
+  "strategy": "none",
+  "seed": 42,
+  "started_at": "2026-11-18T00:30:23+08:00",
+  "status": "success",
+  "git": {
+    "commit": "204c9aa82399165f0647323dc08304950f3f4794",
+    "dirty": true
+  },
+  "config": "config.json",
+  "config_sha256": "97812efacc06e848446f5a5d53efccdcbd74f102f90454bb9083549e0f4a2435",
+  "inputs": [
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\configs\\phase06.yaml",
+      "sha256": "d1a0181032babe6d50659a47739afb437cc7018e14a142f3128bd27450a005bb",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/d1a0181032babe6d50659a47739afb437cc7018e14a142f3128bd27450a005bb"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\__init__.py",
+      "sha256": "1477143721d08f8ac410ca4a8bd30a106d70d4d458016d79dbb59425c21ed0f7",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/1477143721d08f8ac410ca4a8bd30a106d70d4d458016d79dbb59425c21ed0f7"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\archive.py",
+      "sha256": "8454530cc4536c3b22392d6773b2dd4743fcffd3a59e58a52885286125ffab82",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/8454530cc4536c3b22392d6773b2dd4743fcffd3a59e58a52885286125ffab82"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\assignment.py",
+      "sha256": "aec95677cd222b402a086acd022f7ebbaf1e9b2e01594b4396ffff218e13f708",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/aec95677cd222b402a086acd022f7ebbaf1e9b2e01594b4396ffff218e13f708"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\cli.py",
+      "sha256": "c71a4108b075f586f4a826c4d880ac1d6fa303ce34a936f6c094e8d90675c3e7",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/c71a4108b075f586f4a826c4d880ac1d6fa303ce34a936f6c094e8d90675c3e7"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\config.py",
+      "sha256": "fb420442bd2471067b4a2d433728e67f15a5c835b66c0a190043dea0525a6b93",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/fb420442bd2471067b4a2d433728e67f15a5c835b66c0a190043dea0525a6b93"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\demand.py",
+      "sha256": "10eb2c0cf60a64f7b0c19a47550d32bb933fd8a02b27cd548f16f05038c6e901",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/10eb2c0cf60a64f7b0c19a47550d32bb933fd8a02b27cd548f16f05038c6e901"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\environment.py",
+      "sha256": "3643689a71b7105df039f1c183491b7386e319fbd1197fa86c5be033e6545a44",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/3643689a71b7105df039f1c183491b7386e319fbd1197fa86c5be033e6545a44"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\flood.py",
+      "sha256": "541e322ca8691cf9e26d7a74617409d16c12f6885285efb5b4f77938f9a9fb94",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/541e322ca8691cf9e26d7a74617409d16c12f6885285efb5b4f77938f9a9fb94"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\network.py",
+      "sha256": "de1acb9b31df448fb7f86deb33388d4507a200529768db07600a4b05dd0e62eb",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/de1acb9b31df448fb7f86deb33388d4507a200529768db07600a4b05dd0e62eb"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\optimization.py",
+      "sha256": "fc70cc4854d5f6dab91436e65037e41c33eaa19c0a0602c184277d95aef70ebe",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/fc70cc4854d5f6dab91436e65037e41c33eaa19c0a0602c184277d95aef70ebe"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\osm_download.py",
+      "sha256": "b394806c216392e3365fb3f80e4901982ed15eb10e09bc0a127ec06c20b2629b",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/b394806c216392e3365fb3f80e4901982ed15eb10e09bc0a127ec06c20b2629b"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase01.py",
+      "sha256": "c67320384b965b449c2318afae41e3384df5c8b1a4d0d781bf3a3af93eb22a16",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/c67320384b965b449c2318afae41e3384df5c8b1a4d0d781bf3a3af93eb22a16"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase02.py",
+      "sha256": "c3f059486bc3fcdd2c72b2be984b2e8324ff08ba7c1a6d7786b071f94ca08448",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/c3f059486bc3fcdd2c72b2be984b2e8324ff08ba7c1a6d7786b071f94ca08448"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase03.py",
+      "sha256": "0b6ec1728fb02d396d6d3007a7c1366abcfcd40ecc8e9795b0515715b4816812",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/0b6ec1728fb02d396d6d3007a7c1366abcfcd40ecc8e9795b0515715b4816812"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\phase04.py",
+      "sha256": "34b9acfb47a38a659a142d36ca6becdf6ee9b7eb0efcdced82c07bfd7b9fa5c6",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/34b9acfb47a38a659a142d36ca6becdf6ee9b7eb0efcdced82c07bfd7b9fa5c6"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\pipeline.py",
+      "sha256": "c3308c58adc40da4794fd45da175c39e55fef032411071f701451305b19bf37e",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/c3308c58adc40da4794fd45da175c39e55fef032411071f701451305b19bf37e"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\research.py",
+      "sha256": "d0c44d7d1fc59fab84240db8819535c97f1568911042da59058300bb9b11fef7",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/d0c44d7d1fc59fab84240db8819535c97f1568911042da59058300bb9b11fef7"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\resilience.py",
+      "sha256": "15d0d28002612cf52b334452b7ad9b3c0f7d9adfe3b40b809cf281fa371bac82",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/15d0d28002612cf52b334452b7ad9b3c0f7d9adfe3b40b809cf281fa371bac82"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\sioux.py",
+      "sha256": "972b84d4d3d4821143c0d6063731214d187e27b22b50468890616a6c749a207a",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/972b84d4d3d4821143c0d6063731214d187e27b22b50468890616a6c749a207a"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\spatial.py",
+      "sha256": "04cef883f38e641152ffb8f3a6a0461eea8067ec92e6cd7029c9509e21a20b83",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/04cef883f38e641152ffb8f3a6a0461eea8067ec92e6cd7029c9509e21a20b83"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\spatial_sources.py",
+      "sha256": "82f58f3f50c2b2cc7e3da548956f52ef42a4d621c704f31a74f035e6a3f2b7c9",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/82f58f3f50c2b2cc7e3da548956f52ef42a4d621c704f31a74f035e6a3f2b7c9"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\sumo_run.py",
+      "sha256": "68355418fe03b6c0f1501e548b591e92494427bb683ee9ea146ce0a9d8634d4e",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/68355418fe03b6c0f1501e548b591e92494427bb683ee9ea146ce0a9d8634d4e"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\user_water.py",
+      "sha256": "a3f31681077795dfbeb4091419ae9aa3f9a5a71c68c3130b1d69636b55d54206",
+      "snapshot": "results/runs/20261118T003023_p06_dd3a8f40/raw/input_snapshots/a3f31681077795dfbeb4091419ae9aa3f9a5a71c68c3130b1d69636b55d54206"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\sioux_falls\\sioux_links.csv",
+      "sha256": "fb654b8fd5041032c2e6ee60f96598631d79ae3560f13066f8c969134d624756"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\sioux_falls\\sioux_nodes.csv",
+      "sha256": "f4b2242c67ef86527d2369dd42bc31091f66eb645ba965bc01e12f159db9bffa"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\sioux_falls\\sioux_od.csv",
+      "sha256": "6eea62b34470dabebb0b43d80fd1d07e3dd5b97d01998598917809afa781c57b"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\sioux_falls\\sioux_reference_flow.csv",
+      "sha256": "d6876fe71f692ad49e0ab4927da7522298bc23f3105d08894fdc91d023e8a577"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\sioux_falls\\sioux_statistics.json",
+      "sha256": "2f4886d75a9a4c806fcda61aba7ead418f84a914cee4eb28e56ea1d7aedd3207"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\output_inventory.json",
+      "sha256": "169dddab84af1c53d7a1db433884c2a721d8aeff358ffdea03210602b2a351fa"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\full_osm_administrative_scope\\road_network.graphml",
+      "sha256": "b772ae6a75d5cdc4d4ed9c97a218c55dcedb321d66dbf01f090a8ef0df93b2c9"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\full_osm_administrative_scope\\scope_exclusions.json",
+      "sha256": "05e9a52d6349a781be699c98f061a5453dbd65f03b36bdeccfe22f79d24bca5d"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\network_statistics.json",
+      "sha256": "05f58f564c01d4bc75c19b966216409ddb7e50b2a90372134df8605e038f9ca8"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\road_attributes.csv",
+      "sha256": "457696cb8b3b358a5edfdd43327c044b5d89269f78429e7a073b16ae4ab5d325"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\road_edges.geojson",
+      "sha256": "8f0b98d70179196255ab92f9e46fa455051b46a426e6afcb950e0d2c45e6bbc6"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\road_network.graphml",
+      "sha256": "821f2cc8a2b832c75c890c881fd9046bcafe5d299a05904cc3201e3af69b215b"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\road_nodes.geojson",
+      "sha256": "711012f151427b178e7e1990a55722e67a38381e7d548ffd8e482e5f1330a918"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\nanshan\\study_boundary.geojson",
+      "sha256": "24ada03ca126e131c4d3bc959e588f1c34e5d315f5521de7a4995a2190e541fb"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\small\\network_statistics.json",
+      "sha256": "50c78e52bf30bc78927448699f45831eb11e3d0355b9c849067beab8563bcb57"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\small\\road_attributes.csv",
+      "sha256": "9ed23dcfcd8f9ca782ac3a341738d2f8c82cd11832240b4ef5e61263c03c1b9d"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\small\\road_edges.geojson",
+      "sha256": "29323c8f3f3ec550eb996129c869b0e087b8fe1f16a4b0ab085d1d10efa742b8"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\small\\road_network.graphml",
+      "sha256": "18212856ca249aff17636b3cdd6db502ce9d5ebac5c9bcddade52217a9f43129"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\small\\road_nodes.geojson",
+      "sha256": "935ce390b45a271dbe9289dfb5acca033b0c12181287d4d30f52618ea98da840"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\phase01\\20261117T193651_p01_2e554d34\\small\\study_boundary.geojson",
+      "sha256": "e6b46d32708d14735dbe8ce53f4115084e8ecabc5533cca3430356e4c622cee4"
+    },
+    {
+      "path": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\synthetic\\phase03\\20261117T215510_p03_ab17de87\\od_matrix.csv",
+      "sha256": "7c534d6d9dfde59bf253c5c3c344200c9741f2730d2aacf205b44e11de6ca591"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "figures/assignment_validation.png",
+      "title": "用户均衡收敛与Sioux Falls参考流量",
+      "kind": "figure",
+      "data_kind": "mixed",
+      "simulation_time_s": null,
+      "units": {},
+      "sources": [
+        {
+          "path": "results/runs/20261118T003023_p06_dd3a8f40/raw/sioux_comparison.csv",
+          "sha256": "6f96d79a11d2af39012d469081b63b37b2b1e4c116ee23b61a4f25a4f0e407d2"
+        },
+        {
+          "path": "results/runs/20261118T003023_p06_dd3a8f40/raw/assignment_report.json",
+          "sha256": "a520490141bfbae937f1118eccf7626d020ab7c1b8a60fe7268c09eb79affc72"
+        }
+      ],
+      "sha256": "4e646baae9f65a5d836bc98c6494680b63972620f8e9ce74c69e24536901f9d2",
+      "created_at": "2026-11-18T00:30:42+08:00"
+    }
+  ],
+  "command": [
+    "C:\\Users\\zh\\Desktop\\git\\jiaotong\\.conda-env\\python.exe",
+    "C:\\Users\\zh\\Desktop\\git\\jiaotong\\src\\uftr\\cli.py",
+    "run",
+    "--phase",
+    "06"
+  ],
+  "finished_at": "2026-11-18T00:30:42+08:00",
+  "elapsed_s": 19.16286470000341,
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "97812efacc06e848446f5a5d53efccdcbd74f102f90454bb9083549e0f4a2435",
+      "bytes": 1215
+    },
+    {
+      "path": "figures/assignment_validation.png",
+      "sha256": "4e646baae9f65a5d836bc98c6494680b63972620f8e9ce74c69e24536901f9d2",
+      "bytes": 82078
+    },
+    {
+      "path": "raw/assignment_report.json",
+      "sha256": "a520490141bfbae937f1118eccf7626d020ab7c1b8a60fe7268c09eb79affc72",
+      "bytes": 1419
+    },
+    {
+      "path": "raw/nanshan_assignment.json",
+      "sha256": "ae78ec75416d591a57bdcc55c08ca6cde7d84112e26a904c343e29e5c590cfed",
+      "bytes": 317
+    },
+    {
+      "path": "raw/nanshan_convergence.csv",
+      "sha256": "0df386a685b76bec60d03ba50e55634d5e92703d8d1d1e73db4d8eaf710b5e43",
+      "bytes": 123
+    },
+    {
+      "path": "raw/nanshan_flows.parquet",
+      "sha256": "3d934877be8e359c1ccbbcdb38742c293760e7a1fa0b4afff495570d036401ea",
+      "bytes": 1740525
+    },
+    {
+      "path": "raw/sioux_assignment.json",
+      "sha256": "f2525afa3502e67abec204605d1f8f242bca1aac91c462e83a0eef53ee526493",
+      "bytes": 268
+    },
+    {
+      "path": "raw/sioux_comparison.csv",
+      "sha256": "6f96d79a11d2af39012d469081b63b37b2b1e4c116ee23b61a4f25a4f0e407d2",
+      "bytes": 4633
+    },
+    {
+      "path": "raw/sioux_convergence.csv",
+      "sha256": "b6af3c28be9595d6ecb127a64f0caa67ce6145e432d0b356c89f21a08efe3551",
+      "bytes": 89378
+    },
+    {
+      "path": "raw/sioux_flows.parquet",
+      "sha256": "5d0f2d80633ba0dbd19047dc5f5842593eda5c7c6f47bf8f5bb48966a4e929b4",
+      "bytes": 5587
+    },
+    {
+      "path": "raw/small_assignment.json",
+      "sha256": "bc43008ddf2d1291df6f14eea6989ef092c089bbe3abf9c91a82b0eb96e366a8",
+      "bytes": 286
+    },
+    {
+      "path": "raw/small_convergence.csv",
+      "sha256": "cf59a6e3c140029dd8ca192edf102c61acd671ff78b4d9c9ccdc7c39c244c623",
+      "bytes": 103
+    },
+    {
+      "path": "raw/small_flows.parquet",
+      "sha256": "b65b31283a9df09d6a51d458512e31172865d2f723ca024c65ca133d4d4ca6f7",
+      "bytes": 93410
+    },
+    {
+      "path": "raw/stage_report.json",
+      "sha256": "a520490141bfbae937f1118eccf7626d020ab7c1b8a60fe7268c09eb79affc72",
+      "bytes": 1419
+    }
+  ]
+}
