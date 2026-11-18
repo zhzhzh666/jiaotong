@@ -48,3 +48,5 @@ pd.DataFrame(od_08_00, index=ids, columns=ids).to_csv('od_0800_0815.csv')
 生成命令：`.conda-env/python.exe scripts/generate_synthetic_data_package.py --config configs/synthetic_data_package.yaml`（创建新包并更新报告共用内容）。只读验证：`.conda-env/python.exe scripts/verify_synthetic_data_package.py`。
 
 完整包与ZIP留本机；GitHub保留生成脚本、配置、说明、Word/PPT和小型检查记录。10个输入与38个输出SHA及ZIP内容一致，审计见`docs/validation/synthetic_data_package/package_audit.json`。
+
+新增降雨积水消退模块见[STORM_FLOOD_MODEL.md](STORM_FLOOD_MODEL.md)。独立退水实验基准复现本包，原数据包和OD不变；四情景五参数组及阈值持续时间存新目录。

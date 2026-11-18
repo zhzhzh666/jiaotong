@@ -131,7 +131,7 @@ section('参考文献与数据许可',[
     [r['label']+'：'+r['doi'] for r in data['references']])
 
 # Keep separately generated experiment-input sections when refreshing run facts.
-sections.extend(s for s in data.get('final',{}).get('sections',[]) if s.get('title','').startswith('补充情景 '))
+sections.extend(s for s in data.get('final',{}).get('sections',[]) if s.get('title','').startswith(('补充情景 ','情景建模 ')))
 data.update(updated='2026-11-18',status='研究原型：南山分配与韧性评估、小网治理与十种子实验；实际验收范围及限制见报告')
 data['final']={'sections':sections,'tests_passed':test_count,'runs':{p:r.name for p,r in runs.items()},'scope_limit':'small optimization/ten seeds; full Nanshan assignment/resilience and sampled SUMO only'}
 write_json(target/'content.json',data)

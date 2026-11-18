@@ -4,6 +4,10 @@
   "observed": false,
   "input_sha256_checks": 10,
   "output_sha256_checks": 38,
+  "input_verification_basis": {
+    "current_bytes": 9,
+    "recorded_provenance_snapshot": 1
+  },
   "zip_members_equal_local_files": true,
   "zip_crc_passed": true,
   "generation_consistency_checks": 16,

@@ -1,5 +1,7 @@
 # 操作说明
 
+全过程模块命令：`.conda-env/python.exe scripts/run_storm_flood_process.py --config configs/storm_flood_process.yaml`。新结果在`data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3`，打开index.html查看降雨/水深/超阈值点数及退水敏感性，读取raw/point_threshold_metrics.csv区分recovered、not_exceeded与right_censored。只读核验可运行`.conda-env/python.exe scripts/verify_synthetic_data_package.py --package data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3`。每次输出新目录；完整ZIP留本机。当前Word/PPT各24页/张。
+
 ## 南山合成数据包
 
 本机打开`data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/index.html`查看三张运行图；同名ZIP约50.5 MiB，包含降雨、水深、OD、GIS、字段字典和追溯信息。点深度CSV单位m，三个OD基准矩阵单位veh/h，NPZ的96个矩阵单位为每15分钟期望车次；分配小时率需除0.25，不能直接当路段流量。
@@ -48,6 +50,6 @@ GitHub含源码、配置、依赖锁、Word/PPT和小型验收副本。请备份
 
 ## 报告维护
 
-维护版docs/deliverables/研究方案与阶段进展.docx和开题与阶段进展汇报.pptx来自content.json。Python文档和artifact-tool PPT使用Codex捆绑运行时，见该目录README；图像均有源文件和run_id。原始根PPT/Word不改。22页/22张已完成渲染与旧版逐页像素比对检查，最终图片检查记录和交付指纹在docs/validation及delivery_manifest.json。
+维护版docs/deliverables/研究方案与阶段进展.docx和开题与阶段进展汇报.pptx来自content.json。Python文档和artifact-tool PPT使用Codex捆绑运行时，见该目录README；图像均有源文件和run_id。原始根PPT/Word不改。24页/24张已完成渲染与旧版逐页像素比对检查，最终图片检查记录和交付指纹在docs/validation及delivery_manifest.json。
 
 监测SW零点与测站地址代理位置未核实；OD、容量、积水、治理成本效果与情景概率未实测标定；人口与OSM年份不同，完整避难所缺失。南山时间效率为15起点抽样，介数32起点抽样。南山SUMO治理集合与风险无交集，灾害与治理结果相同；不据此证明全区治理有效。C/D/E只用种子42，B/F各十种子。GA为可选扩展未实现；G为实际分配效率表，不冒充南山优化耗时。

@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 2035100,
-      "sha256": "dd29bad1c678330ad1a8050f1c4c373fbd4be4df1f7c5d9a1317abe217cdf8e1"
+      "bytes": 2067540,
+      "sha256": "a91d2e2c18a33c312e569db4a545153a2e414ff7524536d9550810b70bc84794"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 2399500,
-      "sha256": "6b95131c1e4062fe43ddf4f2d5e0a0c81efd215a79d1379ffb3c88381379e9d8"
+      "bytes": 2763610,
+      "sha256": "9cc7e5e6d8a0794083c03b58e7ef4ca9ca8c457d3aa8dc4eb80c237b82602de8"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 38959,
-    "sha256": "855e5f364660bbbde122b6ef82c1d15d659642d013a5b943099ea1d69e0f28f5"
+    "bytes": 45115,
+    "sha256": "750909bdd04651bba1464bc03b6c1eb9ea0401487a13960cece03f7dc35d5699"
   },
   "originals_preserved": [
     {
@@ -44,31 +44,43 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 22,
-    "docx_pages": 22,
+    "pptx_slides": 24,
+    "docx_pages": 24,
     "embedded_source_images": {
-      "word": 15,
+      "word": 17,
       "ppt": 13
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
-    "core_tests_rerun_for_document_update": false,
+    "core_tests_rerun_for_document_update": true,
     "shared_titles_and_doi_checked": true,
-    "native_chart_source_series_checked": 7,
+    "native_chart_source_series_checked": 18,
     "pptx_package_layout_fonts_and_reimport": "pass",
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
-    "native_powerpoint_playback_verified": false
+    "native_powerpoint_playback_verified": false,
+    "latest_tests_passed": 115
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 6787,
-    "sha256": "b5831796ab71ffd171ded457307acda82cb10f0f2878d857ca4e8f219a0a7386"
+    "bytes": 7300,
+    "sha256": "ac931ec626b0685b39f1bd9245715e07aaf124008e8fb9f6fa713885e14f434d"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
     "generation_checks_passed": 16,
     "observed": false,
     "traffic_assignment_rerun": false
+  },
+  "storm_process": {
+    "path": "data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3",
+    "process_consistency_checks": 11,
+    "observed": false,
+    "traffic_assignment_rerun": false,
+    "tests_report": {
+      "path": "docs/validation/storm_process/tests.xml",
+      "bytes": 13710,
+      "sha256": "7cdf6820d4688fd57faa0f630d8bedc7ae42fa7a41d45b7c84300aad116e97db"
+    }
   }
 }

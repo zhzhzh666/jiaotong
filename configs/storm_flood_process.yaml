@@ -1,0 +1,11 @@
+source_package: data/synthetic/scenario_packages/20261118T141443_nanshan_seed42
+interval_minutes: 15
+recovery_threshold_m: 0.01
+thresholds_m: [0, 0.01, 0.15, 0.30, 0.40]
+# Parameter sensitivity only: multipliers are not calibrated engineering effects.
+cases:
+  baseline: {drainage_multiplier: 1.0, recession_multiplier: 1.0, label: 基准参数}
+  drainage_half: {drainage_multiplier: 0.5, recession_multiplier: 1.0, label: 排水能力0.5倍}
+  drainage_1p5: {drainage_multiplier: 1.5, recession_multiplier: 1.0, label: 排水能力1.5倍}
+  recession_fast: {drainage_multiplier: 1.0, recession_multiplier: 0.5, label: 消退常数2小时}
+  recession_slow: {drainage_multiplier: 1.0, recession_multiplier: 2.0, label: 消退常数8小时}

@@ -1,0 +1,19 @@
+{
+  "package_id": "20261118T150315_storm_process_7b2a75f3",
+  "source_kind": "synthetic",
+  "observed": false,
+  "input_sha256_checks": 7,
+  "output_sha256_checks": 15,
+  "input_verification_basis": {
+    "current_bytes": 7,
+    "recorded_provenance_snapshot": 0
+  },
+  "zip_members_equal_local_files": true,
+  "zip_crc_passed": true,
+  "generation_consistency_checks": 11,
+  "manifest_sha256": "0968d9bc1a2273ceb66c5e2f254d524237253d193af12943026de309f1e88217",
+  "zip_bytes": 1777140,
+  "zip_sha256": "1bda63dcbe04958d083a6024cdb822172e7421bd7480430d8874adf052192625",
+  "all_checks_passed": true,
+  "scope": "Integrity and generation consistency only; no observational calibration or traffic reassignment"
+}

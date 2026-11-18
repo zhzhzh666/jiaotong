@@ -1,6 +1,12 @@
 # Word 与 PPT 维护说明
 
-2026-11-18维护版：Word22页、PPT22张。原19节实验报告后增加降雨驱动积水、60个南山合成点、完整OD与出发时间分布三节。降雨、水深及OD未经实测校准，新包未重跑分配或韧性。原始根PPT/Word、论文及用户水位数据保持不动。
+当前维护版为Word24页/PPT24张，新增降雨积水全过程与退水敏感性两节。Word17张/PPT13张嵌图、6个原生图表18条序列核验通过。115项测试和11项过程核验通过，原稿SHA保持。完整模型说明见../STORM_FLOOD_MODEL.md。
+
+本轮PPT命令为scripts/append_storm_process_presentation.mjs 构建目录 新输出.pptx 22张已审源文件；源备份.cache/storm-doc-sync/before/开题与阶段进展汇报.pptx。帮助脚本preserve_existing_chart_workbooks.py逐字节保留旧图表和XLSX，不重构源公式。当前Word PDF/PNG位于.cache/storm-doc-sync/final-word.pdf和final-word-pages；PPT回执和PNG在v4。新23/24页张逐张检查，其余22页张与上一版像素一致。验证脚本按final_visual_review.json读取对应证据，不使用旧回执。
+
+以下为上一轮流程与范围记录。
+
+上一轮2026-11-18维护版：Word22页、PPT22张。原19节实验报告后增加降雨驱动积水、60个南山合成点、完整OD与出发时间分布三节。降雨、水深及OD未经实测校准，新包未重跑分配或韧性。原始根PPT/Word、论文及用户水位数据保持不动。
 
 共用正文与图表证据为content.json的final.sections及synthetic_data_package。Word嵌入15张源图，PPT嵌入13张；新增降雨/水深/需求采用三个原生可编辑图表，7条序列与源CSV逐值核对。共享标题、DOI、原稿指纹和交付文件SHA通过核验；详情见delivery_manifest.json。此前106项核心测试记录沿用，本轮另通过16项生成一致性检查，未重跑核心模型与长仿真。
 

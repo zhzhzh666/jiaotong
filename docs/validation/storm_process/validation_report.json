@@ -1,0 +1,89 @@
+{
+  "run_id": "20261118T150315_storm_process_7b2a75f3",
+  "source_package": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
+  "source_kind": "synthetic",
+  "observed": false,
+  "cases": 5,
+  "scenarios": 4,
+  "points": 60,
+  "interval_minutes": 15,
+  "rain_end_hour": 13,
+  "recovery_threshold_m": 0.01,
+  "metric_method": "Piecewise linear endpoints; strict depth > threshold; final downward crossing; right-censor at 24h",
+  "baseline_replay_max_error_m": 3.885780586188048e-16,
+  "max_interval_balance_residual_mm": 1.1013412404281553e-13,
+  "max_event_balance_residual_mm": 9.094947017729282e-13,
+  "checks": {
+    "frozen_inputs_match": true,
+    "baseline_matches_frozen_depth": true,
+    "interval_water_balance": true,
+    "event_water_balance": true,
+    "finite_nonnegative_depths": true,
+    "dry_normal_for_all_cases": true,
+    "dry_recession_nonincreasing": true,
+    "drainage_ordering": true,
+    "recession_ordering": true,
+    "durations_within_window": true,
+    "censored_not_given_recovery": true
+  },
+  "all_checks_passed": true,
+  "baseline_summary": [
+    {
+      "case": "baseline",
+      "scenario": "normal",
+      "peak_depth_m": 0.0,
+      "first_peak_hour": 0.0,
+      "peak_point_id": "synthetic_risk_0000",
+      "ponded_points_001": 0,
+      "recovered_points_001": 0,
+      "censored_points_001": 0,
+      "latest_recovery_hour_001": null,
+      "max_duration_above_015_h": 0.0,
+      "max_points_above_015": 0
+    },
+    {
+      "case": "baseline",
+      "scenario": "general",
+      "peak_depth_m": 0.214932560244021,
+      "first_peak_hour": 10.5,
+      "peak_point_id": "synthetic_risk_0059",
+      "ponded_points_001": 60,
+      "recovered_points_001": 60,
+      "censored_points_001": 0,
+      "latest_recovery_hour_001": 18.00713170841865,
+      "max_duration_above_015_h": 4.208742071906931,
+      "max_points_above_015": 11
+    },
+    {
+      "case": "baseline",
+      "scenario": "severe",
+      "peak_depth_m": 0.453095862373881,
+      "first_peak_hour": 10.5,
+      "peak_point_id": "synthetic_risk_0059",
+      "ponded_points_001": 60,
+      "recovered_points_001": 60,
+      "censored_points_001": 0,
+      "latest_recovery_hour_001": 20.618751763679704,
+      "max_duration_above_015_h": 7.452078196307561,
+      "max_points_above_015": 59
+    },
+    {
+      "case": "baseline",
+      "scenario": "extreme",
+      "peak_depth_m": 0.69141298244188,
+      "first_peak_hour": 10.5,
+      "peak_point_id": "synthetic_risk_0059",
+      "ponded_points_001": 60,
+      "recovered_points_001": 60,
+      "censored_points_001": 0,
+      "latest_recovery_hour_001": 22.164461024985005,
+      "max_duration_above_015_h": 9.216369736471217,
+      "max_points_above_015": 60
+    }
+  ],
+  "limits": [
+    "Independent hypothetical ponds; no drainage network, lateral exchange or tidal backwater",
+    "Rainfall and drainage/recession parameters uncalibrated; sensitivity is not engineering efficacy",
+    "No new traffic assignment, resilience or optimization run"
+  ]
+}

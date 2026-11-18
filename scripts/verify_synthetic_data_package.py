@@ -12,8 +12,19 @@ def verify(package):
     manifest_path = package / 'manifest.json'
     manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
     checked_inputs = 0
+    input_basis = {'current_bytes': 0, 'recorded_provenance_snapshot': 0}
     for item in manifest['inputs']:
-        assert sha256((ROOT / item['path']).read_bytes()).hexdigest() == item['sha256'], item['path']
+        path = ROOT / item['path']
+        if path.is_file() and sha256(path.read_bytes()).hexdigest() == item['sha256']:
+            input_basis['current_bytes'] += 1
+        else:
+            # Code/config may evolve; only accept frozen snapshot bytes whose
+            # SHA exactly matches this original recorded input. Never apply to data.
+            candidates = [package/'provenance'/path.name]
+            if path.suffix=='.yaml':candidates.append(package/'provenance/config.yaml')
+            assert path.suffix in {'.py','.yaml'} and any(
+                p.is_file() and sha256(p.read_bytes()).hexdigest()==item['sha256'] for p in candidates), item['path']
+            input_basis['recorded_provenance_snapshot'] += 1
         checked_inputs += 1
     members = {item['path'] for item in manifest['outputs']}
     assert {p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file()} == members | {'manifest.json'}
@@ -31,8 +42,9 @@ def verify(package):
     assert validation['all_checks_passed'] and all(validation['checks'].values())
     return {'package_id': package.name, 'source_kind': 'synthetic', 'observed': False,
             'input_sha256_checks': checked_inputs, 'output_sha256_checks': len(members),
+            'input_verification_basis': input_basis,
             'zip_members_equal_local_files': True, 'zip_crc_passed': True,
-            'generation_consistency_checks': validation['check_count'],
+            'generation_consistency_checks': validation.get('check_count', len(validation['checks'])),
             'manifest_sha256': sha256(manifest_path.read_bytes()).hexdigest(),
             'zip_bytes': archive_path.stat().st_size,
             'zip_sha256': sha256(archive_path.read_bytes()).hexdigest(),

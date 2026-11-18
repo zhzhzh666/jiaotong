@@ -1,5 +1,7 @@
 # 数据来源与真实性
 
+全过程补充使用冻结合成包的参考雨量、点参数及基准水深，未新增实测数据。结果位于`data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3`，7输入/15输出指纹与ZIP内容核验通过。退水阈值0.01 m为分析定义，SW观测继续独立；源包与OD未改动。
+
 ## 2026-11-18新增合成数据
 
 `data/synthetic/scenario_packages/20261118T141443_nanshan_seed42`基于既有南山OSM路网、低DSM道路候选点、WorldPop与设施重力/IPF需求派生。60点降雨与水深采用假设雨型和独立蓄水桶，OD为574×574合成小时率，另输出96个15分钟期望车次矩阵。未下载新的实测降雨、流量或OD；45站观测SW保持独立。所有派生数据标注synthetic/observed=false。

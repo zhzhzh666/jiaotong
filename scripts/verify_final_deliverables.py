@@ -35,7 +35,7 @@ with ZipFile(pptpath) as ppt,ZipFile(docpath) as word:
     for run_id in final['runs'].values():assert run_id in ppt_text
     images=[s['figure'] for s in sections if s.get('figure')]
     # New rainfall and demand figures use editable native charts in PowerPoint.
-    ppt_images=[s['figure'] for s in sections if s.get('figure') and
+    ppt_images=[s['figure'] for s in sections if s.get('figure') and not s.get('ppt_native',False) and
                 (not s['title'].startswith('补充情景 ') or s['title']=='补充情景 南山合成积水点')]
     for archive,prefix,expected in [(word,'word/media/',images),(ppt,'ppt/media/',ppt_images)]:
         embedded={sha256(archive.read(n)).hexdigest() for n in archive.namelist() if n.startswith(prefix)}
@@ -67,6 +67,21 @@ with ZipFile(pptpath) as ppt,ZipFile(docpath) as word:
                     assert len(actual)==len(values)
                     assert all(math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-10) for a,b in zip(actual,values)),(i,field)
                 native_series_checked+=1
+        if data.get('storm_process'):
+            process=ROOT/data['storm_process']['path']
+            charts=json.loads((process/'raw/native_chart_data.json').read_text(encoding='utf-8'))
+            ns['a']='http://schemas.openxmlformats.org/drawingml/2006/main'
+            trees=[ET.fromstring(ppt.read(n)) for n in ppt.namelist() if n.startswith('ppt/slides/charts/chart') and n.endswith('.xml')]
+            by_title={''.join(t.text or '' for t in tree.findall('c:chart/c:title//a:t',ns)):tree for tree in trees}
+            for expected in charts:
+                tree=by_title[expected['title']];series=tree.findall('.//c:scatterChart/c:ser',ns)
+                assert len(series)==len(expected['series'])
+                for ser,values in zip(series,expected['series']):
+                    for field,key in [('xVal','x'),('yVal','y')]:
+                        actual=[float(v.text) for v in ser.findall(f'c:{field}/c:numRef/c:numCache/c:pt/c:v',ns)]
+                        assert len(actual)==len(values[key])
+                        assert all(math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-10) for a,b in zip(actual,values[key]))
+                    native_series_checked+=1
 
 def record(path):
     b=path.read_bytes()
@@ -80,7 +95,7 @@ manifest={'updated':data['updated'],'phase_status':data['status'],'accepted_runs
  'originals_preserved':old['originals_preserved'],
  'verification':{'final_content_checked':True,'all_pages_and_slides_visually_reviewed':True,
  'pptx_slides':len(slides),'docx_pages':len(pdf.pages),'embedded_source_images':{'word':len(images),'ppt':len(ppt_images)},'embedded_image_sha256_matches':True,
- 'previous_core_tests_passed':int(suite.attrib['tests']),'core_tests_rerun_for_document_update':False,'shared_titles_and_doi_checked':True,
+ 'previous_core_tests_passed':int(suite.attrib['tests']),'core_tests_rerun_for_document_update':bool(data.get('storm_process')),'shared_titles_and_doi_checked':True,
  'native_chart_source_series_checked':native_series_checked,
  'pptx_package_layout_fonts_and_reimport':'pass',
  'word_render':'Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable',
@@ -91,5 +106,12 @@ if data.get('synthetic_data_package'):
     manifest['synthetic_data_package']={'path':data['synthetic_data_package']['path'],
         'generation_checks_passed':data['synthetic_data_package']['report']['check_count'],
         'observed':False,'traffic_assignment_rerun':False}
+if data.get('storm_process'):
+    latest=ET.parse(ROOT/data['storm_process']['tests_report']).getroot().find('testsuite')
+    assert int(latest.attrib['failures'])==int(latest.attrib['errors'])==0
+    assert int(latest.attrib['tests'])==data['storm_process']['tests_passed']
+    manifest['verification']['latest_tests_passed']=int(latest.attrib['tests'])
+    manifest['storm_process']={'path':data['storm_process']['path'],'process_consistency_checks':11,
+        'observed':False,'traffic_assignment_rerun':False,'tests_report':record(ROOT/data['storm_process']['tests_report'])}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

@@ -1,5 +1,7 @@
 # 实验记录：当前验收与完整历史
 
+全过程补充运行`20261118T150315_storm_process_7b2a75f3`，命令`.conda-env/python.exe scripts/run_storm_flood_process.py --config configs/storm_flood_process.yaml`。基准重放最大误差3.886e-16 m，区间/事件平衡误差1.101e-13/9.095e-13 mm；115测试通过、pip check无冲突。四雨量情景五参数组，阈值0/0.01/0.15/0.30/0.40 m逐点统计，未超过和右删失留空恢复时刻。此前探索输出保留；修正了汇总JSON空值和相对配置路径。PPT导入曾丢失旧图表XLSX，后按源文件逐字节保留原图表及工作簿，并修正包命名空间；失败v1/v2保留。最终v4通过全部结构/图表/字体/重导入核验；24页/张中原22页/张像素相同，新增23/24逐张检查。尚未验收原生PowerPoint播放，也未重跑交通评估。
+
 ## 2026-11-18 南山合成输入补充
 
 用户无法下载相关数据，授权模拟积水点、降雨和OD。执行`.conda-env/python.exe scripts/generate_synthetic_data_package.py --config configs/synthetic_data_package.yaml`，最终包`20261118T141443_nanshan_seed42`（较早141243版本保留）。60点、四情景、24h/15min、574×574完整OD、96区间、全天793108.2755期望车次；16项一致性检查通过，最大事件水量残差9.095e-13 mm。完整包和53,003,982字节ZIP保留本机，10输入/38输出SHA与ZIP成员一致性独立核验通过。
@@ -150,3 +152,5 @@ GitHub上传补充：用户提供https://github.com/zhzhzh666/jiaotong后，配�
 独立审计、5图/55输入/114索引链接校验通过，11项关键输出与首轮成功运行逐字节一致。5张实际PNG逐张查看并保存到docs/validation/phase03；Word19页、PPT24张全部渲染检查，12张嵌入源图字节核验，原稿指纹不变。报告和命令见docs/PHASE03_REPORT.md。下一阶段为Phase 04，本阶段结束停止，收到继续指令再实施。
 
 本轮失败及修复：20261117T214644_p03_61342393的NumPy bool报告序列化失败，转换为原生bool修复；20261117T214831_p03_c01bcc13的源分级带括号说明，改为校验纯等级前缀且保留全文。独立审计float32求和与逐像元float64总量精度不一致，改为float64审计求和。首轮成功20261117T215014_p03_2b8fe770；热力图标签拥挤已修复，实施提交410a526后干净源码重放。所有失败运行、数据和日志保留。最终命令：`.conda-env/python.exe -m uftr.cli run --phase 03 --user-source data/raw/user_sources/20261117T215014_p03_2b8fe770`。独立审计scripts/audit_demand.py与scripts/audit_run.py通过。
+
+冻结输入审计补充：原合成包生成器修正相对配置路径后，历史代码按包内provenance快照的原SHA逐字节接受；原10输入/38输出清单和ZIP字节未修改。当前退水实验7输入均匹配当前字节。

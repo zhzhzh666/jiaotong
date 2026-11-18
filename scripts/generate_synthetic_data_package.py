@@ -35,6 +35,7 @@ def hash_file(p):
 
 
 def build(config_path):
+    config_path = config_path.resolve()
     cfg = yaml.safe_load(config_path.read_text(encoding='utf-8'))
     stamp = datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y%m%dT%H%M%S')
     out = ROOT/'data/synthetic/scenario_packages'/f'{stamp}_nanshan_seed{cfg["seed"]}'
