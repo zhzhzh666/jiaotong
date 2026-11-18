@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>龙岗 · 城市交通数字沙盘</title><link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
+<body>
+<div id="scene" aria-label="可旋转缩放的三维交通仿真"></div>
+<header><a class="brand" href="./"><span class="brand-icon">◈</span><span>龙岗 <i>/</i> 城市交通数字沙盘<small>LONGGANG · TRAFFIC OBSERVATORY</small></span></a><div class="header-right"><span class="status"><b></b> SUMO 轨迹回放</span><button id="help" title="数据说明">ⓘ 数据说明</button><button id="fullscreen" title="全屏">⛶ 全屏</button></div></header>
+<aside>
+ <div class="eyebrow">URBAN RESILIENCE LAB <span>01 / 03</span></div>
+ <h1>看见城市的<br>每一次流动<span>。</span></h1>
+ <p class="intro">龙岗片区 · 暴雨内涝交通仿真<br>3 km × 3 km 微观交通数字沙盘</p>
+ <div class="section-label">仿真情景 <span>SCENARIO</span></div>
+ <div class="scenario-list"><button class="scenario active" data-case="dry"><span class="scenario-icon">☀</span><span>无雨基准<small>观察正常道路交通</small></span><b>01</b></button><button class="scenario" data-case="rain_rolling"><span class="scenario-icon">☂</span><span>暴雨积水<small>积水影响与道路中断</small></span><b>02</b></button><button class="scenario" data-case="governed_rolling"><span class="scenario-icon">◇</span><span>治理情景<small>S0 + S3 方案 · 同需求比较</small></span><b>03</b></button></div>
+ <div class="section-label metrics-label">当前交通状态 <span id="metric-time">10:30:00</span></div>
+ <div class="metrics"><div><span>运行车辆</span><strong id="running">—</strong><small>辆 · SUMO 统计</small></div><div><span>累计到达</span><strong id="arrived">—</strong><small>辆 · 当前时刻</small></div><div><span>平均车速</span><strong id="speed">—</strong><small>km/h · 轨迹采样</small></div><div><span>中断道路</span><strong id="closed">—</strong><small>条 · 源有向弧</small></div></div>
+ <div class="chart-title">在途车辆变化 <span>4 小时回放</span></div><canvas id="chart" width="500" height="130" aria-label="在途车辆曲线"></canvas>
+ <div class="source-note"><span>↳</span> 真实 SUMO 运行轨迹 / 程序化城市配景<br><span></span>5% 合成需求 · 参数未经实测标定</div>
+</aside>
+<main class="scene-overlay"><div class="scene-title"><span class="tag">3D DIGITAL TWIN</span><h2 id="scene-name">晴日 · 城市脉动</h2><p id="scene-subtitle">真实路网与车辆轨迹，重新呈现。</p></div><div class="compass"><span>N</span><div>↑</div><small>EPSG:32650</small></div></main>
+<div class="view-tools"><div class="tool-group"><button data-view="district" class="active">◈ 街区视角</button><button data-view="overview">▦ 全域鸟瞰</button><button data-view="follow">▹ 跟随车辆</button></div><div class="tool-group"><button id="orbit">↻ 自动运镜</button><button id="lighting">☾ 夜景</button><button id="buildings" class="active">▥ 建筑</button><button id="water" class="active">≈ 积水</button></div></div>
+<div class="legend"><span><i class="fast"></i>畅行</span><span><i class="slow"></i>缓行</span><span><i class="stop"></i>低速 / 停车</span><span class="water-legend"><i class="flood"></i>道路积水</span><em>拖动旋转 · 滚轮缩放 · 右键平移 · 点击车辆查看</em></div>
+<footer><button id="play" class="play" title="播放或暂停">Ⅱ</button><div class="time-block"><strong id="clock">10:30:00</strong><span>2023.09.10 · 仿真时钟</span></div><div class="timeline"><input id="timeline" type="range" min="0" max="14400" value="1800" step="1" aria-label="仿真时间"><div><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span></div></div><select id="rate" aria-label="播放倍速"><option value="1">1× 实时</option><option value="5" selected>5× 速度</option><option value="15">15× 速度</option><option value="60">60× 速度</option></select><button id="reset" title="从头播放">↺</button></footer>
+<div id="selection" hidden><button id="close-selection">×</button><span class="eyebrow">VEHICLE INSPECTOR</span><h3 id="vehicle-id"></h3><p id="vehicle-speed"></p><small>点击其他车辆切换观察对象</small></div>
+<dialog id="info"><button id="close-info">×</button><div class="eyebrow">ABOUT THIS SIMULATION</div><h2>让演示更清晰，也让数据可追溯。</h2><p>道路和车辆位置来自既有龙岗 3 km × 3 km SUMO 试验。使用冻结控制器重放三种情景，按 1 秒采样 TraCI 位置、方向与速度，连续样本间进行线性插值。面板统计读取 60 秒交通账本。</p><p>建筑、树木、材质和照明为程序化视觉配景，不代表真实建筑或实测地形。道路沿用原试验的平面推定几何。蓝色积水带展示该道路的模型水深，并非连续二维水面；0.30 m 及以上标为中断。</p><p>采用原试验的 5% 合成需求、3,588 辆计划；OD、积水、容量代理均未经实测标定。原试验实际在途改道为 0，演示不声称已验证治理工程收益。</p><a href="./data/audit.json" target="_blank" rel="noopener">查看回放账本核验 ↗</a><small id="source-run"></small></dialog>
+<div id="loading"><div class="loader-mark">◈</div><h2>正在构建城市沙盘</h2><p id="load-status">载入路网与 SUMO 轨迹…</p></div><div id="toast" role="status"></div>
+<script type="module" src="app.js"></script></body></html>

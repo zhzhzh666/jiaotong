@@ -1,0 +1,37 @@
+{
+  "source_run": "data/processed/longgang_sumo/20261118T175153_sumo_492a503a",
+  "source_road_shapes_matched": 4969,
+  "cases": {
+    "dry": {
+      "frames": 14401,
+      "unique_vehicles": 3588,
+      "vehicle_samples": 791166,
+      "every_second_running_count_matches_archived_SUMO": true,
+      "all_minute_statistics_match": true,
+      "arrived": 3588
+    },
+    "rain_rolling": {
+      "frames": 14401,
+      "unique_vehicles": 882,
+      "vehicle_samples": 236069,
+      "every_second_running_count_matches_archived_SUMO": true,
+      "all_minute_statistics_match": true,
+      "arrived": 877
+    },
+    "governed_rolling": {
+      "frames": 14401,
+      "unique_vehicles": 1236,
+      "vehicle_samples": 359459,
+      "every_second_running_count_matches_archived_SUMO": true,
+      "all_minute_statistics_match": true,
+      "arrived": 1230
+    }
+  },
+  "sha256": {
+    "audit.json": "78ad30b58c0913d32dc54034b4a878d46b0b7b2f544c5550f9bed279610d347b",
+    "dry.json": "e3f27372379388e14e6335aeb1e722d00b687f52a73964fbe0f391aa3a58124e",
+    "governed_rolling.json": "ca3f31482463a098cf399d9a58da8fb04750c65a4748f209db63c8dc92837f77",
+    "network.json": "021f83c65979bd9902277798466444a26fb1883c18463a8372b4a012ddb9d23e",
+    "rain_rolling.json": "fd08205e2fe1d277a25be5df6b3d33db529c6950252f450eeeff8d52f9cb83e6"
+  }
+}

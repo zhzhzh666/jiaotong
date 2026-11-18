@@ -17,6 +17,9 @@ htmlcov/
 /data/processed/
 /data/synthetic/
 /tmp/
+/dashboard/digital-twin/data/*.json
+/dashboard/digital-twin/data/*.gz
+/tmp-digital-twin-*.log
 /*.pdf
 /*.pptx
 /*.docx

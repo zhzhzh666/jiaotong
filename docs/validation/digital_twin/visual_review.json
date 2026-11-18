@@ -1,0 +1,37 @@
+{
+  "viewport": "1280x720",
+  "screenshots": [
+    {
+      "path": "docs/validation/digital_twin/day.jpg",
+      "sha256": "064b6fe629bceed40ef8135ad7c154434c539a727fbfb22107afa04bc61a90c2"
+    },
+    {
+      "path": "docs/validation/digital_twin/follow.jpg",
+      "sha256": "2eab02b2c828aaa60f572fec79d2c2c9589f6ff7db0a5d1a53f5ae2ffd32557a"
+    },
+    {
+      "path": "docs/validation/digital_twin/night.jpg",
+      "sha256": "0c705db35989d87d6513c60cd9b6b1aeab00e152d04b15ed9be7bb5ee20e10f1"
+    },
+    {
+      "path": "docs/validation/digital_twin/overview.jpg",
+      "sha256": "b396a831be168bd49e597665616b13294a60298dae87a485b09c738044273e23"
+    },
+    {
+      "path": "docs/validation/digital_twin/rain.jpg",
+      "sha256": "c22439d2999851257cb2e76ca0ec3e5151910912e4247670671b67a30266b8a2"
+    }
+  ],
+  "browser_checks": [
+    "day/night",
+    "dry/rain/governed switching",
+    "dry/rain/governed final arrived: 3588/877/1230",
+    "timeline Home/End/PageUp",
+    "pause/play",
+    "district/overview/follow"
+  ],
+  "final_console_warning_error_count": 0,
+  "pytest": "171 passed, 56 warnings, 10.99s",
+  "pip_check": "No broken requirements found",
+  "data_audit": "data_audit.json"
+}
