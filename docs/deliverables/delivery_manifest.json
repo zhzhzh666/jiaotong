@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-19",
-  "phase_status": "龙岗不含大鹏的分区损失、道路退化、抽样点队列与四候选NSGA-II试验完成，独立审计通过。未实测标定，收益对目的地抽样敏感，工程方案待复核。",
+  "phase_status": "龙岗代表片区五组SUMO试验与独立审计完成；治理多完成353次访问，未观察到额外滚动改道收益。5%合成需求，容量未标定，不能外推全区。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 7625844,
-      "sha256": "dd913d5373aa13d070824ecb3db44f0746485c566e25b2594a525b24ff4951b6"
+      "bytes": 8189948,
+      "sha256": "1cd118718d717392e4f687f60db31a58124d6d66b228b324d38b7ef434ba9dc0"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 8620689,
-      "sha256": "2f5c1b4859f21923e9da21e97d405bbdbdcce7892d0c0b8f5be5bd65bd094ce9"
+      "bytes": 9167121,
+      "sha256": "671155351b3eb6ca32efcafcb0456909edcbfd738bd456796866ee386780937f"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 139089,
-    "sha256": "2c7043f7aa5390fc0ad81718a0cf46009d958749c7962c2cf81cd6c38c3bdc80"
+    "bytes": 156991,
+    "sha256": "b0f47cb78a321a23d5cf652ad3497c92d2f4e4849292f283dd41db29cb2bfad7"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 48,
-    "docx_pages": 48,
+    "pptx_slides": 53,
+    "docx_pages": 53,
     "embedded_source_images": {
-      "word": 35,
-      "ppt": 27
+      "word": 38,
+      "ppt": 30
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -59,14 +59,14 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 165,
+    "latest_tests_passed": 171,
     "model_tests_rerun_for_this_document_update": false,
     "preserved_native_chart_workbook_parts": 42
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 12606,
-    "sha256": "fbaed8cd2eec4aab28bf7bee25e6768796146a4027c30af4951986af205b0971"
+    "bytes": 13715,
+    "sha256": "14ba708bfb319891f2620512305e6b5424b668e7dcc7ae6e3b67bb565744bf26"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -237,5 +237,41 @@
     "main_extra_generalized_cost_reduction_percent": 9.887073210067712,
     "four_strata_same_subset_reduction_percent": 5.764186693823592,
     "engineering_recommendation_validated": false
+  },
+  "longgang_sumo": {
+    "path": "data/processed/longgang_sumo/20261118T175153_sumo_492a503a",
+    "scope": "S0附近3 km×3 km工作域，含周边连接道路；非全龙岗",
+    "demand_fraction": 0.05,
+    "planned_visits": 3588,
+    "calibrated": false,
+    "full_longgang": false,
+    "arrived_by_scenario": {
+      "dry": 3588,
+      "rain_departure": 877,
+      "rain_rolling": 877,
+      "governed_departure": 1230,
+      "governed_rolling": 1230
+    },
+    "actual_route_changes": 0,
+    "additional_rolling_benefit_observed": false,
+    "capacity_proxy_exactly_matches_reference": false,
+    "actual_osg_screenshot": true,
+    "real_terrain_buildings_water_surface": false,
+    "tests_report": {
+      "path": "docs/validation/longgang_sumo/tests.xml",
+      "bytes": 20354,
+      "sha256": "411e690d0de2fa860cfa7c05dc9b3a6f9f2317ea8f3b317e25913bdaaab86fa9"
+    },
+    "independent_audit": {
+      "path": "docs/validation/longgang_sumo/independent_audit.json",
+      "bytes": 3185,
+      "sha256": "4ddb992b4ffca45a6a1fb6488d0f433a10811fecbdd6664832eeb05b3b113fc0"
+    },
+    "evidence_index": {
+      "path": "docs/validation/longgang_sumo/evidence_index.json",
+      "bytes": 5167,
+      "sha256": "1cdb3db023fdaec4f0a8225d78d8a2a3d682f079b05ff7cf0dd4135bf193f950"
+    },
+    "evidence_files_sha256_checked": 35
   }
 }

@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-19T01:31:30.557163+08:00",
+  "updated_at": "2026-11-19T02:31:42.428572+08:00",
   "owner_thread": "01a1ee8f-7e77-7663-8c67-f10d97e0243f",
   "automation_id": "jiaotong-ppt-word",
   "status": "active",
   "interval_minutes": 30,
   "user_scope_clarification": "本聊天继续维护Word/PPT；其他开发聊天仅更新项目及GitHub。来源聊天的停止文档指令不取消本自动任务。",
-  "current_document_pages": 48,
-  "current_presentation_slides": 48,
-  "last_check": "分区损失、道路退化、抽样点队列与四候选NSGA-II试验已同步48页/张，全部渲染和视觉核对完成。来源开发提交56772b6；未触碰单独15分钟PPT。",
-  "pending": "未标定，2层/4层抽样收益9.8871%/5.7642%且未全组合重优化；无雨过饱和。完整OD、FIFO回溢、信号与工程汇水区造价待核。",
+  "current_document_pages": 53,
+  "current_presentation_slides": 53,
+  "last_check": "五组龙岗片区SUMO已独立核实并同步53页/张；全部渲染，新增49—53及封面逐一查看，历史2—48像素一致。其他15分钟汇报独立保留。 全区耗时讨论已读完，仅估算、未执行。",
+  "pending": "单车道、tau容量代理、信号与OD未标定；片区/5%/空网/固定边界/单种子不能外推全区。新三维网页展示进行中，SDTA/Gawron仅提议未运行。",
   "source_threads": [
     "01a1e50e-6bff-73b1-a41f-d1713fb73f47",
     "01a1ee72-b914-7ee0-8576-1221bb77f825",
@@ -18,12 +18,14 @@
     "01a1ef77-d019-7332-b11a-c1d5230dacb5",
     "01a1ef6c-ab39-74b0-b3dc-83ac4f4afaab",
     "01a1ef69-8542-7573-a906-535916f18505",
-    "01a1efac-1b2c-7891-b6a1-79b7f2c855f9"
+    "01a1efac-1b2c-7891-b6a1-79b7f2c855f9",
+    "01a1efc6-96f9-7c51-b5a7-535cf4ebbd6b",
+    "01a1efe6-d066-75c1-aaf8-3788421b69cc"
   ],
-  "document_sha256": "2f5c1b4859f21923e9da21e97d405bbdbdcce7892d0c0b8f5be5bd65bd094ce9",
-  "presentation_sha256": "dd913d5373aa13d070824ecb3db44f0746485c566e25b2594a525b24ff4951b6",
+  "document_sha256": "671155351b3eb6ca32efcafcb0456909edcbfd738bd456796866ee386780937f",
+  "presentation_sha256": "1cd118718d717392e4f687f60db31a58124d6d66b228b324d38b7ef434ba9dc0",
   "source_wait_cursors": {
-    "01a1ee72-b914-7ee0-8576-1221bb77f825": "b5d10bca-5ca9-4aad-9755-814b9d944672:9",
+    "01a1ee72-b914-7ee0-8576-1221bb77f825": "d3a0d2d9-718c-488f-8203-0da3b7d4e8b0:3",
     "01a1e50e-6bff-73b1-a41f-d1713fb73f47": "4e0c257d-a91f-4b91-a62d-6d66d3ab7ec2:1",
     "01a1ee71-4c6c-70d0-879f-5bb3ab2a1b52": "7ca166c4-a547-4ebc-b410-edd9e6eda5c2:1"
   },
@@ -33,23 +35,60 @@
     "01a1ef6e-aee9-7762-b3af-69e5e9159ba0",
     "01a1efac-1ea7-7070-b5ca-bc008e248b38",
     "01a1efb0-8c94-7802-81b8-271551eb2dc5",
-    "01a1efb7-35e5-72e0-aa7d-3a2b5d5ab371"
+    "01a1efb7-35e5-72e0-aa7d-3a2b5d5ab371",
+    "01a1efbc-deaa-7df1-982c-902ef13c9239",
+    "01a1efc7-30cb-7c62-b47e-773c15a5a854",
+    "01a1efe4-58c6-7f92-b48b-6f3157e6e6e8",
+    "01a1efe5-d6e7-7ad0-820a-4070eaf29d90",
+    "01a1efe8-83c9-7620-ad34-4e0a2607cc11",
+    "01a1efe9-e909-7af1-9860-73fe9aa8c271",
+    "01a1efeb-7e7d-7ec0-8b18-18bf85a02fd5",
+    "01a1efec-a7ef-7ee2-891d-a28c063950a2",
+    "01a1efe6-d32c-7a81-a8bd-544518d7c639"
   ],
   "incorporated_runs": [
     "20261118T121117_longgang_od_2bf08c94",
     "20261118T124853_longgang_storm_7e7668c1",
     "20261118T133312_era5_surface_d4aecd75",
     "20261118T165311_adaptive_4adc99a6",
-    "20261118T171634_robustness_8c0a6b68"
+    "20261118T171634_robustness_8c0a6b68",
+    "20261118T175153_sumo_492a503a"
   ],
-  "qa_directory": ".cache/document-sync-20261119-adaptive",
+  "qa_directory": ".cache/document-sync-20261119-sumo",
   "visual_review": "docs/validation/final_visual_review.json",
   "verification_passed": true,
   "other_deliverables_preserved": [
-    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报.pptx"
+    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO更新版.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO片区结果版.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_当前进度版.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_进度更新版.pptx"
   ],
-  "last_source_commit": "2c83c7f",
-  "source_latest_completed_turn": "01a1efb7-35e5-72e0-aa7d-3a2b5d5ab371",
-  "latest_method_document_read": "docs/LONGGANG_ROAD_DEGRADATION_PROCESS.md",
-  "source_latest_read_status": "All nine known source chats read through available messages. Latest main turn describes proposed dynamic simulation improvements and explicitly starts no new simulation; same audited numerical runs remain current."
+  "last_source_commit": "e2bc4255eb46240a7ede4fbe30c25ecc8fabc458",
+  "source_latest_completed_turn": "01a1efec-a7ef-7ee2-891d-a28c063950a2",
+  "latest_method_document_read": "docs/LONGGANG_DYNAMIC_SUMO_MODEL.md",
+  "source_latest_read_status": "All eleven known jiaotong source chats read through current available messages. New web 3D demonstration is in progress; SDTA discussed but not run.",
+  "other_deliverable_fingerprints": [
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报.pptx",
+      "sha256": "f65be2491b0a5575183568620baeacde61a86d8a44d48ab181b17f951fe41b24"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO更新版.pptx",
+      "sha256": "cefa0143dcb117bcf9ea11275183fd9c45ee47456f84cb8c8f487ed770bb647d"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO片区结果版.pptx",
+      "sha256": "fda2d15311f951e7e65bf3c6fe552af2ea039979c292e872d8e3dc980ada9d76"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_当前进度版.pptx",
+      "sha256": "77b4ad0ee5c89fc22ffd5f75e9d0c0c4728525268e6af1e1d033b832e8e06f8f"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_进度更新版.pptx",
+      "sha256": "153a3966e7af32079809e92bc1659019e21908bcf96a5e0028f8f3611fdacb0a"
+    }
+  ],
+  "automation_prompt_sha256": "97a21102fe3ccfa7f3a6ac3bc3b57f3fdf21ce60fc84af27a13319adb11655b3"
 }

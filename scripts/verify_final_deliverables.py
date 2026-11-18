@@ -261,5 +261,39 @@ if data.get('longgang_adaptive'):
         'main_extra_generalized_cost_reduction_percent':(base[0]-recommended[0])/base[0]*100,
         'four_strata_same_subset_reduction_percent':(1-sensitivities[9]['extra_generalized_vehicle_hours']/sensitivities[0]['extra_generalized_vehicle_hours'])*100,
         'engineering_recommendation_validated':False}
+if data.get('longgang_sumo'):
+    sumo=data['longgang_sumo']; evidence=ROOT/'docs/validation/longgang_sumo'
+    index=json.loads((ROOT/sumo['evidence_index']).read_text(encoding='utf-8'))
+    audit=json.loads((ROOT/sumo['audit']).read_text(encoding='utf-8'))
+    latest=ET.parse(ROOT/sumo['tests_report']).getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==sumo['tests_passed']==171
+    assert int(latest.attrib['failures'])==int(latest.attrib['errors'])==0
+    assert json.loads((evidence/'status.json').read_text(encoding='utf-8'))['status']=='complete'
+    assert audit['source_sha_verified']==12 and audit['source_sumo_arcs']==4969
+    assert audit['planned_routes_checked']==3588 and audit['road_depth_values_checked']==168946
+    for item in index['files']:
+        assert record(evidence/item['path'])['sha256']==item['sha256'],item['path']
+    for scenario,arrived in zip(['dry','rain_departure','rain_rolling','governed_departure','governed_rolling'],[3588,877,877,1230,1230]):
+        r=json.loads((evidence/f'cases/{scenario}/result.json').read_text(encoding='utf-8'))
+        a=next(x for x in audit['scenarios'] if x['scenario']==scenario)
+        assert r==sumo['results'][scenario] and r['planned']==3588 and r['arrived']==arrived
+        assert r['planned']==sum(r[k] for k in ['invalid','external_pending','sumo_pending','running','arrived'])
+        assert r['vehicle_seconds']==a['vehicle_seconds_replayed']
+        assert r['generalized_vehicle_seconds']==r['vehicle_seconds']+7200*(r['unfinished']+r['invalid'])
+        assert all(r[k]==0 for k in ['route_changes','teleports','collision_vehicle_events','balance_error'])
+    assert audit['routing_probe']['passed'] and audit['routing_probe']['arrived']==1
+    assert audit['capacity_probe'][2]['observed_discharge_veh_h_600_to_1200']==426
+    for value in [Path(sumo['path']).name,'168,946','353','426','5%','0.30 m']:
+        assert value in doc_text and value in ppt_text,value
+    assert not sumo['calibrated'] and sumo['demand_fraction']==0.05
+    manifest['verification']['latest_tests_passed']=171
+    manifest['longgang_sumo']={'path':sumo['path'],'scope':sumo['scope'],
+        'demand_fraction':0.05,'planned_visits':3588,'calibrated':False,'full_longgang':False,
+        'arrived_by_scenario':{k:r['arrived'] for k,r in sumo['results'].items()},
+        'actual_route_changes':0,'additional_rolling_benefit_observed':False,
+        'capacity_proxy_exactly_matches_reference':False,'actual_osg_screenshot':True,
+        'real_terrain_buildings_water_surface':False,
+        'tests_report':record(ROOT/sumo['tests_report']),'independent_audit':record(ROOT/sumo['audit']),
+        'evidence_index':record(ROOT/sumo['evidence_index']),'evidence_files_sha256_checked':len(index['files'])}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

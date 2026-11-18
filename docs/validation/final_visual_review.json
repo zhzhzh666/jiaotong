@@ -1,19 +1,17 @@
 {
   "all_pages_and_slides_visually_reviewed": true,
-  "word_pages": 48,
-  "ppt_slides": 48,
-  "method": "All 48 final Word pages and slides rendered. Changed 1/41 and new 42-48 individually viewed. Original pages/slides 2-40 pixel-identical in v1 to reviewed 41-page edition. Final Word v2 matches all reviewed v1 body regions exactly, footer dates/page fields independently checked on every page, final page 1 footer viewed. All 42 source native chart/workbook parts preserved byte-for-byte. Word read-only COM export and bundled pypdfium2; Artifact Tool final PPTX reimport/render. Native PowerPoint playback not checked.",
-  "word_sha256": "2f5c1b4859f21923e9da21e97d405bbdbdcce7892d0c0b8f5be5bd65bd094ce9",
-  "ppt_sha256": "dd913d5373aa13d070824ecb3db44f0746485c566e25b2594a525b24ff4951b6",
+  "word_pages": 53,
+  "ppt_slides": 53,
+  "method": "All 53 final Word pages and slides rendered. Changed cover 1 and new 49-53 individually viewed; pages/slides 2-48 pixel-identical to reviewed 48-page edition. Final PPT v3 slide 50 unit label viewed; all other v3 slides pixel-identical to reviewed v2. All 42 native chart/relationship/workbook parts preserved byte-for-byte. Word read-only COM PDF export with bundled pypdfium2 and Artifact Tool PPTX reimport/render. Native PowerPoint playback not checked.",
   "preserved_chart_workbook_parts": 42,
-  "word_pdf": ".cache/document-sync-20261119-adaptive/final-word-v2.pdf",
-  "ppt_receipt": ".cache/document-sync-20261119-adaptive/v1/validation.json",
-  "previous_review_sha256": "2935f222aed92aa9d7aea8c35634c0b66b4a8695f20e2dd72be7456ecfb4c723",
-  "render_comparison": ".cache/document-sync-20261119-adaptive/render-comparison-v2.json",
+  "word_pdf": ".cache/document-sync-20261119-sumo/final-word-v1.pdf",
+  "ppt_receipt": ".cache/document-sync-20261119-sumo/v3/validation.json",
+  "previous_review_sha256": "fbaed8cd2eec4aab28bf7bee25e6768796146a4027c30af4951986af205b0971",
+  "render_comparison": ".cache/document-sync-20261119-sumo/render-comparison.json",
   "word_page_images": [
     {
       "page": 1,
-      "sha256": "d117a64b8ecc19414ccc9d9c91b45613d7f3ee69e3bdc880f596f1bd6e03b230"
+      "sha256": "b7f5a9db0d6a95fa32c2733742edbd4f19741e93066a09f646bf301a3f96a602"
     },
     {
       "page": 2,
@@ -202,12 +200,32 @@
     {
       "page": 48,
       "sha256": "f315e758291a3b70314339ea6a091b2cc830eedc0b4fcf5fe32020acfc80371c"
+    },
+    {
+      "page": 49,
+      "sha256": "4b59e0e3e129e8d155835d76dd77900aa2cd0f410deb3081199061ad0cca0b51"
+    },
+    {
+      "page": 50,
+      "sha256": "74fa60062b6535a7f749c7b1142dfab464a39a66ff09a6801a567c741ed3458a"
+    },
+    {
+      "page": 51,
+      "sha256": "2b284943369f24481b07f5c4b05f5fda81fbe2807b407e0a7195082270a78110"
+    },
+    {
+      "page": 52,
+      "sha256": "a61c3ccfb6fee5f1f6736cf478dbb190ddb6c82b010ff26195fc239ba0fdbb9d"
+    },
+    {
+      "page": 53,
+      "sha256": "1cabebebee8b031f12c81e4c50e684d1f7d627cdc7894c31fe1b51b7163b3dfc"
     }
   ],
   "ppt_slide_images": [
     {
       "slide": 1,
-      "sha256": "8be4c9257d8871713203ace06d3007c0b99721b1e216a5599f1069061162c872"
+      "sha256": "401c81beb73ff23874486333498721b66e34b06d39799d5b2a3e339e29eca56c"
     },
     {
       "slide": 2,
@@ -396,6 +414,28 @@
     {
       "slide": 48,
       "sha256": "4d155dbb7a6e8e94b75c3cc4edbf1c57b88de1785b11e4d86ac0fda3f1a05b7a"
+    },
+    {
+      "slide": 49,
+      "sha256": "70c5edb3771e925046763befc9db78fd294135c715c056c38a7e55a92d7a4544"
+    },
+    {
+      "slide": 50,
+      "sha256": "5241971a8d4ef5fd59195942478749476ea6ba2b009fb2e9059d599651e50271"
+    },
+    {
+      "slide": 51,
+      "sha256": "daebb397f0f10ee6adbfc6fb8cca63c5e2593ca0da128d52121de97197d809f7"
+    },
+    {
+      "slide": 52,
+      "sha256": "b4629839d6e2bc6e7aa5c53c6690b600132196537a2c8b6db6b2332d205809ca"
+    },
+    {
+      "slide": 53,
+      "sha256": "e144c6488a6274b4eb237a92d37d26e9359f2623718e68083bdddb25a45100d4"
     }
-  ]
+  ],
+  "word_sha256": "671155351b3eb6ca32efcafcb0456909edcbfd738bd456796866ee386780937f",
+  "ppt_sha256": "1cd118718d717392e4f687f60db31a58124d6d66b228b324d38b7ef434ba9dc0"
 }
