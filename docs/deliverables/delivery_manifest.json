@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-18",
-  "phase_status": "龙岗不含大鹏的ERA5驱动B方案简化地形汇流原型完成，参数未实测标定，交通影响待重算。独立桶与南山结果保留历史，C方案未实施。",
+  "updated": "2026-11-19",
+  "phase_status": "龙岗不含大鹏的分区损失、道路退化、抽样点队列与四候选NSGA-II试验完成，独立审计通过。未实测标定，收益对目的地抽样敏感，工程方案待复核。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 7001425,
-      "sha256": "bb0c8e0a40d442f9e1c11726e97b3bdbae41644bf5fc650550f9614046cbdd11"
+      "bytes": 7625844,
+      "sha256": "dd913d5373aa13d070824ecb3db44f0746485c566e25b2594a525b24ff4951b6"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 8021095,
-      "sha256": "711c96b362d06568f3b00607bfa14a275b9684207fadc0b5be899a4a1e3dd13b"
+      "bytes": 8620689,
+      "sha256": "2f5c1b4859f21923e9da21e97d405bbdbdcce7892d0c0b8f5be5bd65bd094ce9"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 116242,
-    "sha256": "a048652061975dfefd1f54fafeb0420ed756fb20256e30d151633ccf44cc04b1"
+    "bytes": 139089,
+    "sha256": "2c7043f7aa5390fc0ad81718a0cf46009d958749c7962c2cf81cd6c38c3bdc80"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 41,
-    "docx_pages": 41,
+    "pptx_slides": 48,
+    "docx_pages": 48,
     "embedded_source_images": {
-      "word": 32,
-      "ppt": 24
+      "word": 35,
+      "ppt": 27
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -59,12 +59,14 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 151
+    "latest_tests_passed": 165,
+    "model_tests_rerun_for_this_document_update": false,
+    "preserved_native_chart_workbook_parts": 42
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 10886,
-    "sha256": "2935f222aed92aa9d7aea8c35634c0b66b4a8695f20e2dd72be7456ecfb4c723"
+    "bytes": 12606,
+    "sha256": "fbaed8cd2eec4aab28bf7bee25e6768796146a4027c30af4951986af205b0971"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -116,7 +118,7 @@
     "include_dapeng": false,
     "intake_path": "data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253",
     "assignment_ready": false,
-    "traffic_assignment_rerun_for_longgang": false,
+    "traffic_assignment_rerun_for_longgang": true,
     "intake_checks": {
       "path": "docs/validation/longgang_intake/intake_checks.json",
       "bytes": 549,
@@ -126,7 +128,8 @@
       "path": "docs/validation/longgang_intake/intake_report.json",
       "bytes": 7128,
       "sha256": "5ae4e9d39b9dc99cfc20ecfc885caae6bb9243119c628192c12824c92a76ab59"
-    }
+    },
+    "sampled_dynamic_loading_only": true
   },
   "longgang_od": {
     "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
@@ -198,5 +201,41 @@
       "bytes": 473,
       "sha256": "214fe29f9eae035d0d60c96bf12a16aa5272ccd7988605ee09b158232fdde5a3"
     }
+  },
+  "longgang_adaptive": {
+    "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6",
+    "calibrated": false,
+    "sampled_dynamic_loading": true,
+    "full_od_dynamic_loading": false,
+    "dynamic_user_equilibrium": false,
+    "tests_report": {
+      "path": "docs/validation/longgang_adaptive/tests.xml",
+      "bytes": 19612,
+      "sha256": "25eda8238656528bafb26ffa015e69be19421fce7dca55a621822097daf2e649"
+    },
+    "independent_audit": {
+      "path": "docs/validation/longgang_adaptive/independent_audit.json",
+      "bytes": 1155,
+      "sha256": "1ea3d51133d870c668371514ad730306b66d654bff30b3dd0a2686e812e97b60"
+    },
+    "evidence_index": {
+      "path": "docs/validation/longgang_adaptive/evidence_index.json",
+      "bytes": 7649,
+      "sha256": "92c5fb676852e71d07d1513940050d09bb98357a8764e5e88971a19993666701"
+    },
+    "evidence_files_sha256_checked": 41,
+    "worldcover_source": {
+      "path": "docs/validation/longgang_adaptive/worldcover_source.json",
+      "bytes": 2336,
+      "sha256": "24e6ff328951d6b2d0b2615f75abef15746af10b357156833f893f5e91379851"
+    },
+    "robustness_report": {
+      "path": "docs/validation/longgang_adaptive/robustness_report.json",
+      "bytes": 4554,
+      "sha256": "7112689f6f7972c6da8b4a0e51828858ab6752562597439a637ea33bb9158504"
+    },
+    "main_extra_generalized_cost_reduction_percent": 9.887073210067712,
+    "four_strata_same_subset_reduction_percent": 5.764186693823592,
+    "engineering_recommendation_validated": false
   }
 }

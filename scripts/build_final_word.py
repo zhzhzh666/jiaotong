@@ -18,7 +18,7 @@ for name,size in [('Normal',10.5),('Title',22),('Heading 1',17),('Caption',9)]:
     for key in ['asciiTheme','eastAsiaTheme','hAnsiTheme','cstheme']:s.element.get_or_add_rPr().rFonts.attrib.pop(qn('w:'+key),None)
     for border in list(s.element.xpath('./w:pPr/w:pBdr')):border.getparent().remove(border)
 footer=page.footer.paragraphs[0];footer.alignment=WD_ALIGN_PARAGRAPH.RIGHT
-footer.add_run('2026-11-18 | ');field=OxmlElement('w:fldSimple');field.set(qn('w:instr'),'PAGE');footer._p.append(field)
+footer.add_run(data['updated']+' | ');field=OxmlElement('w:fldSimple');field.set(qn('w:instr'),'PAGE');footer._p.append(field)
 for i,s in enumerate(sections):
     title=d.add_paragraph(s['title'],'Title' if i==0 else 'Heading 1')
     if i:title.paragraph_format.page_break_before=True

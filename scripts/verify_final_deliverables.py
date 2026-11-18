@@ -213,5 +213,53 @@ if data.get('longgang_era5_surface'):
         'tests_report':record(ROOT/era5['tests_report']),
         'independent_numerical_audit':record(ROOT/era5['audit']),
         'rainfall_attribution':record(evidence/'era5_attribution.json')}
+if data.get('longgang_adaptive'):
+    adaptive=data['longgang_adaptive']; evidence=ROOT/'docs/validation/longgang_adaptive'
+    report=json.loads((evidence/'validation_report.json').read_text(encoding='utf-8'))
+    audit=json.loads((ROOT/adaptive['audit']).read_text(encoding='utf-8'))
+    worldcover=json.loads((ROOT/adaptive['worldcover_source']).read_text(encoding='utf-8'))
+    robust=json.loads((ROOT/adaptive['robustness_report']).read_text(encoding='utf-8'))
+    index=json.loads((evidence/'evidence_index.json').read_text(encoding='utf-8'))
+    latest=ET.parse(ROOT/adaptive['tests_report']).getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==adaptive['tests_passed']==165
+    assert int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert report==adaptive['report'] and report['run_id']==audit['run_id']==Path(adaptive['path']).name
+    assert audit['passed'] and not report['calibrated'] and not report['include_dapeng']
+    assert audit['independent_scatter_add_road_depth_values']==19722240
+    assert audit['source_arcs_partitioned_once']==451801 and audit['frozen_depth_mapped_arcs_checked']==86807
+    assert audit['traffic_ledgers_checked']==52 and audit['exact_feasible_combinations']==15
+    assert audit['independent_pareto_masks']==report['exact_pareto_masks']==[0,8,9,11]
+    assert report['recommended_mask']==robust['recommended_mask']==9
+    assert report['recommended_sites']==[0,3] and report['nsga2_front_recall_by_seed']=={'42':1.0,'43':1.0,'44':1.0}
+    for item in index['files']:
+        actual=record(evidence/item['path'])
+        assert actual['sha256']==item['sha256'] and actual['bytes']==item['bytes'],item['path']
+    for item in ['9.8871%','5.7642%','FIFO','未实测标定',report['run_id'],robust['run_id']]:
+        assert item in doc_text and item in ppt_text,item
+    assert worldcover['license']=='CC BY 4.0' and worldcover['attribution'] in doc_text and worldcover['attribution'] in ppt_text
+    base,recommended=report['worst_case_base_objectives'],report['worst_case_recommended_objectives']
+    assert math.isclose((base[0]-recommended[0])/base[0]*100,9.8871,abs_tol=0.00005)
+    sensitivities={x['mask']:x for x in report['traffic_sensitivities'] if x['destinations_per_origin']==4}
+    assert math.isclose((1-sensitivities[9]['extra_generalized_vehicle_hours']/sensitivities[0]['extra_generalized_vehicle_hours'])*100,5.7642,abs_tol=0.00005)
+    assert all(x['extra_cost_reduction_vehicle_hours']>0 for x in robust['comparison'])
+    before=ROOT/'.cache/document-sync-20261119-adaptive/before/开题与阶段进展汇报.pptx'
+    with ZipFile(before) as source,ZipFile(pptpath) as final_ppt:
+        parts=[n for n in source.namelist() if n.startswith('ppt/slides/charts/') or n.startswith('ppt/embeddings/')]
+        assert len(parts)==42
+        assert all(source.read(n)==final_ppt.read(n) for n in parts)
+    manifest['active_research']['traffic_assignment_rerun_for_longgang']=True
+    manifest['active_research']['sampled_dynamic_loading_only']=True
+    manifest['verification']['latest_tests_passed']=165
+    manifest['verification']['model_tests_rerun_for_this_document_update']=False
+    manifest['verification']['preserved_native_chart_workbook_parts']=42
+    manifest['longgang_adaptive']={'path':adaptive['path'],'calibrated':False,
+        'sampled_dynamic_loading':True,'full_od_dynamic_loading':False,'dynamic_user_equilibrium':False,
+        'tests_report':record(ROOT/adaptive['tests_report']),'independent_audit':record(ROOT/adaptive['audit']),
+        'evidence_index':record(evidence/'evidence_index.json'),'evidence_files_sha256_checked':len(index['files']),
+        'worldcover_source':record(ROOT/adaptive['worldcover_source']),
+        'robustness_report':record(ROOT/adaptive['robustness_report']),
+        'main_extra_generalized_cost_reduction_percent':(base[0]-recommended[0])/base[0]*100,
+        'four_strata_same_subset_reduction_percent':(1-sensitivities[9]['extra_generalized_vehicle_hours']/sensitivities[0]['extra_generalized_vehicle_hours'])*100,
+        'engineering_recommendation_validated':False}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))
