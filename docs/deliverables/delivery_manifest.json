@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-19",
-  "phase_status": "龙岗代表片区五组SUMO试验与独立审计完成；治理多完成353次访问，未观察到额外滚动改道收益。5%合成需求，容量未标定，不能外推全区。",
+  "phase_status": "龙岗片区SUMO与网页三维离线回放已核验。三组每秒轨迹和账本一致，程序化建筑非实测；全区基准仍待完成核验。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 8189948,
-      "sha256": "1cd118718d717392e4f687f60db31a58124d6d66b228b324d38b7ef434ba9dc0"
+      "bytes": 8667801,
+      "sha256": "f161c7039f2d518b6a1ebad77dbf18367b8ad802fb075ccf2c9920dfeb249fed"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 9167121,
-      "sha256": "671155351b3eb6ca32efcafcb0456909edcbfd738bd456796866ee386780937f"
+      "bytes": 9634464,
+      "sha256": "7f1a877f922a013519c8e66bc644f02169b013a5fd8ea056e6c76477da317d53"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 156991,
-    "sha256": "b0f47cb78a321a23d5cf652ad3497c92d2f4e4849292f283dd41db29cb2bfad7"
+    "bytes": 164498,
+    "sha256": "56411c86bf548d88dc42b8be2376b9707affbe8e27775adecae217ad2da7fec8"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 53,
-    "docx_pages": 53,
+    "pptx_slides": 56,
+    "docx_pages": 56,
     "embedded_source_images": {
-      "word": 38,
-      "ppt": 30
+      "word": 41,
+      "ppt": 33
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -65,8 +65,8 @@
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 13715,
-    "sha256": "14ba708bfb319891f2620512305e6b5424b668e7dcc7ae6e3b67bb565744bf26"
+    "bytes": 14366,
+    "sha256": "ff6ed902a0a1aad3a3c97e60d478b2af7d4ada8d64de9d7f69abbd132114a611"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -273,5 +273,29 @@
       "sha256": "1cdb3db023fdaec4f0a8225d78d8a2a3d682f079b05ff7cf0dd4135bf193f950"
     },
     "evidence_files_sha256_checked": 35
+  },
+  "digital_twin": {
+    "source_run": "data/processed/longgang_sumo/20261118T175153_sumo_492a503a",
+    "replay_path": "data/processed/digital_twin_replay_20261118T183542",
+    "source_commit": "1f784e0",
+    "offline_replay": true,
+    "measured_city_model": false,
+    "frame_seconds": 1,
+    "frames_per_case": 14401,
+    "vehicle_samples": 1386694,
+    "minute_rows": 720,
+    "data_audit": {
+      "path": "docs/validation/digital_twin/data_audit.json",
+      "bytes": 1365,
+      "sha256": "dd5c95b020f4016bb2e9fb40cb1f7bee55d2d7857c9d145fa2843c96fb35bba8"
+    },
+    "visual_review": {
+      "path": "docs/validation/digital_twin/visual_review.json",
+      "bytes": 1233,
+      "sha256": "235514eb6b13d8cbbd023ca4bb9356c2f550ba7135e31f50b858475f0a0dfb58"
+    },
+    "local_data_sha_files_checked": 5,
+    "screenshots_sha_checked": 5,
+    "model_or_browser_tests_rerun_for_document_update": false
   }
 }

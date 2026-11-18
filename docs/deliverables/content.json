@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-19",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "龙岗代表片区五组SUMO试验与独立审计完成；治理多完成353次访问，未观察到额外滚动改道收益。5%合成需求，容量未标定，不能外推全区。",
+  "status": "龙岗片区SUMO与网页三维离线回放已核验。三组每秒轨迹和账本一致，程序化建筑非实测；全区基准仍待完成核验。",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -208,13 +208,13 @@
       {
         "title": "暴雨内涝交通网络韧性评估与优化",
         "paragraphs": [
-          "2026年11月19日：龙岗代表片区已完成五组SUMO微观试验与独立审计。第49—53节补充3 km×3 km范围、5%合成边界访问需求、积水控制、滚动选路、结果与实际OSG三维截图。固定3,588辆计划，无雨、暴雨、治理后分别完成3,588、877、1,230次片区访问；滚动组实际改道均为0，未观察到额外改道收益。171项既有测试通过。",
-          "第2—30节保留南山与小网历史，第31—41节为龙岗接收、OD及早期积水，第42—48节为分区损失与抽样点队列治理试验。早期“尚未重算交通或SUMO”是当时状态。最新SUMO仅代表片区和缩放需求，容量代理、车道信号与OD未经实测标定，未完成全龙岗动态均衡或工程收益验证。"
+          "2026年11月19日：龙岗代表片区五组SUMO结果已核验，新完成Three.js网页三维离线回放。第54—56节补充实际日景、积水与夜景截图、数据追溯和操作入口。三组各14,401帧，共1,386,694条车辆位置记录，逐秒车辆数与原SUMO日志一致。建筑、植被与路灯为程序化配景，积水带表示道路模型水深，尚未接入实测城市建筑、高程或连续二维水面。",
+          "第2—30节保留南山与小网历史，第31—41节为龙岗数据及早期积水，第42—48节为抽样点队列治理，第49—53节为3 km×3 km、5%需求的SUMO片区试验。无雨、暴雨、治理后分别完成3,588、877、1,230次访问，实际在途改道0次。新画面不改变这些结果。全龙岗5%基准试跑和Ubuntu迁移包正在推进，待完成核验后另行同步；当前无全区均衡或工程收益结论。"
         ],
         "slide_points": [
           "研究报告与阶段进展",
           "2026年11月19日",
-          "龙岗代表片区 SUMO五组试验完成"
+          "龙岗片区 SUMO与三维回放已核验"
         ],
         "figure": null,
         "caption": "",
@@ -1068,6 +1068,60 @@
         "ppt_right": "",
         "ppt_footer": "当前接受运行 20261118T175153_sumo_492a503a；三维画面支持显示功能，不代表真实城市或水流重建。",
         "figure_width_cm": 16
+      },
+      {
+        "title": "龙岗三维回放 网页展示与数据范围",
+        "paragraphs": [
+          "Three.js r170新增独立三维网页，支持无雨dry、暴雨rain_rolling、治理governed_rolling三情景。道路沿用原SUMO片区推定平面几何，车辆位置来自冻结控制器每秒TraCI重放。建筑、植被、路灯、屋顶与日夜照明是程序化视觉配景，未增加实测建筑轮廓、高度、道路高程或真实信号相位。",
+          "来源仍为S0附近3 km×3 km、5%合成边界访问需求的片区试验，不是全龙岗模型。相同3,588辆计划下，到达仍为3,588／877／1,230次访问，暴雨和治理后的实际在途改道均0。页面回放没有新增治理或动态选路收益，单车道与tau容量代理仍未经实测标定。",
+          "图为来源聊天在1280×720浏览器实际查看时保存的日景截图。界面统计是截图时刻的局部状态，不是四小时最终到达量；例如日景画面显示10:48:01，累计到达879。该网页与第53节原生OSG预览是两个不同显示入口。"
+        ],
+        "slide_points": [],
+        "figure": "docs/validation/digital_twin/day.jpg",
+        "caption": "实际网页日景 原SUMO轨迹配合程序化城市配景 非城市实景测绘",
+        "figure_width_cm": 16,
+        "rows": null,
+        "headers": null,
+        "source_label": "docs/PHASE_DIGITAL_TWIN_REPORT.md；docs/validation/digital_twin/；来源运行20261118T175153_sumo_492a503a",
+        "ppt_left": "Three.js网页离线回放\n\n道路：原SUMO推定几何\n车辆：每秒TraCI位置\n\n无雨 / 暴雨 / 治理三组\n到达仍为3,588 / 877 / 1,230\n原实际在途改道仍0\n\n建筑、树木、灯光为配景\n未接入实测城市三维模型",
+        "ppt_right": "",
+        "ppt_footer": "实际浏览器日景截图；截图中的879为10:48:01累计到达，最终无雨到达量为3,588。"
+      },
+      {
+        "title": "龙岗三维回放 积水显示与轨迹核对",
+        "paragraphs": [
+          "蓝色道路水带表示相应源有向弧的模型水深，橙色横线表示达到0.30 m中断阈值，不能解释为连续二维淹没水面。道路仍为原试验平面，颜色展示没有新增水动力求解。未知道路水深仍保留未知语义，其交通正常处理假设沿用原试验。",
+          "完整1秒版重放保存为data/processed/digital_twin_replay_20261118T183542，早期5秒试导出目录保留。每帧记录车辆索引、x/y米坐标、航向角和速度m/s，补查新出发车辆，连续帧间线性插值。三组各14,401帧，独立车辆ID为3,588／882／1,236；车辆位置记录为791,166／236,069／359,459条，共1,386,694条，不是车辆总数。",
+          "独立审计核对4,969条道路ID、顺序、全部坐标与积水数组，三组逐秒在途数与历史summary一致，720行分钟统计一致，各组10个最终账本字段与历史值一致。来源summary的time=t−1对应simulationStep后t。到达与在途统计使用60秒账本，显示车速取当前轨迹样本均值；亚秒插值仍有近似。"
+        ],
+        "slide_points": [],
+        "figure": "docs/validation/digital_twin/rain.jpg",
+        "caption": "实际网页暴雨画面 蓝色带为道路模型水深 不是连续二维水面",
+        "figure_width_cm": 16,
+        "rows": null,
+        "headers": null,
+        "source_label": "docs/PHASE_DIGITAL_TWIN_REPORT.md；docs/validation/digital_twin/；来源运行20261118T175153_sumo_492a503a",
+        "ppt_left": "模型水深着色\n\n蓝色：道路弧水深\n橙线：达到0.30 m中断阈值\n不代表连续二维水面\n\n3组各14,401帧\n共1,386,694条位置记录\n逐秒车辆数匹配历史日志\n4,969条道路 / 720行统计核对\n每组10个终态账本字段一致",
+        "ppt_right": "",
+        "ppt_footer": "实际暴雨页面截图；位置记录数不是车辆数。每秒采样及帧间插值用于显示，原交通结果保持不变。"
+      },
+      {
+        "title": "龙岗三维回放 夜景操作与复现入口",
+        "paragraphs": [
+          "页面提供街区、全域鸟瞰、车辆跟随、自动运镜和点击车辆检查；支持暂停播放、1／5／15／60倍速、时间轴及键盘跳转、建筑与积水开关、全屏。日夜切换改变光照与窗灯，不改变仿真时间、OD或道路积水。图为实际浏览器夜景截图。",
+          "在项目根目录双击启动三维仿真.cmd，或用.conda-env/python.exe运行scripts/serve_digital_twin.py；本机地址http://127.0.0.1:8766/，只监听回环。依赖及Three.js MIT许可随代码保存。大型JSON及gzip留本机，新机器须复制原试验及输入，再用scripts/export_digital_twin.py重建，并执行scripts/audit_digital_twin.py核验；仅获取代码不足以直接显示全部轨迹。",
+          "来源浏览器核验记录覆盖三情景末端到达量、日夜、暂停播放、时间轴、鸟瞰与跟随，最终console warning/error为0；来源工作区171项既有测试与pip check通过。本次文档同步核对归档数据SHA和截图，没有重新运行仿真或浏览器测试。全龙岗5%基准和Ubuntu迁移包仍在推进，待完成独立核验后更新；SDTA/Gawron尚无已验收运行结果。"
+        ],
+        "slide_points": [],
+        "figure": "docs/validation/digital_twin/night.jpg",
+        "caption": "实际网页夜景 窗灯和建筑为程序化配景 日夜切换不改交通结果",
+        "figure_width_cm": 16,
+        "rows": null,
+        "headers": null,
+        "source_label": "docs/PHASE_DIGITAL_TWIN_REPORT.md；docs/validation/digital_twin/；来源运行20261118T175153_sumo_492a503a",
+        "ppt_left": "显示与操作\n\n日夜 / 街区 / 鸟瞰 / 跟随\n自动运镜 / 车辆检查\n暂停、倍速与时间轴\n\n双击启动三维仿真.cmd\n本机地址127.0.0.1:8766\n\n完整轨迹JSON/gzip留本机\n新机器先复制或重建数据\n全区基准及迁移包待验收",
+        "ppt_right": "",
+        "ppt_footer": "实际浏览器夜景截图；日夜切换仅改变显示。当前为离线轨迹回放，不能用配景证明真实建筑或水动力重建。"
       }
     ],
     "tests_passed": 106,
@@ -1688,7 +1742,7 @@
     "synthetic_storm_path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1",
     "era5_surface_path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75"
   },
-  "cover_subtitle": "龙岗不含大鹏 分区治理与代表片区SUMO试验",
+  "cover_subtitle": "龙岗不含大鹏 片区交通试验与三维轨迹回放",
   "longgang_od": {
     "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
     "report": {
@@ -2566,5 +2620,27 @@
     "actual_longgang_route_changes": 0,
     "native_osg_screenshot": true,
     "terrain_buildings_water_surface": false
+  },
+  "digital_twin": {
+    "source_run": "data/processed/longgang_sumo/20261118T175153_sumo_492a503a",
+    "replay_path": "data/processed/digital_twin_replay_20261118T183542",
+    "data_audit": "docs/validation/digital_twin/data_audit.json",
+    "visual_review": "docs/validation/digital_twin/visual_review.json",
+    "report": "docs/PHASE_DIGITAL_TWIN_REPORT.md",
+    "offline_replay": true,
+    "measured_city_model": false,
+    "frame_seconds": 1,
+    "frames_per_case": 14401,
+    "vehicle_samples": 1386694,
+    "minute_rows": 720,
+    "tests_passed": 171,
+    "source_commit": "1f784e0",
+    "data_sha256": {
+      "audit.json": "78ad30b58c0913d32dc54034b4a878d46b0b7b2f544c5550f9bed279610d347b",
+      "dry.json": "e3f27372379388e14e6335aeb1e722d00b687f52a73964fbe0f391aa3a58124e",
+      "governed_rolling.json": "ca3f31482463a098cf399d9a58da8fb04750c65a4748f209db63c8dc92837f77",
+      "network.json": "021f83c65979bd9902277798466444a26fb1883c18463a8372b4a012ddb9d23e",
+      "rain_rolling.json": "fd08205e2fe1d277a25be5df6b3d33db529c6950252f450eeeff8d52f9cb83e6"
+    }
   }
 }

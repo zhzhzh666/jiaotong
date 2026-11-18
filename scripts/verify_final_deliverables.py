@@ -295,5 +295,30 @@ if data.get('longgang_sumo'):
         'real_terrain_buildings_water_surface':False,
         'tests_report':record(ROOT/sumo['tests_report']),'independent_audit':record(ROOT/sumo['audit']),
         'evidence_index':record(ROOT/sumo['evidence_index']),'evidence_files_sha256_checked':len(index['files'])}
+if data.get('digital_twin'):
+    twin=data['digital_twin']
+    audit=json.loads((ROOT/twin['data_audit']).read_text(encoding='utf-8'))
+    visual=json.loads((ROOT/twin['visual_review']).read_text(encoding='utf-8'))
+    assert audit['source_run']==twin['source_run'] and audit['source_road_shapes_matched']==4969
+    assert all(c['frames']==14401 and c['every_second_running_count_matches_archived_SUMO'] and c['all_minute_statistics_match'] for c in audit['cases'].values())
+    assert sum(c['vehicle_samples'] for c in audit['cases'].values())==twin['vehicle_samples']==1386694
+    assert [audit['cases'][c]['arrived'] for c in ['dry','rain_rolling','governed_rolling']]==[3588,877,1230]
+    assert twin['offline_replay'] and not twin['measured_city_model'] and twin['minute_rows']==720
+    assert visual['pytest'].startswith('171 passed') and visual['final_console_warning_error_count']==0
+    for item in visual['screenshots']:assert record(ROOT/item['path'])['sha256']==item['sha256']
+    for name,digest in audit['sha256'].items():
+        assert record(ROOT/'dashboard/digital-twin/data'/name)['sha256']==digest
+    for text in ['Three.js','14,401','1,386,694','程序化','离线','8766']:
+        assert text in doc_text and text in ppt_text,text
+    before=ROOT/'.cache/document-sync-20261119-digital-twin/before/开题与阶段进展汇报.pptx'
+    with ZipFile(before) as source,ZipFile(pptpath) as final_ppt:
+        parts=[n for n in source.namelist() if n.startswith('ppt/slides/charts/') or n.startswith('ppt/embeddings/')]
+        assert len(parts)==42 and all(source.read(n)==final_ppt.read(n) for n in parts)
+    manifest['digital_twin']={'source_run':twin['source_run'],'replay_path':twin['replay_path'],
+        'source_commit':twin['source_commit'],'offline_replay':True,'measured_city_model':False,
+        'frame_seconds':1,'frames_per_case':14401,'vehicle_samples':1386694,'minute_rows':720,
+        'data_audit':record(ROOT/twin['data_audit']),'visual_review':record(ROOT/twin['visual_review']),
+        'local_data_sha_files_checked':len(audit['sha256']),'screenshots_sha_checked':len(visual['screenshots']),
+        'model_or_browser_tests_rerun_for_document_update':False}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))
