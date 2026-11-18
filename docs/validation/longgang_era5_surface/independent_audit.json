@@ -1,0 +1,17 @@
+{
+  "run_id": "20261118T133312_era5_surface_d4aecd75",
+  "passed": true,
+  "known_road_values_checked": 26351104,
+  "baseline_road_grid_aggregation_values_checked": 3293888,
+  "rain_values_rechecked_from_HTTP_response": 1080,
+  "independent_baseline_grid_endpoints_replayed": 32188520,
+  "maximum_replay_difference_m_float32_archive": 5.913280620717387e-08,
+  "maximum_cumulative_budget_residual_m3": 1.4201468729879707e-06,
+  "monotonic_sensitivity_checks": 4,
+  "input_hashes_checked": 16,
+  "output_hashes_checked": 57,
+  "zip_files_checked": 58,
+  "zip_sha256": "f384d2313e7fd1f775976bab58297c547beff4b3c95b28c514da2b26454c7f3c",
+  "manifest_sha256": "58e24441eab42125d535e5214d738cbda1b4bbdc82af2bd87e5933d75d47bc13",
+  "note": "Numerical/data integrity only; no observed flood calibration or field validation."
+}

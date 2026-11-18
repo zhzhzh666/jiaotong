@@ -1,0 +1,372 @@
+{
+  "run_id": "20261118T133312_era5_surface_d4aecd75",
+  "inputs": [
+    {
+      "path": "configs/longgang_era5_surface.yaml",
+      "sha256": "4fc29c35d6c2ab0b0ab28b5953e9857a8510c7a4c54bdd1dc980ef9bffe0ac5f",
+      "bytes": 2162
+    },
+    {
+      "path": "scripts/run_longgang_era5_surface.py",
+      "sha256": "ceda72c887cac4fe06ceeac57a3e357a1830a7199878fd97d57b417172d6257f",
+      "bytes": 22351
+    },
+    {
+      "path": "src/uftr/era5_surface.py",
+      "sha256": "52b723456742e47a62130f024f32ae2eca86477b741818cbf4122fe626fed1d8",
+      "bytes": 8187
+    },
+    {
+      "path": "scripts/acquire_longgang_era5.py",
+      "sha256": "02a554fe1184c62f6fdd353d0c57b20124a884b652793b5204cf12c77186a19e",
+      "bytes": 7002
+    },
+    {
+      "path": "data/raw/phase02/20261117_source_acquisition/dem_e113.tif",
+      "sha256": "074e13244e6da6745bcf76150fdc6e06f774140a7aac796785922fce962eacbb",
+      "bytes": 36641041
+    },
+    {
+      "path": "data/raw/phase02/20261117_source_acquisition/dem_e114.tif",
+      "sha256": "b950ab75642d6684fe08c82b6aa3bb087c1d35acd229ef0e6e6586e1b0868fa3",
+      "bytes": 25030462
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/manifest.json",
+      "sha256": "a5cf7562f13e9685f10de614ae5badac2ff6d6b348dea9fee49e1766f9a49a30",
+      "bytes": 24110
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/study_boundary.geojson",
+      "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83",
+      "bytes": 15802
+    },
+    {
+      "path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1/manifest.json",
+      "sha256": "4435c901281828ebbe0ec5597b940372e63503170a2455fb74fe2cc1cbd7889b",
+      "bytes": 18976
+    },
+    {
+      "path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1/gis/road_features.geojson",
+      "sha256": "2d135862d67a1aec8bbf05d34f77ad780cce27394a042de476ffcc054cf5f0c4",
+      "bytes": 4734109
+    },
+    {
+      "path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1/raw/road_sample_coverage.parquet",
+      "sha256": "c0dcb63519886b22e7c7214fd1184706c30b9e40575725633e50f33a4952867c",
+      "bytes": 935807
+    },
+    {
+      "path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1/raw/od_graph_arc_mapping.csv",
+      "sha256": "78cea6aa27dbcf7a71ca43c820aca9aa7bc13701feac9e7aa8c0348365ab11f0",
+      "bytes": 12790011
+    },
+    {
+      "path": "data/raw/longgang_era5/20261118T132916_era5_184f075b/manifest.json",
+      "sha256": "df5b299dac9bbc81c0e737a0f09dcc3c49b11f13bdc8c43219de3af3af859fd5",
+      "bytes": 1686
+    },
+    {
+      "path": "data/raw/longgang_era5/20261118T132916_era5_184f075b/response.json",
+      "sha256": "abd60a8e28576a4cddfe0a04f39e25480cc6996985c2232ff9b1b18a837aaa84",
+      "bytes": 33687
+    },
+    {
+      "path": "data/raw/longgang_era5/20261118T132916_era5_184f075b/hourly_rainfall.npz",
+      "sha256": "c9dde5f0b9efc6944638a9078f780d8df674d29f0025379f9e9aeb13c16bb8c8",
+      "bytes": 2805
+    },
+    {
+      "path": "data/raw/longgang_era5/20261118T132916_era5_184f075b/request.json",
+      "sha256": "99307867c1a239aec59a6e511f47e5c1cf7b1b02788b010424b833a802b1e271",
+      "bytes": 1032
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/era5_surface_map.png",
+      "sha256": "a361b0d066df6e686eba62dcf4b181f243fb3af0ff5aadd70f5f24b7efa8bca3",
+      "bytes": 331577
+    },
+    {
+      "path": "figures/era5_surface_map.svg",
+      "sha256": "409beefd7b5f720d8b3ea3d8141da99cf58f17b37a401f53d1b8f60e56589b64",
+      "bytes": 259116
+    },
+    {
+      "path": "figures/era5_surface_process.png",
+      "sha256": "9c78b56e99a930b46e891699f3e1b2a2bb3d1c5a884feffc53a454066d453d81",
+      "bytes": 134818
+    },
+    {
+      "path": "figures/era5_surface_process.svg",
+      "sha256": "2b5c0a400fd4d397b0e2f2fd044fbe73412ccf32f8c9df8e9e43cc4aa3f1afb7",
+      "bytes": 46399
+    },
+    {
+      "path": "figures/era5_surface_sensitivity_balance.png",
+      "sha256": "269e5aa28f60c8bd9b681d4604b6c7640a12519be76d7aa2060c2f152187cac7",
+      "bytes": 102427
+    },
+    {
+      "path": "figures/era5_surface_sensitivity_balance.svg",
+      "sha256": "e0bf4373cef22b233681aa5df1c907e9687bf47f105b444faf33151b422e6994",
+      "bytes": 25715
+    },
+    {
+      "path": "gis/depression_storage_threshold_m.tif",
+      "sha256": "1c83b311a2caaf99e0d787d1900344b59b81e0d414c3ad87f7047a46918a651e",
+      "bytes": 34946
+    },
+    {
+      "path": "gis/district_fraction.tif",
+      "sha256": "32217df2ee0afa73ed97d6047780cf4a4bff4e70298ea04dcfcb4071e3e3df08",
+      "bytes": 9332
+    },
+    {
+      "path": "gis/district_peak_depth_m.tif",
+      "sha256": "a7f14c58445ff8c5da7f37e2d2cadb3d2f2b900415cf9b03266fb4baa39603cf",
+      "bytes": 66938
+    },
+    {
+      "path": "gis/road_features.geojson",
+      "sha256": "2d135862d67a1aec8bbf05d34f77ad780cce27394a042de476ffcc054cf5f0c4",
+      "bytes": 4734109
+    },
+    {
+      "path": "gis/study_boundary.geojson",
+      "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83",
+      "bytes": 15802
+    },
+    {
+      "path": "gis/terrain_dsm_mean_150m.tif",
+      "sha256": "2846374d4c5fcec04e312f702ea8c239415dc366e64b7cc692414b2f25a0cded",
+      "bytes": 222394
+    },
+    {
+      "path": "provenance/acquire_longgang_era5.py",
+      "sha256": "02a554fe1184c62f6fdd353d0c57b20124a884b652793b5204cf12c77186a19e",
+      "bytes": 7002
+    },
+    {
+      "path": "provenance/era5_surface.py",
+      "sha256": "52b723456742e47a62130f024f32ae2eca86477b741818cbf4122fe626fed1d8",
+      "bytes": 8187
+    },
+    {
+      "path": "provenance/longgang_era5_surface.yaml",
+      "sha256": "4fc29c35d6c2ab0b0ab28b5953e9857a8510c7a4c54bdd1dc980ef9bffe0ac5f",
+      "bytes": 2162
+    },
+    {
+      "path": "provenance/rainfall_attribution.json",
+      "sha256": "214fe29f9eae035d0d60c96bf12a16aa5272ccd7988605ee09b158232fdde5a3",
+      "bytes": 473
+    },
+    {
+      "path": "provenance/run_longgang_era5_surface.py",
+      "sha256": "ceda72c887cac4fe06ceeac57a3e357a1830a7199878fd97d57b417172d6257f",
+      "bytes": 22351
+    },
+    {
+      "path": "provenance/validation_report.json",
+      "sha256": "aa32ee01c8f788d9b79bc697a045b39a7cec102cb4efce5cda0f53a719289827",
+      "bytes": 9362
+    },
+    {
+      "path": "raw/baseline_depth_fields.npz",
+      "sha256": "4192a0c8c2362201a2b71e345ea221ac7af190d5452593d6db2545cf60957de7",
+      "bytes": 12759322
+    },
+    {
+      "path": "raw/dry_control_grid_summary.npz",
+      "sha256": "c984f1c4640d7a14bba552a6366f246498a01ef73fc085fd124d533abd1bf8b3",
+      "bytes": 1516
+    },
+    {
+      "path": "raw/dry_control_road_depth.npz",
+      "sha256": "886161cc90dbd577e098d75e76575350a89390a64d2d83e7d68962280d6d93c9",
+      "bytes": 494635
+    },
+    {
+      "path": "raw/dry_control_water_balance.csv",
+      "sha256": "1ccef57eb975bd0c0fc5eea769d22515a5735078b3e7b33fd3c348f562b09616",
+      "bytes": 26538
+    },
+    {
+      "path": "raw/era5_baseline_grid_summary.npz",
+      "sha256": "d65a758aa9df83ef95a05d31a62681683150ded1e6b8ac52eeb4f9b9ee2796cb",
+      "bytes": 451003
+    },
+    {
+      "path": "raw/era5_baseline_road_depth.npz",
+      "sha256": "671bc9f589c3cea034f1e79bc4a9eec642b06726344925a4665047f0aa4f81f8",
+      "bytes": 1866986
+    },
+    {
+      "path": "raw/era5_baseline_water_balance.csv",
+      "sha256": "5ab46dfa6daaa7eafca1d6a4e5a3707bd684ada2824d4a92d53c01ced77ce675",
+      "bytes": 89126
+    },
+    {
+      "path": "raw/hourly_rainfall.csv",
+      "sha256": "b0036ccd1a83d2348705826944796b630b41eb6ba2f3136ffc0c9892424a5382",
+      "bytes": 8772
+    },
+    {
+      "path": "raw/loss_double_grid_summary.npz",
+      "sha256": "dee5f56542bb84ea7578132c68db1e2880408c65ae0c136f17ca9e5dd25be28f",
+      "bytes": 43178
+    },
+    {
+      "path": "raw/loss_double_road_depth.npz",
+      "sha256": "0959b517288f7e6e0e1cb3d5ca1aef3bea31e3b4e32d505d3200e6c44180107a",
+      "bytes": 510132
+    },
+    {
+      "path": "raw/loss_double_water_balance.csv",
+      "sha256": "70ed2cdcad46e601260483e420103ead821a27df8451b6a7406101ffdc7f49fa",
+      "bytes": 59106
+    },
+    {
+      "path": "raw/loss_half_grid_summary.npz",
+      "sha256": "705621214dc6107645bd7569be6a154d42dd2bbdccd7962bbef0fbe95e2c813c",
+      "bytes": 531689
+    },
+    {
+      "path": "raw/loss_half_road_depth.npz",
+      "sha256": "498976ae315cee7ab1ba55a5b52b411f94dc76a549cc58421822a052ebb5e067",
+      "bytes": 4922551
+    },
+    {
+      "path": "raw/loss_half_water_balance.csv",
+      "sha256": "207ae74833c1987395b2eda066fed5f6837238824de3066809091497fc7e5d82",
+      "bytes": 100663
+    },
+    {
+      "path": "raw/od_graph_arc_mapping.csv",
+      "sha256": "78cea6aa27dbcf7a71ca43c820aca9aa7bc13701feac9e7aa8c0348365ab11f0",
+      "bytes": 12790011
+    },
+    {
+      "path": "raw/rainfall_070_grid_summary.npz",
+      "sha256": "500036c427e449293c04de95a600c6e5c936171567597546bd07fa1c2c62538a",
+      "bytes": 447070
+    },
+    {
+      "path": "raw/rainfall_070_road_depth.npz",
+      "sha256": "7bb9b9d9635f7af483151bac13300fa54cb87641f6ec5a3d11b6d31bcd62cf1c",
+      "bytes": 693513
+    },
+    {
+      "path": "raw/rainfall_070_water_balance.csv",
+      "sha256": "682c9780cb985aa9de96bf96186fd87e21d8378106988e39e2f666845c5a621b",
+      "bytes": 76237
+    },
+    {
+      "path": "raw/rainfall_130_grid_summary.npz",
+      "sha256": "f6b7f3bd3b6c6be76890eb2580f2967d0e19e31ccadde18ba404a5825626f215",
+      "bytes": 489172
+    },
+    {
+      "path": "raw/rainfall_130_road_depth.npz",
+      "sha256": "cd95482de8fffacd57892df3e17f98bf73c4aa462f1b916b860e9846b19ef560",
+      "bytes": 3507831
+    },
+    {
+      "path": "raw/rainfall_130_water_balance.csv",
+      "sha256": "5fff597be03432f65d8e7765923fc14ac55a71731d8ee9ffa76b52770627b23d",
+      "bytes": 100495
+    },
+    {
+      "path": "raw/road_feature_status.csv",
+      "sha256": "d46257bb1c8053a4ea0e72c1a7c4ad3e900b128d11dcca848e702e44132052a5",
+      "bytes": 729339
+    },
+    {
+      "path": "raw/road_sample_cells.parquet",
+      "sha256": "062db0b5b7b3743f9a6d2cade0853a8d2d89253dfa2d869ec7880bc8b0ff04c3",
+      "bytes": 1026719
+    },
+    {
+      "path": "raw/routing_fast_grid_summary.npz",
+      "sha256": "5ef11daf4c67ee594861eddcf98ccc382bed0da2d3df28bebb1a685cd843ec36",
+      "bytes": 453567
+    },
+    {
+      "path": "raw/routing_fast_road_depth.npz",
+      "sha256": "452033437e4c04660dd9598a536b637ecbee364b5718e42046e7fe0d40b93a55",
+      "bytes": 1946501
+    },
+    {
+      "path": "raw/routing_fast_water_balance.csv",
+      "sha256": "1b797ad10f5b778d1c199550ddb0fd28bd1adebfd5ac8923eb06295bd5950be2",
+      "bytes": 93070
+    },
+    {
+      "path": "raw/routing_grid.npz",
+      "sha256": "dbee4ee5a9c4d1363709828cf09295be2d488c8797f6e36b6495d3084a0d4088",
+      "bytes": 1191248
+    },
+    {
+      "path": "raw/routing_slow_grid_summary.npz",
+      "sha256": "87a8cb21a8267d113f436d75561e7997e276112cc8b9669bbc6cbfda315e203c",
+      "bytes": 448483
+    },
+    {
+      "path": "raw/routing_slow_road_depth.npz",
+      "sha256": "e3cbecaca75728a8de0a2b7c5b6a1a9ff1dad9785a758843d39416aa000d22c3",
+      "bytes": 1757895
+    },
+    {
+      "path": "raw/routing_slow_water_balance.csv",
+      "sha256": "58601b26692f63856dac2f31568e9141c69db8a7c3ace823740d49c7ecc20ff5",
+      "bytes": 87912
+    },
+    {
+      "path": "raw/scenario_summary.csv",
+      "sha256": "780c33f97a6b9fbcec9c04723d3ca173aa6d106f0c526333a6db52afa8f4f1b8",
+      "bytes": 1834
+    },
+    {
+      "path": "raw/verification_extended_road_depth.npz",
+      "sha256": "9b4e13a785dd60a9761261de3b6685f5a6dbe86ce2cc9f67738d76da007e58fa",
+      "bytes": 1855302
+    },
+    {
+      "path": "raw/verification_extended_water_balance.csv",
+      "sha256": "19ca0d600a67507200cb49903fbfdd76ae78ce6b347c99207cd14825639e2669",
+      "bytes": 90951
+    },
+    {
+      "path": "raw/verification_fine_road_depth.npz",
+      "sha256": "eb9b430b229321204b5a70a25eb714f69d9ffcf637059be366a7334f365bf371",
+      "bytes": 1855080
+    },
+    {
+      "path": "raw/verification_fine_water_balance.csv",
+      "sha256": "784bedc7863766a40bb8e74962f29e96ca81d2baca868bbf924bce867dd1fbde",
+      "bytes": 90290
+    },
+    {
+      "path": "status.json",
+      "sha256": "bb4568d01ef567bbf457b3f69107b6c0d2fcd5593e9c56654be34e1b2f27f67b",
+      "bytes": 106
+    },
+    {
+      "path": "verification_domain/depression_storage_threshold_m.tif",
+      "sha256": "d40f85a7c2d6551bf5f953269f5a117d2b0eef383cf47c549ed8d2f251bc9697",
+      "bytes": 50692
+    },
+    {
+      "path": "verification_domain/district_fraction.tif",
+      "sha256": "48204974825158d750af5eab818e95cf660969c92570e099e5fbbe89adfa494a",
+      "bytes": 10488
+    },
+    {
+      "path": "verification_domain/terrain_dsm_mean_150m.tif",
+      "sha256": "ebeceeff94bc018f17a0460cb6bc9c6bcd69ed911ca6f665b52cdca4b1b89018",
+      "bytes": 342662
+    }
+  ]
+}

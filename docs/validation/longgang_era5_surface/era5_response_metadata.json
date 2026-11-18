@@ -1,0 +1,7 @@
+{
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=22.5%2C22.5%2C22.5%2C22.75%2C22.75%2C22.75%2C23.0%2C23.0%2C23.0&longitude=114.0%2C114.25%2C114.5%2C114.0%2C114.25%2C114.5%2C114.0%2C114.25%2C114.5&start_date=2023-09-06&end_date=2023-09-11&hourly=precipitation&models=era5&timezone=Asia%2FShanghai&cell_selection=nearest",
+  "status_code": 200,
+  "retrieved_utc": "2026-11-18T13:29:19.557907+00:00",
+  "content_type": "application/json; charset=utf-8",
+  "sha256": "abd60a8e28576a4cddfe0a04f39e25480cc6996985c2232ff9b1b18a837aaa84"
+}

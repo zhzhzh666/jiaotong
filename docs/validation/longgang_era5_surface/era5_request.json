@@ -1,0 +1,54 @@
+{
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "params": {
+    "latitude": "22.5,22.5,22.5,22.75,22.75,22.75,23.0,23.0,23.0",
+    "longitude": "114.0,114.25,114.5,114.0,114.25,114.5,114.0,114.25,114.5",
+    "start_date": "2023-09-06",
+    "end_date": "2023-09-11",
+    "hourly": "precipitation",
+    "models": "era5",
+    "timezone": "Asia/Shanghai",
+    "cell_selection": "nearest"
+  },
+  "requested_points_lat_lon": [
+    [
+      22.5,
+      114.0
+    ],
+    [
+      22.5,
+      114.25
+    ],
+    [
+      22.5,
+      114.5
+    ],
+    [
+      22.75,
+      114.0
+    ],
+    [
+      22.75,
+      114.25
+    ],
+    [
+      22.75,
+      114.5
+    ],
+    [
+      23.0,
+      114.0
+    ],
+    [
+      23.0,
+      114.25
+    ],
+    [
+      23.0,
+      114.5
+    ]
+  ],
+  "configuration_sha256": "4fc29c35d6c2ab0b0ab28b5953e9857a8510c7a4c54bdd1dc980ef9bffe0ac5f",
+  "simulation_start": "2023-09-06T00:00:00+08:00",
+  "simulation_end": "2023-09-11T00:00:00+08:00"
+}

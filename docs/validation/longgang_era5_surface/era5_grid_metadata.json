@@ -1,0 +1,83 @@
+[
+  {
+    "rain_grid_id": 0,
+    "latitude": 22.5,
+    "longitude": 114.0,
+    "total_mm": 183.8,
+    "max_hour_mm": 9.4,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 1,
+    "latitude": 22.5,
+    "longitude": 114.25,
+    "total_mm": 180.0,
+    "max_hour_mm": 7.3,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 2,
+    "latitude": 22.5,
+    "longitude": 114.5,
+    "total_mm": 168.0,
+    "max_hour_mm": 6.4,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 3,
+    "latitude": 22.75,
+    "longitude": 114.0,
+    "total_mm": 166.39999999999998,
+    "max_hour_mm": 6.7,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 4,
+    "latitude": 22.75,
+    "longitude": 114.25,
+    "total_mm": 182.20000000000002,
+    "max_hour_mm": 6.8,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 5,
+    "latitude": 22.75,
+    "longitude": 114.5,
+    "total_mm": 158.79999999999998,
+    "max_hour_mm": 7.3,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 6,
+    "latitude": 23.0,
+    "longitude": 114.0,
+    "total_mm": 140.7,
+    "max_hour_mm": 4.5,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 7,
+    "latitude": 23.0,
+    "longitude": 114.25,
+    "total_mm": 169.2,
+    "max_hour_mm": 8.5,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  },
+  {
+    "rain_grid_id": 8,
+    "latitude": 23.0,
+    "longitude": 114.5,
+    "total_mm": 145.6,
+    "max_hour_mm": 8.9,
+    "record_count": 120,
+    "source": "ERA5_reanalysis_via_Open_Meteo_not_station"
+  }
+]

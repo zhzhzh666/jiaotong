@@ -1,0 +1,93 @@
+{
+  "run_id": "20261118T133312_era5_surface_d4aecd75",
+  "files": [
+    {
+      "path": "era5_attribution.json",
+      "sha256": "214fe29f9eae035d0d60c96bf12a16aa5272ccd7988605ee09b158232fdde5a3",
+      "bytes": 473
+    },
+    {
+      "path": "era5_grid_metadata.json",
+      "sha256": "ab7f372be160d6e965ed30de59b61ddc22b01a383f2e6be46932cea1c7a030e9",
+      "bytes": 2012
+    },
+    {
+      "path": "era5_manifest.json",
+      "sha256": "df5b299dac9bbc81c0e737a0f09dcc3c49b11f13bdc8c43219de3af3af859fd5",
+      "bytes": 1686
+    },
+    {
+      "path": "era5_request.json",
+      "sha256": "99307867c1a239aec59a6e511f47e5c1cf7b1b02788b010424b833a802b1e271",
+      "bytes": 1032
+    },
+    {
+      "path": "era5_response.json",
+      "sha256": "abd60a8e28576a4cddfe0a04f39e25480cc6996985c2232ff9b1b18a837aaa84",
+      "bytes": 33687
+    },
+    {
+      "path": "era5_response_metadata.json",
+      "sha256": "b06f46e74b3eca474282def11e82b729471866a3473eb7083063d2c3621a4bec",
+      "bytes": 557
+    },
+    {
+      "path": "figures/era5_surface_map.png",
+      "sha256": "a361b0d066df6e686eba62dcf4b181f243fb3af0ff5aadd70f5f24b7efa8bca3",
+      "bytes": 331577
+    },
+    {
+      "path": "figures/era5_surface_map.svg",
+      "sha256": "409beefd7b5f720d8b3ea3d8141da99cf58f17b37a401f53d1b8f60e56589b64",
+      "bytes": 259116
+    },
+    {
+      "path": "figures/era5_surface_process.png",
+      "sha256": "9c78b56e99a930b46e891699f3e1b2a2bb3d1c5a884feffc53a454066d453d81",
+      "bytes": 134818
+    },
+    {
+      "path": "figures/era5_surface_process.svg",
+      "sha256": "2b5c0a400fd4d397b0e2f2fd044fbe73412ccf32f8c9df8e9e43cc4aa3f1afb7",
+      "bytes": 46399
+    },
+    {
+      "path": "figures/era5_surface_sensitivity_balance.png",
+      "sha256": "269e5aa28f60c8bd9b681d4604b6c7640a12519be76d7aa2060c2f152187cac7",
+      "bytes": 102427
+    },
+    {
+      "path": "figures/era5_surface_sensitivity_balance.svg",
+      "sha256": "e0bf4373cef22b233681aa5df1c907e9687bf47f105b444faf33151b422e6994",
+      "bytes": 25715
+    },
+    {
+      "path": "hourly_rainfall.csv",
+      "sha256": "b0036ccd1a83d2348705826944796b630b41eb6ba2f3136ffc0c9892424a5382",
+      "bytes": 8772
+    },
+    {
+      "path": "independent_audit.json",
+      "sha256": "80ffc6fafa5dc03136c229eeb5b45f2fc3b738778d85722094ec3f747e16fa24",
+      "bytes": 836
+    },
+    {
+      "path": "run_manifest.json",
+      "sha256": "58e24441eab42125d535e5214d738cbda1b4bbdc82af2bd87e5933d75d47bc13",
+      "bytes": 13328
+    },
+    {
+      "path": "scenario_summary.csv",
+      "sha256": "780c33f97a6b9fbcec9c04723d3ca173aa6d106f0c526333a6db52afa8f4f1b8",
+      "bytes": 1834
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "aa32ee01c8f788d9b79bc697a045b39a7cec102cb4efce5cda0f53a719289827",
+      "bytes": 9362
+    }
+  ],
+  "visual_review": "Three PNG figures individually viewed; Chinese labels and numerical meaning checked. SVG companions preserved.",
+  "raw_data_attribution": "Weather data by Open-Meteo.com; Copernicus Climate Change Service / ECMWF ERA5. CC BY 4.0.",
+  "raw_data_changes": "ERA5 response.json copied byte-for-byte; hourly/scenario CSVs are derived model products."
+}

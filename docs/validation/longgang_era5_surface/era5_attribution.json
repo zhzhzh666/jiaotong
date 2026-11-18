@@ -1,0 +1,9 @@
+{
+  "attribution": "Weather data by Open-Meteo.com; Copernicus Climate Change Service / ECMWF ERA5",
+  "provider_url": "https://open-meteo.com/",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "provider_licence_url": "https://open-meteo.com/en/licence",
+  "changes": "Raw response unchanged; selected complete simulation intervals and packed values into NPZ.",
+  "classification": "reanalysis_not_gauge_observation"
+}

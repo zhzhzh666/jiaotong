@@ -1,0 +1,54 @@
+{
+  "run_id": "20261118T132916_era5_184f075b",
+  "inputs": [
+    {
+      "path": "configs/longgang_era5_surface.yaml",
+      "sha256": "4fc29c35d6c2ab0b0ab28b5953e9857a8510c7a4c54bdd1dc980ef9bffe0ac5f"
+    },
+    {
+      "path": "scripts/acquire_longgang_era5.py",
+      "sha256": "02a554fe1184c62f6fdd353d0c57b20124a884b652793b5204cf12c77186a19e"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/study_boundary.geojson",
+      "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "attribution.json",
+      "sha256": "214fe29f9eae035d0d60c96bf12a16aa5272ccd7988605ee09b158232fdde5a3",
+      "bytes": 473
+    },
+    {
+      "path": "grid_metadata.json",
+      "sha256": "ab7f372be160d6e965ed30de59b61ddc22b01a383f2e6be46932cea1c7a030e9",
+      "bytes": 2012
+    },
+    {
+      "path": "hourly_rainfall.npz",
+      "sha256": "c9dde5f0b9efc6944638a9078f780d8df674d29f0025379f9e9aeb13c16bb8c8",
+      "bytes": 2805
+    },
+    {
+      "path": "request.json",
+      "sha256": "99307867c1a239aec59a6e511f47e5c1cf7b1b02788b010424b833a802b1e271",
+      "bytes": 1032
+    },
+    {
+      "path": "response.json",
+      "sha256": "abd60a8e28576a4cddfe0a04f39e25480cc6996985c2232ff9b1b18a837aaa84",
+      "bytes": 33687
+    },
+    {
+      "path": "response_metadata.json",
+      "sha256": "b06f46e74b3eca474282def11e82b729471866a3473eb7083063d2c3621a4bec",
+      "bytes": 557
+    },
+    {
+      "path": "status.json",
+      "sha256": "298462908b8aaf9f48e05257713af19e165f1b2f800409cfa5a2dc022cc2be1c",
+      "bytes": 67
+    }
+  ]
+}
