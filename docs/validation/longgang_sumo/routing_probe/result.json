@@ -1,0 +1,20 @@
+{
+  "source_kind": "Synthetic diamond functional fixture, not Longgang benefit",
+  "closure_time_s": 10,
+  "closed_edge": "b",
+  "before": [
+    "a",
+    "b",
+    "b2",
+    "d"
+  ],
+  "after": [
+    "a",
+    "c",
+    "c2",
+    "d"
+  ],
+  "arrived": 1,
+  "teleports": 0,
+  "passed": true
+}

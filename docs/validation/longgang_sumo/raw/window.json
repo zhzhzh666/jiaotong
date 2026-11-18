@@ -1,0 +1,22 @@
+{
+  "start_interval": 424,
+  "start_hour_since_2023_09_06": 106.0,
+  "duration_seconds": 14400,
+  "departure_seconds": 10800,
+  "peak_interval": 432,
+  "peak_closed_source_arcs": 694,
+  "selection": "Centred on first maximum closed-arc endpoint in untreated 1.3x rain, clamped to input window; no traffic outcomes used",
+  "initial_state": "Empty network; no queues inherited from preceding hours",
+  "roi_bounds_local_m": [
+    0,
+    0,
+    3000,
+    3000
+  ],
+  "projection": "EPSG:32650 translated by ROI southwest corner",
+  "source_nodes": 2938,
+  "source_arcs": 4969,
+  "signals": "All junctions priority; uncalibrated",
+  "geometry": "Frozen inferred nodes/segments, flat z=0; no certified road surface elevation",
+  "unknown_depth_arcs": 76
+}

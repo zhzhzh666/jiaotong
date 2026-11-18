@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "scenarios": [
+    "dry",
+    "rain_departure",
+    "rain_rolling",
+    "governed_departure",
+    "governed_rolling"
+  ]
+}

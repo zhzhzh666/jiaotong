@@ -1,0 +1,532 @@
+{
+  "run": "data\\processed\\longgang_sumo\\20261118T175153_sumo_492a503a",
+  "scope": "Longgang S0 3x3km ROI; scaled demand; uncalibrated",
+  "files": [
+    {
+      "path": "capacity_probe/depth00.log",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "capacity_probe/depth00.net.xml",
+      "bytes": 1577,
+      "sha256": "5759e72515438f0cbdcf2bc494d4a72a9f5f322ee50c461847ac6950216f91d2"
+    },
+    {
+      "path": "capacity_probe/depth00.rou.xml",
+      "bytes": 106998,
+      "sha256": "605351f06e7f7f1920aa3a1542a5a84ef50eeb58267da02d1e0f32ec9d40b80b"
+    },
+    {
+      "path": "capacity_probe/depth00_edges.xml",
+      "bytes": 85,
+      "sha256": "9a3146462ee9c3a0a8c851794e414d92f64d1eab85ce68650488ac905fa05899"
+    },
+    {
+      "path": "capacity_probe/depth00_tripinfo.xml",
+      "bytes": 163672,
+      "sha256": "1806fda457fec8f97b21c81e0f8b8fc200c936bedcb8e6a2f8e7621faf10b680"
+    },
+    {
+      "path": "capacity_probe/depth10.log",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "capacity_probe/depth10.net.xml",
+      "bytes": 1577,
+      "sha256": "a5a2aef0ae4688ed76f2d79b958882c335e1339b6857e208b814ccccfd3f394f"
+    },
+    {
+      "path": "capacity_probe/depth10.rou.xml",
+      "bytes": 106998,
+      "sha256": "e5fd79f3ce037afe0d84d5ea605172445544ce2c047c6203efe63a04df0b363b"
+    },
+    {
+      "path": "capacity_probe/depth10_edges.xml",
+      "bytes": 86,
+      "sha256": "6d27b50fcf0148545191e2f5abb94b8cae94ecbcdfa771634162048d6014e3e4"
+    },
+    {
+      "path": "capacity_probe/depth10_tripinfo.xml",
+      "bytes": 125496,
+      "sha256": "82045a677728ebe31cb70d84a58e86dbe528306ebe56239d3dbc2cf8e2675231"
+    },
+    {
+      "path": "capacity_probe/depth20.log",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "capacity_probe/depth20.net.xml",
+      "bytes": 1576,
+      "sha256": "f9a4c573c455e5bcbe69c549018ce1d91793ef7c2bb6745f132bf63f4e10a3ed"
+    },
+    {
+      "path": "capacity_probe/depth20.rou.xml",
+      "bytes": 107011,
+      "sha256": "605ea92b14ca37eeee2f16354a41f4c6d35cb67d41bda542b18622b6d3c4fb4b"
+    },
+    {
+      "path": "capacity_probe/depth20_edges.xml",
+      "bytes": 85,
+      "sha256": "f5bdf387a28f86d136d9ecfc2b4df7d6157b3671fe1bcbfe3c9d43c5404bd452"
+    },
+    {
+      "path": "capacity_probe/depth20_tripinfo.xml",
+      "bytes": 46935,
+      "sha256": "24644ed05324d9546228e8899b5e9d45b4d568961bd2a2966733a63c62cf0ea4"
+    },
+    {
+      "path": "capacity_probe/discharge_comparison.csv",
+      "bytes": 309,
+      "sha256": "750ea00abca704242db3240a5a34eae9cea5671c6eb4e5de3f8028e1ca3d2f17"
+    },
+    {
+      "path": "capacity_probe/nodes.xml",
+      "bytes": 71,
+      "sha256": "1161cc1deb3eba0348b220c92ead8ffcfdf323837349d9dc92c08a03d6e30b98"
+    },
+    {
+      "path": "cases/dry/command.json",
+      "bytes": 1032,
+      "sha256": "396197549641ec0592867bead282e45d4351c77f2738df8c163498c27f024ef1"
+    },
+    {
+      "path": "cases/dry/controls.csv",
+      "bytes": 189,
+      "sha256": "587d399b31ab4c5cecdd56ba7863da6a46e8d367f11b50de47f3fce005a2f737"
+    },
+    {
+      "path": "cases/dry/injections.csv",
+      "bytes": 184843,
+      "sha256": "a03450f0845b985d755b0f0ed2b93163d7a7f5a6117e65182906de58cea774a0"
+    },
+    {
+      "path": "cases/dry/longgang.sumocfg",
+      "bytes": 351,
+      "sha256": "2ea18e6487f6dc9bc47ca6e64b267e4fc8d31e9f78fd2494be1c818a6204b222"
+    },
+    {
+      "path": "cases/dry/result.json",
+      "bytes": 927,
+      "sha256": "994d8ee99d9cd7651ca0e306ef0d432e1bc7c664fbc94a028af6cdfb9e9feb9c"
+    },
+    {
+      "path": "cases/dry/route_changes.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/dry/summary.xml",
+      "bytes": 3849385,
+      "sha256": "c6cb0b8e284525b2e27fe974e9bb6712fc1d731beec4e0d49f217291655c8014"
+    },
+    {
+      "path": "cases/dry/traffic_series.csv",
+      "bytes": 10623,
+      "sha256": "79845d39d750616dec184116af67a8b713db836228495b0773247c979b3c5874"
+    },
+    {
+      "path": "cases/dry/tripinfo.xml",
+      "bytes": 1554291,
+      "sha256": "15fbc18a6bd6a7624689835808dccbc008e61a8ae76acba40d4a590d6f9bba32"
+    },
+    {
+      "path": "cases/dry/warnings.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cases/governed_departure/command.json",
+      "bytes": 1092,
+      "sha256": "3fb1e4926cdbd4fd707a500206b4ea3f3eb914eaf363dc3cac45cc2e3624218e"
+    },
+    {
+      "path": "cases/governed_departure/controls.csv",
+      "bytes": 269,
+      "sha256": "8e65fe4ddd7a3f643dce7ae0cc03f09a2a4bf1a10dfee744d0952f855a37bea9"
+    },
+    {
+      "path": "cases/governed_departure/injections.csv",
+      "bytes": 63739,
+      "sha256": "ee7dfff2aa64131dc1e5c485933f1bbe8968394439a20565238c46f59eacca77"
+    },
+    {
+      "path": "cases/governed_departure/longgang.sumocfg",
+      "bytes": 351,
+      "sha256": "2ea18e6487f6dc9bc47ca6e64b267e4fc8d31e9f78fd2494be1c818a6204b222"
+    },
+    {
+      "path": "cases/governed_departure/result.json",
+      "bytes": 953,
+      "sha256": "e87a3bfbbeb84ea896343d7a5525ac05cf712e8b02ca83da37c03419b47f7550"
+    },
+    {
+      "path": "cases/governed_departure/route_changes.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/governed_departure/summary.xml",
+      "bytes": 3807069,
+      "sha256": "9cc76c635f3ff3e8685bfdb5788273c26391619764def7b41f89d2d506c77b6a"
+    },
+    {
+      "path": "cases/governed_departure/traffic_series.csv",
+      "bytes": 11598,
+      "sha256": "b5dc17b961277f7ef49e0686b42d12616d6176ed6b00ca63e5bc60165f376bf7"
+    },
+    {
+      "path": "cases/governed_departure/tripinfo.xml",
+      "bytes": 536474,
+      "sha256": "afe7b6b534151ef532f6ebab8dba6934b560ac1225c4d49c8018f1e5d47e4103"
+    },
+    {
+      "path": "cases/governed_departure/warnings.log",
+      "bytes": 264419,
+      "sha256": "f833370c2ce86f4fb612b12f9bd817b1e0c6385f34b572a2865e4c41a956b555"
+    },
+    {
+      "path": "cases/governed_rolling/command.json",
+      "bytes": 1084,
+      "sha256": "543c9191cb5d0f9bf3c5bf8beae898afa50a05f93740b790d9ce80ae9c543a0c"
+    },
+    {
+      "path": "cases/governed_rolling/controls.csv",
+      "bytes": 269,
+      "sha256": "8e65fe4ddd7a3f643dce7ae0cc03f09a2a4bf1a10dfee744d0952f855a37bea9"
+    },
+    {
+      "path": "cases/governed_rolling/injections.csv",
+      "bytes": 63739,
+      "sha256": "ee7dfff2aa64131dc1e5c485933f1bbe8968394439a20565238c46f59eacca77"
+    },
+    {
+      "path": "cases/governed_rolling/longgang.sumocfg",
+      "bytes": 351,
+      "sha256": "2ea18e6487f6dc9bc47ca6e64b267e4fc8d31e9f78fd2494be1c818a6204b222"
+    },
+    {
+      "path": "cases/governed_rolling/result.json",
+      "bytes": 955,
+      "sha256": "2eed2613631acf7f792fb936d605cae67f5c0f87c3e9d7d6ba32bdfe5c7a7371"
+    },
+    {
+      "path": "cases/governed_rolling/route_changes.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/governed_rolling/summary.xml",
+      "bytes": 3807063,
+      "sha256": "4b1f9e1c9e1e1e729a4bfe0976ef842d5b0cc75f9f976e247492905fd2bf209d"
+    },
+    {
+      "path": "cases/governed_rolling/traffic_series.csv",
+      "bytes": 11598,
+      "sha256": "b5dc17b961277f7ef49e0686b42d12616d6176ed6b00ca63e5bc60165f376bf7"
+    },
+    {
+      "path": "cases/governed_rolling/tripinfo.xml",
+      "bytes": 536468,
+      "sha256": "af620d545e5d49fd9977ace2300038da9271b5d315d8fa59f6decfc74d73d1f3"
+    },
+    {
+      "path": "cases/governed_rolling/warnings.log",
+      "bytes": 271985,
+      "sha256": "cbbbac06b54c9a5dd362957cf1b006fdcbfe8da820e5a56bf3961527d1621a21"
+    },
+    {
+      "path": "cases/rain_departure/command.json",
+      "bytes": 1076,
+      "sha256": "5a805915cce6dfdb9cbcb6fc9cc803f7e087ed006a911db4bf4085197bd8ff42"
+    },
+    {
+      "path": "cases/rain_departure/controls.csv",
+      "bytes": 269,
+      "sha256": "bc8007da2cb1dba5e152cff3a6d534b98e77a62477054d21f0f1c7f88dfb9d71"
+    },
+    {
+      "path": "cases/rain_departure/injections.csv",
+      "bytes": 45524,
+      "sha256": "2a20b1a56d878c4576c8c17d1aa066c64866a4c2d137f3d6b9d2d78e0d2423a2"
+    },
+    {
+      "path": "cases/rain_departure/longgang.sumocfg",
+      "bytes": 351,
+      "sha256": "2ea18e6487f6dc9bc47ca6e64b267e4fc8d31e9f78fd2494be1c818a6204b222"
+    },
+    {
+      "path": "cases/rain_departure/result.json",
+      "bytes": 947,
+      "sha256": "597a1f63edad166efa3d6c14e68052e6362ae64ae9e83791e22608bef73a9a9f"
+    },
+    {
+      "path": "cases/rain_departure/route_changes.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/rain_departure/summary.xml",
+      "bytes": 3783167,
+      "sha256": "4e6db036873aef76630dadb71ed38942926365ca2c74146936ad429847e29534"
+    },
+    {
+      "path": "cases/rain_departure/traffic_series.csv",
+      "bytes": 11433,
+      "sha256": "e51f18959538251893d61c0d45e0aab690aa5b9269a488a11f78a020bcd1b84d"
+    },
+    {
+      "path": "cases/rain_departure/tripinfo.xml",
+      "bytes": 383070,
+      "sha256": "5512aaa4e6590cba7d0414c919d529ea0a392eb7e3eac98c1c2d65f80d8dc3bb"
+    },
+    {
+      "path": "cases/rain_departure/warnings.log",
+      "bytes": 356131,
+      "sha256": "793efd456c71a7f21d0bc2c1bf2a663e2f0dab07edd14027b3de2630462a7850"
+    },
+    {
+      "path": "cases/rain_rolling/command.json",
+      "bytes": 1068,
+      "sha256": "7d9e93522e15c4c2c06344235ab5cc4246dec34367dd6a26a78a0d75c4a7a48d"
+    },
+    {
+      "path": "cases/rain_rolling/controls.csv",
+      "bytes": 269,
+      "sha256": "bc8007da2cb1dba5e152cff3a6d534b98e77a62477054d21f0f1c7f88dfb9d71"
+    },
+    {
+      "path": "cases/rain_rolling/injections.csv",
+      "bytes": 45524,
+      "sha256": "2a20b1a56d878c4576c8c17d1aa066c64866a4c2d137f3d6b9d2d78e0d2423a2"
+    },
+    {
+      "path": "cases/rain_rolling/longgang.sumocfg",
+      "bytes": 351,
+      "sha256": "2ea18e6487f6dc9bc47ca6e64b267e4fc8d31e9f78fd2494be1c818a6204b222"
+    },
+    {
+      "path": "cases/rain_rolling/result.json",
+      "bytes": 947,
+      "sha256": "81654a85fa1635792947b2718989e6cf861416bd0aebd27e50456cf701b693d5"
+    },
+    {
+      "path": "cases/rain_rolling/route_changes.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/rain_rolling/summary.xml",
+      "bytes": 3783161,
+      "sha256": "c1ed47053244396ef2889bb2c31ce71e6eef0de9bc789409255f04d4d8e7362d"
+    },
+    {
+      "path": "cases/rain_rolling/traffic_series.csv",
+      "bytes": 11433,
+      "sha256": "e51f18959538251893d61c0d45e0aab690aa5b9269a488a11f78a020bcd1b84d"
+    },
+    {
+      "path": "cases/rain_rolling/tripinfo.xml",
+      "bytes": 383064,
+      "sha256": "1917f70106a83d069b4a33ed049d18e6ca8ab1589d2f345e0173aa3f8915ff92"
+    },
+    {
+      "path": "cases/rain_rolling/warnings.log",
+      "bytes": 359953,
+      "sha256": "afb79aba092a78549137b65d2d6854d95df9b89d15ccdb11609e97b2a316402a"
+    },
+    {
+      "path": "comparison.csv",
+      "bytes": 1970,
+      "sha256": "896fd2e7e9bbe055b5d95d69ed85bc8ebffc182564667cb0ffb4e4ba9e05b5cc"
+    },
+    {
+      "path": "config.yaml",
+      "bytes": 713,
+      "sha256": "de48292692b36e57c93570969e05a550e3213749ce7472a4f00a0a7ceba7301f"
+    },
+    {
+      "path": "figures/road_exposure.png",
+      "bytes": 321432,
+      "sha256": "7deb8953df246a4a8049c429430cf101de1ed865b7c3ea2413017141640e2abe"
+    },
+    {
+      "path": "figures/road_exposure.svg",
+      "bytes": 807981,
+      "sha256": "96ea9c9eb2e0492849775aa4be6ec5d432ea2d1281b7752231efa9ec6a371ca5"
+    },
+    {
+      "path": "figures/traffic_comparison.png",
+      "bytes": 180331,
+      "sha256": "965891dc8b63ff75a724105696ca9aba6b343d30135785fed999cde24dac227c"
+    },
+    {
+      "path": "figures/traffic_comparison.svg",
+      "bytes": 110465,
+      "sha256": "69bd7a4d3d595ca660ba53938d3bbbc0e4bf560c5d06dfad2a832e47f70f1bc9"
+    },
+    {
+      "path": "gui_camera.json",
+      "bytes": 128,
+      "sha256": "73c61b892c4312d6bb39830796abd93fc03281f6a7a11720382db029dc062e32"
+    },
+    {
+      "path": "independent_audit.json",
+      "bytes": 3185,
+      "sha256": "4ddb992b4ffca45a6a1fb6488d0f433a10811fecbdd6664832eeb05b3b113fc0"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 2192,
+      "sha256": "bdc946e17de0ddd4fb79bb458175c04f33b1d647736fc9837b24c152d987b0aa"
+    },
+    {
+      "path": "provenance/__pycache__/run_longgang_sumo.cpython-311.pyc",
+      "bytes": 41782,
+      "sha256": "d85a63c79de404c877c9ebd3f27d36a1c0ca65d6a1ce6b0d11787f2cec55fd74"
+    },
+    {
+      "path": "provenance/adaptive.py",
+      "bytes": 15413,
+      "sha256": "c12a27597c813e883fea4e2905a9011f30787ec753c78e8d4b09a7bb4f9cea0a"
+    },
+    {
+      "path": "provenance/audit_longgang_sumo.py",
+      "bytes": 13299,
+      "sha256": "e0fbd614ea16a233e4afee5d83c5f818a3bce08353746df735803f2c0af67a96"
+    },
+    {
+      "path": "provenance/export_longgang_sumo_evidence.py",
+      "bytes": 2983,
+      "sha256": "b52bb7c600e4d7db2a2b35782d11af9453fa53d72890589574e5ce42b50a5a54"
+    },
+    {
+      "path": "provenance/longgang_sumo.yaml",
+      "bytes": 863,
+      "sha256": "4dccff1f84836dc38916938ad25cd6b06c95b2319639340f7bcb3bbef8a48498"
+    },
+    {
+      "path": "provenance/run_longgang_sumo.py",
+      "bytes": 22737,
+      "sha256": "0f4c40ed8988b40bb52ba2e56d1ee56420e69f7040c89858d8fb411dc2bd4468"
+    },
+    {
+      "path": "provenance/sumo_dynamic.py",
+      "bytes": 8020,
+      "sha256": "a207e7068988190975c3dfd73b1963acd2a8bfc866cc14cd4da41cb19c8bb804"
+    },
+    {
+      "path": "provenance/view_longgang_sumo.py",
+      "bytes": 2778,
+      "sha256": "6658d4e163f6e3730aed86845ed401b96a0b5a8f10b18c00d23631bfc1b8ba2f"
+    },
+    {
+      "path": "raw/boundary_demand_audit.json",
+      "bytes": 381,
+      "sha256": "9c44aa35ace7b834c6adf3586a2096d03d8acc24fc2eceac558c37fe93007af7"
+    },
+    {
+      "path": "raw/boundary_visits.json",
+      "bytes": 19196887,
+      "sha256": "e5fa96b755fc1f9bbf65fc09521bc215c22674c83279ce49b389adf72a43de8e"
+    },
+    {
+      "path": "raw/departure_plan.csv",
+      "bytes": 3473416,
+      "sha256": "f515bf15048780cc258a02ece7f43ddee55322da0a393f8f698e1707f9bebda3"
+    },
+    {
+      "path": "raw/netconvert.log",
+      "bytes": 931,
+      "sha256": "eca669bdee03e6f8318a3ebe3d09eab358e72f12b49fc5f5f63b50c2544b2e7a"
+    },
+    {
+      "path": "raw/network.edg.xml",
+      "bytes": 704260,
+      "sha256": "ef59306014560772440e81c1e4a47d610528b3973fa31bc850473d4d9c3e54ef"
+    },
+    {
+      "path": "raw/network.net.xml",
+      "bytes": 5773953,
+      "sha256": "1525cc822f6ce22dfdeabe80469e1ed6207da009dcc3d2df59ef0d1a465d665c"
+    },
+    {
+      "path": "raw/network.nod.xml",
+      "bytes": 254921,
+      "sha256": "62371aa72bc78dcbb1c7d4f2a073b3bd8d64ee66fa5682a1aae8f642d10bc28c"
+    },
+    {
+      "path": "raw/plan_report.json",
+      "bytes": 330,
+      "sha256": "658213b36b4440de4032f17e671cf69a9f871451f978f4de1936df5a349c19dc"
+    },
+    {
+      "path": "raw/road_states.npz",
+      "bytes": 68443,
+      "sha256": "2d5f06e50cb899d226dc64aafbe7333d584873b230e2cd3d861e24caacd4baaf"
+    },
+    {
+      "path": "raw/source_sumo_mapping.csv",
+      "bytes": 479000,
+      "sha256": "2b1fa5a2303f3e07b2023d873af832014e5227df34a012cc8c64104174d41982"
+    },
+    {
+      "path": "raw/types.rou.xml",
+      "bytes": 205,
+      "sha256": "2b72cc3b7318792e4443c0d5099965fa9d9beeee152fe99ad7685cd57bc4608f"
+    },
+    {
+      "path": "raw/view.xml",
+      "bytes": 152,
+      "sha256": "1a8b292936e6813ed7fe895de9f153f772aa93693c5f5a7204301748b47e3b33"
+    },
+    {
+      "path": "raw/view_initial.xml",
+      "bytes": 116,
+      "sha256": "757b4358842851bc0696c4f6bcdaa86f195eff3842afdba7b470b4581d3c847f"
+    },
+    {
+      "path": "raw/window.json",
+      "bytes": 772,
+      "sha256": "07c9125bb65944b439753512132babe21db39aec210cc976644ede3196177f6a"
+    },
+    {
+      "path": "routing_probe/edges.xml",
+      "bytes": 347,
+      "sha256": "49969c7b6ff385f1b76ee14d3f7435e7ae969612701a056f622deb8f478650f7"
+    },
+    {
+      "path": "routing_probe/network.net.xml",
+      "bytes": 6218,
+      "sha256": "3238a3b254aaa8f3c9160687c144b46119cff0d2ac3f6f62f31426cf50d9054b"
+    },
+    {
+      "path": "routing_probe/nodes.xml",
+      "bytes": 194,
+      "sha256": "4796ae8c08b64a07341282ab5bcaf11c42b9c7cb47af1912dc27fddb07ded39a"
+    },
+    {
+      "path": "routing_probe/result.json",
+      "bytes": 307,
+      "sha256": "03d7ad17495ff72d15583a006cfdac5922c7de9a749454386d83133ed634e389"
+    },
+    {
+      "path": "routing_probe/routes.xml",
+      "bytes": 145,
+      "sha256": "49f4acfc0d1f76b257ed88670b7fa1cdf081d77eaa8cbcc37d76aa2aa6ba236a"
+    },
+    {
+      "path": "status.json",
+      "bytes": 159,
+      "sha256": "fc628226eb1bc041a3a74c47bf6ebf85da1cac29c526c3212cddb13cc3914125"
+    },
+    {
+      "path": "sumo_version.txt",
+      "bytes": 890,
+      "sha256": "585828c254519291bb874497e5feaee4a32845da5bda0131f0c70cabe39863b1"
+    }
+  ],
+  "preview_note": "GUI preview folders are separate diagnostic reruns, excluded from numerical evidence. Screenshots preserved under docs/validation/longgang_sumo/figures."
+}

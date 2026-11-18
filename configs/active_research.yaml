@@ -43,3 +43,9 @@ assignment_ready_note: Sampled weighted dynamic loading only; full OD and topolo
 accepted_adaptive_pilot: data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6
 adaptive_config: configs/longgang_adaptive.yaml
 worldcover_package: data/raw/longgang_worldcover/20261118T163548_worldcover_c1d3d395
+sumo_local_pilot_ready: true
+sumo_local_pilot: data/processed/longgang_sumo/20261118T175153_sumo_492a503a
+sumo_config: configs/longgang_sumo.yaml
+sumo_scope: S0_3km_square_5percent_synthetic_boundary_visit_demand
+sumo_3d: flat_OSG_road_vehicle_preview_verified_no_buildings_or_water_surface
+sumo_capacity_note: uncalibrated_tau_proxy_not_exact_macro_capacity

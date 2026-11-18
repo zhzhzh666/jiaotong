@@ -1,0 +1,145 @@
+{
+  "run": "data\\processed\\longgang_sumo\\20261118T175153_sumo_492a503a",
+  "files": [
+    {
+      "path": "capacity_probe/discharge_comparison.csv",
+      "sha256": "750ea00abca704242db3240a5a34eae9cea5671c6eb4e5de3f8028e1ca3d2f17"
+    },
+    {
+      "path": "cases/dry/result.json",
+      "sha256": "994d8ee99d9cd7651ca0e306ef0d432e1bc7c664fbc94a028af6cdfb9e9feb9c"
+    },
+    {
+      "path": "cases/dry/route_changes.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/dry/traffic_series.csv",
+      "sha256": "79845d39d750616dec184116af67a8b713db836228495b0773247c979b3c5874"
+    },
+    {
+      "path": "cases/governed_departure/result.json",
+      "sha256": "e87a3bfbbeb84ea896343d7a5525ac05cf712e8b02ca83da37c03419b47f7550"
+    },
+    {
+      "path": "cases/governed_departure/route_changes.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/governed_departure/traffic_series.csv",
+      "sha256": "b5dc17b961277f7ef49e0686b42d12616d6176ed6b00ca63e5bc60165f376bf7"
+    },
+    {
+      "path": "cases/governed_rolling/result.json",
+      "sha256": "2eed2613631acf7f792fb936d605cae67f5c0f87c3e9d7d6ba32bdfe5c7a7371"
+    },
+    {
+      "path": "cases/governed_rolling/route_changes.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/governed_rolling/traffic_series.csv",
+      "sha256": "b5dc17b961277f7ef49e0686b42d12616d6176ed6b00ca63e5bc60165f376bf7"
+    },
+    {
+      "path": "cases/rain_departure/result.json",
+      "sha256": "597a1f63edad166efa3d6c14e68052e6362ae64ae9e83791e22608bef73a9a9f"
+    },
+    {
+      "path": "cases/rain_departure/route_changes.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/rain_departure/traffic_series.csv",
+      "sha256": "e51f18959538251893d61c0d45e0aab690aa5b9269a488a11f78a020bcd1b84d"
+    },
+    {
+      "path": "cases/rain_rolling/result.json",
+      "sha256": "81654a85fa1635792947b2718989e6cf861416bd0aebd27e50456cf701b693d5"
+    },
+    {
+      "path": "cases/rain_rolling/route_changes.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/rain_rolling/traffic_series.csv",
+      "sha256": "e51f18959538251893d61c0d45e0aab690aa5b9269a488a11f78a020bcd1b84d"
+    },
+    {
+      "path": "comparison.csv",
+      "sha256": "896fd2e7e9bbe055b5d95d69ed85bc8ebffc182564667cb0ffb4e4ba9e05b5cc"
+    },
+    {
+      "path": "config.yaml",
+      "sha256": "de48292692b36e57c93570969e05a550e3213749ce7472a4f00a0a7ceba7301f"
+    },
+    {
+      "path": "figures/road_exposure.png",
+      "sha256": "7deb8953df246a4a8049c429430cf101de1ed865b7c3ea2413017141640e2abe"
+    },
+    {
+      "path": "figures/road_exposure.svg",
+      "sha256": "96ea9c9eb2e0492849775aa4be6ec5d432ea2d1281b7752231efa9ec6a371ca5"
+    },
+    {
+      "path": "figures/sumo_3d_follow.jpg",
+      "sha256": "a545ac3982e5c66e89f585c21eed9f92ba69165dd115b1de31a4d5c424dbe963"
+    },
+    {
+      "path": "figures/sumo_3d_live.jpg",
+      "sha256": "dd2b9da176d22775185c3a68736d7d5f33d391c46b55b3ab0a094e1a414854fa"
+    },
+    {
+      "path": "figures/traffic_comparison.png",
+      "sha256": "965891dc8b63ff75a724105696ca9aba6b343d30135785fed999cde24dac227c"
+    },
+    {
+      "path": "figures/traffic_comparison.svg",
+      "sha256": "69bd7a4d3d595ca660ba53938d3bbbc0e4bf560c5d06dfad2a832e47f70f1bc9"
+    },
+    {
+      "path": "gui_camera.json",
+      "sha256": "73c61b892c4312d6bb39830796abd93fc03281f6a7a11720382db029dc062e32"
+    },
+    {
+      "path": "independent_audit.json",
+      "sha256": "4ddb992b4ffca45a6a1fb6488d0f433a10811fecbdd6664832eeb05b3b113fc0"
+    },
+    {
+      "path": "inputs.json",
+      "sha256": "bdc946e17de0ddd4fb79bb458175c04f33b1d647736fc9837b24c152d987b0aa"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "73cfdc5e92771b46bedc46eaddc25a26f7bb61aa733559454f59767677d323b8"
+    },
+    {
+      "path": "raw/boundary_demand_audit.json",
+      "sha256": "9c44aa35ace7b834c6adf3586a2096d03d8acc24fc2eceac558c37fe93007af7"
+    },
+    {
+      "path": "raw/plan_report.json",
+      "sha256": "658213b36b4440de4032f17e671cf69a9f871451f978f4de1936df5a349c19dc"
+    },
+    {
+      "path": "raw/window.json",
+      "sha256": "07c9125bb65944b439753512132babe21db39aec210cc976644ede3196177f6a"
+    },
+    {
+      "path": "routing_probe/result.json",
+      "sha256": "03d7ad17495ff72d15583a006cfdac5922c7de9a749454386d83133ed634e389"
+    },
+    {
+      "path": "status.json",
+      "sha256": "fc628226eb1bc041a3a74c47bf6ebf85da1cac29c526c3212cddb13cc3914125"
+    },
+    {
+      "path": "sumo_version.txt",
+      "sha256": "585828c254519291bb874497e5feaee4a32845da5bda0131f0c70cabe39863b1"
+    },
+    {
+      "path": "tests.xml",
+      "sha256": "411e690d0de2fa860cfa7c05dc9b3a6f9f2317ea8f3b317e25913bdaaab86fa9"
+    }
+  ]
+}

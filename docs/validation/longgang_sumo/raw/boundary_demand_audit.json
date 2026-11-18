@@ -1,0 +1,8 @@
+{
+  "eligible_offpeak_veh_h": 73568.18247823417,
+  "disconnected_offpeak_veh_h": 2860.292966762313,
+  "outside_offpeak_veh_h": 49806.63618833164,
+  "roi_visit_offpeak_veh_h": 24237.48540588892,
+  "roi_visits": 18912,
+  "note": "Every dry shortest-path ROI visit; re-entries count as separate visits. Boundary routes fixed from dry network, not a citywide rerouting model."
+}

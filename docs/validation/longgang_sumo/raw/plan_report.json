@@ -1,0 +1,9 @@
+{
+  "expected_scaled_visit_departures": 3635.6228108832497,
+  "planned_vehicles": 3588,
+  "valid_planned": 3588,
+  "invalid_planned": 0,
+  "demand_fraction": 0.05,
+  "poisson_seed": 42,
+  "assumption": "Poisson departures from synthetic full OD ROI visit rates; scaled physical demand, not weighted full-demand vehicles"
+}

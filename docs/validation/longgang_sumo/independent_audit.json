@@ -1,0 +1,112 @@
+{
+  "source_sha_verified": 12,
+  "source_sumo_arcs": 4969,
+  "planned_routes_checked": 3588,
+  "road_depth_values_checked": 168946,
+  "full_od_ledger": {
+    "full_offpeak_veh_h": 76147.1278616473,
+    "eligible_offpeak_veh_h": 73568.18247823443,
+    "missing_connector_offpeak_veh_h": 632.0148429210653,
+    "intrazonal_offpeak_veh_h": 1946.9305404918068,
+    "note": "ROI uses visits of eligible normal routes; disconnected, nonintersecting, intrazonal and missing-connector demand remain in full-OD ledger, not fabricated SUMO trips."
+  },
+  "scenarios": [
+    {
+      "scenario": "dry",
+      "planned": 3588,
+      "arrived": 3588,
+      "vehicle_seconds_replayed": 907534.0,
+      "route_changes_checked": 0,
+      "vehicle_balance_error": 0,
+      "teleports": 0,
+      "collision_vehicle_events": 0
+    },
+    {
+      "scenario": "governed_departure",
+      "planned": 3588,
+      "arrived": 1230,
+      "vehicle_seconds_replayed": 21176262.0,
+      "route_changes_checked": 0,
+      "vehicle_balance_error": 0,
+      "teleports": 0,
+      "collision_vehicle_events": 0
+    },
+    {
+      "scenario": "governed_rolling",
+      "planned": 3588,
+      "arrived": 1230,
+      "vehicle_seconds_replayed": 21176262.0,
+      "route_changes_checked": 0,
+      "vehicle_balance_error": 0,
+      "teleports": 0,
+      "collision_vehicle_events": 0
+    },
+    {
+      "scenario": "rain_departure",
+      "planned": 3588,
+      "arrived": 877,
+      "vehicle_seconds_replayed": 24270030.0,
+      "route_changes_checked": 0,
+      "vehicle_balance_error": 0,
+      "teleports": 0,
+      "collision_vehicle_events": 0
+    },
+    {
+      "scenario": "rain_rolling",
+      "planned": 3588,
+      "arrived": 877,
+      "vehicle_seconds_replayed": 24270030.0,
+      "route_changes_checked": 0,
+      "vehicle_balance_error": 0,
+      "teleports": 0,
+      "collision_vehicle_events": 0
+    }
+  ],
+  "note": "Numerical/network consistency, not observed traffic validation.",
+  "capacity_probe": [
+    {
+      "depth_m": 0.0,
+      "speed_kph": 50.0,
+      "tau_s": 1.71,
+      "reference_capacity_veh_h": 1600.0,
+      "observed_discharge_veh_h_600_to_1200": 1338,
+      "relative_capacity_difference": -0.1637499999999999
+    },
+    {
+      "depth_m": 0.1,
+      "speed_kph": 40.65480000000001,
+      "tau_s": 2.28,
+      "reference_capacity_veh_h": 1200.0,
+      "observed_discharge_veh_h_600_to_1200": 1026,
+      "relative_capacity_difference": -0.145
+    },
+    {
+      "depth_m": 0.2,
+      "speed_kph": 12.364800000000017,
+      "tau_s": 3.420000000000001,
+      "reference_capacity_veh_h": 799.9999999999998,
+      "observed_discharge_veh_h_600_to_1200": 426,
+      "relative_capacity_difference": -0.4674999999999998
+    }
+  ],
+  "routing_probe": {
+    "source_kind": "Synthetic diamond functional fixture, not Longgang benefit",
+    "closure_time_s": 10,
+    "closed_edge": "b",
+    "before": [
+      "a",
+      "b",
+      "b2",
+      "d"
+    ],
+    "after": [
+      "a",
+      "c",
+      "c2",
+      "d"
+    ],
+    "arrived": 1,
+    "teleports": 0,
+    "passed": true
+  }
+}

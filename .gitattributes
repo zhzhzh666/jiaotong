@@ -10,3 +10,8 @@ docs/validation/*.svg binary
 /scripts/acquire_longgang_worldcover.py -text
 /src/uftr/adaptive*.py -text
 /docs/validation/longgang_adaptive/figures/*.svg binary
+# Preserve frozen SUMO source/config SHA and generated SVG bytes across checkouts.
+/configs/longgang_sumo.yaml -text
+/scripts/*longgang_sumo*.py -text
+/src/uftr/sumo_dynamic.py -text
+/docs/validation/longgang_sumo/figures/*.svg binary
