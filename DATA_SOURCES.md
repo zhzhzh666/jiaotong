@@ -1,5 +1,13 @@
 # 数据来源与真实性
 
+## 2026-11-18 道路交通性能退化更新
+
+道路模块未引入新实测数据。输入为冻结合成积水过程、点边映射、真实OSM GeoJSON及原GraphML；从GraphML按edge_id恢复u/v/key，保留40105条有向边与平行边。55点关联54边，其余40051边假设原状。
+
+`data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b`含104760行状态、封路事件和四时刻全网快照，标记synthetic/observed=false；11输入/21输出SHA与9,552,634字节ZIP成员/CRC核验通过。源清单见docs/validation/road_performance/package_audit.json。容量、速度基础属性与水深未经实测校准，45站SW不直接代入。
+
+以下保留此前模块及历史实验记录。
+
 全过程补充使用冻结合成包的参考雨量、点参数及基准水深，未新增实测数据。结果位于`data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3`，7输入/15输出指纹与ZIP内容核验通过。退水阈值0.01 m为分析定义，SW观测继续独立；源包与OD未改动。
 
 ## 2026-11-18新增合成数据

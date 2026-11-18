@@ -1,0 +1,79 @@
+{
+  "run_id": "20261118T153023_road_performance_ab224c4b",
+  "source_process": "data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3",
+  "source_kind": "synthetic",
+  "observed": false,
+  "network_directed_edges": 40105,
+  "listed_directed_edges": 54,
+  "unlisted_assumed_normal_edges": 40051,
+  "matched_points": 55,
+  "unmatched_points_retained_in_source": 5,
+  "cases": 5,
+  "scenarios": 4,
+  "endpoints": 97,
+  "state_rows": 104760,
+  "settings": {
+    "closure_depth_m": 0.3,
+    "minimum_capacity_fraction": 0.2,
+    "capacity_loss_at_closure": 0.8
+  },
+  "baseline_depth_replay_max_error_m": 3.885780586188048e-16,
+  "baseline": {
+    "normal": {
+      "max_closed_edges": 0,
+      "ever_closed_edges": 0,
+      "longest_closure_h": 0.0,
+      "minimum_listed_capacity_ratio": 1.0,
+      "minimum_network_capacity_sum_ratio": 1.0,
+      "right_censored_edges": 0
+    },
+    "general": {
+      "max_closed_edges": 0,
+      "ever_closed_edges": 0,
+      "longest_closure_h": 0.0,
+      "minimum_listed_capacity_ratio": 0.7282948226286338,
+      "minimum_network_capacity_sum_ratio": 0.9995726420736084,
+      "right_censored_edges": 0
+    },
+    "severe": {
+      "max_closed_edges": 12,
+      "ever_closed_edges": 12,
+      "longest_closure_h": 4.598863897799259,
+      "minimum_listed_capacity_ratio": 0.37659325370174823,
+      "minimum_network_capacity_sum_ratio": 0.9990194599272121,
+      "right_censored_edges": 0
+    },
+    "extreme": {
+      "max_closed_edges": 41,
+      "ever_closed_edges": 41,
+      "longest_closure_h": 6.531598241065671,
+      "minimum_listed_capacity_ratio": 0.08484632397404812,
+      "minimum_network_capacity_sum_ratio": 0.9985605788557295,
+      "right_censored_edges": 0
+    }
+  },
+  "checks": {
+    "source_checksums_match": true,
+    "baseline_depth_replay": true,
+    "all_directed_edges_known": true,
+    "speed_never_exceeds_normal": true,
+    "capacity_never_exceeds_normal": true,
+    "exact_closure_rule": true,
+    "closed_speed_capacity_zero": true,
+    "closed_cost_infinite": true,
+    "open_cost_finite_positive": true,
+    "normal_scenario_unchanged": true,
+    "all_snapshots_keep_original_ids": true,
+    "unlisted_edges_explicit_normal": true,
+    "closed_edges_removed_from_routing": true,
+    "sparse_parquet_roundtrip": true
+  },
+  "all_checks_passed": true,
+  "formula_source": "Pregnolato et al. 2017 DOI 10.1016/j.trd.2017.06.020 PDF p7 Eq4; w=1000h mm, v km/h",
+  "limits": [
+    "Capacity degradation and 0.30 m closure are project assumptions, not calibrated engineering thresholds",
+    "Unlisted edges assumed dry; geometry association does not verify road inundation",
+    "Immediate model reopening below threshold, no hysteresis/inspection delay",
+    "Sum of link capacities is not network throughput; no traffic assignment or resilience recalculated"
+  ]
+}

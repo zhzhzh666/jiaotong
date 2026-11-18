@@ -1,5 +1,15 @@
 # Word 与 PPT 维护说明
 
+## 2026-11-18 道路交通性能退化更新
+
+当前维护版Word27页/PPT27张，新增速度容量、中断恢复、南山道路状态三节。Word20张/PPT14张源图SHA匹配，10个原生可编辑图表29条序列与源数据逐值核验。最新124项测试、14项道路状态检查；容量、封路阈值与合成深度均未实测校准，未重跑分配或韧性。
+
+本轮PPT命令为`scripts/append_road_performance_presentation.mjs 构建目录 新输出.pptx 24张已审源文件`，对应源备份`.cache/road-doc-sync/before/开题与阶段进展汇报.pptx`。捆绑运行时、node_modules链接、环境变量与前轮相同。保留六个源图表与XLSX原字节，新增四个图表使用源JSON，x/y显示缓存取12位有效数后逐值核验。
+
+当前QA：`.cache/road-doc-sync/final-word.pdf`和`final-word-pages`、`v2/validation.json`和`v2/slides`。前24页/张与上一已审版本像素一致，新增25—27页/张逐一检查。最终文件和审核指纹见delivery_manifest.json及../validation/final_visual_review.json。`scripts/verify_final_deliverables.py`验证27页/张、嵌图、原生图表与原稿SHA。历史审查链和失败候选保留，不将结构检查称为原生PowerPoint播放验收。
+
+以下保留此前模块及历史实验记录。
+
 当前维护版为Word24页/PPT24张，新增降雨积水全过程与退水敏感性两节。Word17张/PPT13张嵌图、6个原生图表18条序列核验通过。115项测试和11项过程核验通过，原稿SHA保持。完整模型说明见../STORM_FLOOD_MODEL.md。
 
 本轮PPT命令为scripts/append_storm_process_presentation.mjs 构建目录 新输出.pptx 22张已审源文件；源备份.cache/storm-doc-sync/before/开题与阶段进展汇报.pptx。帮助脚本preserve_existing_chart_workbooks.py逐字节保留旧图表和XLSX，不重构源公式。当前Word PDF/PNG位于.cache/storm-doc-sync/final-word.pdf和final-word-pages；PPT回执和PNG在v4。新23/24页张逐张检查，其余22页张与上一版像素一致。验证脚本按final_visual_review.json读取对应证据，不使用旧回执。

@@ -1,0 +1,19 @@
+{
+  "package_id": "20261118T153023_road_performance_ab224c4b",
+  "source_kind": "synthetic",
+  "observed": false,
+  "input_sha256_checks": 11,
+  "output_sha256_checks": 21,
+  "input_verification_basis": {
+    "current_bytes": 11,
+    "recorded_provenance_snapshot": 0
+  },
+  "zip_members_equal_local_files": true,
+  "zip_crc_passed": true,
+  "generation_consistency_checks": 14,
+  "manifest_sha256": "2930a7c15e53ef176dae8e0c2494ee2d17de30d4853d547469ef8044727c2ed9",
+  "zip_bytes": 9552634,
+  "zip_sha256": "fb0e2277a3e98847d11a7b94ad6a58167458be1c66f3d8ebc5298dbddd9edbc9",
+  "all_checks_passed": true,
+  "scope": "Integrity and generation consistency only; no observational calibration or traffic reassignment"
+}

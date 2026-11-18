@@ -1,0 +1,11 @@
+source_process: data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3
+source_package: data/synthetic/scenario_packages/20261118T141443_nanshan_seed42
+edges: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_edges.geojson
+boundary: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/study_boundary.geojson
+graphml: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_network.graphml
+settings:
+  closure_depth_m: 0.30
+  minimum_capacity_fraction: 0.20
+  capacity_loss_at_closure: 0.80
+snapshot_hours: [0, 10.5, 16, 24]
+# Closed arcs removed; immediate model reopening below 0.30 m, no inspection delay.

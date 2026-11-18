@@ -570,6 +570,42 @@
         "caption": "消退过程 极端情景固定候选点参数对照与基准恢复时间",
         "source_label": "退水实验 20261118T150315_storm_process_7b2a75f3 / flood_recession.png",
         "ppt_native": true
+      },
+      {
+        "title": "道路模型 速度与通行容量",
+        "paragraphs": [
+          "以合成路段水深h（m）驱动道路退化。Pregnolato等2017的PDF第7页Eq.4给出v_limit=0.0009w²-0.5529w+86.9448，w=1000h为mm，速度单位km/h；DOI 10.1016/j.trd.2017.06.020。",
+          "工程适配保留零水深正常速度v0，未中断时v=min(v0,max(0,v_limit))。通行容量独立假设C=C0×max(0.20,1-0.80h/0.30)，单位veh/h；达到0.30 m时速度与容量均置0。容量函数与中断阈值不属于原论文实测结论。",
+          "自由流时间t0=3.6L/v，L为m、t0为秒。关闭边导出时间为inf并移出可通行边集；容量不等于实际车流，当前没有重新分配交通或加入拥堵效应。"
+        ],
+        "figure": "data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b/figures/depth_road_response.png",
+        "caption": "道路退化函数 文献速度适配与独立容量假设",
+        "ppt_native": true,
+        "source_label": "道路退化实验 20261118T153023_road_performance_ab224c4b / depth_road_response.png"
+      },
+      {
+        "title": "道路模型 中断与恢复过程",
+        "paragraphs": [
+          "把四种降雨、五组排水消退参数的97端点积水映射至54条有向边，生成104760行道路状态。基准一般/严重/极端同时中断最多为0/12/41条。",
+          "基准严重、极端情景的单边最长累计中断约4.60和6.53小时。深度达到0.30 m即封路，下降至阈值以下即模型重开；按端点线性插值记录穿越时刻，窗口末仍关闭记右删失。未加入检查放行延迟或滞回。",
+          "图中容量保留率为54条关联边容量属性之和相对正常值，不是网络吞吐量、交通服务率或韧性。与上轮1厘米退水阈值的含义不同，模型重开也不证明道路实际安全。"
+        ],
+        "figure": "data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b/figures/road_impact_process.png",
+        "caption": "道路退化过程 基准参数下的封闭数量与关联边容量属性",
+        "ppt_native": true,
+        "source_label": "道路退化实验 20261118T153023_road_performance_ab224c4b / road_impact_process.png"
+      },
+      {
+        "title": "道路模型 南山道路状态",
+        "paragraphs": [
+          "真实路网40105条有向边均保留，方向及平行边键从原GraphML按edge_id关联恢复，不从几何线猜测。55个候选点关联54条边，5个未匹配点在上游保留；其余40051边假设原状，不表示实测无积水。",
+          "图示为基准参数10.5小时的道路状态。极端情景此时41条弧中断，可通行边集保留40064条；原始全网快照仍有40105条边。几何重叠不改变按独立有向edge_id计数。",
+          "124项测试、14项道路状态核验通过；完整状态、封闭事件、四时刻全网快照、PNG/SVG与源码配置已归档。合成深度及道路基础速度、容量未实测校准；尚未以新输入重跑用户均衡、韧性与治理。"
+        ],
+        "figure": "data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b/figures/road_states_map.png",
+        "caption": "南山三情景道路状态 10.5小时 有向边计数",
+        "ppt_native": false,
+        "source_label": "道路退化实验 20261118T153023_road_performance_ab224c4b / road_states_map.png"
       }
     ],
     "tests_passed": 106,
@@ -761,5 +797,90 @@
     "tests_report": "docs/validation/storm_process/tests.xml",
     "tests_passed": 115,
     "sections_added": 2
+  },
+  "road_performance": {
+    "path": "data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b",
+    "report": {
+      "run_id": "20261118T153023_road_performance_ab224c4b",
+      "source_process": "data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3",
+      "source_kind": "synthetic",
+      "observed": false,
+      "network_directed_edges": 40105,
+      "listed_directed_edges": 54,
+      "unlisted_assumed_normal_edges": 40051,
+      "matched_points": 55,
+      "unmatched_points_retained_in_source": 5,
+      "cases": 5,
+      "scenarios": 4,
+      "endpoints": 97,
+      "state_rows": 104760,
+      "settings": {
+        "closure_depth_m": 0.3,
+        "minimum_capacity_fraction": 0.2,
+        "capacity_loss_at_closure": 0.8
+      },
+      "baseline_depth_replay_max_error_m": 3.885780586188048e-16,
+      "baseline": {
+        "normal": {
+          "max_closed_edges": 0,
+          "ever_closed_edges": 0,
+          "longest_closure_h": 0.0,
+          "minimum_listed_capacity_ratio": 1.0,
+          "minimum_network_capacity_sum_ratio": 1.0,
+          "right_censored_edges": 0
+        },
+        "general": {
+          "max_closed_edges": 0,
+          "ever_closed_edges": 0,
+          "longest_closure_h": 0.0,
+          "minimum_listed_capacity_ratio": 0.7282948226286338,
+          "minimum_network_capacity_sum_ratio": 0.9995726420736084,
+          "right_censored_edges": 0
+        },
+        "severe": {
+          "max_closed_edges": 12,
+          "ever_closed_edges": 12,
+          "longest_closure_h": 4.598863897799259,
+          "minimum_listed_capacity_ratio": 0.37659325370174823,
+          "minimum_network_capacity_sum_ratio": 0.9990194599272121,
+          "right_censored_edges": 0
+        },
+        "extreme": {
+          "max_closed_edges": 41,
+          "ever_closed_edges": 41,
+          "longest_closure_h": 6.531598241065671,
+          "minimum_listed_capacity_ratio": 0.08484632397404812,
+          "minimum_network_capacity_sum_ratio": 0.9985605788557295,
+          "right_censored_edges": 0
+        }
+      },
+      "checks": {
+        "source_checksums_match": true,
+        "baseline_depth_replay": true,
+        "all_directed_edges_known": true,
+        "speed_never_exceeds_normal": true,
+        "capacity_never_exceeds_normal": true,
+        "exact_closure_rule": true,
+        "closed_speed_capacity_zero": true,
+        "closed_cost_infinite": true,
+        "open_cost_finite_positive": true,
+        "normal_scenario_unchanged": true,
+        "all_snapshots_keep_original_ids": true,
+        "unlisted_edges_explicit_normal": true,
+        "closed_edges_removed_from_routing": true,
+        "sparse_parquet_roundtrip": true
+      },
+      "all_checks_passed": true,
+      "formula_source": "Pregnolato et al. 2017 DOI 10.1016/j.trd.2017.06.020 PDF p7 Eq4; w=1000h mm, v km/h",
+      "limits": [
+        "Capacity degradation and 0.30 m closure are project assumptions, not calibrated engineering thresholds",
+        "Unlisted edges assumed dry; geometry association does not verify road inundation",
+        "Immediate model reopening below threshold, no hysteresis/inspection delay",
+        "Sum of link capacities is not network throughput; no traffic assignment or resilience recalculated"
+      ]
+    },
+    "tests_report": "docs/validation/road_performance/tests.xml",
+    "tests_passed": 124,
+    "sections_added": 3
   }
 }

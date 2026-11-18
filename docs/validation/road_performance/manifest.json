@@ -1,0 +1,159 @@
+{
+  "run_id": "20261118T153023_road_performance_ab224c4b",
+  "status": "success",
+  "source_kind": "synthetic",
+  "observed": false,
+  "inputs": [
+    {
+      "path": "configs/road_performance_process.yaml",
+      "sha256": "186ba3e465cbf23c3fdd180c6a817ada38931b62370ffd002dbd0e788c6b6735"
+    },
+    {
+      "path": "scripts/run_road_performance_process.py",
+      "sha256": "6fba703a565e9124641fd9020a9179a267361ba6c9b460c074912884ada9d0f0"
+    },
+    {
+      "path": "src/uftr/road_performance.py",
+      "sha256": "9e55a74ef8b940e0ca7d19ec33b888ff8d532aa45e372089dc2059ada386a508"
+    },
+    {
+      "path": "src/uftr/flood.py",
+      "sha256": "541e322ca8691cf9e26d7a74617409d16c12f6885285efb5b4f77938f9a9fb94"
+    },
+    {
+      "path": "data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3/manifest.json",
+      "sha256": "0968d9bc1a2273ceb66c5e2f254d524237253d193af12943026de309f1e88217"
+    },
+    {
+      "path": "data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3/raw/point_depth_timeseries.parquet",
+      "sha256": "245b62088bdd561aa42cde926a34d25dc35a94f0cd2345c88f7f1fecf1285692"
+    },
+    {
+      "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/gis/point_road_candidates.csv",
+      "sha256": "707e0da75293c3d5af9c8449d5f56e1fce6b4b81702b92bf4ee92d605c761e72"
+    },
+    {
+      "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/flood/edge_depth_timeseries.parquet",
+      "sha256": "d9b3a9c3514b016ebc94537433cc836c6f3750fe6d85937d38c95483a607f288"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_edges.geojson",
+      "sha256": "8f0b98d70179196255ab92f9e46fa455051b46a426e6afcb950e0d2c45e6bbc6"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/study_boundary.geojson",
+      "sha256": "24ada03ca126e131c4d3bc959e588f1c34e5d315f5521de7a4995a2190e541fb"
+    },
+    {
+      "path": "data/processed/phase01/20261117T193651_p01_2e554d34/nanshan/road_network.graphml",
+      "sha256": "821f2cc8a2b832c75c890c881fd9046bcafe5d299a05904cc3201e3af69b215b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/depth_road_response.png",
+      "bytes": 155971,
+      "sha256": "059db815a71b6a8ad583a3aa3f2a4f9b74803a3527711e047311c56b15fc9da0"
+    },
+    {
+      "path": "figures/depth_road_response.svg",
+      "bytes": 33233,
+      "sha256": "71194c79016d7ea9737bbac39382b48d6f7266b25f38c49c4eaee46c2283d1bc"
+    },
+    {
+      "path": "figures/road_impact_process.png",
+      "bytes": 140950,
+      "sha256": "6c57490677592e760cfa83768b2daa07c56fd8ae90e5ec9b0949ba091f703f1a"
+    },
+    {
+      "path": "figures/road_impact_process.svg",
+      "bytes": 29307,
+      "sha256": "c48c3edf0ed4927a51f484ccfa5473bd92514d17846754def753140dc1b765b1"
+    },
+    {
+      "path": "figures/road_states_map.png",
+      "bytes": 580985,
+      "sha256": "d11f9d1524b618a71fb0b5d4acef39db785cedb403fafad0ff78bab07fe827d0"
+    },
+    {
+      "path": "figures/road_states_map.svg",
+      "bytes": 20722677,
+      "sha256": "ea7c354d75809466eac90c1841f97234dedaeee4bf9c1e89aaf9a81e315ef05b"
+    },
+    {
+      "path": "index.html",
+      "bytes": 513,
+      "sha256": "e6a2c309187aff4e2f4cb82480d0ef6246d95464a559b84d38e8d28124f01c76"
+    },
+    {
+      "path": "provenance/config.yaml",
+      "bytes": 652,
+      "sha256": "186ba3e465cbf23c3fdd180c6a817ada38931b62370ffd002dbd0e788c6b6735"
+    },
+    {
+      "path": "provenance/flood.py",
+      "bytes": 3825,
+      "sha256": "541e322ca8691cf9e26d7a74617409d16c12f6885285efb5b4f77938f9a9fb94"
+    },
+    {
+      "path": "provenance/road_performance.py",
+      "bytes": 5985,
+      "sha256": "9e55a74ef8b940e0ca7d19ec33b888ff8d532aa45e372089dc2059ada386a508"
+    },
+    {
+      "path": "provenance/run_road_performance_process.py",
+      "bytes": 19515,
+      "sha256": "6fba703a565e9124641fd9020a9179a267361ba6c9b460c074912884ada9d0f0"
+    },
+    {
+      "path": "provenance/validation_report.json",
+      "bytes": 2926,
+      "sha256": "2b37c50c224b0e1be1fb360d9090dab2fb0c126acc734222d740f65d76912325"
+    },
+    {
+      "path": "raw/closure_episodes.csv",
+      "bytes": 36034,
+      "sha256": "942b8daeb7cff0b51fba71bee7b5db5884d7681bb1976c6458623d881daffae9"
+    },
+    {
+      "path": "raw/edge_depth_timeseries.parquet",
+      "bytes": 296778,
+      "sha256": "7e1229bd4e58838caca2c6520343967d91955ca633adec6ea051175a325c1ec9"
+    },
+    {
+      "path": "raw/full_network_snapshots.parquet",
+      "bytes": 6013532,
+      "sha256": "ded6cd0a8326a94cd185ae07b90639eb44071888acfe422e320e3164f7af4062"
+    },
+    {
+      "path": "raw/native_chart_data.json",
+      "bytes": 111773,
+      "sha256": "159abd76d29e56f6238c833fcc9c54841d3fec46f0612725c8bb628f407ee78c"
+    },
+    {
+      "path": "raw/road_peak_summary.csv",
+      "bytes": 123533,
+      "sha256": "218944e86b73d44c9234d8024f2bc1367e2db0a9379cc2660e1781a042f452d6"
+    },
+    {
+      "path": "raw/road_state_summary.csv",
+      "bytes": 211345,
+      "sha256": "f3b01a0acd957e05b9f7da3ff25a34ab26260895ad0446c76b9877bc49f62903"
+    },
+    {
+      "path": "raw/road_state_timeseries.parquet",
+      "bytes": 1199453,
+      "sha256": "af0d6b5e423fcd86159b1562c8f445a4c2e6dad50e8dc9024fc8a65661513ace"
+    },
+    {
+      "path": "raw/routing_edge_checks.csv",
+      "bytes": 141,
+      "sha256": "a8a7b40c7b9209d221581dc47ee2b093b0735360746c331572531a8b8ab3ba60"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2113,
+      "sha256": "b0beff0092c65ed5cc80d1abd2310b850c47be87fcd3ccb20ed5db512ee9f20f"
+    }
+  ]
+}

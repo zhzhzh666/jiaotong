@@ -1,5 +1,22 @@
 # 操作说明
 
+## 2026-11-18 道路交通性能退化更新
+
+道路交通性能退化模块已完成：水深驱动速度、独立容量函数与0.30 m中断规则，保留有向平行边。四情景×五参数组×97端点×54条关联边，共104760行道路状态；基准一般/严重/极端最多中断0/12/41条，严重/极端单边最长累计中断4.60/6.53小时。124项测试、14项状态核验、11输入/21输出SHA及ZIP内容核验通过。合成模型未经实测校准，未按新输入重跑交通分配、韧性或治理。
+
+模型说明[ROAD_PERFORMANCE_MODEL.md](ROAD_PERFORMANCE_MODEL.md)，当前运行`data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b`。执行命令：
+
+```powershell
+.conda-env/python.exe scripts/run_road_performance_process.py --config configs/road_performance_process.yaml
+.conda-env/python.exe scripts/verify_synthetic_data_package.py --package data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b --output docs/validation/road_performance/package_audit.json
+```
+
+打开该目录index.html查看速度/容量函数、全过程与10.5小时三情景地图，figures含PNG/SVG，同名ZIP可备份。raw含road_state_timeseries、closure_episodes、road_peak_summary、full_network_snapshots及routing_edge_checks；关闭道路在可通行边集中删除。src/uftr/road_performance.py的traversable_edges返回可对接分配器的成本及容量，仍需单独运行和验收交通分配。
+
+维护Word/PPT当前27页/张；其余40051边假设原状，不据此断言真实无积水。完整输入和结果未随Git上传，新机器先恢复configs所指本机备份。
+
+以下保留此前模块及历史实验记录。
+
 全过程模块命令：`.conda-env/python.exe scripts/run_storm_flood_process.py --config configs/storm_flood_process.yaml`。新结果在`data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3`，打开index.html查看降雨/水深/超阈值点数及退水敏感性，读取raw/point_threshold_metrics.csv区分recovered、not_exceeded与right_censored。只读核验可运行`.conda-env/python.exe scripts/verify_synthetic_data_package.py --package data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3`。每次输出新目录；完整ZIP留本机。当前Word/PPT各24页/张。
 
 ## 南山合成数据包

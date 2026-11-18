@@ -67,8 +67,9 @@ with ZipFile(pptpath) as ppt,ZipFile(docpath) as word:
                     assert len(actual)==len(values)
                     assert all(math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-10) for a,b in zip(actual,values)),(i,field)
                 native_series_checked+=1
-        if data.get('storm_process'):
-            process=ROOT/data['storm_process']['path']
+        for component in ['storm_process','road_performance']:
+            if not data.get(component):continue
+            process=ROOT/data[component]['path']
             charts=json.loads((process/'raw/native_chart_data.json').read_text(encoding='utf-8'))
             ns['a']='http://schemas.openxmlformats.org/drawingml/2006/main'
             trees=[ET.fromstring(ppt.read(n)) for n in ppt.namelist() if n.startswith('ppt/slides/charts/chart') and n.endswith('.xml')]
@@ -113,5 +114,12 @@ if data.get('storm_process'):
     manifest['verification']['latest_tests_passed']=int(latest.attrib['tests'])
     manifest['storm_process']={'path':data['storm_process']['path'],'process_consistency_checks':11,
         'observed':False,'traffic_assignment_rerun':False,'tests_report':record(ROOT/data['storm_process']['tests_report'])}
+if data.get('road_performance'):
+    latest=ET.parse(ROOT/data['road_performance']['tests_report']).getroot().find('testsuite')
+    assert int(latest.attrib['failures'])==int(latest.attrib['errors'])==0
+    assert int(latest.attrib['tests'])==data['road_performance']['tests_passed']
+    manifest['verification']['latest_tests_passed']=int(latest.attrib['tests'])
+    manifest['road_performance']={'path':data['road_performance']['path'],'consistency_checks':len(data['road_performance']['report']['checks']),
+        'observed':False,'traffic_assignment_rerun':False,'tests_report':record(ROOT/data['road_performance']['tests_report'])}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

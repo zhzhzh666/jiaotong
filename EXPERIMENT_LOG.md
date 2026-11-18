@@ -1,5 +1,17 @@
 # 实验记录：当前验收与完整历史
 
+## 2026-11-18 道路交通性能退化更新
+
+执行`.conda-env/python.exe scripts/run_road_performance_process.py --config configs/road_performance_process.yaml`，最终运行`20261118T153023_road_performance_ab224c4b`。道路交通性能退化模块已完成：水深驱动速度、独立容量函数与0.30 m中断规则，保留有向平行边。四情景×五参数组×97端点×54条关联边，共104760行道路状态；基准一般/严重/极端最多中断0/12/41条，严重/极端单边最长累计中断4.60/6.53小时。124项测试、14项状态核验、11输入/21输出SHA及ZIP内容核验通过。合成模型未经实测校准，未按新输入重跑交通分配、韧性或治理。
+
+首轮发现GeoJSON未保留u/v/key，失败输出保留，改从权威GraphML关联恢复并加入对应测试，不从几何猜测方向。成功初版保留；最终版改善地图图幅，快照明确标注synthetic。既有flood.py函数和历史manifest均未修改。
+
+PPT首版因x数值含超过15位有效精度未通过工作簿校验，改为图表x/y均取12位有效数字，仅用于显示缓存，全部29条序列按1e-10容差与原源值核对。v1失败稿保留，v2通过。六个既有图表XML与XLSX逐字节保留，四个新增图表具可编辑工作簿。
+
+维护Word/PPT现为27页/张，新增三节，原24页/张像素一致；20/14张源图SHA匹配，10个原生图表29条序列与源值逐值核验。当前说明见docs/ROAD_PERFORMANCE_MODEL.md，阶段报告见docs/PHASE_ROAD_PERFORMANCE_REPORT.md。后台Word只读COM导PDF，捆绑pypdfium2逐页渲染；PPT最终文件Artifact Tool重新导入渲染。新增25—27页/张逐一打开检查，前24页/张像素一致。没有声称原生PowerPoint播放验收。
+
+以下保留此前模块及历史实验记录。
+
 全过程补充运行`20261118T150315_storm_process_7b2a75f3`，命令`.conda-env/python.exe scripts/run_storm_flood_process.py --config configs/storm_flood_process.yaml`。基准重放最大误差3.886e-16 m，区间/事件平衡误差1.101e-13/9.095e-13 mm；115测试通过、pip check无冲突。四雨量情景五参数组，阈值0/0.01/0.15/0.30/0.40 m逐点统计，未超过和右删失留空恢复时刻。此前探索输出保留；修正了汇总JSON空值和相对配置路径。PPT导入曾丢失旧图表XLSX，后按源文件逐字节保留原图表及工作簿，并修正包命名空间；失败v1/v2保留。最终v4通过全部结构/图表/字体/重导入核验；24页/张中原22页/张像素相同，新增23/24逐张检查。尚未验收原生PowerPoint播放，也未重跑交通评估。
 
 ## 2026-11-18 南山合成输入补充

@@ -1,6 +1,16 @@
 # 深圳暴雨内涝交通韧性研究原型
 
-最新补充：暴雨内涝全过程模块已完成，涵盖降雨、积水增长及雨停后消退。四雨量情景×五组排水/消退参数、60点、97端点；115项测试与11项过程核验通过。模型与结果见[情景建模说明](docs/STORM_FLOOD_MODEL.md)，本机图集`data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3/index.html`。Word/PPT现各24页/张。模型未经实测校准，交通分配与韧性仍为原输入下的历史结果。
+## 2026-11-18 道路交通性能退化更新
+
+道路交通性能退化模块已完成：水深驱动速度、独立容量函数与0.30 m中断规则，保留有向平行边。四情景×五参数组×97端点×54条关联边，共104760行道路状态；基准一般/严重/极端最多中断0/12/41条，严重/极端单边最长累计中断4.60/6.53小时。124项测试、14项状态核验、11输入/21输出SHA及ZIP内容核验通过。合成模型未经实测校准，未按新输入重跑交通分配、韧性或治理。
+
+维护Word/PPT现为27页/张，新增三节，原24页/张像素一致；20/14张源图SHA匹配，10个原生图表29条序列与源值逐值核验。当前说明见[道路模型说明](docs/ROAD_PERFORMANCE_MODEL.md)，阶段报告见[阶段报告](docs/PHASE_ROAD_PERFORMANCE_REPORT.md)。
+
+本机图集`data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b/index.html`，同目录旁有约9.11 MiB完整ZIP；Git只保存源码、维护文档及小型核验副本。
+
+以下保留此前模块及历史实验记录。
+
+此前补充：暴雨内涝全过程模块已完成，涵盖降雨、积水增长及雨停后消退。四雨量情景×五组排水/消退参数、60点、97端点；115项测试与11项过程核验通过。模型与结果见[情景建模说明](docs/STORM_FLOOD_MODEL.md)，本机图集`data/synthetic/storm_process/20261118T150315_storm_process_7b2a75f3/index.html`。Word/PPT现各24页/张。模型未经实测校准，交通分配与韧性仍为原输入下的历史结果。
 
 2026-11-18新增南山合成输入包：60个候选积水点，正常/一般/严重/极端参考雨量0/100/200/300 mm，24小时、15分钟步长；574×574完整OD与96个区间矩阵。16项一致性检查通过。入口为本机`data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/index.html`，同目录旁有约50.5 MiB ZIP；方法和字段见[合成数据说明](docs/SYNTHETIC_DATA_PACKAGE.md)。这些数据未实测校准，新包尚未重跑分配与韧性，下面的既有实验结果不属于本包。
 
@@ -35,7 +45,7 @@ Sioux Falls相对间隙9.92645e-5，参考流量相对RMSE0.05736%；南山平�
 
 ## 文档、图片与数据
 
-- [Word研究报告](docs/deliverables/研究方案与阶段进展.docx)：19页；[PPT汇报](docs/deliverables/开题与阶段进展汇报.pptx)：19张，均逐页渲染查看，12张嵌入源图SHA匹配。
+- [Word研究报告](docs/deliverables/研究方案与阶段进展.docx)：27页；[PPT汇报](docs/deliverables/开题与阶段进展汇报.pptx)：27张，新增页面逐张查看，原24页/张像素一致；20/14张源图及29条图表序列核验通过。
 - [最终报告](docs/FINAL_REPORT.md)、[操作说明](docs/USER_GUIDE.md)、[最终审计](docs/validation/final_audit.json)。
 - 本机完整图片索引`results/index.html`；每次`results/runs/<run_id>/`保留raw、figures、screenshots、logs、配置与manifest。Git中可查`docs/validation/phase04`至`phase12`的小型验收副本。
 - 原始资料、完整`data`和`results/runs`留本机，克隆仓库不包含这些大型输入，复现需按`configs`路径恢复本机备份；`docs/validation/final_data_inventory.json`冻结54个输入文件字节。
