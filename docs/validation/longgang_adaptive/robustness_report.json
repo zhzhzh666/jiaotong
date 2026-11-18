@@ -1,0 +1,126 @@
+{
+  "run_id": "20261118T171634_robustness_8c0a6b68",
+  "source_run": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6",
+  "recommended_mask": 9,
+  "comparison": [
+    {
+      "scenario": "loss_half",
+      "extra_cost_reduction_vehicle_hours": 3629383.7825894654,
+      "unfinished_reduction_trips": 55609.67212133296
+    },
+    {
+      "scenario": "loss_double",
+      "extra_cost_reduction_vehicle_hours": 1986652.698188341,
+      "unfinished_reduction_trips": 66649.42377496138
+    },
+    {
+      "scenario": "closure_020",
+      "extra_cost_reduction_vehicle_hours": 4869102.112649187,
+      "unfinished_reduction_trips": 84711.66603091545
+    },
+    {
+      "scenario": "capacity_double",
+      "extra_cost_reduction_vehicle_hours": 8785102.344190687,
+      "unfinished_reduction_trips": 165578.85986844823
+    }
+  ],
+  "results": [
+    {
+      "scenario": "loss_half",
+      "mask": 0,
+      "background_loss_multiplier": 0.5,
+      "closure_depth_m": 0.3,
+      "capacity_multiplier": 1.0,
+      "extra_generalized_vehicle_hours": 136275667.16113546,
+      "total_unfinished_trips": 8374719.222100049,
+      "peak_road_depth_m": 5.241024971008301,
+      "max_water_residual_m3": 2.4032779037952423e-06,
+      "max_vehicle_residual_veh": 2.8870999813079834e-08
+    },
+    {
+      "scenario": "loss_half",
+      "mask": 9,
+      "background_loss_multiplier": 0.5,
+      "closure_depth_m": 0.3,
+      "capacity_multiplier": 1.0,
+      "extra_generalized_vehicle_hours": 132646283.378546,
+      "total_unfinished_trips": 8319109.549978716,
+      "peak_road_depth_m": 4.640539646148682,
+      "max_water_residual_m3": 1.6880221664905548e-06,
+      "max_vehicle_residual_veh": 2.7008354663848877e-08
+    },
+    {
+      "scenario": "loss_double",
+      "mask": 0,
+      "background_loss_multiplier": 2.0,
+      "closure_depth_m": 0.3,
+      "capacity_multiplier": 1.0,
+      "extra_generalized_vehicle_hours": 2777279.689317695,
+      "total_unfinished_trips": 5315636.160068425,
+      "peak_road_depth_m": 0.5728393793106079,
+      "max_water_residual_m3": 1.635751686990261e-06,
+      "max_vehicle_residual_veh": 3.632158041000366e-08
+    },
+    {
+      "scenario": "loss_double",
+      "mask": 9,
+      "background_loss_multiplier": 2.0,
+      "closure_depth_m": 0.3,
+      "capacity_multiplier": 1.0,
+      "extra_generalized_vehicle_hours": 790626.9911293539,
+      "total_unfinished_trips": 5248986.736293464,
+      "peak_road_depth_m": 0.4411371648311615,
+      "max_water_residual_m3": 1.635751686990261e-06,
+      "max_vehicle_residual_veh": 3.91155481338501e-08
+    },
+    {
+      "scenario": "closure_020",
+      "mask": 0,
+      "background_loss_multiplier": 1.0,
+      "closure_depth_m": 0.2,
+      "capacity_multiplier": 1.0,
+      "extra_generalized_vehicle_hours": 80230857.11775261,
+      "total_unfinished_trips": 7224578.069146205,
+      "peak_road_depth_m": 3.4224979877471924,
+      "max_water_residual_m3": 0.0,
+      "max_vehicle_residual_veh": 3.725290298461914e-08
+    },
+    {
+      "scenario": "closure_020",
+      "mask": 9,
+      "background_loss_multiplier": 1.0,
+      "closure_depth_m": 0.2,
+      "capacity_multiplier": 1.0,
+      "extra_generalized_vehicle_hours": 75361755.00510342,
+      "total_unfinished_trips": 7139866.403115289,
+      "peak_road_depth_m": 2.704832077026367,
+      "max_water_residual_m3": 0.0,
+      "max_vehicle_residual_veh": 2.2351741790771484e-08
+    },
+    {
+      "scenario": "capacity_double",
+      "mask": 0,
+      "background_loss_multiplier": 1.0,
+      "closure_depth_m": 0.3,
+      "capacity_multiplier": 2.0,
+      "extra_generalized_vehicle_hours": 89725139.8920754,
+      "total_unfinished_trips": 4936201.620125331,
+      "peak_road_depth_m": 3.4224979877471924,
+      "max_water_residual_m3": 0.0,
+      "max_vehicle_residual_veh": 4.284083843231201e-08
+    },
+    {
+      "scenario": "capacity_double",
+      "mask": 9,
+      "background_loss_multiplier": 1.0,
+      "closure_depth_m": 0.3,
+      "capacity_multiplier": 2.0,
+      "extra_generalized_vehicle_hours": 80940037.54788472,
+      "total_unfinished_trips": 4770622.760256883,
+      "peak_road_depth_m": 2.704832077026367,
+      "max_water_residual_m3": 0.0,
+      "max_vehicle_residual_veh": 2.0489096641540527e-08
+    }
+  ],
+  "note": "Controlled paired sensitivities with fixed weighted route library; not re-optimization across uncertainty cases or field validation."
+}

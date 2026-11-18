@@ -1,0 +1,23 @@
+{
+  "released_trips": 10814522.824300427,
+  "completed_trips": 5172124.909734532,
+  "unfinished_trips": 5642397.914565895,
+  "in_network_trips": 4623584.480739739,
+  "origin_backlog_trips": 1018813.4338261931,
+  "vehicle_seconds": 1177259088255.6973,
+  "penalized_vehicle_seconds": 1217884353240.5718,
+  "maximum_conservation_error_veh": 4.0978193283081055e-08,
+  "transit_ring_remaining_veh": 46366.90689159723,
+  "transit_counter_veh": 46366.90689159807,
+  "unlinked_trips_not_road_loaded": 92906.18190939583,
+  "intrazonal_trips_not_road_loaded": 286198.7894522972,
+  "total_trips": 11193627.79566212,
+  "total_completed_trips": 5458323.69918683,
+  "total_unfinished_trips": 5735304.09647529,
+  "generalized_vehicle_seconds": 1218639137387.155,
+  "sample_pairs": 826,
+  "sample_destinations_per_origin": 2,
+  "internal_seconds": 60,
+  "active_corridors": 9217,
+  "path_stages": 110423
+}

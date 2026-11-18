@@ -1,0 +1,125 @@
+{
+  "run_id": "20261118T165311_adaptive_4adc99a6",
+  "region": "longgang",
+  "include_dapeng": false,
+  "method": "WorldCover-spatial-loss D8 + directed-corridor proportional point queues + departure-route choice + NSGA-II pilot",
+  "calibrated": false,
+  "landcover_package": "data/raw/longgang_worldcover/20261118T163548_worldcover_c1d3d395",
+  "scenarios": {
+    "rain070": 0.7,
+    "rain100": 1.0,
+    "rain130": 1.3
+  },
+  "departure_hours": 120,
+  "synthetic_daily_demand_repeated": true,
+  "dry_reference": {
+    "released_trips": 10814522.824300427,
+    "completed_trips": 5677145.286269303,
+    "unfinished_trips": 5137377.538031124,
+    "in_network_trips": 4836785.026495322,
+    "origin_backlog_trips": 300592.5115358394,
+    "vehicle_seconds": 1119310591478.201,
+    "penalized_vehicle_seconds": 1156299709752.025,
+    "maximum_conservation_error_veh": 4.0978193283081055e-08,
+    "transit_ring_remaining_veh": 49834.04888525853,
+    "transit_counter_veh": 49834.04888525904,
+    "unlinked_trips_not_road_loaded": 92906.18190939583,
+    "intrazonal_trips_not_road_loaded": 286198.7894522972,
+    "total_trips": 11193627.79566212,
+    "total_completed_trips": 5963344.075721601,
+    "total_unfinished_trips": 5230283.719940519,
+    "generalized_vehicle_seconds": 1157054493898.6082,
+    "sample_pairs": 826,
+    "sample_destinations_per_origin": 2,
+    "internal_seconds": 60,
+    "active_corridors": 9217,
+    "path_stages": 110423
+  },
+  "source_directed_arcs": 451801,
+  "corridors": 97030,
+  "frozen_depth_mapped_arcs": 86807,
+  "candidate_count": 4,
+  "max_selected_sites": 3,
+  "feasible_combinations_exhaustively_checked": 15,
+  "exact_pareto_masks": [
+    0,
+    8,
+    9,
+    11
+  ],
+  "recommended_mask": 9,
+  "recommended_sites": [
+    0,
+    3
+  ],
+  "recommended_treatment_area_km2": 3.645,
+  "nsga2_front_recall_by_seed": {
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0
+  },
+  "worst_case_base_objectives": [
+    57517671.792850204,
+    6749742.823738765,
+    0.0
+  ],
+  "worst_case_recommended_objectives": [
+    51830857.47396464,
+    6650193.027557482,
+    3.645
+  ],
+  "maximum_water_balance_residual_m3": 1.7872080206871033e-06,
+  "maximum_vehicle_conservation_error_veh": 5.960464477539063e-08,
+  "traffic_sensitivities": [
+    {
+      "mask": 0,
+      "destinations_per_origin": 2,
+      "step_seconds": 30,
+      "extra_generalized_vehicle_hours": 57714588.74143372,
+      "unfinished_trips": 6737498.395116774,
+      "generalized_hours_difference_from_main": -1692413.183721856,
+      "unfinished_difference_from_main": -12244.428621990606
+    },
+    {
+      "mask": 0,
+      "destinations_per_origin": 4,
+      "step_seconds": 60,
+      "extra_generalized_vehicle_hours": 56670814.428130016,
+      "unfinished_trips": 6477776.948827275,
+      "generalized_hours_difference_from_main": -18962307.74451789,
+      "unfinished_difference_from_main": -271965.8749114899
+    },
+    {
+      "mask": 9,
+      "destinations_per_origin": 2,
+      "step_seconds": 30,
+      "extra_generalized_vehicle_hours": 52024471.64193807,
+      "unfinished_trips": 6637771.622596635,
+      "generalized_hours_difference_from_main": -1695715.9643319363,
+      "unfinished_difference_from_main": -12421.40496084746
+    },
+    {
+      "mask": 9,
+      "destinations_per_origin": 4,
+      "step_seconds": 60,
+      "extra_generalized_vehicle_hours": 53404202.88358229,
+      "unfinished_trips": 6408825.486797636,
+      "generalized_hours_difference_from_main": -16542104.970180053,
+      "unfinished_difference_from_main": -241367.54075984564
+    }
+  ],
+  "elapsed_seconds": 1120.8492136999848,
+  "limitations": [
+    "Uncalibrated ERA5/DSM hydrology; WorldCover 2021 mapped cover, not observed hydraulic parameters",
+    "Loss capacities, +4mm/h treatment, 750m circular footprint, relative costs and scenarios are assumptions",
+    "Full upstream catchment, sewer network and river backwater not resolved; candidate sites are screening locations",
+    "Source graph topology inferred, one effective directional lane/capacity assumed; no turn restrictions or signals",
+    "All source arcs retained in corridor provenance; serial time sum and minimum capacity approximate internal queues",
+    "Origin-stratified weighted destinations, not exact full-OD loading; 24h synthetic demand repeated for five days",
+    "Finite route library and departure-time choice; no en-route rerouting or dynamic equilibrium convergence",
+    "Fluid queues use proportional commodity service, not guaranteed FIFO; unlimited storage, no physical spillback",
+    "Unknown bridge/tunnel and outside-flood-coverage roads assumed normal in traffic, not asserted dry",
+    "Three scenarios use worst case, no measured probabilities; terminal 2h penalty is an assumed cost, not trip completion",
+    "Four-site <=3 selection pilot globally verified only over these candidates; not full-district engineering optimization"
+  ]
+}

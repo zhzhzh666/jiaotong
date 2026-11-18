@@ -1,0 +1,51 @@
+{
+  "run_id": "20261118T163548_worldcover_c1d3d395",
+  "inputs": [
+    {
+      "path": "configs/longgang_adaptive.yaml",
+      "sha256": "c39a22e8e5bd6639313bfeba4deacdb669b772ce961bbc6505ee66b95ff305ca"
+    },
+    {
+      "path": "scripts/acquire_longgang_worldcover.py",
+      "sha256": "159add54e2eadc96007992c8417fff66a72869bcdc87b281e5fd9deda0c86a70"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/gis/terrain_dsm_mean_150m.tif",
+      "sha256": "2846374d4c5fcec04e312f702ea8c239415dc366e64b7cc692414b2f25a0cded"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "landcover_parameters.npz",
+      "sha256": "990046320727bc9ee498104fab63e958ec7ecc124aa5389aaa4f74914728ba93"
+    },
+    {
+      "path": "longgang_adaptive.yaml",
+      "sha256": "c39a22e8e5bd6639313bfeba4deacdb669b772ce961bbc6505ee66b95ff305ca"
+    },
+    {
+      "path": "N21E111_crop.tif",
+      "sha256": "46e0022516223db6b2445d920f5be062d34f4439e9738b2e272918710b4b29f0"
+    },
+    {
+      "path": "N21E111_INCOMPLETE_block_cache.tif",
+      "sha256": "eb40b865ea304e665fd6b8fb7830e7eec977eccffabf920ae8200226152ee3b1"
+    },
+    {
+      "path": "N21E114_crop.tif",
+      "sha256": "60284ca7a200d5c3f42c040598f18ffb6c265bd897d2f9554f5399b64c95d2f8"
+    },
+    {
+      "path": "N21E114_INCOMPLETE_block_cache.tif",
+      "sha256": "ffb3b17f49e6bfbc93749a92d50e1613c729fe4c1dcd3f769ef9c17474baebc3"
+    },
+    {
+      "path": "source.json",
+      "sha256": "24e6ff328951d6b2d0b2615f75abef15746af10b357156833f893f5e91379851"
+    },
+    {
+      "path": "status.json",
+      "sha256": "829312cab39be461cf3680e668eb0e4e0f208b28619cb5584de3ccf7c50261c9"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "run_id": "20261118T165311_adaptive_4adc99a6",
+  "files": [
+    {
+      "path": "candidates.csv",
+      "bytes": 317,
+      "sha256": "ce795ac3eab882297fefbb499ab8c685a928286d9b6a51f32d9bbcda12263ec9"
+    },
+    {
+      "path": "candidates_wgs84.csv",
+      "bytes": 533,
+      "sha256": "aa07543a23dc117578a27b7ae5e5749ed9c9a4495f9915e5d2f1196dc2fc26cc"
+    },
+    {
+      "path": "candidates_wgs84.geojson",
+      "bytes": 2754,
+      "sha256": "11c26fa02d557ded6b4d27bfbb9655a8c44025534eae0c7e0db4d95f210d9067"
+    },
+    {
+      "path": "dry_reference.json",
+      "bytes": 913,
+      "sha256": "ff52695a3457dff2b8fec19c1e81cc7528eb7bdfbbf6105b96022ff8f190b4d6"
+    },
+    {
+      "path": "figures/adaptive_pareto.png",
+      "bytes": 93424,
+      "sha256": "209382f944bc23f5454f365e9d66056582d13ce70224f1ed5aa8289fbe304819"
+    },
+    {
+      "path": "figures/adaptive_pareto.svg",
+      "bytes": 33489,
+      "sha256": "3a998ed08c994b80dcaf47305bebd2a8fc76689b857a4ad8a295ca6218ee27cb"
+    },
+    {
+      "path": "figures/adaptive_queues.png",
+      "bytes": 153129,
+      "sha256": "8411a1e001f623814eb6c3199a4eba9aa8c030b570e46ded67c77ed881f016be"
+    },
+    {
+      "path": "figures/adaptive_queues.svg",
+      "bytes": 32884,
+      "sha256": "cbe3306b7c6a484f804f7b873c6cee4d411255726f91dd07b580f51c3216da3d"
+    },
+    {
+      "path": "figures/adaptive_sites.png",
+      "bytes": 370089,
+      "sha256": "86ac1bb8ab0c5cf713c4229500d614fb0c625581381ae78ce778b179e7b40899"
+    },
+    {
+      "path": "figures/adaptive_sites.svg",
+      "bytes": 2891825,
+      "sha256": "e12b289e485a07539f9d55f036147045e334257fef8c872399dd17b4c88d4850"
+    },
+    {
+      "path": "independent_audit.json",
+      "bytes": 1155,
+      "sha256": "1ea3d51133d870c668371514ad730306b66d654bff30b3dd0a2686e812e97b60"
+    },
+    {
+      "path": "landcover/landcover_parameters.npz",
+      "bytes": 436648,
+      "sha256": "990046320727bc9ee498104fab63e958ec7ecc124aa5389aaa4f74914728ba93"
+    },
+    {
+      "path": "landcover/manifest.json",
+      "bytes": 1736,
+      "sha256": "b33e4a130e2e923cf35d8fcdbe26fa0606549fb9d063c4ccc4e42deae193f69a"
+    },
+    {
+      "path": "landcover/N21E111_crop.tif",
+      "bytes": 11768,
+      "sha256": "46e0022516223db6b2445d920f5be062d34f4439e9738b2e272918710b4b29f0"
+    },
+    {
+      "path": "landcover/N21E114_crop.tif",
+      "bytes": 1680538,
+      "sha256": "60284ca7a200d5c3f42c040598f18ffb6c265bd897d2f9554f5399b64c95d2f8"
+    },
+    {
+      "path": "nsga2_search.json",
+      "bytes": 7993,
+      "sha256": "108ffca73c4554c837f6c971b0a6491d048bec1e3fc48d392cc933ade693294f"
+    },
+    {
+      "path": "optimization_results.csv",
+      "bytes": 1057,
+      "sha256": "5f45b198f43b50340d6bbed5cf96a56b9ec2a25d3225646a306e684c5b05bf81"
+    },
+    {
+      "path": "pareto.json",
+      "bytes": 1541,
+      "sha256": "842750ab2e11f6bbb23ff3e6ae08480a84d5e53581465261ab48554a5d772ef3"
+    },
+    {
+      "path": "robustness_manifest.json",
+      "bytes": 15514,
+      "sha256": "82b7b4d45687e5c329b6715e0a099512d3386ecd043613500dc8aaa09ac535a0"
+    },
+    {
+      "path": "robustness_report.json",
+      "bytes": 4554,
+      "sha256": "7112689f6f7972c6da8b4a0e51828858ab6752562597439a637ea33bb9158504"
+    },
+    {
+      "path": "robustness_robustness_results.csv",
+      "bytes": 1138,
+      "sha256": "ef3bff2f3843ca4a0634cbaded7fee887936db32677a7e204d7193dfbe04278a"
+    },
+    {
+      "path": "run_manifest.json",
+      "bytes": 55811,
+      "sha256": "bf0338dc57218958764b69c5ef68b441dd72a9def623394ae19e32079570fd63"
+    },
+    {
+      "path": "scenario_results.csv",
+      "bytes": 6415,
+      "sha256": "7935491af288de9c13349c6af0ecd9a00a4a60536989734374771b3a049bfa71"
+    },
+    {
+      "path": "tests.xml",
+      "bytes": 19612,
+      "sha256": "25eda8238656528bafb26ffa015e69be19421fce7dca55a621822097daf2e649"
+    },
+    {
+      "path": "traffic/dry_sample2_dt60_traffic.json",
+      "bytes": 913,
+      "sha256": "ff52695a3457dff2b8fec19c1e81cc7528eb7bdfbbf6105b96022ff8f190b4d6"
+    },
+    {
+      "path": "traffic/dry_sample2_dt60_traffic_series.csv",
+      "bytes": 76014,
+      "sha256": "bea86504dc0a22bba5471d41c3f59dfdf67b03adadb53d65397198cc9590fda7"
+    },
+    {
+      "path": "traffic/mask00_rain070_sample2_dt60_traffic.json",
+      "bytes": 913,
+      "sha256": "71ee8dfb6f197926826489363e260ec25d1f9957e29201ac6ee9dd37ba9ab17a"
+    },
+    {
+      "path": "traffic/mask00_rain070_sample2_dt60_traffic_series.csv",
+      "bytes": 75930,
+      "sha256": "25c7fcc7d662dbca1b246a7a313914fd2453167e34651cdf83e26b84846619c1"
+    },
+    {
+      "path": "traffic/mask00_rain100_sample2_dt60_traffic.json",
+      "bytes": 913,
+      "sha256": "aade8b2b7807bda28a9209858575d7c8d6d5439a0132b7255f17797d6ef76413"
+    },
+    {
+      "path": "traffic/mask00_rain100_sample2_dt60_traffic_series.csv",
+      "bytes": 75907,
+      "sha256": "0b03e55d26f0794be1443ffe435974bd7959f55a5646966b71e4749539c42e07"
+    },
+    {
+      "path": "traffic/mask00_rain130_sample2_dt60_traffic.json",
+      "bytes": 914,
+      "sha256": "b9610a4747e3e0a1e3c69e9bb6ca065930867a5281b11b2fee47e0d725dd18f0"
+    },
+    {
+      "path": "traffic/mask00_rain130_sample2_dt60_traffic_series.csv",
+      "bytes": 75626,
+      "sha256": "79c1c03d2340b0a6babdb3e2d5b7e228f8434527b881046f6d56d259f7f890ae"
+    },
+    {
+      "path": "traffic/mask09_rain070_sample2_dt60_traffic.json",
+      "bytes": 912,
+      "sha256": "9b01e7912d5451ad04cabfc7b9babc26cf9e4d03aa35a7e4ed88781c28dbbe9f"
+    },
+    {
+      "path": "traffic/mask09_rain070_sample2_dt60_traffic_series.csv",
+      "bytes": 76003,
+      "sha256": "c92bb07de85876327b64abf8b89f0c2e857cb5bda865c865dea574d145e10e8b"
+    },
+    {
+      "path": "traffic/mask09_rain100_sample2_dt60_traffic.json",
+      "bytes": 915,
+      "sha256": "85c122994cd213e0b84b7e3e8073e14032e708e5abbd387aff3db4a3b05c5bbf"
+    },
+    {
+      "path": "traffic/mask09_rain100_sample2_dt60_traffic_series.csv",
+      "bytes": 75923,
+      "sha256": "e41cfb4d8be615343e6ca8a7ab0c71aed229c01d4b70d8c5c0d57ce17390c4b6"
+    },
+    {
+      "path": "traffic/mask09_rain130_sample2_dt60_traffic.json",
+      "bytes": 914,
+      "sha256": "01e70047cef3dfb125de0e5c3dcaf762f804356e949919513faa41c52bbafb5b"
+    },
+    {
+      "path": "traffic/mask09_rain130_sample2_dt60_traffic_series.csv",
+      "bytes": 75747,
+      "sha256": "bd1a2e8ec145e62de855504123bbf5266e217dd5ac47d6ffa0c89ea07eb623f1"
+    },
+    {
+      "path": "traffic_sensitivities.csv",
+      "bytes": 496,
+      "sha256": "6c051d24a4ba55ef19566bccff81a373aed198f4dd8e431ecbb7084afe8cce77"
+    },
+    {
+      "path": "validation_report.json",
+      "bytes": 5036,
+      "sha256": "ccc39d4032d768771f48ed0d3c76fb60374fcc96633544fe97e82efd5e2e7ea1"
+    },
+    {
+      "path": "worldcover_source.json",
+      "bytes": 2336,
+      "sha256": "24e6ff328951d6b2d0b2615f75abef15746af10b357156833f893f5e91379851"
+    }
+  ],
+  "classification": "uncalibrated four-site pilot; native re-encoded WorldCover crops, code and checks, not measured traffic/flood outcomes",
+  "visual_review": {
+    "review_date_local": "2026-11-19",
+    "pngs": [
+      "figures/adaptive_pareto.png",
+      "figures/adaptive_queues.png",
+      "figures/adaptive_sites.png"
+    ],
+    "result": "All three PNGs individually viewed. Chinese labels, units, candidate markers, cost axes and queue/completion meaning checked; SVG companions preserved."
+  }
+}

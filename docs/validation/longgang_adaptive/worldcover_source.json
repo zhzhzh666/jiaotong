@@ -1,0 +1,61 @@
+{
+  "dataset": "ESA_WorldCover_2021_v200",
+  "year": 2021,
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021), processed by ESA WorldCover consortium",
+  "dataset_doi": "https://doi.org/10.5281/zenodo.7254221",
+  "sources": [
+    {
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N21E111_Map.tif",
+      "file": "N21E111_crop.tif",
+      "etag": "\"8b703500f195fe36627a7fdcde4dd414-11\"",
+      "remote_bytes": 87692242,
+      "native_blocks": 5,
+      "sha256": "46e0022516223db6b2445d920f5be062d34f4439e9738b2e272918710b4b29f0",
+      "bytes": 11768,
+      "transport": "validated 64KiB HTTP range reads of native TIFF blocks",
+      "window_col_row_width_height": [
+        35947,
+        13647,
+        53,
+        3971
+      ],
+      "changes": "Native categorical window re-encoded losslessly as GeoTIFF; not original whole-file bytes."
+    },
+    {
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N21E114_Map.tif",
+      "file": "N21E114_crop.tif",
+      "etag": "\"dfbec44c8a689ce9f585e2a73cee1277-7\"",
+      "remote_bytes": 53611017,
+      "native_blocks": 25,
+      "sha256": "60284ca7a200d5c3f42c040598f18ffb6c265bd897d2f9554f5399b64c95d2f8",
+      "bytes": 1680538,
+      "transport": "validated 64KiB HTTP range reads of native TIFF blocks",
+      "window_col_row_width_height": [
+        0,
+        13647,
+        4931,
+        3971
+      ],
+      "changes": "Native categorical window re-encoded losslessly as GeoTIFF; not original whole-file bytes."
+    }
+  ],
+  "classification": "satellite_land_cover_not_measured_infiltration",
+  "processing": "10m categories nearest-sampled at 30m; 5x5 class fractions at 150m. Not exact 10m areal fractions.",
+  "loss_assumptions_mm_h": {
+    "built": 2.0,
+    "vegetation": 8.0,
+    "bare": 4.0,
+    "water": 0.0
+  },
+  "domain_cells": 66920,
+  "loss_min_mm_h": 0.0,
+  "loss_max_mm_h": 8.0,
+  "fraction_means": {
+    "built": 0.3404076509264794,
+    "vegetation": 0.529525403466826,
+    "bare": 0.035425582785415424,
+    "water": 0.09464136282127915
+  }
+}

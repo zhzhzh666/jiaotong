@@ -1,0 +1,327 @@
+{
+  "run_id": "20261118T171634_robustness_8c0a6b68",
+  "inputs": [
+    {
+      "path": "scripts/check_longgang_adaptive_robustness.py",
+      "sha256": "cd68ae9702e7a0834b87c485b8caec51520b05ddf07dcc81ad9885c9a514d630"
+    },
+    {
+      "path": "src/uftr/adaptive.py",
+      "sha256": "c12a27597c813e883fea4e2905a9011f30787ec753c78e8d4b09a7bb4f9cea0a"
+    },
+    {
+      "path": "src/uftr/adaptive_network.py",
+      "sha256": "8ca640bb04b67fc34fcd81513514e2b0a9e921f2a5743b2de960eb054d7857f1"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/manifest.json",
+      "sha256": "bf0338dc57218958764b69c5ef68b441dd72a9def623394ae19e32079570fd63"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/raw/pareto.json",
+      "sha256": "842750ab2e11f6bbb23ff3e6ae08480a84d5e53581465261ab48554a5d772ef3"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/raw/network.pkl",
+      "sha256": "8dfa6b4f591c9344044c1df361feb959270e78b1533c944a526685e32521260c"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/raw/routes_sample2.pkl",
+      "sha256": "4e4edbe38880b1df2f622c97b8c8b7244a1d310c1d41718d902b2694c568baca"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/raw/spatial_parameters.npz",
+      "sha256": "1e58b9a9ac58fe88759afaf8c381122b40c012914557a104739772a3d6e5c283"
+    },
+    {
+      "path": "configs/longgang_adaptive.yaml",
+      "sha256": "c39a22e8e5bd6639313bfeba4deacdb669b772ce961bbc6505ee66b95ff305ca"
+    },
+    {
+      "path": "scripts/run_longgang_adaptive.py",
+      "sha256": "5837ff9e797749576cdb48f05e431951cca3bccd9a6027bd8aed12e004643046"
+    },
+    {
+      "path": "scripts/acquire_longgang_worldcover.py",
+      "sha256": "159add54e2eadc96007992c8417fff66a72869bcdc87b281e5fd9deda0c86a70"
+    },
+    {
+      "path": "data/raw/longgang_worldcover/20261118T163548_worldcover_c1d3d395/manifest.json",
+      "sha256": "b33e4a130e2e923cf35d8fcdbe26fa0606549fb9d063c4ccc4e42deae193f69a"
+    },
+    {
+      "path": "data/raw/longgang_worldcover/20261118T163548_worldcover_c1d3d395/landcover_parameters.npz",
+      "sha256": "990046320727bc9ee498104fab63e958ec7ecc124aa5389aaa4f74914728ba93"
+    },
+    {
+      "path": "data/raw/longgang_worldcover/20261118T163548_worldcover_c1d3d395/source.json",
+      "sha256": "24e6ff328951d6b2d0b2615f75abef15746af10b357156833f893f5e91379851"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/manifest.json",
+      "sha256": "58e24441eab42125d535e5214d738cbda1b4bbdc82af2bd87e5933d75d47bc13"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/raw/routing_grid.npz",
+      "sha256": "dbee4ee5a9c4d1363709828cf09295be2d488c8797f6e36b6495d3084a0d4088"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/raw/road_sample_cells.parquet",
+      "sha256": "062db0b5b7b3743f9a6d2cade0853a8d2d89253dfa2d869ec7880bc8b0ff04c3"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/gis/terrain_dsm_mean_150m.tif",
+      "sha256": "2846374d4c5fcec04e312f702ea8c239415dc366e64b7cc692414b2f25a0cded"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/raw/road_feature_status.csv",
+      "sha256": "d46257bb1c8053a4ea0e72c1a7c4ad3e900b128d11dcca848e702e44132052a5"
+    },
+    {
+      "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75/raw/od_graph_arc_mapping.csv",
+      "sha256": "78cea6aa27dbcf7a71ca43c820aca9aa7bc13701feac9e7aa8c0348365ab11f0"
+    },
+    {
+      "path": "data/raw/longgang_era5/20261118T132916_era5_184f075b/manifest.json",
+      "sha256": "df5b299dac9bbc81c0e737a0f09dcc3c49b11f13bdc8c43219de3af3af859fd5"
+    },
+    {
+      "path": "data/raw/longgang_era5/20261118T132916_era5_184f075b/hourly_rainfall.npz",
+      "sha256": "c9dde5f0b9efc6944638a9078f780d8df674d29f0025379f9e9aeb13c16bb8c8"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/manifest.json",
+      "sha256": "a5cf7562f13e9685f10de614ae5badac2ff6d6b348dea9fee49e1766f9a49a30"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/inferred_source_network.graphml",
+      "sha256": "66d4684addcfaa85a83aff188e4f436eac02088a7827150f82d40298ffe11aa5"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/zone_connectors.csv",
+      "sha256": "80214df5144132c4f70212fb0da58aa824704b06c4eff1a419427c25b73a54ae"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/od_sensitivity_veh_h.npz",
+      "sha256": "48788187bf99b86ef70b844bc1cc1b698cbd576167bcda759eb9b75c88b5dd1a"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/interval_totals.csv",
+      "sha256": "0b72762d2c50c28a451e905dc09b2bb49866ed11a5b2530a34d4278e3c02a77f"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/provenance/inputs.json",
+      "sha256": "213cb5034338139f4c8b1e37ea8c3f858e900a7a01b229ac2e9804d7e6d9ba6d"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/provenance/run_longgang_adaptive.py",
+      "sha256": "4bc7f228636689b2931a3c657cadd7e30c0060f5a1d88220b7c2e3bb929eb680"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask00_rain070_water.npz",
+      "sha256": "0e13c828f3df78a73066e5cec6d5d3594aad014c0580e76bd349bb1562abb750"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask00_rain100_water.npz",
+      "sha256": "14cefb60c7e7cfbf250ec8fdee2694f1d8efab97fb1a8fc2aebecc19a2363edf"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask00_rain130_water.npz",
+      "sha256": "7785d96020986b0dd676ff26fae48ad44c017a0a697c44851c1e6a0c5cfe50b7"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask01_rain070_water.npz",
+      "sha256": "6db022d81176fb098690ca017ea5513a9c6d9b98fa43078a9d5ea0b93ddd9d7e"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask01_rain100_water.npz",
+      "sha256": "adc6a6d33cf2365017f4ceb97d80ebd82d5076c6e1c0d2192e625c490d03328a"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask01_rain130_water.npz",
+      "sha256": "80d3984a8667dbfa0c079de19280b84957a57701c7ff70f9c9db7ff01dc53e6a"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask02_rain070_water.npz",
+      "sha256": "4b0a8f0cf518c4c9b5f5ab986ca93817cf546a49c0e6953861e70b65dc180731"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask02_rain100_water.npz",
+      "sha256": "93e54950bb0fefb5027593c3b882f2ab766a537ab812075b92b765c0073eb79f"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask02_rain130_water.npz",
+      "sha256": "c60c524af4323573afe4f2cbbb35cb64d38b1b2d4f9ba8802aa0b391bd8f033a"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask03_rain070_water.npz",
+      "sha256": "597110a1299fc5b99eaf6de29df1793063360265185da273ad1a5f23a836b971"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask03_rain100_water.npz",
+      "sha256": "d075b93bb936adc2f4c43fcd5ba1aa32e2243195347b2a5ee1b8e84c3bae2934"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask03_rain130_water.npz",
+      "sha256": "36a9a5c6201278e765af04b4f81cf0bd79885b919275df50564600662158848b"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask04_rain070_water.npz",
+      "sha256": "4b80b2d96ead2a1a45c231cae9cf2a43ac1c5fd8d4daed63af6ef5fcb2a4fb29"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask04_rain100_water.npz",
+      "sha256": "0fc98f259253990d3fc542f714358731e22afd061dd753336f78dd3787678c8e"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask04_rain130_water.npz",
+      "sha256": "a03f7b42649a57a8387afe9ffa8157446b57aa5841a43dcac95715627c967c8e"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask06_rain070_water.npz",
+      "sha256": "ecf7ed31dea0bad2069ddc0f24383ebeb53a84006cba38f95c188432c6c4c67e"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask06_rain100_water.npz",
+      "sha256": "6c567446470323fa82f153836f9ca13f972fe6a23a5eaa93bd163a6975e971f5"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask07_rain070_water.npz",
+      "sha256": "b7cfa6c5d759f85378d076c61ff76a7590dbdbcf78fda88acb6b51d74e83c5f0"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask07_rain100_water.npz",
+      "sha256": "e81de7ac6d4000e932a925e77a3fe13376fdeb1c790178a7eef924bc267cb576"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask07_rain130_water.npz",
+      "sha256": "b469054756b65bf713fd7872a31d1c15adaf7a16fe27acd0b30e7b4f194078ea"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask08_rain070_water.npz",
+      "sha256": "f087fe68540d695237b852ada088036d22dc9d5b13992766090c8c087c36be12"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask08_rain100_water.npz",
+      "sha256": "272922bd0b773b53932daa96e32689c9e8282a944314737a306d77c90e8ee0a6"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask08_rain130_water.npz",
+      "sha256": "bb5880ad5976e71ba648a58022df99c19d6f41fe31b966efbece1228f42b58ed"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask12_rain070_water.npz",
+      "sha256": "bd8a26e1216c30750afac119c3d3bd5906874a51370903902b5f6421b96429aa"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask12_rain100_water.npz",
+      "sha256": "b6b0413a79dd55bd338be66d1b0fce83e96467696dc73108af79dfeffc167129"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask12_rain130_water.npz",
+      "sha256": "bec458b66910e0128f3029826adf3bf044cf0106f20fe77d2d10e14bed24ff56"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask13_rain070_water.npz",
+      "sha256": "31b082b511e8dc007655f1080958486d34ce2969dda242da86461b752c8322c6"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask13_rain100_water.npz",
+      "sha256": "87dd25ba4ac543e877748621939da0c55039fcf5e0e144b40737b1f9d0a539fa"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask13_rain130_water.npz",
+      "sha256": "7c6240d64e3e7f97220064536c8ec614eb5b4305d1ab3dedc82a7dce9d12bc6b"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask14_rain070_water.npz",
+      "sha256": "a60bc0c38484c6e05c3da363fe5feb13fa1133d0a4a86d7a055e68bc2fa9016e"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask14_rain100_water.npz",
+      "sha256": "cb3534cc649d20330042fb00d354d800662f140e10d59d12e8001da22d7b6626"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T163730_adaptive_c8d9ac82/cases/mask14_rain130_water.npz",
+      "sha256": "f0065b64e3cc6bd3294f02d2d983ed33717fbe04f31904c3803cbca8001ce8fd"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/cases/mask00_rain130_water.npz",
+      "sha256": "7785d96020986b0dd676ff26fae48ad44c017a0a697c44851c1e6a0c5cfe50b7"
+    },
+    {
+      "path": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6/cases/mask09_rain130_water.npz",
+      "sha256": "c1c4ead9f24692bd976a0eb6593fe1c4ba84d819a87a29ca8a1b0d40a28ddfdc"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "capacity_double_mask00_traffic.json",
+      "sha256": "9d1a552fe48ff76ffc25a9d6fd75459d7a8f655ffb8951d2754c60ba8009ff52"
+    },
+    {
+      "path": "capacity_double_mask09_traffic.json",
+      "sha256": "1aebeadf7e6b07413386631530e8720378bbdeb0473fb6a4ef728bfd171f2a2c"
+    },
+    {
+      "path": "check_longgang_adaptive_robustness.py",
+      "sha256": "cd68ae9702e7a0834b87c485b8caec51520b05ddf07dcc81ad9885c9a514d630"
+    },
+    {
+      "path": "closure_020_mask00_traffic.json",
+      "sha256": "ffb1d4bbb8c6a711520c49b017aa425fef9e11540f1687d84760b7b8f0257377"
+    },
+    {
+      "path": "closure_020_mask09_traffic.json",
+      "sha256": "e6ed4b66b4caa4982b317b9f366d1938fad2cb0541caa3a4c140e3551f4599ae"
+    },
+    {
+      "path": "dry_capacity_double.json",
+      "sha256": "543a05292995c09b182a1af009d0e238e78f0d1971962d61475bbe9d85c985ed"
+    },
+    {
+      "path": "loss_double_mask00_traffic.json",
+      "sha256": "7d1aed10706b0dafdd2ba9c961d9374f06cbbfe25022dbd0773e6b25ec9e781c"
+    },
+    {
+      "path": "loss_double_mask00_water.npz",
+      "sha256": "e1219de85a3a7e8506021a22bd58cd62af24e58cf1b08c4b6e26d11bc4d41a27"
+    },
+    {
+      "path": "loss_double_mask09_traffic.json",
+      "sha256": "b200d1d9a544a9710f321fc486318d56d546f2f2af165cbe97da7658aede24b4"
+    },
+    {
+      "path": "loss_double_mask09_water.npz",
+      "sha256": "ab41011bf387ea4d724e92f0facb391b03f22e501309af33b27160da6cf48753"
+    },
+    {
+      "path": "loss_half_mask00_traffic.json",
+      "sha256": "0b970c0544e82bb55ba389fb9737e97356d80391d9e3c49defdfc0635773b705"
+    },
+    {
+      "path": "loss_half_mask00_water.npz",
+      "sha256": "1706b400cabac823602986414340640c3a82e5c4f57d62dc1eff743ff57b7a41"
+    },
+    {
+      "path": "loss_half_mask09_traffic.json",
+      "sha256": "3cc99f3585d4aef3c437ef921ade9b5aa53639217ec991a7c411bb63d81efc40"
+    },
+    {
+      "path": "loss_half_mask09_water.npz",
+      "sha256": "7d0b76b04af6bc0b1ea4ac00bafe69b6bba20491afc7951be701d9aa494e17fa"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7112689f6f7972c6da8b4a0e51828858ab6752562597439a637ea33bb9158504"
+    },
+    {
+      "path": "robustness_results.csv",
+      "sha256": "ef3bff2f3843ca4a0634cbaded7fee887936db32677a7e204d7193dfbe04278a"
+    },
+    {
+      "path": "status.json",
+      "sha256": "970587076af8c4ebf6e94dc3999b017a4c3792faf7660c408eb91572fd86128b"
+    }
+  ]
+}

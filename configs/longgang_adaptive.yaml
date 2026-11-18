@@ -1,0 +1,56 @@
+region: longgang
+include_dapeng: false
+seed: 42
+od_package: data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94
+surface_package: data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75
+rainfall_package: data/raw/longgang_era5/20261118T132916_era5_184f075b
+output_root: data/processed/longgang_adaptive
+landcover_output_root: data/raw/longgang_worldcover
+landcover:
+  url_template: https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_{tile}_Map.tif
+  version: ESA_WorldCover_2021_v200
+  license: CC-BY-4.0
+  loss_mm_h: {built: 2.0, vegetation: 8.0, bare: 4.0, water: 0.0}
+  # Class-specific lumped losses are assumptions, not measured sewer capacity.
+surface:
+  internal_seconds: 180
+  output_seconds: 900
+  cell_size_m: 150
+  scenarios: {rain070: 0.7, rain100: 1.0, rain130: 1.3}
+roads:
+  closure_depth_m: 0.30
+  capacity_per_direction_veh_h:
+    motorway: 2000
+    trunk: 1800
+    primary: 1600
+    secondary: 1400
+    tertiary: 1200
+    residential: 800
+    living_street: 500
+    service: 500
+    fallback: 800
+  capacity_loss: {motorway: 0.65, trunk: 0.70, primary: 0.75, secondary: 0.80, tertiary: 0.85, fallback: 0.90}
+  # One effective directional lane, no observed lane capacity; links inherit parent class.
+traffic:
+  internal_seconds: 60
+  verification_seconds: 30
+  destinations_per_origin: 2
+  verification_destinations_per_origin: 4
+  routing_delay_weight: 1.0
+  terminal_penalty_seconds: 7200
+  intrazonal_seconds: 300
+  access_speed_kph: 20
+  # Repeat the synthetic 24h demand for 5 days; not historical 2023 observations.
+  route_library: [dry, baseline_peak, high_peak]
+optimization:
+  candidates: 4
+  max_sites: 3
+  minimum_site_separation_m: 2000
+  radius_m: 750
+  extra_loss_mm_h: 4.0
+  relative_cost_per_km2: 1.0
+  population: 12
+  generations: 8
+  verification_seeds: [42, 43, 44]
+  # Objectives: worst-case finite-horizon delay, unfinished demand, relative cost.
+  # All <=3-site subsets of this four-site pilot are independently enumerated.

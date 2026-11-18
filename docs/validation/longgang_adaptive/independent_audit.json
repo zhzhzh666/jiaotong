@@ -1,0 +1,28 @@
+{
+  "run_id": "20261118T165311_adaptive_4adc99a6",
+  "passed": true,
+  "audit_script_sha256": "f010a6bc173d1a5309e3e1e9015c07856f026da076180c0ff5e03c4f25f0c78b",
+  "input_hashes": 55,
+  "output_hashes": 236,
+  "landcover_fraction_cells_checked": 66920,
+  "independent_scatter_add_road_depth_values": 19722240,
+  "maximum_replayed_road_difference_m": 7.359022245745361e-18,
+  "maximum_replayed_volume_difference_m3": 5.960464477539063e-08,
+  "drainage_subset_monotonicity_checks": 84,
+  "source_arcs_partitioned_once": 451801,
+  "frozen_depth_mapped_arcs_checked": 86807,
+  "directed_library_paths_checked": 4877,
+  "traffic_ledgers_checked": 52,
+  "original_skim_pairs_checked": 2279,
+  "maximum_contracted_vs_original_skim_difference_s": 4.092726157978177e-12,
+  "maximum_vehicle_ledger_residual": 7.613562047481537e-08,
+  "exact_feasible_combinations": 15,
+  "independent_pareto_masks": [
+    0,
+    8,
+    9,
+    11
+  ],
+  "full_synthetic_demand_total_5days": 11193627.795662155,
+  "note": "Numerical bookkeeping and small candidate-set optimality only; no observed calibration or full-OD dynamic equilibrium validation."
+}

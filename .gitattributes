@@ -4,3 +4,9 @@ docs/validation/*.svg binary
 /docs/validation/** -text whitespace=cr-at-eol
 /docs/deliverables/content.json -text whitespace=cr-at-eol
 /docs/deliverables/delivery_manifest.json -text whitespace=cr-at-eol
+# Preserve byte-level source/config fingerprints for the adaptive pilot.
+/configs/longgang_adaptive.yaml -text
+/scripts/*longgang_adaptive*.py -text
+/scripts/acquire_longgang_worldcover.py -text
+/src/uftr/adaptive*.py -text
+/docs/validation/longgang_adaptive/figures/*.svg binary
