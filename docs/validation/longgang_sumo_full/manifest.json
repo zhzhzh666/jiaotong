@@ -1,0 +1,327 @@
+{
+  "run": "data/processed/longgang_sumo_full/20261118T184221_full5_07cdb6f1",
+  "scope": "Whole Longgang excluding Dapeng; buffer plus sampled complete dry paths; 5% synthetic demand; one dry headless baseline",
+  "files": [
+    {
+      "path": "budget_probes/control_commands.csv",
+      "bytes": 23068,
+      "sha256": "b03af9a040443c57e43318ab993e19fa75b15efe8d34a984090d4077045d6c3f"
+    },
+    {
+      "path": "budget_probes/duarouter.log",
+      "bytes": 124,
+      "sha256": "505534d0b7cbccea3077bfc56b2703a481e01e014bba69a0cf57136574a2444f"
+    },
+    {
+      "path": "budget_probes/duarouter_command.json",
+      "bytes": 848,
+      "sha256": "17db2364d88af5bda0028b3db2d5826868f9898375ce3ee5eabd8330f315b407"
+    },
+    {
+      "path": "budget_probes/refreshed.rou.alt.xml.gz",
+      "bytes": 5699441,
+      "sha256": "fd062c56dd0e2d7c7b0e5abc694fe7082d6cc36aa0235fb8a906f2057264448f"
+    },
+    {
+      "path": "budget_probes/refreshed.rou.xml.gz",
+      "bytes": 5598689,
+      "sha256": "040ad77157b4d8511d69d43bb91887728fe85996bfda9aaafce1f2e83f70ae7c"
+    },
+    {
+      "path": "budget_probes/route_queries.csv",
+      "bytes": 8840,
+      "sha256": "ec3debba00413d10d1d4f08e96742fb62673c4b8035f4225150a3d1e9f743d65"
+    },
+    {
+      "path": "budget_probes/whole_demand.trips.xml",
+      "bytes": 1174480,
+      "sha256": "493020d0f89266e654cf180955e2d8ea1daf0960dbcc2901d3c1099b498b7b84"
+    },
+    {
+      "path": "cases/dry/command.json",
+      "bytes": 1636,
+      "sha256": "c72fc8fec169f18f3e52238d750cbb1bbc27ac6d1cc0619620c73b96958527d7"
+    },
+    {
+      "path": "cases/dry/controls.csv",
+      "bytes": 189,
+      "sha256": "587d399b31ab4c5cecdd56ba7863da6a46e8d367f11b50de47f3fce005a2f737"
+    },
+    {
+      "path": "cases/dry/costs.add.xml",
+      "bytes": 254,
+      "sha256": "6a445061ece139a7ee1cd0c2fa6b07ce6e65b4be65b1a94f8da93126c44f30e1"
+    },
+    {
+      "path": "cases/dry/edge_costs.xml.gz",
+      "bytes": 14339989,
+      "sha256": "0ec961e2f6d11325d11e01353992b403772bbe9abca7aeef95ef1e4c624484e8"
+    },
+    {
+      "path": "cases/dry/fcd.xml.gz",
+      "bytes": 6572311,
+      "sha256": "af8a235e4790069660c0e7045046dcf0158dbb523da5db3c77b8e462e8761b5c"
+    },
+    {
+      "path": "cases/dry/hourly_performance.csv",
+      "bytes": 629,
+      "sha256": "fc585c6ec291ff8650cd5944401c4c06f1e85ba78d23704b23bbdb519dd2df6f"
+    },
+    {
+      "path": "cases/dry/injections.csv",
+      "bytes": 547556,
+      "sha256": "7817e3e0b3a60032e2a6d5a41c149b5e30e4da09082eec924d7c243034641ce7"
+    },
+    {
+      "path": "cases/dry/longgang.sumocfg",
+      "bytes": 363,
+      "sha256": "ce3aced5e0939ad4ab3959c647e6c1615e6ab2e5517e4d398001f4366d192026"
+    },
+    {
+      "path": "cases/dry/result.json",
+      "bytes": 1155,
+      "sha256": "288c892e61505b4844e2235cbf73030902dc2277c8a731391a0701c59edf67c3"
+    },
+    {
+      "path": "cases/dry/route_changes.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "cases/dry/summary.xml",
+      "bytes": 3901394,
+      "sha256": "12d58137aca87c438b884b84f803e80b86d10e202d836e6649ea246c92c59bed"
+    },
+    {
+      "path": "cases/dry/traffic_series.csv",
+      "bytes": 12000,
+      "sha256": "8eef294527a4a415cc9bf4880b317ccc329a9a40178776dafd02db4052a771a0"
+    },
+    {
+      "path": "cases/dry/tripinfo.xml",
+      "bytes": 4965736,
+      "sha256": "a10ffec383d2f26969accfddc3f6dc10970e5b9985cda52fb7e779bb131ae2ae"
+    },
+    {
+      "path": "cases/dry/vehicle_routes.xml.gz",
+      "bytes": 5528855,
+      "sha256": "d3cbbbcb51786ff08bd934bb46204a4c1a7a28993c41cd44c73df797d2c97e7e"
+    },
+    {
+      "path": "cases/dry/warnings.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "comparison.csv",
+      "bytes": 915,
+      "sha256": "1fbb9a115404f7ccb84e8c6c734a902022993665ecde4a199708551dbfc66a0c"
+    },
+    {
+      "path": "config.yaml",
+      "bytes": 903,
+      "sha256": "0c451b32bf89415b8a272ca64164cdfa260f576cf8fc5a0cd93cc3cb17bc05c2"
+    },
+    {
+      "path": "figures/performance.png",
+      "bytes": 95741,
+      "sha256": "ec0404a0492f298c3407867f86d08b46230ea75d3e3691cc20f0b38227c4df4a"
+    },
+    {
+      "path": "figures/performance.svg",
+      "bytes": 86529,
+      "sha256": "95e0dde6575b9d93b074ed23cb0d1063686424aec17354bc699d6db9204b0a2f"
+    },
+    {
+      "path": "figures/visual_review.json",
+      "bytes": 399,
+      "sha256": "5b47b65dc217b81073eda92af88a48d4572ccae49327770ae13581e1741be318"
+    },
+    {
+      "path": "figures/whole_district_coverage.png",
+      "bytes": 647752,
+      "sha256": "cbb4d95950cec643c70d77fe0f1f22097566256671295a0f889daf942e44c0e3"
+    },
+    {
+      "path": "figures/whole_district_coverage.svg",
+      "bytes": 340029,
+      "sha256": "ae19be6fdde84265f41e8d370713f816e182397ad65fbe4152ebbaecbae5b16b"
+    },
+    {
+      "path": "gui_status.json",
+      "bytes": 287,
+      "sha256": "805ac27c1cd6675d163763858357f057ed8e51497b6a16503cf45b1edcb4302f"
+    },
+    {
+      "path": "hardware.json",
+      "bytes": 347,
+      "sha256": "fbd240dedf581f3a3f04ed0caef8730db563e45b089bb29ce91295ef773082f2"
+    },
+    {
+      "path": "independent_audit.json",
+      "bytes": 659,
+      "sha256": "0d6581e4c61c039f54064b465210110e6df60ce29d6c2c7c06eb825ee776366d"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 2545,
+      "sha256": "3f4b0ac272a605549c7e94fb4d3f06127726ced01d89dec62c016c6f1183b64f"
+    },
+    {
+      "path": "preparation.json",
+      "bytes": 96,
+      "sha256": "14ada95bf565abe814744b15a7ccc8ac7ad3c78171aecc18c2c2bf98e7ed5efb"
+    },
+    {
+      "path": "provenance/adaptive.py",
+      "bytes": 15413,
+      "sha256": "c12a27597c813e883fea4e2905a9011f30787ec753c78e8d4b09a7bb4f9cea0a"
+    },
+    {
+      "path": "provenance/audit_longgang_full_benchmark.py",
+      "bytes": 11025,
+      "sha256": "92ed1a2782755c93d38d579bc24be94cb8c4c6b8ca52908e6d97dff54b715352"
+    },
+    {
+      "path": "provenance/budget_longgang_full_benchmark.py",
+      "bytes": 11220,
+      "sha256": "e8584a57be92ccbd0a3c2acb7bee7852546a17fbade90c733b7b026d17df569b"
+    },
+    {
+      "path": "provenance/budget_longgang_full_benchmark_probe_original.py",
+      "bytes": 8582,
+      "sha256": "f3328e174e1ba417c4a91fb0d333af0c1c19b5394ab9a599b719afd3bf6c82f9"
+    },
+    {
+      "path": "provenance/export_longgang_full_benchmark.py",
+      "bytes": 3622,
+      "sha256": "b079299fcebf0451d8db9c294b7ebf8d4b57f1e0582e3d61db1c9da8429f79db"
+    },
+    {
+      "path": "provenance/longgang_sumo_full.yaml",
+      "bytes": 961,
+      "sha256": "dcd389845ac6ddcd2c2910a487ed61a6b6be3725eba3bdbc78920057533c0cee"
+    },
+    {
+      "path": "provenance/run_longgang_full_benchmark.py",
+      "bytes": 30691,
+      "sha256": "6f20f75ea08eb5d0cd6f509995d3fd50170867cab54ae899dc3ec697ad27deba"
+    },
+    {
+      "path": "provenance/sumo_benchmark.py",
+      "bytes": 6185,
+      "sha256": "cc8ed0c3bd733f802c9e62f1e45c14000996b9c3170bd18442b31d69c47ee006"
+    },
+    {
+      "path": "provenance/sumo_dynamic.py",
+      "bytes": 8020,
+      "sha256": "a207e7068988190975c3dfd73b1963acd2a8bfc866cc14cd4da41cb19c8bb804"
+    },
+    {
+      "path": "provenance/view_longgang_full_benchmark.py",
+      "bytes": 3013,
+      "sha256": "f777c2d26cd6103593312c3777fb46af356202fd6d53068cbfc6fc42f7440ce6"
+    },
+    {
+      "path": "raw/departure_plan.csv",
+      "bytes": 52424704,
+      "sha256": "ea841b6e2f94814ae3946c07dd09928b14e49b4e0f9a072bdb85fafcb30888a8"
+    },
+    {
+      "path": "raw/netconvert.log",
+      "bytes": 1735,
+      "sha256": "31e2b446c58a535fda4365ae07e8be76799e913b2f0b3afedd501482f3a6d70e"
+    },
+    {
+      "path": "raw/network.edg.xml.gz",
+      "bytes": 2792910,
+      "sha256": "b9fde0f9bb7c21f7d3c4c0975f7c4a9e9413c2e5737c86c064706f3c2b87faba"
+    },
+    {
+      "path": "raw/network.net.xml",
+      "bytes": 167774457,
+      "sha256": "4284d689c29d28fdfcae61e6ac512534f69eeb1ffaa827db60c57c0dc481b2c7"
+    },
+    {
+      "path": "raw/network.nod.xml.gz",
+      "bytes": 2339810,
+      "sha256": "ece389dd1f9c1783b5ba8058d1d8561af97c3b4babd96dadba68eb64c32c8bdd"
+    },
+    {
+      "path": "raw/plan_report.json",
+      "bytes": 669,
+      "sha256": "2200569798ed660f32591f0b346173acc70396c104a8d5456e0ab33ad25c4428"
+    },
+    {
+      "path": "raw/road_states.npz",
+      "bytes": 1358570,
+      "sha256": "614d738dd3508688046b6ae4e71d99108a05c13aac5ce007e395549d35f0aad9"
+    },
+    {
+      "path": "raw/scope.json",
+      "bytes": 693,
+      "sha256": "ebb35008fc0dd8423b540fa63aab1378dbaa220d5ab52c549b96567c7063078a"
+    },
+    {
+      "path": "raw/source_sumo_mapping.csv",
+      "bytes": 15301956,
+      "sha256": "ee6456509e8b139b67a37b8e98295d4245af42ccfab65e2afc505d9f4e27276c"
+    },
+    {
+      "path": "raw/study_boundary.geojson",
+      "bytes": 15802,
+      "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83"
+    },
+    {
+      "path": "raw/types.rou.xml",
+      "bytes": 205,
+      "sha256": "2b72cc3b7318792e4443c0d5099965fa9d9beeee152fe99ad7685cd57bc4608f"
+    },
+    {
+      "path": "raw/view.xml",
+      "bytes": 143,
+      "sha256": "4186b07cb79d1e108219e5528df8782da1724d873099d844ee2872c3be87f6e2"
+    },
+    {
+      "path": "raw/window.json",
+      "bytes": 402,
+      "sha256": "f543e0e329b69910b42bb291cf150ea379f16096178d9fd19219b22df1c8e656"
+    },
+    {
+      "path": "resources_dry_8370cc.csv",
+      "bytes": 85799,
+      "sha256": "409adfe77cd91caa832c2015b50feb832acb61816d9b8b88f87fdd596261d300"
+    },
+    {
+      "path": "resources_summary.json",
+      "bytes": 432,
+      "sha256": "ebc2ebe7d21170e8cf8d04f0c23e0ed2273e3e80bfd7a97e87efe4221c325a8b"
+    },
+    {
+      "path": "runtime_budget.json",
+      "bytes": 3992,
+      "sha256": "7f575b6245979b603795ed6c06559f0f89c732fa762d76c4fd411f6f4db82c4a"
+    },
+    {
+      "path": "status.json",
+      "bytes": 104,
+      "sha256": "0b43ac0697137bbbb6965dc585f17fc39e5a8b81e35107d3b422e7cdcc748b13"
+    },
+    {
+      "path": "storage_archives.json",
+      "bytes": 719,
+      "sha256": "db6727c08600b932f3f28f428b98412c300cedfa4f4a2b3cf3f962ddd8dc0dc4"
+    },
+    {
+      "path": "sumo_version.txt",
+      "bytes": 892,
+      "sha256": "a4e9ac37615f89609c4e37d71e972978573fb179beac6960faa52a2add421b76"
+    },
+    {
+      "path": "tests.xml",
+      "bytes": 22113,
+      "sha256": "146fafd0cdbf2c8f73c5ebc339054498e32536ab5ff945e61281770c01718d3b"
+    }
+  ],
+  "preview_note": "Diagnostic GUI reruns excluded; not mixed with formal baseline or resource trace."
+}

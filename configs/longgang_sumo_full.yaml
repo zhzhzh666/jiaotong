@@ -1,0 +1,29 @@
+region: longgang
+include_dapeng: false
+seed: 42
+od_package: data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94
+adaptive_package: data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6
+surface_package: data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75
+output_root: data/processed/longgang_sumo_full
+area:
+  surrounding_buffer_m: 3000
+  retain_complete_sampled_source_paths: true
+simulation:
+  start_interval: 424
+  duration_seconds: 14400
+  departure_seconds: 10800
+  step_seconds: 1
+  safety_seconds: 1
+  route_seconds: 300
+  output_seconds: 60
+  demand_fraction: 0.05
+  closure_depth_m: 0.30
+  minimum_reroute_saving_seconds: 60
+  minimum_reroute_saving_fraction: 0.10
+  travel_time_smoothing: 0.5
+  observed_speed_floor_m_s: 0.5
+  terminal_penalty_seconds: 7200
+benchmark:
+  memory_sample_seconds: 1
+  fcd_period_seconds: 60
+  # Hourly wall/RSS measured headless; not a calibrated full-demand DUE experiment.

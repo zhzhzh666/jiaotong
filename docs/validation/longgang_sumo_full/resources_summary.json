@@ -1,0 +1,10 @@
+{
+  "samples": 978,
+  "peak_combined_rss_mib": 2586.00390625,
+  "peak_python_rss_mib": 1215.27734375,
+  "peak_children_rss_mib": 2195.29296875,
+  "minimum_host_available_mib": 261.8203125,
+  "total_wall_seconds": 1000.0677462999884,
+  "trace": "resources_dry_8370cc.csv",
+  "memory_definition": "1-second samples of summed Python+descendant RSS; shared pages may be counted twice; host available also reflects other apps"
+}

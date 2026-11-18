@@ -1,0 +1,19 @@
+[
+  "C:\\Users\\zh\\Desktop\\git\\jiaotong\\.conda-env\\Lib\\site-packages\\sumo\\bin\\duarouter.exe",
+  "-n",
+  "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\longgang_sumo_full\\20261118T184221_full5_07cdb6f1\\raw\\network.net.xml",
+  "-r",
+  "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\longgang_sumo_full\\20261118T184221_full5_07cdb6f1\\budget_probes\\whole_demand.trips.xml",
+  "-w",
+  "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\longgang_sumo_full\\20261118T184221_full5_07cdb6f1\\cases\\dry\\edge_costs.xml.gz",
+  "-o",
+  "C:\\Users\\zh\\Desktop\\git\\jiaotong\\data\\processed\\longgang_sumo_full\\20261118T184221_full5_07cdb6f1\\budget_probes\\refreshed.rou.xml.gz",
+  "--routing-algorithm",
+  "dijkstra",
+  "--bulk-routing",
+  "true",
+  "--seed",
+  "42",
+  "--no-step-log",
+  "true"
+]

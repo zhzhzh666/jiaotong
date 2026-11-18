@@ -1,0 +1,12 @@
+{
+  "reviewed": [
+    "performance.png",
+    "whole_district_coverage.png"
+  ],
+  "checks": [
+    "Hourly wall-time bars and RSS/host-available trace are readable with units",
+    "Complete Longgang boundary, source arcs and surrounding connectors are visible",
+    "No unmeasured wet-run or equilibrium results plotted"
+  ],
+  "review_method": "Rendered PNGs inspected with view_image"
+}

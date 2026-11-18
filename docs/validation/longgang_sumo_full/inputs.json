@@ -1,0 +1,58 @@
+[
+  {
+    "path": "configs\\longgang_sumo_full.yaml",
+    "sha256": "dcd389845ac6ddcd2c2910a487ed61a6b6be3725eba3bdbc78920057533c0cee"
+  },
+  {
+    "path": "scripts\\run_longgang_full_benchmark.py",
+    "sha256": "6f20f75ea08eb5d0cd6f509995d3fd50170867cab54ae899dc3ec697ad27deba"
+  },
+  {
+    "path": "src\\uftr\\sumo_benchmark.py",
+    "sha256": "cc8ed0c3bd733f802c9e62f1e45c14000996b9c3170bd18442b31d69c47ee006"
+  },
+  {
+    "path": "src\\uftr\\sumo_dynamic.py",
+    "sha256": "a207e7068988190975c3dfd73b1963acd2a8bfc866cc14cd4da41cb19c8bb804"
+  },
+  {
+    "path": "src\\uftr\\adaptive.py",
+    "sha256": "c12a27597c813e883fea4e2905a9011f30787ec753c78e8d4b09a7bb4f9cea0a"
+  },
+  {
+    "path": "data\\synthetic\\longgang_od\\20261118T121117_longgang_od_2bf08c94\\study_boundary.geojson",
+    "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83"
+  },
+  {
+    "path": "data\\processed\\longgang_adaptive\\20261118T165311_adaptive_4adc99a6\\raw\\source_edges.parquet",
+    "sha256": "6d438a3229c0bf087cb26df968d813baa6773c4bf1e96ace68a689dcd90392ab"
+  },
+  {
+    "path": "data\\processed\\longgang_adaptive\\20261118T165311_adaptive_4adc99a6\\raw\\network.pkl",
+    "sha256": "8dfa6b4f591c9344044c1df361feb959270e78b1533c944a526685e32521260c"
+  },
+  {
+    "path": "data\\synthetic\\longgang_od\\20261118T121117_longgang_od_2bf08c94\\inferred_source_network.graphml",
+    "sha256": "66d4684addcfaa85a83aff188e4f436eac02088a7827150f82d40298ffe11aa5"
+  },
+  {
+    "path": "data\\synthetic\\longgang_od\\20261118T121117_longgang_od_2bf08c94\\od_sensitivity_veh_h.npz",
+    "sha256": "48788187bf99b86ef70b844bc1cc1b698cbd576167bcda759eb9b75c88b5dd1a"
+  },
+  {
+    "path": "data\\synthetic\\longgang_od\\20261118T121117_longgang_od_2bf08c94\\zone_connectors.csv",
+    "sha256": "80214df5144132c4f70212fb0da58aa824704b06c4eff1a419427c25b73a54ae"
+  },
+  {
+    "path": "data\\processed\\longgang_era5_surface\\20261118T133312_era5_surface_d4aecd75\\raw\\routing_grid.npz",
+    "sha256": "dbee4ee5a9c4d1363709828cf09295be2d488c8797f6e36b6495d3084a0d4088"
+  },
+  {
+    "path": "data\\processed\\longgang_adaptive\\20261118T165311_adaptive_4adc99a6\\cases\\mask00_rain130_water.npz",
+    "sha256": "7785d96020986b0dd676ff26fae48ad44c017a0a697c44851c1e6a0c5cfe50b7"
+  },
+  {
+    "path": "data\\processed\\longgang_adaptive\\20261118T165311_adaptive_4adc99a6\\cases\\mask09_rain130_water.npz",
+    "sha256": "c1c4ead9f24692bd976a0eb6593fe1c4ba84d819a87a29ca8a1b0d40a28ddfdc"
+  }
+]

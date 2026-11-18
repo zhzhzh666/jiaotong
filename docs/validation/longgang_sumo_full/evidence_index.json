@@ -1,0 +1,125 @@
+{
+  "run": "data/processed/longgang_sumo_full/20261118T184221_full5_07cdb6f1",
+  "files": [
+    {
+      "path": "budget_probes/control_commands.csv",
+      "sha256": "b03af9a040443c57e43318ab993e19fa75b15efe8d34a984090d4077045d6c3f"
+    },
+    {
+      "path": "budget_probes/duarouter.log",
+      "sha256": "505534d0b7cbccea3077bfc56b2703a481e01e014bba69a0cf57136574a2444f"
+    },
+    {
+      "path": "budget_probes/duarouter_command.json",
+      "sha256": "17db2364d88af5bda0028b3db2d5826868f9898375ce3ee5eabd8330f315b407"
+    },
+    {
+      "path": "budget_probes/route_queries.csv",
+      "sha256": "ec3debba00413d10d1d4f08e96742fb62673c4b8035f4225150a3d1e9f743d65"
+    },
+    {
+      "path": "cases/dry/hourly_performance.csv",
+      "sha256": "fc585c6ec291ff8650cd5944401c4c06f1e85ba78d23704b23bbdb519dd2df6f"
+    },
+    {
+      "path": "cases/dry/result.json",
+      "sha256": "288c892e61505b4844e2235cbf73030902dc2277c8a731391a0701c59edf67c3"
+    },
+    {
+      "path": "cases/dry/traffic_series.csv",
+      "sha256": "8eef294527a4a415cc9bf4880b317ccc329a9a40178776dafd02db4052a771a0"
+    },
+    {
+      "path": "comparison.csv",
+      "sha256": "1fbb9a115404f7ccb84e8c6c734a902022993665ecde4a199708551dbfc66a0c"
+    },
+    {
+      "path": "config.yaml",
+      "sha256": "0c451b32bf89415b8a272ca64164cdfa260f576cf8fc5a0cd93cc3cb17bc05c2"
+    },
+    {
+      "path": "figures/performance.png",
+      "sha256": "ec0404a0492f298c3407867f86d08b46230ea75d3e3691cc20f0b38227c4df4a"
+    },
+    {
+      "path": "figures/performance.svg",
+      "sha256": "95e0dde6575b9d93b074ed23cb0d1063686424aec17354bc699d6db9204b0a2f"
+    },
+    {
+      "path": "figures/visual_review.json",
+      "sha256": "5b47b65dc217b81073eda92af88a48d4572ccae49327770ae13581e1741be318"
+    },
+    {
+      "path": "figures/whole_district_coverage.png",
+      "sha256": "cbb4d95950cec643c70d77fe0f1f22097566256671295a0f889daf942e44c0e3"
+    },
+    {
+      "path": "figures/whole_district_coverage.svg",
+      "sha256": "ae19be6fdde84265f41e8d370713f816e182397ad65fbe4152ebbaecbae5b16b"
+    },
+    {
+      "path": "gui_status.json",
+      "sha256": "805ac27c1cd6675d163763858357f057ed8e51497b6a16503cf45b1edcb4302f"
+    },
+    {
+      "path": "hardware.json",
+      "sha256": "fbd240dedf581f3a3f04ed0caef8730db563e45b089bb29ce91295ef773082f2"
+    },
+    {
+      "path": "independent_audit.json",
+      "sha256": "0d6581e4c61c039f54064b465210110e6df60ce29d6c2c7c06eb825ee776366d"
+    },
+    {
+      "path": "inputs.json",
+      "sha256": "3f4b0ac272a605549c7e94fb4d3f06127726ced01d89dec62c016c6f1183b64f"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "e705f9c6d5dde699dffc816fca0b2bde9db1bde66af1ec7ffb727c78a8c2b2fb"
+    },
+    {
+      "path": "preparation.json",
+      "sha256": "14ada95bf565abe814744b15a7ccc8ac7ad3c78171aecc18c2c2bf98e7ed5efb"
+    },
+    {
+      "path": "raw/plan_report.json",
+      "sha256": "2200569798ed660f32591f0b346173acc70396c104a8d5456e0ab33ad25c4428"
+    },
+    {
+      "path": "raw/scope.json",
+      "sha256": "ebb35008fc0dd8423b540fa63aab1378dbaa220d5ab52c549b96567c7063078a"
+    },
+    {
+      "path": "raw/window.json",
+      "sha256": "f543e0e329b69910b42bb291cf150ea379f16096178d9fd19219b22df1c8e656"
+    },
+    {
+      "path": "resources_dry_8370cc.csv",
+      "sha256": "409adfe77cd91caa832c2015b50feb832acb61816d9b8b88f87fdd596261d300"
+    },
+    {
+      "path": "resources_summary.json",
+      "sha256": "ebc2ebe7d21170e8cf8d04f0c23e0ed2273e3e80bfd7a97e87efe4221c325a8b"
+    },
+    {
+      "path": "runtime_budget.json",
+      "sha256": "7f575b6245979b603795ed6c06559f0f89c732fa762d76c4fd411f6f4db82c4a"
+    },
+    {
+      "path": "status.json",
+      "sha256": "0b43ac0697137bbbb6965dc585f17fc39e5a8b81e35107d3b422e7cdcc748b13"
+    },
+    {
+      "path": "storage_archives.json",
+      "sha256": "db6727c08600b932f3f28f428b98412c300cedfa4f4a2b3cf3f962ddd8dc0dc4"
+    },
+    {
+      "path": "sumo_version.txt",
+      "sha256": "a4e9ac37615f89609c4e37d71e972978573fb179beac6960faa52a2add421b76"
+    },
+    {
+      "path": "tests.xml",
+      "sha256": "146fafd0cdbf2c8f73c5ebc339054498e32536ab5ff945e61281770c01718d3b"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "cpu": "Intel(R) Core(TM) i7-14650HX",
+  "physical_cores": 16,
+  "logical_cpus": 24,
+  "ram_gib": 15.781120300292969,
+  "gpu_solver": false,
+  "memory_definition": "1-second samples of summed Python+descendant RSS; shared pages may be counted twice; host available also reflects other apps"
+}

@@ -15,3 +15,8 @@ docs/validation/*.svg binary
 /scripts/*longgang_sumo*.py -text
 /src/uftr/sumo_dynamic.py -text
 /docs/validation/longgang_sumo/figures/*.svg binary
+# Preserve whole-district benchmark source/config and plot fingerprints.
+/configs/longgang_sumo_full.yaml -text
+/scripts/*longgang_full_benchmark.py -text whitespace=cr-at-eol,-blank-at-eof
+/src/uftr/sumo_benchmark.py -text
+/docs/validation/longgang_sumo_full/figures/*.svg binary

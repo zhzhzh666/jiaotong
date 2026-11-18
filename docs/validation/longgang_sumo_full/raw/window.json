@@ -1,0 +1,13 @@
+{
+  "start_interval": 424,
+  "start_beijing": "2023-09-10 10:00:00",
+  "end_beijing": "2023-09-10 14:00:00",
+  "duration_seconds": 14400,
+  "departure_seconds": 10800,
+  "selection": "Fixed same clock window as archived local pilot, not reselected using full-district results",
+  "initial_state": "Empty network",
+  "projected_offset_m": [
+    193828.3226444564,
+    2496875.424852871
+  ]
+}

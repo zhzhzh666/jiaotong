@@ -1,0 +1,80 @@
+{
+  "measured_baseline": {
+    "preparation_seconds": 52.19835729998886,
+    "sumo_startup_seconds": 10.58388059999561,
+    "controller_loop_and_shutdown_seconds": 935.1267155999958,
+    "one_prepared_case_seconds": 945.7105961999914,
+    "planned": 11506,
+    "valid_planned": 10634,
+    "timed_online_departure_route_queries_seconds": 519.4993206019863,
+    "case_seconds_excluding_timed_route_queries": 426.21127559800516
+  },
+  "measured_probes": {
+    "control_commands": 3000,
+    "mean_control_command_seconds": 8.99409333942458e-05,
+    "route_queries": 128,
+    "mean_route_query_seconds": 0.04651651328185835,
+    "p90_route_query_seconds": 0.10324683000799269,
+    "duarouter_one_full_refresh_seconds": 280.07939369999804,
+    "duarouter_returncode": 0
+  },
+  "wet_control_extrapolation": {
+    "baseline": {
+      "changed_edge_updates": 1157645,
+      "commands": 4742506,
+      "estimated_wall_seconds": 426.5454162678111
+    },
+    "governed": {
+      "changed_edge_updates": 1156742,
+      "commands": 4740700,
+      "estimated_wall_seconds": 426.3829829421011
+    }
+  },
+  "rolling_query_extrapolation": {
+    "dry_active_checks_per_rolling_case": 39426,
+    "all_valid_active_all_slots_upper_count": 499798
+  },
+  "five_case_forecast": {
+    "from_scratch_nominal_seconds": 10154.528242020864,
+    "contingency_seconds": 57712.88172821221,
+    "additional_four_after_baseline_nominal_seconds": 9156.619288520884,
+    "additional_four_contingency_seconds": 56714.97277471223,
+    "planning_allowance_seconds": 20256.85812674174,
+    "additional_four_planning_allowance_seconds": 19258.94917324176
+  },
+  "dry_assignment_iteration_forecasts": [
+    {
+      "iterations": 10,
+      "nominal_seconds": 7115.105050280021,
+      "contingency_seconds": 11377.217806260072
+    },
+    {
+      "iterations": 20,
+      "nominal_seconds": 14178.011743260053,
+      "contingency_seconds": 22702.237255220156
+    },
+    {
+      "iterations": 30,
+      "nominal_seconds": 21240.918436240085,
+      "contingency_seconds": 34027.25670418024
+    },
+    {
+      "iterations": 50,
+      "nominal_seconds": 35366.73182220015,
+      "contingency_seconds": 56677.29560210041
+    }
+  ],
+  "limitations": [
+    "Only one dry whole-district traffic case was measured; four wet/control cases are forecasts.",
+    "Probes measure empty-network control writes and routing; wet congestion, repeated failures, cache hits and paging can change wall time.",
+    "Nominal uses dry active-vehicle checks; contingency assumes twice dry simulation time and all valid vehicles active at every routing slot. Neither is a confidence interval or a guaranteed bound.",
+    "The router probe is one complete path refresh, not a converged Gawron/SDTA iteration. Forecasts omit unmeasured alternative-route probability-update overhead.",
+    "Iteration counts are planning scenarios; convergence and the required iteration count were not measured.",
+    "Budgets apply to this CPU/RAM, 5% demand and four simulated hours, with GUI disabled; they do not apply to 100% demand or 24 hours.",
+    "Assignment forecasts remove timed online departure-route queries before adding the offline router refresh, avoiding double-counting routing. A preassigned-route SUMO run was not separately measured.",
+    "Only a single full path-refresh runtime is measured, and probability updates for alternative routes remain unmeasured.",
+    "Sparse observed edge-cost intervals use normal free-flow fallback in duarouter where no matching measured interval exists.",
+    "Five-case planning allowance is twice the nominal variable runtime, a scheduling choice; the separate all-active stress scenario is much more pessimistic and is neither an observed runtime nor a guaranteed upper bound."
+  ],
+  "assignment_forecast_formula": "P + N * (B - timed_online_departure_queries + measured_offline_refresh); contingency doubles the non-query traffic portion"
+}

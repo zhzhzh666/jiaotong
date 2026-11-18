@@ -1,0 +1,20 @@
+{
+  "source_sha_verified": 14,
+  "source_sumo_arcs": 151701,
+  "whole_district_arcs_checked": 86804,
+  "unique_valid_paths_checked": 8937,
+  "planned": 11506,
+  "valid": 10634,
+  "invalid": 872,
+  "arrived": 10634,
+  "vehicle_seconds_independent": 12473271.0,
+  "hourly_records_checked": 4,
+  "resource_samples_checked": 978,
+  "fcd_timestep_records": 240,
+  "headless_verified": true,
+  "vehicle_balance_error": 0,
+  "actual_injected_routes_checked": 10634,
+  "teleports": 0,
+  "collision_vehicle_events": 0,
+  "note": "Internal consistency, not calibration against observed traffic; coverage is against the frozen source road topology."
+}

@@ -1,0 +1,7 @@
+{
+  "attempted_after_completed_headless_baseline": true,
+  "status": "not_started_disk_full",
+  "observed_error": "OSError [Errno 28] No space left on device while writing preview_dry_0ced41/command.json",
+  "formal_results_affected": false,
+  "whole_district_3d_verified": false
+}

@@ -1,0 +1,19 @@
+{
+  "reason": "Disk filled after completed baseline; lossless archive of generated network-construction intermediates only. Main SUMO network and all traffic results unchanged.",
+  "files": [
+    {
+      "original": "raw/network.edg.xml",
+      "stored": "raw/network.edg.xml.gz",
+      "original_bytes": 21516880,
+      "stored_bytes": 2792910,
+      "original_sha256": "020b1614980ab89d82e35b10cf6ee129a76b2c37add57ee5e99056b91f264e7f"
+    },
+    {
+      "original": "raw/network.nod.xml",
+      "stored": "raw/network.nod.xml.gz",
+      "original_bytes": 8818244,
+      "stored_bytes": 2339810,
+      "original_sha256": "4c861d862bd5fa73b199ffa6bb0a700e9a1157d5bbd3b590a490345bbfdc65c8"
+    }
+  ]
+}

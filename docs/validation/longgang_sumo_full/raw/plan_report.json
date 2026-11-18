@@ -1,0 +1,21 @@
+{
+  "expected_all_scaled_trips": 11422.069179247095,
+  "planned_vehicles": 11506,
+  "valid_planned": 10634,
+  "invalid_planned": 872,
+  "route_status_counts": {
+    "source_reachable": 10609,
+    "source_disconnected": 457,
+    "intrazonal_not_loaded": 312,
+    "missing_connector": 103,
+    "sumo_turn_repaired": 25
+  },
+  "demand_fraction": 0.05,
+  "poisson_seed": 42,
+  "matrix_shape": [
+    483,
+    483
+  ],
+  "source_offpeak_veh_h": 76147.1278616473,
+  "note": "Whole OD sampled first, every sampled complete dry route retained. Intrazonal, connector and connectivity failures stay explicitly invalid, not fabricated trips or dropped draws."
+}

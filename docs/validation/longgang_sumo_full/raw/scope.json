@@ -1,0 +1,12 @@
+{
+  "district_source_arcs": 86804,
+  "district_arcs_in_sumo": 86804,
+  "excluded_district_degenerate_arcs": 3,
+  "surrounding_buffer_m": 3000,
+  "source_arcs": 151701,
+  "source_nodes": 101794,
+  "retained_sampled_source_path_arcs": 47642,
+  "whole_trips_not_roi_visits": true,
+  "scope": "Every usable source segment intersecting Longgang excluding Dapeng, 3km surrounding buffer, plus complete sampled dry source paths. Surroundings are connectors, not an expanded administrative study area.",
+  "outside_routing_limit": "New alternatives outside the buffer and sampled dry-path union are not represented; no external-external OD demand exists in the source synthetic matrices."
+}
