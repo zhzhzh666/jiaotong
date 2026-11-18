@@ -1,18 +1,19 @@
 {
   "all_pages_and_slides_visually_reviewed": true,
-  "word_pages": 33,
-  "ppt_slides": 33,
-  "method": "All final pages/slides rendered. Historical pages/slides 2-30 pixel-identical to prior reviewed edition. Changed 1/31 and new 32/33 Word page and slide images individually opened and visually inspected. No clipping or missing glyphs observed. All 14 historical native chart XML and source workbooks preserved byte-for-byte.",
-  "word_sha256": "baa50906b4c1ed9af2f6f17d379956ce7b9864183e2bab31ea1d42bd6fe334f6",
-  "ppt_sha256": "95620f9b8ffc136bc7cddc961591a114122c84102d9d7eb6539bfab11231d2aa",
+  "word_pages": 37,
+  "ppt_slides": 37,
+  "method": "All 37 final Word pages and slides rendered. Existing 2-32 are pixel-identical to reviewed 33-page edition. Changed 1/33 and new 34-37 individually viewed; final corrected Word 34/35 re-viewed. All 42 historical chart/workbook parts preserved byte-for-byte. Word rendered through native Word read-only COM after packaged renderer reported missing LibreOffice. Native PowerPoint playback not checked.",
+  "word_sha256": "e1ed309e9834d3fce01133d74696a8c9d8bde21ab25c9105ed29d8a87b2419c2",
+  "ppt_sha256": "6b6c0cd26d31f1731f710d5481755810973ee74a1d60f43ba952c2a7a0a551b7",
   "preserved_chart_workbook_parts": 42,
-  "word_pdf": ".cache/longgang-od-doc-sync/final-word.pdf",
-  "ppt_receipt": ".cache/longgang-od-doc-sync/v2/validation.json",
-  "previous_review_sha256": "c706823215f1e038a5d184a4215f1dc99e57fbb773bef9b44794b07f56f58974",
+  "word_pdf": ".cache/document-sync-20261118-storm/final-word.pdf",
+  "ppt_receipt": ".cache/document-sync-20261118-storm/v4/validation.json",
+  "previous_review_sha256": "c75bdcd3cd1a08068f27b7b6975a77645713ac7670bf7c1b93fe923e2dab3c36",
+  "render_comparison": ".cache/document-sync-20261118-storm/render-comparison.json",
   "word_page_images": [
     {
       "page": 1,
-      "sha256": "3297114cdf0809d15423dfc0a2ea746e321bd8bd3869afa69af327bd7caba52a"
+      "sha256": "010c16389ea6896c95af43cea8bb1931dfc64e9f79db8473facef852c600d095"
     },
     {
       "page": 2,
@@ -140,13 +141,29 @@
     },
     {
       "page": 33,
-      "sha256": "90304fe56adbbeab731ca85b53334a8cbfbd35174f2aa9d287d81630a13dff00"
+      "sha256": "577f9df656223acf97a3c494cd9fd7d8445cf48f6464a2abda3c22bff756afa5"
+    },
+    {
+      "page": 34,
+      "sha256": "03ac2e5c7fadc1ee7e8b402a137675524c6cd88a6c2fed12792d671c46844802"
+    },
+    {
+      "page": 35,
+      "sha256": "2b1e5874be24c20ec0377fe0a20b61136954e76845aecfcc6b3400a5e1bfb459"
+    },
+    {
+      "page": 36,
+      "sha256": "db8b4c8ba7fb83054b9fb40174a7aea0e3b215ed0a3b062c67e06da22623eaff"
+    },
+    {
+      "page": 37,
+      "sha256": "9ac6093addca57fe22a56fbb6acf18a2e25d57cad9ee10faa1ba5b9fff72d64d"
     }
   ],
   "slide_images": [
     {
       "slide": 1,
-      "sha256": "77dbc4bd5fd92df644f199128f69b7f4917394cc0577fb787a6f573d783bc27c"
+      "sha256": "8fb13db475af88f3bfec4068a86c2a659b4a0d318f739bd5d761dd5b48bc6e0d"
     },
     {
       "slide": 2,
@@ -274,7 +291,23 @@
     },
     {
       "slide": 33,
-      "sha256": "451214920043a1d14e91d1700c508204450316e5823b62be1c4004c521b871bf"
+      "sha256": "82bcebdc0e0bd2f3d6f45747f72a853ca6330680358c29f90d925cf6bc4c52ca"
+    },
+    {
+      "slide": 34,
+      "sha256": "94c7c2bf8bf55eb3677f5db98caf07d42f616c4240d60080e5b33d0f2556153c"
+    },
+    {
+      "slide": 35,
+      "sha256": "e1b5d18236a09f59f41845132380fe5249d5e84ccd3a3f5bc52d2b4a2bfae9cd"
+    },
+    {
+      "slide": 36,
+      "sha256": "5a7c24fc22b94e621adf3250212e05dde15028a92f355ab6fb0886013b8c8b2f"
+    },
+    {
+      "slide": 37,
+      "sha256": "c67cabe82188273d7c9e7b33b4d783f1e3a79c0a61e2d1dda1715e342350e088"
     }
   ]
 }

@@ -161,5 +161,28 @@ if data.get('longgang_od'):
         'traffic_assignment_rerun':False,'tests_report':record(ROOT/od['tests_report']),
         'independent_numerical_audit':record(ROOT/od['audit']),
         'matrix_shape':report['matrix_shape'],'consistency_checks':len(report['checks'])}
+if data.get('longgang_storm'):
+    storm=data['longgang_storm'];run=ROOT/storm['path']
+    report=json.loads((ROOT/'docs/validation/longgang_storm/validation_report.json').read_text(encoding='utf-8'))
+    audit=json.loads((ROOT/storm['audit']).read_text(encoding='utf-8'))
+    latest=ET.parse(ROOT/storm['tests_report']).getroot().find('testsuite')
+    assert report==storm['report'] and report['run_id']==audit['run_id']==run.name
+    assert report['all_checks_passed'] and all(report['checks'].values()) and audit['all_checks_passed']
+    assert not report['observed'] and not report['include_dapeng'] and not storm['hydrodynamic']
+    assert int(latest.attrib['tests'])==storm['tests_passed'] and int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert report['run_id'] in doc_text and report['run_id'] in ppt_text
+    assert report['site_count']==4139 and report['modelled_source_features']==6848
+    assert report['source_feature_status_counts']['elevated_tunnel_or_nonzero_layer_not_modelled']==952
+    assert audit['case_scenario_combinations_audited']==20
+    assert 'C方案尚未实施' in ppt_text and '未运行SWMM或二维模型' in doc_text
+    manifest['verification']['latest_tests_passed']=storm['tests_passed']
+    manifest['longgang_storm']={'path':storm['path'],'observed':False,'hydrodynamic':False,
+        'traffic_assignment_rerun':False,'consistency_checks':len(report['checks']),
+        'tests_report':record(ROOT/storm['tests_report']),'independent_numerical_audit':record(ROOT/storm['audit'])}
+if data.get('longgang_drainage'):
+    drainage=data['longgang_drainage']
+    assert not drainage['real_network_obtained'] and not drainage['coupled_model_run']
+    manifest['longgang_drainage']={'source':record(ROOT/drainage['source']),
+        'real_network_obtained':False,'coupled_model_run':False}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

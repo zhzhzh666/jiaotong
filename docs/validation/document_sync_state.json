@@ -1,0 +1,33 @@
+{
+  "updated_at": "2026-11-18T21:30:25.056385+08:00",
+  "owner_thread": "01a1ee8f-7e77-7663-8c67-f10d97e0243f",
+  "automation_id": "jiaotong-ppt-word",
+  "status": "active",
+  "interval_minutes": 30,
+  "user_scope_clarification": "本聊天继续维护Word/PPT；其他开发聊天仅更新项目及GitHub。来源聊天的停止文档指令不取消本自动任务。",
+  "current_document_pages": 37,
+  "current_presentation_slides": 37,
+  "last_check": "龙岗独立桶情景与C方案数据条件已同步37页/张，交付核验通过。",
+  "pending": "来源新取得ERA5/Open-Meteo单点72小时样例并开始扩展获取降雨与B地表汇流；这些后续成果尚未纳入本版，待独立检查后同步。",
+  "source_threads": [
+    "01a1e50e-6bff-73b1-a41f-d1713fb73f47",
+    "01a1ee72-b914-7ee0-8576-1221bb77f825",
+    "01a1ee71-4c6c-70d0-879f-5bb3ab2a1b52"
+  ],
+  "document_sha256": "e1ed309e9834d3fce01133d74696a8c9d8bde21ab25c9105ed29d8a87b2419c2",
+  "presentation_sha256": "6b6c0cd26d31f1731f710d5481755810973ee74a1d60f43ba952c2a7a0a551b7",
+  "source_wait_cursors": {
+    "01a1ee72-b914-7ee0-8576-1221bb77f825": "7b682bdf-f9df-4b30-8053-b14a717f5159:3"
+  },
+  "source_latest_read_turns": [
+    "01a1eed4-50eb-78d2-ac8a-b9b1eef55267",
+    "01a1eecd-00b7-7b60-ac45-2bffd2f4c2e7"
+  ],
+  "incorporated_runs": [
+    "20261118T121117_longgang_od_2bf08c94",
+    "20261118T124853_longgang_storm_7e7668c1"
+  ],
+  "qa_directory": ".cache/document-sync-20261118-storm",
+  "visual_review": "docs/validation/final_visual_review.json",
+  "verification_passed": true
+}

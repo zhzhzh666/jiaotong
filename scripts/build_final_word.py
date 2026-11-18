@@ -25,7 +25,8 @@ for i,s in enumerate(sections):
     if i==0:d.add_paragraph(data.get('cover_subtitle','研究报告与阶段进展 · 真实深圳路网研究原型'),'Caption')
     for text in s['paragraphs']:d.add_paragraph(text)
     if s.get('figure'):
-        image=ROOT/s['figure'];d.add_picture(str(image),width=Cm(16.3))
+        image=ROOT/s['figure'];d.add_picture(str(image),width=Cm(s.get('figure_width_cm',16.3)))
+        if s.get('figure_width_cm'):d.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
         caption=d.add_paragraph(s['caption'],'Caption');caption.paragraph_format.keep_with_next=False
         source_name=('合成数据包 '+Path(s['figure']).parts[3]+' / figures/'+image.name) if s['title'].startswith('补充情景 ') else s['figure']
         source=d.add_paragraph('来源：'+s.get('source_label',source_name),'Caption');source.paragraph_format.space_after=Pt(4)

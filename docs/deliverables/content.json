@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-18",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "龙岗不含大鹏的合成OD已生成；推定拓扑待核，交通分配与韧性待重算。南山结果作为历史保留。",
+  "status": "龙岗不含大鹏的合成OD与独立蓄水桶情景完成，交通影响待重算。真实管网尚未取得，C方案未实施。南山结果保留为历史。",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -196,13 +196,13 @@
       {
         "title": "暴雨内涝交通网络韧性评估与优化",
         "paragraphs": [
-          "2026年11月18日：龙岗不含大鹏的483×483合成OD已生成，包含471个区内分区和12个外部网关。拓扑为线几何推定，尚未核准；南山交通与韧性结果保留为历史。",
+          "2026年11月18日：龙岗不含大鹏的483×483合成OD及降雨蓄水退水情景已完成。积水由4,139个独立道路网格代理生成，参数未经实测标定。龙岗道路速度容量、交通分配与韧性尚未重算，真实管网尚未取得。南山及小型路网结果保留为历史。",
           "治理与十种子实验使用独立小网压力情景，南山完成全图分配、97端点韧性和抽样SUMO。全部OD、容量、灾害峰值、成本与治理效果尚未标定。"
         ],
         "slide_points": [
           "研究报告与阶段进展",
           "2026年11月18日",
-          "龙岗不含大鹏 合成OD完成，拓扑待核"
+          "龙岗不含大鹏 合成OD与蓄水情景完成"
         ],
         "figure": null,
         "caption": "",
@@ -685,7 +685,7 @@
           "基准平峰76,147.13 veh/h；07:00—10:00采用2倍，为152,294.26 veh/h；17:00—20:00采用1.8倍，为137,064.83 veh/h。其余18小时为平峰。共输出96个15分钟完整方阵，区间车次数=小时流率×0.25，保留小数期望值。",
           "全天基准2,238,725.56车次，低/高需求取0.7/1.3倍，分别1,567,107.89和2,910,343.23车次。峰值时段与倍数均为仿真假设；本次人口吸引与产生相同，早晚高峰只改变总量，不构造通勤方向差异。",
           "全深圳线几何推定图含307,426节点、451,801条有向弧，保留平行边和单行方向。仅连接相同已有顶点，同层连接及异层共同端点衔接均待核；不自动打断几何交叉线。道路缺少原始节点ID、转向限制等，拓扑尚未认证。",
-          "401个区内分区已连接，70个未接入。平峰可路由70,707.89、不可达3,492.31、区内1,946.93 veh/h，全部需求保留。不可达阻抗7200秒仅用于需求生成；区内300秒为假设，均不能当成实际通行时间。136项测试通过，13项运行检查及独立数值审计通过。未重算积水、交通分配、韧性或SUMO。"
+          "401个区内分区已连接，70个未接入。平峰可路由70,707.89、不可达3,492.31、区内1,946.93 veh/h，全部需求保留。不可达阻抗7200秒仅用于需求生成；区内300秒为假设，均不能当成实际通行时间。136项测试通过，13项运行检查及独立数值审计通过。本节记录OD计算时点，后续积水情景见第34—36节。尚未重算龙岗交通分配、韧性或SUMO。"
         ],
         "figure": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/longgang_daily_demand.png",
         "caption": "假设的15分钟需求及低中高敏感性，并非观测曲线或置信区间",
@@ -696,6 +696,78 @@
           "全天基准223.87万车次，低/高为0.7/1.3倍",
           "保留4.59%不可达和2.56%区内需求，拓扑待核"
         ]
+      },
+      {
+        "title": "龙岗暴雨情景 降雨与蓄水步骤",
+        "paragraphs": [
+          "本情景采用合成道路低点与独立蓄水桶，接近方案A的参数化扩展。位置来自道路和DSM，不是已核实历史积水点。没有相邻单元地表汇流，未实施B的汇流计算或C的SWMM与二维水动力耦合。",
+          "先固定龙岗主面和既有OD推定图，按道路不超过100 m间距采样，在250 m网格内选择DSM相对低点。再构造0、100、200、300 mm参考总雨量，模拟24小时、96个15分钟区间及97个水深端点。双峰降雨设在第5—13小时，不对应官方等级或重现期。",
+          "单元储量H以mm计。每步输入I=R×g×C×α，排水D=min(H+I,cΔt+HΔt/τ)，下一步H新=H+I−D，输出水深h=H/1000 m。R为区间雨量，g为空间乘数。C=0.8，α为2至4.5，c为8至18 mm/h，τ=4 h，参数均未标定。",
+          "雨停后输入为零，储量继续消退。三档基准最大水深为0.2613、0.5439、0.8266 m，峰值均在第10.5小时。曲线表达假想道路单元的合成压力情景，不能解释为真实暴雨预测。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "合成道路低点与独立蓄水桶",
+          "参考总雨量0／100／200／300 mm",
+          "最大代理水深0.2613／0.5439／0.8266 m"
+        ],
+        "source_label": "20261118T124853_longgang_storm_7e7668c1 / docs/LONGGANG_STORM_MODEL.md",
+        "figure": "docs/validation/longgang_storm/rainfall_ponding_process.png",
+        "caption": "四档合成情景中的三档暴雨过程及代理水深，虚线为第13小时雨停",
+        "figure_width_cm": 15.0
+      },
+      {
+        "title": "龙岗暴雨情景 空间覆盖与道路关联",
+        "paragraphs": [
+          "龙岗主面不含大鹏，约386.96 km²。33,597个道路采样点形成4,139个250 m网格代理。本轮按道路权限筛选接受7,800个源线要素，6,848个地面要素建模，952个桥隧或非零layer要素保留未知NaN。此数与此前7,837条几何候选的统计口径不同。",
+          "DSM采用Copernicus GLO-30，包含建筑和植被影响，不能当作裸地精细地形或排水管网。代理低点不等于真实洼地，250 m网格也不意味着整格被淹；未覆盖道路区域不在本模型表达范围。",
+          "每个源线要素取其关联单元的最大水深，作为保守暴露代理。较长源线可能把局部影响传播到其他路段。直接读取OD图已保存的edge_id及u/v/key，共映射86,807条有向弧，426条跨研究边界弧另作标记。图拓扑仍待认证。",
+          "桥隧等未知值不能填为0或解释为安全。交通模型应按源要素位置与精确图弧标识连接水深。本轮仅形成水深输入，没有计算速度容量下降、封路、交通分配、韧性或SUMO。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "4,139个道路网格代理",
+          "6,848个地面源要素建模，952个未知",
+          "86,807条推定图弧对应，拓扑待核"
+        ],
+        "source_label": "20261118T124853_longgang_storm_7e7668c1 / docs/LONGGANG_STORM_MODEL.md",
+        "figure": "docs/validation/longgang_storm/proxy_peak_map.png",
+        "caption": "龙岗三档基准暴雨的各代理单元峰值，非实测淹没图"
+      },
+      {
+        "title": "龙岗暴雨情景 恢复与参数敏感性",
+        "paragraphs": [
+          "100、200、300 mm基准情景中，单点水深大于0.15 m的最长时长分别为5.13、8.27、10.03 h。第13小时雨停后，全部曾超1 cm单元在5.93、8.56、10.11 h后恢复至分析阈值以下。1 cm不是行车安全标准。",
+          "同时水深达到0.30 m的源线要素数最大为0、2,477、5,749。该阈值在本轮仅用于暴露统计，不能把数量当作已实施封路或独立道路条数。恢复时刻按峰后最后一次下降穿越1 cm且此后不再超过定义，24小时仍超过的单元保留右删失。",
+          "比较基准、排水能力0.5倍与1.5倍、τ=2 h与8 h，共20组过程。慢退水τ=8 h时，三档情景分别有38、925、1,833个单元在24小时仍超过1 cm。参数变化用于敏感性分析，不直接代表真实排水工程收益。",
+          "141项测试与17项运行检查通过。独立审计回读20组共8,029,660个单元端点值，复核水量递推、道路聚合、104个文件SHA及ZIP。将15分钟雨量均分为5分钟复算，共同端点最大差异约0.00394、0.00813、0.01232 m，仅说明时间离散敏感性。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "雨停后恢复5.93／8.56／10.11 h",
+          "慢退水组24小时仍有未恢复单元",
+          "20组独立审计通过，参数尚未实测标定"
+        ],
+        "source_label": "20261118T124853_longgang_storm_7e7668c1 / docs/LONGGANG_STORM_MODEL.md",
+        "figure": "docs/validation/longgang_storm/sensitivity_road_exposure.png",
+        "caption": "排水退水参数对恢复和源线暴露的影响，未知桥隧不计作干燥道路"
+      },
+      {
+        "title": "龙岗管网耦合方案 数据条件与实施步骤",
+        "paragraphs": [
+          "截至2026年11月18日，公开渠道核查尚未取得可直接下载、覆盖龙岗且字段完整的真实雨水管网。此结论仅表示本轮未取得，不能据此断言数据不存在。已核实的管渠汇总统计和数据质检工具入口均不能替代逐管井空间数据。",
+          "C方案需要管线与检查井的唯一编号、几何、连接关系、断面管径及井底井盖高程，并需要雨水口、排口、泵闸与下游水位资料。资料还须说明坐标和垂直基准、测绘日期、覆盖及使用许可。现有30 m DSM不能视为已满足街道路缘与微地形要求。",
+          "深圳市水务局政府信息公开指南提供正式申请渠道。项目已保存字段清单和未提交的申请草案。取得资料后，先归档核对元数据与管井拓扑，再选完整排水分区建立SWMM一维模型，构建二维地表网格，通过雨水口和检查井实现双向交换并逐步核验质量守恒。",
+          "耦合后须用历史降雨及独立积水流量记录标定和验证，再输出道路水深连接交通模块。本轮未取得真实管井、未提交申请、未运行SWMM或二维模型。既有独立桶情景继续作为未标定压力实验输入，保留原有结果与运行编号。",
+          "来源为项目真实排水管网公开数据核查及深圳市水务局政府信息公开指南（https://swj.sz.gov.cn/xxgk/zfxxgkzn/）。申请材料尚未提交。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "真实管网尚未取得，C方案未实施",
+          "现有统计与质检工具不能替代管井数据",
+          "管网核查后分区建模，耦合交换并标定验证"
+        ],
+        "source_label": "docs/LONGGANG_DRAINAGE_DATA_AVAILABILITY.md / 深圳市水务局政府信息公开指南 https://swj.sz.gov.cn/xxgk/zfxxgkzn/"
       }
     ],
     "tests_passed": 106,
@@ -1104,7 +1176,7 @@
     "scope": "随包440307保留龙岗主面，排除大鹏面",
     "include_dapeng": false,
     "scope_short": "龙岗不含大鹏",
-    "status": "龙岗不含大鹏的合成OD已生成；推定拓扑待核，交通分配与韧性待重算。南山结果作为历史保留。",
+    "status": "龙岗不含大鹏的合成OD与独立蓄水桶情景完成，交通影响待重算。真实管网尚未取得，C方案未实施。南山结果保留为历史。",
     "intake_path": "data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253",
     "report": {
       "run_id": "20261118T195824_longgang_intake_079cc253",
@@ -1312,9 +1384,10 @@
       ]
     },
     "assignment_ready": false,
-    "synthetic_od_path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94"
+    "synthetic_od_path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
+    "synthetic_storm_path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1"
   },
-  "cover_subtitle": "龙岗不含大鹏 合成交通需求计算完成",
+  "cover_subtitle": "龙岗不含大鹏 合成OD与暴雨积水情景",
   "longgang_od": {
     "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
     "report": {
@@ -1453,5 +1526,201 @@
     "audit": "docs/validation/longgang_od/numerical_audit.json",
     "observed": false,
     "assignment_rerun": false
+  },
+  "longgang_storm": {
+    "path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1",
+    "report": {
+      "run_id": "20261118T124853_longgang_storm_7e7668c1",
+      "region": "longgang",
+      "include_dapeng": false,
+      "observed": false,
+      "topology_certified": false,
+      "model": "independent_road_grid_storage_proxies_not_hydrodynamic",
+      "od_package": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
+      "site_count": 4139,
+      "accepted_source_features_in_scope": 7800,
+      "modelled_source_features": 6848,
+      "source_feature_status_counts": {
+        "modelled_ground_samples": 6848,
+        "elevated_tunnel_or_nonzero_layer_not_modelled": 952
+      },
+      "directed_arc_mapping_rows": 86807,
+      "boundary_crossing_arcs": 426,
+      "sample_count": 33597,
+      "missing_dsm_samples": 0,
+      "maximum_site_boundary_error_m": 2.1810881511574087e-10,
+      "boundary_numeric_tolerance_m": 1e-06,
+      "terrain": {
+        "crs": "EPSG:4326",
+        "resolution_degrees": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "valid_cells": 440200,
+        "min": 13.432496070861816,
+        "max": 739.2013549804688,
+        "sum_native_cells": 38395002.06575012,
+        "boundary_rule": "Native cells whose centres fall inside polygon; no fractional-cell redistribution",
+        "nodata": -9999
+      },
+      "time_endpoints": 97,
+      "intervals": 96,
+      "cases": 5,
+      "scenarios": 4,
+      "max_interval_balance_residual_mm": 1.8474111129762605e-13,
+      "max_event_balance_residual_mm": 1.8189894035458565e-12,
+      "time_step_check": [
+        {
+          "scenario": "normal",
+          "max_endpoint_difference_m": 0.0,
+          "median_endpoint_difference_m": 0.0,
+          "coarse_peak_m": 0.0,
+          "fine_peak_at_common_endpoints_m": 0.0,
+          "fine_rainfall_assumption": "15min rain uniformly split into three 5min intervals"
+        },
+        {
+          "scenario": "general",
+          "max_endpoint_difference_m": 0.0039449413331936745,
+          "median_endpoint_difference_m": 0.0,
+          "coarse_peak_m": 0.26128702056641684,
+          "fine_peak_at_common_endpoints_m": 0.25824443307429357,
+          "fine_rainfall_assumption": "15min rain uniformly split into three 5min intervals"
+        },
+        {
+          "scenario": "severe",
+          "max_endpoint_difference_m": 0.008130244110340634,
+          "median_endpoint_difference_m": 0.0,
+          "coarse_peak_m": 0.5438918172192798,
+          "fine_peak_at_common_endpoints_m": 0.5375533917825742,
+          "fine_rainfall_assumption": "15min rain uniformly split into three 5min intervals"
+        },
+        {
+          "scenario": "extreme",
+          "max_endpoint_difference_m": 0.012316241947121775,
+          "median_endpoint_difference_m": 0.00021413958662638843,
+          "coarse_peak_m": 0.8265789990431298,
+          "fine_peak_at_common_endpoints_m": 0.816944943974031,
+          "fine_rainfall_assumption": "15min rain uniformly split into three 5min intervals"
+        }
+      ],
+      "checks": {
+        "scope_excludes_dapeng": true,
+        "frozen_OD_inputs_match": true,
+        "rain_reference_totals": true,
+        "site_mean_rain_factor_one": true,
+        "all_sites_inside_boundary_1um_tolerance": true,
+        "finite_nonnegative_depths": true,
+        "dry_normal": true,
+        "scenario_ordering": true,
+        "dry_recession_nonincreasing": true,
+        "drainage_ordering": true,
+        "recession_ordering": true,
+        "interval_water_balance": true,
+        "event_water_balance": true,
+        "no_false_recovery": true,
+        "durations_within_window": true,
+        "unknown_roads_are_NaN": true,
+        "unique_arc_IDs_read_from_graph": true
+      },
+      "all_checks_passed": true,
+      "baseline_summary": [
+        {
+          "case": "baseline",
+          "scenario": "normal",
+          "reference_rain_mm": 0,
+          "peak_depth_m": 0.0,
+          "peak_site_id": "LGF_787_10023",
+          "first_peak_h": 0.0,
+          "max_sites_above_015": 0,
+          "max_source_features_above_015": 0,
+          "max_source_features_atleast_030": 0,
+          "max_site_duration_above_015_h": 0.0,
+          "ever_wet_sites_001": 0,
+          "censored_sites_001": 0,
+          "recovered_sites_001": 0,
+          "latest_recovery_h_001": null,
+          "modelled_source_features": 6848,
+          "unknown_source_features": 952
+        },
+        {
+          "case": "baseline",
+          "scenario": "general",
+          "reference_rain_mm": 100,
+          "peak_depth_m": 0.26128702056641684,
+          "peak_site_id": "LGF_879_10055",
+          "first_peak_h": 10.5,
+          "max_sites_above_015": 684,
+          "max_source_features_above_015": 1861,
+          "max_source_features_atleast_030": 0,
+          "max_site_duration_above_015_h": 5.131930819240782,
+          "ever_wet_sites_001": 4139,
+          "censored_sites_001": 0,
+          "recovered_sites_001": 4139,
+          "latest_recovery_h_001": 18.928321172490012,
+          "modelled_source_features": 6848,
+          "unknown_source_features": 952
+        },
+        {
+          "case": "baseline",
+          "scenario": "severe",
+          "reference_rain_mm": 200,
+          "peak_depth_m": 0.5438918172192798,
+          "peak_site_id": "LGF_879_10055",
+          "first_peak_h": 10.5,
+          "max_sites_above_015": 3401,
+          "max_source_features_above_015": 6500,
+          "max_source_features_atleast_030": 2477,
+          "max_site_duration_above_015_h": 8.271318359134204,
+          "ever_wet_sites_001": 4139,
+          "censored_sites_001": 0,
+          "recovered_sites_001": 4139,
+          "latest_recovery_h_001": 21.55671667095857,
+          "modelled_source_features": 6848,
+          "unknown_source_features": 952
+        },
+        {
+          "case": "baseline",
+          "scenario": "extreme",
+          "reference_rain_mm": 300,
+          "peak_depth_m": 0.8265789990431298,
+          "peak_site_id": "LGF_879_10055",
+          "first_peak_h": 10.5,
+          "max_sites_above_015": 4120,
+          "max_source_features_above_015": 6847,
+          "max_source_features_atleast_030": 5749,
+          "max_site_duration_above_015_h": 10.028640594213188,
+          "ever_wet_sites_001": 4139,
+          "censored_sites_001": 0,
+          "recovered_sites_001": 4139,
+          "latest_recovery_h_001": 23.109255436037092,
+          "modelled_source_features": 6848,
+          "unknown_source_features": 952
+        }
+      ],
+      "limitations": [
+        "Synthetic stress scenarios, not official return periods or observed historical floods",
+        "DSM includes buildings/vegetation; local low score is an uncalibrated proxy, not delineated drainage",
+        "Independent stores have no lateral exchange, pipe network, river/tide backwater or verified pond areas",
+        "Ground source-line depth is maximum linked grid proxy: coarse conservative exposure, not surveyed carriageway depth",
+        "Bridges, tunnels, nonzero layer and missing DSM remain unmodelled NaN; partial coverage flagged",
+        "Graph IDs are exact within an inferred, uncertified topology; crossing arcs may include outside-boundary portions",
+        "Station SW zero datum and address proxy positions unverified; monitoring not used for calibration",
+        "Road-proxy rainfall factors normalized across sites, not full district area",
+        "No traffic assignment, road speed/capacity response, resilience, optimization or SUMO run"
+      ],
+      "elapsed_seconds": 188.9895429611206
+    },
+    "audit": "docs/validation/longgang_storm/numerical_audit.json",
+    "tests_report": "docs/validation/longgang_storm/tests.xml",
+    "tests_passed": 141,
+    "observed": false,
+    "hydrodynamic": false,
+    "traffic_assignment_rerun": false
+  },
+  "longgang_drainage": {
+    "source": "docs/LONGGANG_DRAINAGE_DATA_AVAILABILITY.md",
+    "checked": "2026-11-18",
+    "real_network_obtained": false,
+    "coupled_model_run": false
   }
 }
