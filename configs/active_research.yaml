@@ -7,7 +7,7 @@ scope_source: user_supplied_shenzhen_osm_bundle
 intake_config: configs/longgang_data_intake.yaml
 historical_intake_with_dapeng: data/processed/longgang_intake/20261118T193729_longgang_intake_fe318c5f
 accepted_intake: data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253
-status: synthetic_OD_complete_inferred_topology_uncertified_assignment_pending
+status: synthetic_OD_and_storm_complete_uncalibrated_topology_and_road_response_pending
 assignment_ready: false
 historical_region: nanshan
 historical_configs_are_not_longgang_configs: true
@@ -15,7 +15,12 @@ next_required:
 - boundary_datum_and_topology_audit
 - station_location_and_vertical_reference_review
 - employment_POI_and_observed_flow_calibration
-- new_inundation_assignment_and_resilience_runs
+- longgang_depth_to_road_response
+- longgang_assignment_and_resilience_runs
 synthetic_od_ready: true
 accepted_synthetic_od: data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94
 od_config: configs/longgang_od.yaml
+synthetic_storm_ready: true
+accepted_synthetic_storm: data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1
+storm_config: configs/longgang_storm.yaml
+storm_model: synthetic_road_grid_bucket_no_surface_routing

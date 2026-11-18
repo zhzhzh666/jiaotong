@@ -1,0 +1,527 @@
+{
+  "run_id": "20261118T124853_longgang_storm_7e7668c1",
+  "inputs": [
+    {
+      "path": "configs/longgang_storm.yaml",
+      "bytes": 1445,
+      "sha256": "0b6aa45ae87e08e1d5ce6a4b5718de01c8cb3f7cc551b56d3b1000f40cc2fe18"
+    },
+    {
+      "path": "scripts/run_longgang_storm.py",
+      "bytes": 19840,
+      "sha256": "73dd0df742b88aa1a11d5a3a2c46790497f1c5f1c50cd5ede029eb77bf829993"
+    },
+    {
+      "path": "src/uftr/longgang_storm.py",
+      "bytes": 9471,
+      "sha256": "e6c690b2ec4e20226b68719fa73bd7f934501d8e5262cee9f66ce1df11558dab"
+    },
+    {
+      "path": "src/uftr/storm_process.py",
+      "bytes": 4225,
+      "sha256": "580a966a0a0308acaa2f8982ecbbac10061a1fba91d45b83d18830a9a4976a20"
+    },
+    {
+      "path": "src/uftr/longgang_od.py",
+      "bytes": 13325,
+      "sha256": "39bee0e0c21e08d42aa20cae058751de7333a3e9cf6a4afc1ec8b4ea48974c88"
+    },
+    {
+      "path": "src/uftr/spatial.py",
+      "bytes": 13247,
+      "sha256": "04cef883f38e641152ffb8f3a6a0461eea8067ec92e6cd7029c9509e21a20b83"
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/extracted/深圳OSM路网.gpkg",
+      "bytes": 101875712,
+      "sha256": "e335d734a29e4f6d08bcf45de706e061c887c5919cd53043a10e838edb4439bc"
+    },
+    {
+      "path": "data/raw/phase02/20261117_source_acquisition/dem_e114.tif",
+      "bytes": 25030462,
+      "sha256": "b950ab75642d6684fe08c82b6aa3bb087c1d35acd229ef0e6e6586e1b0868fa3"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/manifest.json",
+      "bytes": 24110,
+      "sha256": "a5cf7562f13e9685f10de614ae5badac2ff6d6b348dea9fee49e1766f9a49a30"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/study_boundary.geojson",
+      "bytes": 15802,
+      "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/config.yaml",
+      "bytes": 1589,
+      "sha256": "e521fefa2c22274deb8d93cf34d4f26ebf64694efca370d43f72f311132b62d0"
+    },
+    {
+      "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/inferred_source_network.graphml",
+      "bytes": 258656856,
+      "sha256": "66d4684addcfaa85a83aff188e4f436eac02088a7827150f82d40298ffe11aa5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/proxy_peak_map.png",
+      "bytes": 1159048,
+      "sha256": "11723e42aa9b0b037f36f4942315c13f7d0cd4baaa459580c63660166d5dfe2c"
+    },
+    {
+      "path": "figures/proxy_peak_map.svg",
+      "bytes": 9816344,
+      "sha256": "ee3b3aa77da44dc55fd4069fd14ea0ce3a8e44bf09238defb47e1bed2bf412f8"
+    },
+    {
+      "path": "figures/rainfall_ponding_process.png",
+      "bytes": 205728,
+      "sha256": "1fa821d8b263c2d592135d095508cfdcbe297826d93734d1e86ca6682008cb91"
+    },
+    {
+      "path": "figures/rainfall_ponding_process.svg",
+      "bytes": 53662,
+      "sha256": "df6f278ce360826442b3d43825cdc0debbf22bedc89a7bd2aeaa2903e4683ae3"
+    },
+    {
+      "path": "figures/sensitivity_road_exposure.png",
+      "bytes": 151394,
+      "sha256": "3aacf5fe2a757183b4714a8397e10acbb7fc538f80afef291c0b994ac6ae7848"
+    },
+    {
+      "path": "figures/sensitivity_road_exposure.svg",
+      "bytes": 33622,
+      "sha256": "f24a4fb1474704a3ddb0c3bb9e1d1f3226246b38b7d37c8e5e0ebeeb77da37f3"
+    },
+    {
+      "path": "gis/flood_proxy_sites.geojson",
+      "bytes": 2670659,
+      "sha256": "9b66df72930cd239475cdb4354ff68a965dbe44d394ae603b1f429962b86ac63"
+    },
+    {
+      "path": "gis/longgang_dsm_30m.tif",
+      "bytes": 1525331,
+      "sha256": "7d1790b9c2a792946c7349295b74e7b703e07de806939ee1930f569207032664"
+    },
+    {
+      "path": "gis/road_features.geojson",
+      "bytes": 4734109,
+      "sha256": "2d135862d67a1aec8bbf05d34f77ad780cce27394a042de476ffcc054cf5f0c4"
+    },
+    {
+      "path": "gis/study_boundary.geojson",
+      "bytes": 15802,
+      "sha256": "558814d7993c0d9158218b4d8833a31de01907f188dade7f3279e6a955018f83"
+    },
+    {
+      "path": "provenance/longgang_od.py",
+      "bytes": 13325,
+      "sha256": "39bee0e0c21e08d42aa20cae058751de7333a3e9cf6a4afc1ec8b4ea48974c88"
+    },
+    {
+      "path": "provenance/longgang_storm.py",
+      "bytes": 9471,
+      "sha256": "e6c690b2ec4e20226b68719fa73bd7f934501d8e5262cee9f66ce1df11558dab"
+    },
+    {
+      "path": "provenance/longgang_storm.yaml",
+      "bytes": 1445,
+      "sha256": "0b6aa45ae87e08e1d5ce6a4b5718de01c8cb3f7cc551b56d3b1000f40cc2fe18"
+    },
+    {
+      "path": "provenance/run_longgang_storm.py",
+      "bytes": 19840,
+      "sha256": "73dd0df742b88aa1a11d5a3a2c46790497f1c5f1c50cd5ede029eb77bf829993"
+    },
+    {
+      "path": "provenance/spatial.py",
+      "bytes": 13247,
+      "sha256": "04cef883f38e641152ffb8f3a6a0461eea8067ec92e6cd7029c9509e21a20b83"
+    },
+    {
+      "path": "provenance/storm_process.py",
+      "bytes": 4225,
+      "sha256": "580a966a0a0308acaa2f8982ecbbac10061a1fba91d45b83d18830a9a4976a20"
+    },
+    {
+      "path": "provenance/validation_report.json",
+      "bytes": 6999,
+      "sha256": "532fd5b1d8f7a7a094919689ab373d371a78efcfc77c19cfa7003094da936e88"
+    },
+    {
+      "path": "raw/balance/baseline__extreme.parquet",
+      "bytes": 7745561,
+      "sha256": "0a27d368ff176e786c24ccdb3b5befb5de08fc3ce53fd786cd1b70a8720b94cc"
+    },
+    {
+      "path": "raw/balance/baseline__general.parquet",
+      "bytes": 6698635,
+      "sha256": "cbbe8fcaef3d76cf6f64651e4b4ba7b5ddec6802e1a5f39b6b9346b592bce356"
+    },
+    {
+      "path": "raw/balance/baseline__normal.parquet",
+      "bytes": 677714,
+      "sha256": "84f0f04de33d9e25cbbd9e50828d40a0adfe2229dd65305cbf1f80fb28163824"
+    },
+    {
+      "path": "raw/balance/baseline__severe.parquet",
+      "bytes": 7351286,
+      "sha256": "3efd845638dae1be5938431d7174ed6c3826fb14ee9d54f7e733644471936c69"
+    },
+    {
+      "path": "raw/balance/drainage_1p5__extreme.parquet",
+      "bytes": 7352198,
+      "sha256": "e9836c5abd567b306f770bd3d1ff6c5a675288fb10ae3ff3115558d6de408872"
+    },
+    {
+      "path": "raw/balance/drainage_1p5__general.parquet",
+      "bytes": 6290684,
+      "sha256": "83ca006409f2505a1732ada5f3a671a83d62697696789bd9bd7b632850e4f19e"
+    },
+    {
+      "path": "raw/balance/drainage_1p5__normal.parquet",
+      "bytes": 677714,
+      "sha256": "84f0f04de33d9e25cbbd9e50828d40a0adfe2229dd65305cbf1f80fb28163824"
+    },
+    {
+      "path": "raw/balance/drainage_1p5__severe.parquet",
+      "bytes": 6964637,
+      "sha256": "8612d139a01279c4e85d0d0db34c0b45e19843b03cf5baa3c209e76bae7b03eb"
+    },
+    {
+      "path": "raw/balance/drainage_half__extreme.parquet",
+      "bytes": 8363742,
+      "sha256": "1b28feaf4f71d536e0bf01e5a15fda53eadfaf9ee315e6eca1c34362d8b3f4e0"
+    },
+    {
+      "path": "raw/balance/drainage_half__general.parquet",
+      "bytes": 7351236,
+      "sha256": "1a902162904a2fa854d70a107b436e73685f1bbe5dd9ac6cdfb3f886bc044a76"
+    },
+    {
+      "path": "raw/balance/drainage_half__normal.parquet",
+      "bytes": 677714,
+      "sha256": "84f0f04de33d9e25cbbd9e50828d40a0adfe2229dd65305cbf1f80fb28163824"
+    },
+    {
+      "path": "raw/balance/drainage_half__severe.parquet",
+      "bytes": 8017334,
+      "sha256": "9f76b45165231d758fcb45995dfabe881d72fc74b6e3040b5d1744897ffe947d"
+    },
+    {
+      "path": "raw/balance/recession_fast__extreme.parquet",
+      "bytes": 6776519,
+      "sha256": "b03d46e4938767edecea7a6f671560a06272415b339086a656875a28a291169a"
+    },
+    {
+      "path": "raw/balance/recession_fast__general.parquet",
+      "bytes": 6137046,
+      "sha256": "bfd48f1397e3c04876054b800c62627cd92bb31ae31e1500d1600ea2a2231ae3"
+    },
+    {
+      "path": "raw/balance/recession_fast__normal.parquet",
+      "bytes": 677714,
+      "sha256": "84f0f04de33d9e25cbbd9e50828d40a0adfe2229dd65305cbf1f80fb28163824"
+    },
+    {
+      "path": "raw/balance/recession_fast__severe.parquet",
+      "bytes": 6567392,
+      "sha256": "0601fa96069435dba767c290167f37a6c865b21ab613c9b7101105f2d48ea1ab"
+    },
+    {
+      "path": "raw/balance/recession_slow__extreme.parquet",
+      "bytes": 8622178,
+      "sha256": "abe9a01c31acae46fa6fe66aa020b3bdb889421d3daaa7a5c43dd8b91ac443d3"
+    },
+    {
+      "path": "raw/balance/recession_slow__general.parquet",
+      "bytes": 7299744,
+      "sha256": "dba4e20aca91ccbf84db50046760ec375b166e4dde39e2f1bb0ac24e9cd63f31"
+    },
+    {
+      "path": "raw/balance/recession_slow__normal.parquet",
+      "bytes": 677714,
+      "sha256": "84f0f04de33d9e25cbbd9e50828d40a0adfe2229dd65305cbf1f80fb28163824"
+    },
+    {
+      "path": "raw/balance/recession_slow__severe.parquet",
+      "bytes": 8216670,
+      "sha256": "bf2244aa2e3465f65181097a2b664481d3224093ac052177dcd1f6960a447cc7"
+    },
+    {
+      "path": "raw/baseline_road_threshold_metrics.csv",
+      "bytes": 9401876,
+      "sha256": "8f137d7344a0ce9f5b682d82ac6d2a6b829d665b50eee4ce43921a02764c8573"
+    },
+    {
+      "path": "raw/od_graph_arc_mapping.csv",
+      "bytes": 12790011,
+      "sha256": "78cea6aa27dbcf7a71ca43c820aca9aa7bc13701feac9e7aa8c0348365ab11f0"
+    },
+    {
+      "path": "raw/reference_rainfall.csv",
+      "bytes": 20903,
+      "sha256": "58b799d087cb216069e0f98729572eff9882abaaf66536866e30d092a33c9461"
+    },
+    {
+      "path": "raw/road_depths/baseline__extreme.npz",
+      "bytes": 1306882,
+      "sha256": "5079ffb17bbb83e2c4963363170768ddb7247a6f1d0c0dd55176e8f78d747f5d"
+    },
+    {
+      "path": "raw/road_depths/baseline__extreme.parquet",
+      "bytes": 2936176,
+      "sha256": "b7f4619d792459da3aba3bc444bdf427168b4a807e94ab0d489f7456044f372a"
+    },
+    {
+      "path": "raw/road_depths/baseline__general.npz",
+      "bytes": 942392,
+      "sha256": "a4183cda0e20b8f158bb1abe452384bc781b13783cdcf728dded0d19218c5ef8"
+    },
+    {
+      "path": "raw/road_depths/baseline__general.parquet",
+      "bytes": 2390467,
+      "sha256": "93feec1f9c39d57c4522f42d129a619409450a67c32a6d61fd8cd0faf246baae"
+    },
+    {
+      "path": "raw/road_depths/baseline__normal.npz",
+      "bytes": 125841,
+      "sha256": "3646536fba4f8c1dadf75a27eba21b5e3d1f7632d581f9f130f9c67089d12d2b"
+    },
+    {
+      "path": "raw/road_depths/baseline__normal.parquet",
+      "bytes": 1264257,
+      "sha256": "a6716b64f86d88f3d956474341620db61a7aa168ca9d0356d28056c7fd8d3f8f"
+    },
+    {
+      "path": "raw/road_depths/baseline__severe.npz",
+      "bytes": 1172785,
+      "sha256": "f2306acd9efb99c105c8f348b1f993076a183ca7dc2519dd81fe1c82e1d7c939"
+    },
+    {
+      "path": "raw/road_depths/baseline__severe.parquet",
+      "bytes": 2734904,
+      "sha256": "9604e6782299272f582b5ea2a326a67f90e38a67e2c86fa046e26473c858901d"
+    },
+    {
+      "path": "raw/road_depths/drainage_1p5__extreme.npz",
+      "bytes": 1172582,
+      "sha256": "b8c55719d58cb5c7ce0034800d25441aee8865b8ddb53ae0e22008053d1929c0"
+    },
+    {
+      "path": "raw/road_depths/drainage_1p5__general.npz",
+      "bytes": 813827,
+      "sha256": "4b6473c663120715231f1c9526974490bd23fa66a625609e6063e08e0e0980dd"
+    },
+    {
+      "path": "raw/road_depths/drainage_1p5__normal.npz",
+      "bytes": 125841,
+      "sha256": "3646536fba4f8c1dadf75a27eba21b5e3d1f7632d581f9f130f9c67089d12d2b"
+    },
+    {
+      "path": "raw/road_depths/drainage_1p5__severe.npz",
+      "bytes": 1036487,
+      "sha256": "59f7cabb0fbf5e0cbce6e623b5507bffe7f4421614ead7bef2179f5de314a642"
+    },
+    {
+      "path": "raw/road_depths/drainage_half__extreme.npz",
+      "bytes": 1512818,
+      "sha256": "07058e6786a4e6a39c137a424530807135d9d1457d41ef38f1efd9ab74b35565"
+    },
+    {
+      "path": "raw/road_depths/drainage_half__general.npz",
+      "bytes": 1172759,
+      "sha256": "7b67d34f4f4e6c5e4adaa91cfe368bead9614722e188946bf574a6f4570cb5cd"
+    },
+    {
+      "path": "raw/road_depths/drainage_half__normal.npz",
+      "bytes": 125841,
+      "sha256": "3646536fba4f8c1dadf75a27eba21b5e3d1f7632d581f9f130f9c67089d12d2b"
+    },
+    {
+      "path": "raw/road_depths/drainage_half__severe.npz",
+      "bytes": 1401651,
+      "sha256": "27b7a11ea251d76a462baa0d17f49fecf4c5871e21602c4b0ce7306333ea310b"
+    },
+    {
+      "path": "raw/road_depths/recession_fast__extreme.npz",
+      "bytes": 941357,
+      "sha256": "522783803e7571ce3e6cdc1ffe24deb956dfaf3aa08639d745e04a912389c00f"
+    },
+    {
+      "path": "raw/road_depths/recession_fast__general.npz",
+      "bytes": 744942,
+      "sha256": "1424ef1b2d033691865ccaaac1ee5ecc4cfb4f1dd3c0b8add9f6c717f14105a4"
+    },
+    {
+      "path": "raw/road_depths/recession_fast__normal.npz",
+      "bytes": 125841,
+      "sha256": "3646536fba4f8c1dadf75a27eba21b5e3d1f7632d581f9f130f9c67089d12d2b"
+    },
+    {
+      "path": "raw/road_depths/recession_fast__severe.npz",
+      "bytes": 870908,
+      "sha256": "c3358cef406a52434cbbaed9b172db41e825f4efc1f7cf86ef51860d1bbf57ad"
+    },
+    {
+      "path": "raw/road_depths/recession_slow__extreme.npz",
+      "bytes": 1582787,
+      "sha256": "7ae3c4bfa0004276b5e703ac28911573ae401df246c7248f63c9ba51a2335b2a"
+    },
+    {
+      "path": "raw/road_depths/recession_slow__general.npz",
+      "bytes": 1199208,
+      "sha256": "96d22024ef04875f507b35fe61d3fd4674cd2fed080be039e31e9e0e62ebd741"
+    },
+    {
+      "path": "raw/road_depths/recession_slow__normal.npz",
+      "bytes": 125841,
+      "sha256": "3646536fba4f8c1dadf75a27eba21b5e3d1f7632d581f9f130f9c67089d12d2b"
+    },
+    {
+      "path": "raw/road_depths/recession_slow__severe.npz",
+      "bytes": 1487341,
+      "sha256": "7cefc215d08328db04154e2d7abb46b49c0d2b5f467dbc7907e3a3292a6297ba"
+    },
+    {
+      "path": "raw/road_feature_status.csv",
+      "bytes": 729339,
+      "sha256": "d46257bb1c8053a4ea0e72c1a7c4ad3e900b128d11dcca848e702e44132052a5"
+    },
+    {
+      "path": "raw/road_sample_coverage.parquet",
+      "bytes": 935807,
+      "sha256": "c0dcb63519886b22e7c7214fd1184706c30b9e40575725633e50f33a4952867c"
+    },
+    {
+      "path": "raw/scenario_summary.csv",
+      "bytes": 2705,
+      "sha256": "cd11ac74e3f6c25ccecae73beb5943940aeaeaa64e6554c95aebefd23802b16d"
+    },
+    {
+      "path": "raw/site_depths/baseline__extreme.parquet",
+      "bytes": 2695305,
+      "sha256": "5f37ae7446f4ffefaf87ec44c0c45f5267f383ebfb45fbaf0a6abcbb60c81115"
+    },
+    {
+      "path": "raw/site_depths/baseline__general.parquet",
+      "bytes": 2148326,
+      "sha256": "bccd3b4f42b3ab7ef08e8b67b6a1121872083adab9153c5289d4ad487d6731bb"
+    },
+    {
+      "path": "raw/site_depths/baseline__normal.parquet",
+      "bytes": 682082,
+      "sha256": "45fe15b95d93cf7e35665085f1bbe5226a4b81639319d8cc7adee3b22f6174f7"
+    },
+    {
+      "path": "raw/site_depths/baseline__severe.parquet",
+      "bytes": 2493503,
+      "sha256": "40552a144711870322c9dd162dcff5e822004dff3b1b1e0f3dd4ee6d98b0ac69"
+    },
+    {
+      "path": "raw/site_depths/drainage_1p5__extreme.parquet",
+      "bytes": 2493512,
+      "sha256": "e5b65d1cba1191b0766e7de93cbd8d004a9b742c316c7d3f09b57c65afbd2e4d"
+    },
+    {
+      "path": "raw/site_depths/drainage_1p5__general.parquet",
+      "bytes": 1876483,
+      "sha256": "c4385f9861c068368c7afe30e26f8b00f2274470336f9ff314a1606df32b7210"
+    },
+    {
+      "path": "raw/site_depths/drainage_1p5__normal.parquet",
+      "bytes": 682082,
+      "sha256": "45fe15b95d93cf7e35665085f1bbe5226a4b81639319d8cc7adee3b22f6174f7"
+    },
+    {
+      "path": "raw/site_depths/drainage_1p5__severe.parquet",
+      "bytes": 2291178,
+      "sha256": "861589e21ad048afb0fc5905c72700d35ce5932179484eb156be34a3c7db906b"
+    },
+    {
+      "path": "raw/site_depths/drainage_half__extreme.parquet",
+      "bytes": 3025995,
+      "sha256": "83272118ec5f8af2ffb5f1152dcae12bdbb81ec79c4d4df21e6c95f582e94944"
+    },
+    {
+      "path": "raw/site_depths/drainage_half__general.parquet",
+      "bytes": 2493486,
+      "sha256": "4c9b94908ab34b2cfd8130fb463c603f2037fad137a8c4d4b384ba988f9d62fd"
+    },
+    {
+      "path": "raw/site_depths/drainage_half__normal.parquet",
+      "bytes": 682082,
+      "sha256": "45fe15b95d93cf7e35665085f1bbe5226a4b81639319d8cc7adee3b22f6174f7"
+    },
+    {
+      "path": "raw/site_depths/drainage_half__severe.parquet",
+      "bytes": 2841036,
+      "sha256": "993d10cec21a69e1db8a25c68c86ee4671d2e0ae9e3b99467b01937b29fb0f20"
+    },
+    {
+      "path": "raw/site_depths/recession_fast__extreme.parquet",
+      "bytes": 2208582,
+      "sha256": "f4063438f2e03fd485cce7b496cd9a6343fe3ef9aea1b520ea1d3f22f5a4c720"
+    },
+    {
+      "path": "raw/site_depths/recession_fast__general.parquet",
+      "bytes": 1802583,
+      "sha256": "c1fb98fd692f643e77c9f7b7300ea52e97507cab58f97823723c124eba227198"
+    },
+    {
+      "path": "raw/site_depths/recession_fast__normal.parquet",
+      "bytes": 682082,
+      "sha256": "45fe15b95d93cf7e35665085f1bbe5226a4b81639319d8cc7adee3b22f6174f7"
+    },
+    {
+      "path": "raw/site_depths/recession_fast__severe.parquet",
+      "bytes": 2099003,
+      "sha256": "30a0935fb0a85b6b24925ac51fb176c216215d6fbf42b1a5b7dbeb81d42c0d68"
+    },
+    {
+      "path": "raw/site_depths/recession_slow__extreme.parquet",
+      "bytes": 3150817,
+      "sha256": "95f0bed89671d2c6b3ed37a0515baebdedcce5f802c3e3f7e48f6d38de661d79"
+    },
+    {
+      "path": "raw/site_depths/recession_slow__general.parquet",
+      "bytes": 2455215,
+      "sha256": "96d375c4c78e71792b1d9e9b8fbe57cc0e48f3da1e6567b4d14f9bf5fdc25ee6"
+    },
+    {
+      "path": "raw/site_depths/recession_slow__normal.parquet",
+      "bytes": 682082,
+      "sha256": "45fe15b95d93cf7e35665085f1bbe5226a4b81639319d8cc7adee3b22f6174f7"
+    },
+    {
+      "path": "raw/site_depths/recession_slow__severe.parquet",
+      "bytes": 2938674,
+      "sha256": "da38885cb3a952fbdeb3759bc9f9a4356571e4bfc5e473f0861ed631cd74d797"
+    },
+    {
+      "path": "raw/site_parameters.csv",
+      "bytes": 884095,
+      "sha256": "842cb62864d610e4c62d9856078297f2120f3d7e02880e3a04f2eea1b9621a7c"
+    },
+    {
+      "path": "raw/site_road_links.csv",
+      "bytes": 360096,
+      "sha256": "93e91e7cf2bcd6d008febe08aaa043d3d9a7a085e7316560dcc5b6955755cfc2"
+    },
+    {
+      "path": "raw/site_threshold_metrics.csv",
+      "bytes": 34264685,
+      "sha256": "231fa514beb84c9c2208c5cff353b8717dd1e4590dc2e9e3c4c875df2af7baa1"
+    },
+    {
+      "path": "raw/time_step_check.csv",
+      "bytes": 608,
+      "sha256": "8fc95ee14b1dbe790c8ff35c2aca25a83e06ba75280ced94f2262ab450c0e767"
+    },
+    {
+      "path": "status.json",
+      "bytes": 81,
+      "sha256": "711fddc99cdad1affc80647f07f2d533af10944b2c2390e6f237fd47aa501663"
+    }
+  ]
+}

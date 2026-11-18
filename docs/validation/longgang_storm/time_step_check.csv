@@ -1,0 +1,5 @@
+scenario,max_endpoint_difference_m,median_endpoint_difference_m,coarse_peak_m,fine_peak_at_common_endpoints_m,fine_rainfall_assumption
+normal,0.0,0.0,0.0,0.0,15min rain uniformly split into three 5min intervals
+general,0.0039449413331936745,0.0,0.26128702056641684,0.25824443307429357,15min rain uniformly split into three 5min intervals
+severe,0.008130244110340634,0.0,0.5438918172192798,0.5375533917825742,15min rain uniformly split into three 5min intervals
+extreme,0.012316241947121775,0.00021413958662638843,0.8265789990431298,0.816944943974031,15min rain uniformly split into three 5min intervals

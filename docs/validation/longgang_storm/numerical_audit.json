@@ -1,0 +1,13 @@
+{
+  "run_id": "20261118T124853_longgang_storm_7e7668c1",
+  "all_checks_passed": true,
+  "hashes_verified": 104,
+  "zip_files_verified": 93,
+  "case_scenario_combinations_audited": 20,
+  "site_endpoint_values_audited": 8029660,
+  "max_recurrence_error_m": 2.220446049250313e-16,
+  "max_drainage_error_mm": 1.4210854715202004e-14,
+  "max_closed_form_dry_recession_error_m": 3.3306690738754696e-16,
+  "max_source_road_aggregation_error_m": 0.0,
+  "zip_sha256": "cf3d089ca55a0fe03487a1821d803efc5931a6bc79f92f0101264341266891ee"
+}

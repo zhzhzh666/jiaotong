@@ -1,0 +1,41 @@
+region: longgang
+include_dapeng: false
+seed: 42
+od_package: data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94
+source_roads: data/raw/user_sources/shenzhen_osm_20261118/extracted/深圳OSM路网.gpkg
+road_layer: motor_shenzhen
+dsm: data/raw/phase02/20261117_source_acquisition/dem_e114.tif
+output_root: data/synthetic/longgang_storm
+duration_hours: 24
+interval_minutes: 15
+spatial:
+  cell_size_m: 250
+  road_sample_spacing_m: 100
+  local_dsm_radius_pixels: 10
+  local_low_scale_m: 10
+rainfall:
+  # Hypothetical stress events, NOT observations or IDF return periods.
+  event_start_hour: 5
+  event_end_hour: 13
+  peaks_hour: [8, 10]
+  peak_width_hours: [0.65, 1.0]
+  peak_weights: [0.7, 0.3]
+  total_mm: {normal: 0, general: 100, severe: 200, extreme: 300}
+  spatial_correlation_m: 1500
+  spatial_log_sd: 0.15
+  random_fourier_modes: 64
+ponding:
+  runoff_coefficient: 0.8
+  concentration_ratio_min: 2.0
+  concentration_ratio_span: 2.5
+  drainage_min_mm_h: 8.0
+  drainage_span_mm_h: 10.0
+  recession_tau_h: 4.0
+thresholds_m: [0.01, 0.15, 0.30, 0.40]
+recovery_threshold_m: 0.01
+cases:
+  baseline: {drainage_multiplier: 1.0, recession_multiplier: 1.0}
+  drainage_half: {drainage_multiplier: 0.5, recession_multiplier: 1.0}
+  drainage_1p5: {drainage_multiplier: 1.5, recession_multiplier: 1.0}
+  recession_fast: {drainage_multiplier: 1.0, recession_multiplier: 0.5}
+  recession_slow: {drainage_multiplier: 1.0, recession_multiplier: 2.0}
