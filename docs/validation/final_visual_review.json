@@ -1,17 +1,18 @@
 {
   "all_pages_and_slides_visually_reviewed": true,
-  "word_pages": 31,
-  "ppt_slides": 31,
-  "method": "Pages/slides 2-30 pixel-identical to prior reviewed 31-page/slide edition. Changed Word pages and slide images 1/31 individually opened and inspected; no clipping or missing glyphs observed. All 14 existing chart XML and source workbook parts preserved byte-for-byte.",
-  "word_sha256": "85dab4808a103ef3bc8b90e0e395c3d0babcbf5ac0f07e3a08c46c148a1a8a07",
-  "ppt_sha256": "c60b9154e1796c975f0bb1993ecf0ae40a2aff1b0edd7bad3de77ae9b52743e0",
-  "word_pdf": ".cache/longgang-no-dapeng-doc-sync/final-word.pdf",
-  "ppt_receipt": ".cache/longgang-no-dapeng-doc-sync/v1/validation.json",
-  "previous_review_sha256": "0388b8011b297459d7ad7131e9be99bf2f9c47293451f9fce514e732d79a63ec",
+  "word_pages": 33,
+  "ppt_slides": 33,
+  "method": "All final pages/slides rendered. Historical pages/slides 2-30 pixel-identical to prior reviewed edition. Changed 1/31 and new 32/33 Word page and slide images individually opened and visually inspected. No clipping or missing glyphs observed. All 14 historical native chart XML and source workbooks preserved byte-for-byte.",
+  "word_sha256": "baa50906b4c1ed9af2f6f17d379956ce7b9864183e2bab31ea1d42bd6fe334f6",
+  "ppt_sha256": "95620f9b8ffc136bc7cddc961591a114122c84102d9d7eb6539bfab11231d2aa",
+  "preserved_chart_workbook_parts": 42,
+  "word_pdf": ".cache/longgang-od-doc-sync/final-word.pdf",
+  "ppt_receipt": ".cache/longgang-od-doc-sync/v2/validation.json",
+  "previous_review_sha256": "c706823215f1e038a5d184a4215f1dc99e57fbb773bef9b44794b07f56f58974",
   "word_page_images": [
     {
       "page": 1,
-      "sha256": "81c6018f84148e0cf6c69694609a953f0cf7db244b66b600a57884e7d2c2d95d"
+      "sha256": "3297114cdf0809d15423dfc0a2ea746e321bd8bd3869afa69af327bd7caba52a"
     },
     {
       "page": 2,
@@ -131,13 +132,21 @@
     },
     {
       "page": 31,
-      "sha256": "815d22f89ce4de996e8d84eab7cec7d161ad3410adb13f206defa88711a75310"
+      "sha256": "d15c981f1af47f7f18f3ceb4d1c7fa39250cc5613387ecb46bda66ba801e592e"
+    },
+    {
+      "page": 32,
+      "sha256": "63ab31df9d8109aad5aa962d713a89b1c1852eb80aab236472b21948e73c11ac"
+    },
+    {
+      "page": 33,
+      "sha256": "90304fe56adbbeab731ca85b53334a8cbfbd35174f2aa9d287d81630a13dff00"
     }
   ],
   "slide_images": [
     {
       "slide": 1,
-      "sha256": "d08e63520996210ca1195d29552c8dcbb40f5080fcc194eef13b0f25c5bd8bdc"
+      "sha256": "77dbc4bd5fd92df644f199128f69b7f4917394cc0577fb787a6f573d783bc27c"
     },
     {
       "slide": 2,
@@ -257,7 +266,15 @@
     },
     {
       "slide": 31,
-      "sha256": "7c5473c540c4598e74519de7779a251eb47826de83488004c17e897846b06caf"
+      "sha256": "f12be49f4705b7b974768a46e6939ff7f638ad2d67826178fec39d732fbc4a8c"
+    },
+    {
+      "slide": 32,
+      "sha256": "b53edd43b051900428adb9714fa8883d25055ebdf6cbcc612fcfd4700947bd36"
+    },
+    {
+      "slide": 33,
+      "sha256": "451214920043a1d14e91d1700c508204450316e5823b62be1c4004c521b871bf"
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "run_id": "20261118T121117_longgang_od_2bf08c94",
+  "all_checks_passed": true,
+  "input_output_hashes_verified": 132,
+  "zip_files_verified": 126,
+  "all_96_intervals_read_back": true,
+  "max_csv_relative_margin_error": 8.126172378777476e-10,
+  "daily_route_status_expected_trips": {
+    "intrazonal_not_graph_loaded": 57239.75789045912,
+    "routable": 2078811.9516372804,
+    "unreachable_normal_network": 102673.84960469129
+  },
+  "route_status_fraction": {
+    "intrazonal_not_graph_loaded": 0.025568010181936343,
+    "routable": 0.9285693564167279,
+    "unreachable_normal_network": 0.04586263340133585
+  },
+  "zip_sha256": "7561a5fc35d89b698429f1515f853c7fd3b99c959ba8ce4194df3515819619a5"
+}

@@ -1,0 +1,54 @@
+region: longgang
+include_dapeng: false
+seed: 42
+intake_directory: data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253
+roads: data/raw/user_sources/shenzhen_osm_20261118/extracted/深圳OSM路网.gpkg
+road_layer: motor_shenzhen
+population: data/raw/phase02/20261117_source_acquisition/population_2020_1km.tif
+output_root: data/synthetic/longgang_od
+zone_size_m: 1000
+max_connector_distance_m: 1500
+access_speed_kph: 20
+intrazonal_time_s: 300
+minimum_impedance_s: 60
+unreachable_impedance_s: 7200
+gravity_beta_per_s: 0.0008333333333333334
+person_trip_rate_per_hour: 0.05
+motorized_person_trip_share: 0.5
+vehicle_occupancy: 1.25
+attraction_proxy: population_only_no_employment_data
+boundary_gateways: 12
+boundary_inbound_fraction: 0.1
+boundary_outbound_fraction: 0.1
+ipf_tolerance: 1.0e-9
+ipf_max_iterations: 3000
+periods:
+  offpeak: {factor: 1.0}
+  morning_peak: {factor: 2.0}
+  evening_peak: {factor: 1.8}
+time:
+  interval_minutes: 15
+  duration_hours: 24
+  morning_peak_hours: [7, 10]
+  evening_peak_hours: [17, 20]
+sensitivity: {low: 0.7, base: 1.0, high: 1.3}
+network:
+  topology: exact_shared_vertices_same_grade_with_endpoint_transitions
+  coordinates: supplied_EPSG4326_assumed_not_independently_verified
+  default_speed_kph:
+    motorway: 90
+    motorway_link: 40
+    trunk: 60
+    trunk_link: 35
+    primary: 50
+    primary_link: 30
+    secondary: 40
+    secondary_link: 30
+    tertiary: 35
+    tertiary_link: 25
+    residential: 25
+    unclassified: 25
+    living_street: 15
+    service: 15
+  default_speed_fallback_kph: 20
+  prohibited_access: ['no', private]

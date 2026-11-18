@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-18",
-  "phase_status": "当前目标：龙岗不含大鹏；数据筛选完成，拓扑与模型待重算。南山实验作为历史保留。",
+  "phase_status": "龙岗不含大鹏的合成OD已生成；推定拓扑待核，交通分配与韧性待重算。南山结果作为历史保留。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 3919855,
-      "sha256": "c60b9154e1796c975f0bb1993ecf0ae40a2aff1b0edd7bad3de77ae9b52743e0"
+      "bytes": 4939043,
+      "sha256": "95620f9b8ffc136bc7cddc961591a114122c84102d9d7eb6539bfab11231d2aa"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 4974289,
-      "sha256": "85dab4808a103ef3bc8b90e0e395c3d0babcbf5ac0f07e3a08c46c148a1a8a07"
+      "bytes": 5986894,
+      "sha256": "baa50906b4c1ed9af2f6f17d379956ce7b9864183e2bab31ea1d42bd6fe334f6"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 71102,
-    "sha256": "af026d133eaea4d305f5ca69e08f2c25e4a1c742a9b38f3fd7dd8ee2e11623ee"
+    "bytes": 81550,
+    "sha256": "9b645ffb9c1b0bd3478e019326ab259cc8b0928c617eab1fba5655a295d7a5e8"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 31,
-    "docx_pages": 31,
+    "pptx_slides": 33,
+    "docx_pages": 33,
     "embedded_source_images": {
-      "word": 24,
-      "ppt": 16
+      "word": 26,
+      "ppt": 18
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -59,12 +59,12 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 131
+    "latest_tests_passed": 136
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 8178,
-    "sha256": "c706823215f1e038a5d184a4215f1dc99e57fbb773bef9b44794b07f56f58974"
+    "bytes": 8735,
+    "sha256": "c75bdcd3cd1a08068f27b7b6975a77645713ac7670bf7c1b93fe923e2dab3c36"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -127,5 +127,26 @@
       "bytes": 7128,
       "sha256": "5ae4e9d39b9dc99cfc20ecfc885caae6bb9243119c628192c12824c92a76ab59"
     }
+  },
+  "longgang_od": {
+    "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
+    "observed": false,
+    "topology_certified": false,
+    "traffic_assignment_rerun": false,
+    "tests_report": {
+      "path": "docs/validation/longgang_od/tests.xml",
+      "bytes": 16308,
+      "sha256": "6178574859a12d5ed24075f316c887fe0fe912a677561eae126db073d89c930b"
+    },
+    "independent_numerical_audit": {
+      "path": "docs/validation/longgang_od/numerical_audit.json",
+      "bytes": 721,
+      "sha256": "91706df3cb0c3f982cc913b4015b42cad4db4d86d6251db0b2c1f6e9ead68825"
+    },
+    "matrix_shape": [
+      483,
+      483
+    ],
+    "consistency_checks": 13
   }
 }

@@ -7,12 +7,15 @@ scope_source: user_supplied_shenzhen_osm_bundle
 intake_config: configs/longgang_data_intake.yaml
 historical_intake_with_dapeng: data/processed/longgang_intake/20261118T193729_longgang_intake_fe318c5f
 accepted_intake: data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253
-status: data_intake_complete_topology_and_models_pending
+status: synthetic_OD_complete_inferred_topology_uncertified_assignment_pending
 assignment_ready: false
 historical_region: nanshan
 historical_configs_are_not_longgang_configs: true
 next_required:
-  - boundary_datum_and_topology_audit
-  - station_location_and_vertical_reference_review
-  - new_population_facilities_TAZ_gateways_and_OD
-  - new_inundation_assignment_and_resilience_runs
+- boundary_datum_and_topology_audit
+- station_location_and_vertical_reference_review
+- employment_POI_and_observed_flow_calibration
+- new_inundation_assignment_and_resilience_runs
+synthetic_od_ready: true
+accepted_synthetic_od: data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94
+od_config: configs/longgang_od.yaml

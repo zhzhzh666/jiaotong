@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-18",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "当前目标：龙岗不含大鹏；数据筛选完成，拓扑与模型待重算。南山实验作为历史保留。",
+  "status": "龙岗不含大鹏的合成OD已生成；推定拓扑待核，交通分配与韧性待重算。南山结果作为历史保留。",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -196,13 +196,13 @@
       {
         "title": "暴雨内涝交通网络韧性评估与优化",
         "paragraphs": [
-          "2026年11月18日：当前研究范围为龙岗不含大鹏，已按最新范围重新筛选道路与测站。已有南山成果作为历史实验保留，龙岗模型尚未重算。",
+          "2026年11月18日：龙岗不含大鹏的483×483合成OD已生成，包含471个区内分区和12个外部网关。拓扑为线几何推定，尚未核准；南山交通与韧性结果保留为历史。",
           "治理与十种子实验使用独立小网压力情景，南山完成全图分配、97端点韧性和抽样SUMO。全部OD、容量、灾害峰值、成本与治理效果尚未标定。"
         ],
         "slide_points": [
           "研究报告与阶段进展",
           "2026年11月18日",
-          "研究区调整：龙岗不含大鹏；南山结果作为历史保留"
+          "龙岗不含大鹏 合成OD完成，拓扑待核"
         ],
         "figure": null,
         "caption": "",
@@ -649,17 +649,53 @@
           "当前研究范围为随包440307保留龙岗主面，排除大鹏面。五份原件保持原字节；实际GPKG只有机动车与全部道路两层，缺少说明书声称的motor_all_bbox。依所供中心点选择龙岗主面，未用经纬线粗切；旧含大鹏版本保留。",
           "筛选7,837条候选道路线，尚非有向图边；其中5,165条缺车道、7,611条缺限速。需重建交叉口、方向与立交拓扑，边界坐标基准尚待独立核验。",
           "已有水位筛得14个候选站、5,747条记录；其中13个龙岗标签站有5,353条，另1站标签冲突待核。SW路面零点及测站—道路关联仍未确认。",
-          "本批未提供实测雨量、官方OD或实测车流。人口与DSM外包范围覆盖新区域，但须重新裁剪，重建TAZ/设施/网关与需求。前述南山实验属于历史结果，龙岗交通与韧性尚未重算。"
+          "本页记录OD计算前的数据接收状态。本批未提供实测雨量、官方OD或实测车流。随后完成的人口裁剪、推定路网和合成需求见后两节；龙岗积水、交通分配与韧性尚未重算。"
         ],
         "slide_points": [
           "龙岗不含大鹏；7,837条候选道路线，未建图。",
           "13个龙岗标签站＋1个标签冲突站，SW零点待核。",
-          "缺官方OD与实测车流，需重建需求并重算。"
+          "接收时点记录，后续合成OD见第32—33张。"
         ],
         "figure": "docs/validation/longgang_intake/longgang_roads_water_candidates.png",
         "caption": "龙岗不含大鹏的候选路网与测站；紫叉为行政区标签冲突站，尚未验证拓扑。",
         "source_label": "用户OSM包与既有水位资料 / 20261118T195824_longgang_intake_079cc253；© OpenStreetMap contributors，ODbL 1.0",
         "ppt_native": false
+      },
+      {
+        "title": "龙岗交通需求 合成OD计算",
+        "paragraphs": [
+          "范围沿用随包龙岗主面，不含大鹏，面积386.96 km²。在EPSG32650中按1 km网格裁剪为471个分区，另设12个真实跨界道路弧对应的外侧顶点网关，形成483×483矩阵。网关节点身份由线几何推定。",
+          "WorldPop 2020模型人口按“原始像元人数×与分区重叠面积÷整个原始像元面积”分摊，合计3,172,796.99人。假设像元内人口均匀，边界像元不向区内重新归一。产生与吸引均使用人口代理，缺少就业和商业POI，不能解释真实通勤方向。",
+          "基础内部需求Q=P×0.05×0.50÷1.25=63,455.94 veh/h。0.05为每人每小时出行率，0.50为机动车比例，1.25为平均载客率，均属未标定假设。流入和流出各增加0.10Q，12个网关等额设置边际总量。",
+          "采用exp(−t/1200)重力核，对区内、流入、流出三个块分别IPF配平。最大相对误差8.77×10⁻¹⁰。外部到外部需求不在本次建模范围，其零值不能视为实测无过境交通。"
+        ],
+        "figure": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/longgang_zones_od.png",
+        "caption": "龙岗分区人口与早高峰合成OD，行表示起点、列表示终点",
+        "source_label": "20261118T121117_longgang_od_2bf08c94 / 本地所供OSM线几何与WorldPop 2020模型人口；OD为未标定合成估计",
+        "ppt_native": false,
+        "slide_points": [
+          "471个分区＋12个网关，483×483矩阵",
+          "模型人口317.28万人，人口同时代理产生与吸引",
+          "重力模型＋IPF，最大相对配平误差8.77×10⁻¹⁰"
+        ]
+      },
+      {
+        "title": "龙岗交通需求 时间变化与使用限制",
+        "paragraphs": [
+          "基准平峰76,147.13 veh/h；07:00—10:00采用2倍，为152,294.26 veh/h；17:00—20:00采用1.8倍，为137,064.83 veh/h。其余18小时为平峰。共输出96个15分钟完整方阵，区间车次数=小时流率×0.25，保留小数期望值。",
+          "全天基准2,238,725.56车次，低/高需求取0.7/1.3倍，分别1,567,107.89和2,910,343.23车次。峰值时段与倍数均为仿真假设；本次人口吸引与产生相同，早晚高峰只改变总量，不构造通勤方向差异。",
+          "全深圳线几何推定图含307,426节点、451,801条有向弧，保留平行边和单行方向。仅连接相同已有顶点，同层连接及异层共同端点衔接均待核；不自动打断几何交叉线。道路缺少原始节点ID、转向限制等，拓扑尚未认证。",
+          "401个区内分区已连接，70个未接入。平峰可路由70,707.89、不可达3,492.31、区内1,946.93 veh/h，全部需求保留。不可达阻抗7200秒仅用于需求生成；区内300秒为假设，均不能当成实际通行时间。136项测试通过，13项运行检查及独立数值审计通过。未重算积水、交通分配、韧性或SUMO。"
+        ],
+        "figure": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94/longgang_daily_demand.png",
+        "caption": "假设的15分钟需求及低中高敏感性，并非观测曲线或置信区间",
+        "source_label": "20261118T121117_longgang_od_2bf08c94 / interval_totals.csv；docs/LONGGANG_OD_MODEL.md",
+        "ppt_native": false,
+        "slide_points": [
+          "平峰7.61万，早峰15.23万，晚峰13.71万车次/小时",
+          "全天基准223.87万车次，低/高为0.7/1.3倍",
+          "保留4.59%不可达和2.56%区内需求，拓扑待核"
+        ]
       }
     ],
     "tests_passed": 106,
@@ -1068,7 +1104,7 @@
     "scope": "随包440307保留龙岗主面，排除大鹏面",
     "include_dapeng": false,
     "scope_short": "龙岗不含大鹏",
-    "status": "数据接收完成；拓扑、需求及龙岗模型重算待实施",
+    "status": "龙岗不含大鹏的合成OD已生成；推定拓扑待核，交通分配与韧性待重算。南山结果作为历史保留。",
     "intake_path": "data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253",
     "report": {
       "run_id": "20261118T195824_longgang_intake_079cc253",
@@ -1275,7 +1311,147 @@
         "Generate new inundation and rerun assignment/resilience/SUMO; retain Nanshan historical results"
       ]
     },
-    "assignment_ready": false
+    "assignment_ready": false,
+    "synthetic_od_path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94"
   },
-  "cover_subtitle": "研究区调整为龙岗不含大鹏 南山结果作为历史保留"
+  "cover_subtitle": "龙岗不含大鹏 合成交通需求计算完成",
+  "longgang_od": {
+    "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
+    "report": {
+      "run_id": "20261118T121117_longgang_od_2bf08c94",
+      "region": "longgang",
+      "include_dapeng": false,
+      "observed_od": false,
+      "source_kind": "synthetic_population_gravity_IPF_inferred_network",
+      "zones": 471,
+      "external_gateways": 12,
+      "matrix_shape": [
+        483,
+        483
+      ],
+      "positive_population_zones": 471,
+      "connected_internal_zones": 401,
+      "unconnected_positive_population_zones": 70,
+      "population": {
+        "native_cells_intersecting": 593,
+        "allocated_people": 3172796.994235304,
+        "boundary_area_km2": 386.9576011137765,
+        "valid_raster_overlap_area_km2": 386.9576011137766,
+        "nodata_overlap_area_km2": 0.0,
+        "valid_area_fraction": 1.0000000000000002,
+        "allocation": "population count times intersection area divided by full native cell area; no edge-cell inflation",
+        "attraction_proxy": "population_only; no employment or commercial POI data available",
+        "population_year": 2020,
+        "population_is_modelled_not_census": true,
+        "projected_area_closure_error_m2": 1.1920928955078125e-07
+      },
+      "network": {
+        "source_features": 43082,
+        "accepted_features": 42566,
+        "excluded_features": 516,
+        "nodes": 307426,
+        "directed_arcs": 451801,
+        "weak_components": 282,
+        "largest_weak_component_nodes": 302416,
+        "strong_components": 8751,
+        "largest_strong_component_nodes": 294416,
+        "cross_grade_endpoint_transition_nodes": 7753,
+        "source_authoritative_node_ids_available": false,
+        "topology_certified": false,
+        "arbitrary_line_intersections_joined": false,
+        "scope": "Entire supplied Shenzhen motor layer for skims; OD internal zones only Longgang excluding Dapeng",
+        "limitations": [
+          "Exact shared coordinates are inferred shared nodes, not original OSM node identities",
+          "No missing junctions or connections to outside Shenzhen added",
+          "Turn restrictions, conditional access and directional speed limits unavailable",
+          "Missing maxspeed uses configured road-class estimates; speeds are not measured"
+        ]
+      },
+      "periods": {
+        "offpeak": {
+          "total_veh_h": 76147.1278616473,
+          "internal_veh_h": 63455.93988470609,
+          "inbound_veh_h": 6345.5939884706095,
+          "outbound_veh_h": 6345.5939884706095,
+          "nonzero_od_pairs": 233145,
+          "by_route_status_veh_h": {
+            "intrazonal_not_graph_loaded": 1946.9305404918068,
+            "routable": 70707.88951147212,
+            "unreachable_normal_network": 3492.3078096833774
+          },
+          "max_absolute_margin_error_veh_h": 3.881787051795982e-07,
+          "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+        },
+        "morning_peak": {
+          "total_veh_h": 152294.2557232946,
+          "internal_veh_h": 126911.87976941217,
+          "inbound_veh_h": 12691.187976941219,
+          "outbound_veh_h": 12691.187976941219,
+          "nonzero_od_pairs": 233145,
+          "by_route_status_veh_h": {
+            "intrazonal_not_graph_loaded": 3893.8610809836136,
+            "routable": 141415.77902294425,
+            "unreachable_normal_network": 6984.615619366755
+          },
+          "max_absolute_margin_error_veh_h": 7.763574103591964e-07,
+          "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+        },
+        "evening_peak": {
+          "total_veh_h": 137064.83015096516,
+          "internal_veh_h": 114220.69179247096,
+          "inbound_veh_h": 11422.069179247097,
+          "outbound_veh_h": 11422.069179247097,
+          "nonzero_od_pairs": 233145,
+          "by_route_status_veh_h": {
+            "intrazonal_not_graph_loaded": 3504.4749728852516,
+            "routable": 127274.20112064983,
+            "unreachable_normal_network": 6286.15405743008
+          },
+          "max_absolute_margin_error_veh_h": 6.987215783738066e-07,
+          "duration_note": "Hourly rate prototype only; not a 24h departure schedule"
+        }
+      },
+      "daily_expected_vehicle_trips": {
+        "low": 1567107.8913927013,
+        "base": 2238725.5591324307,
+        "high": 2910343.22687216
+      },
+      "intervals": 96,
+      "max_ipf_relative_error": 8.765593270895329e-10,
+      "independent_skim_max_error_s": 0.0,
+      "checks": {
+        "scope_excludes_dapeng": true,
+        "population_fraction_weights_not_above_one": true,
+        "allocated_population_conserved": true,
+        "all_zones_including_zero_population_retained": true,
+        "all_matrices_finite_nonnegative": true,
+        "ipf_margins_converged": true,
+        "external_external_zero": true,
+        "route_status_accounting": true,
+        "independent_skim_error_below_1e_7_s": true,
+        "exactly_96_intervals": true,
+        "daily_integral_matches_intervals": true,
+        "all_interval_csvs_written": true,
+        "sampled_interval_roundtrip": true
+      },
+      "elapsed_seconds": 198.67966985702515,
+      "limitations": [
+        "All quantities are uncalibrated synthetic expected vehicle trips, not official or observed traffic",
+        "Boundary coordinates assumed WGS84 per supplier; datum independently unverified",
+        "Population 2020 differs from 2026 source roads; no event-specific historical reconstruction",
+        "Attraction is population-only; peak periods have no independently estimated commuting direction",
+        "Exact-vertex topology is inferred; unresolved grade transitions and missing source junctions remain",
+        "Uniform intrazonal demand is retained but not loaded to graph; unreachable demand retained",
+        "Inbound and outbound each 10% of internal demand; equal weights across 12 gateways are assumptions",
+        "External-external through traffic excluded, not measured zero",
+        "15min profiles and low/high scales are assumptions, not observations or confidence bounds",
+        "No congestion, water depth, traffic assignment, resilience or SUMO recalculated"
+      ]
+    },
+    "tests_passed": 136,
+    "tests_report": "docs/validation/longgang_od/tests.xml",
+    "audit": "docs/validation/longgang_od/numerical_audit.json",
+    "observed": false,
+    "assignment_rerun": false
+  }
 }

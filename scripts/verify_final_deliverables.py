@@ -146,5 +146,20 @@ if data.get('active_research'):
         'intake_path':active['intake_path'],'assignment_ready':False,'traffic_assignment_rerun_for_longgang':False,
         'intake_checks':record(ROOT/'docs/validation/longgang_intake/intake_checks.json'),
         'intake_report':record(ROOT/'docs/validation/longgang_intake/intake_report.json')}
+if data.get('longgang_od'):
+    od=data['longgang_od'];run=ROOT/od['path']
+    report=json.loads((run/'demand_report.json').read_text(encoding='utf-8'))
+    audit=json.loads((ROOT/od['audit']).read_text(encoding='utf-8'))
+    latest=ET.parse(ROOT/od['tests_report']).getroot().find('testsuite')
+    assert report==od['report'] and audit['run_id']==report['run_id'] and audit['all_checks_passed']
+    assert not report['observed_od'] and not report['include_dapeng']
+    assert all(report['checks'].values()) and audit['all_96_intervals_read_back']
+    assert int(latest.attrib['tests'])==od['tests_passed'] and int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert report['run_id'] in doc_text and report['run_id'] in ppt_text
+    manifest['verification']['latest_tests_passed']=od['tests_passed']
+    manifest['longgang_od']={'path':od['path'],'observed':False,'topology_certified':False,
+        'traffic_assignment_rerun':False,'tests_report':record(ROOT/od['tests_report']),
+        'independent_numerical_audit':record(ROOT/od['audit']),
+        'matrix_shape':report['matrix_shape'],'consistency_checks':len(report['checks'])}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

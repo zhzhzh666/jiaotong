@@ -1,0 +1,22 @@
+{
+  "source_features": 43082,
+  "accepted_features": 42566,
+  "excluded_features": 516,
+  "nodes": 307426,
+  "directed_arcs": 451801,
+  "weak_components": 282,
+  "largest_weak_component_nodes": 302416,
+  "strong_components": 8751,
+  "largest_strong_component_nodes": 294416,
+  "cross_grade_endpoint_transition_nodes": 7753,
+  "source_authoritative_node_ids_available": false,
+  "topology_certified": false,
+  "arbitrary_line_intersections_joined": false,
+  "scope": "Entire supplied Shenzhen motor layer for skims; OD internal zones only Longgang excluding Dapeng",
+  "limitations": [
+    "Exact shared coordinates are inferred shared nodes, not original OSM node identities",
+    "No missing junctions or connections to outside Shenzhen added",
+    "Turn restrictions, conditional access and directional speed limits unavailable",
+    "Missing maxspeed uses configured road-class estimates; speeds are not measured"
+  ]
+}
