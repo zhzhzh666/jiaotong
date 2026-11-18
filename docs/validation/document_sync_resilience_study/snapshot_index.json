@@ -1,0 +1,85 @@
+{
+  "qa_only": true,
+  "archive_sha256": "83cd9aee9b57109d8ab5777b90238afa83ae771c29b47698c7bb5bdd91bbc437",
+  "files": [
+    {
+      "path": "delivery_verification.json",
+      "sha256": "5db8b99ff586939ff28e998364e7e9875b679dfa5819ef350ef28578bcb99372"
+    },
+    {
+      "path": "frozen_audit_resilience_4090.py",
+      "sha256": "ceca46806e816aec7923a72765cade8c09eb2281810f050d11680f41aa2a3dca"
+    },
+    {
+      "path": "frozen_config.yaml",
+      "sha256": "9bb1f378f9eedf7a89ef4ec8d95f0cb862ab5be147a1a8e44b0b85f99b183515"
+    },
+    {
+      "path": "frozen_package_tests.xml",
+      "sha256": "f20ec67b3b95353dd508b56dbc0ff4b6fb00f6a133c62ab6b774080c7db80847"
+    },
+    {
+      "path": "frozen_resilience_ppt.py",
+      "sha256": "cac0479d01173474e1518a3eddba2aa90faf13c23a41f1fa0d30f5589a9c44f4"
+    },
+    {
+      "path": "frozen_run_resilience_4090.py",
+      "sha256": "4af8e7a7fc3ea53c6918fa9da99be37e69752f3e0088354c61778cddfc78efcc"
+    },
+    {
+      "path": "Longgang_preflight_independent_audit.json",
+      "sha256": "1e402b3e5bd8ce8a9fe72ede0c865af06185f6946716cfaffa2d7dad6122bc0a"
+    },
+    {
+      "path": "Longgang_preflight_preflight.json",
+      "sha256": "a2454dcc65183ebfd78d42156a2cbad427d106bbe5e3eaa746e5fdf585dc0b9e"
+    },
+    {
+      "path": "Longgang_preflight_status.json",
+      "sha256": "8d0e7b444d391ba4e6ae8c3b553e7342aea60d44f3a7eaaa6570a41f1d8cfc27"
+    },
+    {
+      "path": "method_and_runbook.md",
+      "sha256": "bc2a948d3b11ce3b9a197dd95517ca30d8e61f9b4d7b1b97df2505aa38c27eb3"
+    },
+    {
+      "path": "phase_report.md",
+      "sha256": "f3c73e6d54b4347803fbf028baf17f78999ed714a99754eefabc7a2a51b770d2"
+    },
+    {
+      "path": "qa_summary.json",
+      "sha256": "845eecc1112647fb657d60f559c38b144150770e127d0d51f91c882f19224341"
+    },
+    {
+      "path": "synthetic_QA_budget_R_recommendations.csv",
+      "sha256": "a24de4c0038f0b9465fda4b8e11c531b40740eb8cdd95d4d28e959b5370dee8c"
+    },
+    {
+      "path": "synthetic_QA_critical_road_R_ranking.csv",
+      "sha256": "4857a3dd978d908988d46518d482eb57e356b05f063b748cf2f42b7f753138e8"
+    },
+    {
+      "path": "synthetic_QA_figures.png",
+      "sha256": "91b0e05b83128b5038553dba6a649eb150f26b056cb6526ad71b6df9482fdcdc"
+    },
+    {
+      "path": "synthetic_QA_governance_R_combinations.csv",
+      "sha256": "38ffd64becf8e04399633f8d9dabb309f3b2345e1f36075993580c177dd613de"
+    },
+    {
+      "path": "synthetic_QA_independent_audit.json",
+      "sha256": "db97f30889a1e899ca32f46d0cf0a6061943efb80cf762a1d669a8e0ed950945"
+    },
+    {
+      "path": "tests.xml",
+      "sha256": "1b1e82d8d59aebbc66ef47341d750381f01ca07e24a56ba6f94101f064994632"
+    }
+  ],
+  "frozen_method_and_source_extracted_from_archive": [
+    "frozen_config.yaml",
+    "frozen_resilience_ppt.py",
+    "frozen_run_resilience_4090.py",
+    "frozen_audit_resilience_4090.py",
+    "method_and_runbook.md"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "source_arcs": 451801,
+  "source_nodes": 307426,
+  "structural_arcs": 86807,
+  "structural_nodes": 58221,
+  "efficiency_origin_count": 64,
+  "efficiency_is_sampled": true,
+  "population_denominator": 3172796.9942353033,
+  "facility_objects": {
+    "fire_station": 31,
+    "hospital": 69
+  },
+  "connected_facility_objects": {
+    "fire_station": 30,
+    "hospital": 64
+  },
+  "od_zones": 483,
+  "candidate_roads": 12,
+  "solver_uses_cuda": false
+}

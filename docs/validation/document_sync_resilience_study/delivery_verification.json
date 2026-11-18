@@ -1,0 +1,34 @@
+{
+  "archive": "jiaotong_ubuntu4090_keyroads_governance_20261119.tar.gz",
+  "archive_bytes": 714908047,
+  "sha256": "83cd9aee9b57109d8ab5777b90238afa83ae771c29b47698c7bb5bdd91bbc437",
+  "purpose": "PPT resilience key-road identification and drainage governance study",
+  "files_verified": 796,
+  "full_extraction_and_SHA": "passed",
+  "frozen_package_tests_passed": 199,
+  "frozen_module_import_verified": true,
+  "full_synthetic_24h_study_resume_audit_roundtrip": "passed in frozen package tests",
+  "real_Longgang_frozen_package_preflight": {
+    "source_arcs": 451801,
+    "source_nodes": 307426,
+    "structural_arcs": 86807,
+    "structural_nodes": 58221,
+    "efficiency_origin_count": 64,
+    "efficiency_is_sampled": true,
+    "population_denominator": 3172796.9942353033,
+    "facility_objects": {
+      "fire_station": 31,
+      "hospital": 69
+    },
+    "connected_facility_objects": {
+      "fire_station": 30,
+      "hospital": 64
+    },
+    "od_zones": 483,
+    "candidate_roads": 12,
+    "solver_uses_cuda": false
+  },
+  "preflight_run": "results/resilience_runs/ppt_20261118T201652Z_87b9d95d",
+  "Ubuntu_target_executed": false,
+  "Longgang_full_R_study_executed": false
+}

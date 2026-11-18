@@ -1,0 +1,15 @@
+{
+  "qa_only": true,
+  "full_suite_tests_passed": 199,
+  "pip_check": "passed",
+  "synthetic_fixture": "3 nodes, 6 directed arcs, 2 zones, 2 road candidates, 4 treatment sites, 3 rainfall cases, 97 endpoints each",
+  "synthetic_cases": 51,
+  "resume_and_export_receive_analysis": "passed",
+  "BPR_tamper_detection": "passed",
+  "source_tamper_export_rejection": "passed",
+  "Ubuntu_target_executed": false,
+  "Longgang_full_study_executed": false,
+  "note": "Figure QA found untreated plot included restoration diagnostics; final plotting filter restricts it to the three untreated rain cases. Frozen-package tests will exercise the corrected plot.",
+  "real_preflight_run": "results/resilience_runs/ppt_20261118T200801Z_268f3602",
+  "final_plot_visual_review": "regenerated with corrected three-case filter; inspected before packing"
+}

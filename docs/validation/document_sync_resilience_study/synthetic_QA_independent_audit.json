@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "states_checked": 120,
+  "state_arrays_checked": 120,
+  "curves_checked": 51,
+  "scope": "SHA, BPR, depth response, OD/node ledgers, recorded-gap arithmetic, Q/R, candidate delta R and budget optimum.",
+  "limits": "No new shortest-path solve, structural efficiency recalculation, field calibration or OSM completeness validation."
+}

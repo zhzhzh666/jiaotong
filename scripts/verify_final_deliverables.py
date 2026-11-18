@@ -424,5 +424,33 @@ if data.get('migration_4090'):
       'archive_sha256':transfer['archive_sha256'],'files_verified_by_source':1078,'archive_sha_rechecked_for_document_update':True,
       'package_tests':192,'target_ubuntu_hardware_accepted':False,'ppt_resilience_extension_delivered':False,
       'qa':record(evidence/'验包记录.json'),'snapshot_files_sha_checked':len(transfer['evidence_sha256'])}
+if data.get('resilience_study_4090'):
+    study=data['resilience_study_4090']; evidence=ROOT/study['snapshot']
+    index=json.loads((ROOT/study['snapshot_index']).read_text(encoding='utf-8'))
+    for item in index['files']:assert record(evidence/item['path'])['sha256']==item['sha256'],item['path']
+    qa=json.loads((evidence/'delivery_verification.json').read_text(encoding='utf-8'))
+    assert qa['archive_bytes']==study['archive_bytes']==714908047 and qa['files_verified']==796
+    assert qa['sha256']==study['archive_sha256']==index['archive_sha256'] and qa['full_extraction_and_SHA']=='passed'
+    assert qa['frozen_module_import_verified'] and qa['frozen_package_tests_passed']==199
+    latest=ET.parse(evidence/'frozen_package_tests.xml').getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==199 and int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert not qa['Ubuntu_target_executed'] and not qa['Longgang_full_R_study_executed']
+    preflight=json.loads((evidence/'Longgang_preflight_status.json').read_text(encoding='utf-8'))
+    assert preflight['phase']=='preflight' and not preflight['complete_full_study'] and preflight['state_calls']==0
+    info=qa['real_Longgang_frozen_package_preflight']
+    assert info['source_arcs']==451801 and info['structural_arcs']==86807 and info['od_zones']==483
+    assert info['efficiency_origin_count']==64 and info['efficiency_is_sampled'] and not info['solver_uses_cuda']
+    assert info['connected_facility_objects']=={'hospital':64,'fire_station':30}
+    synthetic=json.loads((evidence/'synthetic_QA_independent_audit.json').read_text(encoding='utf-8'))
+    assert synthetic['status']=='passed' and synthetic['states_checked']==120 and synthetic['curves_checked']==51
+    for text in ['714,908,047',qa['sha256'],'199','7,857','97端点','真实龙岗仅','14,400','86,807']:
+        assert text in doc_text and text in ppt_text,text
+    manifest['verification']['latest_tests_passed']=199
+    manifest['resilience_study_4090']={'archive':study['archive'],'archive_bytes':study['archive_bytes'],
+      'archive_sha256':study['archive_sha256'],'files_verified_by_source':796,'frozen_package_tests_passed':199,
+      'archive_sha_rechecked_for_document_update':True,'snapshot_files_sha_checked':len(index['files']),
+      'synthetic_cases':51,'synthetic_endpoints_per_case':97,'synthetic_states_audited':120,
+      'real_longgang_preflight_only':True,'longgang_full_R_study_executed':False,'ubuntu_target_executed':False,
+      'snapshot_index':record(ROOT/study['snapshot_index']),'qa':record(evidence/'delivery_verification.json')}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

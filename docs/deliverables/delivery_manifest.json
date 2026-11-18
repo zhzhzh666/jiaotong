@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-19",
-  "phase_status": "龙岗12候选道路静态筛查及四点分预算治理对照已核验，RTX4090五场景迁移包已完成本机验包。目标Ubuntu与PPT韧性扩展待验收。",
+  "phase_status": "按PPT综合韧性模型的关键道路与治理4090专用包已完成本机验收；199项测试及合成24小时流程通过。真实龙岗仅预检，目标Ubuntu与正式R研究待运行。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 10495051,
-      "sha256": "03e7fac2f71fff95068d2aa313b4c76d01dcda2fa0cbe814deb1a26d7cfc0268"
+      "bytes": 10512096,
+      "sha256": "43cd8ac2f8fa2ba8940b2ff3489fa3ccada77f7e40313e7588364a969c106052"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 11429937,
-      "sha256": "b40141328ea968f3b2de357d1d3ad292da19fcabf08e4090c5c812d707fe918a"
+      "bytes": 11432201,
+      "sha256": "54cbd5c54e89a818b5b1b14f2c83d8d98c1f48920a1939c8159554fe53a3375e"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 196155,
-    "sha256": "6a538da812ed1f6c8099010226d7471bdcef952f2da406d9eb74bcaca2ddbb40"
+    "bytes": 206160,
+    "sha256": "94e80e46876f74fc9af92619b204ab9c36605da8c703d48fa5150f71fceb6e37"
   },
   "originals_preserved": [
     {
@@ -44,8 +44,8 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 65,
-    "docx_pages": 65,
+    "pptx_slides": 69,
+    "docx_pages": 69,
     "embedded_source_images": {
       "word": 46,
       "ppt": 38
@@ -59,14 +59,14 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 192,
+    "latest_tests_passed": 199,
     "model_tests_rerun_for_this_document_update": false,
     "preserved_native_chart_workbook_parts": 42
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 16569,
-    "sha256": "5bb6ecccf3cd05c94e032e80ef23515a43e3a37406bbf7f85e769691c97862fd"
+    "bytes": 17513,
+    "sha256": "41999a14749f8d4fb820070a07e983142b8aa8e630487a8729486a4035c67aab"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -398,5 +398,30 @@
       "sha256": "f8b4c95e9c1c73045eb4810441cd65280fbfc04f685b8fae5260a13c56b5f015"
     },
     "snapshot_files_sha_checked": 9
+  },
+  "resilience_study_4090": {
+    "archive": "results/exports/migration_4090_study_20261119/jiaotong_ubuntu4090_keyroads_governance_20261119.tar.gz",
+    "archive_bytes": 714908047,
+    "archive_sha256": "83cd9aee9b57109d8ab5777b90238afa83ae771c29b47698c7bb5bdd91bbc437",
+    "files_verified_by_source": 796,
+    "frozen_package_tests_passed": 199,
+    "archive_sha_rechecked_for_document_update": true,
+    "snapshot_files_sha_checked": 18,
+    "synthetic_cases": 51,
+    "synthetic_endpoints_per_case": 97,
+    "synthetic_states_audited": 120,
+    "real_longgang_preflight_only": true,
+    "longgang_full_R_study_executed": false,
+    "ubuntu_target_executed": false,
+    "snapshot_index": {
+      "path": "docs/validation/document_sync_resilience_study/snapshot_index.json",
+      "bytes": 2984,
+      "sha256": "6abb814cb14fd0414e4a6da2d2e484935c6e48c6a8d415a5a839704f3addce1e"
+    },
+    "qa": {
+      "path": "docs/validation/document_sync_resilience_study/delivery_verification.json",
+      "bytes": 1223,
+      "sha256": "5db8b99ff586939ff28e998364e7e9875b679dfa5819ef350ef28578bcb99372"
+    }
   }
 }

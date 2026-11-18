@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "phase": "preflight",
+  "study_kind": "ppt_resilience",
+  "complete_full_study": false,
+  "state_calls": 0,
+  "state_cache_hits": 0
+}

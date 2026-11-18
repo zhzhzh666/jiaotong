@@ -1,0 +1,48 @@
+region: longgang
+include_dapeng: false
+seed: 42
+target_hardware: {os: Ubuntu 22.04.5, cpu: Intel Core i9-14900K, ram_gib: 128, gpu: RTX4090}
+od_package: data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94
+adaptive_package: data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6
+surface_package: data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75
+screening_package: data/processed/longgang_critical_roads/20261118T191957_critical_b29cd51f
+model_reference: data/raw/model_reference/network_resilience_20261119/network_resilience_model.pptx
+facilities_package: data/raw/model_reference/network_resilience_20261119/osm_facilities_get
+output_root: results/resilience_runs
+expected_source_arcs: 451801
+expected_zones: 483
+model:
+  weights: [0.27, 0.41, 0.32]
+  rho_seconds: 14400
+  bpr_alpha: 0.15
+  bpr_beta: 4
+  gap_target: 0.0001
+  max_iterations: 1000
+  demand_fraction: 0.05
+  closure_depth_m: 0.30
+  # PPT road cost: sum(flow*time)+rho*unserved, no added intrazonal cost.
+  # Intrazonal demand is retained in a separate ledger and not road-loaded.
+  start_interval: 384
+  interval_seconds: 900
+  intervals: 96
+  scenarios: [rain070, rain100, rain130]
+  structure_scope: longgang_source_features
+  efficiency_origins: 64
+  efficiency_batch_size: 8
+  # Use "all" origins for exact network efficiency at much higher cost.
+  facility_max_snap_m: 1500
+  connector_speed_kph: 20
+  functional_threshold_minutes: [15, 30]
+  # Qf = mean of the two K=2 category averages, one per time threshold.
+  save_edge_arrays: true
+identification:
+  candidate_limit: 12
+  # Existing static ranking supplies a shortlist only; new rankings use delta R.
+  counterfactual: restore_candidate_depth_to_zero
+optimization:
+  masks: [0, 1, 2, 4, 8, 3, 5, 9, 6, 10, 12, 7, 11, 13, 14]
+  max_sites: 3
+  budgets: [0.0, 1.8225, 3.645, 5.4675]
+  random_seeds: [42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+  objective: maximize_minimum_24h_R_across_three_rainfalls
+  # Exact enumeration among four frozen spatial drainage candidates.

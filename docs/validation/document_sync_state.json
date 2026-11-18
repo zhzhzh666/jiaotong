@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-19T04:01:10.709832+08:00",
+  "updated_at": "2026-11-19T04:30:39.449223+08:00",
   "owner_thread": "01a1ee8f-7e77-7663-8c67-f10d97e0243f",
   "automation_id": "jiaotong-ppt-word",
   "status": "active",
   "interval_minutes": 30,
   "user_scope_clarification": "本聊天继续维护Word/PPT；其他开发聊天仅更新项目及GitHub。来源聊天的停止文档指令不取消本自动任务。",
-  "current_document_pages": 65,
-  "current_presentation_slides": 65,
-  "last_check": "12候选静态全OD关键道路、四点预算策略和RTX4090五场景迁移包验收已同步65页/张；封面及62—65逐一查看，2—61像素一致。",
-  "pending": "按用户PPT结构/性能/功能权重与24小时R的扩展包仍准备中；OSM设施69医院31消防完整性、运营与连接未实地核实。目标Ubuntu实测、全区四个暴雨治理案例与全区3D回放待完成，无已收敛DUE。独立专题PPT正在套用交通模板。",
+  "current_document_pages": 69,
+  "current_presentation_slides": 69,
+  "last_check": "PPT综合韧性Q/R、设施覆盖、12候选ΔR及四点15组合流程和4090专用研究包本机验收已同步69页/张。封面及66—69逐一查看，2—65像素一致。",
+  "pending": "真实龙岗仅preflight，正式R道路排名与治理收益、目标Ubuntu安装性能及全区3D待完成。主开发四组SUMO固定/动态/治理串联流程尚在验收；独立30页专题PPT保留，不覆盖。设施完整性、运营与真实入口未实地核实。",
   "source_threads": [
     "01a1e50e-6bff-73b1-a41f-d1713fb73f47",
     "01a1ee72-b914-7ee0-8576-1221bb77f825",
@@ -24,8 +24,8 @@
     "01a1eff2-4aa2-77f2-a830-80d95398372b",
     "01a1effd-dfe1-72b2-accb-0843ce6db411"
   ],
-  "document_sha256": "b40141328ea968f3b2de357d1d3ad292da19fcabf08e4090c5c812d707fe918a",
-  "presentation_sha256": "03e7fac2f71fff95068d2aa313b4c76d01dcda2fa0cbe814deb1a26d7cfc0268",
+  "document_sha256": "54cbd5c54e89a818b5b1b14f2c83d8d98c1f48920a1939c8159554fe53a3375e",
+  "presentation_sha256": "43cd8ac2f8fa2ba8940b2ff3489fa3ccada77f7e40313e7588364a969c106052",
   "source_wait_cursors": {
     "01a1ee72-b914-7ee0-8576-1221bb77f825": "d3a0d2d9-718c-488f-8203-0da3b7d4e8b0:6",
     "01a1e50e-6bff-73b1-a41f-d1713fb73f47": "4e0c257d-a91f-4b91-a62d-6d66d3ab7ec2:1",
@@ -58,7 +58,10 @@
     "01a1f01d-04fe-7e42-ae9a-a749445ed0a2",
     "01a1f030-6181-7c22-82f8-dbf330e48906",
     "01a1f008-4bb9-7353-befa-a032e0cc9b8c",
-    "01a1f01d-f93b-7311-9022-e230275b8975"
+    "01a1f01d-f93b-7311-9022-e230275b8975",
+    "01a1f039-d385-7d43-92e3-66bab5ad993c",
+    "01a1f047-d252-7d70-8a68-e187ac577035",
+    "01a1f045-e692-72a2-8eae-f74431215514"
   ],
   "incorporated_runs": [
     "20261118T121117_longgang_od_2bf08c94",
@@ -69,7 +72,7 @@
     "20261118T175153_sumo_492a503a",
     "digital_twin_replay_20261118T183542"
   ],
-  "qa_directory": ".cache/document-sync-20261119-critical-roads",
+  "qa_directory": ".cache/document-sync-20261119-resilience-study",
   "visual_review": "docs/validation/final_visual_review.json",
   "verification_passed": true,
   "other_deliverables_preserved": [
@@ -78,12 +81,14 @@
     "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO片区结果版.pptx",
     "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_当前进度版.pptx",
     "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_进度更新版.pptx",
-    "docs/deliverables/暴雨内涝交通韧性_专题整合版.pptx"
+    "docs/deliverables/暴雨内涝交通韧性_专题整合版.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_交通主题模板版.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_背景意义与总结版.pptx"
   ],
-  "last_source_commit": "b3761b7",
-  "source_latest_completed_turn": "01a1efe6-d32c-7a81-a8bd-544518d7c639",
-  "latest_method_document_read": "docs/PHASE_DIGITAL_TWIN_REPORT.md",
-  "source_latest_read_status": "All known research history retained; actual changed messages from road-criticality, migration, independent PPT and main source read. Static road screening accepted; RTX4090 five-case archive accepted locally. PPT-R extension in progress; Ubuntu performance untested.",
+  "last_source_commit": "40b4959",
+  "source_latest_completed_turn": "01a1f039-d385-7d43-92e3-66bab5ad993c",
+  "latest_method_document_read": "docs/PHASE_MIGRATION_4090_STUDY_REPORT.md",
+  "source_latest_read_status": "Changed actual messages read: PPT-model study package accepted locally; 199 frozen-package tests and synthetic 24h roundtrip. Real Longgang preflight only. Main four-stage SUMO integration remains in progress; independent 30-slide deck preserved.",
   "other_deliverable_fingerprints": [
     {
       "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报.pptx",
@@ -108,27 +113,38 @@
     {
       "path": "docs/deliverables/暴雨内涝交通韧性_专题整合版.pptx",
       "sha256": "9fce9dee98d64396732e109ddc8a5c9166604f2639187ffbfee0303aaee68b96"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_交通主题模板版.pptx",
+      "sha256": "467a00a260fbeec61ae72875d852a000ce8bbe2d18d9d776a408261ac1692c62"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_背景意义与总结版.pptx",
+      "sha256": "dd60aa903adfe44bb79a1ff2dbe5f01a028db9b7b0d24fa56091c8729f2b8869"
     }
   ],
-  "automation_prompt_sha256": "c28ce4c06fdcfe640fe2959dd554bac4d5effbe544b3e9f82f48c3dacb4dc822",
+  "automation_prompt_sha256": "4e88a5e2e8a0a75ddf253b84e06120e18eb22968a3b1f6e640777602e610a029",
   "accepted_runs": [
     "20261118T184221_full5_07cdb6f1",
     "20261118T191957_critical_b29cd51f"
   ],
   "verification_summary": {
-    "critical_source_sha_files_checked": 40,
     "critical_snapshot_sha_files_checked": 14,
     "migration4090_snapshot_sha_files_checked": 9,
+    "resilience_study_snapshot_sha_files_checked": 18,
     "source_images_word": 46,
     "source_images_ppt": 38,
     "native_charts": 14,
     "native_series": 45,
-    "preserved_parts": 42
+    "preserved_parts": 42,
+    "latest_source_tests": 199
   },
   "independent_presentation_changes_during_sync": [],
   "new_source_results_preserved_as_immutable_snapshots": true,
   "source_active_turns_pending": [
-    "01a1f02f-262b-7730-8419-7bd50d90dcae",
-    "01a1f030-6181-7c22-82f8-dbf330e48906"
+    "01a1f045-e692-72a2-8eae-f74431215514"
+  ],
+  "accepted_delivery_packages": [
+    "results/exports/migration_4090_study_20261119/jiaotong_ubuntu4090_keyroads_governance_20261119.tar.gz"
   ]
 }
