@@ -184,5 +184,34 @@ if data.get('longgang_drainage'):
     assert not drainage['real_network_obtained'] and not drainage['coupled_model_run']
     manifest['longgang_drainage']={'source':record(ROOT/drainage['source']),
         'real_network_obtained':False,'coupled_model_run':False}
+if data.get('longgang_era5_surface'):
+    era5=data['longgang_era5_surface']
+    evidence=ROOT/'docs/validation/longgang_era5_surface'
+    report=json.loads((evidence/'validation_report.json').read_text(encoding='utf-8'))
+    audit=json.loads((ROOT/era5['audit']).read_text(encoding='utf-8'))
+    attribution=json.loads((evidence/'era5_attribution.json').read_text(encoding='utf-8'))
+    latest=ET.parse(ROOT/era5['tests_report']).getroot().find('testsuite')
+    assert report==era5['report'] and report['run_id']==audit['run_id']==Path(era5['path']).name
+    assert report['all_checks_passed'] and all(report['checks'].values()) and audit['passed']
+    assert int(latest.attrib['tests'])==era5['tests_passed']==151
+    assert int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert not report['include_dapeng'] and not report['calibrated'] and not report['observed_rain_gauges'] and not report['observed_flood_depths']
+    assert report['rain_hours']==120 and report['rain_grid_count']==9 and report['domain_cells']==66920
+    assert report['output_endpoints']==481 and report['case_count']==8
+    assert audit['rain_values_rechecked_from_HTTP_response']==1080
+    assert audit['independent_baseline_grid_endpoints_replayed']==32188520
+    assert audit['known_road_values_checked']==26351104
+    assert attribution==era5['attribution'] and attribution['classification']=='reanalysis_not_gauge_observation'
+    assert attribution['license']=='CC BY 4.0' and attribution['attribution'] in doc_text and attribution['attribution'] in ppt_text
+    assert report['run_id'] in doc_text and report['run_id'] in ppt_text
+    assert not era5['traffic_assignment_rerun'] and not era5['two_dimensional_hydrodynamics']
+    manifest['verification']['latest_tests_passed']=era5['tests_passed']
+    manifest['longgang_era5_surface']={'path':era5['path'],'calibrated':False,
+        'rain_source':'ERA5_reanalysis_via_Open_Meteo','observed_gauges':False,
+        'two_dimensional_hydrodynamics':False,'traffic_assignment_rerun':False,
+        'consistency_checks':len(report['checks']),
+        'tests_report':record(ROOT/era5['tests_report']),
+        'independent_numerical_audit':record(ROOT/era5['audit']),
+        'rainfall_attribution':record(evidence/'era5_attribution.json')}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-18",
-  "phase_status": "龙岗不含大鹏的合成OD与独立蓄水桶情景完成，交通影响待重算。真实管网尚未取得，C方案未实施。南山结果保留为历史。",
+  "phase_status": "龙岗不含大鹏的ERA5驱动B方案简化地形汇流原型完成，参数未实测标定，交通影响待重算。独立桶与南山结果保留历史，C方案未实施。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 6443434,
-      "sha256": "6b6c0cd26d31f1731f710d5481755810973ee74a1d60f43ba952c2a7a0a551b7"
+      "bytes": 7001425,
+      "sha256": "bb0c8e0a40d442f9e1c11726e97b3bdbae41644bf5fc650550f9614046cbdd11"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 7477357,
-      "sha256": "e1ed309e9834d3fce01133d74696a8c9d8bde21ab25c9105ed29d8a87b2419c2"
+      "bytes": 8021095,
+      "sha256": "711c96b362d06568f3b00607bfa14a275b9684207fadc0b5be899a4a1e3dd13b"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 97446,
-    "sha256": "1bfb33b17105f9395b78271fb54e341e14e268d00175a5cc4093dc87892e8b13"
+    "bytes": 116242,
+    "sha256": "a048652061975dfefd1f54fafeb0420ed756fb20256e30d151633ccf44cc04b1"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 37,
-    "docx_pages": 37,
+    "pptx_slides": 41,
+    "docx_pages": 41,
     "embedded_source_images": {
-      "word": 29,
-      "ppt": 21
+      "word": 32,
+      "ppt": 24
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -59,12 +59,12 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 141
+    "latest_tests_passed": 151
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 9861,
-    "sha256": "5692739979f41fc3b89aa9ef64b551d11e1fb40da63a51f4f17b375d11bdfc6b"
+    "bytes": 10886,
+    "sha256": "2935f222aed92aa9d7aea8c35634c0b66b4a8695f20e2dd72be7456ecfb4c723"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -174,5 +174,29 @@
     },
     "real_network_obtained": false,
     "coupled_model_run": false
+  },
+  "longgang_era5_surface": {
+    "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75",
+    "calibrated": false,
+    "rain_source": "ERA5_reanalysis_via_Open_Meteo",
+    "observed_gauges": false,
+    "two_dimensional_hydrodynamics": false,
+    "traffic_assignment_rerun": false,
+    "consistency_checks": 10,
+    "tests_report": {
+      "path": "docs/validation/rainfall/era5_surface_tests.xml",
+      "bytes": 17971,
+      "sha256": "382ff20fa9b7318ad128d39c5fd0dd54b3f59bdcea66836788361989fc852574"
+    },
+    "independent_numerical_audit": {
+      "path": "docs/validation/longgang_era5_surface/independent_audit.json",
+      "bytes": 836,
+      "sha256": "80ffc6fafa5dc03136c229eeb5b45f2fc3b738778d85722094ec3f747e16fa24"
+    },
+    "rainfall_attribution": {
+      "path": "docs/validation/longgang_era5_surface/era5_attribution.json",
+      "bytes": 473,
+      "sha256": "214fe29f9eae035d0d60c96bf12a16aa5272ccd7988605ee09b158232fdde5a3"
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-18",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "龙岗不含大鹏的合成OD与独立蓄水桶情景完成，交通影响待重算。真实管网尚未取得，C方案未实施。南山结果保留为历史。",
+  "status": "龙岗不含大鹏的ERA5驱动B方案简化地形汇流原型完成，参数未实测标定，交通影响待重算。独立桶与南山结果保留历史，C方案未实施。",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -196,13 +196,13 @@
       {
         "title": "暴雨内涝交通网络韧性评估与优化",
         "paragraphs": [
-          "2026年11月18日：龙岗不含大鹏的483×483合成OD及降雨蓄水退水情景已完成。积水由4,139个独立道路网格代理生成，参数未经实测标定。龙岗道路速度容量、交通分配与韧性尚未重算，真实管网尚未取得。南山及小型路网结果保留为历史。",
+          "2026年11月18日：龙岗不含大鹏已完成483×483合成OD及ERA5驱动B方案简化地形汇流原型。120小时再分析降雨接入150 m DSM固定D8蓄泄模型，参数未经实测标定，不能视为真实内涝重建。龙岗道路速度容量、分配与韧性尚未重算。此前独立桶、南山及小型路网结果保留为历史。",
           "治理与十种子实验使用独立小网压力情景，南山完成全图分配、97端点韧性和抽样SUMO。全部OD、容量、灾害峰值、成本与治理效果尚未标定。"
         ],
         "slide_points": [
           "研究报告与阶段进展",
           "2026年11月18日",
-          "龙岗不含大鹏 合成OD与蓄水情景完成"
+          "龙岗不含大鹏 ERA5地形汇流原型完成"
         ],
         "figure": null,
         "caption": "",
@@ -700,7 +700,7 @@
       {
         "title": "龙岗暴雨情景 降雨与蓄水步骤",
         "paragraphs": [
-          "本情景采用合成道路低点与独立蓄水桶，接近方案A的参数化扩展。位置来自道路和DSM，不是已核实历史积水点。没有相邻单元地表汇流，未实施B的汇流计算或C的SWMM与二维水动力耦合。",
+          "本节为较早的独立桶运行，新B方案见第38—41节。合成道路低点来自道路和DSM，非历史积水实测。该运行没有单元间汇流或管网二维耦合，属于A方案的参数化扩展。",
           "先固定龙岗主面和既有OD推定图，按道路不超过100 m间距采样，在250 m网格内选择DSM相对低点。再构造0、100、200、300 mm参考总雨量，模拟24小时、96个15分钟区间及97个水深端点。双峰降雨设在第5—13小时，不对应官方等级或重现期。",
           "单元储量H以mm计。每步输入I=R×g×C×α，排水D=min(H+I,cΔt+HΔt/τ)，下一步H新=H+I−D，输出水深h=H/1000 m。R为区间雨量，g为空间乘数。C=0.8，α为2至4.5，c为8至18 mm/h，τ=4 h，参数均未标定。",
           "雨停后输入为零，储量继续消退。三档基准最大水深为0.2613、0.5439、0.8266 m，峰值均在第10.5小时。曲线表达假想道路单元的合成压力情景，不能解释为真实暴雨预测。"
@@ -768,6 +768,78 @@
           "管网核查后分区建模，耦合交换并标定验证"
         ],
         "source_label": "docs/LONGGANG_DRAINAGE_DATA_AVAILABILITY.md / 深圳市水务局政府信息公开指南 https://swj.sz.gov.cn/xxgk/zfxxgkzn/"
+      },
+      {
+        "title": "龙岗ERA5方案 降雨数据与时间过程",
+        "paragraphs": [
+          "通过Open-Meteo历史接口固定models=era5和最近网格，获取9个不同0.25°网格，每格120个完整小时，共1,080条非负且无缺失雨量。模拟时窗为北京时间2023年9月6日00时至11日00时；ERA5标记时刻t的降水属于此前一小时，实际选取9月6日01时至11日00时。",
+          "主5 km外扩域使用6个ERA5网格，龙岗面积加权使用4个；区内累计180.100249 mm，最大区均1小时量5.964334 mm。ERA5约25 km再分析不是站点实测。原网格分片常数赋值，小时内均匀分配，不制造精细空间或分钟级降雨信息。",
+          "署名 Weather data by Open-Meteo.com; Copernicus Climate Change Service / ECMWF ERA5。数据许可CC BY 4.0，另遵守提供方使用条件。原响应不改，提取完整时段并封装NPZ。来源 https://open-meteo.com/；许可 https://creativecommons.org/licenses/by/4.0/；条件 https://open-meteo.com/en/licence。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "9个网格 × 120小时，1,080条有效雨量",
+          "龙岗区均累计180.10 mm",
+          "再分析估计，小时内均匀降雨假设"
+        ],
+        "source_label": "20261118T133312_era5_surface_d4aecd75 / docs/LONGGANG_ERA5_SURFACE_MODEL.md",
+        "figure": "docs/validation/longgang_era5_surface/figures/era5_surface_process.png",
+        "caption": "120小时区均ERA5降雨及基准估计水深过程 末端仍有蓄水",
+        "figure_width_cm": 14.0
+      },
+      {
+        "title": "龙岗ERA5方案 地形蓄泄计算方法",
+        "paragraphs": [
+          "龙岗主面不含大鹏，面积386.957601 km²。Copernicus约30 m DSM以面积平均聚合至150 m，EPSG32650；边界外扩5 km的矩形主域239×280，共66,920格。DSM包含建筑和植被，不是裸地DTM；无外部入流、河道或潮汐回水。10 km外扩仅作敏感性，尚未认证完整上游汇水区。",
+          "priority-flood从边界向内遍历8邻格，建立固定无环D8父格树。保留原高程z，填洼高程F仅用于储量阈值d=max(F−z,0)。最大阈值29.38 m可能含DSM与聚合伪洼地，不能视为真实洼地深度；逐格阈值也未表达连通洼地共同水面。",
+          "内部步长Δt=180 s，初始干燥，15分钟输出一次，共481端点。步内雨深R=P(mm)×Δt/3600/1000；加雨后h̃=h+R；损失ℓ=min(h̃,cΔt/3600/1000)。基准c=4 mm/h合并入渗与未解析排水，是假设容量。",
+          "向下游转移q=max(h̃−ℓ−d,0)×(1−exp(−Δt/τ))，更新h新=h̃−ℓ−q+Σ上游q。网格同时转移，接收水下一步才继续下传。边界q计为出域，所有深度乘150² m²记账：全域降雨−损失−边界排出=储量变化，不能冒称区内水量平衡。",
+          "停留时间τ=clip(L/v,900,21600) s；v=0.04×√[max(s,0.0001)/0.01] m/s，L为邻格距离、s为填洼面坡度。此为假设流动尺度，非实测流速或Manning求解。固定D8没有二维动量、动态流向、管井交换或顶托，不能称为SWMM或二维浅水模型。",
+          "八组计算包括无雨、ERA5基准、雨量0.7/1.3倍、损失能力0.5/2倍、停留时间0.5/2倍。倍率仅用于未标定参数敏感性；下一步需要站点降雨和水深、裸地地形、土地覆盖与排水约束，再进行标定验证。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "150 m DSM，66,920格，固定D8树",
+          "180秒内部步长，481个输出端点",
+          "降雨、损失、储量与出域逐步守恒"
+        ],
+        "source_label": "20261118T133312_era5_surface_d4aecd75 / docs/LONGGANG_ERA5_SURFACE_MODEL.md"
+      },
+      {
+        "title": "龙岗ERA5方案 空间结果与道路暴露",
+        "paragraphs": [
+          "33,597个既有地面道路采样位置映射至8,530个模型网格，源线取采样网格最大估计深度。6,848个地面源线要素建模，952个桥隧或非零layer等保持未知NaN；保留86,807条推定OD图有向弧原ID。源线不是独立道路条数，图拓扑仍待认证。",
+          "基准道路样点最大估计深度1.030854 m；同时超过0.15 m的源线最多45个，达到0.30 m的最多2个。这是暴露统计，不代表实测积水或实际封路。本轮没有由此更新速度、容量、交通分配、韧性或SUMO。",
+          "区内估计深度大于0.15 m的同时最大面积0.608831 km²，所有时刻峰值并集面积0.676331 km²。地图展示各格各自峰值，非同一时刻淹没图；颜色上限按99.5分位截色，不能从色标读取全域最大值。",
+          "面积按150 m像元及行政区相交面积估算，未模拟像元内部分淹没，不能解析路缘、雨水口及下穿通道。未知桥隧不填零，参数化水深不得解释为精细街道路面或历史灾情预测。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "基准道路样点最大估计深度1.0309 m",
+          "同时暴露源线45个 >0.15 m，2个 ≥0.30 m",
+          "952个桥隧等未知，不作干燥零值"
+        ],
+        "source_label": "20261118T133312_era5_surface_d4aecd75 / docs/LONGGANG_ERA5_SURFACE_MODEL.md",
+        "figure": "docs/validation/longgang_era5_surface/figures/era5_surface_map.png",
+        "caption": "DSM计算域与逐格峰值图 右图非同一时刻且色标截至99.5分位"
+      },
+      {
+        "title": "龙岗ERA5方案 敏感性与数值核验",
+        "paragraphs": [
+          "损失能力c为2/4/8 mm/h时，道路样点峰值4.098790/1.030854/0.011329 m；雨量倍率0.7/1/1.3时为0.165155/1.030854/2.498684 m。绝对水深强烈依赖未标定假设，不能直接确定真实灾情或工程收益。",
+          "基准全域累计降雨266,202,702.000 m³，损失265,470,787.331 m³，边界排出119,605.938 m³，末端蓄水612,308.731 m³。损失占99.725%体现参数设定，不是实测排水效率；120小时末仍有蓄水，不能宣称全部退水。",
+          "151项既有及新增测试、10项运行检查通过。独立审计核验1,080条原始雨量、32,188,520个网格端点、26,351,104个已建模道路值、16输入SHA、57输出SHA及58个ZIP成员；最大重放差5.92×10⁻⁸ m，累计水量残差1.43×10⁻⁶ m³以内。本轮文档维护引用既有验收，未重跑模型。",
+          "180→60 s最大道路端点差0.023146 m，按绝对0.02 m加峰值5%的原型容差通过，不是水动力收敛证明；5→10 km外扩差0.039351 m，不能保证全上游完整。原型须补齐实测标定与边界认证，尚未接入交通影响计算。"
+        ],
+        "ppt_native": false,
+        "slide_points": [
+          "损失能力2／4／8 mm/h的峰值差异显著",
+          "151项测试，10项检查及独立数值审计通过",
+          "末端仍有蓄水，交通影响尚未计算"
+        ],
+        "source_label": "20261118T133312_era5_surface_d4aecd75 / docs/LONGGANG_ERA5_SURFACE_MODEL.md",
+        "figure": "docs/validation/longgang_era5_surface/figures/era5_surface_sensitivity_balance.png",
+        "caption": "八组参数敏感性与全计算域水量记账 数值平衡不能替代实测标定"
       }
     ],
     "tests_passed": 106,
@@ -1176,7 +1248,7 @@
     "scope": "随包440307保留龙岗主面，排除大鹏面",
     "include_dapeng": false,
     "scope_short": "龙岗不含大鹏",
-    "status": "龙岗不含大鹏的合成OD与独立蓄水桶情景完成，交通影响待重算。真实管网尚未取得，C方案未实施。南山结果保留为历史。",
+    "status": "龙岗不含大鹏的ERA5驱动B方案简化地形汇流原型完成，参数未实测标定，交通影响待重算。独立桶与南山结果保留历史，C方案未实施。",
     "intake_path": "data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253",
     "report": {
       "run_id": "20261118T195824_longgang_intake_079cc253",
@@ -1385,9 +1457,10 @@
     },
     "assignment_ready": false,
     "synthetic_od_path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
-    "synthetic_storm_path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1"
+    "synthetic_storm_path": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1",
+    "era5_surface_path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75"
   },
-  "cover_subtitle": "龙岗不含大鹏 合成OD与暴雨积水情景",
+  "cover_subtitle": "龙岗不含大鹏 ERA5降雨与简化地形汇流",
   "longgang_od": {
     "path": "data/synthetic/longgang_od/20261118T121117_longgang_od_2bf08c94",
     "report": {
@@ -1722,5 +1795,246 @@
     "checked": "2026-11-18",
     "real_network_obtained": false,
     "coupled_model_run": false
+  },
+  "longgang_era5_surface": {
+    "path": "data/processed/longgang_era5_surface/20261118T133312_era5_surface_d4aecd75",
+    "report": {
+      "run_id": "20261118T133312_era5_surface_d4aecd75",
+      "method": "B_DSM_priority_flood_D8_linear_storage_routing",
+      "region": "longgang",
+      "include_dapeng": false,
+      "rain_source": "ERA5_reanalysis_via_Open_Meteo",
+      "observed_rain_gauges": false,
+      "observed_flood_depths": false,
+      "calibrated": false,
+      "rainfall_package": "data/raw/longgang_era5/20261118T132916_era5_184f075b",
+      "road_reference_package": "data/synthetic/longgang_storm/20261118T124853_longgang_storm_7e7668c1",
+      "simulation_start": "2023-09-06T00:00:00+08:00",
+      "simulation_end": "2023-09-11T00:00:00+08:00",
+      "rain_hours": 120,
+      "rain_grid_count": 9,
+      "rain_grids_used_in_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "rain_grids_used_in_district": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "district_mean_rain_total_mm": 180.10024861449057,
+      "district_mean_max_hour_mm": 5.964333651432055,
+      "grid_shape": [
+        239,
+        280
+      ],
+      "domain_cells": 66920,
+      "domain_bounds_m": [
+        191700,
+        2494800,
+        233700,
+        2530650
+      ],
+      "district_area_km2": 386.9576011137772,
+      "cell_size_m": 150,
+      "output_endpoints": 481,
+      "case_count": 8,
+      "source_features": 7800,
+      "modelled_ground_features": 6848,
+      "unknown_features": 952,
+      "road_samples": 33597,
+      "road_sample_cells": 8530,
+      "directed_arc_mapping_count": 86807,
+      "maximum_depression_storage_threshold_m": 29.383535030028664,
+      "time_step_check": {
+        "coarse_seconds": 180,
+        "fine_seconds": 60,
+        "maximum_road_endpoint_difference_m": 0.023145824670791626,
+        "p95_road_endpoint_difference_m": 7.048522820696235e-05,
+        "coarse_peak_road_m": 1.0308539867401123,
+        "fine_peak_road_m": 1.04268217086792,
+        "acceptance_absolute_m": 0.02,
+        "acceptance_relative_to_peak": 0.05,
+        "passed": true
+      },
+      "boundary_sensitivity": {
+        "base_buffer_m": 5000,
+        "extended_buffer_m": 10000,
+        "extended_grid_shape": [
+          305,
+          346
+        ],
+        "maximum_road_endpoint_difference_m": 0.03935100883245468,
+        "p95_road_endpoint_difference_m": 2.1189451217651367e-05,
+        "extended_peak_road_m": 1.031921148300171,
+        "full_upstream_catchment_certified": false
+      },
+      "checks": {
+        "frozen_source_hashes_match": true,
+        "scope_excludes_dapeng": true,
+        "rainfall_complete_and_nonnegative": true,
+        "all_domain_DSM_cells_finite": true,
+        "district_area_conserved": true,
+        "all_ground_road_depths_finite_nonnegative": true,
+        "unknown_roads_remain_NaN": true,
+        "dry_control_zero": true,
+        "domain_water_balance": true,
+        "time_step_refinement": true
+      },
+      "all_checks_passed": true,
+      "scenarios": [
+        {
+          "case": "dry_control",
+          "maximum_district_cell_depth_m": 0.0,
+          "maximum_ground_road_sample_depth_m": 0.0,
+          "maximum_modelled_source_features_over_015": 0,
+          "maximum_modelled_source_features_atleast_030": 0,
+          "district_area_ever_over_015_km2": 0.0,
+          "maximum_simultaneous_area_over_015_km2": 0.0,
+          "domain_rain_m3": 0.0,
+          "domain_loss_m3": 0.0,
+          "domain_boundary_outflow_m3": 0.0,
+          "domain_final_storage_m3": 0.0,
+          "maximum_step_balance_residual_m3": 0.0,
+          "maximum_cumulative_balance_residual_m3": 0.0
+        },
+        {
+          "case": "era5_baseline",
+          "maximum_district_cell_depth_m": 1.030853992272261,
+          "maximum_ground_road_sample_depth_m": 1.0308539867401123,
+          "maximum_modelled_source_features_over_015": 45,
+          "maximum_modelled_source_features_atleast_030": 2,
+          "district_area_ever_over_015_km2": 0.6763308944628338,
+          "maximum_simultaneous_area_over_015_km2": 0.6088308944628338,
+          "domain_rain_m3": 266202702.0000011,
+          "domain_loss_m3": 265470787.33139873,
+          "domain_boundary_outflow_m3": 119605.93804476917,
+          "domain_final_storage_m3": 612308.730556622,
+          "maximum_step_balance_residual_m3": 1.7333832147414796e-09,
+          "maximum_cumulative_balance_residual_m3": 1.0007643140852451e-06
+        },
+        {
+          "case": "rainfall_070",
+          "maximum_district_cell_depth_m": 0.16515518846563176,
+          "maximum_ground_road_sample_depth_m": 0.16515518724918365,
+          "maximum_modelled_source_features_over_015": 1,
+          "maximum_modelled_source_features_atleast_030": 0,
+          "district_area_ever_over_015_km2": 0.0225,
+          "maximum_simultaneous_area_over_015_km2": 0.0225,
+          "domain_rain_m3": 186341891.40000105,
+          "domain_loss_m3": 186329754.19474012,
+          "domain_boundary_outflow_m3": 11215.699549306995,
+          "domain_final_storage_m3": 921.505711000918,
+          "maximum_step_balance_residual_m3": 2.5906388145813253e-10,
+          "maximum_cumulative_balance_residual_m3": 1.4201468729879707e-06
+        },
+        {
+          "case": "rainfall_130",
+          "maximum_district_cell_depth_m": 3.172770864707027,
+          "maximum_ground_road_sample_depth_m": 2.4986844062805176,
+          "maximum_modelled_source_features_over_015": 620,
+          "maximum_modelled_source_features_atleast_030": 319,
+          "district_area_ever_over_015_km2": 7.327259578829091,
+          "maximum_simultaneous_area_over_015_km2": 6.756771550225611,
+          "domain_rain_m3": 346063512.6,
+          "domain_loss_m3": 333771212.6124514,
+          "domain_boundary_outflow_m3": 570689.9181421392,
+          "domain_final_storage_m3": 11721610.069406202,
+          "maximum_step_balance_residual_m3": 5.181163942324929e-09,
+          "maximum_cumulative_balance_residual_m3": 1.3020471669733524e-06
+        },
+        {
+          "case": "loss_half",
+          "maximum_district_cell_depth_m": 4.318220359458154,
+          "maximum_ground_road_sample_depth_m": 4.098789691925049,
+          "maximum_modelled_source_features_over_015": 1609,
+          "maximum_modelled_source_features_atleast_030": 1068,
+          "district_area_ever_over_015_km2": 23.96746365964395,
+          "maximum_simultaneous_area_over_015_km2": 22.601044700038027,
+          "domain_rain_m3": 266202702.0000011,
+          "domain_loss_m3": 213071527.91635412,
+          "domain_boundary_outflow_m3": 1659535.645163918,
+          "domain_final_storage_m3": 51471638.438482754,
+          "maximum_step_balance_residual_m3": 1.7573711375007406e-08,
+          "maximum_cumulative_balance_residual_m3": 1.2083910405635834e-06
+        },
+        {
+          "case": "loss_double",
+          "maximum_district_cell_depth_m": 0.014911683029833062,
+          "maximum_ground_road_sample_depth_m": 0.011328713037073612,
+          "maximum_modelled_source_features_over_015": 0,
+          "maximum_modelled_source_features_atleast_030": 0,
+          "district_area_ever_over_015_km2": 0.0,
+          "maximum_simultaneous_area_over_015_km2": 0.0,
+          "domain_rain_m3": 266202702.0000011,
+          "domain_loss_m3": 266201840.13919163,
+          "domain_boundary_outflow_m3": 861.8608097654368,
+          "domain_final_storage_m3": 0.0,
+          "maximum_step_balance_residual_m3": 1.3099565876473207e-10,
+          "maximum_cumulative_balance_residual_m3": 5.584741984421271e-07
+        },
+        {
+          "case": "routing_fast",
+          "maximum_district_cell_depth_m": 1.3601532332375346,
+          "maximum_ground_road_sample_depth_m": 1.3601531982421875,
+          "maximum_modelled_source_features_over_015": 114,
+          "maximum_modelled_source_features_atleast_030": 24,
+          "district_area_ever_over_015_km2": 1.6115741278702596,
+          "maximum_simultaneous_area_over_015_km2": 1.4765741278702595,
+          "domain_rain_m3": 266202702.0000011,
+          "domain_loss_m3": 264811699.1704231,
+          "domain_boundary_outflow_m3": 193361.08439967,
+          "domain_final_storage_m3": 1197641.7451769554,
+          "maximum_step_balance_residual_m3": 1.6739249986130744e-09,
+          "maximum_cumulative_balance_residual_m3": 1.4010583981871605e-06
+        },
+        {
+          "case": "routing_slow",
+          "maximum_district_cell_depth_m": 0.45410024694826684,
+          "maximum_ground_road_sample_depth_m": 0.4540967643260956,
+          "maximum_modelled_source_features_over_015": 1,
+          "maximum_modelled_source_features_atleast_030": 1,
+          "district_area_ever_over_015_km2": 0.09,
+          "maximum_simultaneous_area_over_015_km2": 0.09,
+          "domain_rain_m3": 266202702.0000011,
+          "domain_loss_m3": 265957220.6963164,
+          "domain_boundary_outflow_m3": 62997.34057505039,
+          "domain_final_storage_m3": 182483.963108889,
+          "maximum_step_balance_residual_m3": 1.3833982848154847e-09,
+          "maximum_cumulative_balance_residual_m3": 1.017026079352945e-06
+        }
+      ],
+      "elapsed_seconds": 26.483552932739258,
+      "limitations": [
+        "ERA5 ~0.25 degree hourly forcing is reanalysis, not local gauges; no historical event calibration",
+        "30m DSM area-averaged to 150m includes canopy/buildings and does not resolve curbs or underpasses",
+        "Fixed D8 priority-flood tree and per-cell spill storage approximate routing; not 2D shallow-water hydraulics",
+        "No sewer network, groundwater, river/tide backwater, pressure flow or dynamic flow reversal",
+        "5km rectangular open boundary assumes zero external inflow; 10km replay is sensitivity, not catchment certification",
+        "Zero initial surface storage; uniform hourly rainfall; lumped loss/travel times assumed, not measured",
+        "Road values are maxima over accepted ground sample cells; bridges/tunnels remain unknown",
+        "No updated road capacity/speed, traffic assignment, resilience or SUMO run"
+      ]
+    },
+    "audit": "docs/validation/longgang_era5_surface/independent_audit.json",
+    "tests_report": "docs/validation/rainfall/era5_surface_tests.xml",
+    "tests_passed": 151,
+    "attribution": {
+      "attribution": "Weather data by Open-Meteo.com; Copernicus Climate Change Service / ECMWF ERA5",
+      "provider_url": "https://open-meteo.com/",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "provider_licence_url": "https://open-meteo.com/en/licence",
+      "changes": "Raw response unchanged; selected complete simulation intervals and packed values into NPZ.",
+      "classification": "reanalysis_not_gauge_observation"
+    },
+    "calibrated": false,
+    "traffic_assignment_rerun": false,
+    "two_dimensional_hydrodynamics": false
   }
 }

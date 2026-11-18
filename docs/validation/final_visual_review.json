@@ -1,19 +1,19 @@
 {
   "all_pages_and_slides_visually_reviewed": true,
-  "word_pages": 37,
-  "ppt_slides": 37,
-  "method": "All 37 final Word pages and slides rendered. Existing 2-32 are pixel-identical to reviewed 33-page edition. Changed 1/33 and new 34-37 individually viewed; final corrected Word 34/35 re-viewed. All 42 historical chart/workbook parts preserved byte-for-byte. Word rendered through native Word read-only COM after packaged renderer reported missing LibreOffice. Native PowerPoint playback not checked.",
-  "word_sha256": "e1ed309e9834d3fce01133d74696a8c9d8bde21ab25c9105ed29d8a87b2419c2",
-  "ppt_sha256": "6b6c0cd26d31f1731f710d5481755810973ee74a1d60f43ba952c2a7a0a551b7",
+  "word_pages": 41,
+  "ppt_slides": 41,
+  "method": "All 41 final Word pages and slides rendered. Existing 2-33 and 35-37 are pixel-identical to the reviewed 37-page edition. Changed 1/34 and new 38-41 individually viewed. All final v2 slides pixel-identical to visually reviewed v1. Historical 42 chart/workbook parts preserved byte-for-byte. Word rendered using read-only native Word COM and bundled pypdfium2; packaged LibreOffice renderer unavailable as diagnosed in previous round. Native PowerPoint playback not checked.",
+  "word_sha256": "711c96b362d06568f3b00607bfa14a275b9684207fadc0b5be899a4a1e3dd13b",
+  "ppt_sha256": "bb0c8e0a40d442f9e1c11726e97b3bdbae41644bf5fc650550f9614046cbdd11",
   "preserved_chart_workbook_parts": 42,
-  "word_pdf": ".cache/document-sync-20261118-storm/final-word.pdf",
-  "ppt_receipt": ".cache/document-sync-20261118-storm/v4/validation.json",
-  "previous_review_sha256": "c75bdcd3cd1a08068f27b7b6975a77645713ac7670bf7c1b93fe923e2dab3c36",
-  "render_comparison": ".cache/document-sync-20261118-storm/render-comparison.json",
+  "word_pdf": ".cache/document-sync-20261118-era5/final-word-v2.pdf",
+  "ppt_receipt": ".cache/document-sync-20261118-era5/v2/validation.json",
+  "previous_review_sha256": "5692739979f41fc3b89aa9ef64b551d11e1fb40da63a51f4f17b375d11bdfc6b",
+  "render_comparison": ".cache/document-sync-20261118-era5/render-comparison-v2.json",
   "word_page_images": [
     {
       "page": 1,
-      "sha256": "010c16389ea6896c95af43cea8bb1931dfc64e9f79db8473facef852c600d095"
+      "sha256": "2e66a8720a6450d2cea71d57c9880ae0086c4ca98b5dc35a5bb6ec7baba49570"
     },
     {
       "page": 2,
@@ -145,7 +145,7 @@
     },
     {
       "page": 34,
-      "sha256": "03ac2e5c7fadc1ee7e8b402a137675524c6cd88a6c2fed12792d671c46844802"
+      "sha256": "b7ea6389acff5839089dc65742b16e3a5df1814c002295b3447fd84edc75db75"
     },
     {
       "page": 35,
@@ -158,12 +158,28 @@
     {
       "page": 37,
       "sha256": "9ac6093addca57fe22a56fbb6acf18a2e25d57cad9ee10faa1ba5b9fff72d64d"
+    },
+    {
+      "page": 38,
+      "sha256": "fda3f93d811d029570b52acfbe36495db5ecb67af16be58c0dd7a2864411cdd0"
+    },
+    {
+      "page": 39,
+      "sha256": "881b4a887ffcb0e3329237bdd121d835e34c1287fb70f026d58509857171e362"
+    },
+    {
+      "page": 40,
+      "sha256": "375a8a16a50d0b3ca018ac385a3d1eb56931f13da0eaefdf8dca47bf9715ef66"
+    },
+    {
+      "page": 41,
+      "sha256": "e1ddb6f65a8399f0b18b994c7a29f73c51f68cbbd0c4010a1af5f0fc2f99320f"
     }
   ],
   "slide_images": [
     {
       "slide": 1,
-      "sha256": "8fb13db475af88f3bfec4068a86c2a659b4a0d318f739bd5d761dd5b48bc6e0d"
+      "sha256": "edb13038c5ec61a9eab5c8e200e4b54728ab4083a50e5d28431130f708ab5614"
     },
     {
       "slide": 2,
@@ -295,7 +311,7 @@
     },
     {
       "slide": 34,
-      "sha256": "94c7c2bf8bf55eb3677f5db98caf07d42f616c4240d60080e5b33d0f2556153c"
+      "sha256": "3d19dee464b43b1e9c1e853a43694e5cfa16eba0af1bdde9789106d7f6ae3147"
     },
     {
       "slide": 35,
@@ -308,6 +324,22 @@
     {
       "slide": 37,
       "sha256": "c67cabe82188273d7c9e7b33b4d783f1e3a79c0a61e2d1dda1715e342350e088"
+    },
+    {
+      "slide": 38,
+      "sha256": "23652aaf59a57fba7420577a1ec21910e66fd0fdd94ba22bdb75aff9a1820eff"
+    },
+    {
+      "slide": 39,
+      "sha256": "701c958427685e2e82fa215dee5c80a76f5d914e2dd63b06205dc3d282414036"
+    },
+    {
+      "slide": 40,
+      "sha256": "3210a457f5ff6c0093c1049c41d0e23778c74e31218fe41dd4f9f1ba993f29dc"
+    },
+    {
+      "slide": 41,
+      "sha256": "236d609abf0d9623a44468b54623fc962bc519861076e047d43f608afd8482ce"
     }
   ]
 }
