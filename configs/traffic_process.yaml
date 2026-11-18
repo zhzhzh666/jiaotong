@@ -1,0 +1,22 @@
+source_package: data/synthetic/scenario_packages/20261118T141443_nanshan_seed42
+road_process: data/synthetic/road_performance/20261118T153023_road_performance_ab224c4b
+network_directory: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan
+population: data/processed/phase03/20261117T215510_p03_ab17de87/zone_population.csv
+facilities: data/processed/phase02/20261117T203637_p02_0286d999/facilities.geojson
+case: baseline
+scenarios: [normal, general, severe, extreme]
+seed: 42
+workers: 1
+assignment:
+  gap_target: 0.0001
+  max_iterations: 1000
+  bpr_alpha: 0.15
+  bpr_beta: 4
+metrics:
+  rho_s: 14400
+  weights: {structure: 0.2, performance: 0.5, functionality: 0.3}
+  access_speed_kph: 20
+  facility_max_snap_m: 1500
+  efficiency_sample_origins: 16
+map_hour: 10.5
+# Frozen left-endpoint road states for [start,end); no traffic queue carryover.

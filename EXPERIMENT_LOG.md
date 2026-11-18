@@ -1,5 +1,21 @@
 # 实验记录：当前验收与完整历史
 
+## 2026-11-18 新合成情景交通评估
+
+新合成积水、道路退化和完整OD已接入南山全路网时片用户均衡与韧性评估（基准排水消退组）：四情景×96个15分钟区间，384条指标记录，188次独立求解全部满足相对间隙1e-4，最大9.99e-05，节点守恒最大误差3.64e-12 veh/h。正常R=1，一般/严重/极端R=0.99995800 / 0.99976986 / 0.99958260。
+
+R按96区间起点状态保持加权平均，正常基准逐区间使用同一OD；与旧97端点梯形积分不同。区内和不可达需求保留，全部568人口区保留在可达性分母；v/c使用退化容量。合成数据未经实测标定，独立时片不传递排队，本轮未进行全尺度治理优化或新SUMO仿真。各天气全天未服务量均与正常相同，医院消防覆盖也未变化；较高R仅描述当前54边暴露模型，不能证明真实暴雨影响很小。
+
+131项测试、14项运行一致性检查与全部188个求解状态的独立BPR/间隙/节点守恒/需求记账审计通过；Word/PPT现为30页/张，原27页/张像素一致，新增28—30页/张逐张检查，23/15张源图SHA和14个原生图表45条序列核验通过。
+
+当前结果`data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da`，说明docs/TRAFFIC_PROCESS_MODEL.md，阶段报告docs/PHASE_TRAFFIC_PROCESS_REPORT.md。
+
+命令`.conda-env/python.exe scripts/run_traffic_process.py --config configs/traffic_process.yaml`。初测发现Series不支持get_indexer，改从权威edge_id索引定位，失败JUnit保留，修复后131项全套通过。原assignment.py/resilience.py算法未改；新接口纠正本轮v/c统计的容量口径。独立审计从存储OD最短路费用重放相对间隙，从弧流与已服务OD重放节点守恒，避免仅复述求解器标志。
+
+文档继续采用后台Word只读COM导PDF、pypdfium2渲染，PPT使用Artifact Tool导入追加原生图表，原10个图表与XLSX逐字节保留。未声称原生PowerPoint播放验收。
+
+以下保留此前模块与历史验收记录。
+
 ## 2026-11-18 道路交通性能退化更新
 
 执行`.conda-env/python.exe scripts/run_road_performance_process.py --config configs/road_performance_process.yaml`，最终运行`20261118T153023_road_performance_ab224c4b`。道路交通性能退化模块已完成：水深驱动速度、独立容量函数与0.30 m中断规则，保留有向平行边。四情景×五参数组×97端点×54条关联边，共104760行道路状态；基准一般/严重/极端最多中断0/12/41条，严重/极端单边最长累计中断4.60/6.53小时。124项测试、14项状态核验、11输入/21输出SHA及ZIP内容核验通过。合成模型未经实测校准，未按新输入重跑交通分配、韧性或治理。
@@ -166,3 +182,5 @@ GitHub上传补充：用户提供https://github.com/zhzhzh666/jiaotong后，配�
 本轮失败及修复：20261117T214644_p03_61342393的NumPy bool报告序列化失败，转换为原生bool修复；20261117T214831_p03_c01bcc13的源分级带括号说明，改为校验纯等级前缀且保留全文。独立审计float32求和与逐像元float64总量精度不一致，改为float64审计求和。首轮成功20261117T215014_p03_2b8fe770；热力图标签拥挤已修复，实施提交410a526后干净源码重放。所有失败运行、数据和日志保留。最终命令：`.conda-env/python.exe -m uftr.cli run --phase 03 --user-source data/raw/user_sources/20261117T215014_p03_2b8fe770`。独立审计scripts/audit_demand.py与scripts/audit_run.py通过。
 
 冻结输入审计补充：原合成包生成器修正相对配置路径后，历史代码按包内provenance快照的原SHA逐字节接受；原10输入/38输出清单和ZIP字节未修改。当前退水实验7输入均匹配当前字节。
+
+文档用综合性能曲线的图例移至坐标轴外，避免遮挡恢复段。通过scripts/export_traffic_resilience_figure.py从冻结interval_metrics.csv重绘，仅修改排版，PNG/SVG及figure_source.json保留源CSV、原manifest、导图脚本与新图SHA。原运行图片、964项输出指纹与438986070字节ZIP均未修改。

@@ -1,0 +1,19 @@
+{
+  "package_id": "20261118T164429_traffic_process_39b516da",
+  "source_kind": "synthetic",
+  "observed": false,
+  "input_sha256_checks": 17,
+  "output_sha256_checks": 964,
+  "input_verification_basis": {
+    "current_bytes": 17,
+    "recorded_provenance_snapshot": 0
+  },
+  "zip_members_equal_local_files": true,
+  "zip_crc_passed": true,
+  "generation_consistency_checks": 14,
+  "manifest_sha256": "1ae23f4d8e382de3d22798c3fff04c10c5f7f3db5069b950af4b45eeb8608b18",
+  "zip_bytes": 438986070,
+  "zip_sha256": "879cef0d1ab9295d10793c99c07a1ba7ce07f094530546118ad89567e4af1366",
+  "all_checks_passed": true,
+  "scope": "Integrity and reported consistency checks of new traffic assignments; no observational calibration"
+}

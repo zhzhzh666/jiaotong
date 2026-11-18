@@ -1,13 +1,13 @@
 {
   "all_pages_and_slides_visually_reviewed": true,
-  "word_pages": 27,
-  "ppt_slides": 27,
-  "method": "All previous 24 Word page PNGs and 24 Artifact Tool slide PNGs are pixel-identical to the previous visually reviewed edition. Final Word pages 25/26/27 and final slides 25/26/27 opened individually at full size. No clipping, orphan text or missing glyphs observed.",
-  "word_sha256": "eb05f35b7195e20716cf3592e5c35d0f59daa183f149c4ecba54a3e3b291e7a8",
-  "ppt_sha256": "9016edb170c3ee642153059ed2555f3ddba726fe24aa74eec946d1ce6c634c95",
-  "word_pdf": ".cache/road-doc-sync/final-word.pdf",
-  "ppt_receipt": ".cache/road-doc-sync/v2/validation.json",
-  "previous_review_sha256": "ac931ec626b0685b39f1bd9245715e07aaf124008e8fb9f6fa713885e14f434d",
+  "word_pages": 30,
+  "ppt_slides": 30,
+  "method": "All prior 27 Word page PNGs and 27 Artifact Tool slide PNGs are pixel-identical to the previous visually reviewed edition. Final Word pages 28/29/30 and slides 28/29/30 individually opened and visually inspected at full size. No clipping, orphan text or missing glyphs observed.",
+  "word_sha256": "1f9dfb9463f1ea9e7893c06cdbdfbd36edefdc45b57a2115b1aa97daf6b5375d",
+  "ppt_sha256": "6c99b9585d8a8a765134786efb33968f1f0f3faa3ee60cc4d820d1039731114a",
+  "word_pdf": ".cache/traffic-doc-sync/final-word.pdf",
+  "ppt_receipt": ".cache/traffic-doc-sync/v1/validation.json",
+  "previous_review_sha256": "954695f80e8dd3b209c18845e4e7764f47aad7866a79511ba24fefc282634c3d",
   "word_page_images": [
     {
       "page": 1,
@@ -116,6 +116,18 @@
     {
       "page": 27,
       "sha256": "8b9a43ef93db3f85c0be428d5486bfc0c0692c34c4c6fcae3785a8fbea7cbfe3"
+    },
+    {
+      "page": 28,
+      "sha256": "ab6c7111de058a86030194cacf90c544f3687a04a8b45592b00444d7264d95b4"
+    },
+    {
+      "page": 29,
+      "sha256": "cc71bca8dcdd65b78a453967aad3ea598eb12fb641d06f865d2079009534f5c2"
+    },
+    {
+      "page": 30,
+      "sha256": "ffd963a97e1d030bc069c64f50bc9f28338ec16ae25769fb9d6ec633af04b723"
     }
   ],
   "slide_images": [
@@ -226,6 +238,18 @@
     {
       "slide": 27,
       "sha256": "cb5203e776ebe4560d308b78035afc782ae3a00bd02a127f86d4892d3cdb0493"
+    },
+    {
+      "slide": 28,
+      "sha256": "96f347caebac7e48a6f0464ad2998e09d450416d86d05883fc44170b00e34b2e"
+    },
+    {
+      "slide": 29,
+      "sha256": "aa897caed26ee159ab00d94b0721c13311ed9a4257e2449395155dff1422ed34"
+    },
+    {
+      "slide": 30,
+      "sha256": "ecdc62b3ffdd9ee01749e82312df38adffd5edb2764f0af38d18bc2cb4843d82"
     }
   ],
   "inherited_review": {
@@ -253,7 +277,10 @@
       21,
       22,
       23,
-      24
+      24,
+      25,
+      26,
+      27
     ],
     "ppt_slides_identical": [
       1,
@@ -279,19 +306,22 @@
       21,
       22,
       23,
-      24
+      24,
+      25,
+      26,
+      27
     ]
   },
   "new_visual_inspection": {
     "word_pages": [
-      25,
-      26,
-      27
+      28,
+      29,
+      30
     ],
     "ppt_slides": [
-      25,
-      26,
-      27
+      28,
+      29,
+      30
     ]
   },
   "native_powerpoint_playback_verified": false

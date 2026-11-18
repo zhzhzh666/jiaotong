@@ -49,7 +49,9 @@ def verify(package):
             'zip_bytes': archive_path.stat().st_size,
             'zip_sha256': sha256(archive_path.read_bytes()).hexdigest(),
             'all_checks_passed': True,
-            'scope': 'Integrity and generation consistency only; no observational calibration or traffic reassignment'}
+            'scope': ('Integrity and reported consistency checks of new traffic assignments; no observational calibration'
+                      if manifest.get('traffic_assignment_rerun') else
+                      'Integrity and generation consistency only; no observational calibration or traffic reassignment')}
 
 
 if __name__ == '__main__':

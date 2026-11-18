@@ -67,7 +67,7 @@ with ZipFile(pptpath) as ppt,ZipFile(docpath) as word:
                     assert len(actual)==len(values)
                     assert all(math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-10) for a,b in zip(actual,values)),(i,field)
                 native_series_checked+=1
-        for component in ['storm_process','road_performance']:
+        for component in ['storm_process','road_performance','traffic_process']:
             if not data.get(component):continue
             process=ROOT/data[component]['path']
             charts=json.loads((process/'raw/native_chart_data.json').read_text(encoding='utf-8'))
@@ -121,5 +121,15 @@ if data.get('road_performance'):
     manifest['verification']['latest_tests_passed']=int(latest.attrib['tests'])
     manifest['road_performance']={'path':data['road_performance']['path'],'consistency_checks':len(data['road_performance']['report']['checks']),
         'observed':False,'traffic_assignment_rerun':False,'tests_report':record(ROOT/data['road_performance']['tests_report'])}
+if data.get('traffic_process'):
+    latest=ET.parse(ROOT/data['traffic_process']['tests_report']).getroot().find('testsuite')
+    assert int(latest.attrib['failures'])==int(latest.attrib['errors'])==0
+    assert int(latest.attrib['tests'])==data['traffic_process']['tests_passed']
+    audit=json.loads((ROOT/'docs/validation/traffic_process/numerical_audit.json').read_text(encoding='utf-8'))
+    assert audit['all_checks_passed'] and audit['intervals_audited']==384
+    manifest['verification']['latest_tests_passed']=int(latest.attrib['tests'])
+    manifest['traffic_process']={'path':data['traffic_process']['path'],'consistency_checks':len(data['traffic_process']['report']['checks']),
+        'observed':False,'traffic_assignment_rerun':True,'tests_report':record(ROOT/data['traffic_process']['tests_report']),
+        'independent_numerical_audit':record(ROOT/'docs/validation/traffic_process/numerical_audit.json')}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

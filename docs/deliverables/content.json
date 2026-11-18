@@ -606,6 +606,42 @@
         "caption": "南山三情景道路状态 10.5小时 有向边计数",
         "ppt_native": false,
         "source_label": "道路退化实验 20261118T153023_road_performance_ab224c4b / road_states_map.png"
+      },
+      {
+        "title": "交通评估 时片分配与综合韧性",
+        "paragraphs": [
+          "在基准排水与消退参数下，将完整574×574合成OD的96个出发区间与冻结道路状态接入南山40105条有向边。四情景共384条区间记录，完成188次独立用户均衡求解，最大相对间隙9.99e-05；全部满足1e-4目标，节点守恒最大误差3.64e-12 veh/h。",
+          "正常R=1，一般/严重/极端R分别为0.99995800 / 0.99976986 / 0.99958260。每个区间对照完全相同OD的正常道路基准，R=ΣQ[k]×0.25/24，使用区间起点道路状态保持。该定义与旧97端点梯形积分不同，旧值不能直接替换或当作此次结果。",
+          "BPR与Frank–Wolfe重新分配，有向平行边独立保留，关闭弧不进入最短路图且流量为0。96个区间独立求解，不传递排队，尚不属于完整动态交通分配；合成OD与道路水深未实测标定。"
+        ],
+        "figure": "docs/validation/traffic_process/traffic_resilience_process.png",
+        "caption": "新输入下时片用户均衡 综合性能与已服务出行平均道路时间",
+        "ppt_native": true,
+        "source_label": "交通评估实验 20261118T164429_traffic_process_39b516da / traffic_resilience_process.png"
+      },
+      {
+        "title": "交通评估 需求去向与拥堵",
+        "paragraphs": [
+          "所有天气使用同一外生需求，全天793108.28期望车次。每15分钟矩阵的车次除以0.25换算为veh/h，96个矩阵逐个重放核验，未将97个积水端点当作97次发车。",
+          "一般/严重/极端全天未服务需求分别为78944.49 / 78944.49 / 78944.49期望车次；所有情景同时保留区内出行。每个时片满足已服务＋未服务＋区内＝总需求，全天记账最大误差0车次。未服务按14400秒、区内按300秒计成本，不能把未服务需求视为已完成出行。",
+          "各雨量下的未服务量均与正常基准相同，医院与消防覆盖率也未变化，本次影响主要来自通行时间。拥堵比例使用当时退化容量，统计开放有向边中v/c>0.9的比例。只有完整需求与全部道路属性字节哈希相同时才复用求解，逐OD去向和边流量均可查。"
+        ],
+        "figure": "data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da/figures/traffic_demand_process.png",
+        "caption": "各天气未服务需求与按退化容量计算的道路拥堵比例",
+        "ppt_native": true,
+        "source_label": "交通评估实验 20261118T164429_traffic_process_39b516da / traffic_demand_process.png"
+      },
+      {
+        "title": "交通评估 南山流量变化",
+        "paragraphs": [
+          "图示10.5小时相对同需求正常基准的道路流量变化，黑色为关闭弧，彩色为流量变化绝对值超过1 veh/h的道路。色标截至±100 veh/h，原始数值完整保留。几何重叠不合并正反向或平行弧。",
+          "可达性保留全部568个人口分区，分母为1540614.37模型人口，未接入人口继续计入。时间效率按固定16个起点到全部节点抽样；医院与消防采用既有OSM设施，缺失避难所不补造。",
+          "131项测试、14项运行核验及全部独立求解的数值审计通过。54条关联边由合成积水驱动，其余40051边假设原状。结果未实测校准，本轮未实施南山全尺度治理优化或新SUMO仿真。"
+        ],
+        "figure": "data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da/figures/traffic_flow_change_map.png",
+        "caption": "南山道路流量相对正常基准的变化 10.5小时",
+        "ppt_native": false,
+        "source_label": "交通评估实验 20261118T164429_traffic_process_39b516da / traffic_flow_change_map.png"
       }
     ],
     "tests_passed": 106,
@@ -881,6 +917,132 @@
     },
     "tests_report": "docs/validation/road_performance/tests.xml",
     "tests_passed": 124,
+    "sections_added": 3
+  },
+  "traffic_process": {
+    "path": "data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da",
+    "report": {
+      "run_id": "20261118T164429_traffic_process_39b516da",
+      "source_kind": "synthetic",
+      "observed": false,
+      "traffic_assignment_rerun": true,
+      "case": "baseline",
+      "intervals_per_scenario": 96,
+      "road_depth_endpoints": 97,
+      "metric_rows": 384,
+      "network_nodes": 20447,
+      "directed_edges": 40105,
+      "OD_zones_in_full_matrix": 574,
+      "OD_rows_per_base_period": {
+        "evening_peak": 58528,
+        "morning_peak": 58528,
+        "offpeak": 58528
+      },
+      "unique_solved_states": 188,
+      "cache_hits": 207,
+      "max_gap": 9.988079645312887e-05,
+      "max_node_balance_error": 3.637978807091713e-12,
+      "sum_assignment_seconds": 1181.2743655996746,
+      "OD_matrix_replay_max_error_vehicles": 8.881784197001252e-16,
+      "daily_accounting_max_error_vehicles": 0.0,
+      "population_denominator": 1540614.3657147214,
+      "efficiency_sample_origins": 16,
+      "facility_counts": {
+        "fire_station": 15,
+        "hospital": 14
+      },
+      "facility_rejections": 0,
+      "scenario_summary": [
+        {
+          "scenario": "normal",
+          "R": 1.0,
+          "Rs": 1.0,
+          "Rp": 1.0,
+          "Rf": 1.0,
+          "served_vehicles": 685627.4457246726,
+          "unserved_vehicles": 78944.48647789993,
+          "intrazonal_vehicles": 28536.343267366174,
+          "total_vehicles": 793108.2754699388,
+          "minimum_Q": 1.0,
+          "minimum_Q_hour": 0.0,
+          "maximum_unserved_rate_veh_h": 7470.878241543361,
+          "max_closed_edges": 0
+        },
+        {
+          "scenario": "general",
+          "R": 0.9999580039225556,
+          "Rs": 0.9999702966230575,
+          "Rp": 0.9999278891958886,
+          "Rf": 1.0,
+          "served_vehicles": 685627.4457246726,
+          "unserved_vehicles": 78944.48647789993,
+          "intrazonal_vehicles": 28536.343267366174,
+          "total_vehicles": 793108.2754699388,
+          "minimum_Q": 0.9996969444034416,
+          "minimum_Q_hour": 10.0,
+          "maximum_unserved_rate_veh_h": 7470.878241543361,
+          "max_closed_edges": 0
+        },
+        {
+          "scenario": "severe",
+          "R": 0.9997698559781064,
+          "Rs": 0.9998330409086971,
+          "Rp": 0.9996064955927343,
+          "Rf": 1.0,
+          "served_vehicles": 685627.4457246726,
+          "unserved_vehicles": 78944.48647789993,
+          "intrazonal_vehicles": 28536.343267366174,
+          "total_vehicles": 793108.2754699388,
+          "minimum_Q": 0.998829509047463,
+          "minimum_Q_hour": 10.25,
+          "maximum_unserved_rate_veh_h": 7470.878241543361,
+          "max_closed_edges": 12
+        },
+        {
+          "scenario": "extreme",
+          "R": 0.9995826021031539,
+          "Rs": 0.999684718542464,
+          "Rp": 0.9992913167893223,
+          "Rf": 1.0,
+          "served_vehicles": 685627.4457246726,
+          "unserved_vehicles": 78944.48647789993,
+          "intrazonal_vehicles": 28536.343267366174,
+          "total_vehicles": 793108.2754699388,
+          "minimum_Q": 0.9981996162079998,
+          "minimum_Q_hour": 10.5,
+          "maximum_unserved_rate_veh_h": 7470.878241543361,
+          "max_closed_edges": 41
+        }
+      ],
+      "integration": "96 left-endpoint hold intervals, duration-weighted mean of Q over 24 h; same-interval dry-road baseline",
+      "checks": {
+        "frozen_inputs_verified": true,
+        "OD_96_matrices_replayed": true,
+        "all_384_intervals": true,
+        "same_demand_across_scenarios": true,
+        "all_unique_assignments_converged": true,
+        "maximum_gap_target": true,
+        "node_flow_conservation": true,
+        "daily_demand_accounting": true,
+        "daily_trips_match_profile": true,
+        "normal_Q_is_one": true,
+        "closed_arcs_carry_no_flow": true,
+        "population_denominator_retained": true,
+        "positive_intra_and_unserved_retained": true,
+        "metrics_finite": true
+      },
+      "check_count": 14,
+      "all_checks_passed": true,
+      "limits": [
+        "Synthetic uncalibrated OD and inundation; 54 exposed directed edges, 40051 assumed original",
+        "Static UE per departure interval; no queue carryover, no full dynamic traffic assignment",
+        "Time efficiency uses fixed sampled origins; missing shelters not invented",
+        "New 96-interval integral differs from historical 97-endpoint trapezoid; old results not directly substituted",
+        "No full Nanshan mitigation optimization or new SUMO run in this evaluation"
+      ]
+    },
+    "tests_report": "docs/validation/traffic_process/tests.xml",
+    "tests_passed": 131,
     "sections_added": 3
   }
 }

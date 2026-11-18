@@ -1,0 +1,28 @@
+{
+  "run_id": "20261118T164429_traffic_process_39b516da",
+  "inputs": [
+    {
+      "path": "data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da/raw/interval_metrics.csv",
+      "sha256": "ca81051cc23be913be48ffba8ab3c90834b6c9ee9df2db696ff558082bd81d73"
+    },
+    {
+      "path": "data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da/manifest.json",
+      "sha256": "1ae23f4d8e382de3d22798c3fff04c10c5f7f3db5069b950af4b45eeb8608b18"
+    },
+    {
+      "path": "scripts/export_traffic_resilience_figure.py",
+      "sha256": "2de4a2b307ecbf5a717b488681b419a9561f300e184f29e4b9b012216e47918b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/validation/traffic_process/traffic_resilience_process.png",
+      "sha256": "1835a3e7171b297f8ede2c513ac95ba13cfe2c61e828ca920631492337354203"
+    },
+    {
+      "path": "docs/validation/traffic_process/traffic_resilience_process.svg",
+      "sha256": "387896c786efb1b92a14f06b4a6887b653547923ebc140853b8c5e9363a90f06"
+    }
+  ],
+  "change": "Legend moved outside axes only; stored numerical results and frozen package unchanged"
+}

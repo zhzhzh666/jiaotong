@@ -1,5 +1,24 @@
 # 操作说明
 
+## 2026-11-18 新合成情景交通评估
+
+新合成积水、道路退化和完整OD已接入南山全路网时片用户均衡与韧性评估（基准排水消退组）：四情景×96个15分钟区间，384条指标记录，188次独立求解全部满足相对间隙1e-4，最大9.99e-05，节点守恒最大误差3.64e-12 veh/h。正常R=1，一般/严重/极端R=0.99995800 / 0.99976986 / 0.99958260。
+
+R按96区间起点状态保持加权平均，正常基准逐区间使用同一OD；与旧97端点梯形积分不同。区内和不可达需求保留，全部568人口区保留在可达性分母；v/c使用退化容量。合成数据未经实测标定，独立时片不传递排队，本轮未进行全尺度治理优化或新SUMO仿真。各天气全天未服务量均与正常相同，医院消防覆盖也未变化；较高R仅描述当前54边暴露模型，不能证明真实暴雨影响很小。
+
+131项测试、14项运行一致性检查与全部188个求解状态的独立BPR/间隙/节点守恒/需求记账审计通过；Word/PPT现为30页/张，原27页/张像素一致，新增28—30页/张逐张检查，23/15张源图SHA和14个原生图表45条序列核验通过。
+
+当前结果`data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da`，说明TRAFFIC_PROCESS_MODEL.md，阶段报告PHASE_TRAFFIC_PROCESS_REPORT.md。
+
+```powershell
+.conda-env/python.exe scripts/run_traffic_process.py --config configs/traffic_process.yaml
+.conda-env/python.exe scripts/audit_traffic_process.py --run data/synthetic/traffic_evaluation/20261118T164429_traffic_process_39b516da --output docs/validation/traffic_process/numerical_audit.json
+```
+
+中断可追加`--resume 原运行目录`，要求全部源码和输入SHA与检查点相同，成功运行禁止覆盖。raw/interval_metrics.csv关联state_id与同需求baseline_state_id，states/含边流量/时间/有效容量，od_service/含逐OD服务，accessibility/含全部人口区到设施时间，traces/含迭代过程。图集通过本机index.html查询，完整包不上传Git。
+
+以下保留此前模块与历史验收记录。
+
 ## 2026-11-18 道路交通性能退化更新
 
 道路交通性能退化模块已完成：水深驱动速度、独立容量函数与0.30 m中断规则，保留有向平行边。四情景×五参数组×97端点×54条关联边，共104760行道路状态；基准一般/严重/极端最多中断0/12/41条，严重/极端单边最长累计中断4.60/6.53小时。124项测试、14项状态核验、11输入/21输出SHA及ZIP内容核验通过。合成模型未经实测校准，未按新输入重跑交通分配、韧性或治理。

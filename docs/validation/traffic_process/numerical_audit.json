@@ -1,0 +1,18 @@
+{
+  "all_checks_passed": true,
+  "run_id": "20261118T164429_traffic_process_39b516da",
+  "run_manifest_sha256": "1ae23f4d8e382de3d22798c3fff04c10c5f7f3db5069b950af4b45eeb8608b18",
+  "auditor_sha256": "2659d3e39b85a94b47010545e53100b81b971f209facf5af4044ae21e8a966a2",
+  "unique_states_audited": 188,
+  "intervals_audited": 384,
+  "artifact_SHA_checked": 752,
+  "max_BPR_time_error_s": 0.0,
+  "max_node_balance_error_veh_h": 3.637978807091713e-12,
+  "max_relative_gap_replay_error": 4.803286674653906e-16,
+  "closed_arc_flows_zero": true,
+  "served_unserved_intrazonal_retained": true,
+  "effective_capacity_vc_checked": true,
+  "same_demand_baselines_checked": true,
+  "daily_demand_and_integrals_replayed": true,
+  "scope": "Independent numerical accounting of stored new UE results; no empirical validation"
+}
