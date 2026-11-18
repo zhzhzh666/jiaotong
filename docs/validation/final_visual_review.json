@@ -1,17 +1,25 @@
 {
   "all_pages_and_slides_visually_reviewed": true,
-  "word_pages": 56,
-  "ppt_slides": 56,
-  "method": "All 56 final Word pages and slides rendered. Changed cover 1 and new sections 54-56 individually viewed. Pages/slides 2-53 pixel-identical to reviewed 53-page edition. All 42 native chart/relationship/workbook parts preserved byte-for-byte. Word read-only COM PDF export, bundled pypdfium2 PNG, Artifact Tool final PPTX reimport/render. Native PowerPoint playback not checked.",
+  "word_pages": 61,
+  "ppt_slides": 61,
+  "method": "All 61 final pages and slides rendered. Cover and new 57-61 individually inspected. Pages/slides 2-56 pixel-identical to the reviewed 56-section edition. All 42 original chart/relationship/workbook parts byte-preserved. Read-only Word COM PDF and bundled pypdfium2 PNG, final PPTX reimport and Artifact Tool PNG. No native PowerPoint playback claim.",
   "preserved_chart_workbook_parts": 42,
-  "word_pdf": ".cache/document-sync-20261119-digital-twin/final-word.pdf",
-  "ppt_receipt": ".cache/document-sync-20261119-digital-twin/v1/validation.json",
-  "previous_review_sha256": "14ba708bfb319891f2620512305e6b5424b668e7dcc7ae6e3b67bb565744bf26",
-  "render_comparison": ".cache/document-sync-20261119-digital-twin/render-comparison.json",
+  "individually_reviewed_changed_pages_and_slides": [
+    1,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "word_pdf": ".cache/document-sync-20261119-full-baseline/final-word.pdf",
+  "ppt_receipt": ".cache/document-sync-20261119-full-baseline/v2/validation.json",
+  "previous_review_sha256": "ff6ed902a0a1aad3a3c97e60d478b2af7d4ada8d64de9d7f69abbd132114a611",
+  "render_comparison": ".cache/document-sync-20261119-full-baseline/render-comparison.json",
   "word_page_images": [
     {
       "page": 1,
-      "sha256": "dec477f956c911794c4ea7db1ab013b709087ece5143246b3fe8ce205d13cc8e"
+      "sha256": "923bff762b7c42e9693e41ac66a5f263f1e7cba82e91797e3c5ca0182ecf795a"
     },
     {
       "page": 2,
@@ -232,12 +240,32 @@
     {
       "page": 56,
       "sha256": "1b389aeb6198b6a415e47cb220480fb5a55c84862cd7f891dffa15eeee0e88e8"
+    },
+    {
+      "page": 57,
+      "sha256": "85fb327eb41884a0a80f096d758b0c4f010814108420301932e5aa1de72f711f"
+    },
+    {
+      "page": 58,
+      "sha256": "287371416618e4a9222c72a9d1e9e6f512ce21d575ab03771869c94ce57f56e7"
+    },
+    {
+      "page": 59,
+      "sha256": "a7b53090d6935bfa0ef55b0ce680ea45ddae83463a895daf1742a21944430e26"
+    },
+    {
+      "page": 60,
+      "sha256": "de8daf9d09d7c19b54c2557ca928f609624922c510ceb63dfd22ce0e96efaf63"
+    },
+    {
+      "page": 61,
+      "sha256": "89fe982ab745ec8366d42ba04fdd0ecad5935cdba14d1f8f35cf00bbe840bec9"
     }
   ],
   "ppt_slide_images": [
     {
       "slide": 1,
-      "sha256": "da33ae0db438f6c071edac84b62ed0113b4086d6b58dec05845448440b013b94"
+      "sha256": "8edecafe4eb1e68fe8ee5731a553f89879a82ccf1b9ddf18d6933d4a21f31d0f"
     },
     {
       "slide": 2,
@@ -458,8 +486,28 @@
     {
       "slide": 56,
       "sha256": "59f6e5f5fbf6ecc86fed7cfcfb6d8025b2c3b2dae66b9d449e2207f35c97e22b"
+    },
+    {
+      "slide": 57,
+      "sha256": "9cb66c1e7a91d700100b0b0e0c7d787c98eaab68cb1de8208a20095ec70565ed"
+    },
+    {
+      "slide": 58,
+      "sha256": "cb6d070aac1d94da3b4c92e6b2cf832949f871bcb1f490db26b857149d59ff96"
+    },
+    {
+      "slide": 59,
+      "sha256": "050f9b27de9d35e6d6f70717ec18280e982985afbf55af2d0bd10630e4bcb207"
+    },
+    {
+      "slide": 60,
+      "sha256": "6fd9358a06bc23ed668367ea7317719c78c4844b44a501af2b6fceb8fad8ae00"
+    },
+    {
+      "slide": 61,
+      "sha256": "0a9dc550f5106440f6938e89e64431adaa9c8c76acfa39b7ddc7fac26dc15433"
     }
   ],
-  "word_sha256": "7f1a877f922a013519c8e66bc644f02169b013a5fd8ea056e6c76477da317d53",
-  "ppt_sha256": "f161c7039f2d518b6a1ebad77dbf18367b8ad802fb075ccf2c9920dfeb249fed"
+  "word_sha256": "d621349e0cde9687cc37d5f89dd44afbe0c3705bbb1f701d09bdbe16c463064b",
+  "ppt_sha256": "bc6c9c7d1223e9c6fe78e0098c095ed2a9dc89f4997a17d0b0f24118f457dfc9"
 }

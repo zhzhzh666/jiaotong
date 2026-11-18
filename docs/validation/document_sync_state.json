@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-19T02:57:14.603786+08:00",
+  "updated_at": "2026-11-19T03:33:58.479460+08:00",
   "owner_thread": "01a1ee8f-7e77-7663-8c67-f10d97e0243f",
   "automation_id": "jiaotong-ppt-word",
   "status": "active",
   "interval_minutes": 30,
   "user_scope_clarification": "本聊天继续维护Word/PPT；其他开发聊天仅更新项目及GitHub。来源聊天的停止文档指令不取消本自动任务。",
-  "current_document_pages": 56,
-  "current_presentation_slides": 56,
-  "last_check": "网页三维离线回放与审计已同步56页/张；封面及新增54—56逐一查看，原2—53像素一致，全部交付核验通过。来源提交1f784e0。",
-  "pending": "全龙岗5%无雨基准仍在运行，待完整结果、逐小时耗时内存与审计；Ubuntu 5090迁移包制作中。SDTA/Gawron仅建议未验收。片区5%需求、tau代理、OD及水深未标定。 最后快照完成2个仿真小时，仍非完整结果。",
+  "current_document_pages": 61,
+  "current_presentation_slides": 61,
+  "last_check": "全龙岗5%无雨基准与本机迁移流程已同步61页/张，封面及57—61逐一查看，2—56像素一致。",
+  "pending": "关键道路新报告刚形成，下一轮核对静态排名、52次求解及独立审计后纳入；迁移聊天按用户数学模型继续扩展。全区暴雨治理四组、目标Ubuntu验收、全区3D仍待完成，未运行收敛DUE。",
   "source_threads": [
     "01a1e50e-6bff-73b1-a41f-d1713fb73f47",
     "01a1ee72-b914-7ee0-8576-1221bb77f825",
@@ -24,10 +24,10 @@
     "01a1eff2-4aa2-77f2-a830-80d95398372b",
     "01a1effd-dfe1-72b2-accb-0843ce6db411"
   ],
-  "document_sha256": "7f1a877f922a013519c8e66bc644f02169b013a5fd8ea056e6c76477da317d53",
-  "presentation_sha256": "f161c7039f2d518b6a1ebad77dbf18367b8ad802fb075ccf2c9920dfeb249fed",
+  "document_sha256": "d621349e0cde9687cc37d5f89dd44afbe0c3705bbb1f701d09bdbe16c463064b",
+  "presentation_sha256": "bc6c9c7d1223e9c6fe78e0098c095ed2a9dc89f4997a17d0b0f24118f457dfc9",
   "source_wait_cursors": {
-    "01a1ee72-b914-7ee0-8576-1221bb77f825": "d3a0d2d9-718c-488f-8203-0da3b7d4e8b0:5",
+    "01a1ee72-b914-7ee0-8576-1221bb77f825": "d3a0d2d9-718c-488f-8203-0da3b7d4e8b0:6",
     "01a1e50e-6bff-73b1-a41f-d1713fb73f47": "4e0c257d-a91f-4b91-a62d-6d66d3ab7ec2:1",
     "01a1ee71-4c6c-70d0-879f-5bb3ab2a1b52": "7ca166c4-a547-4ebc-b410-edd9e6eda5c2:1",
     "01a1efe6-d066-75c1-aaf8-3788421b69cc": "84695a07-6e5c-4633-836c-d528a6326f39:2"
@@ -63,7 +63,7 @@
     "20261118T175153_sumo_492a503a",
     "digital_twin_replay_20261118T183542"
   ],
-  "qa_directory": ".cache/document-sync-20261119-digital-twin",
+  "qa_directory": ".cache/document-sync-20261119-full-baseline",
   "visual_review": "docs/validation/final_visual_review.json",
   "verification_passed": true,
   "other_deliverables_preserved": [
@@ -71,12 +71,13 @@
     "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO更新版.pptx",
     "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_SUMO片区结果版.pptx",
     "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_当前进度版.pptx",
-    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_进度更新版.pptx"
+    "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_进度更新版.pptx",
+    "docs/deliverables/暴雨内涝交通韧性_专题整合版.pptx"
   ],
-  "last_source_commit": "1f784e0",
+  "last_source_commit": "7ca9b43",
   "source_latest_completed_turn": "01a1efe6-d32c-7a81-a8bd-544518d7c639",
   "latest_method_document_read": "docs/PHASE_DIGITAL_TWIN_REPORT.md",
-  "source_latest_read_status": "All thirteen known jiaotong source chats read through current available messages. 3D replay completed and audited. Full-region baseline and Ubuntu transfer packaging in progress; road criticality chat provides advice only.",
+  "source_latest_read_status": "Known research source histories retained; changed main, transfer, critical-road and independent PPT chats read through available messages. Full-district dry baseline accepted. Local migration fixture accepted, target Ubuntu pending. Critical-road rankings pending final independent acceptance.",
   "other_deliverable_fingerprints": [
     {
       "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报.pptx",
@@ -97,7 +98,23 @@
     {
       "path": "docs/deliverables/暴雨内涝交通韧性_15分钟汇报_进度更新版.pptx",
       "sha256": "153a3966e7af32079809e92bc1659019e21908bcf96a5e0028f8f3611fdacb0a"
+    },
+    {
+      "path": "docs/deliverables/暴雨内涝交通韧性_专题整合版.pptx",
+      "sha256": "9fce9dee98d64396732e109ddc8a5c9166604f2639187ffbfee0303aaee68b96"
     }
   ],
-  "automation_prompt_sha256": "8ded7e037f42e17af5cb8b0d660f7ba014963759c5f61269fd39b2605e708206"
+  "automation_prompt_sha256": "2470c9ea17fc6b7c237f5070f1ac3c255399adac3e8e7c19f241473721f73139",
+  "accepted_runs": [
+    "20261118T184221_full5_07cdb6f1"
+  ],
+  "verification_summary": {
+    "full_baseline_evidence_sha256_checked": 30,
+    "migration_snapshot_sha256_checked": 6,
+    "source_images_word": 43,
+    "source_images_ppt": 35,
+    "native_charts": 14,
+    "native_series": 45,
+    "preserved_parts": 42
+  }
 }

@@ -1,0 +1,34 @@
+{
+  "fixture": "Two 500m edges, three vehicles, 900 simulated seconds, wet depth 0.05m, governed dry",
+  "platform": "Windows; not Ubuntu acceptance",
+  "checks": [
+    {
+      "scenario": "dry",
+      "arrived": 3,
+      "balance_error": 0
+    },
+    {
+      "scenario": "governed_departure",
+      "arrived": 3,
+      "balance_error": 0
+    },
+    {
+      "scenario": "governed_rolling",
+      "arrived": 3,
+      "balance_error": 0
+    },
+    {
+      "scenario": "rain_departure",
+      "arrived": 3,
+      "balance_error": 0
+    },
+    {
+      "scenario": "rain_rolling",
+      "arrived": 3,
+      "balance_error": 0
+    }
+  ],
+  "export_receive": "passed",
+  "archive_sha256": "5dfe05e0a9f84c5c5fbf07698e22619279099a1209450f7179dcc6faaf55421e",
+  "qa_directory": "C:\\Users\\zh\\Desktop\\git\\jiaotong\\results\\transfer_qa\\20261118T190100Z_8dd9486a"
+}

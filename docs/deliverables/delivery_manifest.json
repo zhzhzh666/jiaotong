@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-19",
-  "phase_status": "龙岗片区SUMO与网页三维离线回放已核验。三组每秒轨迹和账本一致，程序化建筑非实测；全区基准仍待完成核验。",
+  "phase_status": "全龙岗5%需求无雨基准已独立核验，Ubuntu迁移流程通过本机微型验收。暴雨治理全区比较及目标Ubuntu验收待完成。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 8667801,
-      "sha256": "f161c7039f2d518b6a1ebad77dbf18367b8ad802fb075ccf2c9920dfeb249fed"
+      "bytes": 9419390,
+      "sha256": "bc6c9c7d1223e9c6fe78e0098c095ed2a9dc89f4997a17d0b0f24118f457dfc9"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 9634464,
-      "sha256": "7f1a877f922a013519c8e66bc644f02169b013a5fd8ea056e6c76477da317d53"
+      "bytes": 10368488,
+      "sha256": "d621349e0cde9687cc37d5f89dd44afbe0c3705bbb1f701d09bdbe16c463064b"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 164498,
-    "sha256": "56411c86bf548d88dc42b8be2376b9707affbe8e27775adecae217ad2da7fec8"
+    "bytes": 178214,
+    "sha256": "0fe0dcc21fb6a7a789c0ae31f122f53fd1d81f13abdbd3088c8e70c46ff61900"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 56,
-    "docx_pages": 56,
+    "pptx_slides": 61,
+    "docx_pages": 61,
     "embedded_source_images": {
-      "word": 41,
-      "ppt": 33
+      "word": 43,
+      "ppt": 35
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -59,14 +59,14 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 171,
+    "latest_tests_passed": 186,
     "model_tests_rerun_for_this_document_update": false,
     "preserved_native_chart_workbook_parts": 42
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 14366,
-    "sha256": "ff6ed902a0a1aad3a3c97e60d478b2af7d4ada8d64de9d7f69abbd132114a611"
+    "bytes": 15640,
+    "sha256": "896dfa804538a94f5f472c0cd65b2c126fa6469bda9ab96a421224de49770772"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -297,5 +297,53 @@
     "local_data_sha_files_checked": 5,
     "screenshots_sha_checked": 5,
     "model_or_browser_tests_rerun_for_document_update": false
+  },
+  "longgang_sumo_full": {
+    "path": "data/processed/longgang_sumo_full/20261118T184221_full5_07cdb6f1",
+    "source_commit": "7ca9b43",
+    "demand_fraction": 0.05,
+    "planned": 11506,
+    "valid_arrived": 10634,
+    "invalid": 872,
+    "full_district_dry_only": true,
+    "calibrated": false,
+    "actual_total_wall_seconds": 1000.0677462999884,
+    "peak_sampled_combined_rss_mib": 2586.00390625,
+    "five_cases_and_iterations_are_forecasts": true,
+    "full_district_3d_replay_completed": false,
+    "evidence_index": {
+      "path": "docs/validation/longgang_sumo_full/evidence_index.json",
+      "bytes": 4277,
+      "sha256": "7dd2f8af67f93e79c2fe8bcf58cc4d5ce9fe5ccf2121753b506ba38331ecf16a"
+    },
+    "independent_audit": {
+      "path": "docs/validation/longgang_sumo_full/independent_audit.json",
+      "bytes": 659,
+      "sha256": "0d6581e4c61c039f54064b465210110e6df60ce29d6c2c7c06eb825ee776366d"
+    },
+    "tests_report": {
+      "path": "docs/validation/longgang_sumo_full/tests.xml",
+      "bytes": 22113,
+      "sha256": "146fafd0cdbf2c8f73c5ebc339054498e32536ab5ff945e61281770c01718d3b"
+    },
+    "evidence_files_sha256_checked": 30
+  },
+  "migration_5090": {
+    "local_roundtrip_passed": true,
+    "local_fixture_vehicles": 3,
+    "target_ubuntu_accepted": false,
+    "gpu_solver": false,
+    "research_results": false,
+    "roundtrip_qa": {
+      "path": "docs/validation/document_sync_migration_5090/roundtrip_qa.json",
+      "bytes": 893,
+      "sha256": "520e0c3803263e2d503d155527a97084a308cc447fea584dc1e8ca5ece49e24d"
+    },
+    "tests_report": {
+      "path": "docs/validation/document_sync_migration_5090/tests.xml",
+      "bytes": 22113,
+      "sha256": "add32596ca5b1c2d13aeceb064ce72963561decf9fbb108a8758346dff2665ab"
+    },
+    "evidence_files_sha256_checked": 6
   }
 }

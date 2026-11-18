@@ -1,5 +1,14 @@
 # 深圳暴雨内涝交通韧性研究原型
 
+## 2026-11-19 Word与PPT同步全龙岗无雨基准
+
+专门文档聊天已将全龙岗5%需求无雨基准与Windows本机迁移流程验收补入维护Word61页、PPT61张。新增57—61节说明86,804条有效龙岗源弧、整段OD抽样、11,506计划中10,634有效全到达与872未加载账本，记录本机16.67分钟、采样合计RSS峰值2.525 GiB及每小时耗时。全区只完成无雨一组，五组和迭代耗时是条件预算；未将其写为全区治理收益或DUE收敛。全区3D回放未完成，旧片区网页保持原范围。
+
+全部61页/张已渲染，封面及57—61逐一查看，2—56与已审56页版逐像素一致；43/35张Word/PPT源图、14个原生图表45条序列、42个图表关系及工作簿部件和原稿指纹核验通过。30份全区精简证据SHA核对一致。迁移在Windows通过单车及3辆车微型五情景往返检查，目标Ubuntu与5090性能未验收；精简来源快照见docs/validation/document_sync_migration_5090/。本轮引用186项既有测试，未重跑研究模型或测试。六份独立专题PPT保留。每30分钟继续读取所有相关聊天，关键道路刚形成的新报告及迁移模型扩展转下一轮核对。
+
+交付与审核见docs/deliverables/delivery_manifest.json、docs/validation/final_visual_review.json；QA目录.cache/document-sync-20261119-full-baseline。来源全区运行20261118T184221_full5_07cdb6f1、提交7ca9b43。本节以下保留历史及其他聊天的并发记录。
+
+
 ## 2026-11-19 后续三维展示使用改进沙盘
 
 用户指定后续3D展示使用现有Three.js沙盘`dashboard/digital-twin/`，入口`启动三维仿真.cmd`或`scripts/serve_digital_twin.py`。SUMO继续后台计算，轨迹/道路状态/指标经核验后导出供沙盘回放；OSG仅保留可选诊断。当前网页仍是旧3 km×3 km片区三情景，全区接入尚未完成。全区应单独导出并核对来源、车辆账本、坐标和时间轴；逐秒版需重放采集，不能把现有60秒FCD插值当成原始逐秒轨迹。本轮只记录入口约定，没有重跑模型或改写历史manifest。详情见docs/LONGGANG_FULL_SUMO_BENCHMARK.md第7节及dashboard/digital-twin/README.md。

@@ -320,5 +320,52 @@ if data.get('digital_twin'):
         'data_audit':record(ROOT/twin['data_audit']),'visual_review':record(ROOT/twin['visual_review']),
         'local_data_sha_files_checked':len(audit['sha256']),'screenshots_sha_checked':len(visual['screenshots']),
         'model_or_browser_tests_rerun_for_document_update':False}
+if data.get('longgang_sumo_full'):
+    full=data['longgang_sumo_full']; evidence=ROOT/'docs/validation/longgang_sumo_full'
+    index=json.loads((ROOT/full['evidence_index']).read_text(encoding='utf-8'))
+    audit=json.loads((ROOT/full['audit']).read_text(encoding='utf-8'))
+    result=json.loads((evidence/'cases/dry/result.json').read_text(encoding='utf-8'))
+    latest=ET.parse(ROOT/full['tests_report']).getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==full['tests_passed']==186
+    assert int(latest.attrib['failures'])==int(latest.attrib['errors'])==0
+    for item in index['files']:assert record(evidence/item['path'])['sha256']==item['sha256'],item['path']
+    assert result==full['result'] and result['planned']==11506 and result['invalid']==872 and result['arrived']==10634
+    assert result['planned']==sum(result[k] for k in ['arrived','invalid','running','sumo_pending','external_pending'])
+    assert all(result[k]==0 for k in ['running','sumo_pending','external_pending','balance_error','teleports','collision_vehicle_events'])
+    assert audit['source_sumo_arcs']==151701 and audit['whole_district_arcs_checked']==86804
+    assert audit['vehicle_seconds_independent']==result['vehicle_seconds']==12473271
+    assert result['generalized_vehicle_seconds']==18751671==result['vehicle_seconds']+7200*result['invalid']
+    assert audit['actual_injected_routes_checked']==result['arrived'] and audit['hourly_records_checked']==4
+    with (evidence/'cases/dry/hourly_performance.csv').open(encoding='utf-8-sig',newline='') as f: hourly=list(csv.DictReader(f))
+    assert len(hourly)==4
+    resource=json.loads((evidence/'resources_summary.json').read_text(encoding='utf-8'))
+    budget=json.loads((evidence/'runtime_budget.json').read_text(encoding='utf-8'))
+    assert math.isclose(resource['total_wall_seconds']/60,16.6678,abs_tol=.001)
+    assert math.isclose(resource['peak_combined_rss_mib']/1024,2.5254,abs_tol=.001)
+    assert math.isclose(budget['five_case_forecast']['planning_allowance_seconds']/3600,5.6269,abs_tol=.001)
+    for text in ['86,804','151,701','11,506','10,634','872','16.67','2.525','条件预算','Ubuntu']:
+        assert text in doc_text and text in ppt_text,text
+    assert not full['calibrated'] and full['full_district_dry_only'] and not full['gui_replay_completed']
+    manifest['verification']['latest_tests_passed']=186
+    manifest['longgang_sumo_full']={'path':full['path'],'source_commit':full['source_commit'],'demand_fraction':.05,
+      'planned':11506,'valid_arrived':10634,'invalid':872,'full_district_dry_only':True,'calibrated':False,
+      'actual_total_wall_seconds':resource['total_wall_seconds'],'peak_sampled_combined_rss_mib':resource['peak_combined_rss_mib'],
+      'five_cases_and_iterations_are_forecasts':True,'full_district_3d_replay_completed':False,
+      'evidence_index':record(ROOT/full['evidence_index']),'independent_audit':record(ROOT/full['audit']),
+      'tests_report':record(ROOT/full['tests_report']),'evidence_files_sha256_checked':len(index['files'])}
+if data.get('migration_5090'):
+    migration=data['migration_5090']; evidence=ROOT/migration['evidence']
+    for name,digest in migration['evidence_sha256'].items():assert record(evidence/name)['sha256']==digest,name
+    qa=json.loads((evidence/'roundtrip_qa.json').read_text(encoding='utf-8'))
+    smoke=json.loads((evidence/'sumo_smoke_windows.json').read_text(encoding='utf-8'))
+    assert qa['export_receive']=='passed' and len(qa['checks'])==5
+    assert all(x['arrived']==3 and x['balance_error']==0 for x in qa['checks'])
+    assert smoke['headless_sumo_traci_smoke']=='passed: one vehicle arrived' and not smoke['cuda_used_by_solver']
+    latest=ET.parse(evidence/'tests.xml').getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==186 and int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert migration['local_roundtrip_passed'] and not migration['target_ubuntu_accepted'] and not migration['gpu_solver']
+    manifest['migration_5090']={'local_roundtrip_passed':True,'local_fixture_vehicles':3,'target_ubuntu_accepted':False,
+       'gpu_solver':False,'research_results':False,'roundtrip_qa':record(evidence/'roundtrip_qa.json'),
+       'tests_report':record(evidence/'tests.xml'),'evidence_files_sha256_checked':len(migration['evidence_sha256'])}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))
