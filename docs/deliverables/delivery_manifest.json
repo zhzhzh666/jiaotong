@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-18",
-  "phase_status": "研究原型：南山分配与韧性评估、小网治理与十种子实验；实际验收范围及限制见报告",
+  "phase_status": "当前目标：龙岗（随包440307，含大鹏）；数据接收已完成，拓扑与模型待重算。南山实验作为历史保留。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 3281191,
-      "sha256": "6c99b9585d8a8a765134786efb33968f1f0f3faa3ee60cc4d820d1039731114a"
+      "bytes": 3814553,
+      "sha256": "ce0b9dcaae1d3b4c28f4a6ebcd90d6226cd8437004d9261bc6425a2503e42f96"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 4338491,
-      "sha256": "1f9dfb9463f1ea9e7893c06cdbdfbd36edefdc45b57a2115b1aa97daf6b5375d"
+      "bytes": 4869000,
+      "sha256": "9f83dadee9c5ccf246a5747e73e1b95aa11f4d462613cb8a80c67438f27bd8c2"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 60940,
-    "sha256": "2ba976f8333280665956c57fbe25a5e9cf4d4757ac0d0425498e95a416aa88c5"
+    "bytes": 70166,
+    "sha256": "41230f6f5387bcb0eb738310e740976250c3a4e363c530d688d237fa1bb012c1"
   },
   "originals_preserved": [
     {
@@ -44,15 +44,15 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 30,
-    "docx_pages": 30,
+    "pptx_slides": 31,
+    "docx_pages": 31,
     "embedded_source_images": {
-      "word": 23,
-      "ppt": 15
+      "word": 24,
+      "ppt": 16
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
-    "core_tests_rerun_for_document_update": true,
+    "core_tests_rerun_for_document_update": false,
     "shared_titles_and_doi_checked": true,
     "native_chart_source_series_checked": 45,
     "pptx_package_layout_fonts_and_reimport": "pass",
@@ -63,8 +63,8 @@
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 8818,
-    "sha256": "a0896337521d2eeec558fda3ab6cadbddd40710e9ba60ae60b4ac8ae39e5f724"
+    "bytes": 9060,
+    "sha256": "0388b8011b297459d7ad7131e9be99bf2f9c47293451f9fce514e732d79a63ec"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -108,6 +108,23 @@
       "path": "docs/validation/traffic_process/numerical_audit.json",
       "bytes": 830,
       "sha256": "fe297dd6831b1f7fe6742ded5e039734c9386dc4ed387cce9177f95106f2e53f"
+    }
+  },
+  "active_research": {
+    "region": "longgang",
+    "scope": "随包440307龙岗边界，包含大鹏范围",
+    "intake_path": "data/processed/longgang_intake/20261118T193729_longgang_intake_fe318c5f",
+    "assignment_ready": false,
+    "traffic_assignment_rerun_for_longgang": false,
+    "intake_checks": {
+      "path": "docs/validation/longgang_intake/intake_checks.json",
+      "bytes": 411,
+      "sha256": "7e45f6c0854c386b8eced7d8c03bbf31f84723727c0f1b67ffa1bba5120c562d"
+    },
+    "intake_report": {
+      "path": "docs/validation/longgang_intake/intake_report.json",
+      "bytes": 6414,
+      "sha256": "c36adb021314c12f1775f30f9434b70b0456551b3f2bc59365f87df9c0c58638"
     }
   }
 }

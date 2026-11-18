@@ -22,7 +22,7 @@ footer.add_run('2026-11-18 | ');field=OxmlElement('w:fldSimple');field.set(qn('w
 for i,s in enumerate(sections):
     title=d.add_paragraph(s['title'],'Title' if i==0 else 'Heading 1')
     if i:title.paragraph_format.page_break_before=True
-    if i==0:d.add_paragraph('研究报告与阶段进展 · 真实深圳路网研究原型','Caption')
+    if i==0:d.add_paragraph(data.get('cover_subtitle','研究报告与阶段进展 · 真实深圳路网研究原型'),'Caption')
     for text in s['paragraphs']:d.add_paragraph(text)
     if s.get('figure'):
         image=ROOT/s['figure'];d.add_picture(str(image),width=Cm(16.3))
@@ -30,7 +30,7 @@ for i,s in enumerate(sections):
         source_name=('合成数据包 '+Path(s['figure']).parts[3]+' / figures/'+image.name) if s['title'].startswith('补充情景 ') else s['figure']
         source=d.add_paragraph('来源：'+s.get('source_label',source_name),'Caption');source.paragraph_format.space_after=Pt(4)
     if i==0:
-        d.add_paragraph('验收范围','Heading 1')
+        d.add_paragraph('历史验收范围' if data.get('active_research') else '验收范围','Heading 1')
         for text in ['南山：全路网分配、24h全过程韧性、2000计划车辆SUMO抽样。','小型真实区域：六路组治理、穷举核验、十种子与独立测试。','完整数据和图片留本机；源码、配置、维护文档及验收副本上传GitHub。']:
             d.add_paragraph(text)
 d.core_properties.title=data['title'];d.core_properties.subject='深圳城市暴雨内涝交通韧性研究原型与实际实验';d.core_properties.author=''

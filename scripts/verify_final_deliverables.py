@@ -96,7 +96,7 @@ manifest={'updated':data['updated'],'phase_status':data['status'],'accepted_runs
  'originals_preserved':old['originals_preserved'],
  'verification':{'final_content_checked':True,'all_pages_and_slides_visually_reviewed':True,
  'pptx_slides':len(slides),'docx_pages':len(pdf.pages),'embedded_source_images':{'word':len(images),'ppt':len(ppt_images)},'embedded_image_sha256_matches':True,
- 'previous_core_tests_passed':int(suite.attrib['tests']),'core_tests_rerun_for_document_update':bool(data.get('storm_process')),'shared_titles_and_doi_checked':True,
+ 'previous_core_tests_passed':int(suite.attrib['tests']),'core_tests_rerun_for_document_update':bool(data.get('storm_process')) and not bool(data.get('active_research')),'shared_titles_and_doi_checked':True,
  'native_chart_source_series_checked':native_series_checked,
  'pptx_package_layout_fonts_and_reimport':'pass',
  'word_render':'Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable',
@@ -131,5 +131,17 @@ if data.get('traffic_process'):
     manifest['traffic_process']={'path':data['traffic_process']['path'],'consistency_checks':len(data['traffic_process']['report']['checks']),
         'observed':False,'traffic_assignment_rerun':True,'tests_report':record(ROOT/data['traffic_process']['tests_report']),
         'independent_numerical_audit':record(ROOT/'docs/validation/traffic_process/numerical_audit.json')}
+if data.get('active_research'):
+    active=data['active_research']
+    intake=ROOT/active['intake_path']
+    checks=json.loads((intake/'intake_checks.json').read_text(encoding='utf-8'))
+    report=json.loads((intake/'intake_report.json').read_text(encoding='utf-8'))
+    assert checks['all_checks_passed'] and report==active['report']
+    assert active['region']=='longgang' and report['include_dapeng'] and not active['assignment_ready']
+    assert '龙岗' in doc_text and '龙岗' in ppt_text
+    manifest['active_research']={'region':active['region'],'scope':active['scope'],
+        'intake_path':active['intake_path'],'assignment_ready':False,'traffic_assignment_rerun_for_longgang':False,
+        'intake_checks':record(ROOT/'docs/validation/longgang_intake/intake_checks.json'),
+        'intake_report':record(ROOT/'docs/validation/longgang_intake/intake_report.json')}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

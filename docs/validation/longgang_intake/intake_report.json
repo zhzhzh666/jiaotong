@@ -1,0 +1,184 @@
+{
+  "run_id": "20261118T193729_longgang_intake_fe318c5f",
+  "region": "longgang",
+  "scope": "龙岗区（随包440307边界，包含大鹏范围）",
+  "adcode": 440307,
+  "include_dapeng": true,
+  "authorization": "用户2026-11-18明确选择采用随包440307边界，包含大鹏范围",
+  "source_files": [
+    {
+      "name": "深圳OSM路网_研究数据包.zip",
+      "bytes": 34340821,
+      "sha256": "348a68aa068eb2fd5fb3c825725ada025c3bfa34c8d41be19bf3fa5548e4fa25",
+      "copy_verified": true
+    },
+    {
+      "name": "深圳OSM路网数据字段说明(1).docx",
+      "bytes": 42273,
+      "sha256": "451d5eb682c47a6c855929a69f2b10b98c4509a1f39bc845f055bdea0a04b2ea",
+      "copy_verified": true
+    },
+    {
+      "name": "道路等级统计(1).csv",
+      "bytes": 547,
+      "sha256": "a5003e74400ad7e2c470725652947ac5750e423478bfe167561cac18c01d77cd",
+      "copy_verified": true
+    },
+    {
+      "name": "深圳OSM路网.gpkg.zip",
+      "bytes": 29293660,
+      "sha256": "aac05a8928ef62da79b20291ba0f4492985f76ad83af9f8eab374e982d8af9ba",
+      "copy_verified": true
+    },
+    {
+      "name": "深圳机动车路网.geojson.zip",
+      "bytes": 4015781,
+      "sha256": "7a5009e9406d04355bfa45dc011e8c7f756125269e5101ff517806a1ce6e6d0e",
+      "copy_verified": true
+    }
+  ],
+  "archives": [
+    {
+      "name": "深圳OSM路网.gpkg.zip",
+      "crc_passed": true,
+      "members": [
+        {
+          "name": "深圳OSM路网.gpkg",
+          "bytes": 101875712,
+          "sha256": "e335d734a29e4f6d08bcf45de706e061c887c5919cd53043a10e838edb4439bc"
+        }
+      ]
+    },
+    {
+      "name": "深圳OSM路网_研究数据包.zip",
+      "crc_passed": true,
+      "members": [
+        {
+          "name": "深圳OSM路网.gpkg",
+          "bytes": 101875712,
+          "sha256": "e335d734a29e4f6d08bcf45de706e061c887c5919cd53043a10e838edb4439bc"
+        },
+        {
+          "name": "深圳OSM路网与积涝站叠加图.png",
+          "bytes": 875513,
+          "sha256": "612ffe95ca0a91b0ba02546097262d473050eac38187672930e1760e9b38ddb2"
+        },
+        {
+          "name": "深圳OSM路网数据字段说明.docx",
+          "bytes": 42273,
+          "sha256": "451d5eb682c47a6c855929a69f2b10b98c4509a1f39bc845f055bdea0a04b2ea"
+        },
+        {
+          "name": "深圳市行政区边界.json",
+          "bytes": 69077,
+          "sha256": "e346a6cb0d5c482bf52fd0b845d0cda8c03a6ab666ce310afd3292a4d1899fa8"
+        },
+        {
+          "name": "深圳机动车路网.geojson",
+          "bytes": 37476442,
+          "sha256": "3b846fbaeb67c9fff0394a754708049cf222d6ddcc40f7cfb30f93777cd719ef"
+        },
+        {
+          "name": "道路等级统计.csv",
+          "bytes": 547,
+          "sha256": "a5003e74400ad7e2c470725652947ac5750e423478bfe167561cac18c01d77cd"
+        }
+      ]
+    },
+    {
+      "name": "深圳机动车路网.geojson.zip",
+      "crc_passed": true,
+      "members": [
+        {
+          "name": "深圳机动车路网.geojson",
+          "bytes": 37476442,
+          "sha256": "3b846fbaeb67c9fff0394a754708049cf222d6ddcc40f7cfb30f93777cd719ef"
+        }
+      ]
+    }
+  ],
+  "sqlite_quick_check": "ok",
+  "actual_layers": [
+    {
+      "name": "motor_shenzhen",
+      "features": 43082,
+      "srs_id": 4326
+    },
+    {
+      "name": "all_roads_shenzhen",
+      "features": 152169,
+      "srs_id": 4326
+    }
+  ],
+  "source_geojson_matches_motor_layer": true,
+  "supplied_boundary_features": 9,
+  "boundary_has_explicit_crs": false,
+  "boundary_datum_independently_verified": false,
+  "road_features_selected": 9624,
+  "selected_features_are_directed_graph_edges": false,
+  "whole_selected_feature_length_m": 3220568.5,
+  "road_osm_ids_unique": false,
+  "road_geometries_valid": true,
+  "missing_lanes": 6603,
+  "missing_maxspeed": 9341,
+  "oneway_counts": {
+    "yes": 5607,
+    "<missing>": 3519,
+    "no": 496,
+    "-1": 2
+  },
+  "station_candidates": 15,
+  "water_record_candidates": 6125,
+  "label_consistent_stations": 14,
+  "label_consistent_water_records": 5731,
+  "label_conflict_station_ids": [
+    "9281292002"
+  ],
+  "candidate_SW_peak_m": 1.95,
+  "station_to_road_median_m": 20.81234007387147,
+  "station_to_road_max_m": 111.98850053873261,
+  "raw_SW_reference_verified": false,
+  "station_road_association_verified": false,
+  "new_measured_rainfall": false,
+  "new_measured_OD": false,
+  "new_measured_traffic_flow": false,
+  "raster_extent_checks": [
+    {
+      "role": "population_source",
+      "path": "data/raw/phase02/20261117_source_acquisition/population_2020_1km.tif",
+      "crs": "EPSG:4326",
+      "resolution": [
+        0.0083333333,
+        0.0083333333
+      ],
+      "extent_covers_boundary": true,
+      "note": "Extent check only; valid pixel coverage and Longgang clipping not yet audited"
+    },
+    {
+      "role": "dsm_source",
+      "path": "data/raw/phase02/20261117_source_acquisition/dem_e114.tif",
+      "crs": "EPSG:4326",
+      "resolution": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "extent_covers_boundary": true,
+      "note": "Extent check only; valid pixel coverage and Longgang clipping not yet audited"
+    }
+  ],
+  "traffic_assignment_rerun": false,
+  "discrepancies": [
+    "Dictionary lists motor_all_bbox, but delivered GPKG contains only two layers",
+    "Claimed BBBike original archive and gpkg/ provenance directory are absent from all five files",
+    "Boundary JSON has no explicit CRS/source; WGS84 is a supplier claim, independently unverified",
+    "Road features have no authoritative u/v/node IDs; endpoint-only joining cannot certify topology",
+    "Dictionary overlay proximity is not evidence of sensor location or SW road-relative datum"
+  ],
+  "next_steps": [
+    "Rebuild directional topology with shared junctions and grade separation; validate oneway=-1, access and busway",
+    "Audit supplied boundary datum against an independent source",
+    "Review station label conflict and surveyed road/sensor association",
+    "Clip DSM/population, acquire Longgang facilities, create new TAZ/gateways and synthetic or calibrated OD",
+    "Generate new inundation and rerun assignment/resilience/SUMO; retain Nanshan historical results"
+  ]
+}

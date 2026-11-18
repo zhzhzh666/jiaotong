@@ -1,0 +1,14 @@
+region: longgang
+region_label: 龙岗区（随包440307边界，包含大鹏范围）
+scope_adcode: 440307
+include_dapeng: true
+scope_authorization: 用户2026-11-18明确选择采用随包440307边界，包含大鹏范围
+source_directory: data/raw/user_sources/shenzhen_osm_20261118
+network_layer: motor_shenzhen
+projected_crs: EPSG:32650
+station_source: data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_stations_all.geojson
+water_source: data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_water_levels_all.csv
+population_source: data/raw/phase02/20261117_source_acquisition/population_2020_1km.tif
+dsm_source: data/raw/phase02/20261117_source_acquisition/dem_e114.tif
+output_root: data/processed/longgang_intake
+status: data_intake_only_not_assignment_ready

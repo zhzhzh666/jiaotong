@@ -131,8 +131,12 @@ section('参考文献与数据许可',[
     [r['label']+'：'+r['doi'] for r in data['references']])
 
 # Keep separately generated experiment-input sections when refreshing run facts.
-sections.extend(s for s in data.get('final',{}).get('sections',[]) if s.get('title','').startswith(('补充情景 ','情景建模 ','道路模型 ','交通评估 ')))
+sections.extend(s for s in data.get('final',{}).get('sections',[]) if s.get('title','').startswith(('补充情景 ','情景建模 ','道路模型 ','交通评估 ','龙岗研究区 ')))
 data.update(updated='2026-11-18',status='研究原型：南山分配与韧性评估、小网治理与十种子实验；实际验收范围及限制见报告')
+if data.get('active_research'):
+    data['status']='当前目标：龙岗（随包440307，含大鹏）；数据接收已完成，拓扑与模型待重算。南山实验作为历史保留。'
+    sections[0]['paragraphs'][0]='2026年11月18日：研究区调整为龙岗（随包440307，含大鹏），已完成数据接收。前述南山成果作为历史实验保留，龙岗模型尚未重算。'
+    sections[0]['slide_points']=['研究报告与阶段进展','2026年11月18日','研究区调整：龙岗含大鹏；南山结果作为历史保留']
 data['final']={'sections':sections,'tests_passed':test_count,'runs':{p:r.name for p,r in runs.items()},'scope_limit':'small optimization/ten seeds; full Nanshan assignment/resilience and sampled SUMO only'}
 write_json(target/'content.json',data)
 write_json(ROOT/'docs/validation/accepted_runs.json',data['final']['runs'])

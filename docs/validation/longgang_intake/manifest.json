@@ -1,0 +1,118 @@
+{
+  "run_id": "20261118T193729_longgang_intake_fe318c5f",
+  "status": "intake_complete_graph_and_models_pending",
+  "inputs": [
+    {
+      "path": "configs/longgang_data_intake.yaml",
+      "sha256": "b3aabd2a41499877054ff4f839addd9f6b3011b68608874de96df8909ad0a5b4",
+      "bytes": 797
+    },
+    {
+      "path": "scripts/intake_longgang_data.py",
+      "sha256": "25c794561a39a729cef34dfe056fe40718d174d0cd34ba30c71473fd0e26e1ae",
+      "bytes": 13563
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/source_manifest.json",
+      "sha256": "5e724931899b55771f829fabfa6776dbf1e040522da0012f8c91e91178e16b71",
+      "bytes": 2355
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/深圳OSM路网_研究数据包.zip",
+      "sha256": "348a68aa068eb2fd5fb3c825725ada025c3bfa34c8d41be19bf3fa5548e4fa25",
+      "bytes": 34340821
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/深圳OSM路网数据字段说明(1).docx",
+      "sha256": "451d5eb682c47a6c855929a69f2b10b98c4509a1f39bc845f055bdea0a04b2ea",
+      "bytes": 42273
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/道路等级统计(1).csv",
+      "sha256": "a5003e74400ad7e2c470725652947ac5750e423478bfe167561cac18c01d77cd",
+      "bytes": 547
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/深圳OSM路网.gpkg.zip",
+      "sha256": "aac05a8928ef62da79b20291ba0f4492985f76ad83af9f8eab374e982d8af9ba",
+      "bytes": 29293660
+    },
+    {
+      "path": "data/raw/user_sources/shenzhen_osm_20261118/深圳机动车路网.geojson.zip",
+      "sha256": "7a5009e9406d04355bfa45dc011e8c7f756125269e5101ff517806a1ce6e6d0e",
+      "bytes": 4015781
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_stations_all.geojson",
+      "sha256": "56aabf02e387cad03677a52702e41f78518b724dbbc24bbf43a19427808169f4",
+      "bytes": 33528
+    },
+    {
+      "path": "data/processed/phase03/20261117T215510_p03_ab17de87/user_water/user_water_levels_all.csv",
+      "sha256": "14312dd5782d83bba972f49f760ace42d37b66abd0f944c220376a0c50f51700",
+      "bytes": 4386956
+    }
+  ],
+  "outputs": [
+    {
+      "path": "config.yaml",
+      "sha256": "b3aabd2a41499877054ff4f839addd9f6b3011b68608874de96df8909ad0a5b4",
+      "bytes": 797
+    },
+    {
+      "path": "intake_longgang_data.py",
+      "sha256": "25c794561a39a729cef34dfe056fe40718d174d0cd34ba30c71473fd0e26e1ae",
+      "bytes": 13563
+    },
+    {
+      "path": "intake_report.json",
+      "sha256": "c36adb021314c12f1775f30f9434b70b0456551b3f2bc59365f87df9c0c58638",
+      "bytes": 6414
+    },
+    {
+      "path": "longgang_roads_water_candidates.png",
+      "sha256": "f5ff635c3ccf99f2d8975a28180668d6db172569a30446e586a3c05a75a2b3c0",
+      "bytes": 543026
+    },
+    {
+      "path": "longgang_roads_water_candidates.svg",
+      "sha256": "5ebb6a823e4cc7083961f5f2bcaed9115b7d832b0e9150eb176bbe9bb32fee01",
+      "bytes": 3402176
+    },
+    {
+      "path": "road_class_summary.csv",
+      "sha256": "35c22b6384d8856e3e206007ad19edd19fd263d2421d26efa9449c2a9cd0faa8",
+      "bytes": 388
+    },
+    {
+      "path": "road_features_intersecting.geojson",
+      "sha256": "470ea0800fa356b648e12343a7ce684511666ce2428400196e8f067dd3b35910",
+      "bytes": 9971254
+    },
+    {
+      "path": "station_road_candidates.csv",
+      "sha256": "f4c6ea6b87adf20404f4b35bc228e202bd91001225c3a10c2907cc8ba8fbb493",
+      "bytes": 6111
+    },
+    {
+      "path": "station_selection_summary.csv",
+      "sha256": "e8bb0267fcf6b67370c7ef0b578f94ca64ea73ac5fdd373059aa846f7a70a51d",
+      "bytes": 622
+    },
+    {
+      "path": "study_boundary_supplied.geojson",
+      "sha256": "b82d2d2f65564c2c603c09e52c65b53ed6ed675b9cd43496766fd95581cd1048",
+      "bytes": 22023
+    },
+    {
+      "path": "water_records_candidates.csv",
+      "sha256": "1d4c9577cd239ee3134913b431fe67d77806185d6027af49dc98cd75131c8836",
+      "bytes": 1530721
+    },
+    {
+      "path": "water_stations_candidates.geojson",
+      "sha256": "62c653feb6acac7b0dcbcea8dd5a7c2ddf20348034adc22c0294068ca1ff8350",
+      "bytes": 13004
+    }
+  ]
+}

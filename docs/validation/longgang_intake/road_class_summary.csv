@@ -1,0 +1,15 @@
+﻿highway,features,whole_feature_length_m
+busway,5,521.1
+living_street,133,22229.9
+motorway,507,246475.4
+motorway_link,460,122124.9
+primary,1000,458561.4
+primary_link,392,39293.4
+residential,2501,669143.5
+secondary,982,437745.7
+secondary_link,262,20809.3
+tertiary,1611,650297.0
+tertiary_link,153,13360.8
+trunk,450,182627.0
+trunk_link,194,30933.7
+unclassified,974,326445.4

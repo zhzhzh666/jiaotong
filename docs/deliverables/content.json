@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-18",
   "title": "暴雨内涝情景下城市交通网络韧性评估与优化研究",
-  "status": "研究原型：南山分配与韧性评估、小网治理与十种子实验；实际验收范围及限制见报告",
+  "status": "当前目标：龙岗（随包440307，含大鹏）；数据接收已完成，拓扑与模型待重算。南山实验作为历史保留。",
   "run_id": "20261117T173510_p00_a2d49eb6",
   "evidence": "docs/validation/accepted-run-manifest.json",
   "metrics": {
@@ -196,13 +196,13 @@
       {
         "title": "暴雨内涝交通网络韧性评估与优化",
         "paragraphs": [
-          "研究报告与阶段进展 · 2026年11月18日。基于深圳南山真实有向道路网络，完成参数化内涝、静态用户均衡、全过程韧性、道路治理与SUMO原型。",
+          "2026年11月18日：研究区调整为龙岗（随包440307，含大鹏），已完成数据接收。前述南山成果作为历史实验保留，龙岗模型尚未重算。",
           "治理与十种子实验使用独立小网压力情景，南山完成全图分配、97端点韧性和抽样SUMO。全部OD、容量、灾害峰值、成本与治理效果尚未标定。"
         ],
         "slide_points": [
           "研究报告与阶段进展",
           "2026年11月18日",
-          "真实路网 · 参数化内涝 · 交通韧性与治理原型"
+          "研究区调整：龙岗含大鹏；南山结果作为历史保留"
         ],
         "figure": null,
         "caption": "",
@@ -642,6 +642,24 @@
         "caption": "南山道路流量相对正常基准的变化 10.5小时",
         "ppt_native": false,
         "source_label": "交通评估实验 20261118T164429_traffic_process_39b516da / traffic_flow_change_map.png"
+      },
+      {
+        "title": "龙岗研究区 数据接收与迁移范围",
+        "paragraphs": [
+          "研究区已按用户选择调整为随包440307龙岗区边界，包含大鹏范围。五份原件已保存并核对SHA；实际GPKG只有机动车与全部道路两层，缺少说明书声称的motor_all_bbox。",
+          "筛选9,624条候选道路线，尚非有向图边；其中6,603条缺车道、9,341条缺限速。需重建交叉口、方向与立交拓扑，边界坐标基准尚待独立核验。",
+          "已有水位筛得15个候选站、6,125条记录；其中14个龙岗标签站有5,731条，另1站标签冲突待核。SW路面零点及测站—道路关联仍未确认。",
+          "本批未提供实测雨量、官方OD或实测车流。人口与DSM外包范围覆盖新区域，但须重新裁剪，重建TAZ/设施/网关与需求。前述南山实验属于历史结果，龙岗交通与韧性尚未重算。"
+        ],
+        "slide_points": [
+          "龙岗440307含大鹏；9,624条候选道路线，未建图。",
+          "14个龙岗标签站＋1个标签冲突站，SW零点待核。",
+          "缺官方OD与实测车流，需重建需求并重算。"
+        ],
+        "figure": "docs/validation/longgang_intake/longgang_roads_water_candidates.png",
+        "caption": "龙岗含大鹏的候选路网与测站；紫叉为行政区标签冲突站，尚未验证拓扑。",
+        "source_label": "用户OSM包与既有水位资料 / 20261118T193729_longgang_intake_fe318c5f；© OpenStreetMap contributors，ODbL 1.0",
+        "ppt_native": false
       }
     ],
     "tests_passed": 106,
@@ -1044,5 +1062,197 @@
     "tests_report": "docs/validation/traffic_process/tests.xml",
     "tests_passed": 131,
     "sections_added": 3
-  }
+  },
+  "active_research": {
+    "region": "longgang",
+    "scope": "随包440307龙岗边界，包含大鹏范围",
+    "status": "数据接收完成；拓扑、需求及龙岗模型重算待实施",
+    "intake_path": "data/processed/longgang_intake/20261118T193729_longgang_intake_fe318c5f",
+    "report": {
+      "run_id": "20261118T193729_longgang_intake_fe318c5f",
+      "region": "longgang",
+      "scope": "龙岗区（随包440307边界，包含大鹏范围）",
+      "adcode": 440307,
+      "include_dapeng": true,
+      "authorization": "用户2026-11-18明确选择采用随包440307边界，包含大鹏范围",
+      "source_files": [
+        {
+          "name": "深圳OSM路网_研究数据包.zip",
+          "bytes": 34340821,
+          "sha256": "348a68aa068eb2fd5fb3c825725ada025c3bfa34c8d41be19bf3fa5548e4fa25",
+          "copy_verified": true
+        },
+        {
+          "name": "深圳OSM路网数据字段说明(1).docx",
+          "bytes": 42273,
+          "sha256": "451d5eb682c47a6c855929a69f2b10b98c4509a1f39bc845f055bdea0a04b2ea",
+          "copy_verified": true
+        },
+        {
+          "name": "道路等级统计(1).csv",
+          "bytes": 547,
+          "sha256": "a5003e74400ad7e2c470725652947ac5750e423478bfe167561cac18c01d77cd",
+          "copy_verified": true
+        },
+        {
+          "name": "深圳OSM路网.gpkg.zip",
+          "bytes": 29293660,
+          "sha256": "aac05a8928ef62da79b20291ba0f4492985f76ad83af9f8eab374e982d8af9ba",
+          "copy_verified": true
+        },
+        {
+          "name": "深圳机动车路网.geojson.zip",
+          "bytes": 4015781,
+          "sha256": "7a5009e9406d04355bfa45dc011e8c7f756125269e5101ff517806a1ce6e6d0e",
+          "copy_verified": true
+        }
+      ],
+      "archives": [
+        {
+          "name": "深圳OSM路网.gpkg.zip",
+          "crc_passed": true,
+          "members": [
+            {
+              "name": "深圳OSM路网.gpkg",
+              "bytes": 101875712,
+              "sha256": "e335d734a29e4f6d08bcf45de706e061c887c5919cd53043a10e838edb4439bc"
+            }
+          ]
+        },
+        {
+          "name": "深圳OSM路网_研究数据包.zip",
+          "crc_passed": true,
+          "members": [
+            {
+              "name": "深圳OSM路网.gpkg",
+              "bytes": 101875712,
+              "sha256": "e335d734a29e4f6d08bcf45de706e061c887c5919cd53043a10e838edb4439bc"
+            },
+            {
+              "name": "深圳OSM路网与积涝站叠加图.png",
+              "bytes": 875513,
+              "sha256": "612ffe95ca0a91b0ba02546097262d473050eac38187672930e1760e9b38ddb2"
+            },
+            {
+              "name": "深圳OSM路网数据字段说明.docx",
+              "bytes": 42273,
+              "sha256": "451d5eb682c47a6c855929a69f2b10b98c4509a1f39bc845f055bdea0a04b2ea"
+            },
+            {
+              "name": "深圳市行政区边界.json",
+              "bytes": 69077,
+              "sha256": "e346a6cb0d5c482bf52fd0b845d0cda8c03a6ab666ce310afd3292a4d1899fa8"
+            },
+            {
+              "name": "深圳机动车路网.geojson",
+              "bytes": 37476442,
+              "sha256": "3b846fbaeb67c9fff0394a754708049cf222d6ddcc40f7cfb30f93777cd719ef"
+            },
+            {
+              "name": "道路等级统计.csv",
+              "bytes": 547,
+              "sha256": "a5003e74400ad7e2c470725652947ac5750e423478bfe167561cac18c01d77cd"
+            }
+          ]
+        },
+        {
+          "name": "深圳机动车路网.geojson.zip",
+          "crc_passed": true,
+          "members": [
+            {
+              "name": "深圳机动车路网.geojson",
+              "bytes": 37476442,
+              "sha256": "3b846fbaeb67c9fff0394a754708049cf222d6ddcc40f7cfb30f93777cd719ef"
+            }
+          ]
+        }
+      ],
+      "sqlite_quick_check": "ok",
+      "actual_layers": [
+        {
+          "name": "motor_shenzhen",
+          "features": 43082,
+          "srs_id": 4326
+        },
+        {
+          "name": "all_roads_shenzhen",
+          "features": 152169,
+          "srs_id": 4326
+        }
+      ],
+      "source_geojson_matches_motor_layer": true,
+      "supplied_boundary_features": 9,
+      "boundary_has_explicit_crs": false,
+      "boundary_datum_independently_verified": false,
+      "road_features_selected": 9624,
+      "selected_features_are_directed_graph_edges": false,
+      "whole_selected_feature_length_m": 3220568.5,
+      "road_osm_ids_unique": false,
+      "road_geometries_valid": true,
+      "missing_lanes": 6603,
+      "missing_maxspeed": 9341,
+      "oneway_counts": {
+        "yes": 5607,
+        "<missing>": 3519,
+        "no": 496,
+        "-1": 2
+      },
+      "station_candidates": 15,
+      "water_record_candidates": 6125,
+      "label_consistent_stations": 14,
+      "label_consistent_water_records": 5731,
+      "label_conflict_station_ids": [
+        "9281292002"
+      ],
+      "candidate_SW_peak_m": 1.95,
+      "station_to_road_median_m": 20.81234007387147,
+      "station_to_road_max_m": 111.98850053873261,
+      "raw_SW_reference_verified": false,
+      "station_road_association_verified": false,
+      "new_measured_rainfall": false,
+      "new_measured_OD": false,
+      "new_measured_traffic_flow": false,
+      "raster_extent_checks": [
+        {
+          "role": "population_source",
+          "path": "data/raw/phase02/20261117_source_acquisition/population_2020_1km.tif",
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.0083333333,
+            0.0083333333
+          ],
+          "extent_covers_boundary": true,
+          "note": "Extent check only; valid pixel coverage and Longgang clipping not yet audited"
+        },
+        {
+          "role": "dsm_source",
+          "path": "data/raw/phase02/20261117_source_acquisition/dem_e114.tif",
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.0002777777777777778,
+            0.0002777777777777778
+          ],
+          "extent_covers_boundary": true,
+          "note": "Extent check only; valid pixel coverage and Longgang clipping not yet audited"
+        }
+      ],
+      "traffic_assignment_rerun": false,
+      "discrepancies": [
+        "Dictionary lists motor_all_bbox, but delivered GPKG contains only two layers",
+        "Claimed BBBike original archive and gpkg/ provenance directory are absent from all five files",
+        "Boundary JSON has no explicit CRS/source; WGS84 is a supplier claim, independently unverified",
+        "Road features have no authoritative u/v/node IDs; endpoint-only joining cannot certify topology",
+        "Dictionary overlay proximity is not evidence of sensor location or SW road-relative datum"
+      ],
+      "next_steps": [
+        "Rebuild directional topology with shared junctions and grade separation; validate oneway=-1, access and busway",
+        "Audit supplied boundary datum against an independent source",
+        "Review station label conflict and surveyed road/sensor association",
+        "Clip DSM/population, acquire Longgang facilities, create new TAZ/gateways and synthetic or calibrated OD",
+        "Generate new inundation and rerun assignment/resilience/SUMO; retain Nanshan historical results"
+      ]
+    },
+    "assignment_ready": false
+  },
+  "cover_subtitle": "研究区调整为龙岗含大鹏 南山结果作为历史保留"
 }

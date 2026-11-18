@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "five_sources_hash_match": true,
+    "zip_crc": true,
+    "gpkg_integrity": true,
+    "duplicate_road_formats_match": true,
+    "nonempty_valid_selection": true,
+    "station_record_subset": true,
+    "manifest_output_hashes": true
+  },
+  "all_checks_passed": true,
+  "scope": "Data-copy, format and selection consistency only; not topology, datum, field or model validation"
+}
