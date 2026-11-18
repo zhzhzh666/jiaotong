@@ -367,5 +367,62 @@ if data.get('migration_5090'):
     manifest['migration_5090']={'local_roundtrip_passed':True,'local_fixture_vehicles':3,'target_ubuntu_accepted':False,
        'gpu_solver':False,'research_results':False,'roundtrip_qa':record(evidence/'roundtrip_qa.json'),
        'tests_report':record(evidence/'tests.xml'),'evidence_files_sha256_checked':len(migration['evidence_sha256'])}
+if data.get('longgang_critical_roads'):
+    critical=data['longgang_critical_roads']; evidence=ROOT/critical['snapshot']
+    index=json.loads((ROOT/critical['snapshot_index']).read_text(encoding='utf-8'))
+    for item in index['files']:assert record(evidence/item['path'])['sha256']==item['sha256'],item['path']
+    report=json.loads((evidence/'report.json').read_text(encoding='utf-8'))
+    audit=json.loads((evidence/'independent_audit.json').read_text(encoding='utf-8'))
+    validation=json.loads((evidence/'validation.json').read_text(encoding='utf-8'))
+    assert report==critical['report'] and report['counterfactual_features']==12
+    assert report['counterfactual_static_solves']==48 and report['total_static_solves_including_baselines']==52
+    assert report['zone_count']==483 and report['connected_zones']==413 and not report['static_demand_sampled']
+    assert audit['status']=='passed' and audit['all_input_and_output_sha_match']
+    assert sum(x['OD_cells_compared'] for x in audit['distance_checks'])==933156
+    assert max(x['max_seconds_difference'] for x in audit['distance_checks'])<.00007
+    assert validation['dynamic_objectives_replayed']==15 and validation['greedy_objective_gap_max_vehicle_hours']==0
+    def critical_rows(name):
+        with (evidence/name).open(encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
+    rankings=critical_rows('critical_road_ranking.csv');cases=critical_rows('cases/road_counterfactuals.csv')
+    assert len(rankings)==12 and [x['osm_id'] for x in rankings[:3]]==['222954715','1125597098','776647546']
+    for row in rankings:
+        group=[x for x in cases if x['source_feature_position']==row['source_feature_position'] and x['kind']=='single_feature_restoration']
+        assert len(group)==3,(row['source_feature_position'],[x['kind'] for x in cases])
+        assert math.isclose(sum(float(x['restoration_gain_vehicle_hours_per_hour']) for x in group)/3,float(row['mean_restoration_gain_vehicle_hours_per_hour']),abs_tol=1e-8)
+    budget=critical_rows('budget_recommendations.csv')
+    assert [int(x['mask']) for x in budget]==[0,8,9,11]
+    for row,expected in zip(budget,[0,5.449789510809031,9.887073210067722,11.257684428233656]):
+        assert math.isclose(float(row['gain_percent']),expected,abs_tol=1e-10)
+    latest=ET.parse(evidence/'tests.xml').getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==192 and int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert critical['static_full_od_screening'] and not critical['full_dynamic_validated'] and not critical['field_calibrated']
+    for text in ['1040.1526','379.8419','204.5803','5.4498%','11.2577%','933,156']:
+        assert text in doc_text and text.replace('%','%') in ppt_text,text
+    manifest['verification']['latest_tests_passed']=192
+    manifest['longgang_critical_roads']={'path':critical['path'],'scope':'12 source features, full synthetic offpeak OD, static counterfactual screening',
+      'static_solves':52,'candidate_features':12,'dynamic_combinations_reused':15,
+      'source_evidence_sha_files_checked':index['original_evidence_sha_checked'],'snapshot_files_sha_checked':len(index['files']),
+      'top3_osm':[r['osm_id'] for r in rankings[:3]],'budget_masks':[0,8,9,11],
+      'field_calibrated':False,'full_dynamic_validated':False,'snapshot_index':record(ROOT/critical['snapshot_index']),
+      'audit':record(evidence/'independent_audit.json'),'tests':record(evidence/'tests.xml')}
+if data.get('migration_4090'):
+    transfer=data['migration_4090']; evidence=ROOT/transfer['snapshot']
+    for name,digest in transfer['evidence_sha256'].items():assert record(evidence/name)['sha256']==digest,name
+    qa=json.loads((evidence/'验包记录.json').read_text(encoding='utf-8'))
+    assert qa['archive_bytes']==transfer['archive_bytes']==1078459168 and qa['files_verified']==1078
+    assert qa['sha256']==transfer['archive_sha256'] and qa['full_extraction_and_SHA']=='passed'
+    assert qa['actual_headless_sumo_smoke']=='passed on Windows' and not qa['ubuntu_hardware_tested']
+    latest=ET.parse(evidence/'package_tests.xml').getroot().find('testsuite')
+    assert int(latest.attrib['tests'])==192 and int(latest.attrib['errors'])==int(latest.attrib['failures'])==0
+    assert not transfer['ubuntu_hardware_tested'] and not transfer['ppt_resilience_extension_delivered']
+    with (evidence/'osm_facilities_wgs84.csv').open(encoding='utf-8-sig',newline='') as f: facilities=list(csv.DictReader(f))
+    assert sum(x['category']=='hospital' for x in facilities)==69 and sum(x['category']=='fire_station' for x in facilities)==31
+    preflight=json.loads((evidence/'resilience_preflight_status.json').read_text(encoding='utf-8'))
+    assert preflight['phase']=='preflight' and not preflight['complete_full_study'] and preflight['state_calls']==0
+    for text in ['4090','i9-14900K','128 GiB','1,078,459,168',qa['sha256']]:assert text in doc_text and text in ppt_text,text
+    manifest['migration_4090']={'archive':transfer['archive'],'archive_bytes':transfer['archive_bytes'],
+      'archive_sha256':transfer['archive_sha256'],'files_verified_by_source':1078,'archive_sha_rechecked_for_document_update':True,
+      'package_tests':192,'target_ubuntu_hardware_accepted':False,'ppt_resilience_extension_delivered':False,
+      'qa':record(evidence/'验包记录.json'),'snapshot_files_sha_checked':len(transfer['evidence_sha256'])}
 (target/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest,ensure_ascii=False,indent=2))

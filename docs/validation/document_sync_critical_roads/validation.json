@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "dynamic_objectives_replayed": 15,
+  "source_geometry_osm_identity": true,
+  "input_fingerprints_unchanged": true,
+  "nonnegative_static_restoration_gains": true,
+  "all_strategy_selections_within_budget": true,
+  "greedy_objective_gap_max_vehicle_hours": 0.0,
+  "elapsed_seconds": 97.8363049000036
+}

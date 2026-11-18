@@ -1,0 +1,12 @@
+{
+  "target": "Ubuntu 22.04.5 x86_64; Intel Core i9-14900K 32 threads; 128 GiB; RTX 4090; 2 TB",
+  "archive": "jiaotong_ubuntu4090_simulation_20261119.tar.gz",
+  "archive_bytes": 1078459168,
+  "sha256": "bea33658d4c8c5dfd403087d2e0551d312861f1e9f9910ef467772d45575e1c4",
+  "files_verified": 1078,
+  "full_extraction_and_SHA": "passed",
+  "package_tests_passed": 192,
+  "actual_headless_sumo_smoke": "passed on Windows",
+  "ubuntu_hardware_tested": false,
+  "scope": "Five-scenario simulation; PPT resilience road identification/governance package pending"
+}

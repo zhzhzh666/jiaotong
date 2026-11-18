@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "source_graph_arcs": 451801,
+  "source_graph_nodes": 307426,
+  "distance_checks": [
+    {
+      "case": "dry",
+      "max_seconds_difference": 8.185452315956354e-12,
+      "OD_cells_compared": 233289
+    },
+    {
+      "case": "rain070",
+      "max_seconds_difference": 5.985448024148354e-05,
+      "OD_cells_compared": 233289
+    },
+    {
+      "case": "rain100",
+      "max_seconds_difference": 6.909001058374997e-05,
+      "OD_cells_compared": 233289
+    },
+    {
+      "case": "rain130",
+      "max_seconds_difference": 4.159177933615865e-05,
+      "OD_cells_compared": 233289
+    }
+  ],
+  "counterfactual_source_arc_checks": [
+    {
+      "source_feature_position": 22569,
+      "direct_source_dry_failure_loss": 0.0,
+      "restoration_scenario": "rain100",
+      "direct_source_restoration_gain": 3120.4579206426606
+    },
+    {
+      "source_feature_position": 22553,
+      "direct_source_dry_failure_loss": 0.026722384414656897,
+      "restoration_scenario": "rain070",
+      "direct_source_restoration_gain": 0.0
+    }
+  ],
+  "dynamic_budget_optima_independently_checked": 4,
+  "all_input_and_output_sha_match": true,
+  "audit_source_sha256": "bb9485743fc41196b4b20f7b598d50b9b38c0a982423213d3f8b0924cb3b60ab",
+  "note": "Independent uncontracted source arcs, no uftr road criticality/corridor computation imports; all OD origins used. Not a field-calibration audit."
+}

@@ -1,0 +1,63 @@
+{
+  "source_run": "data/processed/longgang_critical_roads/20261118T191957_critical_b29cd51f",
+  "original_evidence_sha_checked": 40,
+  "source_index_sha256": "a46771e79a21e818bd06f2ae209c4462b6e2187ac8e3420bf8ebfb4d35b29cfb",
+  "files": [
+    {
+      "path": "budget_recommendations.csv",
+      "sha256": "42e983f19c0a617bf2690bb737ca23d39e2bb4bf1fd31b440a4d0eb438eb159c"
+    },
+    {
+      "path": "critical_road_ranking.csv",
+      "sha256": "7c10503d61e0cf557ad2d5c0db1335e273bde5689f68041c7292130b920fa8a4"
+    },
+    {
+      "path": "figures/budget_strategy_comparison.png",
+      "sha256": "2ce061b15299726b1a06802763730e03a9575c09724d3411f2ead73ac7a1695c"
+    },
+    {
+      "path": "figures/critical_roads_map.png",
+      "sha256": "978102a637da0737a2a9423c54355dcb340310ce69393c58bd155a4b2ae05e49"
+    },
+    {
+      "path": "figures/road_restoration_ranking.png",
+      "sha256": "e106e386e2a559078f049cd648477a955ce84318e6cbd5b300d96c0f769b394d"
+    },
+    {
+      "path": "governance_strategy_comparison.csv",
+      "sha256": "c7b719079f66548947728d4ac51196c7b79283953801ca176ae3ac814b73804b"
+    },
+    {
+      "path": "independent_audit.json",
+      "sha256": "2c5bc7ee0a06180ab38b7bd02a799ac58e74316fc7f75ec08a9bff5f5e5d35ea"
+    },
+    {
+      "path": "phase_report.md",
+      "sha256": "ee5a1188e35e0f230ebd9113871f9d7d497cdca9356fcab797725e98ea73d54d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "40af0e0d2ab7d2c3c96ddb6dc2e30cb38c18c4c8d627c1cf93a5b58df8492429"
+    },
+    {
+      "path": "source_evidence_index.json",
+      "sha256": "a46771e79a21e818bd06f2ae209c4462b6e2187ac8e3420bf8ebfb4d35b29cfb"
+    },
+    {
+      "path": "status.json",
+      "sha256": "9e333aadac352c8c042b7553ccd58085ecbc5b5c5bef71ca0e48281843d71660"
+    },
+    {
+      "path": "tests.xml",
+      "sha256": "3f43869e15c1f4a59e42004b2ad44a6ff8affdfc69f1941c67057c6aed026f7f"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "c5cd66e96a8dba5d5642f5c54ce538f350528b71c47243ebe6961a1411f06ae5"
+    },
+    {
+      "path": "cases/road_counterfactuals.csv",
+      "sha256": "70505e7122264a1730dd1c030a40790197fd6dbf57e7f208dfeb31419127b2a5"
+    }
+  ]
+}

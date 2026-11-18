@@ -1,0 +1,208 @@
+{
+  "source_run": "data/processed/longgang_critical_roads/20261118T191957_critical_b29cd51f",
+  "source_manifest_sha256": "cc287ef9a546f35361a0bd25c7e234a50960631e8e4f222f0c16cf2544bd2408",
+  "tests_note": "192 tests and pip check ran during this task; later runner-only changes correct rendering and report wording. No mobile app tests.",
+  "scope": "12 source-feature static full-OD counterfactuals; frozen four-site sampled dynamic governance comparison",
+  "files": [
+    {
+      "path": "budget_recommendations.csv",
+      "sha256": "42e983f19c0a617bf2690bb737ca23d39e2bb4bf1fd31b440a4d0eb438eb159c",
+      "bytes": 735
+    },
+    {
+      "path": "cases/road_counterfactuals.csv",
+      "sha256": "70505e7122264a1730dd1c030a40790197fd6dbf57e7f208dfeb31419127b2a5",
+      "bytes": 7218
+    },
+    {
+      "path": "critical_road_ranking.csv",
+      "sha256": "7c10503d61e0cf557ad2d5c0db1335e273bde5689f68041c7292130b920fa8a4",
+      "bytes": 3162
+    },
+    {
+      "path": "figures/budget_strategy_comparison.png",
+      "sha256": "2ce061b15299726b1a06802763730e03a9575c09724d3411f2ead73ac7a1695c",
+      "bytes": 152594
+    },
+    {
+      "path": "figures/budget_strategy_comparison.svg",
+      "sha256": "1c4d0ad05e553faa6f37e6d2cdd55cfff8f97caf274dee19b17ea347c5250871",
+      "bytes": 26307
+    },
+    {
+      "path": "figures/critical_roads_map.png",
+      "sha256": "978102a637da0737a2a9423c54355dcb340310ce69393c58bd155a4b2ae05e49",
+      "bytes": 839771
+    },
+    {
+      "path": "figures/critical_roads_map.svg",
+      "sha256": "d205b351191aa31ae2f4f9a535d6fe8d8805fcbdec51e058e60ef02331574a6a",
+      "bytes": 3986982
+    },
+    {
+      "path": "figures/importance_correlation.png",
+      "sha256": "023835e19fed3c5808271931ac9683c3adcab14079a3dabb29a074c77a1fbfa7",
+      "bytes": 118924
+    },
+    {
+      "path": "figures/importance_correlation.svg",
+      "sha256": "9c2018eec37e4e83e1581899407eb99525b8608cbf9bb4d8d7d94e586cc15bc5",
+      "bytes": 28558
+    },
+    {
+      "path": "figures/road_restoration_ranking.png",
+      "sha256": "e106e386e2a559078f049cd648477a955ce84318e6cbd5b300d96c0f769b394d",
+      "bytes": 103999
+    },
+    {
+      "path": "figures/road_restoration_ranking.svg",
+      "sha256": "b50a73b1d06c7c9f259fb73f4a28ac520adb068e5c160b8a7599859e30ae047e",
+      "bytes": 14602
+    },
+    {
+      "path": "gis/critical_roads.geojson",
+      "sha256": "f5685b23dc375a9c4d934dfa2bb1cc476d08a79f6162bc38fe05091eb9dea193",
+      "bytes": 15200
+    },
+    {
+      "path": "governance_sites_wgs84.csv",
+      "sha256": "5eb991a11926a0d9625ee419d803dadf8693be4da6afe2b5f8e8a01052810111",
+      "bytes": 481
+    },
+    {
+      "path": "governance_strategy_comparison.csv",
+      "sha256": "c7b719079f66548947728d4ac51196c7b79283953801ca176ae3ac814b73804b",
+      "bytes": 8760
+    },
+    {
+      "path": "greedy_marginal_trace.csv",
+      "sha256": "b108ee8fcfe36f6a1244547d816e51185b981d2ae70ffaba2e1234a471181e0a",
+      "bytes": 407
+    },
+    {
+      "path": "importance_spearman.csv",
+      "sha256": "311e9793f6d4bd85443051e4b489ae74515b8678ec339f493f96564b1a272f22",
+      "bytes": 756
+    },
+    {
+      "path": "independent_audit.json",
+      "sha256": "2c5bc7ee0a06180ab38b7bd02a799ac58e74316fc7f75ec08a9bff5f5e5d35ea",
+      "bytes": 1451
+    },
+    {
+      "path": "index.html",
+      "sha256": "826c798c798e4139ebb8a0aedb4a625055c5470fbb87b4c6dc4a60021bca7cb0",
+      "bytes": 5388
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "cc287ef9a546f35361a0bd25c7e234a50960631e8e4f222f0c16cf2544bd2408",
+      "bytes": 24433
+    },
+    {
+      "path": "provenance/adaptive.py",
+      "sha256": "c12a27597c813e883fea4e2905a9011f30787ec753c78e8d4b09a7bb4f9cea0a",
+      "bytes": 15413
+    },
+    {
+      "path": "provenance/adaptive_network.py",
+      "sha256": "8ca640bb04b67fc34fcd81513514e2b0a9e921f2a5743b2de960eb054d7857f1",
+      "bytes": 7304
+    },
+    {
+      "path": "provenance/audit_longgang_critical_roads.py",
+      "sha256": "bb9485743fc41196b4b20f7b598d50b9b38c0a982423213d3f8b0924cb3b60ab",
+      "bytes": 8770
+    },
+    {
+      "path": "provenance/export_longgang_critical_roads.py",
+      "sha256": "f33eb30757e863e0a094ce4045a3cbfa8b480733412556778f41ef547af64ff2",
+      "bytes": 2590
+    },
+    {
+      "path": "provenance/inputs.json",
+      "sha256": "021b92c33d30d6f659f7fcacbdfc745505e8bdd1576e74ca47807fad4c88f9bb",
+      "bytes": 17061
+    },
+    {
+      "path": "provenance/longgang_critical_roads.yaml",
+      "sha256": "25f0693bcbbef4d152a4fc5655103553dc891414473aa0df288c88758fa6529f",
+      "bytes": 1230
+    },
+    {
+      "path": "provenance/road_criticality.py",
+      "sha256": "58d334d540424ce5896fbd1b35b9c5bc07aea5c76e9a557d541073890db1442c",
+      "bytes": 10247
+    },
+    {
+      "path": "provenance/run_longgang_critical_roads.py",
+      "sha256": "c9baf0837308a0538b7c4b5d0e8e4a25cced8e494538c22c7104696ee1c1f9c5",
+      "bytes": 35762
+    },
+    {
+      "path": "raw/all_road_screening.csv",
+      "sha256": "907698f1d32656d42089b793954773d77bb3f6a385be48d60ea80249a8c21260",
+      "bytes": 637439
+    },
+    {
+      "path": "raw/centrality_sampled_sources.csv",
+      "sha256": "57df239a347159f4e3574322b6e13555af50f24514e66e752fa7b36bd656cbd1",
+      "bytes": 258
+    },
+    {
+      "path": "raw/corridor_indicators.csv",
+      "sha256": "d08e92baec5faf18ff7492ffedd761cba36a0b44006a6acc066b92c2b6125575",
+      "bytes": 2792445
+    },
+    {
+      "path": "raw/dynamic_objective_replay.csv",
+      "sha256": "c186e1060ce83fbd9386417d4aa79aa9fc83789ce080818a5a203695a7b73d6b",
+      "bytes": 661
+    },
+    {
+      "path": "raw/shortlist.csv",
+      "sha256": "40eb8f97240fe0d8a8d9c9c32e38199122c5665c535cddfd1613bbb8ac4fcc66",
+      "bytes": 1649
+    },
+    {
+      "path": "raw/site_strategy_indicators.csv",
+      "sha256": "6b836a0bc22c6e63b769d42cdc273f6755e4465259a31c692365a188a7d3966e",
+      "bytes": 415
+    },
+    {
+      "path": "raw/snapshot_baselines.csv",
+      "sha256": "a400ec092a9c64a7d58f21b5ddfd2554992a099d40fdfcb13b1e38a6bb0732d2",
+      "bytes": 599
+    },
+    {
+      "path": "report.json",
+      "sha256": "40af0e0d2ab7d2c3c96ddb6dc2e30cb38c18c4c8d627c1cf93a5b58df8492429",
+      "bytes": 5877
+    },
+    {
+      "path": "road_site_links.csv",
+      "sha256": "00896c181d3cd03901bc4806ac36b8de57621b54606c7bc9757471c8c1462d60",
+      "bytes": 1093
+    },
+    {
+      "path": "status.json",
+      "sha256": "9e333aadac352c8c042b7553ccd58085ecbc5b5c5bef71ca0e48281843d71660",
+      "bytes": 103
+    },
+    {
+      "path": "tests.xml",
+      "sha256": "3f43869e15c1f4a59e42004b2ad44a6ff8affdfc69f1941c67057c6aed026f7f",
+      "bytes": 22939
+    },
+    {
+      "path": "validation.json",
+      "sha256": "c5cd66e96a8dba5d5642f5c54ce538f350528b71c47243ebe6961a1411f06ae5",
+      "bytes": 337
+    },
+    {
+      "path": "结果说明.md",
+      "sha256": "9e2ed9b55e366729d16af9960a9741cdbb3a9022cff4ea20e7593087cab2d3a1",
+      "bytes": 5422
+    }
+  ]
+}

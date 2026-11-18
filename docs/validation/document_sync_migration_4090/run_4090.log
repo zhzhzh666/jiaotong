@@ -1,0 +1,10 @@
+usage: run_4090.py [-h] [--config CONFIG] [--cases CASES [CASES ...]]
+                   [--resume RESUME]
+
+Headless five-case runner. Reuse preparation, resume only between full cases.
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --cases CASES [CASES ...]
+  --resume RESUME       Existing results/remote_runs/<id>; case-boundary only

@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-19",
-  "phase_status": "全龙岗5%需求无雨基准已独立核验，Ubuntu迁移流程通过本机微型验收。暴雨治理全区比较及目标Ubuntu验收待完成。",
+  "phase_status": "龙岗12候选道路静态筛查及四点分预算治理对照已核验，RTX4090五场景迁移包已完成本机验包。目标Ubuntu与PPT韧性扩展待验收。",
   "accepted_runs": {
     "04": "20261118T003010_p04_b90874cf",
     "05": "20261118T003411_p05_ed9ae37d",
@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 9419390,
-      "sha256": "bc6c9c7d1223e9c6fe78e0098c095ed2a9dc89f4997a17d0b0f24118f457dfc9"
+      "bytes": 10495051,
+      "sha256": "03e7fac2f71fff95068d2aa313b4c76d01dcda2fa0cbe814deb1a26d7cfc0268"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 10368488,
-      "sha256": "d621349e0cde9687cc37d5f89dd44afbe0c3705bbb1f701d09bdbe16c463064b"
+      "bytes": 11429937,
+      "sha256": "b40141328ea968f3b2de357d1d3ad292da19fcabf08e4090c5c812d707fe918a"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 178214,
-    "sha256": "0fe0dcc21fb6a7a789c0ae31f122f53fd1d81f13abdbd3088c8e70c46ff61900"
+    "bytes": 196155,
+    "sha256": "6a538da812ed1f6c8099010226d7471bdcef952f2da406d9eb74bcaca2ddbb40"
   },
   "originals_preserved": [
     {
@@ -44,11 +44,11 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 61,
-    "docx_pages": 61,
+    "pptx_slides": 65,
+    "docx_pages": 65,
     "embedded_source_images": {
-      "word": 43,
-      "ppt": 35
+      "word": 46,
+      "ppt": 38
     },
     "embedded_image_sha256_matches": true,
     "previous_core_tests_passed": 106,
@@ -59,14 +59,14 @@
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
     "native_powerpoint_playback_verified": false,
-    "latest_tests_passed": 186,
+    "latest_tests_passed": 192,
     "model_tests_rerun_for_this_document_update": false,
     "preserved_native_chart_workbook_parts": 42
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 15640,
-    "sha256": "896dfa804538a94f5f472c0cd65b2c126fa6469bda9ab96a421224de49770772"
+    "bytes": 16569,
+    "sha256": "5bb6ecccf3cd05c94e032e80ef23515a43e3a37406bbf7f85e769691c97862fd"
   },
   "synthetic_data_package": {
     "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
@@ -345,5 +345,58 @@
       "sha256": "add32596ca5b1c2d13aeceb064ce72963561decf9fbb108a8758346dff2665ab"
     },
     "evidence_files_sha256_checked": 6
+  },
+  "longgang_critical_roads": {
+    "path": "data/processed/longgang_critical_roads/20261118T191957_critical_b29cd51f",
+    "scope": "12 source features, full synthetic offpeak OD, static counterfactual screening",
+    "static_solves": 52,
+    "candidate_features": 12,
+    "dynamic_combinations_reused": 15,
+    "source_evidence_sha_files_checked": 40,
+    "snapshot_files_sha_checked": 14,
+    "top3_osm": [
+      "222954715",
+      "1125597098",
+      "776647546"
+    ],
+    "budget_masks": [
+      0,
+      8,
+      9,
+      11
+    ],
+    "field_calibrated": false,
+    "full_dynamic_validated": false,
+    "snapshot_index": {
+      "path": "docs/validation/document_sync_critical_roads/snapshot_index.json",
+      "bytes": 2231,
+      "sha256": "bebf836efb8d693ac51f1f0084cc73040cfb9b6577c9ff9d206f4ffc584554ab"
+    },
+    "audit": {
+      "path": "docs/validation/document_sync_critical_roads/independent_audit.json",
+      "bytes": 1451,
+      "sha256": "2c5bc7ee0a06180ab38b7bd02a799ac58e74316fc7f75ec08a9bff5f5e5d35ea"
+    },
+    "tests": {
+      "path": "docs/validation/document_sync_critical_roads/tests.xml",
+      "bytes": 22939,
+      "sha256": "3f43869e15c1f4a59e42004b2ad44a6ff8affdfc69f1941c67057c6aed026f7f"
+    }
+  },
+  "migration_4090": {
+    "archive": "results/exports/migration_4090_simulation_20261119/jiaotong_ubuntu4090_simulation_20261119.tar.gz",
+    "archive_bytes": 1078459168,
+    "archive_sha256": "bea33658d4c8c5dfd403087d2e0551d312861f1e9f9910ef467772d45575e1c4",
+    "files_verified_by_source": 1078,
+    "archive_sha_rechecked_for_document_update": true,
+    "package_tests": 192,
+    "target_ubuntu_hardware_accepted": false,
+    "ppt_resilience_extension_delivered": false,
+    "qa": {
+      "path": "docs/validation/document_sync_migration_4090/验包记录.json",
+      "bytes": 570,
+      "sha256": "f8b4c95e9c1c73045eb4810441cd65280fbfc04f685b8fae5260a13c56b5f015"
+    },
+    "snapshot_files_sha_checked": 9
   }
 }

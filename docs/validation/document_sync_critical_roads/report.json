@@ -1,0 +1,156 @@
+{
+  "run_id": "20261118T191957_critical_b29cd51f",
+  "region": "longgang",
+  "include_dapeng": false,
+  "calibrated": false,
+  "source_adaptive_run": "data/processed/longgang_adaptive/20261118T165311_adaptive_4adc99a6",
+  "source_directed_arcs": 451801,
+  "corridors": 97030,
+  "zone_count": 483,
+  "connected_zones": 413,
+  "eligible_flooded_features": 1154,
+  "counterfactual_features": 12,
+  "counterfactual_static_solves": 48,
+  "total_static_solves_including_baselines": 52,
+  "centrality_sample_sources": 32,
+  "static_OD_period": "base synthetic offpeak veh/h",
+  "static_demand_sampled": false,
+  "static_excess_time_cap_seconds": 7200,
+  "static_ranking_rule": "equal arithmetic mean of restored capped excess impedance across three simultaneous snapshots",
+  "snapshots": [
+    {
+      "scenario": "rain070",
+      "snapshot_interval": 424,
+      "beijing_time": "2023-09-10T10:00:00+08:00",
+      "simultaneous_closed_features": 1,
+      "capped_excess_vehicle_hours_per_hour": 206.97999471507035,
+      "new_unreachable_veh_h": 0.0,
+      "dry_unreachable_or_unlinked_veh_h": 3492.3078096833774,
+      "total_unreachable_veh_h": 3492.3078096833774,
+      "interzonal_demand_veh_h": 74200.1973211555
+    },
+    {
+      "scenario": "rain100",
+      "snapshot_interval": 446,
+      "beijing_time": "2023-09-10T15:30:00+08:00",
+      "simultaneous_closed_features": 213,
+      "capped_excess_vehicle_hours_per_hour": 24827.344683899657,
+      "new_unreachable_veh_h": 10971.306924861254,
+      "dry_unreachable_or_unlinked_veh_h": 3492.3078096833774,
+      "total_unreachable_veh_h": 14463.614734544632,
+      "interzonal_demand_veh_h": 74200.1973211555
+    },
+    {
+      "scenario": "rain130",
+      "snapshot_interval": 450,
+      "beijing_time": "2023-09-10T16:30:00+08:00",
+      "simultaneous_closed_features": 712,
+      "capped_excess_vehicle_hours_per_hour": 66899.8176952142,
+      "new_unreachable_veh_h": 30553.147171686913,
+      "dry_unreachable_or_unlinked_veh_h": 3492.3078096833774,
+      "total_unreachable_veh_h": 34045.45498137029,
+      "interzonal_demand_veh_h": 74200.1973211555
+    }
+  ],
+  "dynamic_combinations_replayed": 15,
+  "dynamic_evaluation": "reused frozen 120h, 2-destination-strata proportional point queues, not rerun or full-OD DUE",
+  "site_orders": {
+    "depth_first": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "flow_first": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "centrality_first": [
+      0,
+      3,
+      1,
+      2
+    ],
+    "road_screening_first": [
+      3,
+      0,
+      1,
+      2
+    ]
+  },
+  "budget_recommendations": [
+    {
+      "budget": 0.0,
+      "strategy": "exact_enumeration",
+      "seed": "",
+      "mask": 0,
+      "selected_sites": "",
+      "relative_cost": 0.0,
+      "selected_count": 0,
+      "worst_extra_generalized_vehicle_hours": 57517671.79285021,
+      "worst_unfinished_trips": 6749742.823738765,
+      "gain_vehicle_hours": 0.0,
+      "gain_percent": 0.0,
+      "objective_gap_to_exact_vehicle_hours": 0.0,
+      "gain_per_relative_cost": 0.0
+    },
+    {
+      "budget": 1.8225,
+      "strategy": "exact_enumeration",
+      "seed": "",
+      "mask": 8,
+      "selected_sites": "S3",
+      "relative_cost": 1.8225,
+      "selected_count": 1,
+      "worst_extra_generalized_vehicle_hours": 54383079.748621896,
+      "worst_unfinished_trips": 6693969.766610328,
+      "gain_vehicle_hours": 3134592.0442283154,
+      "gain_percent": 5.449789510809031,
+      "objective_gap_to_exact_vehicle_hours": 0.0,
+      "gain_per_relative_cost": 1719940.7650086777
+    },
+    {
+      "budget": 3.645,
+      "strategy": "exact_enumeration",
+      "seed": "",
+      "mask": 9,
+      "selected_sites": "S0,S3",
+      "relative_cost": 3.645,
+      "selected_count": 2,
+      "worst_extra_generalized_vehicle_hours": 51830857.47396464,
+      "worst_unfinished_trips": 6650193.027557482,
+      "gain_vehicle_hours": 5686814.318885572,
+      "gain_percent": 9.887073210067722,
+      "objective_gap_to_exact_vehicle_hours": 0.0,
+      "gain_per_relative_cost": 1560168.5374171666
+    },
+    {
+      "budget": 5.4675,
+      "strategy": "exact_enumeration",
+      "seed": "",
+      "mask": 11,
+      "selected_sites": "S0,S1,S3",
+      "relative_cost": 5.4675,
+      "selected_count": 3,
+      "worst_extra_generalized_vehicle_hours": 51042513.81194397,
+      "worst_unfinished_trips": 6636166.348639005,
+      "gain_vehicle_hours": 6475157.980906241,
+      "gain_percent": 11.257684428233656,
+      "objective_gap_to_exact_vehicle_hours": 0.0,
+      "gain_per_relative_cost": 1184299.5849851377
+    }
+  ],
+  "hospital_accessibility": "not evaluated: no verified current Longgang hospital set/connectors supplied",
+  "road_restoration_interpretation": "hypothetical diagnostic: set one source feature depth to zero; no hydraulic or engineering feasibility claim",
+  "site_interpretation": "frozen hydraulically recomputed +4mm/h loss in 750m circles; four candidates only, relative costs",
+  "limitations": [
+    "静态全OD筛查没有拥堵反馈、排队、信号和途中重规划，不能替代全区动态验证。",
+    "只对候选源要素逐一验证，不是全部道路的精确关键性排名；源要素不等于完整命名道路。",
+    "各雨量只取一个真实同时刻快照；三档等权不是实际灾害概率，不能称全过程韧性R。",
+    "静态单道路恢复与排水治理点是不同决策单元；工程收益只引用冻结的四点动态组合试验。",
+    "动态OD目的地抽样敏感、无雨参考已过饱和；未标定，不作为工程收益预测。",
+    "医院可达性、真实造价和完整管网作用范围待补；未知桥隧与区外水深在交通中假设正常。"
+  ]
+}

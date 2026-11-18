@@ -1,0 +1,20 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.18 | packaged by conda-forge | (main, Oct 26 2026, 11:29:07) [MSC v.1944 64 bit (AMD64)]",
+  "cuda_used_by_solver": false,
+  "numpy": "2.4.6",
+  "pandas": "2.3.3",
+  "geopandas": "1.2.0",
+  "rasterio": "1.4.4",
+  "scipy": "1.17.1",
+  "pyproj": "3.7.2",
+  "eclipse-sumo": "1.28.0",
+  "sumolib": "1.28.0",
+  "traci": "1.28.0",
+  "sumo": "Eclipse SUMO sumo 1.28.0",
+  "netconvert": "Eclipse SUMO netconvert 1.28.0",
+  "duarouter": "Eclipse SUMO duarouter 1.28.0",
+  "gpu": "name, driver_version, memory.total [MiB]\nNVIDIA GeForce RTX 4060 Laptop GPU, 616.56, 8188 MiB\n",
+  "headless_sumo_traci_smoke": "passed: one vehicle arrived"
+}
+REPORT C:\Users\zh\Desktop\git\jiaotong\results\exports\migration_4090_simulation_20261119\verified_extract\results\healthchecks\eb1b1c39f791

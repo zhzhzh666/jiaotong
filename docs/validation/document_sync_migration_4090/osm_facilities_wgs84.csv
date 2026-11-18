@@ -1,0 +1,101 @@
+﻿osm_type,osm_id,category,longitude,latitude,name,location_kind,source
+node,2149865576,hospital,114.1232632,22.5585482,人民医院留医部,OSM node,OpenStreetMap; completeness and operation not field verified
+node,2149877732,fire_station,114.1215895,22.5663555,田贝中队,OSM node,OpenStreetMap; completeness and operation not field verified
+node,2507854946,hospital,114.1344145,22.6192026,百合医院,OSM node,OpenStreetMap; completeness and operation not field verified
+node,4923799945,hospital,114.0452832,22.6534825,富士康社區康復中心,OSM node,OpenStreetMap; completeness and operation not field verified
+node,4923815638,hospital,114.0443939,22.6680431,富士康社区康复中心,OSM node,OpenStreetMap; completeness and operation not field verified
+node,5480644621,hospital,114.1217163,22.5645255,罗湖区疾病预防控制中心,OSM node,OpenStreetMap; completeness and operation not field verified
+node,6249192216,hospital,114.2072403,22.6511148,龙岗区第三人民医院,OSM node,OpenStreetMap; completeness and operation not field verified
+node,9419666732,fire_station,114.0337281,22.6152102,,OSM node,OpenStreetMap; completeness and operation not field verified
+node,11964289914,fire_station,114.1136,22.7791467,凤凰岗社区微型消防站,OSM node,OpenStreetMap; completeness and operation not field verified
+way,180256240,hospital,114.1228588,22.5599441,深圳市人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,318485858,hospital,114.0276676,22.658136,深圳市龙华区人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,328374421,fire_station,114.1682301,22.5615703,罗湖区消防救援大队莲花小型站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,364731902,hospital,114.0440158,22.5591121,北京大学深圳医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,364733593,hospital,114.0371996,22.5618527,广州中医药大学深圳医院（福田区中医院）,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,387964479,hospital,114.0561917,22.6619298,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,493114482,hospital,114.0805713,22.5598191,深圳市第二人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,501628142,hospital,114.0452556,22.65343,富士康社區康復中心,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,501628171,hospital,114.0450786,22.6530985,富士康社區康復中心,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,501628213,fire_station,114.0452197,22.6560409,消防隊,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,563824467,hospital,114.2489378,22.5924333,盐田区人民医院盐田院区门诊部,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,563824468,hospital,114.2477752,22.5927733,盐田区人民医院盐田院区住院部,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,564165326,hospital,114.2290482,22.5602688,盐田区人民医院沙头角院区,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,574503791,hospital,114.1316368,22.5790672,深圳市罗湖区妇幼保健院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,647444383,hospital,114.1258465,22.5670537,深圳市康宁医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,697323247,hospital,114.0411014,22.7160676,龙华区中心医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,705386451,fire_station,114.0407565,22.6040115,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,720790832,fire_station,114.0353755,22.6099106,深圳市消防救援支队战勤保障与训练中心,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,759525430,hospital,114.2226335,22.7287557,深圳市龙岗区人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,759525432,hospital,114.2299757,22.7309146,深圳市龙岗区妇幼保健院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,759525433,hospital,114.2784884,22.7388385,龙岗中心医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,765144388,hospital,114.1215051,22.638245,深圳市第三人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,778174353,hospital,114.2996596,22.6647913,深圳市康宁医院坪山院区,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,781674157,hospital,114.3576782,22.7413043,坪山区中医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,782915634,hospital,114.0487485,22.5726778,市公安局监管医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,782971966,hospital,114.3642978,22.7493991,坪山区妇幼保健院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,819148982,hospital,114.3733953,22.7071109,深圳市萨米国际医疗中心（深圳市第四人民医院）,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,819300464,hospital,114.3587909,22.6884063,南方医科大学深圳口腔医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,819340493,hospital,114.3462029,22.689889,深圳市坪山区人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,824883032,hospital,114.0545376,22.7830568,广东医科大学附属东莞第一医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,827404335,fire_station,114.3783026,22.7394179,深圳市公安消防支队坪山区大队坑梓特勤中队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,880594795,hospital,114.0973225,22.5761049,中国人民武装警察边防部队总医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,887010901,fire_station,114.0539096,22.5660866,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,906212975,hospital,114.210779,22.711063,北京中医药大学深圳医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,906542659,hospital,114.2263666,22.7060155,深圳龙城医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,929842141,hospital,114.2460109,22.6971111,深圳市肿瘤医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,939229067,hospital,114.1087821,22.5559367,深圳市口腔医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,946103593,hospital,114.0536815,22.5691012,福田区第二人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,975506716,hospital,114.2615188,22.7442854,深圳市龙岗区骨科医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,989942549,hospital,114.0330091,22.6317447,深圳市健安医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1034098624,hospital,114.3182645,22.6676373,坪山区人民医院（新）,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1037496919,hospital,114.1741413,22.5696953,深圳市罗湖中医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1057905116,hospital,114.2224561,22.7246926,深圳市龙岗区慢性病防治院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1086174533,hospital,114.1339534,22.7485473,东莞金美济妇女儿童医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1131230266,hospital,114.1254808,22.7009088,龙岗区第五人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1216783709,hospital,114.1281816,22.5972167,龙岗区第二人民医院(罗岗院区),OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1217018787,hospital,114.3049974,22.6994896,深圳市龙岗区骨科医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1229890894,hospital,114.1342393,22.6194006,百合医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1229897105,fire_station,114.1393593,22.6129994,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1244809509,fire_station,114.1569899,22.5634857,莲塘消防救援支队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1245469357,hospital,114.2145248,22.7243364,龙岗区耳鼻咽喉医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1246790772,fire_station,114.1782023,22.6251078,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1251175600,hospital,114.1308739,22.5765908,深圳市职业病防治院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1253528625,fire_station,114.1268989,22.6268693,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1255858017,fire_station,114.129663,22.6202043,东方半岛社区消防队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1262566169,fire_station,114.1379074,22.573577,罗湖消防东乐小型站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1266682180,hospital,114.0963134,22.572643,深圳市罗湖区慢性病防治院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1272954201,fire_station,114.1072703,22.5695077,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1273606174,fire_station,114.1231831,22.5929989,罗岗特勤消防救援站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1275164640,fire_station,114.2568121,22.5930858,盐田公安消防大队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1275990719,fire_station,114.0649409,22.5561927,华富治安联防大队十四中队四分队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1279573036,fire_station,114.1308436,22.5832417,深圳市罗湖区布心消防救援站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1331505747,hospital,114.0521663,22.5788961,深圳市中医肛肠医院（福田）梅林院区,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1360553665,fire_station,114.1138361,22.6516588,吉华街道专职消防队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1366737441,hospital,114.3114581,22.7831701,龙岗区第六人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1367648703,hospital,114.0649208,22.7047137,深圳市第二人民医院龙华医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1369006248,hospital,114.1625556,22.7112603,东莞广济医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1369548906,hospital,114.1392357,22.6771102,深圳大学附属华南医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1413202379,hospital,114.2079666,22.6511254,龙岗第三人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1416112718,hospital,114.2999742,22.6042214,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1416689190,fire_station,114.2022823,22.7130744,大运城消防中队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1416992078,hospital,114.2209063,22.7260262,龙岗区疾病预防控制中心,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1425709989,hospital,114.0618932,22.6305409,深圳坂田医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1429863060,hospital,114.0308233,22.5594322,景田北社区医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1430819019,hospital,114.0807253,22.6414703,香港中文大学（深圳）医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1432455781,hospital,114.0377386,22.5694927,福田区第二人民医院(龙尾院区),OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1432481860,fire_station,114.0459235,22.5677321,深圳市公安局消防支队梅林中队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1454560444,hospital,114.1106784,22.6082715,深圳市龙岗区第七人民医院(龙岭院区),OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1492944908,fire_station,114.2395806,22.7304182,长兴消防站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1494606556,fire_station,114.1550425,22.6131618,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1497837889,fire_station,114.1242212,22.6742722,华南消防站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1501623550,hospital,114.1160328,22.7048786,深圳侨爱中医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1509362086,hospital,114.09402,22.8232379,东莞三局医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1509500392,hospital,114.1635274,22.8327358,东莞清溪华美妇产医院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1512381248,fire_station,114.2324359,22.6914372,嶂背社区消防站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1521666187,fire_station,114.1556261,22.6228483,深圳市龙岗区南湾街道专职消防队,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1521666342,hospital,114.1602398,22.6283857,简竹护理院,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1533154799,fire_station,114.2151229,22.5626136,正坑小型消防站,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1549415214,fire_station,114.2377673,22.7398879,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1560659025,fire_station,114.2161095,22.67847,,OSM object center,OpenStreetMap; completeness and operation not field verified
+way,1566349936,hospital,114.1403879,22.6127038,深圳市龙岗区第四人民医院,OSM object center,OpenStreetMap; completeness and operation not field verified

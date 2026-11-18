@@ -1,0 +1,25 @@
+{
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query_bounds_wgs84": [
+    114.02108044013302,
+    22.55458101051079,
+    114.3857658429057,
+    22.84076133178037
+  ],
+  "boundary_buffer_m": 3000,
+  "retrieved_utc": "2026-11-18T19:29:42.884709+00:00",
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "response_sha256": "026d9ff50896f8813cf525e319057bcbb960df221bcd14bc00a71822abd550b0",
+  "category_counts": {
+    "hospital": 69,
+    "fire_station": 31
+  },
+  "previous_errors": [],
+  "limitations": [
+    "Public OSM POIs, completeness and operating status unverified.",
+    "Ways/relations use center coordinates, not verified road entrances.",
+    "Bounding rectangle around Longgang plus 3km; facilities outside it omitted.",
+    "OSM geometry duplicates across node/way representations may remain."
+  ]
+}
