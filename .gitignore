@@ -4,11 +4,13 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .cache/
+/.chart-data-*/
 *.egg-info/
 .coverage
 htmlcov/
 .env
 /results/runs/
+/results/exports/
 /results/index.csv
 /results/index.html
 /data/raw/

@@ -501,6 +501,51 @@
         "caption": "",
         "rows": null,
         "headers": null
+      },
+      {
+        "title": "补充情景 降雨驱动的合成积水",
+        "paragraphs": [
+          "新增数据包采用固定种子42，在24小时内按15分钟步长生成降雨与积水。正常、一般、严重、极端情景总雨量分别为0、100、200、300 mm，名称仅表示实验强度，不对应官方重现期。",
+          "60个候选点沿用低DSM道路种子及高斯聚集。各点使用独立蓄水桶，有效降雨按假设汇水比例集中，并按假设排水能力与储量消退。水量守恒只验证计算一致，不能替代管网和水动力标定。",
+          "最高合成点水深为一般0.215 m、严重0.453 m、极端0.691 m。观测SW数据不参与本模型的零点或参数校准。"
+        ],
+        "slide_points": [
+          "24小时，15分钟步长，固定种子42",
+          "总雨量100 / 200 / 300 mm为实验假设",
+          "独立蓄水桶模型，未经真实排水系统标定"
+        ],
+        "figure": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/figures/synthetic_rainfall_depth.png",
+        "caption": "补充图 合成雨强及60点最大水深过程，时间为相对情景起点"
+      },
+      {
+        "title": "补充情景 南山合成积水点",
+        "paragraphs": [
+          "所有60个合成候选点均在研究边界内。点位来源为既有低DSM道路种子及聚集，DSM含建筑植被，不能视为裸地排水地形。各点峰值可能发生在不同时间。",
+          "55点存在几何道路匹配，关联54条有向边；其余5点保留且不赋路段水深。路段使用关联点最大值，未列路段默认干燥仅为模型假设。几何匹配不能证明实际道路受淹。",
+          "本补充仅生成新实验输入，没有重跑既有交通分配、韧性或治理优化，原阶段实验结论不自动适用于这套新情景。"
+        ],
+        "slide_points": [
+          "60个合成候选点，55点有几何道路匹配",
+          "关联54条有向边，保留5个未匹配点",
+          "空间匹配和假设排水参数均需后续验证"
+        ],
+        "figure": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/figures/synthetic_flood_points_map.png",
+        "caption": "补充图 三种暴雨强度的各点最高合成水深，使用相同色标"
+      },
+      {
+        "title": "补充情景 完整OD矩阵与出发需求",
+        "paragraphs": [
+          "完整矩阵574×574，包含568个内部交通分区和6个外部网关。每个基准时段58528个非零OD对，242个ID有正需求，零需求区、不可达需求和区内需求均保留。OD沿用人口与设施生成的重力/IPF结果，未经实测校准。",
+          "平峰、早峰、晚峰小时总率分别为36974.7448、73949.4896、66554.5406 veh/h。按假设时间分布形成96个15分钟矩阵，全天期望出行量793108.28车次。区间矩阵单位为期望车次，小时率应除以0.25。",
+          "完整数据、配置、脚本及16项算术与回读检查存于data/synthetic/scenario_packages/20261118T141443_nanshan_seed42。所有天气情景使用相同外生OD，不推定真实雨天出行抑制或真实路段流量。"
+        ],
+        "slide_points": [
+          "完整OD为574 × 574，保留零需求与不可达出行",
+          "三套小时率矩阵及96套15分钟期望车次矩阵",
+          "OD与时间分布合成，未重跑交通分配"
+        ],
+        "figure": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/figures/synthetic_OD_demand.png",
+        "caption": "补充图 242个活跃分区的早高峰子矩阵及全天合成需求率"
       }
     ],
     "tests_passed": 106,
@@ -516,5 +561,86 @@
       "07_small": "20261117T235936_p07_e0ae2117"
     },
     "scope_limit": "small optimization/ten seeds; full Nanshan assignment/resilience and sampled SUMO only"
+  },
+  "synthetic_data_package": {
+    "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
+    "report": {
+      "package_id": "20261118T141443_nanshan_seed42",
+      "data_kind": "synthetic_scenarios_unvalidated",
+      "seed": 42,
+      "duration_h": 24,
+      "interval_min": 15,
+      "intervals": 96,
+      "depth_endpoints": 97,
+      "points": 60,
+      "road_matched_points": 55,
+      "affected_directed_edges": 54,
+      "matrix_shape": [
+        574,
+        574
+      ],
+      "internal_zones": 568,
+      "gateways": 6,
+      "active_OD_zone_ids": 242,
+      "nonzero_pairs_per_period": 58528,
+      "base_OD_totals_veh_h": {
+        "evening_peak": 66554.54059887599,
+        "morning_peak": 73949.48955430662,
+        "offpeak": 36974.744777153326
+      },
+      "daily_expected_vehicle_trips": 793108.2754699388,
+      "rainfall_total_mm": {
+        "normal": 0,
+        "general": 100,
+        "severe": 200,
+        "extreme": 300
+      },
+      "maximum_point_depth_m": {
+        "normal": 0.0,
+        "general": 0.214932560244021,
+        "severe": 0.4530958623738807,
+        "extreme": 0.6914129824418799
+      },
+      "max_mass_balance_residual_mm": 9.094947017729282e-13,
+      "checks": {
+        "all_60_points_in_boundary": true,
+        "nonnegative_finite_depth": true,
+        "normal_is_dry": true,
+        "rainfall_totals_match_assumptions": true,
+        "nested_depth_scenarios": true,
+        "per_interval_mass_balance": true,
+        "event_mass_balance": true,
+        "all_mapped_edges_exist": true,
+        "all_input_OD_zones_retained": true,
+        "daily_OD_equals_interval_sum": true,
+        "profile_expected_vehicles_conserved": true,
+        "all_OD_finite_nonnegative": true,
+        "OD_archive_roundtrip": true,
+        "evening_peak_CSV_roundtrip": true,
+        "morning_peak_CSV_roundtrip": true,
+        "offpeak_CSV_roundtrip": true
+      },
+      "check_count": 16,
+      "all_checks_passed": true,
+      "scope": "New synthetic rainfall-driven bucket experiment inputs only; prior Phase04-13 results are not recomputed",
+      "geometric_edge_default": "Unlisted edges assumed depth 0; listed edges use max of associated synthetic points",
+      "units": {
+        "rainfall": "mm per interval",
+        "intensity": "mm/h",
+        "depth": "m at interval endpoint",
+        "base_OD": "veh/h",
+        "time_OD": "fractional expected vehicle trips per 15min",
+        "daily_OD": "expected vehicle trips per day"
+      },
+      "limits": [
+        "No measured OD, drainage capacity, catchment boundaries, flood footprint or return-period calibration",
+        "DSM ranking and hypothetical runoff concentration are proxies; ponds do not exchange water",
+        "Synthetic spatial rain mean is an unweighted 60-point mean, not a calibrated area integral",
+        "Point-road association does not establish physical inundation; five unmatched points retained",
+        "Exogenous OD kept identical across weather scenarios; unreachable and intrazonal demand retained",
+        "Observed SW records remain separate and do not calibrate this model"
+      ]
+    },
+    "sections_added": 3
   }
 }

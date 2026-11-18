@@ -1,5 +1,11 @@
 # 数据来源与真实性
 
+## 2026-11-18新增合成数据
+
+`data/synthetic/scenario_packages/20261118T141443_nanshan_seed42`基于既有南山OSM路网、低DSM道路候选点、WorldPop与设施重力/IPF需求派生。60点降雨与水深采用假设雨型和独立蓄水桶，OD为574×574合成小时率，另输出96个15分钟期望车次矩阵。未下载新的实测降雨、流量或OD；45站观测SW保持独立。所有派生数据标注synthetic/observed=false。
+
+10个输入和38个输出指纹、ZIP内容核验通过，记录见`docs/validation/synthetic_data_package/package_audit.json`；完整包保留本机。方法、单位和限制见`docs/SYNTHETIC_DATA_PACKAGE.md`。
+
 更新2026-11-18。真实来源、估计属性与合成结果严格分开。南山已完成全图用户均衡、24小时/97端点韧性与固定2000辆计划的SUMO抽样；关键性、治理及十种子实验使用三个TAZ的小型真实区域。尚未实施南山全尺度优化，不能宣称全区治理收益或已校准历史灾害预测。
 
 ## 用户水位与字段字典

@@ -27,7 +27,8 @@ for i,s in enumerate(sections):
     if s.get('figure'):
         image=ROOT/s['figure'];d.add_picture(str(image),width=Cm(16.3))
         caption=d.add_paragraph(s['caption'],'Caption');caption.paragraph_format.keep_with_next=False
-        source=d.add_paragraph('来源：'+s['figure'],'Caption');source.paragraph_format.space_after=Pt(4)
+        source_name=('合成数据包 '+Path(s['figure']).parts[3]+' / figures/'+image.name) if s['title'].startswith('补充情景 ') else s['figure']
+        source=d.add_paragraph('来源：'+source_name,'Caption');source.paragraph_format.space_after=Pt(4)
     if i==0:
         d.add_paragraph('验收范围','Heading 1')
         for text in ['南山：全路网分配、24h全过程韧性、2000计划车辆SUMO抽样。','小型真实区域：六路组治理、穷举核验、十种子与独立测试。','完整数据和图片留本机；源码、配置、维护文档及验收副本上传GitHub。']:

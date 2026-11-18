@@ -1,0 +1,34 @@
+seed: 42
+duration_hours: 24
+interval_minutes: 15
+rainfall:
+  # Research stress scenarios, not Shenzhen IDF return periods or observations.
+  event_start_hour: 5
+  event_end_hour: 13
+  peaks_hour: [8, 10]
+  peak_width_hours: [0.65, 1.0]
+  peak_weights: [0.7, 0.3]
+  total_mm: {normal: 0, general: 100, severe: 200, extreme: 300}
+  spatial_correlation_m: 1500
+  spatial_log_sd: 0.15
+ponding:
+  # Each point is an independent hypothetical pond, not a delineated catchment.
+  runoff_coefficient: 0.8
+  concentration_ratio_min: 2.0
+  concentration_ratio_span: 2.5
+  drainage_min_mm_h: 8.0
+  drainage_span_mm_h: 10.0
+  recession_tau_h: 4.0
+  risk_breaks_m: [0.15, 0.30, 0.40]
+demand:
+  source: data/synthetic/phase03/20261117T215510_p03_ab17de87/od_all_periods.csv
+  # Existing base rates retain offpeak / morning / evening multipliers 1 / 2 / 1.8.
+  morning_hours: [7, 9]
+  evening_hours: [17, 19]
+  hourly_offpeak_multipliers: [0.30, 0.25, 0.20, 0.20, 0.25, 0.40, 0.75, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.85, 0.70, 0.55, 0.40]
+  weather_demand_multiplier: 1.0
+paths:
+  risk_points: data/synthetic/phase02/20261117T203637_p02_0286d999/flood_points.geojson
+  point_road_mapping: data/processed/phase02/20261117T203637_p02_0286d999/flood_road_mapping.csv
+  network: data/processed/phase01/20261117T193651_p01_2e554d34/nanshan
+  zones: data/processed/phase03/20261117T215510_p03_ab17de87

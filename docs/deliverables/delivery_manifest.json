@@ -15,19 +15,19 @@
   "deliverables": [
     {
       "path": "docs/deliverables/开题与阶段进展汇报.pptx",
-      "bytes": 1312031,
-      "sha256": "7512a6288a4bddfa4c44591e51e88855888d04896498313bc894079bc23ade91"
+      "bytes": 2035100,
+      "sha256": "dd29bad1c678330ad1a8050f1c4c373fbd4be4df1f7c5d9a1317abe217cdf8e1"
     },
     {
       "path": "docs/deliverables/研究方案与阶段进展.docx",
-      "bytes": 1252029,
-      "sha256": "ef9c1b3b5366a89c1724efcbdb5c538d7b41e80772253b22a7d05eded56d28cf"
+      "bytes": 2399500,
+      "sha256": "6b95131c1e4062fe43ddf4f2d5e0a0c81efd215a79d1379ffb3c88381379e9d8"
     }
   ],
   "content_source": {
     "path": "docs/deliverables/content.json",
-    "bytes": 31961,
-    "sha256": "7760bc205e79ce9810687ea887793c499d56fe457dec5f6d8f2527cebd247ed7"
+    "bytes": 38959,
+    "sha256": "855e5f364660bbbde122b6ef82c1d15d659642d013a5b943099ea1d69e0f28f5"
   },
   "originals_preserved": [
     {
@@ -44,12 +44,17 @@
   "verification": {
     "final_content_checked": true,
     "all_pages_and_slides_visually_reviewed": true,
-    "pptx_slides": 19,
-    "docx_pages": 19,
-    "embedded_source_images": 12,
+    "pptx_slides": 22,
+    "docx_pages": 22,
+    "embedded_source_images": {
+      "word": 15,
+      "ppt": 13
+    },
     "embedded_image_sha256_matches": true,
-    "tests_passed": 106,
+    "previous_core_tests_passed": 106,
+    "core_tests_rerun_for_document_update": false,
     "shared_titles_and_doi_checked": true,
+    "native_chart_source_series_checked": 7,
     "pptx_package_layout_fonts_and_reimport": "pass",
     "word_render": "Microsoft Word read-only COM ExportAsFixedFormat PDF then bundled pypdfium2 PNG; LibreOffice unavailable",
     "pptx_render": "Artifact Tool final file reimport, each slide exported to PNG",
@@ -57,7 +62,13 @@
   },
   "visual_review": {
     "path": "docs/validation/final_visual_review.json",
-    "bytes": 5037,
-    "sha256": "cff3dc320f24980f055d412607d68ee490600eceeb05f23dbac3d200eaccfa0f"
+    "bytes": 6787,
+    "sha256": "b5831796ab71ffd171ded457307acda82cb10f0f2878d857ca4e8f219a0a7386"
+  },
+  "synthetic_data_package": {
+    "path": "data/synthetic/scenario_packages/20261118T141443_nanshan_seed42",
+    "generation_checks_passed": 16,
+    "observed": false,
+    "traffic_assignment_rerun": false
   }
 }

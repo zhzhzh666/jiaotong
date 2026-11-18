@@ -1,0 +1,15 @@
+{
+  "package_id": "20261118T141443_nanshan_seed42",
+  "source_kind": "synthetic",
+  "observed": false,
+  "input_sha256_checks": 10,
+  "output_sha256_checks": 38,
+  "zip_members_equal_local_files": true,
+  "zip_crc_passed": true,
+  "generation_consistency_checks": 16,
+  "manifest_sha256": "189b4b2145535b80a12ef789657740b53ffbdd2e8ae17b3d43adf9a64b282895",
+  "zip_bytes": 53003982,
+  "zip_sha256": "b5faa009ff8b6e7af779f5194acfeff60bae96a3c8af6c430f50f6d5b55a9b77",
+  "all_checks_passed": true,
+  "scope": "Integrity and generation consistency only; no observational calibration or traffic reassignment"
+}

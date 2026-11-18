@@ -1,5 +1,18 @@
 # 操作说明
 
+## 南山合成数据包
+
+本机打开`data/synthetic/scenario_packages/20261118T141443_nanshan_seed42/index.html`查看三张运行图；同名ZIP约50.5 MiB，包含降雨、水深、OD、GIS、字段字典和追溯信息。点深度CSV单位m，三个OD基准矩阵单位veh/h，NPZ的96个矩阵单位为每15分钟期望车次；分配小时率需除0.25，不能直接当路段流量。
+
+在项目环境运行：
+
+```powershell
+.conda-env/python.exe scripts/verify_synthetic_data_package.py
+.conda-env/python.exe scripts/generate_synthetic_data_package.py --config configs/synthetic_data_package.yaml
+```
+
+验证命令只读核验；生成命令创建新包并更新共用content.json，随后需要重新同步和审核Word/PPT。配置控制雨量、时段、空间扰动与假设排水参数。已有Phase04—13运行和界面结果没有使用这次新包，不能当作新情景的评估；正式接入需新配置、新run_id及验收。详见SYNTHETIC_DATA_PACKAGE.md。
+
 工作目录C:/Users/zh/Desktop/git/jiaotong。南山已完成全图用户均衡、24小时/97端点韧性与固定2000辆计划的SUMO抽样；关键性、治理及十种子实验使用三个TAZ的小型真实区域。尚未实施南山全尺度优化，不能宣称全区治理收益或已校准历史灾害预测。
 
 ## 安装与运行
@@ -35,6 +48,6 @@ GitHub含源码、配置、依赖锁、Word/PPT和小型验收副本。请备份
 
 ## 报告维护
 
-维护版docs/deliverables/研究方案与阶段进展.docx和开题与阶段进展汇报.pptx来自content.json。Python文档和artifact-tool PPT使用Codex捆绑运行时，见该目录README；图像均有源文件和run_id。原始根PPT/Word不改。19页/19张已渲染检查，最终图片检查记录和交付指纹在docs/validation及delivery_manifest.json。
+维护版docs/deliverables/研究方案与阶段进展.docx和开题与阶段进展汇报.pptx来自content.json。Python文档和artifact-tool PPT使用Codex捆绑运行时，见该目录README；图像均有源文件和run_id。原始根PPT/Word不改。22页/22张已完成渲染与旧版逐页像素比对检查，最终图片检查记录和交付指纹在docs/validation及delivery_manifest.json。
 
 监测SW零点与测站地址代理位置未核实；OD、容量、积水、治理成本效果与情景概率未实测标定；人口与OSM年份不同，完整避难所缺失。南山时间效率为15起点抽样，介数32起点抽样。南山SUMO治理集合与风险无交集，灾害与治理结果相同；不据此证明全区治理有效。C/D/E只用种子42，B/F各十种子。GA为可选扩展未实现；G为实际分配效率表，不冒充南山优化耗时。

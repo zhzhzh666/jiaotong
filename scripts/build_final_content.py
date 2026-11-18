@@ -130,6 +130,8 @@ section('参考文献与数据许可',[
     'OpenStreetMap contributors，ODbL 1.0；WorldPop 2020，CC BY 4.0；Copernicus DSM保留供应商署名。Sioux Falls上游学术研究单位与版本见Phase01报告。深圳公开平台目录链接见DATA_SOURCES.md，字段说明为用户提供的研究数据字典，不冒充平台官方零点声明。'],
     [r['label']+'：'+r['doi'] for r in data['references']])
 
+# Keep separately generated experiment-input sections when refreshing run facts.
+sections.extend(s for s in data.get('final',{}).get('sections',[]) if s.get('title','').startswith('补充情景 '))
 data.update(updated='2026-11-18',status='研究原型：南山分配与韧性评估、小网治理与十种子实验；实际验收范围及限制见报告')
 data['final']={'sections':sections,'tests_passed':test_count,'runs':{p:r.name for p,r in runs.items()},'scope_limit':'small optimization/ten seeds; full Nanshan assignment/resilience and sampled SUMO only'}
 write_json(target/'content.json',data)

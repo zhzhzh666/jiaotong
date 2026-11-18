@@ -1,0 +1,77 @@
+{
+  "package_id": "20261118T141443_nanshan_seed42",
+  "data_kind": "synthetic_scenarios_unvalidated",
+  "seed": 42,
+  "duration_h": 24,
+  "interval_min": 15,
+  "intervals": 96,
+  "depth_endpoints": 97,
+  "points": 60,
+  "road_matched_points": 55,
+  "affected_directed_edges": 54,
+  "matrix_shape": [
+    574,
+    574
+  ],
+  "internal_zones": 568,
+  "gateways": 6,
+  "active_OD_zone_ids": 242,
+  "nonzero_pairs_per_period": 58528,
+  "base_OD_totals_veh_h": {
+    "evening_peak": 66554.54059887599,
+    "morning_peak": 73949.48955430662,
+    "offpeak": 36974.744777153326
+  },
+  "daily_expected_vehicle_trips": 793108.2754699388,
+  "rainfall_total_mm": {
+    "normal": 0,
+    "general": 100,
+    "severe": 200,
+    "extreme": 300
+  },
+  "maximum_point_depth_m": {
+    "normal": 0.0,
+    "general": 0.214932560244021,
+    "severe": 0.4530958623738807,
+    "extreme": 0.6914129824418799
+  },
+  "max_mass_balance_residual_mm": 9.094947017729282e-13,
+  "checks": {
+    "all_60_points_in_boundary": true,
+    "nonnegative_finite_depth": true,
+    "normal_is_dry": true,
+    "rainfall_totals_match_assumptions": true,
+    "nested_depth_scenarios": true,
+    "per_interval_mass_balance": true,
+    "event_mass_balance": true,
+    "all_mapped_edges_exist": true,
+    "all_input_OD_zones_retained": true,
+    "daily_OD_equals_interval_sum": true,
+    "profile_expected_vehicles_conserved": true,
+    "all_OD_finite_nonnegative": true,
+    "OD_archive_roundtrip": true,
+    "evening_peak_CSV_roundtrip": true,
+    "morning_peak_CSV_roundtrip": true,
+    "offpeak_CSV_roundtrip": true
+  },
+  "check_count": 16,
+  "all_checks_passed": true,
+  "scope": "New synthetic rainfall-driven bucket experiment inputs only; prior Phase04-13 results are not recomputed",
+  "geometric_edge_default": "Unlisted edges assumed depth 0; listed edges use max of associated synthetic points",
+  "units": {
+    "rainfall": "mm per interval",
+    "intensity": "mm/h",
+    "depth": "m at interval endpoint",
+    "base_OD": "veh/h",
+    "time_OD": "fractional expected vehicle trips per 15min",
+    "daily_OD": "expected vehicle trips per day"
+  },
+  "limits": [
+    "No measured OD, drainage capacity, catchment boundaries, flood footprint or return-period calibration",
+    "DSM ranking and hypothetical runoff concentration are proxies; ponds do not exchange water",
+    "Synthetic spatial rain mean is an unweighted 60-point mean, not a calibrated area integral",
+    "Point-road association does not establish physical inundation; five unmatched points retained",
+    "Exogenous OD kept identical across weather scenarios; unreachable and intrazonal demand retained",
+    "Observed SW records remain separate and do not calibrate this model"
+  ]
+}

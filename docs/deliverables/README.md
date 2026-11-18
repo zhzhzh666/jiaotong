@@ -1,15 +1,21 @@
 # Word 与 PPT 维护说明
 
-2026-11-18维护版：Word19页、PPT19张，包含实际内涝、分配、南山韧性、小网六候选治理、十种子、SUMO和中文界面。共12张源图字节核验，全部逐页/逐张渲染查看。原始根PPT/Word及论文保留，原稿SHA见delivery_manifest.json。
+2026-11-18维护版：Word22页、PPT22张。原19节实验报告后增加降雨驱动积水、60个南山合成点、完整OD与出发时间分布三节。降雨、水深及OD未经实测校准，新包未重跑分配或韧性。原始根PPT/Word、论文及用户水位数据保持不动。
 
-content.json的final.sections是共用正文、图片和备注证据，旧phase00—03字段作为历史保留。当前范围为南山分配/韧性/抽样SUMO、小网优化与十种子；未完成南山全尺度优化，也没有实测标定的洪灾预测。数据零点、代理坐标、不可达需求与小网范围均在两份文件中明示。
+共用正文与图表证据为content.json的final.sections及synthetic_data_package。Word嵌入15张源图，PPT嵌入13张；新增降雨/水深/需求采用三个原生可编辑图表，7条序列与源CSV逐值核对。共享标题、DOI、原稿指纹和交付文件SHA通过核验；详情见delivery_manifest.json。此前106项核心测试记录沿用，本轮另通过16项生成一致性检查，未重跑核心模型与长仿真。
 
-先用项目环境执行scripts/build_final_content.py汇总真实成功run。Word使用Codex捆绑Python执行scripts/build_word.py --output 新文件.docx；PPT使用捆绑Node和artifact-tool，不能用python-pptx重建。将build_presentation.mjs和build_final_presentation.mjs一并复制到.cache/doc-sync，其node_modules链接捆绑模块目录，设置CODEX_PRESENTATION_SKILL、CODEX_ARTIFACT_PYTHON、RUNTIME_NODE_MODULES后从项目根目录执行build_presentation.mjs 新输出.pptx。捆绑运行时路径应通过load_workspace_dependencies查询，不修改项目环境。
+## 维护与渲染
 
-PPT finalizer禁止覆盖已有输出和旧回执，每次使用新路径，检查后复制到维护文件名。结构、字体、几何和再次导入检查通过后，对最终文件再次导入并逐张导PNG查看。Word的render_docx.py依赖LibreOffice；本机缺少该程序已诊断，采用Microsoft Word新建COM实例只读打开维护候选，ExportAsFixedFormat PDF17，pypdfium2生成每页PNG并逐页查看。不得操作用户正在编辑的原稿。
+文档使用Codex捆绑Python，PPT使用捆绑Node与artifact-tool。通过load_workspace_dependencies查询运行时；模型与GIS生成只用项目.conda-env。Word命令为`scripts/build_final_word.py --output 新路径.docx`。本机缺少LibreOffice，沿用新建后台Word COM实例只读打开候选、ExportAsFixedFormat PDF17、pypdfium2逐页导PNG的方法；原稿不打开编辑。
 
-QA文件留.cache/doc-sync。人工看图后更新docs/validation/final_visual_review.json的实际文件SHA与结论，再用捆绑Python执行scripts/verify_deliverables.py，核对标题/DOI/12张嵌图/原稿/交付文件SHA并更新manifest。当前验证分支scripts/verify_final_deliverables.py的回执文件名对应本次final-reviewed；下一轮必须按新回执路径更新，不能挪用历史通过结论。最终数值审计使用项目环境-m uftr.cli run --phase 13。
+追加PPT使用`scripts/append_synthetic_data_presentation.mjs 构建目录 新输出.pptx 19张源文件.pptx`。本次19张已审源备份为`.cache/synthetic-doc-sync/before/开题与阶段进展汇报.pptx`；脚本拒绝向22张版重复追加。将脚本复制到.cache/doc-sync（node_modules链接捆绑模块），设置CODEX_PRESENTATION_SKILL、CODEX_ARTIFACT_PYTHON、RUNTIME_NODE_MODULES后，从项目根运行。PPT输出与私有回执放不同目录，每次使用新输出路径。原19节从头构建脚本仍保留，使用前须进行完整视觉复核。
 
-依赖锁是可安装的实际版本集合；docs/validation/installed-pip-freeze.txt保留原始pip provenance（含Conda构建位置与旧editable提交），requirements-lock.txt将本机构建URL规范为已安装版本并移除项目editable地址，项目本身另用pip install -e .安装。
+finalizer核验包结构、字体、几何、原生图表与嵌入XLSX，并重新导入最终文件逐张导PNG。当前QA位于`.cache/synthetic-doc-sync/`：Word PDF与22页PNG、v3回执与22张PNG、before旧维护文件。新Word20—22页、PPT2/3/20—22张打开检查；其余Word19页和PPT17张PNG与上一逐页审核版本字节一致。旧版审核记录也留在before和Git历史中。
 
-验收范围、失败与修复记录、数据位置详见docs/FINAL_REPORT.md、USER_GUIDE.md和EXPERIMENT_LOG.md。此检查未声称原生PowerPoint播放或真实灾害校准已完成。
+人工检查后更新docs/validation/final_visual_review.json，使用捆绑Python运行`scripts/verify_final_deliverables.py`。该脚本按当前审核记录读取对应PDF/回执，验证页数、共享正文、DOI、嵌图、源CSV图表与原稿，更新delivery_manifest.json。不得挪用旧回执或把结构核验称为原生PowerPoint播放验收。
+
+## 数据包与复现边界
+
+完整新数据包和ZIP保留本机`data/synthetic/scenario_packages/20261118T141443_nanshan_seed42`，字段与模型见../SYNTHETIC_DATA_PACKAGE.md；小型核验副本在../validation/synthetic_data_package。Git包含源码、配置、维护文档与小型核验材料，不包含全部原始输入和完整生成数据。重新生成前须恢复configs所指本机输入；输入SHA记在包manifest.json。修改合成参数后，新运行结果必须重新验收。
+
+依赖锁是实际安装版本集合。docs/validation/installed-pip-freeze.txt保留原始pip provenance；requirements-lock.txt将本机构建URL规范为版本并移除旧editable地址，项目另用pip install -e .安装。范围及历史限制见../FINAL_REPORT.md、../USER_GUIDE.md和根EXPERIMENT_LOG.md。
