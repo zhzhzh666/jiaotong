@@ -1,16 +1,16 @@
 {
-  "run_id": "20261118T193729_longgang_intake_fe318c5f",
+  "run_id": "20261118T195824_longgang_intake_079cc253",
   "status": "intake_complete_graph_and_models_pending",
   "inputs": [
     {
       "path": "configs/longgang_data_intake.yaml",
-      "sha256": "b3aabd2a41499877054ff4f839addd9f6b3011b68608874de96df8909ad0a5b4",
-      "bytes": 797
+      "sha256": "eddfcc4d33b634df1b3e4ab7d9a4b1d351ac185e9c85697ceee1b80d7be1837a",
+      "bytes": 871
     },
     {
       "path": "scripts/intake_longgang_data.py",
-      "sha256": "25c794561a39a729cef34dfe056fe40718d174d0cd34ba30c71473fd0e26e1ae",
-      "bytes": 13563
+      "sha256": "ba78d1a057489b71ef650e07b7d55c1bd71f546ae7287777aa58515c4d4f3e47",
+      "bytes": 16692
     },
     {
       "path": "data/raw/user_sources/shenzhen_osm_20261118/source_manifest.json",
@@ -56,63 +56,68 @@
   "outputs": [
     {
       "path": "config.yaml",
-      "sha256": "b3aabd2a41499877054ff4f839addd9f6b3011b68608874de96df8909ad0a5b4",
-      "bytes": 797
+      "sha256": "eddfcc4d33b634df1b3e4ab7d9a4b1d351ac185e9c85697ceee1b80d7be1837a",
+      "bytes": 871
+    },
+    {
+      "path": "excluded_dapeng_boundary.geojson",
+      "sha256": "7ea436afc1ebe03b8a41b81d5e366be7229b652d71a92c34b72ebd04076aa7b0",
+      "bytes": 6672
     },
     {
       "path": "intake_longgang_data.py",
-      "sha256": "25c794561a39a729cef34dfe056fe40718d174d0cd34ba30c71473fd0e26e1ae",
-      "bytes": 13563
+      "sha256": "ba78d1a057489b71ef650e07b7d55c1bd71f546ae7287777aa58515c4d4f3e47",
+      "bytes": 16692
     },
     {
       "path": "intake_report.json",
-      "sha256": "c36adb021314c12f1775f30f9434b70b0456551b3f2bc59365f87df9c0c58638",
-      "bytes": 6414
+      "sha256": "5ae4e9d39b9dc99cfc20ecfc885caae6bb9243119c628192c12824c92a76ab59",
+      "bytes": 7128
     },
     {
       "path": "longgang_roads_water_candidates.png",
-      "sha256": "f5ff635c3ccf99f2d8975a28180668d6db172569a30446e586a3c05a75a2b3c0",
-      "bytes": 543026
+      "sha256": "48563ee3bdcfb8ed02c1945ff17c4a04e450e11a84e6de8b83ed733328c64088",
+      "bytes": 648997
     },
     {
       "path": "longgang_roads_water_candidates.svg",
-      "sha256": "5ebb6a823e4cc7083961f5f2bcaed9115b7d832b0e9150eb176bbe9bb32fee01",
-      "bytes": 3402176
+      "sha256": "170ed2a8e203a809379b34a9edd0d237e85ef86748a81c246b13e5df7d4003a9",
+      "bytes": 2773705
     },
     {
       "path": "road_class_summary.csv",
-      "sha256": "35c22b6384d8856e3e206007ad19edd19fd263d2421d26efa9449c2a9cd0faa8",
-      "bytes": 388
+      "sha256": "da2384a16e242ea1e3cde1b96cd366ddf05d463fab081c987dd056a246b70f97",
+      "bytes": 386
     },
     {
       "path": "road_features_intersecting.geojson",
-      "sha256": "470ea0800fa356b648e12343a7ce684511666ce2428400196e8f067dd3b35910",
-      "bytes": 9971254
+      "sha256": "d0e99d25beacd65775aa0cfcb0a943a6d8fc2219178cf37b615fe81da8280cb6",
+      "bytes": 8078163
     },
     {
       "path": "station_road_candidates.csv",
-      "sha256": "f4c6ea6b87adf20404f4b35bc228e202bd91001225c3a10c2907cc8ba8fbb493",
-      "bytes": 6111
+      "sha256": "6cce8e8e7c5345601b3a4d285de590ee9d9103014ad24ecf53fcefabbc8366ad",
+      "bytes": 5864
     },
     {
       "path": "station_selection_summary.csv",
-      "sha256": "e8bb0267fcf6b67370c7ef0b578f94ca64ea73ac5fdd373059aa846f7a70a51d",
-      "bytes": 622
+      "sha256": "e257a4911d8b8336d01051720a7852d0c47cea85ea3ade75d29bb9740afb0962",
+      "bytes": 585
     },
     {
       "path": "study_boundary_supplied.geojson",
-      "sha256": "b82d2d2f65564c2c603c09e52c65b53ed6ed675b9cd43496766fd95581cd1048",
-      "bytes": 22023
+      "sha256": "a916151b4659c41a016cc706572d31c3ddc5dfa9cdfc7c633c7587a4624aadf3",
+      "bytes": 15811
     },
     {
       "path": "water_records_candidates.csv",
-      "sha256": "1d4c9577cd239ee3134913b431fe67d77806185d6027af49dc98cd75131c8836",
-      "bytes": 1530721
+      "sha256": "07c98b8458e6498148da712e64d9c9803f9c73e6e1c1b417feada842c6e8df10",
+      "bytes": 1438841
     },
     {
       "path": "water_stations_candidates.geojson",
-      "sha256": "62c653feb6acac7b0dcbcea8dd5a7c2ddf20348034adc22c0294068ca1ff8350",
-      "bytes": 13004
+      "sha256": "77d0ed4e12378212cbfa8a9c528b1d605b9e139cc12b6c6fce28fb1190775db5",
+      "bytes": 12648
     }
   ]
 }

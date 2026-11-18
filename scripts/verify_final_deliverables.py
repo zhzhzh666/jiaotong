@@ -137,9 +137,12 @@ if data.get('active_research'):
     checks=json.loads((intake/'intake_checks.json').read_text(encoding='utf-8'))
     report=json.loads((intake/'intake_report.json').read_text(encoding='utf-8'))
     assert checks['all_checks_passed'] and report==active['report']
-    assert active['region']=='longgang' and report['include_dapeng'] and not active['assignment_ready']
+    assert active['region']=='longgang' and report['include_dapeng']==active['include_dapeng'] and not active['assignment_ready']
+    if not active['include_dapeng']:
+        assert report['selected_roads_intersect_excluded_component']==report['selected_stations_in_excluded_component']==0
+        assert '不含大鹏' in doc_text and '不含大鹏' in ppt_text
     assert '龙岗' in doc_text and '龙岗' in ppt_text
-    manifest['active_research']={'region':active['region'],'scope':active['scope'],
+    manifest['active_research']={'region':active['region'],'scope':active['scope'],'include_dapeng':active['include_dapeng'],
         'intake_path':active['intake_path'],'assignment_ready':False,'traffic_assignment_rerun_for_longgang':False,
         'intake_checks':record(ROOT/'docs/validation/longgang_intake/intake_checks.json'),
         'intake_report':record(ROOT/'docs/validation/longgang_intake/intake_report.json')}

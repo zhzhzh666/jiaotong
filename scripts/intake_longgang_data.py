@@ -17,7 +17,7 @@ import argparse
 import geopandas as gpd
 import pandas as pd
 import rasterio
-from shapely.geometry import box
+from shapely.geometry import box, Point
 import yaml
 import matplotlib
 matplotlib.use('Agg')
@@ -87,16 +87,39 @@ def run(config):
     boundary = gpd.read_file(extracted/'深圳市行政区边界.json')
     district = boundary[boundary.adcode.astype(str).eq(str(cfg['scope_adcode']))].copy()
     assert len(district) == 1 and district.geometry.is_valid.all()
-    geom = district.geometry.union_all()
+    source_geom = district.geometry.union_all()
+    geom = source_geom
+    include_dapeng = bool(cfg['include_dapeng'])
+    scope_method = 'whole supplied 440307 geometry'
+    removed_geom = None
+    if not include_dapeng:
+        if cfg.get('scope_selection') != 'component_covering_supplied_district_center':
+            raise ValueError('Explicit mainland component selection required')
+        # This bundle has two separate polygon components. Do not select by area:
+        # the Dapeng component is slightly larger than the Longgang mainland.
+        if source_geom.geom_type != 'MultiPolygon' or len(source_geom.geoms) != 2:
+            raise ValueError('Review changed source boundary before excluding Dapeng')
+        center = Point(*district.iloc[0]['center'])
+        parts = [part for part in source_geom.geoms if part.covers(center)]
+        if len(parts) != 1:
+            raise ValueError('District center must identify exactly one component')
+        geom = parts[0]
+        removed_geom = source_geom.difference(geom)
+        assert geom.is_valid and not geom.intersects(removed_geom)
+        scope_method = 'retain supplied polygon covering its Longgang district center; exclude other Dapeng polygon'
+        district.geometry = [geom]
+    district['include_dapeng'] = include_dapeng
+    district['scope_selection_method'] = scope_method
     selection = roads[roads.intersects(geom)].copy()
     selection.insert(0, 'source_feature_id', ['motor_shenzhen_fid_'+str(v) for v in selection.index])
-    selection['selection_rule'] = 'whole source feature intersects supplied 440307 boundary'
+    selection['selection_rule'] = 'whole source feature intersects selected study polygon'
     selection['topology_ready'] = False
 
     stations = gpd.read_file(ROOT/cfg['station_source']).to_crs(4326)
     selected_stations = stations[stations.geometry.covered_by(geom)].copy()
     selected_stations = selected_stations.rename(columns={'within_study': 'within_previous_nanshan_study'})
     selected_stations['within_longgang_supplied_boundary'] = True
+    selected_stations['include_dapeng_in_scope'] = include_dapeng
     selected_stations['district_label_conflict'] = ~selected_stations['行政区'].eq('龙岗区')
     projected = selection.to_crs(cfg['projected_crs'])
     candidates = gpd.sjoin_nearest(selected_stations.to_crs(cfg['projected_crs']),
@@ -119,6 +142,9 @@ def run(config):
     out = ROOT/cfg['output_root']/name
     out.mkdir(parents=True, exist_ok=False)
     district.to_file(out/'study_boundary_supplied.geojson', driver='GeoJSON')
+    if removed_geom is not None:
+        gpd.GeoDataFrame({'name':['excluded Dapeng component'],'source_adcode':[cfg['scope_adcode']]},
+            geometry=[removed_geom],crs=boundary.crs).to_file(out/'excluded_dapeng_boundary.geojson',driver='GeoJSON')
     selection.to_file(out/'road_features_intersecting.geojson', driver='GeoJSON')
     selected_stations.to_file(out/'water_stations_candidates.geojson', driver='GeoJSON')
     levels.to_csv(out/'water_records_candidates.csv', index=False, encoding='utf-8-sig')
@@ -138,16 +164,28 @@ def run(config):
     district.boundary.plot(ax=ax, color='#263c50', linewidth=1)
     selected_stations[~selected_stations.district_label_conflict].plot(ax=ax, color='#d55e00', markersize=30, zorder=4)
     selected_stations[selected_stations.district_label_conflict].plot(ax=ax, color='#8a2be2', marker='x', markersize=55, zorder=5)
-    ax.set_title('龙岗研究范围（随包440307，包含大鹏）\n9,624条候选道路线与15个候选积涝站', fontsize=16)
+    short_scope = '包含大鹏' if include_dapeng else '不含大鹏'
+    ax.set_title(f'龙岗研究范围（{short_scope}）\n{len(selection):,}条候选道路线与{len(selected_stations)}个候选积涝站', fontsize=16)
     ax.set_xlabel('经度 / WGS84标称坐标');ax.set_ylabel('纬度 / WGS84标称坐标')
     ax.set_aspect(1/__import__('math').cos(__import__('math').radians(22.65)))
-    fig.text(.08,.025,'橙点：14个龙岗标签站；紫叉：1个行政区标签冲突站。边界基准与测站位置待核实。\n© OpenStreetMap contributors，ODbL 1.0；道路为几何要素，尚未重建可分配拓扑。',fontsize=10)
+    consistent=int((~selected_stations.district_label_conflict).sum())
+    conflict=int(selected_stations.district_label_conflict.sum())
+    fig.text(.08,.025,f'橙点：{consistent}个龙岗标签站；紫叉：{conflict}个行政区标签冲突站。边界基准与测站位置待核实。\n© OpenStreetMap contributors，ODbL 1.0；道路为几何要素，尚未重建可分配拓扑。',fontsize=10)
     fig.tight_layout(rect=(0,.075,1,1))
     fig.savefig(out/'longgang_roads_water_candidates.png', dpi=180)
     fig.savefig(out/'longgang_roads_water_candidates.svg')
     plt.close(fig)
     report = {'run_id': name, 'region': cfg['region'], 'scope': cfg['region_label'], 'adcode':cfg['scope_adcode'],
-        'include_dapeng': True, 'authorization': cfg['scope_authorization'],
+        'include_dapeng': include_dapeng, 'authorization': cfg['scope_authorization'],
+        'scope_selection_method':scope_method,
+        'scope_is_derived_from_supplier_not_independent_official_boundary':True,
+        'source_boundary_sha256':digest(extracted/'深圳市行政区边界.json'),
+        'selected_boundary_bounds':list(geom.bounds),
+        'excluded_boundary_bounds':list(removed_geom.bounds) if removed_geom is not None else None,
+        'selected_roads_intersect_excluded_component':int(selection.intersects(removed_geom).sum()) if removed_geom is not None else 0,
+        'selected_stations_in_excluded_component':int(selected_stations.intersects(removed_geom).sum()) if removed_geom is not None else 0,
+        'removed_source_road_features':int((roads.intersects(source_geom) & ~roads.intersects(geom)).sum()),
+        'removed_station_ids':stations.loc[stations.geometry.covered_by(source_geom) & ~stations.geometry.covered_by(geom),'CZBM'].tolist(),
         'source_files': [{k:e[k] for k in ['name','bytes','sha256','copy_verified']} for e in original],
         'archives':archives, 'sqlite_quick_check': integrity, 'actual_layers': layers,
         'source_geojson_matches_motor_layer':True, 'supplied_boundary_features':len(boundary),
@@ -192,6 +230,10 @@ def run(config):
         'nonempty_valid_selection':len(selection)>0 and bool(selection.geometry.is_valid.all()),
         'station_record_subset':set(levels.CZBM)==set(selected_stations.CZBM),
         'manifest_output_hashes':all(digest(out/e['path'])==e['sha256'] for e in manifest['outputs'])}
+    if not include_dapeng:
+        checks.update({'no_roads_intersect_dapeng':report['selected_roads_intersect_excluded_component']==0,
+            'no_stations_in_dapeng':report['selected_stations_in_excluded_component']==0,
+            'source_reconstructed_from_selected_and_excluded':geom.union(removed_geom).equals(source_geom)})
     assert all(checks.values()), checks
     write(out/'intake_checks.json',{'checks':checks,'all_checks_passed':True,
         'scope':'Data-copy, format and selection consistency only; not topology, datum, field or model validation'})

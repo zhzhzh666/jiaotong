@@ -1,10 +1,12 @@
 region: longgang
-region_label: 龙岗区（随包440307边界，包含大鹏范围）
+region_label: 龙岗区（随包440307保留龙岗主面，不含大鹏）
 adcode: 440307
-include_dapeng: true
+include_dapeng: false
+scope_selection: component_covering_supplied_district_center
 scope_source: user_supplied_shenzhen_osm_bundle
 intake_config: configs/longgang_data_intake.yaml
-accepted_intake: data/processed/longgang_intake/20261118T193729_longgang_intake_fe318c5f
+historical_intake_with_dapeng: data/processed/longgang_intake/20261118T193729_longgang_intake_fe318c5f
+accepted_intake: data/processed/longgang_intake/20261118T195824_longgang_intake_079cc253
 status: data_intake_complete_topology_and_models_pending
 assignment_ready: false
 historical_region: nanshan

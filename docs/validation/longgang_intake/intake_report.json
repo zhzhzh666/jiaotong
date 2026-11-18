@@ -1,10 +1,31 @@
 {
-  "run_id": "20261118T193729_longgang_intake_fe318c5f",
+  "run_id": "20261118T195824_longgang_intake_079cc253",
   "region": "longgang",
-  "scope": "龙岗区（随包440307边界，包含大鹏范围）",
+  "scope": "龙岗区（随包440307保留龙岗主面，不含大鹏）",
   "adcode": 440307,
-  "include_dapeng": true,
-  "authorization": "用户2026-11-18明确选择采用随包440307边界，包含大鹏范围",
+  "include_dapeng": false,
+  "authorization": "用户2026-11-18最新要求删去大鹏，覆盖此前含大鹏的范围选择",
+  "scope_selection_method": "retain supplied polygon covering its Longgang district center; exclude other Dapeng polygon",
+  "scope_is_derived_from_supplier_not_independent_official_boundary": true,
+  "source_boundary_sha256": "e346a6cb0d5c482bf52fd0b845d0cda8c03a6ab666ce310afd3292a4d1899fa8",
+  "selected_boundary_bounds": [
+    114.050228,
+    22.581653,
+    114.35658,
+    22.813694
+  ],
+  "excluded_boundary_bounds": [
+    114.337672,
+    22.438579,
+    114.628466,
+    22.669963
+  ],
+  "selected_roads_intersect_excluded_component": 0,
+  "selected_stations_in_excluded_component": 0,
+  "removed_source_road_features": 1787,
+  "removed_station_ids": [
+    "9281192016"
+  ],
   "source_files": [
     {
       "name": "深圳OSM路网_研究数据包.zip",
@@ -114,28 +135,28 @@
   "supplied_boundary_features": 9,
   "boundary_has_explicit_crs": false,
   "boundary_datum_independently_verified": false,
-  "road_features_selected": 9624,
+  "road_features_selected": 7837,
   "selected_features_are_directed_graph_edges": false,
-  "whole_selected_feature_length_m": 3220568.5,
+  "whole_selected_feature_length_m": 2631289.7,
   "road_osm_ids_unique": false,
   "road_geometries_valid": true,
-  "missing_lanes": 6603,
-  "missing_maxspeed": 9341,
+  "missing_lanes": 5165,
+  "missing_maxspeed": 7611,
   "oneway_counts": {
-    "yes": 5607,
-    "<missing>": 3519,
-    "no": 496,
+    "yes": 4741,
+    "<missing>": 2736,
+    "no": 358,
     "-1": 2
   },
-  "station_candidates": 15,
-  "water_record_candidates": 6125,
-  "label_consistent_stations": 14,
-  "label_consistent_water_records": 5731,
+  "station_candidates": 14,
+  "water_record_candidates": 5747,
+  "label_consistent_stations": 13,
+  "label_consistent_water_records": 5353,
   "label_conflict_station_ids": [
     "9281292002"
   ],
   "candidate_SW_peak_m": 1.95,
-  "station_to_road_median_m": 20.81234007387147,
+  "station_to_road_median_m": 16.541571959809957,
   "station_to_road_max_m": 111.98850053873261,
   "raw_SW_reference_verified": false,
   "station_road_association_verified": false,

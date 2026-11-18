@@ -1,8 +1,9 @@
 region: longgang
-region_label: 龙岗区（随包440307边界，包含大鹏范围）
+region_label: 龙岗区（随包440307保留龙岗主面，不含大鹏）
 scope_adcode: 440307
-include_dapeng: true
-scope_authorization: 用户2026-11-18明确选择采用随包440307边界，包含大鹏范围
+include_dapeng: false
+scope_authorization: 用户2026-11-18最新要求删去大鹏，覆盖此前含大鹏的范围选择
+scope_selection: component_covering_supplied_district_center
 source_directory: data/raw/user_sources/shenzhen_osm_20261118
 network_layer: motor_shenzhen
 projected_crs: EPSG:32650

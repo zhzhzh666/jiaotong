@@ -12,6 +12,7 @@ if(!skill||!python||!process.argv[3])throw new Error('Provide bundled runtime, b
 await fs.mkdir(build,{recursive:true});await fs.mkdir(path.dirname(finalPath),{recursive:true});
 const data=JSON.parse(await fs.readFile(path.join(root,'docs/deliverables/content.json'),'utf8'));
 const sections=data.final.sections.filter(s=>s.title.startsWith('龙岗研究区 '));
+const active=data.active_research,report=active.report,scopeShort=active.scope_short;
 const p=await PresentationFile.importPptx(await FileBlob.load(source));
 if(p.slides.items.length!==30||sections.length!==1)throw new Error('Provide the reviewed 30-slide source');
 await fs.writeFile(path.join(build,'before-layout.ndjson'),JSON.stringify(await p.inspect({kind:'slide,textbox,shape,layout',search:'真实路网',maxChars:10000})));
@@ -20,11 +21,11 @@ let replaced=0;
 for(const shape of cover.shapes.items){
   const before=shape.text.toString();
   if(before.includes('真实路网 · 参数化内涝 · 交通韧性与治理原型')){
-    shape.text.replace('真实路网 · 参数化内涝 · 交通韧性与治理原型','研究区调整：龙岗含大鹏；南山结果作为历史保留');replaced++;
+    shape.text.replace('真实路网 · 参数化内涝 · 交通韧性与治理原型',`研究区调整：${scopeShort}；南山结果作为历史保留`);replaced++;
   }
 }
 if(replaced!==1)throw new Error('Expected one cover text anchor');
-cover.speakerNotes.text='当前研究区：用户确认随包440307龙岗区边界，包含大鹏范围。已接收资料，龙岗拓扑/需求/仿真尚未重算。第2—30张为南山及小网历史实验，第31张为本轮接收情况。';
+cover.speakerNotes.text=`当前研究区：${active.scope}。已按最新范围筛选资料，龙岗拓扑/需求/仿真尚未重算。第2—30张为南山及小网历史实验，第31张为当前范围数据。`;
 const section=sections[0],slide=p.slides.add();slide.background.fill='#FFFFFF';
 function box(text,x,y,w,h,size=21){
   const shape=slide.shapes.add({geometry:'textbox',position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});
@@ -34,7 +35,8 @@ box(section.title,75,35,1130,80,34);
 const bytes=await fs.readFile(path.join(root,section.figure));
 slide.images.add({blob:bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),contentType:'image/png',alt:section.caption,
   fit:'contain',position:{left:55,top:135,width:735,height:535}});
-box('范围：随包440307，包含大鹏。\n9,624条候选道路线，尚未建图。\n\n15个候选站／6,125条记录。\n14站标签一致，另1站待核。\n\n未新增官方OD或实测车流。\n需重建拓扑、需求与积水输入。\n南山结果保留，龙岗尚未重算。',815,150,400,480,19);
+const n=x=>Number(x).toLocaleString('en-US');
+box(`范围：${scopeShort}。\n${n(report.road_features_selected)}条候选道路线，尚未建图。\n\n${report.station_candidates}个候选站／${n(report.water_record_candidates)}条记录。\n${report.label_consistent_stations}站标签一致，另${report.label_conflict_station_ids.length}站待核。\n\n未新增官方OD或实测车流。\n需重建拓扑、需求与积水输入。\n南山结果保留，龙岗尚未重算。`,815,150,400,480,19);
 slide.speakerNotes.text=section.paragraphs.join('\n\n')+'\n'+section.source_label+'\n说明：docs/LONGGANG_DATA_INTAKE.md。图内点为地址代理位置；最近道路不是已验证受灾边。';
 const candidate=path.join(build,'candidate.pptx');await(await PresentationFile.exportPptx(p)).save(candidate);
 const preserved=path.join(build,'preserved.pptx');
